@@ -11,7 +11,7 @@ public final class PlayerSkipSegment extends SynchronizationSegment {
 	 * The amount of players to skip
 	 */
 	private final int count;
-	
+
 	/**
 	 * Creates the skip player segment.
 	 */
@@ -19,7 +19,7 @@ public final class PlayerSkipSegment extends SynchronizationSegment {
 		super(EMPTY_BLOCK_SET);
 		this.count = count;
 	}
-	
+
 	/**
 	 * @return the Count
 	 */

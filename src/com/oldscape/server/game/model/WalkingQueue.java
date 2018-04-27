@@ -54,8 +54,8 @@ public final class WalkingQueue {
 	}
 
 	/**
-	 * The maximum size of the queue. If any additional steps are added, they
-	 * are discarded.
+	 * The maximum size of the queue. If any additional steps are added, they are
+	 * discarded.
 	 */
 	private static final int MAXIMUM_SIZE = 128;
 
@@ -90,8 +90,8 @@ public final class WalkingQueue {
 	}
 
 	/**
-	 * Adds the first step to the queue, attempting to connect the server and
-	 * client position by looking at the previous queue.
+	 * Adds the first step to the queue, attempting to connect the server and client
+	 * position by looking at the previous queue.
 	 * 
 	 * @param clientPosition
 	 *            The first step.

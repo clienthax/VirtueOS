@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.google.common.base.Preconditions;
-import com.oldscape.tool.cache.type.TypeListManager;
-import com.oldscape.tool.cache.type.items.ItemType;
+import com.oldscape.cache.type.TypeListManager;
+import com.oldscape.cache.type.items.ItemType;
 
 /**
  * Represents an inventory - a collection of {@link Item}s.
@@ -24,20 +24,20 @@ public final class ItemContainer {
 	public static enum StackMode {
 
 		/**
-		 * When in {@link #STACK_ALWAYS} mode, an {@link Inventory} will stack
-		 * every single item, regardless of the settings of individual items.
+		 * When in {@link #STACK_ALWAYS} mode, an {@link Inventory} will stack every
+		 * single item, regardless of the settings of individual items.
 		 */
 		STACK_ALWAYS,
 
 		/**
-		 * When in {@link #STACK_NEVER} mode, an {@link Inventory} will never
-		 * stack items.
+		 * When in {@link #STACK_NEVER} mode, an {@link Inventory} will never stack
+		 * items.
 		 */
 		STACK_NEVER,
 
 		/**
-		 * When in {@link #STACK_STACKABLE_ITEMS} mode, an {@link Inventory}
-		 * will stack items depending on their settings.
+		 * When in {@link #STACK_STACKABLE_ITEMS} mode, an {@link Inventory} will stack
+		 * items depending on their settings.
 		 */
 		STACK_STACKABLE_ITEMS;
 
@@ -72,12 +72,11 @@ public final class ItemContainer {
 	 * The size of this inventory the number of 'used slots'.
 	 */
 	private int size = 0;
-	
+
 	/**
 	 * Stand, Run, Walk
 	 */
 	private int runAnim = 0x338, standAnim = 0x328, walkAnim = 0x333;
-	
 
 	/**
 	 * Creates an inventory.
@@ -102,8 +101,7 @@ public final class ItemContainer {
 	 *             If the mode is {@code null}.
 	 */
 	public ItemContainer(int capacity, StackMode mode) {
-		Preconditions.checkArgument(capacity >= 0,
-				"Capacity cannot be negative.");
+		Preconditions.checkArgument(capacity >= 0, "Capacity cannot be negative.");
 		Preconditions.checkNotNull(mode, "Stacking mode cannot be null.");
 
 		this.capacity = capacity;
@@ -116,8 +114,8 @@ public final class ItemContainer {
 	 * 
 	 * @param id
 	 *            The id.
-	 * @return {@code true} if the item was added, {@code false} if there was
-	 *         not enough room.
+	 * @return {@code true} if the item was added, {@code false} if there was not
+	 *         enough room.
 	 */
 	public boolean add(int id) {
 		return add(id, 1) == 0;
@@ -138,17 +136,17 @@ public final class ItemContainer {
 	}
 
 	/**
-	 * Adds an item to this inventory. This will attempt to add as much of the
-	 * item that is possible. If the item remains, it will be returned (in the
-	 * case of stackable items, any quantity that remains in the stack is
-	 * returned). If nothing remains, the method will return {@code null}. If
-	 * something remains, the listener will also be notified which could be
-	 * used, for example, to send a message to the player.
+	 * Adds an item to this inventory. This will attempt to add as much of the item
+	 * that is possible. If the item remains, it will be returned (in the case of
+	 * stackable items, any quantity that remains in the stack is returned). If
+	 * nothing remains, the method will return {@code null}. If something remains,
+	 * the listener will also be notified which could be used, for example, to send
+	 * a message to the player.
 	 * 
 	 * @param item
 	 *            The item to add to this inventory.
-	 * @return The item that remains if there is not enough room in the
-	 *         inventory. If nothing remains, {@code null}.
+	 * @return The item that remains if there is not enough room in the inventory.
+	 *         If nothing remains, {@code null}.
 	 */
 	public Item add(Item item) {
 		int id = item.getId();
@@ -246,8 +244,7 @@ public final class ItemContainer {
 	 */
 	private void checkBounds(int... slots) {
 		for (int slot : slots) {
-			Preconditions.checkElementIndex(slot, capacity, "Slot " + slot
-					+ " out of bounds.");
+			Preconditions.checkElementIndex(slot, capacity, "Slot " + slot + " out of bounds.");
 		}
 	}
 
@@ -289,8 +286,8 @@ public final class ItemContainer {
 	 * 
 	 * @param ids
 	 *            The ids.
-	 * @return {@code true} if the inventory does contain at least one of the
-	 *         items, otherwise {@code false}.
+	 * @return {@code true} if the inventory does contain at least one of the items,
+	 *         otherwise {@code false}.
 	 */
 	public boolean containsAny(int... ids) {
 		return Arrays.stream(ids).anyMatch(id -> slotOf(id) != -1);
@@ -396,8 +393,7 @@ public final class ItemContainer {
 	 * 
 	 * @param definition
 	 *            The item definition.
-	 * @return {@code true} if the item should be stacked, {@code false}
-	 *         otherwise.
+	 * @return {@code true} if the item should be stacked, {@code false} otherwise.
 	 */
 	private boolean isStackable(ItemType definition) {
 		if (mode == StackMode.STACK_ALWAYS) {
@@ -459,8 +455,8 @@ public final class ItemContainer {
 	/**
 	 * Removes one item with each of the specified ids.
 	 * <p>
-	 * This method will attempt to remove one of each item, and will continue
-	 * even if a previous item could not be removed.
+	 * This method will attempt to remove one of each item, and will continue even
+	 * if a previous item could not be removed.
 	 * 
 	 * @param ids
 	 *            The ids of the item to remove.
@@ -477,8 +473,8 @@ public final class ItemContainer {
 	}
 
 	/**
-	 * Removes {@code amount} of the item with the specified {@code id}. If the
-	 * item is stackable, it will remove it from the stack. If not, it'll remove
+	 * Removes {@code amount} of the item with the specified {@code id}. If the item
+	 * is stackable, it will remove it from the stack. If not, it'll remove
 	 * {@code amount} items.
 	 * 
 	 * @param id
@@ -555,10 +551,10 @@ public final class ItemContainer {
 	}
 
 	/**
-	 * Removes {@code amount} of the item at the specified {@code slot}. If the
-	 * item is not stacked, it will only remove the single item at the slot
-	 * (meaning it will ignore any amount higher than 1). This means that this
-	 * method will under no circumstances make any changes to other slots.
+	 * Removes {@code amount} of the item at the specified {@code slot}. If the item
+	 * is not stacked, it will only remove the single item at the slot (meaning it
+	 * will ignore any amount higher than 1). This means that this method will under
+	 * no circumstances make any changes to other slots.
 	 * 
 	 * @param slot
 	 *            The slot.
@@ -574,8 +570,7 @@ public final class ItemContainer {
 				int removed = Math.min(amount, itemAmount);
 				int remainder = itemAmount - removed;
 
-				set(slot, (remainder > 0) ? new Item(item.getId(), remainder)
-						: null);
+				set(slot, (remainder > 0) ? new Item(item.getId(), remainder) : null);
 				return removed;
 			}
 		}
@@ -609,8 +604,7 @@ public final class ItemContainer {
 	 * @param slot
 	 *            The slot.
 	 * @param item
-	 *            The item, or {@code null} to remove the item that is in the
-	 *            slot.
+	 *            The item, or {@code null} to remove the item that is in the slot.
 	 * @return The item that was in the slot.
 	 */
 	public Item set(int slot, Item item) {
@@ -660,8 +654,8 @@ public final class ItemContainer {
 	 * 
 	 * @param id
 	 *            The id.
-	 * @return The first slot containing the specified item, or {@code -1} if
-	 *         none of the slots matched the conditions.
+	 * @return The first slot containing the specified item, or {@code -1} if none
+	 *         of the slots matched the conditions.
 	 */
 	public int slotOf(int id) {
 		int used = 0;
@@ -737,8 +731,8 @@ public final class ItemContainer {
 	public void swap(int oldSlot, int newSlot) {
 		swap(false, oldSlot, newSlot);
 	}
-	
-	public int getStandAnim() {	
+
+	public int getStandAnim() {
 		if (standAnim == -1)
 			return getStandAnim();
 		return standAnim;
@@ -752,7 +746,7 @@ public final class ItemContainer {
 
 	public int getRunAnim() {
 		if (runAnim == -1)
-			return getRunAnim();		
+			return getRunAnim();
 		return runAnim;
 	}
 

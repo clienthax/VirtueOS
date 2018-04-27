@@ -32,13 +32,13 @@ public class SkillContainer {
 
 	private int[] levels = new int[24];
 	private int[] exps = new int[24];
-	
+
 	private final Player player;
-	
-	public SkillContainer (Player player) {
+
+	public SkillContainer(Player player) {
 		this.player = player;
 	}
-	
+
 	public void addExp(int id, int exp) {
 		exps[id] += exp;
 		player.sendSkill(id, levels[id], exps[id]);

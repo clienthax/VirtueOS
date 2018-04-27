@@ -27,8 +27,8 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 
 	/**
 	 * The maximum number of players to load per cycle. This prevents the update
-	 * packet from becoming too large (the client uses a 5000 byte buffer) and
-	 * also stops old spec PCs from crashing when they login or teleport.
+	 * packet from becoming too large (the client uses a 5000 byte buffer) and also
+	 * stops old spec PCs from crashing when they login or teleport.
 	 */
 	@SuppressWarnings("unused")
 	private static final int NEW_PLAYERS_PER_CYCLE = 20;
@@ -110,7 +110,8 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 
 						Player pl = viewport.getLocalPlayer(playerIdx);
 						if (pl == null || !pl.isActive()
-								|| pl.getPosition().getLongestDelta(player.getPosition()) > viewport.getViewingDistance()
+								|| pl.getPosition().getLongestDelta(player.getPosition()) > viewport
+										.getViewingDistance()
 								|| !pl.getPosition().withinDistance(player.getPosition(), viewport.getViewingDistance())
 								|| !pl.getFirstDirection().equals(Direction.NONE) || pl.isTeleporting())
 							break;
@@ -118,13 +119,11 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 						skipCount++;
 					}
 					segments.add(new PlayerSkipSegment(skipCount));
-					//System.out.println("[NSN0] : " + skipCount);
+					// System.out.println("[NSN0] : " + skipCount);
 					viewport.setSlotFlag(playerIndex, (byte) (viewport.getSlotFlag(playerIndex) | 0x2));
 				}
 			}
 		}
-
-
 
 		segments.add(new CycleEndSegment());
 
@@ -170,7 +169,7 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 						Player pl = viewport.getLocalPlayer(playerIdx);
 						if (pl == null || !pl.isActive()
 								|| pl.getPosition().getLongestDelta(player.getPosition()) > viewport
-								.getViewingDistance()
+										.getViewingDistance()
 								|| !pl.getPosition().withinDistance(player.getPosition(), viewport.getViewingDistance())
 								|| !pl.getFirstDirection().equals(Direction.NONE) || pl.isTeleporting())
 							break;
@@ -178,7 +177,7 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 						skipCount++;
 					}
 					segments.add(new PlayerSkipSegment(skipCount));
-					//System.out.println("[NSN1] : " + skipCount);
+					// System.out.println("[NSN1] : " + skipCount);
 					viewport.setSlotFlag(playerIndex, (byte) (viewport.getSlotFlag(playerIndex) | 0x2));
 				}
 			}
@@ -205,7 +204,8 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 			if (p != null && p != player && p.isActive()
 					&& p.getPosition().withinDistance(player.getPosition(), viewport.getViewingDistance())) {
 				if (update) {
-					segments.add(new PlayerAdditionSegment(p.getBlockSet(), p.getPosition(), viewport.getRegionHash(playerIndex)));
+					segments.add(new PlayerAdditionSegment(p.getBlockSet(), p.getPosition(),
+							viewport.getRegionHash(playerIndex)));
 					viewport.setRegionHash(playerIndex, p.getPosition().toRegionPacked());
 				} else {
 					segments.add(new PlayerAdditionSegment(p.getBlockSet(), p.getPosition()));
@@ -232,7 +232,7 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 						skipCount++;
 					}
 					segments.add(new PlayerSkipSegment(skipCount));
-					//System.out.println("[NSN2] : " + skipCount);
+					// System.out.println("[NSN2] : " + skipCount);
 					viewport.setSlotFlag(playerIndex, (byte) (viewport.getSlotFlag(playerIndex) | 0x2));
 				}
 			}
@@ -243,8 +243,6 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 		skipCount = 0;
 
 		segments.add(new CycleStartSegment());
-
-
 
 		for (int index = 0; index < viewport.getOutPlayersIndexesCount(); index++) {
 			int playerIndex = viewport.getOutPlayersIndex(index);
@@ -260,9 +258,11 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 			Player p = server.getGameWorld().getPlayers().get(playerIndex);
 			boolean update = p == null ? false : viewport.regionUpdate(playerIndex, p.getPosition().toRegionPacked());
 
-			if (p != null && p != player && p.isActive() && p.getPosition().withinDistance(player.getPosition(), viewport.getViewingDistance())) {
+			if (p != null && p != player && p.isActive()
+					&& p.getPosition().withinDistance(player.getPosition(), viewport.getViewingDistance())) {
 				if (update) {
-					segments.add(new PlayerAdditionSegment(p.getBlockSet(), p.getPosition(), viewport.getRegionHash(playerIndex)));
+					segments.add(new PlayerAdditionSegment(p.getBlockSet(), p.getPosition(),
+							viewport.getRegionHash(playerIndex)));
 					viewport.setRegionHash(playerIndex, p.getPosition().toRegionPacked());
 				} else {
 					segments.add(new PlayerAdditionSegment(p.getBlockSet(), p.getPosition()));
@@ -274,7 +274,7 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 				if (update) {
 					segments.add(new RegionHashSegment(p.getPosition(), viewport.getRegionHash(playerIndex)));
 					viewport.setRegionHash(playerIndex, p.getPosition().toRegionPacked());
-				} else {//Problem in here?
+				} else {// Problem in here?
 
 					for (int idx = index + 1; idx < viewport.getOutPlayersIndexesCount(); idx++) {
 						int playerIdx = viewport.getOutPlayersIndex(idx);

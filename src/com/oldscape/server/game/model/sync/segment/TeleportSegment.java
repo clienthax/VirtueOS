@@ -15,7 +15,7 @@ public final class TeleportSegment extends SynchronizationSegment {
 	 * The start.
 	 */
 	private final Position start;
-	
+
 	/**
 	 * The destination.
 	 */
@@ -29,8 +29,7 @@ public final class TeleportSegment extends SynchronizationSegment {
 	 * @param destination
 	 *            The destination.
 	 */
-	public TeleportSegment(SynchronizationBlockSet blockSet,
-			Position start, Position destination) {
+	public TeleportSegment(SynchronizationBlockSet blockSet, Position start, Position destination) {
 		super(blockSet);
 		this.start = start;
 		this.destination = destination;
@@ -44,7 +43,7 @@ public final class TeleportSegment extends SynchronizationSegment {
 	public Position getStart() {
 		return start;
 	}
-	
+
 	/**
 	 * Gets the destination.
 	 * 

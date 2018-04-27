@@ -31,7 +31,7 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 
 /**
  * @author Kyle Friz
- * @since  Aug 29, 2015
+ * @since Aug 29, 2015
  */
 public class Viewport {
 
@@ -39,7 +39,7 @@ public class Viewport {
 	 * The player that owns this viewport
 	 */
 	private final Player player;
-	
+
 	/**
 	 * The player's list of local npcs.
 	 */
@@ -49,12 +49,12 @@ public class Viewport {
 	 * The player's list of local players.
 	 */
 	private final Player[] localPlayers = new Player[2048];
-	
+
 	/**
 	 * Represents an array of players' indices within the current player's view
 	 */
 	private final int[] localPlayersIndexes = new int[2048];
-	
+
 	/**
 	 * Represents the amount of local players within the current player's view
 	 */
@@ -64,7 +64,7 @@ public class Viewport {
 	 * Represents an array of players outside the current player's view
 	 */
 	private final int[] outPlayersIndexes = new int[2048];
-	
+
 	/**
 	 * Represents an the amount of players outside the current player's view
 	 */
@@ -74,32 +74,32 @@ public class Viewport {
 	 * Represents an array of region hashes
 	 */
 	private final int[] regionHashes = new int[2048];
-	
+
 	/**
 	 * Represents an array
 	 */
 	private final byte[] slotFlags = new byte[2048];
-	
+
 	/**
 	 * Represents the movement types of all active players
 	 */
 	private final byte[] movementTypes = new byte[2048];
-	
+
 	/**
 	 * Represents the amount of players added in the current tick
 	 */
 	private int localAddedPlayers = 0;
-	
+
 	/**
 	 * Represents if the player has a large scene radius
 	 */
 	private final boolean largeScene = false;
-	
+
 	/**
 	 * The current maximum viewing distance of this player.
 	 */
 	private int viewingDistance = 1;
-	
+
 	/**
 	 * A flag which indicates there are npcs that couldn't be added.
 	 */
@@ -109,12 +109,12 @@ public class Viewport {
 	 * A flag which indicates there are players that couldn't be added.
 	 */
 	private boolean excessivePlayers = false;
-	
+
 	/**
 	 * A flag which indicates if the viewport has been initialized.
 	 */
 	private boolean initialized = false;
-	
+
 	public Viewport(Player player) {
 		this.player = player;
 	}
@@ -122,24 +122,24 @@ public class Viewport {
 	public synchronized void initialize(GameFrameBuilder builder, GameWorld world) {
 		localPlayersIndexesCount = 0;
 		outPlayersIndexesCount = 0;
-		
+
 		localPlayers[player.getIndex()] = player;
 		localPlayersIndexes[localPlayersIndexesCount++] = player.getIndex();
-		
-        builder.switchToBitAccess();
-        builder.putBits(30, player.getPosition().toPositionPacked());
-        for (int playerIndex = 1; playerIndex < GameWorld.MAXIMUM_PLAYERS; playerIndex++) {
-            if (playerIndex != player.getIndex()) {
-            	Player player = world.getPlayers().get(playerIndex);
-                builder.putBits(18, player != null ? player.getPosition().toRegionPacked() : 0);
-                outPlayersIndexes[outPlayersIndexesCount++] = playerIndex;
-            }
-        }
-        builder.switchToByteAccess();
-        
-        initialized = true;
+
+		builder.switchToBitAccess();
+		builder.putBits(30, player.getPosition().toPositionPacked());
+		for (int playerIndex = 1; playerIndex < GameWorld.MAXIMUM_PLAYERS; playerIndex++) {
+			if (playerIndex != player.getIndex()) {
+				Player player = world.getPlayers().get(playerIndex);
+				builder.putBits(18, player != null ? player.getPosition().toRegionPacked() : 0);
+				outPlayersIndexes[outPlayersIndexesCount++] = playerIndex;
+			}
+		}
+		builder.switchToByteAccess();
+
+		initialized = true;
 	}
-	
+
 	public synchronized void refresh() {
 		localPlayersIndexesCount = 0;
 		outPlayersIndexesCount = 0;
@@ -153,7 +153,7 @@ public class Viewport {
 				localPlayersIndexes[localPlayersIndexesCount++] = playerIndex;
 			}
 		}
-		
+
 		if (!excessivePlayers) {
 			if (viewingDistance < Position.DEFAULT_DISTANCE) {
 				viewingDistance++;
@@ -165,11 +165,11 @@ public class Viewport {
 			excessivePlayers = false;
 		}
 	}
-	
+
 	public final boolean initialized() {
 		return initialized;
 	}
-	
+
 	/**
 	 * @return the player
 	 */
@@ -191,7 +191,7 @@ public class Viewport {
 	public Player getLocalPlayer(int index) {
 		return localPlayers[index];
 	}
-	
+
 	/**
 	 * @param index
 	 * @param object
@@ -199,14 +199,14 @@ public class Viewport {
 	public void setLocalPlayer(int index, Player player) {
 		localPlayers[index] = player;
 	}
-	
+
 	/**
 	 * @return the localPlayersIndex
 	 */
 	public int getLocalPlayersIndex(int index) {
 		return localPlayersIndexes[index];
 	}
-	
+
 	/**
 	 * @return the localPlayersIndexesCount
 	 */
@@ -229,8 +229,10 @@ public class Viewport {
 	}
 
 	/**
-	 * @param index the Index
-	 * @param hash the Hash
+	 * @param index
+	 *            the Index
+	 * @param hash
+	 *            the Hash
 	 * @return if they match
 	 */
 	public boolean regionUpdate(int index, int hash) {
@@ -238,22 +240,26 @@ public class Viewport {
 	}
 
 	/**
-	 * @param index the Index
+	 * @param index
+	 *            the Index
 	 * @return the Hash
 	 */
 	public int getRegionHash(int index) {
 		return regionHashes[index];
 	}
-	
+
 	/**
 	 * Sets the region hash
-	 * @param index the Index
-	 * @param hash the Hash
+	 * 
+	 * @param index
+	 *            the Index
+	 * @param hash
+	 *            the Hash
 	 */
 	public void setRegionHash(int index, int hash) {
 		regionHashes[index] = hash;
 	}
-	
+
 	/**
 	 * @return the slotFlag
 	 */
@@ -264,7 +270,7 @@ public class Viewport {
 	public void setSlotFlag(int index, byte flag) {
 		slotFlags[index] = flag;
 	}
-	
+
 	/**
 	 * @return the movementType
 	 */
@@ -285,7 +291,7 @@ public class Viewport {
 	public boolean isLargeScene() {
 		return largeScene;
 	}
-	
+
 	/**
 	 * Checks if there are excessive npcs.
 	 * 
@@ -333,5 +339,5 @@ public class Viewport {
 	public void resetViewingDistance() {
 		viewingDistance = 1;
 	}
-	
+
 }

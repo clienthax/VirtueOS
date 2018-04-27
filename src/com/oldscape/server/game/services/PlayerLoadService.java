@@ -52,8 +52,8 @@ public class PlayerLoadService extends AbstractService implements Runnable {
 	private final BlockingDeque<LoginTransaction> pendingTransactions = new LinkedBlockingDeque<>();
 
 	/**
-	 * The {@link java.util.concurrent.atomic.AtomicBoolean} for the running of
-	 * the service.
+	 * The {@link java.util.concurrent.atomic.AtomicBoolean} for the running of the
+	 * service.
 	 */
 	private final AtomicBoolean running = new AtomicBoolean(true);
 
@@ -106,8 +106,8 @@ public class PlayerLoadService extends AbstractService implements Runnable {
 							new InputStreamReader(new FileInputStream(character)))) {
 
 						/**
-						 * Creates a new {@link com.oldscape.server.rs3.game.ServerContext}
-						 * from the properties file.
+						 * Creates a new {@link com.oldscape.server.rs3.game.ServerContext} from the
+						 * properties file.
 						 */
 						player = gson.fromJson(reader, Player.class);
 
@@ -136,41 +136,38 @@ public class PlayerLoadService extends AbstractService implements Runnable {
 
 						/*
 						 * if (player.getCredentials().isAurthenticated()) {
-						 * context.sendLoginFailure(Response.AUTHENTICATOR);
-						 * player = null; continue; }
+						 * context.sendLoginFailure(Response.AUTHENTICATOR); player = null; continue; }
 						 */
 					}
 				} else {
 					// Fake a new player for now.
-					player = new Player(1, 
-							new AccountCredentials(
-								/* Account creation date. */
-								Date.from(Instant.now()), 
-								/* Last Logged in*/
-								Date.from(Instant.now()),
-								/* Username */
-								protocol, 
-								/* Display name */
-								NameUtils.display(event.getUserName()), 
-								/* Email address */
-								"test@log.in",
-								/* Password */
-								FNVHash.fnv1a_64(event.getPassword()), 
-								/* Unread Messages */
-								0, 
-								/* Last IP Address*/
-								"127.0.0.1", 
-								/* Membership expiry date*/
-								new DateTime().plusDays(90).toDate(),
-								/* Subscription type */
-								SubscriptionType.SUBSCRIPTED_MEMBER, 
-								/* Permission */
-								Permission.ADMINISTRATOR, 
-								/* Email Verified*/
-								true, 
-								/* Authenticator */
-								false),
-							DisplayMode.FIXED);
+					player = new Player(1, new AccountCredentials(
+							/* Account creation date. */
+							Date.from(Instant.now()),
+							/* Last Logged in */
+							Date.from(Instant.now()),
+							/* Username */
+							protocol,
+							/* Display name */
+							NameUtils.display(event.getUserName()),
+							/* Email address */
+							"test@log.in",
+							/* Password */
+							FNVHash.fnv1a_64(event.getPassword()),
+							/* Unread Messages */
+							0,
+							/* Last IP Address */
+							"127.0.0.1",
+							/* Membership expiry date */
+							new DateTime().plusDays(90).toDate(),
+							/* Subscription type */
+							SubscriptionType.SUBSCRIPTED_MEMBER,
+							/* Permission */
+							Permission.ADMINISTRATOR,
+							/* Email Verified */
+							true,
+							/* Authenticator */
+							false), DisplayMode.FIXED);
 				}
 
 				player.setEncodingRandom(event.getEncodingRandom());
@@ -192,12 +189,13 @@ public class PlayerLoadService extends AbstractService implements Runnable {
 	}
 
 	/**
-	 * Adds a {@link com.oldscape.server.game.network.login.LoginSessionContext} to the
-	 * {@code pendingContexts}.
+	 * Adds a {@link com.oldscape.server.game.network.login.LoginSessionContext} to
+	 * the {@code pendingContexts}.
 	 * 
 	 * @param transaction
-	 *            The {@link com.oldscape.server.game.network.login.LoginSessionContext} to
-	 *            registerLobbyPlayer.
+	 *            The
+	 *            {@link com.oldscape.server.game.network.login.LoginSessionContext}
+	 *            to registerLobbyPlayer.
 	 */
 	public void addLoginTransaction(LoginTransaction transaction) {
 		pendingTransactions.add(transaction);

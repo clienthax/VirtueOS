@@ -17,8 +17,7 @@ public final class PostPlayerSynchronizationTask extends SynchronizationTask {
 	private final Player player;
 
 	/**
-	 * Creates the {@link PostPlayerSynchronizationTask} for the specified
-	 * player.
+	 * Creates the {@link PostPlayerSynchronizationTask} for the specified player.
 	 * 
 	 * @param player
 	 *            The player.
@@ -29,9 +28,10 @@ public final class PostPlayerSynchronizationTask extends SynchronizationTask {
 
 	@Override
 	public void run() {
-		if(player.isTeleporting()) {
+		if (player.isTeleporting()) {
 			player.setTeleporting(false);
-			player.addBlock(SynchronizationBlock.createMovementTypeBlock(player.getWalkingQueue().runningQueue(), player.isTeleporting()));//TODO is this the best way to do this?
+			player.addBlock(SynchronizationBlock.createMovementTypeBlock(player.getWalkingQueue().runningQueue(),
+					player.isTeleporting()));// TODO is this the best way to do this?
 		}
 
 		player.setRegionChange(false);

@@ -30,12 +30,14 @@ public final class LoginSessionContext extends SessionEventContext {
 	}
 
 	/**
-	 * Initialises the {@link com.oldscape.server.game.network.login.LoginSessionContext} .
+	 * Initialises the
+	 * {@link com.oldscape.server.game.network.login.LoginSessionContext} .
 	 */
 	public void initialise() {
 		Response response = Response.LOGIN_CONTINUE;
 
-		ByteBuf buffer = channel.alloc().buffer(9).writeByte(response.getResponse()).writeLong((long) (Math.random() * Long.MAX_VALUE));
+		ByteBuf buffer = channel.alloc().buffer(9).writeByte(response.getResponse())
+				.writeLong((long) (Math.random() * Long.MAX_VALUE));
 		ChannelFuture future = channel.writeAndFlush(buffer, channel.voidPromise()); // ok try now
 		if (response != Response.LOGIN_CONTINUE) {
 			future.addListener(ChannelFutureListener.CLOSE);

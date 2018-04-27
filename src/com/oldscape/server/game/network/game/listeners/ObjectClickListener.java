@@ -17,7 +17,8 @@ public class ObjectClickListener implements EventListener<ObjectClickEvent, Game
 	public void onEvent(ObjectClickEvent event, GameSessionContext context) {
 		System.out.println("object clicked");
 		Player player = context.getPlayer();
-		player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()));
+		player.getWalkingQueue()
+				.addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()));
 		// TODO: Handle the action of the object here
 
 	}

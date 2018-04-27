@@ -8,7 +8,8 @@ import com.oldscape.server.game.model.player.Player;
 public class PlayerLoginContextPair {
 
 	/**
-	 * The {@link com.oldscape.server.game.model.player.Player} of the succesfull login.
+	 * The {@link com.oldscape.server.game.model.player.Player} of the succesfull
+	 * login.
 	 */
 	private final Player player;
 
@@ -18,12 +19,14 @@ public class PlayerLoginContextPair {
 	private final LoginSessionContext context;
 
 	/**
-	 * Creates a new {@link com.oldscape.server.game.network.login.PlayerLoginContextPair}
+	 * Creates a new
+	 * {@link com.oldscape.server.game.network.login.PlayerLoginContextPair}
 	 * 
 	 * @param composition
 	 *            The {@link com.oldscape.server.game.model.player.Player}.
 	 * @param context
-	 *            The {@link com.oldscape.server.game.network.login.LoginSessionContext}.
+	 *            The
+	 *            {@link com.oldscape.server.game.network.login.LoginSessionContext}.
 	 */
 	public PlayerLoginContextPair(Player composition, LoginSessionContext context) {
 		this.player = composition;

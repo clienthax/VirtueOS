@@ -5,6 +5,7 @@ import com.oldscape.server.game.model.combat.action.CombatAction;
 
 /**
  * MeleeAction Class
+ * 
  * @author Kyle Friz
  * @author Kayla Friz
  * @since Jul 11, 2015
@@ -12,17 +13,15 @@ import com.oldscape.server.game.model.combat.action.CombatAction;
 public class MeleeAction extends CombatAction {
 
 	@Override
-	public void attack(MobileEntity attacker, MobileEntity defender,
-			boolean successful) {
+	public void attack(MobileEntity attacker, MobileEntity defender, boolean successful) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public void defend(MobileEntity defender, MobileEntity attacker,
-			boolean successful) {
+	public void defend(MobileEntity defender, MobileEntity attacker, boolean successful) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

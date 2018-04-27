@@ -12,12 +12,13 @@ public final class LoginEventListener implements EventListener<LoginEvent, Login
 	@Override
 	public void onEvent(LoginEvent event, LoginSessionContext context) {
 
-		if (event.getMajor() != context.getServer().getContext().getMajor()) {//TODO load from config
+		if (event.getMajor() != context.getServer().getContext().getMajor()) {// TODO load from config
 			context.sendLoginFailure(Response.SERVER_UPDATED);
 			System.out.println("Wrong client version");
 		}
 
-		if (!event.getToken().equals("p1cxIGuofoL*Cxh6XInci7jdO6eoWyjw4JDOroxQCWofrlANnxj8Eg")) {//TODO load from config
+		if (!event.getToken().equals("p1cxIGuofoL*Cxh6XInci7jdO6eoWyjw4JDOroxQCWofrlANnxj8Eg")) {// TODO load from
+																									// config
 			context.sendLoginFailure(Response.SERVER_UPDATED);
 			System.out.println("Wrong client token");
 		}
@@ -25,7 +26,7 @@ public final class LoginEventListener implements EventListener<LoginEvent, Login
 		for (int index = 1; index < event.getCrcValues().length; index++) {
 
 			if (context.getServer().getChecksumTable().getEntry(index - 1).getCrc() != event.getCrcValues()[index]) {
-				//TODO this doesn't seem right, we should be sending this to the client right?
+				// TODO this doesn't seem right, we should be sending this to the client right?
 				context.sendLoginFailure(Response.SERVER_UPDATED);
 				System.out.println("Invalid crcs");
 				return;

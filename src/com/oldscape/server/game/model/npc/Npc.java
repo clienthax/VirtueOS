@@ -23,9 +23,9 @@ package com.oldscape.server.game.model.npc;
 
 import java.util.Optional;
 
+import com.oldscape.cache.type.TypeListManager;
 import com.oldscape.server.game.model.MobileEntity;
 import com.oldscape.shared.model.Position;
-import com.oldscape.tool.cache.type.TypeListManager;
 
 /**
  * @author Im Frizzy <skype:kfriz1998>
@@ -35,7 +35,7 @@ import com.oldscape.tool.cache.type.TypeListManager;
  * @since Mar 21, 2015
  */
 public class Npc extends MobileEntity {
-	
+
 	public Npc(int id, int x, int y) {
 		this.npcType = Optional.of(TypeListManager.lookupNpc(id));
 		this.setPosition(new Position(x, y, 0));
@@ -57,8 +57,8 @@ public class Npc extends MobileEntity {
 	public int getId() {
 		return getNpcType().getID();
 	}
-	
-	public boolean isAttackable () {
+
+	public boolean isAttackable() {
 		for (String option : getNpcType().getOptions()) {
 			if ("Attack".equalsIgnoreCase(option)) {
 				return true;

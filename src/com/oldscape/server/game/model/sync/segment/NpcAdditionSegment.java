@@ -37,8 +37,7 @@ public final class NpcAdditionSegment extends SynchronizationSegment {
 	 * @param npcId
 	 *            The id of the npc.
 	 */
-	public NpcAdditionSegment(SynchronizationBlockSet blockSet, int index,
-			Position position, int npcId) {
+	public NpcAdditionSegment(SynchronizationBlockSet blockSet, int index, Position position, int npcId) {
 		super(blockSet);
 		this.index = index;
 		this.position = position;

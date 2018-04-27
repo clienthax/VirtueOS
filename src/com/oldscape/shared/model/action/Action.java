@@ -25,14 +25,14 @@ import com.oldscape.server.game.model.MobileEntity;
 
 /**
  * @author Kyle Friz
- * @since  Aug 4, 2015
+ * @since Aug 4, 2015
  */
 public interface Action {
 
 	void initialize(MobileEntity entity);
-	
+
 	void pulse(MobileEntity entity);
-	
+
 	void finalize(MobileEntity entity);
-	
+
 }

@@ -46,11 +46,15 @@ public final class CollisionMatrix {
 	private static final byte ALL_BLOCKED = (byte) 0b1111_1111;
 
 	/**
-	 * Creates an array of CollisionMatrix objects, all of the specified width and length.
+	 * Creates an array of CollisionMatrix objects, all of the specified width and
+	 * length.
 	 *
-	 * @param count The length of the array to create.
-	 * @param width The width of each CollisionMatrix.
-	 * @param length The length of each CollisionMatrix.
+	 * @param count
+	 *            The length of the array to create.
+	 * @param width
+	 *            The width of each CollisionMatrix.
+	 * @param length
+	 *            The length of each CollisionMatrix.
 	 * @return The array of CollisionMatrix objects.
 	 */
 	public static CollisionMatrix[] createMatrices(int count, int width, int length) {
@@ -77,8 +81,10 @@ public final class CollisionMatrix {
 	/**
 	 * Creates the CollisionMatrix.
 	 *
-	 * @param width The width of the matrix.
-	 * @param length The length of the matrix.
+	 * @param width
+	 *            The width of the matrix.
+	 * @param length
+	 *            The length of the matrix.
 	 */
 	public CollisionMatrix(int width, int length) {
 		this.width = width;
@@ -87,12 +93,15 @@ public final class CollisionMatrix {
 	}
 
 	/**
-	 * Returns whether or not <strong>all</strong> of the specified {@link CollisionFlag}s are set for the specified
-	 * coordinate pair.
+	 * Returns whether or not <strong>all</strong> of the specified
+	 * {@link CollisionFlag}s are set for the specified coordinate pair.
 	 *
-	 * @param x The x coordinate.
-	 * @param y The y coordinate.
-	 * @param flags The CollisionFlags.
+	 * @param x
+	 *            The x coordinate.
+	 * @param y
+	 *            The y coordinate.
+	 * @param flags
+	 *            The CollisionFlags.
 	 * @return {@code true} iff all of the CollisionFlags are set.
 	 */
 	public boolean all(int x, int y, CollisionFlag... flags) {
@@ -106,12 +115,15 @@ public final class CollisionMatrix {
 	}
 
 	/**
-	 * Returns whether or not <strong>any</strong> of the specified {@link CollisionFlag}s are set for the specified
-	 * coordinate pair.
+	 * Returns whether or not <strong>any</strong> of the specified
+	 * {@link CollisionFlag}s are set for the specified coordinate pair.
 	 *
-	 * @param x The x coordinate.
-	 * @param y The y coordinate.
-	 * @param flags The CollisionFlags.
+	 * @param x
+	 *            The x coordinate.
+	 * @param y
+	 *            The y coordinate.
+	 * @param flags
+	 *            The CollisionFlags.
 	 * @return {@code true} iff any of the CollisionFlags are set.
 	 */
 	public boolean any(int x, int y, CollisionFlag... flags) {
@@ -127,31 +139,40 @@ public final class CollisionMatrix {
 	/**
 	 * Completely blocks the tile at the specified coordinate pair.
 	 *
-	 * @param x The x coordinate.
-	 * @param y The y coordinate.
+	 * @param x
+	 *            The x coordinate.
+	 * @param y
+	 *            The y coordinate.
 	 */
 	public void block(int x, int y) {
 		set(x, y, ALL_BLOCKED);
 	}
 
 	/**
-	 * Clears (i.e. sets to {@code false}) the value of the specified {@link CollisionFlag} for the specified
-	 * coordinate pair.
+	 * Clears (i.e. sets to {@code false}) the value of the specified
+	 * {@link CollisionFlag} for the specified coordinate pair.
 	 *
-	 * @param x The x coordinate.
-	 * @param y The y coordinate.
-	 * @param flag The CollisionFlag.
+	 * @param x
+	 *            The x coordinate.
+	 * @param y
+	 *            The y coordinate.
+	 * @param flag
+	 *            The CollisionFlag.
 	 */
 	public void clear(int x, int y, CollisionFlag flag) {
 		set(x, y, (byte) ~flag.asByte());
 	}
 
 	/**
-	 * Returns whether or not the specified {@link CollisionFlag} is set for the specified coordinate pair.
+	 * Returns whether or not the specified {@link CollisionFlag} is set for the
+	 * specified coordinate pair.
 	 *
-	 * @param x The x coordinate.
-	 * @param y The y coordinate.
-	 * @param flag The CollisionFlag.
+	 * @param x
+	 *            The x coordinate.
+	 * @param y
+	 *            The y coordinate.
+	 * @param flag
+	 *            The CollisionFlag.
 	 * @return {@code true} iff the CollisionFlag is set.
 	 */
 	public boolean flagged(int x, int y, CollisionFlag flag) {
@@ -161,8 +182,10 @@ public final class CollisionMatrix {
 	/**
 	 * Gets the value of the specified tile.
 	 *
-	 * @param x The x coordinate of the tile.
-	 * @param y The y coordinate of the tile.
+	 * @param x
+	 *            The x coordinate of the tile.
+	 * @param y
+	 *            The y coordinate of the tile.
 	 * @return The value.
 	 */
 	public int get(int x, int y) {
@@ -172,20 +195,25 @@ public final class CollisionMatrix {
 	/**
 	 * Resets the cell of the specified coordinate pair.
 	 *
-	 * @param x The x coordinate.
-	 * @param y The y coordinate.
+	 * @param x
+	 *            The x coordinate.
+	 * @param y
+	 *            The y coordinate.
 	 */
 	public void reset(int x, int y) {
 		set(x, y, ALL_ALLOWED);
 	}
 
 	/**
-	 * Sets (i.e. sets to {@code true}) the value of the specified {@link CollisionFlag} for the specified coordinate
-	 * pair.
+	 * Sets (i.e. sets to {@code true}) the value of the specified
+	 * {@link CollisionFlag} for the specified coordinate pair.
 	 *
-	 * @param x The x coordinate.
-	 * @param y The y coordinate.
-	 * @param flag The CollisionFlag.
+	 * @param x
+	 *            The x coordinate.
+	 * @param y
+	 *            The y coordinate.
+	 * @param flag
+	 *            The CollisionFlag.
 	 */
 	public void set(int x, int y, CollisionFlag flag) {
 		set(x, y, flag.asByte());
@@ -198,48 +226,56 @@ public final class CollisionMatrix {
 	}
 
 	/**
-	 * Returns whether or not an Entity of the specified {@link EntityType type} cannot traverse the tile at the
-	 * specified coordinate pair.
+	 * Returns whether or not an Entity of the specified {@link EntityType type}
+	 * cannot traverse the tile at the specified coordinate pair.
 	 *
-	 * @param x The x coordinate.
-	 * @param y The y coordinate.
-	 * @param entity The {@link EntityType}.
-	 * @param direction The {@link Direction} the Entity is approaching from.
-	 * @return {@code true} iff the tile at the specified coordinate pair is not traversable.
+	 * @param x
+	 *            The x coordinate.
+	 * @param y
+	 *            The y coordinate.
+	 * @param entity
+	 *            The {@link EntityType}.
+	 * @param direction
+	 *            The {@link Direction} the Entity is approaching from.
+	 * @return {@code true} iff the tile at the specified coordinate pair is not
+	 *         traversable.
 	 */
 	public boolean untraversable(int x, int y, EntityType entity, Direction direction) {
 		CollisionFlag[] flags = CollisionFlag.forType(entity);
 		int north = 0, east = 1, south = 2, west = 3;
 
 		switch (direction) {
-			case NORTH_WEST:
-				return flagged(x, y, flags[south]) || flagged(x, y, flags[east]);
-			case NORTH:
-				return flagged(x, y, flags[south]);
-			case NORTH_EAST:
-				return flagged(x, y, flags[south]) || flagged(x, y, flags[west]);
-			case EAST:
-				return flagged(x, y, flags[west]);
-			case SOUTH_EAST:
-				return flagged(x, y, flags[north]) || flagged(x, y, flags[west]);
-			case SOUTH:
-				return flagged(x, y, flags[north]);
-			case SOUTH_WEST:
-				return flagged(x, y, flags[north]) || flagged(x, y, flags[east]);
-			case WEST:
-				return flagged(x, y, flags[east]);
-			default:
-				throw new IllegalArgumentException("Unrecognised direction " + direction + ".");
+		case NORTH_WEST:
+			return flagged(x, y, flags[south]) || flagged(x, y, flags[east]);
+		case NORTH:
+			return flagged(x, y, flags[south]);
+		case NORTH_EAST:
+			return flagged(x, y, flags[south]) || flagged(x, y, flags[west]);
+		case EAST:
+			return flagged(x, y, flags[west]);
+		case SOUTH_EAST:
+			return flagged(x, y, flags[north]) || flagged(x, y, flags[west]);
+		case SOUTH:
+			return flagged(x, y, flags[north]);
+		case SOUTH_WEST:
+			return flagged(x, y, flags[north]) || flagged(x, y, flags[east]);
+		case WEST:
+			return flagged(x, y, flags[east]);
+		default:
+			throw new IllegalArgumentException("Unrecognised direction " + direction + ".");
 		}
 	}
 
 	/**
 	 * Gets the index in the matrix for the specified coordinate pair.
 	 *
-	 * @param x The x coordinate.
-	 * @param y The y coordinate.
+	 * @param x
+	 *            The x coordinate.
+	 * @param y
+	 *            The y coordinate.
 	 * @return The index.
-	 * @throws ArrayIndexOutOfBoundsException If the specified coordinate pair does not fit in this matrix.
+	 * @throws ArrayIndexOutOfBoundsException
+	 *             If the specified coordinate pair does not fit in this matrix.
 	 */
 	private int indexOf(int x, int y) {
 		Preconditions.checkElementIndex(x, width, "X coordinate must be [0, " + width + "), received " + x + ".");
@@ -248,11 +284,15 @@ public final class CollisionMatrix {
 	}
 
 	/**
-	 * Sets the appropriate index for the specified coordinate pair to the specified value.
+	 * Sets the appropriate index for the specified coordinate pair to the specified
+	 * value.
 	 *
-	 * @param x The x coordinate.
-	 * @param y The y coordinate.
-	 * @param value The value.
+	 * @param x
+	 *            The x coordinate.
+	 * @param y
+	 *            The y coordinate.
+	 * @param value
+	 *            The value.
 	 */
 	private void set(int x, int y, byte value) {
 		matrix[indexOf(x, y)] = value;

@@ -93,8 +93,8 @@ public enum Direction {
 	}
 
 	/**
-	 * Checks if the direction represented by the two delta values can connect
-	 * two points together in a single direction.
+	 * Checks if the direction represented by the two delta values can connect two
+	 * points together in a single direction.
 	 * 
 	 * @param deltaX
 	 *            The difference in X coordinates.

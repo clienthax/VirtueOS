@@ -29,13 +29,13 @@ package com.oldscape.shared.model.player;
 public enum DisplayMode {
 
 	FIXED(548),
-	
+
 	RESIZE(161),
-	
+
 	RESIZE_PANELS(164);
-	
+
 	private final int id;
-	
+
 	DisplayMode(int id) {
 		this.id = id;
 	}
@@ -43,5 +43,5 @@ public enum DisplayMode {
 	public int getId() {
 		return id;
 	}
-	
+
 }

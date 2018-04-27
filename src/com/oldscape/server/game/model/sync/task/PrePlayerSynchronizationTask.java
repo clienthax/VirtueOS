@@ -18,8 +18,7 @@ public final class PrePlayerSynchronizationTask extends SynchronizationTask {
 	private final Player player;
 
 	/**
-	 * Creates the {@link PrePlayerSynchronizationTask} for the specified
-	 * player.
+	 * Creates the {@link PrePlayerSynchronizationTask} for the specified player.
 	 * 
 	 * @param player
 	 *            The player.
@@ -49,15 +48,16 @@ public final class PrePlayerSynchronizationTask extends SynchronizationTask {
 
 		if (player.isTeleporting()) {
 			player.getViewport().resetViewingDistance();
-			player.addBlock(SynchronizationBlock.createMovementTypeBlock(player.getWalkingQueue().runningQueue(), player.isTeleporting()));//TODO is this the best way to do this?
+			player.addBlock(SynchronizationBlock.createMovementTypeBlock(player.getWalkingQueue().runningQueue(),
+					player.isTeleporting()));// TODO is this the best way to do this?
 		}
 
 		if (!player.hasLastKnownPosition() || needsRegionUpdate()) {
 			player.setRegionChange(true);
 
 			Position position = player.getPosition();
-			System.out.println("Sending position "+position.toString());
-			if(!player.hasLastKnownPosition() || !player.isTeleporting())
+			System.out.println("Sending position " + position.toString());
+			if (!player.hasLastKnownPosition() || !player.isTeleporting())
 				player.setLastPosition(position);
 			player.sendRegionUpdate(position);
 		}

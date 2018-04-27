@@ -37,44 +37,44 @@ public class ButtonClickEventListener implements EventListener<ButtonClickEvent,
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.Event,
-	 * com.oldscape.shared.event.EventContext)
+	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.
+	 * Event, com.oldscape.shared.event.EventContext)
 	 */
 	@Override
 	public void onEvent(ButtonClickEvent event, GameSessionContext context) {
 		Player player = context.getPlayer();
-		 System.out.println("buttonclickevent "+event.getInterfaceID() + ", " +
-		 event.getButtonID());
+		System.out.println("buttonclickevent " + event.getInterfaceID() + ", " + event.getButtonID());
 
-		 if(event.getInterfaceID() == 595) {//worldmap
-		 	switch (event.getButtonID()) {
-				case 34://close map X
-					player.sendCloseInterfaceSub(548, 22);
-					break;
+		if (event.getInterfaceID() == 595) {// worldmap
+			switch (event.getButtonID()) {
+			case 34:// close map X
+				player.sendCloseInterfaceSub(548, 22);
+				break;
 			}
-		 }
+		}
 
-		 if(event.getInterfaceID() == 160) {//minimap panel
-		 	switch (event.getButtonID()) {
-				case 36://Map button
-					player.sendCS2Script(1749, new Object[]{865789592});//c -- guessing this is coords?
-					player.sendOpenInterfaceSub(548, 22, 595, true);
-//					player.setInterfaceClickMask(595, 17, 0, 4, 2);//TODO
-					break;
+		if (event.getInterfaceID() == 160) {// minimap panel
+			switch (event.getButtonID()) {
+			case 36:// Map button
+				player.sendCS2Script(1749, new Object[] { 865789592 });// c -- guessing this is coords?
+				player.sendOpenInterfaceSub(548, 22, 595, true);
+				// player.setInterfaceClickMask(595, 17, 0, 4, 2);//TODO
+				break;
 			}
-		 }
+		}
 
-		 if(event.getInterfaceID() == 182) {//Settings tab
-		 	switch (event.getButtonID()) {
-				case 8://Logout button
-					player.logout();
-					break;
+		if (event.getInterfaceID() == 182) {// Settings tab
+			switch (event.getButtonID()) {
+			case 8:// Logout button
+				player.logout();
+				break;
 			}
-		 }
+		}
 
-		if (event.getInterfaceID() == 378 && (event.getButtonID() == 6 || event.getButtonID() == 75)) {//Click here to play
+		if (event.getInterfaceID() == 378 && (event.getButtonID() == 6 || event.getButtonID() == 75)) {// Click here to
+																										// play
 			player.sendSetRootInterface(player.getDisplay().getId());
-			if (player.getDisplay().equals(DisplayMode.RESIZE_PANELS)) {//todo
+			if (player.getDisplay().equals(DisplayMode.RESIZE_PANELS)) {// todo
 				player.sendSetInterfaceMoveSubEvent(165, 1, 164, 21);
 				player.sendSetInterfaceMoveSubEvent(165, 5, 164, 9);
 				player.sendSetInterfaceMoveSubEvent(165, 2, 164, 3);

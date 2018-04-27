@@ -50,14 +50,16 @@ public final class GameSessionContext extends SessionEventContext {
 
 		int totalHandled = 0;
 		Event eventToHandle;
-		while ((totalHandled < EVENTS_TO_HANDLE_LIMIT_PER_CYCLE) && (eventToHandle = pendingEventsToHandle.poll()) != null) {
+		while ((totalHandled < EVENTS_TO_HANDLE_LIMIT_PER_CYCLE)
+				&& (eventToHandle = pendingEventsToHandle.poll()) != null) {
 			server.getGameEventHub().publish(eventToHandle, this);
 			totalHandled++;
 		}
 	}
 
 	/**
-	 * Handles the disconnection of a {@link com.oldscape.server.game.model.player.Player}.
+	 * Handles the disconnection of a
+	 * {@link com.oldscape.server.game.model.player.Player}.
 	 */
 	public void onDisconnection() {
 		player.setActive(false);

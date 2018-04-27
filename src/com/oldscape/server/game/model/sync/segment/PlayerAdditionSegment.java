@@ -16,9 +16,9 @@ public final class PlayerAdditionSegment extends SynchronizationSegment {
 	private final Position position;
 
 	private final boolean update;
-	
+
 	private final int regionHash;
-	
+
 	/**
 	 * Creates the add player segment.
 	 * 
@@ -35,7 +35,7 @@ public final class PlayerAdditionSegment extends SynchronizationSegment {
 		this.update = false;
 		this.regionHash = -1;
 	}
-	
+
 	/**
 	 * Creates the add player segment.
 	 * 
@@ -65,11 +65,11 @@ public final class PlayerAdditionSegment extends SynchronizationSegment {
 	public boolean isUpdate() {
 		return update;
 	}
-	
+
 	public int getRegionHash() {
 		return regionHash;
 	}
-	
+
 	@Override
 	public SegmentType getType() {
 		return SegmentType.ADD_MOB;

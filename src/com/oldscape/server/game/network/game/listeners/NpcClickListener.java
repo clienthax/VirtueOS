@@ -19,15 +19,14 @@ public class NpcClickListener implements EventListener<NpcActionEvent, GameSessi
 		Player player = context.getPlayer();
 		// TODO: Handle the action of the npc here
 
-		Npc npc = player.getViewport().getLocalNpcs().get(event.getIndex() -1);
+		Npc npc = player.getViewport().getLocalNpcs().get(event.getIndex() - 1);
 		System.out.println(npc.getId());
 
-		if(npc.getId() == 394) {
-			player.sendCS2Script(917, new Object[]{-1, -2});//ii
+		if (npc.getId() == 394) {
+			player.sendCS2Script(917, new Object[] { -1, -2 });// ii
 			player.sendOpenInterfaceSub(548, 21, 12, false);
 			player.sendOpenInterfaceSub(161, 66, 15, false);
 		}
-
 
 	}
 

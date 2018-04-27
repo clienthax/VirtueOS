@@ -2,8 +2,8 @@ package com.oldscape.server.game.model.player.inv;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
-import com.oldscape.tool.cache.type.TypeListManager;
-import com.oldscape.tool.cache.type.items.ItemType;
+import com.oldscape.cache.type.TypeListManager;
+import com.oldscape.cache.type.items.ItemType;
 
 /**
  * Represents a single item.
@@ -21,7 +21,7 @@ public final class Item {
 	 * The item definition.
 	 */
 	private final ItemType itemType;
-	
+
 	/**
 	 * The item's id.
 	 */
@@ -83,8 +83,7 @@ public final class Item {
 
 	@Override
 	public String toString() {
-		return MoreObjects.toStringHelper(this).add("id", id)
-				.add("amount", amount).toString();
+		return MoreObjects.toStringHelper(this).add("id", id).add("amount", amount).toString();
 	}
 
 }

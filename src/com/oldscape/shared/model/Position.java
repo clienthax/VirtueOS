@@ -8,11 +8,8 @@ public final class Position {
 	public static final int DEFAULT_DISTANCE = 15;
 
 	public static enum RegionSize {
-		
-		DEFAULT(104), 
-		LARGE(120), 
-		XLARGE(136), 
-		XXLARGE(168);
+
+		DEFAULT(104), LARGE(120), XLARGE(136), XXLARGE(168);
 
 		private final int size;
 
@@ -36,7 +33,7 @@ public final class Position {
 	public Position(int x, int y, int height) {
 		this(x, y, height, RegionSize.DEFAULT);
 	}
-	
+
 	public Position(int x, int y, int height, RegionSize mapSize) {
 		this.x = x;
 		this.y = y;
@@ -45,16 +42,14 @@ public final class Position {
 	}
 
 	public Position(int localX, int localY, int height, int regionId, RegionSize mapSize) {
-		this(localX + (((regionId >> 8) & 0xff) << 6), localX
-				+ ((regionId & 0xff) << 6), height, mapSize);
+		this(localX + (((regionId >> 8) & 0xff) << 6), localX + ((regionId & 0xff) << 6), height, mapSize);
 	}
 
 	public boolean withinDistance(Position tile, int distance) {
 		if (tile.getHeight() != height)
 			return false;
 		int deltaX = tile.x - x, deltaY = tile.y - y;
-		return deltaX <= distance && deltaX >= -distance && deltaY <= distance
-				&& deltaY >= -distance;
+		return deltaX <= distance && deltaX >= -distance && deltaY <= distance && deltaY >= -distance;
 	}
 
 	public boolean withinDistance(Position position) {
@@ -106,7 +101,7 @@ public final class Position {
 	public int getChunkY() {
 		return (y >> 3);
 	}
-	
+
 	public int getRegionX() {
 		return (x >> 6);
 	}
@@ -114,7 +109,7 @@ public final class Position {
 	public int getRegionY() {
 		return (y >> 6);
 	}
-	
+
 	public int getRegionID() {
 		return ((getRegionX() << 8) + getRegionY());
 	}
@@ -134,7 +129,7 @@ public final class Position {
 	public RegionSize getMapSize() {
 		return mapSize;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "X: " + getX() + ", Y: " + getY() + ", Height: " + getHeight();

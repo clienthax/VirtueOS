@@ -18,7 +18,7 @@ public abstract class SynchronizationSegment {
 	 * An empty {@link SynchronizationBlockSet}.
 	 */
 	protected static final SynchronizationBlockSet EMPTY_BLOCK_SET = new SynchronizationBlockSet();
-	
+
 	/**
 	 * The {@link SynchronizationBlockSet}.
 	 */

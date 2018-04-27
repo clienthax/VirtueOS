@@ -29,26 +29,32 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 
 /**
  * @author Kyle Friz
- * @since  Aug 29, 2015
+ * @since Aug 29, 2015
  */
 public class PlayerAdditionDescriptor extends SynchronizationDescriptor {
 
-	/* (non-Javadoc)
-	 * @see com.oldscape.server.game.model.sync.Descriptor#encodeDescriptor(com.oldscape.server.game.model.player.Player, com.oldscape.server.game.model.sync.seg.SynchronizationSegment, com.oldscape.shared.network.game.GameFrameBuilder)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.oldscape.server.game.model.sync.Descriptor#encodeDescriptor(com.oldscape.
+	 * server.game.model.player.Player,
+	 * com.oldscape.server.game.model.sync.seg.SynchronizationSegment,
+	 * com.oldscape.shared.network.game.GameFrameBuilder)
 	 */
 	@Override
 	public void encodeDescriptor(Event event, SynchronizationSegment segment, GameFrameBuilder builder) {
 		Position position = ((PlayerAdditionSegment) segment).getPosition();
 		boolean update = ((PlayerAdditionSegment) segment).isUpdate();
-		
+
 		builder.putBit(true);
 		builder.putBits(2, 0);
-		
+
 		builder.putBit(update);
 		if (update) {
 			encodeRegion(builder, ((PlayerAdditionSegment) segment).getRegionHash(), position.toRegionPacked());
 		}
-		
+
 		builder.putBits(6, position.getXInRegion());
 		builder.putBits(6, position.getYInRegion());
 		builder.putBit(true);

@@ -29,8 +29,8 @@ public final class OnDemandService extends AbstractService implements Runnable {
 	private final BlockingDeque<OnDemandSessionContext> pendingContexts = new LinkedBlockingDeque<>();
 
 	/**
-	 * The {@link java.util.concurrent.atomic.AtomicBoolean} for the running of
-	 * the service.
+	 * The {@link java.util.concurrent.atomic.AtomicBoolean} for the running of the
+	 * service.
 	 */
 	private final AtomicBoolean running = new AtomicBoolean(true);
 
@@ -58,7 +58,8 @@ public final class OnDemandService extends AbstractService implements Runnable {
 	}
 
 	/**
-	 * Adds a {@link com.oldscape.server.game.network.ondemand.OnDemandSessionContext} to
+	 * Adds a
+	 * {@link com.oldscape.server.game.network.ondemand.OnDemandSessionContext} to
 	 * the {@code pendingContexts}.
 	 * 
 	 * @param session

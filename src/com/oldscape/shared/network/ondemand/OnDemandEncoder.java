@@ -1,6 +1,6 @@
 package com.oldscape.shared.network.ondemand;
 
-import com.oldscape.tool.cache.Sector;
+import com.oldscape.cache.Sector;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

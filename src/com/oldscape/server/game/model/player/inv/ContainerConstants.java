@@ -26,7 +26,7 @@ public final class ContainerConstants {
 	 * The equipment interface id.
 	 */
 	public static final int EQUIPMENT_ID = -1328;
-	
+
 	public static final int BANK_ID = -1329;
 
 	/**
@@ -35,11 +35,11 @@ public final class ContainerConstants {
 	public static final int INVENTORY_ID = 9764864;
 
 	public static final int INVENTORY_CHANNEL = 93;
-	
+
 	public static final int EQUIPMENT_CHANNEL = 94;
-	
+
 	public static final int BANK_CHANNEL = 95;
-	
+
 	/**
 	 * The bank full message.
 	 */
@@ -49,7 +49,7 @@ public final class ContainerConstants {
 	 * The inventory full message.
 	 */
 	public static final String FULL_INVENTORY_MESSAGE = "Not enough inventory space.";
-	
+
 	/**
 	 * Default private constructor to prevent instantiation.
 	 */

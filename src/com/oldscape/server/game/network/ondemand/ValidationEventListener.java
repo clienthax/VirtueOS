@@ -20,7 +20,7 @@ public final class ValidationEventListener implements EventListener<ValidationMe
 	public void onEvent(ValidationMessageEvent validation, OnDemandSessionContext context) {
 
 		int status;
-		if ((validation.getVersion() == context.getServer().getContext().getMajor() )) {//TODO read from config
+		if ((validation.getVersion() == context.getServer().getContext().getMajor())) {
 			status = UpdateStatusMessageEvent.STATUS_OK;
 		} else {
 			status = UpdateStatusMessageEvent.STATUS_OUT_OF_DATE;

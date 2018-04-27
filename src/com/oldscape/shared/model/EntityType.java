@@ -54,25 +54,27 @@ public enum EntityType {
 	PROJECTILE,
 
 	/**
-	 * A GameObject that is loaded statically (i.e. from the game resources) at start-up.
+	 * A GameObject that is loaded statically (i.e. from the game resources) at
+	 * start-up.
 	 */
 	STATIC_OBJECT;
 
 	/**
 	 * Returns whether or not this EntityType is for a Mob.
 	 *
-	 * @return {@code true} if this EntityType is for a Mob, otherwise {@code false}.
+	 * @return {@code true} if this EntityType is for a Mob, otherwise
+	 *         {@code false}.
 	 */
 	public boolean isMob() {
 		return this == PLAYER || this == NPC;
 	}
 
 	/**
-	 * Returns whether or not this EntityType should be short-lived (i.e. not added to its {@link Region}s
-	 * local objects).
+	 * Returns whether or not this EntityType should be short-lived (i.e. not added
+	 * to its {@link Region}s local objects).
 	 *
 	 * @return {@code true} if this EntityType is short-lived.
-     */
+	 */
 	public boolean isTransient() {
 		return this == PROJECTILE;
 	}

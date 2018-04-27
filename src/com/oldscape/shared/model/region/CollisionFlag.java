@@ -71,9 +71,11 @@ public enum CollisionFlag {
 	PROJECTILE_WEST(7);
 
 	/**
-	 * Returns an array of CollisionFlags that indicate if the specified {@link EntityType} can be positioned on a tile.
+	 * Returns an array of CollisionFlags that indicate if the specified
+	 * {@link EntityType} can be positioned on a tile.
 	 *
-	 * @param type The EntityType.
+	 * @param type
+	 *            The EntityType.
 	 * @return The array of CollisionFlags.
 	 */
 	public static CollisionFlag[] forType(EntityType type) {
@@ -81,7 +83,8 @@ public enum CollisionFlag {
 	}
 
 	/**
-	 * Returns an array of CollisionFlags that indicate if a Mob can be positioned on a tile.
+	 * Returns an array of CollisionFlags that indicate if a Mob can be positioned
+	 * on a tile.
 	 *
 	 * @return The array of CollisionFlags.
 	 */
@@ -90,7 +93,8 @@ public enum CollisionFlag {
 	}
 
 	/**
-	 * Returns an array of CollisionFlags that indicate if a Projectile can be positioned on a tile.
+	 * Returns an array of CollisionFlags that indicate if a Projectile can be
+	 * positioned on a tile.
 	 *
 	 * @return The array of CollisionFlags.
 	 */
@@ -106,7 +110,8 @@ public enum CollisionFlag {
 	/**
 	 * Creates the CollisionFlag.
 	 *
-	 * @param bit The index of the bit this flag is stored in.
+	 * @param bit
+	 *            The index of the bit this flag is stored in.
 	 */
 	private CollisionFlag(int bit) {
 		this.bit = bit;

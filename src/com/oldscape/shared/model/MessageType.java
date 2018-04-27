@@ -23,21 +23,20 @@ package com.oldscape.shared.model;
 
 /**
  * @author Kyle Friz
- * @since  Sep 4, 2015
+ * @since Sep 4, 2015
  */
 public enum MessageType {
 
-	GAME(0),
-	CHAT(1);
-	
+	GAME(0), CHAT(1);
+
 	private final int type;
-	
+
 	MessageType(int type) {
 		this.type = type;
 	}
-	
+
 	public int getID() {
 		return type;
 	}
-	
+
 }

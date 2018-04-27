@@ -2,6 +2,7 @@ package com.oldscape.server.game.model;
 
 import java.util.Optional;
 
+import com.oldscape.cache.type.npcs.NpcType;
 import com.oldscape.server.game.model.sync.block.InteractingMobBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlockSet;
@@ -11,19 +12,16 @@ import com.oldscape.server.game.model.sync.reference.Graphic;
 import com.oldscape.shared.model.Node;
 import com.oldscape.shared.model.Position;
 import com.oldscape.shared.model.region.Region;
-import com.oldscape.tool.cache.type.npcs.NpcType;
 
 /**
  * Created by sean on 17/07/14.
  */
 public abstract class MobileEntity extends Node {
 
-	//3250 3423 --varock east
-	//3222 3222 --lumby
 	protected int X = 3250;
 	protected int Y = 3423;
-	protected Position position = new Position(X , Y , 0, Position.RegionSize.DEFAULT);
-	protected Position lastPosition = new Position(X , Y, 0, Position.RegionSize.DEFAULT);
+	protected Position position = new Position(X, Y, 0, Position.RegionSize.DEFAULT);
+	protected Position lastPosition = new Position(X, Y, 0, Position.RegionSize.DEFAULT);
 
 	/**
 	 * This mob's set of synchronization blocks.
@@ -71,8 +69,8 @@ public abstract class MobileEntity extends Node {
 	protected boolean teleporting = false;
 
 	/**
-	 * This mob's npc definition. A player only uses this if they are appearing
-	 * as an npc.
+	 * This mob's npc definition. A player only uses this if they are appearing as
+	 * an npc.
 	 */
 	protected Optional<NpcType> npcType = Optional.empty();
 
@@ -315,8 +313,8 @@ public abstract class MobileEntity extends Node {
 	}
 
 	/**
-	 * Teleports this mob to the specified {@link Position}, setting the
-	 * appropriate flags and clearing the walking queue.
+	 * Teleports this mob to the specified {@link Position}, setting the appropriate
+	 * flags and clearing the walking queue.
 	 * 
 	 * @param position
 	 *            The position.
@@ -359,8 +357,7 @@ public abstract class MobileEntity extends Node {
 	/**
 	 * Returns whether or not this mob has an {@link NpcDefinition}.
 	 * 
-	 * @return {@code true} if this mob has an npc definition, {@code false} if
-	 *         not.
+	 * @return {@code true} if this mob has an npc definition, {@code false} if not.
 	 */
 	public final boolean hasNpcType() {
 		return npcType.isPresent();

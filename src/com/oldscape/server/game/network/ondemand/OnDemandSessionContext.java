@@ -139,8 +139,9 @@ public final class OnDemandSessionContext extends SessionEventContext {
 	}
 
 	/**
-	 * Adds this {@link com.oldscape.server.game.network.ondemand.OnDemandSessionContext}
-	 * to the {@link com.oldscape.server.game.services.OnDemandService}.
+	 * Adds this
+	 * {@link com.oldscape.server.game.network.ondemand.OnDemandSessionContext} to
+	 * the {@link com.oldscape.server.game.services.OnDemandService}.
 	 */
 	public void addContextToService() {
 		service.addOnDemandContext(this);

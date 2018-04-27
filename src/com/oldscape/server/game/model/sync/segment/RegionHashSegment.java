@@ -13,9 +13,9 @@ public final class RegionHashSegment extends SynchronizationSegment {
 	 * The position.
 	 */
 	private final Position position;
-	
+
 	private final int regionHash;
-	
+
 	/**
 	 * Creates the remove npc segment.
 	 */
@@ -33,11 +33,11 @@ public final class RegionHashSegment extends SynchronizationSegment {
 	public Position getPosition() {
 		return position;
 	}
-	
+
 	public int getRegionHash() {
 		return regionHash;
 	}
-	
+
 	@Override
 	public SegmentType getType() {
 		return SegmentType.REGION_HASH;

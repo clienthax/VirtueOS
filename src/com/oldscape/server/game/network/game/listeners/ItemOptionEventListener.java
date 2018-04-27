@@ -21,13 +21,13 @@
  */
 package com.oldscape.server.game.network.game.listeners;
 
+import com.oldscape.cache.type.items.ItemType;
 import com.oldscape.server.game.model.EquipmentConstants;
 import com.oldscape.server.game.model.player.Player;
 import com.oldscape.server.game.model.player.inv.Item;
 import com.oldscape.server.game.network.game.GameSessionContext;
 import com.oldscape.shared.event.EventListener;
 import com.oldscape.shared.network.game.event.impl.ItemOptionEvent;
-import com.oldscape.tool.cache.type.items.ItemType;
 
 /**
  * @author Kyle Friz
@@ -39,8 +39,8 @@ public class ItemOptionEventListener implements EventListener<ItemOptionEvent, G
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.Event,
-	 * com.oldscape.shared.event.EventContext)
+	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.
+	 * Event, com.oldscape.shared.event.EventContext)
 	 */
 	@Override
 	public void onEvent(ItemOptionEvent event, GameSessionContext context) {

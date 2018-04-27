@@ -13,11 +13,11 @@ public final class PlayerRemovalSegment extends SynchronizationSegment {
 	 * The position.
 	 */
 	private final Position position;
-	
+
 	private final boolean update;
-	
+
 	private final int regionHash;
-	
+
 	/**
 	 * Creates the remove player segment.
 	 */
@@ -27,7 +27,7 @@ public final class PlayerRemovalSegment extends SynchronizationSegment {
 		this.update = false;
 		this.regionHash = -1;
 	}
-	
+
 	/**
 	 * Creates the remove player segment.
 	 */
@@ -46,15 +46,15 @@ public final class PlayerRemovalSegment extends SynchronizationSegment {
 	public Position getPosition() {
 		return position;
 	}
-	
+
 	public boolean isUpdate() {
 		return update;
 	}
-	
+
 	public int getRegionHash() {
 		return regionHash;
 	}
-	
+
 	@Override
 	public SegmentType getType() {
 		return SegmentType.REMOVE_MOB;

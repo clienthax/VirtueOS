@@ -37,18 +37,19 @@ public class WalkEventListener implements EventListener<WalkEvent, GameSessionCo
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.Event,
-	 * com.oldscape.shared.event.EventContext)
+	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.
+	 * Event, com.oldscape.shared.event.EventContext)
 	 */
 	@Override
 	public void onEvent(WalkEvent event, GameSessionContext context) {
 		Player player = context.getPlayer();
 
-		//Close any open interfaces
+		// Close any open interfaces
 		player.sendCloseInterfaceSub(548, 22);
 
 		player.getWalkingQueue().clear();
-		player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()), context.getServer().getRegionManager());
+		player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()),
+				context.getServer().getRegionManager());
 	}
 
 }

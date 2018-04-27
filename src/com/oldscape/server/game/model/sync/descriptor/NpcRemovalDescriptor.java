@@ -27,12 +27,18 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 
 /**
  * @author Kyle Friz
- * @since  Aug 30, 2015
+ * @since Aug 30, 2015
  */
 public class NpcRemovalDescriptor extends SynchronizationDescriptor {
 
-	/* (non-Javadoc)
-	 * @see com.oldscape.server.game.model.sync.Descriptor#encodeDescriptor(com.oldscape.server.game.model.player.Player, com.oldscape.server.game.model.sync.seg.SynchronizationSegment, com.oldscape.shared.network.game.GameFrameBuilder)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.oldscape.server.game.model.sync.Descriptor#encodeDescriptor(com.oldscape.
+	 * server.game.model.player.Player,
+	 * com.oldscape.server.game.model.sync.seg.SynchronizationSegment,
+	 * com.oldscape.shared.network.game.GameFrameBuilder)
 	 */
 	@Override
 	public void encodeDescriptor(Event event, SynchronizationSegment segment, GameFrameBuilder builder) {

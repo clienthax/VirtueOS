@@ -7,9 +7,6 @@ import java.util.List;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
 
-
-
-
 public final class SkillSet {
 
 	/**
@@ -39,7 +36,8 @@ public final class SkillSet {
 	/**
 	 * Gets the minimum experience required for the specified level.
 	 *
-	 * @param level The level.
+	 * @param level
+	 *            The level.
 	 * @return The minimum experience.
 	 */
 	public static int getExperienceForLevel(int level) {
@@ -50,11 +48,13 @@ public final class SkillSet {
 	/**
 	 * Gets the minimum level to get the specified experience.
 	 *
-	 * @param experience The experience.
+	 * @param experience
+	 *            The experience.
 	 * @return The minimum level.
 	 */
 	public static int getLevelForExperience(double experience) {
-		Preconditions.checkArgument(experience >= 0 && experience <= MAXIMUM_EXP, "Experience must be between 0 and " + MAXIMUM_EXP + ", inclusive.");
+		Preconditions.checkArgument(experience >= 0 && experience <= MAXIMUM_EXP,
+				"Experience must be between 0 and " + MAXIMUM_EXP + ", inclusive.");
 		for (int level = 1; level <= 98; level++) {
 			if (experience < EXPERIENCE_FOR_LEVEL[level + 1]) {
 				return level;
@@ -94,8 +94,10 @@ public final class SkillSet {
 	/**
 	 * Adds experience to the specified skill.
 	 *
-	 * @param id The skill id.
-	 * @param experience The amount of experience.
+	 * @param id
+	 *            The skill id.
+	 * @param experience
+	 *            The amount of experience.
 	 */
 	public void addExperience(int id, double experience) {
 		checkBounds(id);
@@ -119,7 +121,8 @@ public final class SkillSet {
 	/**
 	 * Adds a {@link SkillListener} to this set.
 	 *
-	 * @param listener The listener.
+	 * @param listener
+	 *            The listener.
 	 */
 	public void addListener(SkillListener listener) {
 		listeners.add(listener);
@@ -162,7 +165,8 @@ public final class SkillSet {
 	/**
 	 * Gets the current level of the specified skill.
 	 *
-	 * @param skill The skill.
+	 * @param skill
+	 *            The skill.
 	 * @return The current level.
 	 */
 	public int getCurrentLevel(int skill) {
@@ -172,7 +176,8 @@ public final class SkillSet {
 	/**
 	 * Gets the experience of the specified skill.
 	 *
-	 * @param skill The skill.
+	 * @param skill
+	 *            The skill.
 	 * @return The experience.
 	 */
 	public double getExperience(int skill) {
@@ -182,7 +187,8 @@ public final class SkillSet {
 	/**
 	 * Gets the maximum level of the specified skill.
 	 *
-	 * @param skill The skill.
+	 * @param skill
+	 *            The skill.
 	 * @return The maximum level.
 	 */
 	public int getMaximumLevel(int skill) {
@@ -192,7 +198,8 @@ public final class SkillSet {
 	/**
 	 * Gets a skill by its id.
 	 *
-	 * @param id The id.
+	 * @param id
+	 *            The id.
 	 * @return The skill.
 	 */
 	public Skill getSkill(int id) {
@@ -235,7 +242,8 @@ public final class SkillSet {
 	/**
 	 * Removes a {@link SkillListener}.
 	 *
-	 * @param listener The listener to remove.
+	 * @param listener
+	 *            The listener to remove.
 	 */
 	public void removeListener(SkillListener listener) {
 		listeners.remove(listener);
@@ -244,8 +252,10 @@ public final class SkillSet {
 	/**
 	 * Sets the current level of the specified skill.
 	 *
-	 * @param skill The skill.
-	 * @param level The level.
+	 * @param skill
+	 *            The skill.
+	 * @param level
+	 *            The level.
 	 */
 	public void setCurrentLevel(int skill, int level) {
 		Skill old = getSkill(skill);
@@ -255,8 +265,10 @@ public final class SkillSet {
 	/**
 	 * Sets the experience level of the specified skill.
 	 *
-	 * @param skill The skill.
-	 * @param experience The experience.
+	 * @param skill
+	 *            The skill.
+	 * @param experience
+	 *            The experience.
 	 */
 	public void setExperience(int skill, double experience) {
 		Skill old = getSkill(skill);
@@ -266,8 +278,10 @@ public final class SkillSet {
 	/**
 	 * Sets the maximum level of the specified skill.
 	 *
-	 * @param skill The skill.
-	 * @param level The level.
+	 * @param skill
+	 *            The skill.
+	 * @param level
+	 *            The level.
 	 */
 	public void setMaximumLevel(int skill, int level) {
 		Skill old = getSkill(skill);
@@ -277,8 +291,10 @@ public final class SkillSet {
 	/**
 	 * Sets a {@link Skill}.
 	 *
-	 * @param id The id.
-	 * @param skill The skill.
+	 * @param id
+	 *            The id.
+	 * @param skill
+	 *            The skill.
 	 */
 	public void setSkill(int id, Skill skill) {
 		checkBounds(id);
@@ -312,8 +328,10 @@ public final class SkillSet {
 	/**
 	 * Checks the bounds of the id.
 	 *
-	 * @param id The id.
-	 * @throws IndexOutOfBoundsException If the id is out of bounds.
+	 * @param id
+	 *            The id.
+	 * @throws IndexOutOfBoundsException
+	 *             If the id is out of bounds.
 	 */
 	private void checkBounds(int id) {
 		Preconditions.checkElementIndex(id, skills.length, "Skill id is out of bounds.");
@@ -329,7 +347,8 @@ public final class SkillSet {
 	/**
 	 * Notifies listeners that a skill has been levelled up.
 	 *
-	 * @param id The skill's id.
+	 * @param id
+	 *            The skill's id.
 	 */
 	private void notifyLevelledUp(int id) {
 		checkBounds(id);
@@ -350,7 +369,8 @@ public final class SkillSet {
 	/**
 	 * Notifies listeners that a skill has been updated.
 	 *
-	 * @param id The skill's id.
+	 * @param id
+	 *            The skill's id.
 	 */
 	private void notifySkillUpdated(int id) {
 		checkBounds(id);

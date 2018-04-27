@@ -35,14 +35,13 @@ import com.oldscape.shared.utility.BufferUtils;
 public class Region {
 
 	/**
-	 * A bit flag that indicates that the tile at the current Position is
-	 * blocked.
+	 * A bit flag that indicates that the tile at the current Position is blocked.
 	 */
 	private static final int BLOCKED_TILE = 1;
 
 	/**
-	 * A bit flag that indicates that the tile at the current Position is a
-	 * bridge tile.
+	 * A bit flag that indicates that the tile at the current Position is a bridge
+	 * tile.
 	 */
 	private static final int BRIDGE_TILE = 2;
 

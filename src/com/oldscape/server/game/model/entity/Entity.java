@@ -19,8 +19,10 @@ public abstract class Entity {
 	/**
 	 * Creates the Entity.
 	 *
-	 * @param world The {@link World} containing the Entity.
-	 * @param position The {@link Position} of the Entity.
+	 * @param world
+	 *            The {@link World} containing the Entity.
+	 * @param position
+	 *            The {@link Position} of the Entity.
 	 */
 	public Entity(GameWorld world, Position position) {
 		this.world = world;

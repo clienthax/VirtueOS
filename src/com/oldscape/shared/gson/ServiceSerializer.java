@@ -28,22 +28,20 @@ public final class ServiceSerializer implements JsonSerializer<Set<Service>>, Js
 		JsonArray serviceArray = new JsonArray();
 
 		/**
-		 * Loops through the {@link com.google.common.util.concurrent.Service}s
-		 * and adds a new {@link com.google.gson.JsonPrimitive} with the name of
-		 * the {@link com.google.common.util.concurrent.Service} class.
+		 * Loops through the {@link com.google.common.util.concurrent.Service}s and adds
+		 * a new {@link com.google.gson.JsonPrimitive} with the name of the
+		 * {@link com.google.common.util.concurrent.Service} class.
 		 */
 		for (Service service : services) {
 
 			/**
-			 * Creates a new {@link com.google.gson.JsonPrimitive} with the name
-			 * of the {@link com.google.common.util.concurrent.Service}
-			 * {@link java.lang.Class}.
+			 * Creates a new {@link com.google.gson.JsonPrimitive} with the name of the
+			 * {@link com.google.common.util.concurrent.Service} {@link java.lang.Class}.
 			 */
 			JsonPrimitive jsonService = new JsonPrimitive(service.getClass().getName());
 
 			/**
-			 * Adds the {@link com.google.gson.JsonPrimitive} to the
-			 * {@code serviceArray}.
+			 * Adds the {@link com.google.gson.JsonPrimitive} to the {@code serviceArray}.
 			 */
 			serviceArray.add(jsonService);
 
@@ -71,8 +69,7 @@ public final class ServiceSerializer implements JsonSerializer<Set<Service>>, Js
 		Set<Service> services = new HashSet<>();
 
 		/**
-		 * Loops through the array opf {@link JsonElement}s in the
-		 * {@code serviceArray}.
+		 * Loops through the array opf {@link JsonElement}s in the {@code serviceArray}.
 		 */
 		for (JsonElement serviceElement : serviceArray) {
 
@@ -82,30 +79,27 @@ public final class ServiceSerializer implements JsonSerializer<Set<Service>>, Js
 			try {
 
 				/**
-				 * If the {@code serviceElement} is not a json primitive or is
-				 * not a {@link java.lang.String} then an
-				 * {@link com.google.gson.JsonParseException} is thrown.
+				 * If the {@code serviceElement} is not a json primitive or is not a
+				 * {@link java.lang.String} then an {@link com.google.gson.JsonParseException}
+				 * is thrown.
 				 */
 				if (!serviceElement.isJsonPrimitive() || !((JsonPrimitive) serviceElement).isString())
 					new JsonParseException("Error parsing Service element.");
 
 				/**
-				 * The class of the
-				 * {@link com.google.common.util.concurrent.Service}.
+				 * The class of the {@link com.google.common.util.concurrent.Service}.
 				 */
 				String serviceClass = serviceElement.getAsString();
 
 				/**
-				 * Creates a new
-				 * {@link com.google.common.util.concurrent.Service} based on
-				 * the {@link java.lang.String} from the {@code serviceElement}.
+				 * Creates a new {@link com.google.common.util.concurrent.Service} based on the
+				 * {@link java.lang.String} from the {@code serviceElement}.
 				 */
 				Service service = (Service) Class.forName(serviceClass).newInstance();
 
 				/**
-				 * Adds the {@link com.google.common.util.concurrent.Service} to
-				 * the {@link java.util.Set} of
-				 * {@link com.google.common.util.concurrent.Service}s.
+				 * Adds the {@link com.google.common.util.concurrent.Service} to the
+				 * {@link java.util.Set} of {@link com.google.common.util.concurrent.Service}s.
 				 */
 				services.add(service);
 

@@ -27,12 +27,12 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 
 /**
  * @author Kyle Friz
- * @since  Aug 28, 2015
+ * @since Aug 28, 2015
  */
 public abstract class SynchronizationDescriptor {
-	
+
 	public abstract void encodeDescriptor(Event event, SynchronizationSegment segment, GameFrameBuilder builder);
-	
+
 	protected void encodeRegion(GameFrameBuilder builder, int lastRegionHash, int currentRegionHash) {
 		int lastRegionX = (lastRegionHash >> 8) & 0xff;
 		int lastRegionY = 0xff & lastRegionHash;
@@ -76,5 +76,5 @@ public abstract class SynchronizationDescriptor {
 			builder.putBits(18, (yOffset & 0xff) + ((xOffset & 0xff) << 8) + ((planeOffset & 0x3) << 16));
 		}
 	}
-	
+
 }

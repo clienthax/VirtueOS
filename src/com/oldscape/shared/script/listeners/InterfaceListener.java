@@ -50,8 +50,8 @@ public interface InterfaceListener {
 	 * @param itemId
 	 *            The id of the item clicked, or 65535 if there was no item
 	 * @param slotId
-	 *            The slot within the component which was clicked, or 65535 if
-	 *            the component has no slots
+	 *            The slot within the component which was clicked, or 65535 if the
+	 *            component has no slots
 	 * @param option
 	 *            The option selected. Ranges from 1 to 10
 	 * @return True if the interaction was handled, false otherwise

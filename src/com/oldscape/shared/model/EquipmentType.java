@@ -27,37 +27,37 @@ package com.oldscape.shared.model;
  */
 public class EquipmentType {
 
-    /**
-     * @return
-     */
-    public boolean isFullHat() {
-        // TODO Auto-generated method stub
-        return false;
-    }
+	/**
+	 * @return
+	 */
+	public boolean isFullHat() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
-    /**
-     * @return
-     */
-    public boolean isFullMask() {
-        // TODO Auto-generated method stub
-        return false;
-    }
+	/**
+	 * @return
+	 */
+	public boolean isFullMask() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
-    /**
-     * @param id
-     * @return
-     */
-    public static EquipmentType lookup(int id) {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	/**
+	 * @param id
+	 * @return
+	 */
+	public static EquipmentType lookup(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-    /**
-     * @return
-     */
-    public boolean isFullBody() {
-        // TODO Auto-generated method stub
-        return false;
-    }
+	/**
+	 * @return
+	 */
+	public boolean isFullBody() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }

@@ -26,11 +26,9 @@ public final class MovementSegment extends SynchronizationSegment {
 	 * @throws IllegalArgumentException
 	 *             If there are not 0, 1 or 2 directions.
 	 */
-	public MovementSegment(SynchronizationBlockSet blockSet,
-			Direction[] directions) {
+	public MovementSegment(SynchronizationBlockSet blockSet, Direction[] directions) {
 		super(blockSet);
-		Preconditions.checkArgument(directions.length >= 0
-				&& directions.length < 3,
+		Preconditions.checkArgument(directions.length >= 0 && directions.length < 3,
 				"Directions length must be between 0 and 2 inclusive.");
 		this.directions = directions;
 	}

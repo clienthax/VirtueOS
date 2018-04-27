@@ -43,9 +43,9 @@ public class SessionEventContext implements EventContext {
 	}
 
 	/**
-	 * Writes a {@link java.lang.Object} which improves performance because the
-	 * void promise is allocated statically (one per channel) so it doesn't need
-	 * to allocate a new promise.
+	 * Writes a {@link java.lang.Object} which improves performance because the void
+	 * promise is allocated statically (one per channel) so it doesn't need to
+	 * allocate a new promise.
 	 * 
 	 * @param obj
 	 *            The {@link java.lang.Object} to write.

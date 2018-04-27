@@ -41,12 +41,12 @@ public class RSAKeyGenerator {
 	/**
 	 * The location of the file which will contain the private key.
 	 */
-	private static String privateFile = "./RSAPrivateKeys.txt";
+	private static String privateFile = "./repository/private.key";
 
 	/**
 	 * The location of the file which will contain the public key.
 	 */
-	private static String publicFile = "./RSAPublicKeys.txt";
+	private static String publicFile = "./repository/rsa.pub";
 
 	/**
 	 * NOTE: Do not use initialize(512), ondemand does not work then
@@ -65,17 +65,23 @@ public class RSAKeyGenerator {
 			login_keygen.initialize(2048);
 			KeyPair login_keypair = login_keygen.genKeyPair();
 
-			RSAPrivateKeySpec ondemand_privateSpec = ondemand_factory.getKeySpec(ondemand_keypair.getPrivate(), RSAPrivateKeySpec.class);
+			RSAPrivateKeySpec ondemand_privateSpec = ondemand_factory.getKeySpec(ondemand_keypair.getPrivate(),
+					RSAPrivateKeySpec.class);
 
-			RSAPublicKeySpec ondemand_publicSpec = ondemand_factory.getKeySpec(ondemand_keypair.getPublic(), RSAPublicKeySpec.class);
+			RSAPublicKeySpec ondemand_publicSpec = ondemand_factory.getKeySpec(ondemand_keypair.getPublic(),
+					RSAPublicKeySpec.class);
 
-			RSAPrivateKeySpec login_privateSpec = login_factory.getKeySpec(login_keypair.getPrivate(), RSAPrivateKeySpec.class);
+			RSAPrivateKeySpec login_privateSpec = login_factory.getKeySpec(login_keypair.getPrivate(),
+					RSAPrivateKeySpec.class);
 
-			RSAPublicKeySpec login_publicSpec = login_factory.getKeySpec(login_keypair.getPublic(), RSAPublicKeySpec.class);
+			RSAPublicKeySpec login_publicSpec = login_factory.getKeySpec(login_keypair.getPublic(),
+					RSAPublicKeySpec.class);
 
-			writeKey(privateFile, ondemand_privateSpec.getModulus(), ondemand_privateSpec.getPrivateExponent(), login_privateSpec.getModulus(), login_privateSpec.getPrivateExponent());
+			writeKey(privateFile, ondemand_privateSpec.getModulus(), ondemand_privateSpec.getPrivateExponent(),
+					login_privateSpec.getModulus(), login_privateSpec.getPrivateExponent());
 
-			writeKey(publicFile, ondemand_publicSpec.getModulus(), ondemand_publicSpec.getPublicExponent(), login_publicSpec.getModulus(), login_publicSpec.getPublicExponent());
+			writeKey(publicFile, ondemand_publicSpec.getModulus(), ondemand_publicSpec.getPublicExponent(),
+					login_publicSpec.getModulus(), login_publicSpec.getPublicExponent());
 
 		} catch (InvalidKeySpecException | NoSuchAlgorithmException e) {
 			e.printStackTrace();
@@ -102,7 +108,8 @@ public class RSAKeyGenerator {
 			writer.newLine();
 			writer.write(" */");
 			writer.newLine();
-			writer.write("public static final BigInteger ONDEMAND_MODULUS = new BigInteger(\"" + ondemand_modulus.toString() + "\");");
+			writer.write("public static final BigInteger ONDEMAND_MODULUS = new BigInteger(\""
+					+ ondemand_modulus.toString() + "\");");
 			writer.newLine();
 			writer.newLine();
 			writer.write("/**");
@@ -111,7 +118,8 @@ public class RSAKeyGenerator {
 			writer.newLine();
 			writer.write(" */");
 			writer.newLine();
-			writer.write("public static final BigInteger ONDEMAND_EXPONENT = new BigInteger(\"" + ondemand_exponent.toString() + "\");");
+			writer.write("public static final BigInteger ONDEMAND_EXPONENT = new BigInteger(\""
+					+ ondemand_exponent.toString() + "\");");
 			writer.newLine();
 			writer.newLine();
 			writer.write("/**");
@@ -120,7 +128,8 @@ public class RSAKeyGenerator {
 			writer.newLine();
 			writer.write(" */");
 			writer.newLine();
-			writer.write("public static final BigInteger LOGIN_MODULUS = new BigInteger(\"" + login_modulus.toString() + "\");");
+			writer.write("public static final BigInteger LOGIN_MODULUS = new BigInteger(\"" + login_modulus.toString()
+					+ "\");");
 			writer.newLine();
 			writer.newLine();
 			writer.write("/**");
@@ -129,7 +138,8 @@ public class RSAKeyGenerator {
 			writer.newLine();
 			writer.write(" */");
 			writer.newLine();
-			writer.write("public static final BigInteger LOGIN_EXPONENT = new BigInteger(\"" + login_exponent.toString() + "\");");
+			writer.write("public static final BigInteger LOGIN_EXPONENT = new BigInteger(\"" + login_exponent.toString()
+					+ "\");");
 			writer.newLine();
 			writer.close();
 		} catch (Exception e) {

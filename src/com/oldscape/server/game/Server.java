@@ -5,6 +5,11 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.logging.Logger;
 
+import com.oldscape.cache.Cache;
+import com.oldscape.cache.ChecksumTable;
+import com.oldscape.cache.Container;
+import com.oldscape.cache.FileStore;
+import com.oldscape.cache.type.TypeListManager;
 import com.oldscape.server.game.network.GameChannelHandler;
 import com.oldscape.server.game.network.SessionEventContext;
 import com.oldscape.server.game.network.game.listeners.AttackNpcEventListener;
@@ -54,11 +59,6 @@ import com.oldscape.shared.network.ondemand.UpdateEncryptionMessageEvent;
 import com.oldscape.shared.network.ondemand.ValidationMessageEvent;
 import com.oldscape.shared.script.ScriptManager;
 import com.oldscape.shared.utility.Huffman;
-import com.oldscape.tool.cache.Cache;
-import com.oldscape.tool.cache.ChecksumTable;
-import com.oldscape.tool.cache.Container;
-import com.oldscape.tool.cache.FileStore;
-import com.oldscape.tool.cache.type.TypeListManager;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -93,8 +93,8 @@ public final class Server {
 	private static final File CACHE_LOCATION = new File("./repository/cache/");
 
 	/**
-	 * The {@link com.oldscape.server.game.ServerContext} containing the various data of
-	 * the server.
+	 * The {@link com.oldscape.server.game.ServerContext} containing the various
+	 * data of the server.
 	 */
 	private final ServerContext context;
 
@@ -104,9 +104,8 @@ public final class Server {
 	private final GameEventRepository eventRepository = new GameEventRepository(this);
 
 	/**
-	 * Creates a new {@link io.netty.channel.nio.NioEventLoopGroup} with a
-	 * number of threads based on the available processors the server is running
-	 * on.
+	 * Creates a new {@link io.netty.channel.nio.NioEventLoopGroup} with a number of
+	 * threads based on the available processors the server is running on.
 	 */
 	private final EventLoopGroup group = new NioEventLoopGroup(Runtime.getRuntime().availableProcessors());
 
@@ -225,7 +224,8 @@ public final class Server {
 
 		regionManager.initialize();
 
-		bootstrap.group(group).channel(NioServerSocketChannel.class).handler(new LoggingHandler(LogLevel.INFO)).childHandler(new ChannelInitializer<NioSocketChannel>() {
+		bootstrap.group(group).channel(NioServerSocketChannel.class).handler(new LoggingHandler(LogLevel.INFO))
+				.childHandler(new ChannelInitializer<NioSocketChannel>() {
 
 					@Override
 					protected void initChannel(NioSocketChannel ch) throws Exception {
@@ -249,7 +249,7 @@ public final class Server {
 		gameEventHub.subscribe(DropConnectionEvent.class, new DropConnectionEventListener());
 		gameEventHub.subscribe(LoginStateEvent.class, new LoginStateEventListener());
 
-		//TODO update when game updates
+		// TODO update when game updates
 		gameEventHub.subscribe(InterfaceClickEvent.class, new InterfaceClickEventListener());
 		gameEventHub.subscribe(ButtonClickEvent.class, new ButtonClickEventListener());
 		gameEventHub.subscribe(CommandEvent.class, new CommandEventListener());
@@ -260,7 +260,7 @@ public final class Server {
 		gameEventHub.subscribe(ItemOptionEvent.class, new ItemOptionEventListener());
 
 		gameEventHub.subscribe(PublicChatMessage.class, new PublicChatEventListener());
-		
+
 		gameEventHub.subscribe(ClientDimensionsEvent.class, new ClientDimensionsEventListener());
 
 		onDemandService.startAsync();
@@ -437,7 +437,6 @@ public final class Server {
 	// public DatabaseService getDatabaseService() {
 	// return databaseService;
 	// }
-
 
 	public static Server getServer() {
 		return server;

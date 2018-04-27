@@ -37,8 +37,8 @@ public class ClientDimensionsEventListener implements EventListener<ClientDimens
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.Event,
-	 * com.oldscape.shared.event.EventContext)
+	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.
+	 * Event, com.oldscape.shared.event.EventContext)
 	 */
 	@Override
 	public void onEvent(ClientDimensionsEvent event, GameSessionContext context) {

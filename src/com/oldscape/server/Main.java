@@ -60,8 +60,8 @@ public final class Main {
 			reader.close();
 
 			/**
-			 * Creates a new {@link com.oldscape.server.rs3.game.Server} and initializes
-			 * and binds the server.
+			 * Creates a new {@link com.oldscape.server.rs3.game.Server} and initializes and
+			 * binds the server.
 			 */
 			new Server(ctx).initialize().bind();
 		}

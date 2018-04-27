@@ -35,8 +35,8 @@ public class PlayerSaveService extends AbstractService implements Runnable {
 	private final BlockingDeque<Player> pendingSaves = new LinkedBlockingDeque<>();
 
 	/**
-	 * The {@link java.util.concurrent.atomic.AtomicBoolean} for the running of
-	 * the service.
+	 * The {@link java.util.concurrent.atomic.AtomicBoolean} for the running of the
+	 * service.
 	 */
 	private final AtomicBoolean running = new AtomicBoolean(true);
 
@@ -52,8 +52,8 @@ public class PlayerSaveService extends AbstractService implements Runnable {
 		GsonBuilder builder = new GsonBuilder();
 
 		/**
-		 * Sets the builder into pretty printing mode for saving i.e indents,
-		 * spaces, etc
+		 * Sets the builder into pretty printing mode for saving i.e indents, spaces,
+		 * etc
 		 */
 		builder.setPrettyPrinting();
 

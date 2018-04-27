@@ -44,8 +44,8 @@ public final class ParallelClientSynchronizer extends ClientSynchronizer {
 
 	/**
 	 * Creates the parallel client synchronizer backed by a thread pool with a
-	 * number of threads equal to the number of processing cores available (this
-	 * is found by the {@link Runtime#availableProcessors()} method.
+	 * number of threads equal to the number of processing cores available (this is
+	 * found by the {@link Runtime#availableProcessors()} method.
 	 */
 	public ParallelClientSynchronizer(Server server) {
 		super(server);

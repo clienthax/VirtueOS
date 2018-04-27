@@ -28,14 +28,12 @@ public final class AppearanceContainerListener extends ContainerAdapter {
 
 	@Override
 	public void itemsUpdated(ItemContainer inventory) {
-		player.getBlockSet().add(
-				SynchronizationBlock.createAppearanceBlock(player));
+		player.getBlockSet().add(SynchronizationBlock.createAppearanceBlock(player));
 	}
 
 	@Override
 	public void itemUpdated(ItemContainer inventory, int slot, Item item) {
-		player.getBlockSet().add(
-				SynchronizationBlock.createAppearanceBlock(player));
+		player.getBlockSet().add(SynchronizationBlock.createAppearanceBlock(player));
 	}
 
 }

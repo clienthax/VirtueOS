@@ -71,8 +71,9 @@ public final class DefaultEventHub<C extends EventContext> extends EventHub<C> {
 		List<EventListener<?, ?>> eventHandlers = eventMap.get(event.getClass());
 
 		if (eventHandlers == null) {
-			return;//TODO not a bloody issue!
-			//throw new IllegalArgumentException("No event listeners bound to " + event.getClass());
+			return;// TODO not a bloody issue!
+			// throw new IllegalArgumentException("No event listeners bound to " +
+			// event.getClass());
 		}
 
 		eventHandlers.forEach((EventListener listener) -> {

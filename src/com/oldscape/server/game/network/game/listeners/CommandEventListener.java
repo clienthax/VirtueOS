@@ -41,8 +41,8 @@ public class CommandEventListener implements EventListener<CommandEvent, GameSes
 	 * (non-Javadoc)
 	 *
 	 * @see
-	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.Event,
-	 * com.oldscape.shared.event.EventContext)
+	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.
+	 * Event, com.oldscape.shared.event.EventContext)
 	 */
 	@Override
 	public void onEvent(CommandEvent event, GameSessionContext context) {
@@ -60,24 +60,18 @@ public class CommandEventListener implements EventListener<CommandEvent, GameSes
 		} else {
 			System.out.println("Unknown command. [ " + event.getSyntax() + " ]");
 		}
-/*
-		if (event.getSyntax().equals("tele")) {
-			try {
-				int coordX = Integer.parseInt(event.getArgs()[0]);
-				int coordY = Integer.parseInt(event.getArgs()[1]);
-				int height = Integer.parseInt(event.getArgs()[2]);
-				context.getPlayer().teleport(new Position(coordX, coordY, height));
-			} catch (Exception e) {
-				try {
-					int coordX = Integer.parseInt(event.getArgs()[0]);
-					int coordY = Integer.parseInt(event.getArgs()[1]);
-					context.getPlayer().teleport(new Position(coordX, coordY, context.getPlayer().getPosition().getHeight()));
-				} catch (Exception output) {
-					System.out.println("Use ::tele coordX coordY height");
-				}
-			}
-		}*/
-
+		/*
+		 * if (event.getSyntax().equals("tele")) { try { int coordX =
+		 * Integer.parseInt(event.getArgs()[0]); int coordY =
+		 * Integer.parseInt(event.getArgs()[1]); int height =
+		 * Integer.parseInt(event.getArgs()[2]); context.getPlayer().teleport(new
+		 * Position(coordX, coordY, height)); } catch (Exception e) { try { int coordX =
+		 * Integer.parseInt(event.getArgs()[0]); int coordY =
+		 * Integer.parseInt(event.getArgs()[1]); context.getPlayer().teleport(new
+		 * Position(coordX, coordY, context.getPlayer().getPosition().getHeight())); }
+		 * catch (Exception output) {
+		 * System.out.println("Use ::tele coordX coordY height"); } } }
+		 */
 
 		if (event.getSyntax().equals("logout")) {
 			context.getPlayer().logout();
@@ -128,7 +122,7 @@ public class CommandEventListener implements EventListener<CommandEvent, GameSes
 			context.getPlayer().sendOpenInterfaceSub(548, 22, Integer.parseInt(event.getArgs()[0]), false);
 		}
 
-		if(event.getSyntax().equals("closeinter")) {
+		if (event.getSyntax().equals("closeinter")) {
 			context.getPlayer().sendCloseInterfaceSub(548, 22);
 		}
 
@@ -143,28 +137,26 @@ public class CommandEventListener implements EventListener<CommandEvent, GameSes
 
 		/*
 		 * if (event.getSyntax().equals("walk")) {
-		 * System.out.println(context.getPlayer().getPosition().toString() +
-		 * ", " + context.getPlayer().getLastPosition().toString());
-		 * context.getPlayer
-		 * ().getWalkingQueue().setRunningQueue(event.getArgs()[
-		 * 0].equals("true")); context.getPlayer().getWalkingQueue().addStep(new
+		 * System.out.println(context.getPlayer().getPosition().toString() + ", " +
+		 * context.getPlayer().getLastPosition().toString()); context.getPlayer
+		 * ().getWalkingQueue().setRunningQueue(event.getArgs()[ 0].equals("true"));
+		 * context.getPlayer().getWalkingQueue().addStep(new
 		 * Position(context.getPlayer().getPosition().getX() + 5,
 		 * context.getPlayer().getPosition().getY(),
 		 * context.getPlayer().getPosition().getHeight())); }
 		 * 
-		 * if (event.getSyntax().equals("equip")) { int weapon = 12904; int helm
-		 * = 12417; int cape = 13069; int shield = 12817; int body = 10338; int
-		 * bottom = 10340; int necklace = 12436;
-		 * context.getPlayer().getEquipment().set(3, new Item(weapon));
-		 * context.getPlayer().getEquipment().set(0, new Item(helm));
+		 * if (event.getSyntax().equals("equip")) { int weapon = 12904; int helm =
+		 * 12417; int cape = 13069; int shield = 12817; int body = 10338; int bottom =
+		 * 10340; int necklace = 12436; context.getPlayer().getEquipment().set(3, new
+		 * Item(weapon)); context.getPlayer().getEquipment().set(0, new Item(helm));
 		 * context.getPlayer().getEquipment().set(1, new Item(cape));
 		 * context.getPlayer().getEquipment().set(5, new Item(shield));
 		 * context.getPlayer().getEquipment().set(4, new Item(body));
 		 * context.getPlayer().getEquipment().set(7, new Item(bottom));
 		 * context.getPlayer().getEquipment().set(2, new Item(necklace)); }
 		 * 
-		 * if (event.getSyntax().equals("inter")) { if (event.getArgs().length >
-		 * 1) { return; } context.getPlayer().sendOpenInterfaceSub(548, 104,
+		 * if (event.getSyntax().equals("inter")) { if (event.getArgs().length > 1) {
+		 * return; } context.getPlayer().sendOpenInterfaceSub(548, 104,
 		 * Integer.parseInt(event.getArgs()[0]), false); }
 		 * 
 		 * if (event.getSyntax().equals("item")) { int itemID =
@@ -175,21 +167,22 @@ public class CommandEventListener implements EventListener<CommandEvent, GameSes
 		 * context.getPlayer().getInventory().add(itemID, itemAmount); }
 		 */
 
-		 /* if (event.getSyntax().equals("coords")) {
+		/*
+		 * if (event.getSyntax().equals("coords")) {
 		 * System.out.println(context.getPlayer().getPosition().toString()); }
 		 * 
 		 * if (event.getSyntax().equals("anim")) { int animID =
-		 * Integer.parseInt(event.getArgs()[0]);
-		 * context.getPlayer().playAnimation(new Animation(animID)); }
+		 * Integer.parseInt(event.getArgs()[0]); context.getPlayer().playAnimation(new
+		 * Animation(animID)); }
 		 * 
 		 * if (event.getSyntax().equals("gfx")) { int gfxID =
-		 * Integer.parseInt(event.getArgs()[0]);
-		 * context.getPlayer().playGraphic(new Graphic(gfxID)); }
+		 * Integer.parseInt(event.getArgs()[0]); context.getPlayer().playGraphic(new
+		 * Graphic(gfxID)); }
 		 * 
 		 * if (event.getSyntax().equals("hit")) { int hit =
 		 * Integer.parseInt(event.getArgs()[0]);
-		 * context.getPlayer().addBlock(SynchronizationBlock
-		 * .createHitUpdateBlock(hit, 1, hit, 99, false)); }
+		 * context.getPlayer().addBlock(SynchronizationBlock .createHitUpdateBlock(hit,
+		 * 1, hit, 99, false)); }
 		 */
 	}
 

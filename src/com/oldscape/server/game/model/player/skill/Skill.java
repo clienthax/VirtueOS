@@ -106,7 +106,7 @@ public final class Skill {
 	 * The runecraft id.
 	 */
 	public static final int RUNECRAFT = 20;
-	
+
 	/**
 	 * The hunter id.
 	 */
@@ -126,7 +126,8 @@ public final class Skill {
 	/**
 	 * Gets the name of a skill.
 	 *
-	 * @param id The skill's id.
+	 * @param id
+	 *            The skill's id.
 	 * @return The skill's name.
 	 */
 	public static String getName(int id) {
@@ -136,7 +137,8 @@ public final class Skill {
 	/**
 	 * Whether the skill affects the combat level or not.
 	 *
-	 * @param skill The id of the skill.
+	 * @param skill
+	 *            The id of the skill.
 	 * @return {@code true} if the skill is a combat skill, otherwise {@code false}.
 	 */
 	public static boolean isCombatSkill(int skill) {
@@ -144,11 +146,13 @@ public final class Skill {
 	}
 
 	/**
-	 * Creates a skill from an existing skill, using the existing skill's experience and maximum level values, but the
-	 * specified current level.
+	 * Creates a skill from an existing skill, using the existing skill's experience
+	 * and maximum level values, but the specified current level.
 	 *
-	 * @param currentLevel The current level.
-	 * @param skill The existing skill.
+	 * @param currentLevel
+	 *            The current level.
+	 * @param skill
+	 *            The existing skill.
 	 *
 	 * @return The new skill with the updated current level.
 	 */
@@ -157,11 +161,13 @@ public final class Skill {
 	}
 
 	/**
-	 * Creates a skill from an existing skill, using the existing skill's current and maximum level values, but the
-	 * specified experience.
+	 * Creates a skill from an existing skill, using the existing skill's current
+	 * and maximum level values, but the specified experience.
 	 *
-	 * @param experience The experience.
-	 * @param skill The existing skill.
+	 * @param experience
+	 *            The experience.
+	 * @param skill
+	 *            The existing skill.
 	 * @return The new skill with the updated experience.
 	 */
 	public static Skill updateExperience(double experience, Skill skill) {
@@ -169,11 +175,13 @@ public final class Skill {
 	}
 
 	/**
-	 * Creates a skill from an existing skill, using the existing skill's experience and current level values, but the
-	 * specified maximum level.
+	 * Creates a skill from an existing skill, using the existing skill's experience
+	 * and current level values, but the specified maximum level.
 	 *
-	 * @param maximumLevel experience The maximum level.
-	 * @param skill The existing skill.
+	 * @param maximumLevel
+	 *            experience The maximum level.
+	 * @param skill
+	 *            The existing skill.
 	 * @return The new skill with the updated maximum level.
 	 */
 	public static Skill updateMaximumLevel(int maximumLevel, Skill skill) {
@@ -198,9 +206,12 @@ public final class Skill {
 	/**
 	 * Creates a skill.
 	 *
-	 * @param experience The experience.
-	 * @param currentLevel The current level.
-	 * @param maximumLevel The maximum level.
+	 * @param experience
+	 *            The experience.
+	 * @param currentLevel
+	 *            The current level.
+	 * @param maximumLevel
+	 *            The maximum level.
 	 */
 	public Skill(double experience, int currentLevel, int maximumLevel) {
 		this.experience = experience;

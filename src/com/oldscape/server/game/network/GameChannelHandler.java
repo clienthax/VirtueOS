@@ -44,8 +44,8 @@ public final class GameChannelHandler extends SimpleChannelInboundHandler<Event>
 			 * If the {@link io.netty.util.Attribute} is set as
 			 * {@link com.oldscape.server.rs3.game.net.game.GameSessionContext} we
 			 * registerLobbyPlayer the {@link com.oldscape.server.rs3.shared.event.Event}s
-			 * to a queue and poll the events every 600ms, otherwise we just
-			 * publish events straight away.
+			 * to a queue and poll the events every 600ms, otherwise we just publish events
+			 * straight away.
 			 */
 			if (attribute.get() instanceof GameSessionContext) {
 				((GameSessionContext) attribute.get()).add(msg);

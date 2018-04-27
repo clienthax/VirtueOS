@@ -14,7 +14,8 @@ public final class SynchronizationSkillListener extends SkillAdapter {
 	/**
 	 * Creates the skill synchronization listener.
 	 *
-	 * @param player The player.
+	 * @param player
+	 *            The player.
 	 */
 	public SynchronizationSkillListener(Player player) {
 		this.player = player;
@@ -34,7 +35,7 @@ public final class SynchronizationSkillListener extends SkillAdapter {
 
 	@Override
 	public void skillUpdated(SkillSet set, int id, Skill skill) {
-	//	player.send(new UpdateSkillMessage(id, skill));
+		// player.send(new UpdateSkillMessage(id, skill));
 	}
 
 }

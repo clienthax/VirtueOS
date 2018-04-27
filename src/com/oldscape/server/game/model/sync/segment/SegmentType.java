@@ -36,16 +36,16 @@ public enum SegmentType {
 	 * A segment with movement in a single direction.
 	 */
 	WALK,
-	
+
 	REGION_HASH,
 
 	/**
 	 * A segment with player skip counts.
 	 */
 	SKIP,
-	
+
 	CYCLE_START,
-	
+
 	CYCLE_END;
-	
+
 }

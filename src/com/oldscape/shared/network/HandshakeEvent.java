@@ -18,7 +18,8 @@ public final class HandshakeEvent implements Event {
 	 * Creates a new {@link com.oldscape.shared.network.HandshakeEvent}.
 	 * 
 	 * @param state
-	 *            The {@link com.oldscape.shared.network.HandshakeEvent.HandshakeState}.
+	 *            The
+	 *            {@link com.oldscape.shared.network.HandshakeEvent.HandshakeState}.
 	 */
 	public HandshakeEvent(HandshakeState state) {
 		this.state = state;
@@ -59,14 +60,12 @@ public final class HandshakeEvent implements Event {
 		private static final int ONDEMAND_ID = 15;
 
 		/**
-		 * Gets the
-		 * {@link com.oldscape.shared.network.HandshakeEvent.HandshakeState} based
-		 * on the id.
+		 * Gets the {@link com.oldscape.shared.network.HandshakeEvent.HandshakeState}
+		 * based on the id.
 		 * 
 		 * @param id
 		 *            The id of the handshake.
-		 * @return The
-		 *         {@link com.oldscape.shared.network.HandshakeEvent.HandshakeState}
+		 * @return The {@link com.oldscape.shared.network.HandshakeEvent.HandshakeState}
 		 *         based on the id.
 		 */
 		public static HandshakeState getState(int id) {

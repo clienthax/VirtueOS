@@ -28,22 +28,28 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 
 /**
  * @author Kyle Friz
- * @since  Aug 29, 2015
+ * @since Aug 29, 2015
  */
 public class PlayerRemovalDescriptor extends SynchronizationDescriptor {
 
-	/* (non-Javadoc)
-	 * @see com.oldscape.server.game.model.sync.Descriptor#encodeDescriptor(com.oldscape.server.game.model.player.Player, com.oldscape.server.game.model.sync.seg.SynchronizationSegment, com.oldscape.shared.network.game.GameFrameBuilder)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.oldscape.server.game.model.sync.Descriptor#encodeDescriptor(com.oldscape.
+	 * server.game.model.player.Player,
+	 * com.oldscape.server.game.model.sync.seg.SynchronizationSegment,
+	 * com.oldscape.shared.network.game.GameFrameBuilder)
 	 */
 	@Override
 	public void encodeDescriptor(Event event, SynchronizationSegment segment, GameFrameBuilder builder) {
 		builder.putBit(true);
 		builder.putBit(false);
 		builder.putBits(2, 0);
-		
+
 		int hash = ((PlayerRemovalSegment) segment).getPosition().toRegionPacked();
 		boolean update = ((PlayerRemovalSegment) segment).isUpdate();
-		
+
 		builder.putBit(update);
 		if (update) {
 			encodeRegion(builder, hash, ((PlayerRemovalSegment) segment).getRegionHash());

@@ -18,8 +18,7 @@ public final class DateUtils {
 	private static final LocalDateTime JAGEX_EPOCH = LocalDateTime.of(2002, 2, 27, 0, 0, 0, 0);
 
 	/**
-	 * The private constructor so the {@link java.lang.Class} can't be
-	 * initialised.
+	 * The private constructor so the {@link java.lang.Class} can't be initialised.
 	 */
 	private DateUtils() {
 

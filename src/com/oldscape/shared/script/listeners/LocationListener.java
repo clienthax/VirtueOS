@@ -21,8 +21,8 @@ public interface LocationListener {
 	 * @param loc
 	 *            The {@link SceneLocation} which was clicked
 	 * @param optionID
-	 *            The id of the option which was clicked. Ranges from 1 to 5,
-	 *            with 6 being reserved for "Examine".
+	 *            The id of the option which was clicked. Ranges from 1 to 5, with 6
+	 *            being reserved for "Examine".
 	 * @return True if the interaction was handled, false otherwise
 	 */
 	public boolean handleInteraction(Player player, Region loc, int optionID);
@@ -44,9 +44,9 @@ public interface LocationListener {
 	public boolean handleItemOnLoc(Player player, Region loc, Item item, int invSlot);
 
 	/**
-	 * Gets the minimum number of tiles a player must be within to interact with
-	 * the location. If the player is not within the minimum range, they will
-	 * attempt to move towards the location before the interaction is handled
+	 * Gets the minimum number of tiles a player must be within to interact with the
+	 * location. If the player is not within the minimum range, they will attempt to
+	 * move towards the location before the interaction is handled
 	 * 
 	 * @param loc
 	 *            The {@link SceneLocation} to check

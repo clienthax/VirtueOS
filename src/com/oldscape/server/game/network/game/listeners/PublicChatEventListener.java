@@ -31,13 +31,13 @@ public class PublicChatEventListener implements EventListener<PublicChatMessage,
 	 * (non-Javadoc)
 	 *
 	 * @see
-	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.Event,
-	 * com.oldscape.shared.event.EventContext)
+	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.
+	 * Event, com.oldscape.shared.event.EventContext)
 	 */
 	@Override
 	public void onEvent(PublicChatMessage event, GameSessionContext context) {
 
-		context.getPlayer().sendChatMessage(context.getPlayer().getCredentials().getUserName(), event.getMessage());//TODO this will likely explode
+		context.getPlayer().sendChatMessage(context.getPlayer().getCredentials().getUserName(), event.getMessage());
 
 	}
 

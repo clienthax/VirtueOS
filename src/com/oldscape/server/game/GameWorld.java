@@ -33,14 +33,14 @@ public final class GameWorld {
 	private final MobList<Player> players = new MobList<>(MAXIMUM_PLAYERS);
 
 	/**
-	 * The {@link java.util.Collection} of {@link com.oldscape.server.game.model.npc.Npc}s
-	 * in the server.
+	 * The {@link java.util.Collection} of
+	 * {@link com.oldscape.server.game.model.npc.Npc}s in the server.
 	 */
 	private final MobList<Npc> npcs = new MobList<>(MAXIMUM_NPCS);
 
 	/**
-	 * A {@link java.util.Queue} of {@link com.oldscape.server.game.model.player.Player}s
-	 * to remove.
+	 * A {@link java.util.Queue} of
+	 * {@link com.oldscape.server.game.model.player.Player}s to remove.
 	 */
 	private final Queue<Player> playersToRemove = new ConcurrentLinkedQueue<>();
 
@@ -65,7 +65,7 @@ public final class GameWorld {
 	 */
 	public void registerPlayer(Player player) {
 
-		//TODO move to config
+		// TODO move to config
 		npcs.add(npc = new Npc(394, player.getPosition().getX() + 1, player.getPosition().getY() + 1));
 		synchronized (players) {
 			players.add(player);
@@ -91,11 +91,12 @@ public final class GameWorld {
 
 	/**
 	 * Removes a {@link com.oldscape.server.game.model.player.Player} from the
-	 * {@link java.util.Collection} of {@link com.oldscape.server.game.model.player.Player}
-	 * .
+	 * {@link java.util.Collection} of
+	 * {@link com.oldscape.server.game.model.player.Player} .
 	 *
 	 * @param player
-	 *            The {@link com.oldscape.server.game.model.player.Player} to remove.
+	 *            The {@link com.oldscape.server.game.model.player.Player} to
+	 *            remove.
 	 */
 	public void unregisterPlayer(Player player) {
 		synchronized (players) {
@@ -145,7 +146,8 @@ public final class GameWorld {
 
 	/**
 	 * Gets the {@link java.util.Queue} of
-	 * {@link com.oldscape.server.game.model.player.Player}s to remove from the server.
+	 * {@link com.oldscape.server.game.model.player.Player}s to remove from the
+	 * server.
 	 *
 	 * @return The {@code playersToRemove}.
 	 */

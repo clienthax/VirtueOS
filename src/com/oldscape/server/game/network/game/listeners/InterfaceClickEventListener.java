@@ -40,18 +40,18 @@ public class InterfaceClickEventListener implements EventListener<InterfaceClick
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.Event,
-	 * com.oldscape.shared.event.EventContext)
+	 * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.
+	 * Event, com.oldscape.shared.event.EventContext)
 	 */
 	@Override
 	public void onEvent(InterfaceClickEvent event, GameSessionContext context) {
 		Player player = context.getPlayer();
 
 		// TODO Move to sperate classe
-		//TODO Seems this is all handled via the buttonclicks now
+		// TODO Seems this is all handled via the buttonclicks now
 
-		System.out.println("interfaceclick "+event.getOpcode() + ", " + event.getInterfaceID() + ", " + event.getButtonID() + ", " + event.getItemID() + ", " + event.getSlotID());
-
+		System.out.println("interfaceclick " + event.getOpcode() + ", " + event.getInterfaceID() + ", "
+				+ event.getButtonID() + ", " + event.getItemID() + ", " + event.getSlotID());
 
 		if (event.getInterfaceID() == 182 && event.getButtonID() == 1) {// TODO
 																		// Fix

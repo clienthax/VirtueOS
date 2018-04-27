@@ -22,9 +22,9 @@ import com.oldscape.shared.model.Position;
 public final class NpcSynchronizationTask extends SynchronizationTask {
 
 	/**
-	 * The maximum number of npcs to load per cycle. This prevents the update
-	 * packet from becoming too large (the client uses a 5000 byte buffer) and
-	 * also stops old spec PCs from crashing when they login or teleport.
+	 * The maximum number of npcs to load per cycle. This prevents the update packet
+	 * from becoming too large (the client uses a 5000 byte buffer) and also stops
+	 * old spec PCs from crashing when they login or teleport.
 	 */
 	private static final int NEW_NPCS_PER_CYCLE = 20;
 
@@ -57,10 +57,11 @@ public final class NpcSynchronizationTask extends SynchronizationTask {
 		int oldLocalNpcs = localNpcs.size();
 		final Position playerPosition = player.getPosition();
 
-		//in screen npcs
+		// in screen npcs
 		for (Iterator<Npc> it = localNpcs.iterator(); it.hasNext();) {
 			Npc npc = it.next();
-			if (!npc.isActive() || npc.isTeleporting() || npc.getPosition().getLongestDelta(playerPosition) > player.getViewport().getViewingDistance()) {
+			if (!npc.isActive() || npc.isTeleporting()
+					|| npc.getPosition().getLongestDelta(playerPosition) > player.getViewport().getViewingDistance()) {
 				it.remove();
 				segments.add(new NpcRemovalSegment());
 			} else {
@@ -68,8 +69,7 @@ public final class NpcSynchronizationTask extends SynchronizationTask {
 			}
 		}
 
-
-		//new npcs
+		// new npcs
 		int added = 0;
 		for (Npc npc : server.getGameWorld().getNpcs()) {
 			if (localNpcs.size() >= 255) {
