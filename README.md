@@ -13,6 +13,6 @@ If not using runelite deob (Not functional yet)
 * Execute com.friz.applet.GameApplet
 
 ### Credits ###
-* Kyle Fritz
+* Kyle Friz
 * Sean
 * Lots of people on the Rune-Status discord
