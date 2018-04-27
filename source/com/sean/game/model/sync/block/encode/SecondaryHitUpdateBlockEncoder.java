@@ -1,0 +1,68 @@
+/**
+ * Copyright (c) 2015 Kyle Friz
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+package com.sean.game.model.sync.block.encode;
+
+import com.sean.game.model.sync.block.BlockType;
+import com.sean.game.model.sync.block.HitUpdateBlock;
+import com.sean.game.model.sync.block.SynchronizationBlock;
+import com.sean.shared.network.game.DataOrder;
+import com.sean.shared.network.game.DataTransformation;
+import com.sean.shared.network.game.DataType;
+import com.sean.shared.network.game.GameFrameBuilder;
+
+/**
+ * @author Kyle Friz
+ * @since  Aug 31, 2015
+ */
+public class SecondaryHitUpdateBlockEncoder extends SynchronizationBlockEncoder {
+
+	public SecondaryHitUpdateBlockEncoder() {
+		super(0x1000, 0x40);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.sean.game.model.sync.block.encode.SynchronizationBlockEncoder#encodeBlock(com.sean.game.model.sync.block.SynchronizationBlock, com.sean.shared.network.game.GameFrameBuilder)
+	 */
+	@Override
+	public void encodeBlock(SynchronizationBlock block, GameFrameBuilder builder, boolean player) {
+		HitUpdateBlock hit = (HitUpdateBlock) block;
+		if (player) {
+			builder.put(DataType.SHORT, hit.getDamage());
+			builder.put(DataType.BYTE, hit.getHitType());
+			builder.put(DataType.BYTE, hit.getCurrentHealth());
+			builder.put(DataType.BYTE, hit.getMaximumHealth());
+		} else {
+			builder.put(DataType.BYTE, DataTransformation.SUBTRACT, hit.getDamage());
+			builder.put(DataType.BYTE, hit.getHitType());
+			builder.put(DataType.SHORT, DataOrder.LITTLE, hit.getCurrentHealth());
+			builder.put(DataType.SHORT, DataOrder.LITTLE, hit.getMaximumHealth());}
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.sean.game.model.sync.block.encode.SynchronizationBlockEncoder#getType()
+	 */
+	@Override
+	public BlockType getType() {
+		return BlockType.SECONDARY_HIT_UPDATE;
+	}
+
+}

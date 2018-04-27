@@ -1,0 +1,45 @@
+/*
+ * #78 Interface List
+ * By Ms Frizzy
+ */
+interface 1 - Bag
+interface 2 - Weird Question mark screen
+interface 12 - Bank
+interface 13 - Damage overlay for bosses
+
+
+interface 64 - Convert Membership Bonds
+interface 65 - Membership Bonds
+interface 66 - Redeem Membership Bonds
+interface 67 - Ava Devices shop
+interface 68 - Slayer partner
+
+interface 76 - Minigames tab <join, teleport>
+interface 77 - Quick prayers select
+
+interface 84 - Equip your character...
+
+interface 90 - Bounty World skull
+interface 91 - Clan Wars Settings
+
+interface 102 - Items Kept on Death
+interface 106 - Duel Arena Final Screen
+interface 107 - Duel Areana Screen
+interface 108 - scoreboard
+interface 110 - You are victorious!
+
+interface 310 - Poll History
+
+interface 334 - Trade Second Screen
+interface 335 - Trade First Sreen
+
+interface 370 - House Options
+interface 383 - Grand Exchange Trade History
+interface 402 - Grand Exchange Collection Box
+
+interface 451 - GE Item Sets
+interface 464 - Grand Exchange Guide prices
+interface 465 - Grand Exchange Interface
+interface 467 - Inventory highlight GE
+
+interface 481 - Snow Overlay

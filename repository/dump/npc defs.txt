@@ -1,0 +1,14 @@
+zulrah id: 2042
+melee zulrah id: 2043
+mage zulrah id: 2044
+ 
+mage projectile 1046
+range projectile: 1044
+toxic cloud projectile: 1045
+spawn snakeling projectile: 1047
+ 
+shoot animation: 5069
+go down animation: 5072
+go up animation: 5073
+melee target animation: 5806
+melee attack animation: 5807

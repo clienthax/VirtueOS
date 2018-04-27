@@ -1,0 +1,14 @@
+.classpath
+.gradle/
+.settings/
+build/
+repository/applet/transformed.jar
+repository/applet/gamepack.jar
+repository/cache/
+repository/characters/
+*.class
+/bin/
+.idea/
+.project
+xteascraper
+Test.java

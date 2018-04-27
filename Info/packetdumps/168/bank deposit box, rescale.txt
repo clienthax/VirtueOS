@@ -1,0 +1,30 @@
+setVarpLarge(867, 44065803)
+setVarpLarge(867, 44065803)
+setVarpLarge(867, 44065803)
+setVarpLarge(1052, 28320781)
+setVarpLarge(1052, 28320781)
+setVarpLarge(1052, 28320781)
+setVarpLarge(1053, 43002886)
+setVarpLarge(1053, 43002886)
+setVarpLarge(1053, 43002886)
+packet 13 (items on interface?) -1327 93
+packet13 11
+packet13 1 4252
+packet13 1 1356
+packet13 1 1520
+packet13 1 1520
+packet13 1 362
+packet13 1 362
+packet13 1 362
+packet13 1 362
+packet13 1 362
+packet13 1 362
+packet13 1 9005
+sendCloseInterfaceSub(161, 71)
+sendSetInterfaceClickMask(161, 54, -1, -1, 0)
+sendCloseInterfaceSub(161, 72)
+sendSetInterfaceClickMask(161, 55, -1, -1, 0)
+cs2Script(915, new Object[]{[3]});//i
+cs2Script(917, new Object[]{[-1, -1]});//ii
+sendOpenInterfaceSub(161, 13, 192, false)
+sendSetInterfaceClickMask(192, 2, 0, 27, 1180734)

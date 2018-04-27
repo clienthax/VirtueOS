@@ -1,0 +1,37 @@
+packet 13 (items on interface?) -1265 31
+packet13 12
+packet13 5 1932
+packet13 2 1936
+packet13 5 20743
+packet13 2 1736
+packet13 3 1926
+packet13 2 1924
+packet13 2 1888
+packet13 2 591
+packet13 2 1756
+packet13 5 2348
+packet13 5 551
+packet13 5 9004
+packet 13 (items on interface?) -1327 93
+packet13 14
+packet13 1 4252
+packet13 1 1356
+packet13 1 1520
+packet13 1 1520
+packet13 1 362
+packet13 1 362
+packet13 1 362
+packet13 1 362
+packet13 1 362
+packet13 1 362
+packet13 1 9005
+packet13 0 0
+packet13 3 558
+packet13 3 557
+cs2Script(917, new Object[]{[-1, -1]});//ii
+sendOpenInterfaceSub(161, 13, 300, false)
+sendOpenInterfaceSub(161, 66, 301, false)
+cs2Script(1074, new Object[]{[31, Rimmington General Store, -1, 0]});//vsoi
+sendSetInterfaceClickMask(300, 16, 1, 40, 1086)
+cs2Script(149, new Object[]{[19726336, 93, 4, 7, 0, -1, Value<col=ff9040>, Sell 1<col=ff9040>, Sell 5<col=ff9040>, Sell 10<col=ff9040>, Sell 50<col=ff9040>]});//IviiiIsssss
+sendSetInterfaceClickMask(301, 0, 0, 27, 1086)
