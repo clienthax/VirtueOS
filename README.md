@@ -1,18 +1,19 @@
-# VirtueOS - 168 #
+# VirtueOS #
 
-Git Repository for the VirtueOS Server
+Open-source community OldSchool RuneScape™ Private server project.
 
 ### How do I get set up? ###
 
-* Import gradle project
-* Compile with Java 10+
-* Execute com.sean.Main
+* Import Gradle project.
+* Compile with Java 1.8+
+* Execute com.oldscape.server.Main
 
-If not using runelite deob (Not functional yet)
-* Execute com.friz.asm.Application, if there is no transformed.jar in '/repository/applet/'
-* Execute com.friz.applet.GameApplet
+If not using RuneLite deob (Not functional yet)
+* Execute com.oldscape.tool.asm.Application, if there is no transformed.jar in '/repository/applet/'
+* Execute com.oldscape.tool.applet.GameApplet
 
-### Credits ###
-Kyle Fritz
-Sean
-Lots of people on the Rune-Status discord
+### Credit List ###
+* Sean
+* [Kyle Friz](https://rune-status.net/members/kyle-friz.249/)
+* [Clienthax](https://rune-status.net/members/clienthax.370/)
+* [Rune-Status](https://rune-status.net/) Community
