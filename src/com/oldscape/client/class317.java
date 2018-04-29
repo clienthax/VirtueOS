@@ -1,9 +1,9 @@
 package com.oldscape.client;
 
-public class class317 {
-   static char[] field3926;
-   static char[] field3927;
-   static int[] field3928;
+class class317 {
+   static final char[] field3926;
+   private static final char[] field3927;
+   private static final int[] field3928;
 
    static {
       field3926 = new char[64];
@@ -57,10 +57,10 @@ public class class317 {
          field3928[var0] = var0 - 48 + 52;
       }
 
-      int[] var2 = field3928;
+      final int[] var2 = field3928;
       field3928[43] = 62;
       var2[42] = 62;
-      int[] var1 = field3928;
+      final int[] var1 = field3928;
       field3928[47] = 63;
       var1[45] = 63;
    }

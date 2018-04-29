@@ -1,15 +1,15 @@
 package com.oldscape.client;
 
-public class FrameMap extends Node {
+class FrameMap extends Node {
    static Buffer NetCache_reference;
-   int id;
-   int count;
-   int[] types;
-   int[][] list;
+   final int id;
+   private final int count;
+   final int[] types;
+   final int[][] list;
 
-   FrameMap(int var1, byte[] var2) {
+   FrameMap(final int var1, final byte[] var2) {
       this.id = var1;
-      Buffer var3 = new Buffer(var2);
+      final Buffer var3 = new Buffer(var2);
       this.count = var3.readUnsignedByte();
       this.types = new int[this.count];
       this.list = new int[this.count][];
@@ -31,22 +31,22 @@ public class FrameMap extends Node {
 
    }
 
-   static final void worldToMinimap(int var0, int var1, int var2, int var3, SpritePixels var4, class236 var5) {
-      int var6 = var3 * var3 + var2 * var2;
+   static void worldToMinimap(final int var0, final int var1, final int var2, final int var3, final SpritePixels spritePixels, final class236 var5) {
+      final int var6 = var3 * var3 + var2 * var2;
       if(var6 > 4225 && var6 < 90000) {
-         int var7 = Client.mapAngle & 2047;
-         int var8 = Graphics3D.SINE[var7];
-         int var9 = Graphics3D.COSINE[var7];
-         int var10 = var9 * var2 + var3 * var8 >> 16;
-         int var11 = var3 * var9 - var8 * var2 >> 16;
-         double var12 = Math.atan2((double)var10, (double)var11);
-         int var14 = var5.field2773 / 2 - 25;
-         int var15 = (int)(Math.sin(var12) * (double)var14);
-         int var16 = (int)(Math.cos(var12) * (double)var14);
-         byte var17 = 20;
-         Client.mapedge.method5876(var15 + (var0 + var5.field2773 / 2 - var17 / 2), var5.field2772 / 2 + var1 - var17 / 2 - var16 - 10, var17, var17, 15, 15, var12, 256);
+         final int var7 = Client.mapAngle & 2047;
+         final int var8 = Graphics3D.SINE[var7];
+         final int var9 = Graphics3D.COSINE[var7];
+         final int var10 = var9 * var2 + var3 * var8 >> 16;
+         final int var11 = var3 * var9 - var8 * var2 >> 16;
+         final double var12 = Math.atan2(var10, var11);
+         final int var14 = var5.width / 2 - 25;
+         final int var15 = (int)(Math.sin(var12) * var14);
+         final int var16 = (int)(Math.cos(var12) * var14);
+         final byte var17 = 20;
+         Client.mapedge.method5876(var15 + (var0 + var5.width / 2 - var17 / 2), var5.height / 2 + var1 - var17 / 2 - var16 - 10, var17, var17, 15, 15, var12, 256);
       } else {
-         class38.drawDot(var0, var1, var2, var3, var4, var5);
+         class38.drawDot(var0, var1, var2, var3, spritePixels, var5);
       }
 
    }

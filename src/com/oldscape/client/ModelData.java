@@ -1,53 +1,54 @@
 package com.oldscape.client;
 
+@SuppressWarnings("Duplicates")
 public class ModelData extends Renderable {
-   static int[] field1765;
-   static int[] field1753;
-   static int field1724;
-   static int[] field1768;
-   static int[] field1757;
-   int vertexCount;
-   int[] vertexX;
-   int[] vertexY;
-   int[] vertexZ;
-   int triangleFaceCount;
-   int[] trianglePointsX;
-   int[] trianglePointsY;
-   int[] trianglePointsZ;
-   byte[] faceRenderType;
-   byte[] faceRenderPriorities;
-   byte[] faceAlphas;
-   byte[] textureCoords;
-   short[] faceColor;
-   short[] faceTextures;
-   byte priority;
-   int field1738;
-   byte[] textureRenderTypes;
-   short[] texTriangleX;
-   short[] texTriangleY;
-   short[] texTriangleZ;
-   short[] field1743;
-   short[] field1745;
-   short[] field1740;
-   short[] field1746;
-   short[] field1747;
-   short[] texturePrimaryColor;
-   byte[] field1749;
-   int[] vertexSkins;
-   int[] triangleSkinValues;
-   int[][] field1752;
-   int[][] field1758;
-   FaceNormal[] faceNormals;
-   VertexNormal[] normals;
-   VertexNormal[] field1756;
+   private static final int[] field1765;
+   private static final int[] field1753;
+   private static int field1724;
+   private static final int[] field1768;
+   private static final int[] field1757;
+   private int vertexCount;
+   private int[] vertexX;
+   private int[] vertexY;
+   private int[] vertexZ;
+   private int triangleFaceCount;
+   private int[] trianglePointsX;
+   private int[] trianglePointsY;
+   private int[] trianglePointsZ;
+   private byte[] faceRenderTypes;
+   private byte[] faceRenderPriorities;
+   private byte[] faceAlphas;
+   private byte[] textureCoords;
+   private short[] faceColor;
+   private short[] faceTextures;
+   private byte priority;
+   private int field1738;
+   private byte[] textureRenderTypes;
+   private short[] texTriangleX;
+   private short[] texTriangleY;
+   private short[] texTriangleZ;
+   private short[] field1743;
+   private short[] field1745;
+   private short[] field1740;
+   private short[] field1746;
+   private short[] field1747;
+   private short[] texturePrimaryColor;
+   private byte[] field1749;
+   private int[] vertexSkins;
+   private int[] triangleSkinValues;
+   private int[][] vertexGroups;
+   private int[][] field1758;
+   private FaceNormal[] faceNormals;
+   private VertexNormal[] normals;
+   private VertexNormal[] field1756;
    public short field1731;
    public short contrast;
-   boolean field1759;
-   int field1760;
-   int field1761;
-   int field1762;
-   int field1763;
-   int field1764;
+   private boolean field1759;
+   private int field1760;
+   private int field1761;
+   private int field1762;
+   private int field1763;
+   private int field1764;
 
    static {
       field1765 = new int[10000];
@@ -57,14 +58,14 @@ public class ModelData extends Renderable {
       field1757 = Graphics3D.COSINE;
    }
 
-   ModelData() {
+   private ModelData() {
       this.vertexCount = 0;
       this.triangleFaceCount = 0;
       this.priority = 0;
       this.field1759 = false;
    }
 
-   public ModelData(ModelData[] var1, int var2) {
+   public ModelData(final ModelData[] var1, final int var2) {
       this.vertexCount = 0;
       this.triangleFaceCount = 0;
       this.priority = 0;
@@ -100,7 +101,7 @@ public class ModelData extends Renderable {
                }
             }
 
-            var3 |= var10.faceRenderType != null;
+            var3 |= var10.faceRenderTypes != null;
             var5 |= var10.faceAlphas != null;
             var6 |= var10.triangleSkinValues != null;
             var7 |= var10.faceTextures != null;
@@ -116,7 +117,7 @@ public class ModelData extends Renderable {
       this.trianglePointsY = new int[this.triangleFaceCount];
       this.trianglePointsZ = new int[this.triangleFaceCount];
       if(var3) {
-         this.faceRenderType = new byte[this.triangleFaceCount];
+         this.faceRenderTypes = new byte[this.triangleFaceCount];
       }
 
       if(var4) {
@@ -163,8 +164,8 @@ public class ModelData extends Renderable {
          if(var10 != null) {
             int var11;
             for(var11 = 0; var11 < var10.triangleFaceCount; ++var11) {
-               if(var3 && var10.faceRenderType != null) {
-                  this.faceRenderType[this.triangleFaceCount] = var10.faceRenderType[var11];
+               if(var3 && var10.faceRenderTypes != null) {
+                  this.faceRenderTypes[this.triangleFaceCount] = var10.faceRenderTypes[var11];
                }
 
                if(var4) {
@@ -207,7 +208,7 @@ public class ModelData extends Renderable {
             }
 
             for(var11 = 0; var11 < var10.field1738; ++var11) {
-               byte var12 = this.textureRenderTypes[this.field1738] = var10.textureRenderTypes[var11];
+               final byte var12 = this.textureRenderTypes[this.field1738] = var10.textureRenderTypes[var11];
                if(var12 == 0) {
                   this.texTriangleX[this.field1738] = (short)this.method2626(var10, var10.texTriangleX[var11]);
                   this.texTriangleY[this.field1738] = (short)this.method2626(var10, var10.texTriangleY[var11]);
@@ -237,7 +238,7 @@ public class ModelData extends Renderable {
 
    }
 
-   ModelData(byte[] var1) {
+   private ModelData(final byte[] var1) {
       this.vertexCount = 0;
       this.triangleFaceCount = 0;
       this.priority = 0;
@@ -250,7 +251,7 @@ public class ModelData extends Renderable {
 
    }
 
-   public ModelData(ModelData var1, boolean var2, boolean var3, boolean var4, boolean var5) {
+   public ModelData(final ModelData var1, final boolean var2, final boolean var3, final boolean var4) {
       this.vertexCount = 0;
       this.triangleFaceCount = 0;
       this.priority = 0;
@@ -299,7 +300,7 @@ public class ModelData extends Renderable {
       this.trianglePointsX = var1.trianglePointsX;
       this.trianglePointsY = var1.trianglePointsY;
       this.trianglePointsZ = var1.trianglePointsZ;
-      this.faceRenderType = var1.faceRenderType;
+      this.faceRenderTypes = var1.faceRenderTypes;
       this.faceRenderPriorities = var1.faceRenderPriorities;
       this.textureCoords = var1.textureCoords;
       this.priority = var1.priority;
@@ -316,7 +317,7 @@ public class ModelData extends Renderable {
       this.texturePrimaryColor = var1.texturePrimaryColor;
       this.vertexSkins = var1.vertexSkins;
       this.triangleSkinValues = var1.triangleSkinValues;
-      this.field1752 = var1.field1752;
+      this.vertexGroups = var1.vertexGroups;
       this.field1758 = var1.field1758;
       this.normals = var1.normals;
       this.faceNormals = var1.faceNormals;
@@ -325,29 +326,29 @@ public class ModelData extends Renderable {
       this.contrast = var1.contrast;
    }
 
-   void decodeNewFormat(byte[] var1) {
-      Buffer var2 = new Buffer(var1);
-      Buffer var3 = new Buffer(var1);
-      Buffer var4 = new Buffer(var1);
-      Buffer var5 = new Buffer(var1);
-      Buffer var6 = new Buffer(var1);
-      Buffer var7 = new Buffer(var1);
-      Buffer var8 = new Buffer(var1);
+   private void decodeNewFormat(final byte[] var1) {
+      final Buffer var2 = new Buffer(var1);
+      final Buffer var3 = new Buffer(var1);
+      final Buffer var4 = new Buffer(var1);
+      final Buffer var5 = new Buffer(var1);
+      final Buffer var6 = new Buffer(var1);
+      final Buffer var7 = new Buffer(var1);
+      final Buffer var8 = new Buffer(var1);
       var2.offset = var1.length - 23;
-      int var9 = var2.readUnsignedShort();
-      int var10 = var2.readUnsignedShort();
-      int var11 = var2.readUnsignedByte();
-      int var12 = var2.readUnsignedByte();
-      int var13 = var2.readUnsignedByte();
-      int var14 = var2.readUnsignedByte();
-      int var15 = var2.readUnsignedByte();
-      int var16 = var2.readUnsignedByte();
-      int var17 = var2.readUnsignedByte();
-      int var18 = var2.readUnsignedShort();
-      int var19 = var2.readUnsignedShort();
-      int var20 = var2.readUnsignedShort();
-      int var21 = var2.readUnsignedShort();
-      int var22 = var2.readUnsignedShort();
+      final int var9 = var2.readUnsignedShort();
+      final int var10 = var2.readUnsignedShort();
+      final int var11 = var2.readUnsignedByte();
+      final int var12 = var2.readUnsignedByte();
+      final int var13 = var2.readUnsignedByte();
+      final int var14 = var2.readUnsignedByte();
+      final int var15 = var2.readUnsignedByte();
+      final int var16 = var2.readUnsignedByte();
+      final int var17 = var2.readUnsignedByte();
+      final int var18 = var2.readUnsignedShort();
+      final int var19 = var2.readUnsignedShort();
+      final int var20 = var2.readUnsignedShort();
+      final int var21 = var2.readUnsignedShort();
+      final int var22 = var2.readUnsignedShort();
       int var23 = 0;
       int var24 = 0;
       int var25 = 0;
@@ -357,7 +358,7 @@ public class ModelData extends Renderable {
          var2.offset = 0;
 
          for(var26 = 0; var26 < var11; ++var26) {
-            byte var27 = this.textureRenderTypes[var26] = var2.readByte();
+            final byte var27 = this.textureRenderTypes[var26] = var2.readByte();
             if(var27 == 0) {
                ++var23;
             }
@@ -373,61 +374,61 @@ public class ModelData extends Renderable {
       }
 
       var26 = var11 + var9;
-      int var28 = var26;
+      final int var28 = var26;
       if(var12 == 1) {
          var26 += var10;
       }
 
-      int var29 = var26;
+      final int var29 = var26;
       var26 += var10;
-      int var30 = var26;
+      final int var30 = var26;
       if(var13 == 255) {
          var26 += var10;
       }
 
-      int var31 = var26;
+      final int var31 = var26;
       if(var15 == 1) {
          var26 += var10;
       }
 
-      int var32 = var26;
+      final int var32 = var26;
       if(var17 == 1) {
          var26 += var9;
       }
 
-      int var33 = var26;
+      final int var33 = var26;
       if(var14 == 1) {
          var26 += var10;
       }
 
-      int var34 = var26;
+      final int var34 = var26;
       var26 += var21;
-      int var35 = var26;
+      final int var35 = var26;
       if(var16 == 1) {
          var26 += var10 * 2;
       }
 
-      int var36 = var26;
+      final int var36 = var26;
       var26 += var22;
-      int var37 = var26;
+      final int var37 = var26;
       var26 += var10 * 2;
-      int var38 = var26;
+      final int var38 = var26;
       var26 += var18;
-      int var39 = var26;
+      final int var39 = var26;
       var26 += var19;
-      int var40 = var26;
+      final int var40 = var26;
       var26 += var20;
-      int var41 = var26;
+      final int var41 = var26;
       var26 += var23 * 6;
-      int var42 = var26;
+      final int var42 = var26;
       var26 += var24 * 6;
-      int var43 = var26;
+      final int var43 = var26;
       var26 += var24 * 6;
-      int var44 = var26;
+      final int var44 = var26;
       var26 += var24 * 2;
-      int var45 = var26;
+      final int var45 = var26;
       var26 += var24;
-      int var46 = var26;
+      final int var46 = var26;
       var26 += var24 * 2 + var25 * 2;
       this.vertexCount = var9;
       this.triangleFaceCount = var10;
@@ -443,7 +444,7 @@ public class ModelData extends Renderable {
       }
 
       if(var12 == 1) {
-         this.faceRenderType = new byte[var10];
+         this.faceRenderTypes = new byte[var10];
       }
 
       if(var13 == 255) {
@@ -540,7 +541,7 @@ public class ModelData extends Renderable {
       for(var51 = 0; var51 < var10; ++var51) {
          this.faceColor[var51] = (short)var2.readUnsignedShort();
          if(var12 == 1) {
-            this.faceRenderType[var51] = var3.readByte();
+            this.faceRenderTypes[var51] = var3.readByte();
          }
 
          if(var13 == 255) {
@@ -603,7 +604,7 @@ public class ModelData extends Renderable {
          }
 
          if(var56 == 4) {
-            int var57 = var51;
+            final int var57 = var51;
             var51 = var52;
             var52 = var57;
             var53 = var2.readShortSmart() + var54;
@@ -679,67 +680,67 @@ public class ModelData extends Renderable {
 
    }
 
-   void decodeOldFormat(byte[] var1) {
+   private void decodeOldFormat(final byte[] var1) {
       boolean var2 = false;
       boolean var3 = false;
-      Buffer var4 = new Buffer(var1);
-      Buffer var5 = new Buffer(var1);
-      Buffer var6 = new Buffer(var1);
-      Buffer var7 = new Buffer(var1);
-      Buffer var8 = new Buffer(var1);
+      final Buffer var4 = new Buffer(var1);
+      final Buffer var5 = new Buffer(var1);
+      final Buffer var6 = new Buffer(var1);
+      final Buffer var7 = new Buffer(var1);
+      final Buffer var8 = new Buffer(var1);
       var4.offset = var1.length - 18;
-      int var9 = var4.readUnsignedShort();
-      int var10 = var4.readUnsignedShort();
-      int var11 = var4.readUnsignedByte();
-      int var12 = var4.readUnsignedByte();
-      int var13 = var4.readUnsignedByte();
-      int var14 = var4.readUnsignedByte();
-      int var15 = var4.readUnsignedByte();
-      int var16 = var4.readUnsignedByte();
-      int var17 = var4.readUnsignedShort();
-      int var18 = var4.readUnsignedShort();
-      int var19 = var4.readUnsignedShort();
-      int var20 = var4.readUnsignedShort();
-      byte var21 = 0;
+      final int var9 = var4.readUnsignedShort();
+      final int var10 = var4.readUnsignedShort();
+      final int var11 = var4.readUnsignedByte();
+      final int var12 = var4.readUnsignedByte();
+      final int var13 = var4.readUnsignedByte();
+      final int var14 = var4.readUnsignedByte();
+      final int var15 = var4.readUnsignedByte();
+      final int var16 = var4.readUnsignedByte();
+      final int var17 = var4.readUnsignedShort();
+      final int var18 = var4.readUnsignedShort();
+      final int var19 = var4.readUnsignedShort();
+      final int var20 = var4.readUnsignedShort();
+      final byte var21 = 0;
       int var45 = var21 + var9;
-      int var23 = var45;
+      final int var23 = var45;
       var45 += var10;
-      int var24 = var45;
+      final int var24 = var45;
       if(var13 == 255) {
          var45 += var10;
       }
 
-      int var25 = var45;
+      final int var25 = var45;
       if(var15 == 1) {
          var45 += var10;
       }
 
-      int var26 = var45;
+      final int var26 = var45;
       if(var12 == 1) {
          var45 += var10;
       }
 
-      int var27 = var45;
+      final int var27 = var45;
       if(var16 == 1) {
          var45 += var9;
       }
 
-      int var28 = var45;
+      final int var28 = var45;
       if(var14 == 1) {
          var45 += var10;
       }
 
-      int var29 = var45;
+      final int var29 = var45;
       var45 += var20;
-      int var30 = var45;
+      final int var30 = var45;
       var45 += var10 * 2;
-      int var31 = var45;
+      final int var31 = var45;
       var45 += var11 * 6;
-      int var32 = var45;
+      final int var32 = var45;
       var45 += var17;
-      int var33 = var45;
+      final int var33 = var45;
       var45 += var18;
-      int var10000 = var45 + var19;
+      final int var10000 = var45 + var19;
       this.vertexCount = var9;
       this.triangleFaceCount = var10;
       this.field1738 = var11;
@@ -761,7 +762,7 @@ public class ModelData extends Renderable {
       }
 
       if(var12 == 1) {
-         this.faceRenderType = new byte[var10];
+         this.faceRenderTypes = new byte[var10];
          this.textureCoords = new byte[var10];
          this.faceTextures = new short[var10];
       }
@@ -834,10 +835,10 @@ public class ModelData extends Renderable {
          if(var12 == 1) {
             var39 = var5.readUnsignedByte();
             if((var39 & 1) == 1) {
-               this.faceRenderType[var38] = 1;
+               this.faceRenderTypes[var38] = 1;
                var2 = true;
             } else {
-               this.faceRenderType[var38] = 0;
+               this.faceRenderTypes[var38] = 0;
             }
 
             if((var39 & 2) == 2) {
@@ -950,16 +951,16 @@ public class ModelData extends Renderable {
       }
 
       if(!var2) {
-         this.faceRenderType = null;
+         this.faceRenderTypes = null;
       }
 
    }
 
-   final int method2626(ModelData var1, int var2) {
+   private int method2626(final ModelData var1, final int var2) {
       int var3 = -1;
-      int var4 = var1.vertexX[var2];
-      int var5 = var1.vertexY[var2];
-      int var6 = var1.vertexZ[var2];
+      final int var4 = var1.vertexX[var2];
+      final int var5 = var1.vertexY[var2];
+      final int var6 = var1.vertexZ[var2];
 
       for(int var7 = 0; var7 < this.vertexCount; ++var7) {
          if(var4 == this.vertexX[var7] && var5 == this.vertexY[var7] && var6 == this.vertexZ[var7]) {
@@ -983,11 +984,11 @@ public class ModelData extends Renderable {
    }
 
    public ModelData method2604() {
-      ModelData var1 = new ModelData();
-      if(this.faceRenderType != null) {
-         var1.faceRenderType = new byte[this.triangleFaceCount];
+      final ModelData var1 = new ModelData();
+      if(this.faceRenderTypes != null) {
+         var1.faceRenderTypes = new byte[this.triangleFaceCount];
 
-          System.arraycopy(this.faceRenderType, 0, var1.faceRenderType, 0, this.triangleFaceCount);
+          System.arraycopy(this.faceRenderTypes, 0, var1.faceRenderTypes, 0, this.triangleFaceCount);
       }
 
       var1.vertexCount = this.vertexCount;
@@ -1018,7 +1019,7 @@ public class ModelData extends Renderable {
       var1.texturePrimaryColor = this.texturePrimaryColor;
       var1.vertexSkins = this.vertexSkins;
       var1.triangleSkinValues = this.triangleSkinValues;
-      var1.field1752 = this.field1752;
+      var1.vertexGroups = this.vertexGroups;
       var1.field1758 = this.field1758;
       var1.normals = this.normals;
       var1.faceNormals = this.faceNormals;
@@ -1027,7 +1028,7 @@ public class ModelData extends Renderable {
       return var1;
    }
 
-   public ModelData method2601(int[][] var1, int var2, int var3, int var4, boolean var5, int var6) {
+   public ModelData method2601(final int[][] var1, final int var2, final int var3, final int var4, final int var6) {
       this.method2641();
       int var7 = var2 + this.field1761;
       int var8 = var2 + this.field1762;
@@ -1041,7 +1042,7 @@ public class ModelData extends Renderable {
          if(var3 == var1[var7][var9] && var3 == var1[var8][var9] && var3 == var1[var7][var10] && var3 == var1[var8][var10]) {
             return this;
          } else {
-            ModelData var11 = new ModelData();
+            final ModelData var11 = new ModelData();
             var11.vertexCount = this.vertexCount;
             var11.triangleFaceCount = this.triangleFaceCount;
             var11.field1738 = this.field1738;
@@ -1050,7 +1051,7 @@ public class ModelData extends Renderable {
             var11.trianglePointsX = this.trianglePointsX;
             var11.trianglePointsY = this.trianglePointsY;
             var11.trianglePointsZ = this.trianglePointsZ;
-            var11.faceRenderType = this.faceRenderType;
+            var11.faceRenderTypes = this.faceRenderTypes;
             var11.faceRenderPriorities = this.faceRenderPriorities;
             var11.faceAlphas = this.faceAlphas;
             var11.textureCoords = this.textureCoords;
@@ -1070,7 +1071,7 @@ public class ModelData extends Renderable {
             var11.texturePrimaryColor = this.texturePrimaryColor;
             var11.vertexSkins = this.vertexSkins;
             var11.triangleSkinValues = this.triangleSkinValues;
-            var11.field1752 = this.field1752;
+            var11.vertexGroups = this.vertexGroups;
             var11.field1758 = this.field1758;
             var11.field1731 = this.field1731;
             var11.contrast = this.contrast;
@@ -1110,7 +1111,7 @@ public class ModelData extends Renderable {
                      var19 = var15 >> 7;
                      var20 = var1[var18][var19] * (128 - var16) + var1[var18 + 1][var19] * var16 >> 7;
                      var21 = var1[var18][var19 + 1] * (128 - var16) + var16 * var1[var18 + 1][var19 + 1] >> 7;
-                     int var22 = var20 * (128 - var17) + var21 * var17 >> 7;
+                     final int var22 = var20 * (128 - var17) + var21 * var17 >> 7;
                      var11.vertexY[var12] = (var6 - var13) * (var22 - var3) / var6 + this.vertexY[var12];
                   }
                }
@@ -1124,7 +1125,7 @@ public class ModelData extends Renderable {
       }
    }
 
-   void computeAnimationTables() {
+   private void computeAnimationTables() {
       int[] var1;
       int var2;
       int var3;
@@ -1141,14 +1142,14 @@ public class ModelData extends Renderable {
             }
          }
 
-         this.field1752 = new int[var2 + 1][];
+         this.vertexGroups = new int[var2 + 1][];
 
          for(var3 = 0; var3 <= var2; ++var3) {
-            this.field1752[var3] = new int[var1[var3]];
+            this.vertexGroups[var3] = new int[var1[var3]];
             var1[var3] = 0;
          }
 
-         for(var3 = 0; var3 < this.vertexCount; this.field1752[var4][var1[var4]++] = var3++) {
+         for(var3 = 0; var3 < this.vertexCount; this.vertexGroups[var4][var1[var4]++] = var3++) {
             var4 = this.vertexSkins[var3];
          }
 
@@ -1185,7 +1186,7 @@ public class ModelData extends Renderable {
 
    public void method2607() {
       for(int var1 = 0; var1 < this.vertexCount; ++var1) {
-         int var2 = this.vertexX[var1];
+         final int var2 = this.vertexX[var1];
          this.vertexX[var1] = this.vertexZ[var1];
          this.vertexZ[var1] = -var2;
       }
@@ -1204,7 +1205,7 @@ public class ModelData extends Renderable {
 
    public void method2610() {
       for(int var1 = 0; var1 < this.vertexCount; ++var1) {
-         int var2 = this.vertexZ[var1];
+         final int var2 = this.vertexZ[var1];
          this.vertexZ[var1] = this.vertexX[var1];
          this.vertexX[var1] = -var2;
       }
@@ -1212,12 +1213,12 @@ public class ModelData extends Renderable {
       this.method2617();
    }
 
-   public void method2606(int var1) {
-      int var2 = field1768[var1];
-      int var3 = field1757[var1];
+   public void method2606(final int var1) {
+      final int var2 = field1768[var1];
+      final int var3 = field1757[var1];
 
       for(int var4 = 0; var4 < this.vertexCount; ++var4) {
-         int var5 = var2 * this.vertexZ[var4] + var3 * this.vertexX[var4] >> 16;
+         final int var5 = var2 * this.vertexZ[var4] + var3 * this.vertexX[var4] >> 16;
          this.vertexZ[var4] = var3 * this.vertexZ[var4] - var2 * this.vertexX[var4] >> 16;
          this.vertexX[var4] = var5;
       }
@@ -1225,7 +1226,7 @@ public class ModelData extends Renderable {
       this.method2617();
    }
 
-   public void method2611(int var1, int var2, int var3) {
+   public void method2611(final int var1, final int var2, final int var3) {
       for(int var4 = 0; var4 < this.vertexCount; ++var4) {
          this.vertexX[var4] += var1;
          this.vertexY[var4] += var2;
@@ -1235,7 +1236,7 @@ public class ModelData extends Renderable {
       this.method2617();
    }
 
-   public void recolor(short var1, short var2) {
+   public void recolor(final short var1, final short var2) {
       for(int var3 = 0; var3 < this.triangleFaceCount; ++var3) {
          if(this.faceColor[var3] == var1) {
             this.faceColor[var3] = var2;
@@ -1244,7 +1245,7 @@ public class ModelData extends Renderable {
 
    }
 
-   public void method2613(short var1, short var2) {
+   public void method2613(final short var1, final short var2) {
       if(this.faceTextures != null) {
          for(int var3 = 0; var3 < this.triangleFaceCount; ++var3) {
             if(this.faceTextures[var3] == var1) {
@@ -1262,7 +1263,7 @@ public class ModelData extends Renderable {
       }
 
       for(var1 = 0; var1 < this.triangleFaceCount; ++var1) {
-         int var2 = this.trianglePointsX[var1];
+         final int var2 = this.trianglePointsX[var1];
          this.trianglePointsX[var1] = this.trianglePointsZ[var1];
          this.trianglePointsZ[var1] = var2;
       }
@@ -1270,7 +1271,7 @@ public class ModelData extends Renderable {
       this.method2617();
    }
 
-   public void method2615(int var1, int var2, int var3) {
+   public void method2615(final int var1, final int var2, final int var3) {
       for(int var4 = 0; var4 < this.vertexCount; ++var4) {
          this.vertexX[var4] = this.vertexX[var4] * var1 / 128;
          this.vertexY[var4] = var2 * this.vertexY[var4] / 128;
@@ -1284,84 +1285,83 @@ public class ModelData extends Renderable {
       if(this.normals == null) {
          this.normals = new VertexNormal[this.vertexCount];
 
-         int var1;
-         for(var1 = 0; var1 < this.vertexCount; ++var1) {
-            this.normals[var1] = new VertexNormal();
+         for(int vertexIdx = 0; vertexIdx < this.vertexCount; ++vertexIdx) {
+            this.normals[vertexIdx] = new VertexNormal();
          }
 
-         for(var1 = 0; var1 < this.triangleFaceCount; ++var1) {
-            int var2 = this.trianglePointsX[var1];
-            int var3 = this.trianglePointsY[var1];
-            int var4 = this.trianglePointsZ[var1];
-            int var5 = this.vertexX[var3] - this.vertexX[var2];
-            int var6 = this.vertexY[var3] - this.vertexY[var2];
-            int var7 = this.vertexZ[var3] - this.vertexZ[var2];
-            int var8 = this.vertexX[var4] - this.vertexX[var2];
-            int var9 = this.vertexY[var4] - this.vertexY[var2];
-            int var10 = this.vertexZ[var4] - this.vertexZ[var2];
-            int var11 = var6 * var10 - var9 * var7;
-            int var12 = var7 * var8 - var10 * var5;
+         for(int faceIdx = 0; faceIdx < this.triangleFaceCount; ++faceIdx) {
+            final int pointX = this.trianglePointsX[faceIdx];
+            final int pointY = this.trianglePointsY[faceIdx];
+            final int pointZ = this.trianglePointsZ[faceIdx];
+            final int var5 = this.vertexX[pointY] - this.vertexX[pointX];
+            final int var6 = this.vertexY[pointY] - this.vertexY[pointX];
+            final int var7 = this.vertexZ[pointY] - this.vertexZ[pointX];
+            final int var8 = this.vertexX[pointZ] - this.vertexX[pointX];
+            final int var9 = this.vertexY[pointZ] - this.vertexY[pointX];
+            final int var10 = this.vertexZ[pointZ] - this.vertexZ[pointX];
+            int x = var6 * var10 - var9 * var7;
+            int y = var7 * var8 - var10 * var5;
 
-            int var13;
-            for(var13 = var5 * var9 - var8 * var6; var11 > 8192 || var12 > 8192 || var13 > 8192 || var11 < -8192 || var12 < -8192 || var13 < -8192; var13 >>= 1) {
-               var11 >>= 1;
-               var12 >>= 1;
+            int z;
+            for(z = var5 * var9 - var8 * var6; x > 8192 || y > 8192 || z > 8192 || x < -8192 || y < -8192 || z < -8192; z >>= 1) {
+               x >>= 1;
+               y >>= 1;
             }
 
-            int var14 = (int)Math.sqrt((double)(var11 * var11 + var12 * var12 + var13 * var13));
+            int var14 = (int)Math.sqrt((x * x + y * y + z * z));
             if(var14 <= 0) {
                var14 = 1;
             }
 
-            var11 = var11 * 256 / var14;
-            var12 = var12 * 256 / var14;
-            var13 = var13 * 256 / var14;
-            byte var15;
-            if(this.faceRenderType == null) {
-               var15 = 0;
+            x = x * 256 / var14;
+            y = y * 256 / var14;
+            z = z * 256 / var14;
+            final byte faceRenderType;
+            if(this.faceRenderTypes == null) {
+               faceRenderType = 0;
             } else {
-               var15 = this.faceRenderType[var1];
+               faceRenderType = this.faceRenderTypes[faceIdx];
             }
 
-            if(var15 == 0) {
-               VertexNormal var16 = this.normals[var2];
-               var16.x += var11;
-               var16.y += var12;
-               var16.z += var13;
-               ++var16.magnitude;
-               var16 = this.normals[var3];
-               var16.x += var11;
-               var16.y += var12;
-               var16.z += var13;
-               ++var16.magnitude;
-               var16 = this.normals[var4];
-               var16.x += var11;
-               var16.y += var12;
-               var16.z += var13;
-               ++var16.magnitude;
-            } else if(var15 == 1) {
+            if(faceRenderType == 0) {
+               VertexNormal vertexNormal = this.normals[pointX];
+               vertexNormal.x += x;
+               vertexNormal.y += y;
+               vertexNormal.z += z;
+               ++vertexNormal.magnitude;
+               vertexNormal = this.normals[pointY];
+               vertexNormal.x += x;
+               vertexNormal.y += y;
+               vertexNormal.z += z;
+               ++vertexNormal.magnitude;
+               vertexNormal = this.normals[pointZ];
+               vertexNormal.x += x;
+               vertexNormal.y += y;
+               vertexNormal.z += z;
+               ++vertexNormal.magnitude;
+            } else if(faceRenderType == 1) {
                if(this.faceNormals == null) {
                   this.faceNormals = new FaceNormal[this.triangleFaceCount];
                }
 
-               FaceNormal var17 = this.faceNormals[var1] = new FaceNormal();
-               var17.x = var11;
-               var17.y = var12;
-               var17.z = var13;
+               final FaceNormal faceNormal = this.faceNormals[faceIdx] = new FaceNormal();
+               faceNormal.x = x;
+               faceNormal.y = y;
+               faceNormal.z = z;
             }
          }
 
       }
    }
 
-   void method2617() {
+   private void method2617() {
       this.normals = null;
       this.field1756 = null;
       this.faceNormals = null;
       this.field1759 = false;
    }
 
-   void method2641() {
+   private void method2641() {
       if(!this.field1759) {
          super.modelHeight = 0;
          this.field1760 = 0;
@@ -1370,10 +1370,10 @@ public class ModelData extends Renderable {
          this.field1763 = -99999;
          this.field1764 = 99999;
 
-         for(int var1 = 0; var1 < this.vertexCount; ++var1) {
-            int var2 = this.vertexX[var1];
-            int var3 = this.vertexY[var1];
-            int var4 = this.vertexZ[var1];
+         for(int vertexIdx = 0; vertexIdx < this.vertexCount; ++vertexIdx) {
+            final int var2 = this.vertexX[vertexIdx];
+            final int var3 = this.vertexY[vertexIdx];
+            final int var4 = this.vertexZ[vertexIdx];
             if(var2 < this.field1761) {
                this.field1761 = var2;
             }
@@ -1403,16 +1403,16 @@ public class ModelData extends Renderable {
       }
    }
 
-   public final Model light(int var1, int var2, int var3, int var4, int var5) {
+   public final Model light(final int var1, final int var2, final int var3, final int var4, final int var5) {
       this.computeNormals();
-      int var6 = (int)Math.sqrt((double)(var5 * var5 + var3 * var3 + var4 * var4));
-      int var7 = var6 * var2 >> 8;
-      Model var8 = new Model();
-      var8.field1852 = new int[this.triangleFaceCount];
-      var8.field1861 = new int[this.triangleFaceCount];
-      var8.field1862 = new int[this.triangleFaceCount];
+      final int var6 = (int)Math.sqrt((var5 * var5 + var3 * var3 + var4 * var4));
+      final int var7 = var6 * var2 >> 8;
+      final Model model = new Model();
+      model.field1852 = new int[this.triangleFaceCount];
+      model.field1861 = new int[this.triangleFaceCount];
+      model.field1862 = new int[this.triangleFaceCount];
       if(this.field1738 > 0 && this.textureCoords != null) {
-         int[] var9 = new int[this.field1738];
+         final int[] var9 = new int[this.field1738];
 
          int var10;
          for(var10 = 0; var10 < this.triangleFaceCount; ++var10) {
@@ -1421,197 +1421,196 @@ public class ModelData extends Renderable {
             }
          }
 
-         var8.field1866 = 0;
+         model.field1866 = 0;
 
          for(var10 = 0; var10 < this.field1738; ++var10) {
             if(var9[var10] > 0 && this.textureRenderTypes[var10] == 0) {
-               ++var8.field1866;
+               ++model.field1866;
             }
          }
 
-         var8.field1869 = new int[var8.field1866];
-         var8.field1868 = new int[var8.field1866];
-         var8.field1871 = new int[var8.field1866];
+         model.field1869 = new int[model.field1866];
+         model.field1868 = new int[model.field1866];
+         model.field1871 = new int[model.field1866];
          var10 = 0;
 
-         int var11;
-         for(var11 = 0; var11 < this.field1738; ++var11) {
+         for(int var11 = 0; var11 < this.field1738; ++var11) {
             if(var9[var11] > 0 && this.textureRenderTypes[var11] == 0) {
-               var8.field1869[var10] = this.texTriangleX[var11] & '\uffff';
-               var8.field1868[var10] = this.texTriangleY[var11] & '\uffff';
-               var8.field1871[var10] = this.texTriangleZ[var11] & '\uffff';
+               model.field1869[var10] = this.texTriangleX[var11] & '\uffff';
+               model.field1868[var10] = this.texTriangleY[var11] & '\uffff';
+               model.field1871[var10] = this.texTriangleZ[var11] & '\uffff';
                var9[var11] = var10++;
             } else {
                var9[var11] = -1;
             }
          }
 
-         var8.field1865 = new byte[this.triangleFaceCount];
+         model.field1865 = new byte[this.triangleFaceCount];
 
-         for(var11 = 0; var11 < this.triangleFaceCount; ++var11) {
+         for(int var11 = 0; var11 < this.triangleFaceCount; ++var11) {
             if(this.textureCoords[var11] != -1) {
-               var8.field1865[var11] = (byte)var9[this.textureCoords[var11] & 255];
+               model.field1865[var11] = (byte)var9[this.textureCoords[var11] & 255];
             } else {
-               var8.field1865[var11] = -1;
+               model.field1865[var11] = -1;
             }
          }
       }
 
-      for(int var16 = 0; var16 < this.triangleFaceCount; ++var16) {
-         byte var17;
-         if(this.faceRenderType == null) {
-            var17 = 0;
+      for(int faceIdx = 0; faceIdx < this.triangleFaceCount; ++faceIdx) {
+         byte faceRenderType;
+         if(this.faceRenderTypes == null) {
+            faceRenderType = 0;
          } else {
-            var17 = this.faceRenderType[var16];
+            faceRenderType = this.faceRenderTypes[faceIdx];
          }
 
-         byte var18;
+         final byte faceAlpha;
          if(this.faceAlphas == null) {
-            var18 = 0;
+            faceAlpha = 0;
          } else {
-            var18 = this.faceAlphas[var16];
+            faceAlpha = this.faceAlphas[faceIdx];
          }
 
-         short var12;
+         final short faceTexture;
          if(this.faceTextures == null) {
-            var12 = -1;
+            faceTexture = -1;
          } else {
-            var12 = this.faceTextures[var16];
+            faceTexture = this.faceTextures[faceIdx];
          }
 
-         if(var18 == -2) {
-            var17 = 3;
+         if(faceAlpha == -2) {
+            faceRenderType = 3;
          }
 
-         if(var18 == -1) {
-            var17 = 2;
+         if(faceAlpha == -1) {
+            faceRenderType = 2;
          }
 
-         VertexNormal var13;
+         VertexNormal vertexNormal;
          int var14;
-         FaceNormal var19;
-         if(var12 == -1) {
-            if(var17 != 0) {
-               if(var17 == 1) {
-                  var19 = this.faceNormals[var16];
-                  var14 = (var4 * var19.y + var5 * var19.z + var3 * var19.x) / (var7 / 2 + var7) + var1;
-                  var8.field1852[var16] = method2630(this.faceColor[var16] & '\uffff', var14);
-                  var8.field1862[var16] = -1;
-               } else if(var17 == 3) {
-                  var8.field1852[var16] = 128;
-                  var8.field1862[var16] = -1;
+         final FaceNormal faceNormal;
+         if(faceTexture == -1) {
+            if(faceRenderType != 0) {
+               if(faceRenderType == 1) {
+                  faceNormal = this.faceNormals[faceIdx];
+                  var14 = (var4 * faceNormal.y + var5 * faceNormal.z + var3 * faceNormal.x) / (var7 / 2 + var7) + var1;
+                  model.field1852[faceIdx] = method2630(this.faceColor[faceIdx] & '\uffff', var14);
+                  model.field1862[faceIdx] = -1;
+               } else if(faceRenderType == 3) {
+                  model.field1852[faceIdx] = 128;
+                  model.field1862[faceIdx] = -1;
                } else {
-                  var8.field1862[var16] = -2;
+                  model.field1862[faceIdx] = -2;
                }
             } else {
-               int var15 = this.faceColor[var16] & '\uffff';
-               if(this.field1756 != null && this.field1756[this.trianglePointsX[var16]] != null) {
-                  var13 = this.field1756[this.trianglePointsX[var16]];
+               final int var15 = this.faceColor[faceIdx] & '\uffff';
+               if(this.field1756 != null && this.field1756[this.trianglePointsX[faceIdx]] != null) {
+                  vertexNormal = this.field1756[this.trianglePointsX[faceIdx]];
                } else {
-                  var13 = this.normals[this.trianglePointsX[var16]];
+                  vertexNormal = this.normals[this.trianglePointsX[faceIdx]];
                }
 
-               var14 = (var4 * var13.y + var5 * var13.z + var3 * var13.x) / (var7 * var13.magnitude) + var1;
-               var8.field1852[var16] = method2630(var15, var14);
-               if(this.field1756 != null && this.field1756[this.trianglePointsY[var16]] != null) {
-                  var13 = this.field1756[this.trianglePointsY[var16]];
+               var14 = (var4 * vertexNormal.y + var5 * vertexNormal.z + var3 * vertexNormal.x) / (var7 * vertexNormal.magnitude) + var1;
+               model.field1852[faceIdx] = method2630(var15, var14);
+               if(this.field1756 != null && this.field1756[this.trianglePointsY[faceIdx]] != null) {
+                  vertexNormal = this.field1756[this.trianglePointsY[faceIdx]];
                } else {
-                  var13 = this.normals[this.trianglePointsY[var16]];
+                  vertexNormal = this.normals[this.trianglePointsY[faceIdx]];
                }
 
-               var14 = (var4 * var13.y + var5 * var13.z + var3 * var13.x) / (var7 * var13.magnitude) + var1;
-               var8.field1861[var16] = method2630(var15, var14);
-               if(this.field1756 != null && this.field1756[this.trianglePointsZ[var16]] != null) {
-                  var13 = this.field1756[this.trianglePointsZ[var16]];
+               var14 = (var4 * vertexNormal.y + var5 * vertexNormal.z + var3 * vertexNormal.x) / (var7 * vertexNormal.magnitude) + var1;
+               model.field1861[faceIdx] = method2630(var15, var14);
+               if(this.field1756 != null && this.field1756[this.trianglePointsZ[faceIdx]] != null) {
+                  vertexNormal = this.field1756[this.trianglePointsZ[faceIdx]];
                } else {
-                  var13 = this.normals[this.trianglePointsZ[var16]];
+                  vertexNormal = this.normals[this.trianglePointsZ[faceIdx]];
                }
 
-               var14 = (var4 * var13.y + var5 * var13.z + var3 * var13.x) / (var7 * var13.magnitude) + var1;
-               var8.field1862[var16] = method2630(var15, var14);
+               var14 = (var4 * vertexNormal.y + var5 * vertexNormal.z + var3 * vertexNormal.x) / (var7 * vertexNormal.magnitude) + var1;
+               model.field1862[faceIdx] = method2630(var15, var14);
             }
-         } else if(var17 != 0) {
-            if(var17 == 1) {
-               var19 = this.faceNormals[var16];
-               var14 = (var4 * var19.y + var5 * var19.z + var3 * var19.x) / (var7 / 2 + var7) + var1;
-               var8.field1852[var16] = method2622(var14);
-               var8.field1862[var16] = -1;
+         } else if(faceRenderType != 0) {
+            if(faceRenderType == 1) {
+               faceNormal = this.faceNormals[faceIdx];
+               var14 = (var4 * faceNormal.y + var5 * faceNormal.z + var3 * faceNormal.x) / (var7 / 2 + var7) + var1;
+               model.field1852[faceIdx] = method2622(var14);
+               model.field1862[faceIdx] = -1;
             } else {
-               var8.field1862[var16] = -2;
+               model.field1862[faceIdx] = -2;
             }
          } else {
-            if(this.field1756 != null && this.field1756[this.trianglePointsX[var16]] != null) {
-               var13 = this.field1756[this.trianglePointsX[var16]];
+            if(this.field1756 != null && this.field1756[this.trianglePointsX[faceIdx]] != null) {
+               vertexNormal = this.field1756[this.trianglePointsX[faceIdx]];
             } else {
-               var13 = this.normals[this.trianglePointsX[var16]];
+               vertexNormal = this.normals[this.trianglePointsX[faceIdx]];
             }
 
-            var14 = (var4 * var13.y + var5 * var13.z + var3 * var13.x) / (var7 * var13.magnitude) + var1;
-            var8.field1852[var16] = method2622(var14);
-            if(this.field1756 != null && this.field1756[this.trianglePointsY[var16]] != null) {
-               var13 = this.field1756[this.trianglePointsY[var16]];
+            var14 = (var4 * vertexNormal.y + var5 * vertexNormal.z + var3 * vertexNormal.x) / (var7 * vertexNormal.magnitude) + var1;
+            model.field1852[faceIdx] = method2622(var14);
+            if(this.field1756 != null && this.field1756[this.trianglePointsY[faceIdx]] != null) {
+               vertexNormal = this.field1756[this.trianglePointsY[faceIdx]];
             } else {
-               var13 = this.normals[this.trianglePointsY[var16]];
+               vertexNormal = this.normals[this.trianglePointsY[faceIdx]];
             }
 
-            var14 = (var4 * var13.y + var5 * var13.z + var3 * var13.x) / (var7 * var13.magnitude) + var1;
-            var8.field1861[var16] = method2622(var14);
-            if(this.field1756 != null && this.field1756[this.trianglePointsZ[var16]] != null) {
-               var13 = this.field1756[this.trianglePointsZ[var16]];
+            var14 = (var4 * vertexNormal.y + var5 * vertexNormal.z + var3 * vertexNormal.x) / (var7 * vertexNormal.magnitude) + var1;
+            model.field1861[faceIdx] = method2622(var14);
+            if(this.field1756 != null && this.field1756[this.trianglePointsZ[faceIdx]] != null) {
+               vertexNormal = this.field1756[this.trianglePointsZ[faceIdx]];
             } else {
-               var13 = this.normals[this.trianglePointsZ[var16]];
+               vertexNormal = this.normals[this.trianglePointsZ[faceIdx]];
             }
 
-            var14 = (var4 * var13.y + var5 * var13.z + var3 * var13.x) / (var7 * var13.magnitude) + var1;
-            var8.field1862[var16] = method2622(var14);
+            var14 = (var4 * vertexNormal.y + var5 * vertexNormal.z + var3 * vertexNormal.x) / (var7 * vertexNormal.magnitude) + var1;
+            model.field1862[faceIdx] = method2622(var14);
          }
       }
 
       this.computeAnimationTables();
-      var8.verticesCount = this.vertexCount;
-      var8.verticesX = this.vertexX;
-      var8.verticesY = this.vertexY;
-      var8.verticesZ = this.vertexZ;
-      var8.indicesCount = this.triangleFaceCount;
-      var8.indices1 = this.trianglePointsX;
-      var8.indices2 = this.trianglePointsY;
-      var8.indices3 = this.trianglePointsZ;
-      var8.field1863 = this.faceRenderPriorities;
-      var8.field1864 = this.faceAlphas;
-      var8.field1867 = this.priority;
-      var8.vertexGroups = this.field1752;
-      var8.field1890 = this.field1758;
-      var8.field1851 = this.faceTextures;
-      return var8;
+      model.verticesCount = this.vertexCount;
+      model.verticesX = this.vertexX;
+      model.verticesY = this.vertexY;
+      model.verticesZ = this.vertexZ;
+      model.indicesCount = this.triangleFaceCount;
+      model.indices1 = this.trianglePointsX;
+      model.indices2 = this.trianglePointsY;
+      model.indices3 = this.trianglePointsZ;
+      model.faceRenderPriorities = this.faceRenderPriorities;
+      model.faceAplhas = this.faceAlphas;
+      model.priority = this.priority;
+      model.vertexGroups = this.vertexGroups;
+      model.field1890 = this.field1758;
+      model.faceTextures = this.faceTextures;
+      return model;
    }
 
-   public static ModelData method2645(IndexDataBase var0, int var1, int var2) {
-      byte[] var3 = var0.getConfigData(var1, var2);
+   public static ModelData method2645(final IndexDataBase var0, final int var1, final int var2) {
+      final byte[] var3 = var0.getConfigData(var1, var2);
       return var3 == null?null:new ModelData(var3);
    }
 
-   static void method2608(ModelData var0, ModelData var1, int var2, int var3, int var4, boolean var5) {
+   static void method2608(final ModelData var0, final ModelData var1, final int var2, final int var3, final int var4, final boolean var5) {
       var0.method2641();
       var0.computeNormals();
       var1.method2641();
       var1.computeNormals();
       ++field1724;
       int var6 = 0;
-      int[] var7 = var1.vertexX;
-      int var8 = var1.vertexCount;
+      final int[] var7 = var1.vertexX;
+      final int var8 = var1.vertexCount;
 
       int var9;
       for(var9 = 0; var9 < var0.vertexCount; ++var9) {
-         VertexNormal var10 = var0.normals[var9];
+         final VertexNormal var10 = var0.normals[var9];
          if(var10.magnitude != 0) {
-            int var11 = var0.vertexY[var9] - var3;
+            final int var11 = var0.vertexY[var9] - var3;
             if(var11 <= var1.field1760) {
-               int var12 = var0.vertexX[var9] - var2;
+               final int var12 = var0.vertexX[var9] - var2;
                if(var12 >= var1.field1761 && var12 <= var1.field1762) {
-                  int var13 = var0.vertexZ[var9] - var4;
+                  final int var13 = var0.vertexZ[var9] - var4;
                   if(var13 >= var1.field1764 && var13 <= var1.field1763) {
                      for(int var14 = 0; var14 < var8; ++var14) {
-                        VertexNormal var15 = var1.normals[var14];
+                        final VertexNormal var15 = var1.normals[var14];
                         if(var12 == var7[var14] && var13 == var1.vertexZ[var14] && var11 == var1.vertexY[var14] && var15.magnitude != 0) {
                            if(var0.field1756 == null) {
                               var0.field1756 = new VertexNormal[var0.vertexCount];
@@ -1653,28 +1652,28 @@ public class ModelData extends Renderable {
       if(var6 >= 3 && var5) {
          for(var9 = 0; var9 < var0.triangleFaceCount; ++var9) {
             if(field1765[var0.trianglePointsX[var9]] == field1724 && field1765[var0.trianglePointsY[var9]] == field1724 && field1765[var0.trianglePointsZ[var9]] == field1724) {
-               if(var0.faceRenderType == null) {
-                  var0.faceRenderType = new byte[var0.triangleFaceCount];
+               if(var0.faceRenderTypes == null) {
+                  var0.faceRenderTypes = new byte[var0.triangleFaceCount];
                }
 
-               var0.faceRenderType[var9] = 2;
+               var0.faceRenderTypes[var9] = 2;
             }
          }
 
          for(var9 = 0; var9 < var1.triangleFaceCount; ++var9) {
             if(field1724 == field1753[var1.trianglePointsX[var9]] && field1724 == field1753[var1.trianglePointsY[var9]] && field1724 == field1753[var1.trianglePointsZ[var9]]) {
-               if(var1.faceRenderType == null) {
-                  var1.faceRenderType = new byte[var1.triangleFaceCount];
+               if(var1.faceRenderTypes == null) {
+                  var1.faceRenderTypes = new byte[var1.triangleFaceCount];
                }
 
-               var1.faceRenderType[var9] = 2;
+               var1.faceRenderTypes[var9] = 2;
             }
          }
 
       }
    }
 
-   static final int method2630(int var0, int var1) {
+   private static int method2630(final int var0, int var1) {
       var1 = (var0 & 127) * var1 >> 7;
       if(var1 < 2) {
          var1 = 2;
@@ -1685,7 +1684,7 @@ public class ModelData extends Renderable {
       return (var0 & 65408) + var1;
    }
 
-   static final int method2622(int var0) {
+   private static int method2622(int var0) {
       if(var0 < 2) {
          var0 = 2;
       } else if(var0 > 126) {

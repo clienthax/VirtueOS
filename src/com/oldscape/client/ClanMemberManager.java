@@ -1,15 +1,15 @@
 package com.oldscape.client;
 
-public class ClanMemberManager extends NameableContainer {
-   final JagexLoginType field3866;
-   final class302 field3867;
+class ClanMemberManager extends NameableContainer {
+   private final JagexLoginType field3866;
+   private final class302 field3867;
    public String field3870;
    public String field3869;
    public byte field3865;
    public int field3871;
-   int field3872;
+   private int field3872;
 
-   public ClanMemberManager(JagexLoginType var1, class302 var2) {
+   public ClanMemberManager(final JagexLoginType var1, final class302 var2) {
       super(100);
       this.field3870 = null;
       this.field3869 = null;
@@ -22,23 +22,23 @@ public class ClanMemberManager extends NameableContainer {
       return new ClanMember();
    }
 
-   Nameable[] vmethod5462(int var1) {
+   Nameable[] vmethod5462(final int var1) {
       return new ClanMember[var1];
    }
 
-   final void method5481(String var1) {
+   private void method5481(final String var1) {
       this.field3870 = class290.method5208(var1);
    }
 
-   final void method5457(String var1) {
+   private void method5457(final String var1) {
       this.field3869 = class290.method5208(var1);
    }
 
-   public final void method5469(Buffer var1) {
+   public final void method5469(final Buffer var1) {
       this.method5457(var1.readString());
-      long var2 = var1.readLong();
+      final long var2 = var1.readLong();
       long var5 = var2;
-      String var4;
+      final String var4;
       int var7;
       if(var2 > 0L && var2 < 6582952005840035281L) {
          if(var2 % 37L == 0L) {
@@ -50,10 +50,10 @@ public class ClanMemberManager extends NameableContainer {
                ++var7;
             }
 
-            StringBuilder var15 = new StringBuilder(var7);
+            final StringBuilder var15 = new StringBuilder(var7);
 
             while(var5 != 0L) {
-               long var11 = var5;
+               final long var11 = var5;
                var5 /= 37L;
                var15.append(class316.field3924[(int)(var11 - var5 * 37L)]);
             }
@@ -71,8 +71,8 @@ public class ClanMemberManager extends NameableContainer {
          this.method5302();
 
          for(int var8 = 0; var8 < var7; ++var8) {
-            ClanMember var9 = (ClanMember)this.method5312(new Name(var1.readString(), this.field3866));
-            int var10 = var1.readUnsignedShort();
+            final ClanMember var9 = (ClanMember)this.method5312(new Name(var1.readString(), this.field3866));
+            final int var10 = var1.readUnsignedShort();
             var9.method5389(var10, ++this.field3872 - 1);
             var9.rank = var1.readByte();
             var1.readString();
@@ -82,10 +82,10 @@ public class ClanMemberManager extends NameableContainer {
       }
    }
 
-   public final void method5459(Buffer var1) {
-      Name var2 = new Name(var1.readString(), this.field3866);
-      int var3 = var1.readUnsignedShort();
-      byte var4 = var1.readByte();
+   public final void method5459(final Buffer var1) {
+      final Name var2 = new Name(var1.readString(), this.field3866);
+      final int var3 = var1.readUnsignedShort();
+      final byte var4 = var1.readByte();
       boolean var5 = false;
       if(var4 == -128) {
          var5 = true;
@@ -133,8 +133,8 @@ public class ClanMemberManager extends NameableContainer {
 
    }
 
-   final void method5470(ClanMember var1) {
-      if(var1.method5271().equals(this.field3867.vmethod5404())) {
+   private void method5470(final ClanMember var1) {
+      if(var1.getCurrentName().equals(this.field3867.vmethod5404())) {
          this.field3871 = var1.rank;
       }
 

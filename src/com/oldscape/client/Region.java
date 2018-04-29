@@ -1,63 +1,63 @@
 package com.oldscape.client;
 
-public class Region {
+class Region {
    public static boolean regionLowMemory;
-   static int tileUpdateCount;
-   static int Scene_plane;
-   static int cycle;
-   static int minTileX;
-   static int maxTileX;
-   static int minTileZ;
-   static int maxTileZ;
-   static int screenCenterX;
-   static int screenCenterZ;
-   static int cameraX2;
-   static int cameraY2;
-   static int cameraZ2;
+   private static int tileUpdateCount;
+   private static int Scene_plane;
+   private static int cycle;
+   private static int minTileX;
+   private static int maxTileX;
+   private static int minTileZ;
+   private static int maxTileZ;
+   private static int screenCenterX;
+   private static int screenCenterZ;
+   private static int cameraX2;
+   private static int cameraY2;
+   private static int cameraZ2;
    static int pitchSin;
    static int pitchCos;
    static int yawSin;
    static int yawCos;
-   static GameObject[] entityBuffer;
-   static boolean checkClick;
-   static int field2013;
-   static int mouseX2;
-   static int mouseY2;
+   private static final GameObject[] entityBuffer;
+   private static boolean checkClick;
+   private static int field2013;
+   private static int mouseX2;
+   private static int mouseY2;
    public static int selectedRegionTileX;
    public static int selectedRegionTileY;
-   static boolean viewportWalking;
-   static int MAX_OCCLUDER_LEVELS;
-   static int[] levelOccluderCount;
-   static Occluder[][] levelOccluders;
-   static int field1981;
-   static Occluder[] field2025;
-   static Deque tileDeque;
-   static final int[] field2027;
-   static final int[] field2040;
-   static final int[] TILE_WALL_DRAW_FLAGS_1;
-   static final int[] WALL_UNCULL_FLAGS_0;
-   static final int[] WALL_UNCULL_FLAGS_1;
-   static final int[] WALL_UNCULL_FLAGS_2;
-   static final int[] WALL_UNCULL_FLAGS_3;
-   static boolean[][][][] visibilityMaps;
-   static boolean[][] renderArea;
-   static int field1996;
-   static int field2039;
-   static int field2042;
-   static int field2041;
-   static int field1999;
-   static int field2043;
-   int maxY;
-   int maxX;
-   int maxZ;
-   int[][][] tileHeights;
-   Tile[][][] tiles;
-   int minLevel;
-   int entityCount;
-   GameObject[] objects;
-   int[][][] tileCycles;
-   int[][] TILE_MASK_2D;
-   int[][] TILE_ROTATION_2D;
+   private static boolean viewportWalking;
+   private static final int MAX_OCCLUDER_LEVELS;
+   private static final int[] levelOccluderCount;
+   private static final Occluder[][] levelOccluders;
+   private static int field1981;
+   private static final Occluder[] field2025;
+   private static final Deque tileDeque;
+   private static final int[] field2027;
+   private static final int[] field2040;
+   private static final int[] TILE_WALL_DRAW_FLAGS_1;
+   private static final int[] WALL_UNCULL_FLAGS_0;
+   private static final int[] WALL_UNCULL_FLAGS_1;
+   private static final int[] WALL_UNCULL_FLAGS_2;
+   private static final int[] WALL_UNCULL_FLAGS_3;
+   private static final boolean[][][][] visibilityMaps;
+   private static boolean[][] renderArea;
+   private static int field1996;
+   private static int field2039;
+   private static int field2042;
+   private static int field2041;
+   private static int field1999;
+   private static int field2043;
+   private int maxY;
+   private int maxX;
+   private int maxZ;
+   private int[][][] tileHeights;
+   private Tile[][][] tiles;
+   private int minLevel;
+   private int entityCount;
+   private GameObject[] objects;
+   private int[][][] tileCycles;
+   private int[][] TILE_MASK_2D;
+   private int[][] TILE_ROTATION_2D;
 
    static {
       regionLowMemory = true;
@@ -87,7 +87,7 @@ public class Region {
       visibilityMaps = new boolean[8][32][51][51];
    }
 
-   public Region(int var1, int var2, int var3, int[][][] var4) {
+   public Region(final int var1, final int var2, final int var3, final int[][][] var4) {
       this.minLevel = 0;
       this.entityCount = 0;
       this.objects = new GameObject[5000];
@@ -133,7 +133,7 @@ public class Region {
 
    }
 
-   public void setup(int var1) {
+   public void setup(final int var1) {
       this.minLevel = var1;
 
       for(int var2 = 0; var2 < this.maxX; ++var2) {
@@ -146,16 +146,16 @@ public class Region {
 
    }
 
-   public void setBridge(int var1, int var2) {
-      Tile var3 = this.tiles[0][var1][var2];
+   public void setBridge(final int var1, final int var2) {
+      final Tile var3 = this.tiles[0][var1][var2];
 
       for(int var4 = 0; var4 < 3; ++var4) {
-         Tile var5 = this.tiles[var4][var1][var2] = this.tiles[var4 + 1][var1][var2];
+         final Tile var5 = this.tiles[var4][var1][var2] = this.tiles[var4 + 1][var1][var2];
          if(var5 != null) {
             --var5.plane;
 
             for(int var6 = 0; var6 < var5.entityCount; ++var6) {
-               GameObject var7 = var5.objects[var6];
+               final GameObject var7 = var5.objects[var6];
                if((var7.hash >> 29 & 3) == 2 && var7.relativeX == var1 && var2 == var7.relativeY) {
                   --var7.plane;
                }
@@ -171,15 +171,15 @@ public class Region {
       this.tiles[3][var1][var2] = null;
    }
 
-   public void setPhysicalLevel(int var1, int var2, int var3, int var4) {
-      Tile var5 = this.tiles[var1][var2][var3];
+   public void setPhysicalLevel(final int var1, final int var2, final int var3, final int var4) {
+      final Tile var5 = this.tiles[var1][var2][var3];
       if(var5 != null) {
          this.tiles[var1][var2][var3].physicalLevel = var4;
       }
    }
 
-   public void addTile(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20) {
-      SceneTilePaint var21;
+   public void addTile(final int var1, final int var2, final int var3, final int var4, final int var5, final int var6, final int var7, final int var8, final int var9, final int var10, final int var11, final int var12, final int var13, final int var14, final int var15, final int var16, final int var17, final int var18, final int var19, final int var20) {
+      final SceneTilePaint var21;
       int var22;
       if(var4 == 0) {
          var21 = new SceneTilePaint(var11, var12, var13, var14, -1, var19, false);
@@ -192,7 +192,7 @@ public class Region {
 
          this.tiles[var1][var2][var3].paint = var21;
       } else if(var4 != 1) {
-         SceneTileModel var23 = new SceneTileModel(var4, var5, var6, var2, var3, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16, var17, var18, var19, var20);
+         final SceneTileModel var23 = new SceneTileModel(var4, var5, var6, var2, var3, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16, var17, var18, var19, var20);
 
          for(var22 = var1; var22 >= 0; --var22) {
             if(this.tiles[var22][var2][var3] == null) {
@@ -214,9 +214,9 @@ public class Region {
       }
    }
 
-   public void groundObjectSpawned(int var1, int var2, int var3, int var4, Renderable var5, int var6, int var7) {
+   public void groundObjectSpawned(final int var1, final int var2, final int var3, final int var4, final Renderable var5, final int var6, final int var7) {
       if(var5 != null) {
-         GroundObject var8 = new GroundObject();
+         final GroundObject var8 = new GroundObject();
          var8.renderable = var5;
          var8.x = var2 * 128 + 64;
          var8.y = var3 * 128 + 64;
@@ -231,8 +231,8 @@ public class Region {
       }
    }
 
-   public void addItemPile(int var1, int var2, int var3, int var4, Renderable var5, int var6, Renderable var7, Renderable var8) {
-      ItemLayer var9 = new ItemLayer();
+   public void addItemPile(final int var1, final int var2, final int var3, final int var4, final Renderable var5, final int var6, final Renderable var7, final Renderable var8) {
+      final ItemLayer var9 = new ItemLayer();
       var9.bottom = var5;
       var9.x = var2 * 128 + 64;
       var9.y = var3 * 128 + 64;
@@ -241,11 +241,11 @@ public class Region {
       var9.middle = var7;
       var9.top = var8;
       int var10 = 0;
-      Tile var11 = this.tiles[var1][var2][var3];
+      final Tile var11 = this.tiles[var1][var2][var3];
       if(var11 != null) {
          for(int var12 = 0; var12 < var11.entityCount; ++var12) {
             if((var11.objects[var12].flags & 256) == 256 && var11.objects[var12].renderable instanceof Model) {
-               Model var13 = (Model)var11.objects[var12].renderable;
+               final Model var13 = (Model)var11.objects[var12].renderable;
                var13.calculateBoundsCylinder();
                if(var13.modelHeight > var10) {
                   var10 = var13.modelHeight;
@@ -262,9 +262,9 @@ public class Region {
       this.tiles[var1][var2][var3].itemLayer = var9;
    }
 
-   public void addBoundary(int var1, int var2, int var3, int var4, Renderable var5, Renderable var6, int var7, int var8, int var9, int var10) {
+   public void addBoundary(final int var1, final int var2, final int var3, final int var4, final Renderable var5, final Renderable var6, final int var7, final int var8, final int var9, final int var10) {
       if(var5 != null || var6 != null) {
-         WallObject var11 = new WallObject();
+         final WallObject var11 = new WallObject();
          var11.hash = var9;
          var11.config = var10;
          var11.x = var2 * 128 + 64;
@@ -285,9 +285,9 @@ public class Region {
       }
    }
 
-   public void addBoundaryDecoration(int var1, int var2, int var3, int var4, Renderable var5, Renderable var6, int var7, int var8, int var9, int var10, int var11, int var12) {
+   public void addBoundaryDecoration(final int var1, final int var2, final int var3, final int var4, final Renderable var5, final Renderable var6, final int var7, final int var8, final int var9, final int var10, final int var11, final int var12) {
       if(var5 != null) {
-         DecorativeObject var13 = new DecorativeObject();
+         final DecorativeObject var13 = new DecorativeObject();
          var13.hash = var11;
          var13.renderInfoBitPacked = var12;
          var13.x = var2 * 128 + 64;
@@ -310,17 +310,17 @@ public class Region {
       }
    }
 
-   public boolean method2862(int var1, int var2, int var3, int var4, int var5, int var6, Renderable var7, int var8, int var9, int var10) {
+   public boolean method2862(final int var1, final int var2, final int var3, final int var4, final int var5, final int var6, final Renderable var7, final int var8, final int var9, final int var10) {
       if(var7 == null) {
          return true;
       } else {
-         int var11 = var5 * 64 + var2 * 128;
-         int var12 = var6 * 64 + var3 * 128;
+         final int var11 = var5 * 64 + var2 * 128;
+         final int var12 = var6 * 64 + var3 * 128;
          return this.addEntityMarker(var1, var2, var3, var5, var6, var11, var12, var4, var7, var8, false, var9, var10);
       }
    }
 
-   public boolean method2863(int var1, int var2, int var3, int var4, int var5, Renderable var6, int var7, int var8, boolean var9) {
+   public boolean method2863(final int var1, final int var2, final int var3, final int var4, final int var5, final Renderable var6, final int var7, final int var8, final boolean var9) {
       if(var6 == null) {
          return true;
       } else {
@@ -354,11 +354,11 @@ public class Region {
       }
    }
 
-   public boolean method2871(int var1, int var2, int var3, int var4, int var5, Renderable var6, int var7, int var8, int var9, int var10, int var11, int var12) {
-      return var6 == null?true:this.addEntityMarker(var1, var9, var10, var11 - var9 + 1, var12 - var10 + 1, var2, var3, var4, var6, var7, true, var8, 0);
+   public boolean method2871(final int var1, final int var2, final int var3, final int var4, final Renderable var6, final int var7, final int var8, final int var9, final int var10, final int var11, final int var12) {
+      return var6 == null || this.addEntityMarker(var1, var9, var10, var11 - var9 + 1, var12 - var10 + 1, var2, var3, var4, var6, var7, true, var8, 0);
    }
 
-   boolean addEntityMarker(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, Renderable var9, int var10, boolean var11, int var12, int var13) {
+   private boolean addEntityMarker(final int var1, final int var2, final int var3, final int var4, final int var5, final int var6, final int var7, final int var8, final Renderable var9, final int var10, final boolean var11, final int var12, final int var13) {
       int var15;
       for(int var14 = var2; var14 < var2 + var4; ++var14) {
          for(var15 = var3; var15 < var3 + var5; ++var15) {
@@ -366,14 +366,14 @@ public class Region {
                return false;
             }
 
-            Tile var21 = this.tiles[var1][var14][var15];
+            final Tile var21 = this.tiles[var1][var14][var15];
             if(var21 != null && var21.entityCount >= 5) {
                return false;
             }
          }
       }
 
-      GameObject var20 = new GameObject();
+      final GameObject var20 = new GameObject();
       var20.hash = var12;
       var20.flags = var13;
       var20.plane = var1;
@@ -412,7 +412,7 @@ public class Region {
                }
             }
 
-            Tile var22 = this.tiles[var1][var15][var16];
+            final Tile var22 = this.tiles[var1][var15][var16];
             var22.objects[var22.entityCount] = var20;
             var22.entityFlags[var22.entityCount] = var17;
             var22.flags |= var17;
@@ -429,7 +429,7 @@ public class Region {
 
    public void clearEntities() {
       for(int var1 = 0; var1 < this.entityCount; ++var1) {
-         GameObject var2 = this.objects[var1];
+         final GameObject var2 = this.objects[var1];
          this.removeEntity(var2);
          this.objects[var1] = null;
       }
@@ -437,10 +437,10 @@ public class Region {
       this.entityCount = 0;
    }
 
-   void removeEntity(GameObject var1) {
+   private void removeEntity(final GameObject var1) {
       for(int var2 = var1.relativeX; var2 <= var1.offsetX; ++var2) {
          for(int var3 = var1.relativeY; var3 <= var1.offsetY; ++var3) {
-            Tile var4 = this.tiles[var1.plane][var2][var3];
+            final Tile var4 = this.tiles[var1.plane][var2][var3];
             if(var4 != null) {
                int var5;
                for(var5 = 0; var5 < var4.entityCount; ++var5) {
@@ -468,10 +468,10 @@ public class Region {
 
    }
 
-   public void method2868(int var1, int var2, int var3, int var4) {
-      Tile var5 = this.tiles[var1][var2][var3];
+   public void method2868(final int var1, final int var2, final int var3, final int var4) {
+      final Tile var5 = this.tiles[var1][var2][var3];
       if(var5 != null) {
-         DecorativeObject var6 = var5.decorativeObject;
+         final DecorativeObject var6 = var5.decorativeObject;
          if(var6 != null) {
             var6.offsetX = var4 * var6.offsetX / 16;
             var6.offsetY = var4 * var6.offsetY / 16;
@@ -479,25 +479,25 @@ public class Region {
       }
    }
 
-   public void removeBoundaryObject(int var1, int var2, int var3) {
-      Tile var4 = this.tiles[var1][var2][var3];
+   public void removeBoundaryObject(final int var1, final int var2, final int var3) {
+      final Tile var4 = this.tiles[var1][var2][var3];
       if(var4 != null) {
          var4.wallObject = null;
       }
    }
 
-   public void removeWallDecoration(int var1, int var2, int var3) {
-      Tile var4 = this.tiles[var1][var2][var3];
+   public void removeWallDecoration(final int var1, final int var2, final int var3) {
+      final Tile var4 = this.tiles[var1][var2][var3];
       if(var4 != null) {
          var4.decorativeObject = null;
       }
    }
 
-   public void method3035(int var1, int var2, int var3) {
-      Tile var4 = this.tiles[var1][var2][var3];
+   public void method3035(final int var1, final int var2, final int var3) {
+      final Tile var4 = this.tiles[var1][var2][var3];
       if(var4 != null) {
          for(int var5 = 0; var5 < var4.entityCount; ++var5) {
-            GameObject var6 = var4.objects[var5];
+            final GameObject var6 = var4.objects[var5];
             if((var6.hash >> 29 & 3) == 2 && var2 == var6.relativeX && var3 == var6.relativeY) {
                this.removeEntity(var6);
                return;
@@ -507,84 +507,80 @@ public class Region {
       }
    }
 
-   public void removeFloorDecoration(int var1, int var2, int var3) {
-      Tile var4 = this.tiles[var1][var2][var3];
+   public void removeFloorDecoration(final int var1, final int var2, final int var3) {
+      final Tile var4 = this.tiles[var1][var2][var3];
       if(var4 != null) {
          var4.groundObject = null;
       }
    }
 
-   public void removeGroundItemPile(int var1, int var2, int var3) {
-      Tile var4 = this.tiles[var1][var2][var3];
+   public void removeGroundItemPile(final int var1, final int var2, final int var3) {
+      final Tile var4 = this.tiles[var1][var2][var3];
       if(var4 != null) {
          var4.itemLayer = null;
       }
    }
 
-   public WallObject method2874(int var1, int var2, int var3) {
-      Tile var4 = this.tiles[var1][var2][var3];
+   public WallObject method2874(final int var1, final int var2, final int var3) {
+      final Tile var4 = this.tiles[var1][var2][var3];
       return var4 == null?null:var4.wallObject;
    }
 
-   public DecorativeObject method2928(int var1, int var2, int var3) {
-      Tile var4 = this.tiles[var1][var2][var3];
+   public DecorativeObject method2928(final int var1, final int var2, final int var3) {
+      final Tile var4 = this.tiles[var1][var2][var3];
       return var4 == null?null:var4.decorativeObject;
    }
 
-   public GameObject method2876(int var1, int var2, int var3) {
-      Tile var4 = this.tiles[var1][var2][var3];
-      if(var4 == null) {
-         return null;
-      } else {
-         for(int var5 = 0; var5 < var4.entityCount; ++var5) {
-            GameObject var6 = var4.objects[var5];
-            if((var6.hash >> 29 & 3) == 2 && var2 == var6.relativeX && var3 == var6.relativeY) {
+   public GameObject method2876(final int var1, final int var2, final int var3) {
+      final Tile var4 = this.tiles[var1][var2][var3];
+      if (var4 != null) {
+         for (int var5 = 0; var5 < var4.entityCount; ++var5) {
+            final GameObject var6 = var4.objects[var5];
+            if ((var6.hash >> 29 & 3) == 2 && var2 == var6.relativeX && var3 == var6.relativeY) {
                return var6;
             }
          }
 
-         return null;
       }
+      return null;
    }
 
-   public GroundObject getFloorDecoration(int var1, int var2, int var3) {
-      Tile var4 = this.tiles[var1][var2][var3];
+   public GroundObject getFloorDecoration(final int var1, final int var2, final int var3) {
+      final Tile var4 = this.tiles[var1][var2][var3];
       return var4 != null && var4.groundObject != null?var4.groundObject:null;
    }
 
-   public int getWallObjectHash(int var1, int var2, int var3) {
-      Tile var4 = this.tiles[var1][var2][var3];
+   public int getWallObjectHash(final int var1, final int var2, final int var3) {
+      final Tile var4 = this.tiles[var1][var2][var3];
       return var4 != null && var4.wallObject != null?var4.wallObject.hash:0;
    }
 
-   public int method2879(int var1, int var2, int var3) {
-      Tile var4 = this.tiles[var1][var2][var3];
+   public int method2879(final int var1, final int var2, final int var3) {
+      final Tile var4 = this.tiles[var1][var2][var3];
       return var4 != null && var4.decorativeObject != null?var4.decorativeObject.hash:0;
    }
 
-   public int method2888(int var1, int var2, int var3) {
-      Tile var4 = this.tiles[var1][var2][var3];
-      if(var4 == null) {
-         return 0;
-      } else {
-         for(int var5 = 0; var5 < var4.entityCount; ++var5) {
-            GameObject var6 = var4.objects[var5];
-            if((var6.hash >> 29 & 3) == 2 && var2 == var6.relativeX && var3 == var6.relativeY) {
+   public int method2888(final int var1, final int var2, final int var3) {
+      final Tile var4 = this.tiles[var1][var2][var3];
+      if (var4 != null) {
+         for (int var5 = 0; var5 < var4.entityCount; ++var5) {
+            final GameObject var6 = var4.objects[var5];
+            if ((var6.hash >> 29 & 3) == 2 && var2 == var6.relativeX && var3 == var6.relativeY) {
                return var6.hash;
             }
          }
 
-         return 0;
       }
+      return 0;
    }
 
-   public int getGroundObjectHash(int var1, int var2, int var3) {
-      Tile var4 = this.tiles[var1][var2][var3];
+   public int getGroundObjectHash(final int var1, final int var2, final int var3) {
+      final Tile var4 = this.tiles[var1][var2][var3];
       return var4 != null && var4.groundObject != null?var4.groundObject.hash:0;
    }
 
-   public int getObjectFlags(int var1, int var2, int var3, int var4) {
-      Tile var5 = this.tiles[var1][var2][var3];
+   public int getObjectFlags(final int var1, final int var2, final int var3, final int var4) {
+      final Tile var5 = this.tiles[var1][var2][var3];
       if(var5 == null) {
          return -1;
       } else if(var5.wallObject != null && var5.wallObject.hash == var4) {
@@ -604,16 +600,16 @@ public class Region {
       }
    }
 
-   public void applyLighting(int var1, int var2, int var3) {
+   public void applyLighting(final int var1, final int var2, final int var3) {
       for(int var4 = 0; var4 < this.maxY; ++var4) {
          for(int var5 = 0; var5 < this.maxX; ++var5) {
             for(int var6 = 0; var6 < this.maxZ; ++var6) {
-               Tile var7 = this.tiles[var4][var5][var6];
+               final Tile var7 = this.tiles[var4][var5][var6];
                if(var7 != null) {
-                  WallObject var8 = var7.wallObject;
+                  final WallObject var8 = var7.wallObject;
                   ModelData var10;
                   if(var8 != null && var8.renderable1 instanceof ModelData) {
-                     ModelData var9 = (ModelData)var8.renderable1;
+                     final ModelData var9 = (ModelData)var8.renderable1;
                      this.method2894(var9, var4, var5, var6, 1, 1);
                      if(var8.renderable2 instanceof ModelData) {
                         var10 = (ModelData)var8.renderable2;
@@ -626,15 +622,15 @@ public class Region {
                   }
 
                   for(int var12 = 0; var12 < var7.entityCount; ++var12) {
-                     GameObject var14 = var7.objects[var12];
+                     final GameObject var14 = var7.objects[var12];
                      if(var14 != null && var14.renderable instanceof ModelData) {
-                        ModelData var11 = (ModelData)var14.renderable;
+                        final ModelData var11 = (ModelData)var14.renderable;
                         this.method2894(var11, var4, var5, var6, var14.offsetX - var14.relativeX + 1, var14.offsetY - var14.relativeY + 1);
                         var14.renderable = var11.light(var11.field1731, var11.contrast, var1, var2, var3);
                      }
                   }
 
-                  GroundObject var13 = var7.groundObject;
+                  final GroundObject var13 = var7.groundObject;
                   if(var13 != null && var13.renderable instanceof ModelData) {
                      var10 = (ModelData)var13.renderable;
                      this.method2966(var10, var4, var5, var6);
@@ -647,7 +643,7 @@ public class Region {
 
    }
 
-   void method2966(ModelData var1, int var2, int var3, int var4) {
+   private void method2966(final ModelData var1, final int var2, final int var3, final int var4) {
       Tile var5;
       ModelData var6;
       if(var3 < this.maxX) {
@@ -684,12 +680,12 @@ public class Region {
 
    }
 
-   void method2894(ModelData var1, int var2, int var3, int var4, int var5, int var6) {
+   private void method2894(final ModelData var1, final int var2, final int var3, final int var4, final int var5, final int var6) {
       boolean var7 = true;
       int var8 = var3;
-      int var9 = var3 + var5;
-      int var10 = var4 - 1;
-      int var11 = var4 + var6;
+      final int var9 = var3 + var5;
+      final int var10 = var4 - 1;
+      final int var11 = var4 + var6;
 
       for(int var12 = var2; var12 <= var2 + 1; ++var12) {
          if(var12 != this.maxY) {
@@ -697,10 +693,10 @@ public class Region {
                if(var13 >= 0 && var13 < this.maxX) {
                   for(int var14 = var10; var14 <= var11; ++var14) {
                      if(var14 >= 0 && var14 < this.maxZ && (!var7 || var13 >= var9 || var14 >= var11 || var14 < var4 && var3 != var13)) {
-                        Tile var15 = this.tiles[var12][var13][var14];
+                        final Tile var15 = this.tiles[var12][var13][var14];
                         if(var15 != null) {
-                           int var16 = (this.tileHeights[var12][var13 + 1][var14] + this.tileHeights[var12][var13 + 1][var14 + 1] + this.tileHeights[var12][var13][var14] + this.tileHeights[var12][var13][var14 + 1]) / 4 - (this.tileHeights[var2][var3 + 1][var4] + this.tileHeights[var2][var3][var4] + this.tileHeights[var2][var3 + 1][var4 + 1] + this.tileHeights[var2][var3][var4 + 1]) / 4;
-                           WallObject var17 = var15.wallObject;
+                           final int var16 = (this.tileHeights[var12][var13 + 1][var14] + this.tileHeights[var12][var13 + 1][var14 + 1] + this.tileHeights[var12][var13][var14] + this.tileHeights[var12][var13][var14 + 1]) / 4 - (this.tileHeights[var2][var3 + 1][var4] + this.tileHeights[var2][var3][var4] + this.tileHeights[var2][var3 + 1][var4 + 1] + this.tileHeights[var2][var3][var4 + 1]) / 4;
+                           final WallObject var17 = var15.wallObject;
                            if(var17 != null) {
                               ModelData var18;
                               if(var17.renderable1 instanceof ModelData) {
@@ -715,11 +711,11 @@ public class Region {
                            }
 
                            for(int var23 = 0; var23 < var15.entityCount; ++var23) {
-                              GameObject var19 = var15.objects[var23];
+                              final GameObject var19 = var15.objects[var23];
                               if(var19 != null && var19.renderable instanceof ModelData) {
-                                 ModelData var20 = (ModelData)var19.renderable;
-                                 int var21 = var19.offsetX - var19.relativeX + 1;
-                                 int var22 = var19.offsetY - var19.relativeY + 1;
+                                 final ModelData var20 = (ModelData)var19.renderable;
+                                 final int var21 = var19.offsetX - var19.relativeX + 1;
+                                 final int var22 = var19.offsetY - var19.relativeY + 1;
                                  ModelData.method2608(var1, var20, (var21 - var5) * 64 + (var19.relativeX - var3) * 128, var16, (var19.relativeY - var4) * 128 + (var22 - var6) * 64, var7);
                               }
                            }
@@ -736,13 +732,13 @@ public class Region {
 
    }
 
-   public void drawTile(int[] var1, int var2, int var3, int var4, int var5, int var6) {
-      Tile var7 = this.tiles[var4][var5][var6];
+   public void drawTile(final int[] var1, int var2, final int var3, final int var4, final int var5, final int var6) {
+      final Tile var7 = this.tiles[var4][var5][var6];
       if(var7 != null) {
-         SceneTilePaint var8 = var7.paint;
+         final SceneTilePaint var8 = var7.paint;
          int var10;
          if(var8 != null) {
-            int var9 = var8.rgb;
+            final int var9 = var8.rgb;
             if(var9 != 0) {
                for(var10 = 0; var10 < 4; ++var10) {
                   var1[var2] = var9;
@@ -754,14 +750,14 @@ public class Region {
 
             }
          } else {
-            SceneTileModel var18 = var7.overlay;
+            final SceneTileModel var18 = var7.overlay;
             if(var18 != null) {
                var10 = var18.shape;
-               int var11 = var18.rotation;
-               int var12 = var18.underlay;
-               int var13 = var18.overlay;
-               int[] var14 = this.TILE_MASK_2D[var10];
-               int[] var15 = this.TILE_ROTATION_2D[var11];
+               final int var11 = var18.rotation;
+               final int var12 = var18.underlay;
+               final int var13 = var18.overlay;
+               final int[] var14 = this.TILE_MASK_2D[var10];
+               final int[] var15 = this.TILE_ROTATION_2D[var11];
                int var16 = 0;
                int var17;
                if(var12 != 0) {
@@ -799,7 +795,7 @@ public class Region {
       }
    }
 
-   public void method2889(int var1, int var2, int var3, boolean var4) {
+   public void method2889(final int var1, final int var2, final int var3, final boolean var4) {
       if(!method2906() || var4) {
          checkClick = true;
          viewportWalking = var4;
@@ -815,7 +811,7 @@ public class Region {
       viewportWalking = true;
    }
 
-   public void drawRegion(int var1, int var2, int var3, int var4, int var5, int var6) {
+   public void drawRegion(int var1, final int var2, int var3, int var4, final int var5, final int var6) {
       if(var1 < 0) {
          var1 = 0;
       } else if(var1 >= this.maxX * 128) {
@@ -878,16 +874,12 @@ public class Region {
 
          for(var9 = minTileX; var9 < maxTileX; ++var9) {
             for(var10 = minTileZ; var10 < maxTileZ; ++var10) {
-               Tile var11 = var8[var9][var10];
+               final Tile var11 = var8[var9][var10];
                if(var11 != null) {
                   if(var11.physicalLevel <= var6 && (renderArea[var9 - screenCenterX + 25][var10 - screenCenterZ + 25] || this.tileHeights[var7][var9][var10] - var2 >= 2000)) {
                      var11.draw = true;
                      var11.visible = true;
-                     if(var11.entityCount > 0) {
-                        var11.drawEntities = true;
-                     } else {
-                        var11.drawEntities = false;
-                     }
+                     var11.drawEntities = var11.entityCount > 0;
 
                      ++tileUpdateCount;
                   } else {
@@ -1010,7 +1002,7 @@ public class Region {
       checkClick = false;
    }
 
-   void draw(Tile var1, boolean var2) {
+   private void draw(final Tile var1, boolean var2) {
       tileDeque.addFront(var1);
 
       while(true) {
@@ -1136,8 +1128,8 @@ public class Region {
 
                                  var21 = 0;
                                  var11 = 0;
-                                 WallObject var31 = var3.wallObject;
-                                 DecorativeObject var13 = var3.decorativeObject;
+                                 final WallObject var31 = var3.wallObject;
+                                 final DecorativeObject var13 = var3.decorativeObject;
                                  if(var31 != null || var13 != null) {
                                     if(var4 == screenCenterX) {
                                        ++var21;
@@ -1201,7 +1193,7 @@ public class Region {
                                           var18 = -var14;
                                        }
 
-                                       int var19;
+                                       final int var19;
                                        if(var17 != 2 && var17 != 3) {
                                           var19 = var16;
                                        } else {
@@ -1217,12 +1209,12 @@ public class Region {
                                  }
 
                                  if(var20) {
-                                    GroundObject var22 = var3.groundObject;
+                                    final GroundObject var22 = var3.groundObject;
                                     if(var22 != null) {
                                        var22.renderable.draw(0, pitchSin, pitchCos, yawSin, yawCos, var22.x - cameraX2, var22.floor - cameraY2, var22.y - cameraZ2, var22.hash);
                                     }
 
-                                    ItemLayer var23 = var3.itemLayer;
+                                    final ItemLayer var23 = var3.itemLayer;
                                     if(var23 != null && var23.height == 0) {
                                        if(var23.middle != null) {
                                           var23.middle.draw(0, pitchSin, pitchCos, yawSin, yawCos, var23.x - cameraX2, var23.hash - cameraY2, var23.y - cameraZ2, var23.flags);
@@ -1296,7 +1288,7 @@ public class Region {
                               }
 
                               try {
-                                 int var34 = var3.entityCount;
+                                 final int var34 = var3.entityCount;
                                  var3.drawEntities = false;
                                  var21 = 0;
 
@@ -1360,7 +1352,7 @@ public class Region {
                                     var25 = -1;
 
                                     for(var24 = 0; var24 < var21; ++var24) {
-                                       GameObject var35 = entityBuffer[var24];
+                                       final GameObject var35 = entityBuffer[var24];
                                        if(var35.cycle != cycle) {
                                           if(var35.drawPriority > var11) {
                                              var11 = var35.drawPriority;
@@ -1381,7 +1373,7 @@ public class Region {
                                        break;
                                     }
 
-                                    GameObject var33 = entityBuffer[var25];
+                                    final GameObject var33 = entityBuffer[var25];
                                     var33.cycle = cycle;
                                     if(!this.isAreaOccluded(var7, var33.relativeX, var33.offsetX, var33.relativeY, var33.offsetY, var33.renderable.modelHeight)) {
                                        var33.renderable.draw(var33.orientation, pitchSin, pitchCos, yawSin, yawCos, var33.x - cameraX2, var33.height - cameraY2, var33.y - cameraZ2, var33.hash);
@@ -1389,7 +1381,7 @@ public class Region {
 
                                     for(var14 = var33.relativeX; var14 <= var33.offsetX; ++var14) {
                                        for(var15 = var33.relativeY; var15 <= var33.offsetY; ++var15) {
-                                          Tile var26 = var8[var14][var15];
+                                          final Tile var26 = var8[var14][var15];
                                           if(var26.wallCullDirection != 0) {
                                              tileDeque.addFront(var26);
                                           } else if((var14 != var4 || var15 != var5) && var26.visible) {
@@ -1402,7 +1394,7 @@ public class Region {
                                  if(!var3.drawEntities) {
                                     break;
                                  }
-                              } catch (Exception var28) {
+                              } catch (final Exception var28) {
                                  var3.drawEntities = false;
                                  break;
                               }
@@ -1440,7 +1432,7 @@ public class Region {
 
          var3.visible = false;
          --tileUpdateCount;
-         ItemLayer var32 = var3.itemLayer;
+         final ItemLayer var32 = var3.itemLayer;
          if(var32 != null && var32.height != 0) {
             if(var32.middle != null) {
                var32.middle.draw(0, pitchSin, pitchCos, yawSin, yawCos, var32.x - cameraX2, var32.hash - cameraY2 - var32.height, var32.y - cameraZ2, var32.flags);
@@ -1456,7 +1448,7 @@ public class Region {
          }
 
          if(var3.wallDrawFlags != 0) {
-            DecorativeObject var29 = var3.decorativeObject;
+            final DecorativeObject var29 = var3.decorativeObject;
             if(var29 != null && !this.isOccluded(var7, var4, var5, var29.renderable1.modelHeight)) {
                if((var29.renderFlag & var3.wallDrawFlags) != 0) {
                   var29.renderable1.draw(0, pitchSin, pitchCos, yawSin, yawCos, var29.x - cameraX2 + var29.offsetX, var29.floor - cameraY2, var29.y - cameraZ2 + var29.offsetY, var29.hash);
@@ -1485,7 +1477,7 @@ public class Region {
                }
             }
 
-            WallObject var27 = var3.wallObject;
+            final WallObject var27 = var3.wallObject;
             if(var27 != null) {
                if((var27.orientationB & var3.wallDrawFlags) != 0 && !this.isWallOccluded(var7, var4, var5, var27.orientationB)) {
                   var27.renderable2.draw(0, pitchSin, pitchCos, yawSin, yawCos, var27.x - cameraX2, var27.floor - cameraY2, var27.y - cameraZ2, var27.hash);
@@ -1535,7 +1527,7 @@ public class Region {
       }
    }
 
-   void drawTileUnderlay(SceneTilePaint var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+   private void drawTileUnderlay(final SceneTilePaint var1, final int var2, final int var3, final int var4, final int var5, final int var6, final int var7, final int var8) {
       int var9;
       int var10 = var9 = (var7 << 7) - cameraX2;
       int var11;
@@ -1547,7 +1539,7 @@ public class Region {
       int var17 = this.tileHeights[var2][var7][var8] - cameraY2;
       int var18 = this.tileHeights[var2][var7 + 1][var8] - cameraY2;
       int var19 = this.tileHeights[var2][var7 + 1][var8 + 1] - cameraY2;
-      int var20 = this.tileHeights[var2][var7][var8 + 1] - cameraY2;
+      final int var20 = this.tileHeights[var2][var7][var8 + 1] - cameraY2;
       int var21 = var10 * var6 + var5 * var12 >> 16;
       var12 = var12 * var6 - var5 * var10 >> 16;
       var10 = var21;
@@ -1575,21 +1567,18 @@ public class Region {
                var21 = var20 * var4 - var3 * var15 >> 16;
                var15 = var3 * var20 + var15 * var4 >> 16;
                if(var15 >= 50) {
-                  int var22 = var10 * Graphics3D.Rasterizer3D_zoom / var12 + Graphics3D.centerX;
-                  int var23 = var17 * Graphics3D.Rasterizer3D_zoom / var12 + Graphics3D.centerY;
-                  int var24 = var14 * Graphics3D.Rasterizer3D_zoom / var11 + Graphics3D.centerX;
-                  int var25 = var18 * Graphics3D.Rasterizer3D_zoom / var11 + Graphics3D.centerY;
-                  int var26 = var13 * Graphics3D.Rasterizer3D_zoom / var16 + Graphics3D.centerX;
-                  int var27 = var19 * Graphics3D.Rasterizer3D_zoom / var16 + Graphics3D.centerY;
-                  int var28 = var9 * Graphics3D.Rasterizer3D_zoom / var15 + Graphics3D.centerX;
-                  int var29 = var21 * Graphics3D.Rasterizer3D_zoom / var15 + Graphics3D.centerY;
+                  final int var22 = var10 * Graphics3D.Rasterizer3D_zoom / var12 + Graphics3D.centerX;
+                  final int var23 = var17 * Graphics3D.Rasterizer3D_zoom / var12 + Graphics3D.centerY;
+                  final int var24 = var14 * Graphics3D.Rasterizer3D_zoom / var11 + Graphics3D.centerX;
+                  final int var25 = var18 * Graphics3D.Rasterizer3D_zoom / var11 + Graphics3D.centerY;
+                  final int var26 = var13 * Graphics3D.Rasterizer3D_zoom / var16 + Graphics3D.centerX;
+                  final int var27 = var19 * Graphics3D.Rasterizer3D_zoom / var16 + Graphics3D.centerY;
+                  final int var28 = var9 * Graphics3D.Rasterizer3D_zoom / var15 + Graphics3D.centerX;
+                  final int var29 = var21 * Graphics3D.Rasterizer3D_zoom / var15 + Graphics3D.centerY;
                   Graphics3D.rasterAlpha = 0;
                   int var30;
                   if((var26 - var28) * (var25 - var29) - (var27 - var29) * (var24 - var28) > 0) {
-                     Graphics3D.rasterClipEnable = false;
-                     if(var26 < 0 || var28 < 0 || var24 < 0 || var26 > Graphics3D.rasterClipX || var28 > Graphics3D.rasterClipX || var24 > Graphics3D.rasterClipX) {
-                        Graphics3D.rasterClipEnable = true;
-                     }
+                     Graphics3D.rasterClipEnable = var26 < 0 || var28 < 0 || var24 < 0 || var26 > Graphics3D.rasterClipX || var28 > Graphics3D.rasterClipX || var24 > Graphics3D.rasterClipX;
 
                      if(checkClick && method2898(mouseX2, mouseY2, var27, var29, var25, var26, var28, var24)) {
                         selectedRegionTileX = var7;
@@ -1613,10 +1602,7 @@ public class Region {
                   }
 
                   if((var22 - var24) * (var29 - var25) - (var23 - var25) * (var28 - var24) > 0) {
-                     Graphics3D.rasterClipEnable = false;
-                     if(var22 < 0 || var24 < 0 || var28 < 0 || var22 > Graphics3D.rasterClipX || var24 > Graphics3D.rasterClipX || var28 > Graphics3D.rasterClipX) {
-                        Graphics3D.rasterClipEnable = true;
-                     }
+                     Graphics3D.rasterClipEnable = var22 < 0 || var24 < 0 || var28 < 0 || var22 > Graphics3D.rasterClipX || var24 > Graphics3D.rasterClipX || var28 > Graphics3D.rasterClipX;
 
                      if(checkClick && method2898(mouseX2, mouseY2, var23, var25, var29, var22, var24, var28)) {
                         selectedRegionTileX = var7;
@@ -1641,7 +1627,7 @@ public class Region {
       }
    }
 
-   void drawTileOverlay(SceneTileModel var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   private void drawTileOverlay(final SceneTileModel var1, final int var2, final int var3, final int var4, final int var5, final int var6, final int var7) {
       int var8 = var1.vertexX.length;
 
       int var9;
@@ -1680,16 +1666,13 @@ public class Region {
          var11 = var1.field1774[var9];
          var12 = var1.field1778[var9];
          var13 = SceneTileModel.tmpScreenX[var10];
-         int var14 = SceneTileModel.tmpScreenX[var11];
-         int var15 = SceneTileModel.tmpScreenX[var12];
-         int var16 = SceneTileModel.tmpScreenY[var10];
-         int var17 = SceneTileModel.tmpScreenY[var11];
-         int var18 = SceneTileModel.tmpScreenY[var12];
+         final int var14 = SceneTileModel.tmpScreenX[var11];
+         final int var15 = SceneTileModel.tmpScreenX[var12];
+         final int var16 = SceneTileModel.tmpScreenY[var10];
+         final int var17 = SceneTileModel.tmpScreenY[var11];
+         final int var18 = SceneTileModel.tmpScreenY[var12];
          if((var13 - var14) * (var18 - var17) - (var16 - var17) * (var15 - var14) > 0) {
-            Graphics3D.rasterClipEnable = false;
-            if(var13 < 0 || var14 < 0 || var15 < 0 || var13 > Graphics3D.rasterClipX || var14 > Graphics3D.rasterClipX || var15 > Graphics3D.rasterClipX) {
-               Graphics3D.rasterClipEnable = true;
-            }
+            Graphics3D.rasterClipEnable = var13 < 0 || var14 < 0 || var15 < 0 || var13 > Graphics3D.rasterClipX || var14 > Graphics3D.rasterClipX || var15 > Graphics3D.rasterClipX;
 
             if(checkClick && method2898(mouseX2, mouseY2, var16, var17, var18, var13, var14, var15)) {
                selectedRegionTileX = var6;
@@ -1704,7 +1687,7 @@ public class Region {
                      Graphics3D.rasterTexture(var16, var17, var18, var13, var14, var15, var1.triangleColorA[var9], var1.triangleColorB[var9], var1.triangleColorC[var9], SceneTileModel.vertexSceneX[var10], SceneTileModel.vertexSceneX[var11], SceneTileModel.vertexSceneX[var12], SceneTileModel.vertexSceneY[var10], SceneTileModel.vertexSceneY[var11], SceneTileModel.vertexSceneY[var12], SceneTileModel.vertexSceneZ[var10], SceneTileModel.vertexSceneZ[var11], SceneTileModel.vertexSceneZ[var12], var1.triangleTextureId[var9]);
                   }
                } else {
-                  int var19 = Graphics3D.textureLoader.getAverageTextureRGB(var1.triangleTextureId[var9]);
+                  final int var19 = Graphics3D.textureLoader.getAverageTextureRGB(var1.triangleTextureId[var9]);
                   Graphics3D.rasterGouraud(var16, var17, var18, var13, var14, var15, method2897(var19, var1.triangleColorA[var9]), method2897(var19, var1.triangleColorB[var9]), method2897(var19, var1.triangleColorC[var9]));
                }
             } else if(var1.triangleColorA[var9] != 12345678) {
@@ -1715,14 +1698,14 @@ public class Region {
 
    }
 
-   void updateOccluders() {
-      int var1 = levelOccluderCount[Scene_plane];
-      Occluder[] var2 = levelOccluders[Scene_plane];
+   private void updateOccluders() {
+      final int var1 = levelOccluderCount[Scene_plane];
+      final Occluder[] var2 = levelOccluders[Scene_plane];
       field1981 = 0;
 
       for(int var3 = 0; var3 < var1; ++var3) {
-         Occluder var4 = var2[var3];
-         int var5;
+         final Occluder var4 = var2[var3];
+         final int var5;
          int var6;
          int var7;
          int var9;
@@ -1862,15 +1845,15 @@ public class Region {
 
    }
 
-   boolean isTileOccluded(int var1, int var2, int var3) {
-      int var4 = this.tileCycles[var1][var2][var3];
+   private boolean isTileOccluded(final int var1, final int var2, final int var3) {
+      final int var4 = this.tileCycles[var1][var2][var3];
       if(var4 == -cycle) {
          return false;
       } else if(var4 == cycle) {
          return true;
       } else {
-         int var5 = var2 << 7;
-         int var6 = var3 << 7;
+         final int var5 = var2 << 7;
+         final int var6 = var3 << 7;
          if(this.isOccluded(var5 + 1, this.tileHeights[var1][var2][var3], var6 + 1) && this.isOccluded(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3], var6 + 1) && this.isOccluded(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3 + 1], var6 + 128 - 1) && this.isOccluded(var5 + 1, this.tileHeights[var1][var2][var3 + 1], var6 + 128 - 1)) {
             this.tileCycles[var1][var2][var3] = cycle;
             return true;
@@ -1881,16 +1864,16 @@ public class Region {
       }
    }
 
-   boolean isWallOccluded(int var1, int var2, int var3, int var4) {
+   private boolean isWallOccluded(final int var1, final int var2, final int var3, final int var4) {
       if(!this.isTileOccluded(var1, var2, var3)) {
          return false;
       } else {
-         int var5 = var2 << 7;
-         int var6 = var3 << 7;
-         int var7 = this.tileHeights[var1][var2][var3] - 1;
-         int var8 = var7 - 120;
-         int var9 = var7 - 230;
-         int var10 = var7 - 238;
+         final int var5 = var2 << 7;
+         final int var6 = var3 << 7;
+         final int var7 = this.tileHeights[var1][var2][var3] - 1;
+         final int var8 = var7 - 120;
+         final int var9 = var7 - 230;
+         final int var10 = var7 - 238;
          if(var4 < 16) {
             if(var4 == 1) {
                if(var5 > cameraX2) {
@@ -1917,11 +1900,7 @@ public class Region {
                   return false;
                }
 
-               if(!this.isOccluded(var5, var9, var6 + 128)) {
-                  return false;
-               }
-
-               return true;
+               return this.isOccluded(var5, var9, var6 + 128);
             }
 
             if(var4 == 2) {
@@ -1949,11 +1928,7 @@ public class Region {
                   return false;
                }
 
-               if(!this.isOccluded(var5 + 128, var9, var6 + 128)) {
-                  return false;
-               }
-
-               return true;
+               return this.isOccluded(var5 + 128, var9, var6 + 128);
             }
 
             if(var4 == 4) {
@@ -1981,11 +1956,7 @@ public class Region {
                   return false;
                }
 
-               if(!this.isOccluded(var5 + 128, var9, var6 + 128)) {
-                  return false;
-               }
-
-               return true;
+               return this.isOccluded(var5 + 128, var9, var6 + 128);
             }
 
             if(var4 == 8) {
@@ -2013,29 +1984,25 @@ public class Region {
                   return false;
                }
 
-               if(!this.isOccluded(var5 + 128, var9, var6)) {
-                  return false;
-               }
-
-               return true;
+               return this.isOccluded(var5 + 128, var9, var6);
             }
          }
 
-         return !this.isOccluded(var5 + 64, var10, var6 + 64)?false:(var4 == 16?this.isOccluded(var5, var9, var6 + 128):(var4 == 32?this.isOccluded(var5 + 128, var9, var6 + 128):(var4 == 64?this.isOccluded(var5 + 128, var9, var6):(var4 == 128?this.isOccluded(var5, var9, var6):true))));
+         return this.isOccluded(var5 + 64, var10, var6 + 64) && (var4 == 16 ? this.isOccluded(var5, var9, var6 + 128) : (var4 == 32 ? this.isOccluded(var5 + 128, var9, var6 + 128) : (var4 == 64 ? this.isOccluded(var5 + 128, var9, var6) : (var4 == 128 ? this.isOccluded(var5, var9, var6) : true))));
       }
    }
 
-   boolean isOccluded(int var1, int var2, int var3, int var4) {
+   private boolean isOccluded(final int var1, final int var2, final int var3, final int var4) {
       if(!this.isTileOccluded(var1, var2, var3)) {
          return false;
       } else {
-         int var5 = var2 << 7;
-         int var6 = var3 << 7;
+         final int var5 = var2 << 7;
+         final int var6 = var3 << 7;
          return this.isOccluded(var5 + 1, this.tileHeights[var1][var2][var3] - var4, var6 + 1) && this.isOccluded(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3] - var4, var6 + 1) && this.isOccluded(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3 + 1] - var4, var6 + 128 - 1) && this.isOccluded(var5 + 1, this.tileHeights[var1][var2][var3 + 1] - var4, var6 + 128 - 1);
       }
    }
 
-   boolean isAreaOccluded(int var1, int var2, int var3, int var4, int var5, int var6) {
+   private boolean isAreaOccluded(final int var1, final int var2, final int var3, final int var4, final int var5, final int var6) {
       int var7;
       int var8;
       if(var3 == var2 && var5 == var4) {
@@ -2057,35 +2024,31 @@ public class Region {
 
          var7 = (var2 << 7) + 1;
          var8 = (var4 << 7) + 2;
-         int var9 = this.tileHeights[var1][var2][var4] - var6;
+         final int var9 = this.tileHeights[var1][var2][var4] - var6;
          if(!this.isOccluded(var7, var9, var8)) {
             return false;
          } else {
-            int var10 = (var3 << 7) - 1;
+            final int var10 = (var3 << 7) - 1;
             if(!this.isOccluded(var10, var9, var8)) {
                return false;
             } else {
-               int var11 = (var5 << 7) - 1;
+               final int var11 = (var5 << 7) - 1;
                if(!this.isOccluded(var7, var9, var11)) {
                   return false;
-               } else if(!this.isOccluded(var10, var9, var11)) {
-                  return false;
-               } else {
-                  return true;
-               }
+               } else return this.isOccluded(var10, var9, var11);
             }
          }
       }
    }
 
-   boolean isOccluded(int var1, int var2, int var3) {
+   private boolean isOccluded(final int var1, final int var2, final int var3) {
       for(int var4 = 0; var4 < field1981; ++var4) {
-         Occluder var5 = field2025[var4];
-         int var6;
-         int var7;
-         int var8;
-         int var9;
-         int var10;
+         final Occluder var5 = field2025[var4];
+         final int var6;
+         final int var7;
+         final int var8;
+         final int var9;
+         final int var10;
          if(var5.testDirection == 1) {
             var6 = var5.minX - var1;
             if(var6 > 0) {
@@ -2147,8 +2110,8 @@ public class Region {
       return false;
    }
 
-   public static void addOcclude(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
-      Occluder var8 = new Occluder();
+   public static void addOcclude(final int var0, final int var1, final int var2, final int var3, final int var4, final int var5, final int var6, final int var7) {
+      final Occluder var8 = new Occluder();
       var8.minTileX = var2 / 128;
       var8.maxTIleX = var3 / 128;
       var8.minTileZ = var4 / 128;
@@ -2163,14 +2126,14 @@ public class Region {
       levelOccluders[var0][levelOccluderCount[var0]++] = var8;
    }
 
-   public static void buildVisibilityMaps(int[] var0, int var1, int var2, int var3, int var4) {
+   public static void buildVisibilityMaps(final int[] var0, final int var1, final int var2, final int var3, final int var4) {
       field2042 = 0;
       field2041 = 0;
       field1999 = var3;
       field2043 = var4;
       field1996 = var3 / 2;
       field2039 = var4 / 2;
-      boolean[][][][] var5 = new boolean[9][32][53][53];
+      final boolean[][][][] var5 = new boolean[9][32][53][53];
 
       int var6;
       int var7;
@@ -2190,7 +2153,7 @@ public class Region {
             for(int var10 = -26; var10 <= 26; ++var10) {
                for(var11 = -26; var11 <= 26; ++var11) {
                   var12 = var10 * 128;
-                  int var13 = var11 * 128;
+                  final int var13 = var11 * 128;
                   boolean var14 = false;
 
                   for(int var15 = -var1; var15 <= var2; var15 += 128) {
@@ -2245,14 +2208,14 @@ public class Region {
 
    }
 
-   static boolean method2936(int var0, int var1, int var2) {
-      int var3 = var0 * yawCos + var2 * yawSin >> 16;
-      int var4 = var2 * yawCos - var0 * yawSin >> 16;
-      int var5 = var4 * pitchCos + pitchSin * var1 >> 16;
-      int var6 = pitchCos * var1 - var4 * pitchSin >> 16;
+   private static boolean method2936(final int var0, final int var1, final int var2) {
+      final int var3 = var0 * yawCos + var2 * yawSin >> 16;
+      final int var4 = var2 * yawCos - var0 * yawSin >> 16;
+      final int var5 = var4 * pitchCos + pitchSin * var1 >> 16;
+      final int var6 = pitchCos * var1 - var4 * pitchSin >> 16;
       if(var5 >= 50 && var5 <= 3500) {
-         int var7 = var3 * 390 / var5 + field1996;
-         int var8 = var6 * 390 / var5 + field2039;
+         final int var7 = var3 * 390 / var5 + field1996;
+         final int var8 = var6 * 390 / var5 + field2039;
          return var7 >= field2042 && var7 <= field1999 && var8 >= field2041 && var8 <= field2043;
       } else {
          return false;
@@ -2268,7 +2231,7 @@ public class Region {
       viewportWalking = false;
    }
 
-   static final int method2897(int var0, int var1) {
+   private static int method2897(final int var0, int var1) {
       var1 = (var0 & 127) * var1 >> 7;
       if(var1 < 2) {
          var1 = 2;
@@ -2279,7 +2242,7 @@ public class Region {
       return (var0 & 65408) + var1;
    }
 
-   static boolean method2898(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   private static boolean method2898(final int var0, final int var1, final int var2, final int var3, final int var4, final int var5, final int var6, final int var7) {
       if(var1 < var2 && var1 < var3 && var1 < var4) {
          return false;
       } else if(var1 > var2 && var1 > var3 && var1 > var4) {
@@ -2289,22 +2252,22 @@ public class Region {
       } else if(var0 > var5 && var0 > var6 && var0 > var7) {
          return false;
       } else {
-         int var8 = (var1 - var2) * (var6 - var5) - (var0 - var5) * (var3 - var2);
-         int var9 = (var7 - var6) * (var1 - var3) - (var0 - var6) * (var4 - var3);
-         int var10 = (var5 - var7) * (var1 - var4) - (var2 - var4) * (var0 - var7);
-         return var8 == 0?(var9 != 0?(var9 < 0?var10 <= 0:var10 >= 0):true):(var8 < 0?var9 <= 0 && var10 <= 0:var9 >= 0 && var10 >= 0);
+         final int var8 = (var1 - var2) * (var6 - var5) - (var0 - var5) * (var3 - var2);
+         final int var9 = (var7 - var6) * (var1 - var3) - (var0 - var6) * (var4 - var3);
+         final int var10 = (var5 - var7) * (var1 - var4) - (var2 - var4) * (var0 - var7);
+         return var8 == 0?(var9 == 0 || (var9 < 0 ? var10 <= 0 : var10 >= 0)):(var8 < 0?var9 <= 0 && var10 <= 0:var9 >= 0 && var10 >= 0);
       }
    }
 
-   public static final int[] method2905(int var0, int var1, int var2) {
+   public static int[] method2905(int var0, final int var1, int var2) {
       int var3 = var0 * yawCos + var2 * yawSin >> 16;
       var2 = var2 * yawCos - var0 * yawSin >> 16;
       var0 = var3;
       var3 = pitchCos * var1 - var2 * pitchSin >> 16;
       var2 = pitchSin * var1 + var2 * pitchCos >> 16;
       var2 |= 1;
-      int var4 = var0 * Graphics3D.Rasterizer3D_zoom / var2 + Graphics3D.centerX + Rasterizer2D.draw_region_x;
-      int var5 = Graphics3D.Rasterizer3D_zoom * var3 / var2 + Graphics3D.centerY + Rasterizer2D.drawingAreaTop;
+      final int var4 = var0 * Graphics3D.Rasterizer3D_zoom / var2 + Graphics3D.centerX + Rasterizer2D.draw_region_x;
+      final int var5 = Graphics3D.Rasterizer3D_zoom * var3 / var2 + Graphics3D.centerY + Rasterizer2D.drawingAreaTop;
       return new int[]{var4, var5};
    }
 }

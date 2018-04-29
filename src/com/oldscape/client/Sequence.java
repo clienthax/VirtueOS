@@ -4,14 +4,14 @@ public class Sequence extends CacheableNode {
    static IndexDataBase seq_ref;
    static IndexDataBase skel_ref;
    static IndexDataBase skin_ref;
-   static NodeCache sequences;
-   static NodeCache skeletons;
+   static final NodeCache sequences;
+   static final NodeCache skeletons;
    public int[] frameIDs;
-   int[] field3758;
+   private int[] field3758;
    public int[] frameLengths;
    public int[] field3759;
    public int frameStep;
-   int[] interleaveLeave;
+   private int[] interleaveLeave;
    public boolean stretches;
    public int forcedPriority;
    public int leftHandItem;
@@ -38,9 +38,9 @@ public class Sequence extends CacheableNode {
       this.replyMode = 2;
    }
 
-   void decode(Buffer var1) {
+   void decode(final Buffer var1) {
       while(true) {
-         int var2 = var1.readUnsignedByte();
+         final int var2 = var1.readUnsignedByte();
          if(var2 == 0) {
             return;
          }
@@ -49,8 +49,8 @@ public class Sequence extends CacheableNode {
       }
    }
 
-   void readNext(Buffer var1, int var2) {
-      int var3;
+   private void readNext(final Buffer var1, final int var2) {
+      final int var3;
       int var4;
       if(var2 == 1) {
          var3 = var1.readUnsignedShort();
@@ -137,27 +137,27 @@ public class Sequence extends CacheableNode {
 
    }
 
-   public Model transformActorModel(Model var1, int var2) {
+   public Model transformActorModel(final Model var1, int var2) {
       var2 = this.frameIDs[var2];
-      Frames var3 = Item.getFrames(var2 >> 16);
+      final Frames var3 = Item.getFrames(var2 >> 16);
       var2 &= 65535;
       if(var3 == null) {
          return var1.toSharedModel(true);
       } else {
-         Model var4 = var1.toSharedModel(!var3.method3063(var2));
+         final Model var4 = var1.toSharedModel(!var3.method3063(var2));
          var4.method2695(var3, var2);
          return var4;
       }
    }
 
-   Model transformObjectModel(Model var1, int var2, int var3) {
+   Model transformObjectModel(final Model var1, int var2, int var3) {
       var2 = this.frameIDs[var2];
-      Frames var4 = Item.getFrames(var2 >> 16);
+      final Frames var4 = Item.getFrames(var2 >> 16);
       var2 &= 65535;
       if(var4 == null) {
          return var1.toSharedModel(true);
       } else {
-         Model var5 = var1.toSharedModel(!var4.method3063(var2));
+         final Model var5 = var1.toSharedModel(!var4.method3063(var2));
          var3 &= 3;
          if(var3 == 1) {
             var5.rotateY270Ccw();
@@ -180,68 +180,66 @@ public class Sequence extends CacheableNode {
       }
    }
 
-   Model transformSpotAnimModel(Model var1, int var2) {
+   Model transformSpotAnimModel(final Model var1, int var2) {
       var2 = this.frameIDs[var2];
-      Frames var3 = Item.getFrames(var2 >> 16);
+      final Frames var3 = Item.getFrames(var2 >> 16);
       var2 &= 65535;
       if(var3 == null) {
          return var1.toSharedSpotAnimModel(true);
       } else {
-         Model var4 = var1.toSharedSpotAnimModel(!var3.method3063(var2));
+         final Model var4 = var1.toSharedSpotAnimModel(!var3.method3063(var2));
          var4.method2695(var3, var2);
          return var4;
       }
    }
 
-   public Model applyTransformations(Model var1, int var2, Sequence var3, int var4) {
+   public Model applyTransformations(final Model var1, int var2, final Sequence var3, int var4) {
       var2 = this.frameIDs[var2];
-      Frames var5 = Item.getFrames(var2 >> 16);
+      final Frames var5 = Item.getFrames(var2 >> 16);
       var2 &= 65535;
       if(var5 == null) {
          return var3.transformActorModel(var1, var4);
       } else {
          var4 = var3.frameIDs[var4];
-         Frames var6 = Item.getFrames(var4 >> 16);
+         final Frames var6 = Item.getFrames(var4 >> 16);
          var4 &= 65535;
-         Model var7;
+         final Model var7;
          if(var6 == null) {
             var7 = var1.toSharedModel(!var5.method3063(var2));
             var7.method2695(var5, var2);
-            return var7;
          } else {
             var7 = var1.toSharedModel(!var5.method3063(var2) & !var6.method3063(var4));
             var7.method2745(var5, var2, var6, var4, this.interleaveLeave);
-            return var7;
          }
+          return var7;
       }
    }
 
-   public Model method5180(Model var1, int var2) {
-      int var3 = this.frameIDs[var2];
-      Frames var4 = Item.getFrames(var3 >> 16);
-      var3 &= 65535;
-      if(var4 == null) {
-         return var1.toSharedModel(true);
+   public Model method5180(final Model model, final int sequenceFrame) {
+      int frameID = this.frameIDs[sequenceFrame];
+      final Frames frames = Item.getFrames(frameID >> 16);
+      frameID &= 65535;
+      if(frames == null) {
+         return model.toSharedModel(true);
       } else {
-         Frames var5 = null;
+         Frames tempFrame = null;
          int var6 = 0;
-         if(this.field3758 != null && var2 < this.field3758.length) {
-            var6 = this.field3758[var2];
-            var5 = Item.getFrames(var6 >> 16);
+         if(this.field3758 != null && sequenceFrame < this.field3758.length) {
+            var6 = this.field3758[sequenceFrame];
+            tempFrame = Item.getFrames(var6 >> 16);
             var6 &= 65535;
          }
 
-         Model var7;
-         if(var5 != null && var6 != 65535) {
-            var7 = var1.toSharedModel(!var4.method3063(var3) & !var5.method3063(var6));
-            var7.method2695(var4, var3);
-            var7.method2695(var5, var6);
-            return var7;
+         final Model tempModel;
+         if(tempFrame != null && var6 != 65535) {
+            tempModel = model.toSharedModel(!frames.method3063(frameID) & !tempFrame.method3063(var6));
+            tempModel.method2695(frames, frameID);
+            tempModel.method2695(tempFrame, var6);
          } else {
-            var7 = var1.toSharedModel(!var4.method3063(var3));
-            var7.method2695(var4, var3);
-            return var7;
+            tempModel = model.toSharedModel(!frames.method3063(frameID));
+            tempModel.method2695(frames, frameID);
          }
+          return tempModel;
       }
    }
 }

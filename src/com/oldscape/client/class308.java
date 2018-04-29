@@ -1,26 +1,26 @@
 package com.oldscape.client;
 
-public class class308 extends class221 {
-   public int field3876;
-   public Name field3877;
-   public short field3875;
+class class308 extends class221 {
+   public final int field3876;
+   public final Name name;
+   public final short field3875;
 
-   class308(Name var1, int var2) {
+   class308(final Name name, final int var2) {
       this.field3876 = (int)(class64.method1118() / 1000L);
-      this.field3877 = var1;
+      this.name = name;
       this.field3875 = (short)var2;
    }
 
-   static final int method5486(Widget var0, int var1) {
+   static int method5486(final Widget var0, final int var1) {
       if(var0.dynamicValues != null && var1 < var0.dynamicValues.length) {
          try {
-            int[] var2 = var0.dynamicValues[var1];
+            final int[] var2 = var0.dynamicValues[var1];
             int var3 = 0;
             int var4 = 0;
             byte var5 = 0;
 
             while(true) {
-               int var6 = var2[var4++];
+               final int var6 = var2[var4++];
                int var7 = 0;
                byte var8 = 0;
                if(var6 == 0) {
@@ -48,7 +48,7 @@ public class class308 extends class221 {
                   var9 += var2[var4++];
                   var10 = class44.getWidget(var9);
                   var11 = var2[var4++];
-                  if(var11 != -1 && (!class47.getItemDefinition(var11).isMembers || Client.isMembers)) {
+                  if(var11 != -1 && (!ItemComposition.getItemDefinition(var11).isMembers || Client.isMembers)) {
                      for(var12 = 0; var12 < var10.itemIds.length; ++var12) {
                         if(var11 + 1 == var10.itemIds[var12]) {
                            var7 += var10.itemQuantities[var12];
@@ -58,7 +58,7 @@ public class class308 extends class221 {
                }
 
                if(var6 == 5) {
-                  var7 = class237.clientVarps[var2[var4++]];
+                  var7 = VarpStorage.clientVarps[var2[var4++]];
                }
 
                if(var6 == 6) {
@@ -66,11 +66,11 @@ public class class308 extends class221 {
                }
 
                if(var6 == 7) {
-                  var7 = class237.clientVarps[var2[var4++]] * 100 / 46875;
+                  var7 = VarpStorage.clientVarps[var2[var4++]] * 100 / 46875;
                }
 
                if(var6 == 8) {
-                  var7 = SoundTaskDataProvider.localPlayer.combatLevel;
+                  var7 = Client.localPlayer.combatLevel;
                }
 
                if(var6 == 9) {
@@ -86,7 +86,7 @@ public class class308 extends class221 {
                   var9 += var2[var4++];
                   var10 = class44.getWidget(var9);
                   var11 = var2[var4++];
-                  if(var11 != -1 && (!class47.getItemDefinition(var11).isMembers || Client.isMembers)) {
+                  if(var11 != -1 && (!ItemComposition.getItemDefinition(var11).isMembers || Client.isMembers)) {
                      for(var12 = 0; var12 < var10.itemIds.length; ++var12) {
                         if(var11 + 1 == var10.itemIds[var12]) {
                            var7 = 999999999;
@@ -105,14 +105,14 @@ public class class308 extends class221 {
                }
 
                if(var6 == 13) {
-                  var9 = class237.clientVarps[var2[var4++]];
-                  int var13 = var2[var4++];
+                  var9 = VarpStorage.clientVarps[var2[var4++]];
+                  final int var13 = var2[var4++];
                   var7 = (var9 & 1 << var13) != 0?1:0;
                }
 
                if(var6 == 14) {
                   var9 = var2[var4++];
-                  var7 = DynamicObject.getVarbit(var9);
+                  var7 = Varbit.getVarbit(var9);
                }
 
                if(var6 == 15) {
@@ -128,11 +128,11 @@ public class class308 extends class221 {
                }
 
                if(var6 == 18) {
-                  var7 = (SoundTaskDataProvider.localPlayer.x >> 7) + class138.baseX;
+                  var7 = (Client.localPlayer.x >> 7) + class138.baseX;
                }
 
                if(var6 == 19) {
-                  var7 = (SoundTaskDataProvider.localPlayer.y >> 7) + class23.baseY;
+                  var7 = (Client.localPlayer.y >> 7) + class23.baseY;
                }
 
                if(var6 == 20) {
@@ -161,7 +161,7 @@ public class class308 extends class221 {
                   var5 = var8;
                }
             }
-         } catch (Exception var14) {
+         } catch (final Exception var14) {
             return -1;
          }
       } else {

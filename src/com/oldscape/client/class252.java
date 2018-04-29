@@ -1,6 +1,6 @@
 package com.oldscape.client;
 
-public class class252 {
+class class252 {
    public static String method4505(long var0) {
       if(var0 > 0L && var0 < 6582952005840035281L) {
          if(0L == var0 % 37L) {
@@ -12,14 +12,14 @@ public class class252 {
                ++var2;
             }
 
-            StringBuilder var5;
+            final StringBuilder var5;
             char var8;
             for(var5 = new StringBuilder(var2); 0L != var0; var5.append(var8)) {
-               long var6 = var0;
+               final long var6 = var0;
                var0 /= 37L;
                var8 = class316.field3924[(int)(var6 - 37L * var0)];
                if(var8 == '_') {
-                  int var9 = var5.length() - 1;
+                  final int var9 = var5.length() - 1;
                   var5.setCharAt(var9, Character.toUpperCase(var5.charAt(var9)));
                   var8 = 160;
                }

@@ -1,19 +1,19 @@
 package com.oldscape.client;
 
-public class class93 {
-   static byte[] field1428;
-   static byte[] field1429;
-   static Buffer[] field1430;
+class class93 {
+   static final byte[] field1428;
+   static final byte[] field1429;
+   static final Buffer[] field1430;
    static int playerIndexesCount;
-   static int[] playerIndices;
+   static final int[] playerIndices;
    static int field1433;
-   static int[] field1435;
-   static int[] Players_regions;
-   static int[] Players_orientations;
-   static int[] Players_targetIndices;
+   static final int[] field1435;
+   static final int[] Players_regions;
+   static final int[] Players_orientations;
+   static final int[] Players_targetIndices;
    static int field1438;
-   static int[] field1439;
-   static Buffer field1432;
+   static final int[] field1439;
+   static final Buffer field1432;
    static IndexData indexSoundEffects;
 
    static {

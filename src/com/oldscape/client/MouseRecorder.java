@@ -1,15 +1,15 @@
 package com.oldscape.client;
 
-public class MouseRecorder implements Runnable {
+class MouseRecorder implements Runnable {
    public static Widget[][] widgets;
    static int[] field819;
    static IndexData indexMaps;
    static IndexData indexCache15;
    boolean isRunning;
-   Object lock;
+   final Object lock;
    int index;
-   int[] xs;
-   int[] ys;
+   final int[] xs;
+   final int[] ys;
 
    MouseRecorder() {
       this.isRunning = true;
@@ -21,7 +21,6 @@ public class MouseRecorder implements Runnable {
 
    public void run() {
       for(; this.isRunning; ScriptVarType.method11(50L)) {
-         Object var1 = this.lock;
          synchronized(this.lock) {
             if(this.index < 500) {
                this.xs[this.index] = MouseInput.mouseLastX;

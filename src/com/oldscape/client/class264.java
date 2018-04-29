@@ -2,26 +2,26 @@ package com.oldscape.client;
 
 import java.util.zip.CRC32;
 
-public class class264 {
-   public static class169 NetCache_socket;
+class class264 {
+   static class169 NetCache_socket;
    static int field3416;
-   static HashTable NetCache_pendingPriorityWrites;
-   public static int NetCache_pendingPriorityWritesCount;
-   static HashTable NetCache_pendingPriorityResponses;
-   public static int NetCache_pendingPriorityResponsesCount;
-   static Node2LinkedList NetCache_pendingWritesQueue;
-   static HashTable NetCache_pendingWrites;
-   public static int NetCache_pendingWritesCount;
-   static HashTable NetCache_pendingResponses;
-   public static int NetCache_pendingResponsesCount;
+   static final HashTable NetCache_pendingPriorityWrites;
+   static int NetCache_pendingPriorityWritesCount;
+   static final HashTable NetCache_pendingPriorityResponses;
+   static int NetCache_pendingPriorityResponsesCount;
+   static final Node2LinkedList NetCache_pendingWritesQueue;
+   static final HashTable NetCache_pendingWrites;
+   static int NetCache_pendingWritesCount;
+   static final HashTable NetCache_pendingResponses;
+   static int NetCache_pendingResponsesCount;
    static boolean field3419;
-   static Buffer NetCache_responseHeaderBuffer;
+   static final Buffer NetCache_responseHeaderBuffer;
    static int field3426;
-   static CRC32 NetCache_crc;
-   static IndexData[] NetCache_indexCaches;
+   static final CRC32 NetCache_crc;
+   static final IndexData[] NetCache_indexCaches;
    static byte field3429;
-   public static int field3430;
-   public static int field3431;
+   static int field3430;
+   static int field3431;
 
    static {
       field3416 = 0;
@@ -43,34 +43,34 @@ public class class264 {
       field3431 = 0;
    }
 
-   static final void method4683(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
-      PendingSpawn var9 = null;
+   static void method4683(final int spawnPlane, final int x, final int y, final int spawnType, final int spawnId, final int var5, final int spawnOrientation, final int spawnDelay, final int spawnHitpoints) {
+      PendingSpawn spawn = null;
 
-      for(PendingSpawn var10 = (PendingSpawn)Client.pendingSpawns.getFront(); var10 != null; var10 = (PendingSpawn)Client.pendingSpawns.getNext()) {
-         if(var0 == var10.level && var10.x == var1 && var2 == var10.y && var3 == var10.type) {
-            var9 = var10;
+      for(PendingSpawn pendingSpawn = (PendingSpawn)Client.pendingSpawns.getFront(); pendingSpawn != null; pendingSpawn = (PendingSpawn)Client.pendingSpawns.getNext()) {
+         if(spawnPlane == pendingSpawn.level && pendingSpawn.x == x && y == pendingSpawn.y && spawnType == pendingSpawn.type) {
+            spawn = pendingSpawn;
             break;
          }
       }
 
-      if(var9 == null) {
-         var9 = new PendingSpawn();
-         var9.level = var0;
-         var9.type = var3;
-         var9.x = var1;
-         var9.y = var2;
-         OwnWorldComparator.method1247(var9);
-         Client.pendingSpawns.addFront(var9);
+      if(spawn == null) {
+         spawn = new PendingSpawn();
+         spawn.level = spawnPlane;
+         spawn.type = spawnType;
+         spawn.x = x;
+         spawn.y = y;
+         OwnWorldComparator.method1247(spawn);
+         Client.pendingSpawns.addFront(spawn);
       }
 
-      var9.id = var4;
-      var9.field1151 = var5;
-      var9.orientation = var6;
-      var9.delay = var7;
-      var9.hitpoints = var8;
+      spawn.id = spawnId;
+      spawn.field1151 = var5;
+      spawn.orientation = spawnOrientation;
+      spawn.delay = spawnDelay;
+      spawn.hitpoints = spawnHitpoints;
    }
 
-   static void method4682(byte[] var0, int var1) {
+   static void method4682(final byte[] var0, final int var1) {
       if(Client.field908 == null) {
          Client.field908 = new byte[24];
       }

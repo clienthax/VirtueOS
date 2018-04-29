@@ -1,20 +1,20 @@
 package com.oldscape.client;
 
-public final class WorldMapRectangle {
+final class WorldMapRectangle {
    public static FriendManager friendManager;
    int worldMapRegionWidth;
    int worldMapRegionHeight;
    int worldMapRegionX;
    int worldMapRegionY;
    // $FF: synthetic field
-   final WorldMapManager this$0;
+   private final WorldMapManager this$0;
 
-   WorldMapRectangle(WorldMapManager var1) {
+   WorldMapRectangle(final WorldMapManager var1) {
       this.this$0 = var1;
    }
 
-   public static PacketNode method280(ClientPacket var0, ISAACCipher var1) {
-      PacketNode var2 = ServerPacket.method3433();
+   public static PacketNode method280(final ClientPacket var0, final ISAACCipher var1) {
+      final PacketNode var2 = ServerPacket.method3433();
       var2.clientPacket = var0;
       var2.field2503 = var0.packetLength;
       if(var2.field2503 == -1) {
@@ -35,30 +35,30 @@ public final class WorldMapRectangle {
       return var2;
    }
 
-   public static byte[] toByteArray(Object var0, boolean var1) {
+   public static byte[] toByteArray(final Object var0, final boolean var1) {
       if(var0 == null) {
          return null;
       } else if(var0 instanceof byte[]) {
-         byte[] var3 = (byte[])((byte[])var0);
+         final byte[] var3 = (byte[]) var0;
          return var1?class18.method146(var3):var3;
       } else if(var0 instanceof AbstractByteBuffer) {
-         AbstractByteBuffer var2 = (AbstractByteBuffer)var0;
+         final AbstractByteBuffer var2 = (AbstractByteBuffer)var0;
          return var2.get();
       } else {
          throw new IllegalArgumentException();
       }
    }
 
-   static void method279(int var0, String var1) {
-      int var2 = class93.playerIndexesCount;
-      int[] var3 = class93.playerIndices;
+   static void method279(final int var0, final String var1) {
+      final int var2 = class93.playerIndexesCount;
+      final int[] var3 = class93.playerIndices;
       boolean var4 = false;
-      Name var5 = new Name(var1, GZipDecompressor.loginType);
+      final Name var5 = new Name(var1, GZipDecompressor.loginType);
 
       for(int var6 = 0; var6 < var2; ++var6) {
-         Player var7 = Client.cachedPlayers[var3[var6]];
-         if(var7 != null && var7 != SoundTaskDataProvider.localPlayer && var7.name != null && var7.name.equals(var5)) {
-            PacketNode var8;
+         final Player var7 = Client.cachedPlayers[var3[var6]];
+         if(var7 != null && var7 != Client.localPlayer && var7.name != null && var7.name.equals(var5)) {
+            final PacketNode var8;
             if(var0 == 1) {
                var8 = method280(ClientPacket.field2401, Client.field957.field1484);
                var8.packetBuffer.method3542(0);

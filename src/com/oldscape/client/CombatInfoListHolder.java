@@ -2,17 +2,17 @@ package com.oldscape.client;
 
 import java.net.URL;
 
-public class CombatInfoListHolder extends Node {
+class CombatInfoListHolder extends Node {
    static int field1310;
-   CombatInfo2 combatInfo2;
-   CombatInfoList combatInfo1;
+   final CombatInfo2 combatInfo2;
+   private final CombatInfoList combatInfo1;
 
-   CombatInfoListHolder(CombatInfo2 var1) {
+   CombatInfoListHolder(final CombatInfo2 var1) {
       this.combatInfo1 = new CombatInfoList();
       this.combatInfo2 = var1;
    }
 
-   void method1859(int var1, int var2, int var3, int var4) {
+   void method1859(final int var1, final int var2, final int var3, final int var4) {
       CombatInfo1 var5 = null;
       int var6 = 0;
 
@@ -42,7 +42,7 @@ public class CombatInfoListHolder extends Node {
       }
    }
 
-   CombatInfo1 method1860(int var1) {
+   CombatInfo1 method1860(final int var1) {
       CombatInfo1 var2 = (CombatInfo1)this.combatInfo1.last();
       if(var2 != null && var2.cycle <= var1) {
          for(CombatInfo1 var3 = (CombatInfo1)this.combatInfo1.previous(); var3 != null && var3.cycle <= var1; var3 = (CombatInfo1)this.combatInfo1.previous()) {
@@ -65,12 +65,11 @@ public class CombatInfoListHolder extends Node {
       return this.combatInfo1.isEmpty();
    }
 
-   static void method1871(int var0, IndexFile var1, IndexData var2) {
+   static void method1871(final int var0, final IndexFile var1, final IndexData var2) {
       byte[] var3 = null;
-      Deque var4 = IndexStoreActionHandler.IndexStoreActionHandler_requestQueue;
       synchronized(IndexStoreActionHandler.IndexStoreActionHandler_requestQueue) {
          for(FileSystem var5 = (FileSystem)IndexStoreActionHandler.IndexStoreActionHandler_requestQueue.getFront(); var5 != null; var5 = (FileSystem)IndexStoreActionHandler.IndexStoreActionHandler_requestQueue.getNext()) {
-            if(var5.hash == (long)var0 && var1 == var5.index && var5.type == 0) {
+            if(var5.hash == var0 && var1 == var5.index && var5.type == 0) {
                var3 = var5.field3367;
                break;
             }
@@ -80,7 +79,7 @@ public class CombatInfoListHolder extends Node {
       if(var3 != null) {
          var2.load(var1, var0, var3, true);
       } else {
-         byte[] var8 = var1.read(var0);
+         final byte[] var8 = var1.read(var0);
          var2.load(var1, var0, var8, true);
       }
    }
@@ -92,15 +91,15 @@ public class CombatInfoListHolder extends Node {
       class62.overlayRotations = null;
       GZipDecompressor.field2520 = null;
       class297.field3831 = null;
-      AttackOption.field1354 = null;
+      Client.field1354 = null;
       class55.floorHues = null;
       class183.floorSaturations = null;
-      class253.field3314 = null;
+      Client.field3314 = null;
       class36.floorMultiplier = null;
-      AttackOption.field1356 = null;
+      Client.field1356 = null;
    }
 
-   public static boolean method1865(String var0, int var1, String var2) {
+   public static boolean method1865(final String var0, final int var1, final String var2) {
       if(var1 == 0) {
          try {
             if(!class57.field667.startsWith("win")) {
@@ -108,7 +107,7 @@ public class CombatInfoListHolder extends Node {
             } else if(!var0.startsWith("http://") && !var0.startsWith("https://")) {
                throw new Exception();
             } else {
-               String var10 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?&=,.%+-_#:/*";
+               final String var10 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?&=,.%+-_#:/*";
 
                for(int var4 = 0; var4 < var0.length(); ++var4) {
                   if(var10.indexOf(var0.charAt(var4)) == -1) {
@@ -119,33 +118,33 @@ public class CombatInfoListHolder extends Node {
                Runtime.getRuntime().exec("cmd /c start \"j\" \"" + var0 + "\"");
                return true;
             }
-         } catch (Throwable var5) {
+         } catch (final Throwable var5) {
             return false;
          }
       } else if(var1 == 1) {
          try {
-            Object var3 = class53.method820(class57.field674, var2, new Object[]{(new URL(class57.field674.getCodeBase(), var0)).toString()});
+            final Object var3 = class53.method820(class57.field674, var2, new Object[]{(new URL(class57.field674.getCodeBase(), var0)).toString()});
             return var3 != null;
-         } catch (Throwable var6) {
+         } catch (final Throwable var6) {
             return false;
          }
       } else if(var1 == 2) {
          try {
             class57.field674.getAppletContext().showDocument(new URL(class57.field674.getCodeBase(), var0), "_blank");
             return true;
-         } catch (Exception var7) {
+         } catch (final Exception var7) {
             return false;
          }
       } else if(var1 == 3) {
          try {
             class53.method824(class57.field674, "loggedout");
-         } catch (Throwable var9) {
+         } catch (final Throwable ignored) {
          }
 
          try {
             class57.field674.getAppletContext().showDocument(new URL(class57.field674.getCodeBase(), var0), "_top");
             return true;
-         } catch (Exception var8) {
+         } catch (final Exception var8) {
             return false;
          }
       } else {

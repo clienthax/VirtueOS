@@ -1,67 +1,65 @@
 package com.oldscape.client;
 
-public class class236 extends CacheableNode {
-   public final int field2773;
-   public final int field2772;
-   public final int[] field2771;
-   public final int[] field2774;
+class class236 extends CacheableNode {
 
-   class236(int var1, int var2, int[] var3, int[] var4, int var5) {
-      this.field2773 = var1;
-      this.field2772 = var2;
+   final int width;
+   final int height;
+   final int[] field2771;
+   final int[] field2774;
+
+   class236(final int width, final int height, final int[] var3, final int[] var4) {
+      this.width = width;
+      this.height = height;
       this.field2771 = var3;
       this.field2774 = var4;
    }
 
-   public boolean method4346(int var1, int var2) {
+   boolean method4346(final int var1, final int var2) {
       if(var2 >= 0 && var2 < this.field2774.length) {
-         int var3 = this.field2774[var2];
-         if(var1 >= var3 && var1 <= var3 + this.field2771[var2]) {
-            return true;
-         }
+         final int var3 = this.field2774[var2];
+          return var1 >= var3 && var1 <= var3 + this.field2771[var2];
       }
 
       return false;
    }
 
-   static final void method4345(Widget[] var0, int var1) {
-      for(int var2 = 0; var2 < var0.length; ++var2) {
-         Widget var3 = var0[var2];
-         if(var3 != null) {
-            if(var3.type == 0) {
-               if(var3.children != null) {
-                  method4345(var3.children, var1);
+   static void method4345(final Widget[] widgets, final int id) {
+       for (final Widget widget : widgets) {
+           if (widget != null) {
+               if (widget.type == 0) {
+                   if (widget.children != null) {
+                       method4345(widget.children, id);
+                   }
+
+                   final WidgetNode widgetNode = (WidgetNode) Client.componentTable.get(widget.id);
+                   if (widgetNode != null) {
+                       DynamicObject.method2026(widgetNode.id, id);
+                   }
                }
 
-               WidgetNode var4 = (WidgetNode)Client.componentTable.get((long)var3.id);
-               if(var4 != null) {
-                  DynamicObject.method2026(var4.id, var1);
-               }
-            }
-
-            ScriptEvent var5;
-            if(var1 == 0 && var3.onDialogAbortListener != null) {
-               var5 = new ScriptEvent();
-               var5.widget = var3;
-               var5.objs = var3.onDialogAbortListener;
-               AbstractSoundSystem.method2256(var5);
-            }
-
-            if(var1 == 1 && var3.onSubChangeListener != null) {
-               if(var3.index >= 0) {
-                  Widget var6 = class44.getWidget(var3.id);
-                  if(var6 == null || var6.children == null || var3.index >= var6.children.length || var3 != var6.children[var3.index]) {
-                     continue;
-                  }
+               ScriptEvent scriptEvent;
+               if (id == 0 && widget.onDialogAbortListener != null) {
+                   scriptEvent = new ScriptEvent();
+                   scriptEvent.widget = widget;
+                   scriptEvent.objs = widget.onDialogAbortListener;
+                   AbstractSoundSystem.method2256(scriptEvent);
                }
 
-               var5 = new ScriptEvent();
-               var5.widget = var3;
-               var5.objs = var3.onSubChangeListener;
-               AbstractSoundSystem.method2256(var5);
-            }
-         }
-      }
+               if (id == 1 && widget.onSubChangeListener != null) {
+                   if (widget.index >= 0) {
+                       final Widget var6 = class44.getWidget(widget.id);
+                       if (var6 == null || var6.children == null || widget.index >= var6.children.length || widget != var6.children[widget.index]) {
+                           continue;
+                       }
+                   }
+
+                   scriptEvent = new ScriptEvent();
+                   scriptEvent.widget = widget;
+                   scriptEvent.objs = widget.onSubChangeListener;
+                   AbstractSoundSystem.method2256(scriptEvent);
+               }
+           }
+       }
 
    }
 }

@@ -1,8 +1,8 @@
 package com.oldscape.client;
 
 public class Deque {
-   public Node head;
-   Node current;
+   public final Node head;
+   private Node current;
 
    public Deque() {
       this.head = new Node();
@@ -12,7 +12,7 @@ public class Deque {
 
    public void clear() {
       while(true) {
-         Node var1 = this.head.next;
+         final Node var1 = this.head.next;
          if(var1 == this.head) {
             this.current = null;
             return;
@@ -22,7 +22,7 @@ public class Deque {
       }
    }
 
-   public void addFront(Node var1) {
+   public void addFront(final Node var1) {
       if(var1.previous != null) {
          var1.unlink();
       }
@@ -33,7 +33,7 @@ public class Deque {
       var1.next.previous = var1;
    }
 
-   public void addTail(Node var1) {
+   public void addTail(final Node var1) {
       if(var1.previous != null) {
          var1.unlink();
       }
@@ -45,7 +45,7 @@ public class Deque {
    }
 
    public Node popFront() {
-      Node var1 = this.head.next;
+      final Node var1 = this.head.next;
       if(var1 == this.head) {
          return null;
       } else {
@@ -55,7 +55,7 @@ public class Deque {
    }
 
    public Node popTail() {
-      Node var1 = this.head.previous;
+      final Node var1 = this.head.previous;
       if(var1 == this.head) {
          return null;
       } else {
@@ -65,7 +65,7 @@ public class Deque {
    }
 
    public Node getFront() {
-      Node var1 = this.head.next;
+      final Node var1 = this.head.next;
       if(var1 == this.head) {
          this.current = null;
          return null;
@@ -76,7 +76,7 @@ public class Deque {
    }
 
    public Node getTail() {
-      Node var1 = this.head.previous;
+      final Node var1 = this.head.previous;
       if(var1 == this.head) {
          this.current = null;
          return null;
@@ -87,7 +87,7 @@ public class Deque {
    }
 
    public Node getNext() {
-      Node var1 = this.current;
+      final Node var1 = this.current;
       if(var1 == this.head) {
          this.current = null;
          return null;
@@ -98,7 +98,7 @@ public class Deque {
    }
 
    public Node getPrevious() {
-      Node var1 = this.current;
+      final Node var1 = this.current;
       if(var1 == this.head) {
          this.current = null;
          return null;
@@ -108,7 +108,7 @@ public class Deque {
       }
    }
 
-   public static void method4011(Node var0, Node var1) {
+   public static void method4011(final Node var0, final Node var1) {
       if(var0.previous != null) {
          var0.unlink();
       }

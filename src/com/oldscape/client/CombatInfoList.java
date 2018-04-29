@@ -3,8 +3,8 @@ package com.oldscape.client;
 import java.util.Iterator;
 
 public class CombatInfoList implements Iterable {
-   Node node;
-   Node current;
+   final Node node;
+   private Node current;
 
    public CombatInfoList() {
       this.node = new Node();
@@ -19,7 +19,7 @@ public class CombatInfoList implements Iterable {
 
    }
 
-   public void addFirst(Node var1) {
+   public void addFirst(final Node var1) {
       if(var1.previous != null) {
          var1.unlink();
       }
@@ -30,7 +30,7 @@ public class CombatInfoList implements Iterable {
       var1.next.previous = var1;
    }
 
-   public void addLast(Node var1) {
+   public void addLast(final Node var1) {
       if(var1.previous != null) {
          var1.unlink();
       }
@@ -42,7 +42,7 @@ public class CombatInfoList implements Iterable {
    }
 
    public Node removeLast() {
-      Node var1 = this.node.next;
+      final Node var1 = this.node.next;
       if(var1 == this.node) {
          return null;
       } else {
@@ -52,11 +52,11 @@ public class CombatInfoList implements Iterable {
    }
 
    public Node last() {
-      return this.previousOrLast((Node)null);
+      return this.previousOrLast(null);
    }
 
-   Node previousOrLast(Node var1) {
-      Node var2;
+   private Node previousOrLast(final Node var1) {
+      final Node var2;
       if(var1 == null) {
          var2 = this.node.next;
       } else {
@@ -73,7 +73,7 @@ public class CombatInfoList implements Iterable {
    }
 
    public Node previous() {
-      Node var1 = this.current;
+      final Node var1 = this.current;
       if(var1 == this.node) {
          this.current = null;
          return null;
@@ -91,7 +91,7 @@ public class CombatInfoList implements Iterable {
       return new class211(this);
    }
 
-   public static void method3987(Node var0, Node var1) {
+   public static void method3987(final Node var0, final Node var1) {
       if(var0.previous != null) {
          var0.unlink();
       }

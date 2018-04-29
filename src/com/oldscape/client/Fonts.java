@@ -2,40 +2,38 @@ package com.oldscape.client;
 
 import java.util.HashMap;
 
-public class Fonts {
+class Fonts {
    static SpritePixels[] headIconsPrayer;
-   IndexDataBase field3892;
-   IndexDataBase field3890;
-   HashMap map;
+   private final IndexDataBase indexSprites;
+   private final IndexDataBase field3890;
+   private final HashMap<FontName, Font> map;
 
-   public Fonts(IndexDataBase var1, IndexDataBase var2) {
-      this.field3892 = var1;
+   public Fonts(final IndexDataBase indexSprites, final IndexDataBase var2) {
+      this.indexSprites = indexSprites;
       this.field3890 = var2;
-      this.map = new HashMap();
+      this.map = new HashMap<>();
    }
 
-   public HashMap createMap(FontName[] var1) {
-      HashMap var2 = new HashMap();
-      FontName[] var3 = var1;
+   public HashMap<FontName, Font> createMap(final FontName[] var1) {
+      final HashMap<FontName, Font> tempMap = new HashMap<>();
 
-      for(int var4 = 0; var4 < var3.length; ++var4) {
-         FontName var5 = var3[var4];
-         if(this.map.containsKey(var5)) {
-            var2.put(var5, this.map.get(var5));
-         } else {
-            IndexDataBase var7 = this.field3892;
-            IndexDataBase var8 = this.field3890;
-            String var9 = var5.field3885;
-            int var10 = var7.getFile(var9);
-            int var11 = var7.getChild(var10, "");
-            Font var6 = FontName.method5488(var7, var8, var10, var11);
-            if(var6 != null) {
-               this.map.put(var5, var6);
-               var2.put(var5, var6);
-            }
-         }
-      }
+       for (final FontName fontName : var1) {
+           if (this.map.containsKey(fontName)) {
+               tempMap.put(fontName, this.map.get(fontName));
+           } else {
+               final IndexDataBase var7 = this.indexSprites;
+               final IndexDataBase var8 = this.field3890;
+               final String fileName = fontName.fileName;
+               final int var10 = var7.getFile(fileName);
+               final int var11 = var7.getChild(var10, "");
+               final Font font = FontName.method5488(var7, var8, var10, var11);
+               if (font != null) {
+                   this.map.put(fontName, font);
+                   tempMap.put(fontName, font);
+               }
+           }
+       }
 
-      return var2;
+      return tempMap;
    }
 }

@@ -1,6 +1,6 @@
 package com.oldscape.client;
 
-public abstract class AbstractByteBuffer {
+abstract class AbstractByteBuffer {
    static boolean directBufferUnavailable;
 
    static {
@@ -11,23 +11,23 @@ public abstract class AbstractByteBuffer {
 
    abstract void put(byte[] var1);
 
-   public static void method3757(String[] var0, short[] var1, int var2, int var3) {
+   public static void method3757(final String[] var0, final short[] var1, final int var2, final int var3) {
       if(var2 < var3) {
-         int var4 = (var3 + var2) / 2;
+         final int var4 = (var3 + var2) / 2;
          int var5 = var2;
-         String var6 = var0[var4];
+         final String var6 = var0[var4];
          var0[var4] = var0[var3];
          var0[var3] = var6;
-         short var7 = var1[var4];
+         final short var7 = var1[var4];
          var1[var4] = var1[var3];
          var1[var3] = var7;
 
          for(int var8 = var2; var8 < var3; ++var8) {
             if(var6 == null || var0[var8] != null && var0[var8].compareTo(var6) < (var8 & 1)) {
-               String var9 = var0[var8];
+               final String var9 = var0[var8];
                var0[var8] = var0[var5];
                var0[var5] = var9;
-               short var10 = var1[var8];
+               final short var10 = var1[var8];
                var1[var8] = var1[var5];
                var1[var5++] = var10;
             }

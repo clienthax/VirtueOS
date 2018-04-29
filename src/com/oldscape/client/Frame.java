@@ -1,10 +1,10 @@
 package com.oldscape.client;
 
-public class Frame {
-   static int[] field1817;
-   static int[] field1814;
-   static int[] field1822;
-   static int[] field1818;
+class Frame {
+   private static final int[] field1817;
+   private static final int[] field1814;
+   private static final int[] field1822;
+   private static final int[] field1818;
    FrameMap skin;
    int transformCount;
    int[] transformTypes;
@@ -20,22 +20,22 @@ public class Frame {
       field1818 = new int[500];
    }
 
-   Frame(byte[] var1, FrameMap var2) {
+   Frame(final byte[] var1, final FrameMap var2) {
       this.skin = null;
       this.transformCount = -1;
       this.showing = false;
       this.skin = var2;
-      Buffer var3 = new Buffer(var1);
-      Buffer var4 = new Buffer(var1);
+      final Buffer var3 = new Buffer(var1);
+      final Buffer var4 = new Buffer(var1);
       var3.offset = 2;
-      int var5 = var3.readUnsignedByte();
+      final int var5 = var3.readUnsignedByte();
       int var6 = -1;
       int var7 = 0;
       var4.offset = var5 + var3.offset;
 
       int var8;
       for(var8 = 0; var8 < var5; ++var8) {
-         int var9 = var3.readUnsignedByte();
+         final int var9 = var3.readUnsignedByte();
          if(var9 > 0) {
             if(this.skin.types[var8] != 0) {
                for(int var10 = var8 - 1; var10 > var6; --var10) {

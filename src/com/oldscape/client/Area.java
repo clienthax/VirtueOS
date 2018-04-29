@@ -2,36 +2,37 @@ package com.oldscape.client;
 
 public class Area extends CacheableNode {
    static IndexDataBase field3461;
-   public static Area[] mapAreaType;
-   static NodeCache areaSpriteCache;
+   static Area[] mapAreaType;
+   static final NodeCache areaSpriteCache;
+   static int field2162;
    public final int id;
-   public int spriteId;
-   int field3468;
+   int spriteId;
+   private int field3468;
    public String name;
-   public int field3460;
-   public int field3458;
-   public String[] field3462;
-   public String field3470;
-   int[] field3464;
-   int field3456;
-   int field3466;
-   int field3467;
-   int field3459;
-   public HorizontalAlignment horizontalAlignment;
-   public VerticalAlignment verticalAlignment;
-   int[] field3471;
-   byte[] field3472;
-   public int field3473;
+   int textColor;
+   int fontSizeId;
+   public String[] actions;
+   String field3470;
+   private int[] field3464;
+   private int field3456;
+   private int field3466;
+   private int field3467;
+   private int field3459;
+   HorizontalAlignment horizontalAlignment;
+   VerticalAlignment verticalAlignment;
+   private int[] field3471;
+   private byte[] field3472;
+   int field3473;
 
    static {
       areaSpriteCache = new NodeCache(256);
    }
 
-   Area(int var1) {
+   Area(final int var1) {
       this.spriteId = -1;
       this.field3468 = -1;
-      this.field3458 = 0;
-      this.field3462 = new String[5];
+      this.fontSizeId = 0;
+      this.actions = new String[5];
       this.field3456 = Integer.MAX_VALUE;
       this.field3466 = Integer.MAX_VALUE;
       this.field3467 = Integer.MIN_VALUE;
@@ -42,93 +43,114 @@ public class Area extends CacheableNode {
       this.id = var1;
    }
 
-   void method4757(Buffer var1) {
+   public static boolean method1232(final IndexDataBase var0, final IndexDataBase var1) {
+      field3461 = var1;
+      if(!var0.method4624()) {
+         return false;
+      } else {
+         field2162 = var0.fileCount(35);
+         mapAreaType = new Area[field2162];
+
+         for(int var2 = 0; var2 < field2162; ++var2) {
+            final byte[] var3 = var0.getConfigData(35, var2);
+            if(var3 != null) {
+               mapAreaType[var2] = new Area(var2);
+               mapAreaType[var2].method4757(new Buffer(var3));
+               mapAreaType[var2].method4744();
+            }
+         }
+
+         return true;
+      }
+   }
+
+   void method4757(final Buffer var1) {
       while(true) {
-         int var2 = var1.readUnsignedByte();
+         final int var2 = var1.readUnsignedByte();
          if(var2 == 0) {
             return;
          }
 
-         this.method4742(var1, var2);
+         this.readNext(var1, var2);
       }
    }
 
-   void method4742(Buffer var1, int var2) {
-      if(var2 == 1) {
-         this.spriteId = var1.method3576();
-      } else if(var2 == 2) {
-         this.field3468 = var1.method3576();
-      } else if(var2 == 3) {
-         this.name = var1.readString();
-      } else if(var2 == 4) {
-         this.field3460 = var1.read24BitInt();
-      } else if(var2 == 5) {
-         var1.read24BitInt();
-      } else if(var2 == 6) {
-         this.field3458 = var1.readUnsignedByte();
+   private void readNext(final Buffer buffer, final int opcode) {
+      if(opcode == 1) {
+         this.spriteId = buffer.method3576();
+      } else if(opcode == 2) {
+         this.field3468 = buffer.method3576();
+      } else if(opcode == 3) {
+         this.name = buffer.readString();
+      } else if(opcode == 4) {
+         this.textColor = buffer.read24BitInt();
+      } else if(opcode == 5) {
+         buffer.read24BitInt();
+      } else if(opcode == 6) {
+         this.fontSizeId = buffer.readUnsignedByte();
       } else {
-         int var3;
-         if(var2 == 7) {
-            var3 = var1.readUnsignedByte();
+         final int var3;
+         if(opcode == 7) {
+            var3 = buffer.readUnsignedByte();
             if((var3 & 1) == 0) {
             }
 
             if((var3 & 2) == 2) {
             }
-         } else if(var2 == 8) {
-            var1.readUnsignedByte();
-         } else if(var2 >= 10 && var2 <= 14) {
-            this.field3462[var2 - 10] = var1.readString();
-         } else if(var2 == 15) {
-            var3 = var1.readUnsignedByte();
+         } else if(opcode == 8) {
+            buffer.readUnsignedByte();
+         } else if(opcode >= 10 && opcode <= 14) {
+            this.actions[opcode - 10] = buffer.readString();
+         } else if(opcode == 15) {
+            var3 = buffer.readUnsignedByte();
             this.field3464 = new int[var3 * 2];
 
             int var4;
             for(var4 = 0; var4 < var3 * 2; ++var4) {
-               this.field3464[var4] = var1.readShort();
+               this.field3464[var4] = buffer.readShort();
             }
 
-            var1.readInt();
-            var4 = var1.readUnsignedByte();
+            buffer.readInt();
+            var4 = buffer.readUnsignedByte();
             this.field3471 = new int[var4];
 
             int var5;
             for(var5 = 0; var5 < this.field3471.length; ++var5) {
-               this.field3471[var5] = var1.readInt();
+               this.field3471[var5] = buffer.readInt();
             }
 
             this.field3472 = new byte[var3];
 
             for(var5 = 0; var5 < var3; ++var5) {
-               this.field3472[var5] = var1.readByte();
+               this.field3472[var5] = buffer.readByte();
             }
-         } else if(var2 != 16) {
-            if(var2 == 17) {
-               this.field3470 = var1.readString();
-            } else if(var2 == 18) {
-               var1.method3576();
-            } else if(var2 == 19) {
-               this.field3473 = var1.readUnsignedShort();
-            } else if(var2 == 21) {
-               var1.readInt();
-            } else if(var2 == 22) {
-               var1.readInt();
-            } else if(var2 == 23) {
-               var1.readUnsignedByte();
-               var1.readUnsignedByte();
-               var1.readUnsignedByte();
-            } else if(var2 == 24) {
-               var1.readShort();
-               var1.readShort();
-            } else if(var2 == 25) {
-               var1.method3576();
-            } else if(var2 == 28) {
-               var1.readUnsignedByte();
-            } else if(var2 == 29) {
-               HorizontalAlignment[] var6 = new HorizontalAlignment[]{HorizontalAlignment.field3702, HorizontalAlignment.field3699, HorizontalAlignment.field3698};
-               this.horizontalAlignment = (HorizontalAlignment)Permission.forOrdinal(var6, var1.readUnsignedByte());
-            } else if(var2 == 30) {
-               this.verticalAlignment = (VerticalAlignment)Permission.forOrdinal(Ignore.method5387(), var1.readUnsignedByte());
+         } else if(opcode != 16) {
+            if(opcode == 17) {
+               this.field3470 = buffer.readString();
+            } else if(opcode == 18) {
+               buffer.method3576();
+            } else if(opcode == 19) {
+               this.field3473 = buffer.readUnsignedShort();
+            } else if(opcode == 21) {
+               buffer.readInt();
+            } else if(opcode == 22) {
+               buffer.readInt();
+            } else if(opcode == 23) {
+               buffer.readUnsignedByte();
+               buffer.readUnsignedByte();
+               buffer.readUnsignedByte();
+            } else if(opcode == 24) {
+               buffer.readShort();
+               buffer.readShort();
+            } else if(opcode == 25) {
+               buffer.method3576();
+            } else if(opcode == 28) {
+               buffer.readUnsignedByte();
+            } else if(opcode == 29) {
+               final HorizontalAlignment[] var6 = {HorizontalAlignment.field3702, HorizontalAlignment.field3699, HorizontalAlignment.field3698};
+               this.horizontalAlignment = (HorizontalAlignment) Enumerated.forOrdinal(var6, buffer.readUnsignedByte());
+            } else if(opcode == 30) {
+               this.verticalAlignment = (VerticalAlignment) Enumerated.forOrdinal(Ignore.method5387(), buffer.readUnsignedByte());
             }
          }
       }
@@ -154,96 +176,29 @@ public class Area extends CacheableNode {
 
    }
 
-   public SpritePixels getMapIcon(boolean var1) {
-      int var2 = this.spriteId;
-      return this.method4745(var2);
+   SpritePixels getMapIcon() {
+      final int var2 = this.spriteId;
+      return this.getSpritePixels(var2);
    }
 
-   SpritePixels method4745(int var1) {
-      if(var1 < 0) {
+   private SpritePixels getSpritePixels(final int spriteId) {
+      if(spriteId < 0) {
          return null;
       } else {
-         SpritePixels var2 = (SpritePixels)areaSpriteCache.get((long)var1);
-         if(var2 != null) {
-            return var2;
-         } else {
-            var2 = SoundTaskDataProvider.method817(field3461, var1, 0);
-            if(var2 != null) {
-               areaSpriteCache.put(var2, (long)var1);
+         SpritePixels spritePixels = (SpritePixels)areaSpriteCache.get(spriteId);
+         if (spritePixels == null) {
+            spritePixels = class332.method817(field3461, spriteId, 0);
+            if (spritePixels != null) {
+               areaSpriteCache.put(spritePixels, spriteId);
             }
 
-            return var2;
          }
+         return spritePixels;
       }
    }
 
-   public int method4746() {
+   public int getId() {
       return this.id;
    }
 
-   static void decodeSprite(byte[] var0) {
-      Buffer var1 = new Buffer(var0);
-      var1.offset = var0.length - 2;
-      class332.indexedSpriteCount = var1.readUnsignedShort();
-      class332.indexedSpriteOffsetXs = new int[class332.indexedSpriteCount];
-      FileSystem.indexedSpriteOffsetYs = new int[class332.indexedSpriteCount];
-      WorldMapDecoration.indexSpriteWidths = new int[class332.indexedSpriteCount];
-      class332.indexedSpriteHeights = new int[class332.indexedSpriteCount];
-      class332.spritePixels = new byte[class332.indexedSpriteCount][];
-      var1.offset = var0.length - 7 - class332.indexedSpriteCount * 8;
-      class332.indexedSpriteWidth = var1.readUnsignedShort();
-      class332.indexedSpriteHeight = var1.readUnsignedShort();
-      int var2 = (var1.readUnsignedByte() & 255) + 1;
-
-      int var3;
-      for(var3 = 0; var3 < class332.indexedSpriteCount; ++var3) {
-         class332.indexedSpriteOffsetXs[var3] = var1.readUnsignedShort();
-      }
-
-      for(var3 = 0; var3 < class332.indexedSpriteCount; ++var3) {
-         FileSystem.indexedSpriteOffsetYs[var3] = var1.readUnsignedShort();
-      }
-
-      for(var3 = 0; var3 < class332.indexedSpriteCount; ++var3) {
-         WorldMapDecoration.indexSpriteWidths[var3] = var1.readUnsignedShort();
-      }
-
-      for(var3 = 0; var3 < class332.indexedSpriteCount; ++var3) {
-         class332.indexedSpriteHeights[var3] = var1.readUnsignedShort();
-      }
-
-      var1.offset = var0.length - 7 - class332.indexedSpriteCount * 8 - (var2 - 1) * 3;
-      class332.indexedSpritePalette = new int[var2];
-
-      for(var3 = 1; var3 < var2; ++var3) {
-         class332.indexedSpritePalette[var3] = var1.read24BitInt();
-         if(class332.indexedSpritePalette[var3] == 0) {
-            class332.indexedSpritePalette[var3] = 1;
-         }
-      }
-
-      var1.offset = 0;
-
-      for(var3 = 0; var3 < class332.indexedSpriteCount; ++var3) {
-         int var4 = WorldMapDecoration.indexSpriteWidths[var3];
-         int var5 = class332.indexedSpriteHeights[var3];
-         int var6 = var4 * var5;
-         byte[] var7 = new byte[var6];
-         class332.spritePixels[var3] = var7;
-         int var8 = var1.readUnsignedByte();
-         int var9;
-         if(var8 == 0) {
-            for(var9 = 0; var9 < var6; ++var9) {
-               var7[var9] = var1.readByte();
-            }
-         } else if(var8 == 1) {
-            for(var9 = 0; var9 < var4; ++var9) {
-               for(int var10 = 0; var10 < var5; ++var10) {
-                  var7[var9 + var10 * var4] = var1.readByte();
-               }
-            }
-         }
-      }
-
-   }
 }

@@ -2,13 +2,13 @@ package com.oldscape.client;
 
 import java.io.EOFException;
 
-public class Varcs {
-   boolean[] varcSerials;
-   boolean[] varcstringSerials;
-   int[] varcs;
-   String[] varcstrings;
-   boolean changed;
-   long field1446;
+class Varcs {
+   private final boolean[] varcSerials;
+   private final boolean[] varcstringSerials;
+   private final int[] varcs;
+   private final String[] varcstrings;
+   private boolean changed;
+   private long field1446;
 
    Varcs() {
       this.changed = false;
@@ -18,29 +18,27 @@ public class Varcs {
 
       int var1;
       for(var1 = 0; var1 < this.varcs.length; ++var1) {
-         VarCInt var2 = class241.method4414(var1);
+         final VarCInt var2 = VarCInt.method4414(var1);
          this.varcSerials[var1] = var2.field3474;
       }
 
       this.varcstringSerials = new boolean[this.varcstrings.length];
 
       for(var1 = 0; var1 < this.varcstrings.length; ++var1) {
-         VarCString var3 = (VarCString)VarCString.field3480.get((long)var1);
-         VarCString var5;
-         if(var3 != null) {
-            var5 = var3;
-         } else {
-            byte[] var4 = VarCString.field3481.getConfigData(15, var1);
-            var3 = new VarCString();
-            if(var4 != null) {
-               var3.method4787(new Buffer(var4));
-            }
+         VarCString var3 = (VarCString)VarCString.field3480.get(var1);
+         final VarCString var5;
+          if (var3 == null) {
+              final byte[] var4 = VarCString.field3481.getConfigData(15, var1);
+              var3 = new VarCString();
+              if (var4 != null) {
+                  var3.read(new Buffer(var4));
+              }
 
-            VarCString.field3480.put(var3, (long)var1);
-            var5 = var3;
-         }
+              VarCString.field3480.put(var3, var1);
+          }
+          var5 = var3;
 
-         this.varcstringSerials[var1] = var5.field3479;
+          this.varcstringSerials[var1] = var5.field3479;
       }
 
       for(var1 = 0; var1 < this.varcs.length; ++var1) {
@@ -50,7 +48,7 @@ public class Varcs {
       this.deserialize();
    }
 
-   void putVarc(int var1, int var2) {
+   void putVarc(final int var1, final int var2) {
       this.varcs[var1] = var2;
       if(this.varcSerials[var1]) {
          this.changed = true;
@@ -58,11 +56,11 @@ public class Varcs {
 
    }
 
-   int getVarc(int var1) {
+   int getVarc(final int var1) {
       return this.varcs[var1];
    }
 
-   void putVarcString(int var1, String var2) {
+   void putVarcString(final int var1, final String var2) {
       this.varcstrings[var1] = var2;
       if(this.varcstringSerials[var1]) {
          this.changed = true;
@@ -70,7 +68,7 @@ public class Varcs {
 
    }
 
-   String getVarcString(int var1) {
+   String getVarcString(final int var1) {
       return this.varcstrings[var1];
    }
 
@@ -90,12 +88,12 @@ public class Varcs {
 
    }
 
-   FileOnDisk getVarPrefs(boolean var1) {
+   private FileOnDisk getVarPrefs(final boolean var1) {
       return NPC.getPreferencesFile("2", class265.field3435.name, var1);
    }
 
    void serialize() {
-      FileOnDisk var1 = this.getVarPrefs(true);
+      final FileOnDisk var1 = this.getVarPrefs(true);
 
       try {
          int var2 = 3;
@@ -119,7 +117,7 @@ public class Varcs {
             }
          }
 
-         Buffer var9 = new Buffer(var2);
+         final Buffer var9 = new Buffer(var2);
          var9.putByte(1);
          var9.putShort(var3);
 
@@ -141,11 +139,11 @@ public class Varcs {
          }
 
          var1.write(var9.payload, 0, var9.offset);
-      } catch (Exception var17) {
+      } catch (final Exception ignored) {
       } finally {
          try {
             var1.close();
-         } catch (Exception var16) {
+         } catch (final Exception ignored) {
          }
 
       }
@@ -154,12 +152,12 @@ public class Varcs {
       this.field1446 = class64.method1118();
    }
 
-   void deserialize() {
-      FileOnDisk var1 = this.getVarPrefs(false);
+   private void deserialize() {
+      final FileOnDisk var1 = this.getVarPrefs(false);
 
       label192: {
          try {
-            byte[] var2 = new byte[(int)var1.length()];
+            final byte[] var2 = new byte[(int)var1.length()];
 
             int var4;
             for(int var3 = 0; var3 < var2.length; var3 += var4) {
@@ -169,14 +167,14 @@ public class Varcs {
                }
             }
 
-            Buffer var13 = new Buffer(var2);
+            final Buffer var13 = new Buffer(var2);
             if(var13.payload.length - var13.offset >= 1) {
-               int var14 = var13.readUnsignedByte();
+               final int var14 = var13.readUnsignedByte();
                if(var14 < 0 || var14 > 1) {
                   return;
                }
 
-               int var15 = var13.readUnsignedShort();
+               final int var15 = var13.readUnsignedShort();
 
                int var7;
                int var8;
@@ -198,7 +196,7 @@ public class Varcs {
                   }
 
                   var9 = var13.readUnsignedShort();
-                  String var10 = var13.readString();
+                  final String var10 = var13.readString();
                   if(this.varcstringSerials[var9]) {
                      this.varcstrings[var9] = var10;
                   }
@@ -206,12 +204,12 @@ public class Varcs {
                   ++var8;
                }
             }
-         } catch (Exception var24) {
+         } catch (final Exception var24) {
             break label192;
          } finally {
             try {
                var1.close();
-            } catch (Exception var23) {
+            } catch (final Exception ignored) {
             }
 
          }
@@ -234,6 +232,6 @@ public class Varcs {
    }
 
    public static void method1993() {
-      class278.field3546.reset();
+      ParamNode.paramCache.reset();
    }
 }

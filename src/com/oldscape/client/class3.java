@@ -4,20 +4,20 @@ final class class3 implements class0 {
    static class169 rssocket;
    static IndexedSprite[] modIconSprites;
 
-   static final void initializeGPI(PacketBuffer var0) {
+   static void initializeGPI(final PacketBuffer var0) {
       var0.bitAccess();
-      int var1 = Client.localInteractingIndex;
-      Player var2 = SoundTaskDataProvider.localPlayer = Client.cachedPlayers[var1] = new Player();
+      final int var1 = Client.localInteractingIndex;
+      final Player var2 = Client.localPlayer = Client.cachedPlayers[var1] = new Player();
       var2.playerId = var1;
-      int var3 = var0.getBits(30);
-      byte var4 = (byte)(var3 >> 28);
-      int var5 = var3 >> 14 & 16383;
-      int var6 = var3 & 16383;
+      final int var3 = var0.getBits(30);
+      final byte var4 = (byte)(var3 >> 28);
+      final int var5 = var3 >> 14 & 16383;
+      final int var6 = var3 & 16383;
       var2.pathX[0] = var5 - class138.baseX;
       var2.x = (var2.pathX[0] << 7) + (var2.getSize() << 6);
       var2.pathY[0] = var6 - class23.baseY;
       var2.y = (var2.pathY[0] << 7) + (var2.getSize() << 6);
-      BoundingBox3DDrawMode.plane = var2.field856 = var4;
+      BoundingBox3DDrawMode.plane = var2.plane = var4;
       if(class93.field1430[var1] != null) {
          var2.decodeApperance(class93.field1430[var1]);
       }
@@ -29,10 +29,10 @@ final class class3 implements class0 {
 
       for(int var7 = 1; var7 < 2048; ++var7) {
          if(var1 != var7) {
-            int var8 = var0.getBits(18);
-            int var9 = var8 >> 16;
-            int var10 = var8 >> 8 & 597;
-            int var11 = var8 & 597;
+            final int var8 = var0.getBits(18);
+            final int var9 = var8 >> 16;
+            final int var10 = var8 >> 8 & 597;
+            final int var11 = var8 & 597;
             class93.Players_regions[var7] = (var10 << 14) + var11 + (var9 << 28);
             class93.Players_orientations[var7] = 0;
             class93.Players_targetIndices[var7] = -1;
@@ -44,16 +44,16 @@ final class class3 implements class0 {
       var0.byteAccess();
    }
 
-   static final void xteaChanged(boolean var0, PacketBuffer var1) {
+   static void xteaChanged(final boolean var0, final PacketBuffer var1) {
       Client.isDynamicRegion = var0;
-      int var3;
+      final int var3;
       int var4;
       int var5;
       int var6;
       int var7;
       int var8;
       if(!Client.isDynamicRegion) {
-         int var2 = var1.method3555();
+         final int var2 = var1.method3555();
          var3 = var1.method3554();
          var4 = var1.readUnsignedShort();
          class152.xteaKeys = new int[var4][4];
@@ -94,7 +94,7 @@ final class class3 implements class0 {
 
          class289.method5207(var3, var2, true);
       } else {
-         boolean var15 = var1.method3538() == 1;
+         final boolean var15 = var1.method3538() == 1;
          var3 = var1.method3554();
          var4 = var1.method3554();
          var5 = var1.readUnsignedShort();
@@ -135,8 +135,8 @@ final class class3 implements class0 {
                for(var8 = 0; var8 < 13; ++var8) {
                   var9 = Client.instanceTemplateChunks[var6][var7][var8];
                   if(var9 != -1) {
-                     int var10 = var9 >> 14 & 1023;
-                     int var11 = var9 >> 3 & 2047;
+                     final int var10 = var9 >> 14 & 1023;
+                     final int var11 = var9 >> 3 & 2047;
                      int var12 = (var10 / 8 << 8) + var11 / 8;
 
                      int var13;
@@ -150,7 +150,7 @@ final class class3 implements class0 {
                      if(var12 != -1) {
                         class298.mapRegions[var5] = var12;
                         var13 = var12 >> 8 & 255;
-                        int var14 = var12 & 255;
+                        final int var14 = var12 & 255;
                         ItemContainer.landMapFileIds[var5] = MouseRecorder.indexMaps.getFile("m" + var13 + "_" + var14);
                         FontName.landRegionFileIds[var5] = MouseRecorder.indexMaps.getFile("l" + var13 + "_" + var14);
                         ++var5;

@@ -3,19 +3,18 @@ package com.oldscape.client;
 public final class BoundingBox2D extends BoundingBox {
    static SpritePixels minimapSprite;
    static int field248;
-   public static short[] field246;
-   final int xMin;
-   final int yMin;
-   final int xMax;
-   final int yMax;
-   final int color;
+   private final int xMin;
+   private final int yMin;
+   private final int xMax;
+   private final int yMax;
+   private final int color;
 
-   BoundingBox2D(int var1, int var2, int var3, int var4, int var5) {
-      this.xMin = var1;
-      this.yMin = var2;
-      this.xMax = var3;
-      this.yMax = var4;
-      this.color = var5;
+   BoundingBox2D(final int xMin, final int yMin, final int xMax, final int yMax, final int color) {
+      this.xMin = xMin;
+      this.yMin = yMin;
+      this.xMax = xMax;
+      this.yMax = yMax;
+      this.color = color;
    }
 
    public final void vmethod46() {
@@ -26,13 +25,13 @@ public final class BoundingBox2D extends BoundingBox {
       return new LoginPacket[]{LoginPacket.field2485, LoginPacket.field2486, LoginPacket.field2483, LoginPacket.field2488};
    }
 
-   static final void method36() {
+   static void method36() {
       if(class71.soundSystem1 != null) {
          class71.soundSystem1.method2197();
       }
 
-      if(class155.soundSystem0 != null) {
-         class155.soundSystem0.method2197();
+      if(Client.soundSystem0 != null) {
+         Client.soundSystem0.method2197();
       }
 
    }

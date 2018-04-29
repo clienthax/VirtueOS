@@ -7,30 +7,30 @@ public enum class27 implements Enumerated {
    field402(2, (byte)3);
 
    final int field403;
-   final byte field404;
+   final byte rsOrdinal;
 
-   class27(int var3, byte var4) {
+   class27(final int var3, final byte var4) {
       this.field403 = var3;
-      this.field404 = var4;
+      this.rsOrdinal = var4;
    }
 
    public int rsOrdinal() {
-      return this.field404;
+      return this.rsOrdinal;
    }
 
-   public static final int method248(double var0, double var2, double var4) {
+   public static int method248(final double var0, final double var2, final double var4) {
       double var6 = var4;
       double var8 = var4;
       double var10 = var4;
       if(var2 != 0.0D) {
-         double var12;
+         final double var12;
          if(var4 < 0.5D) {
             var12 = (var2 + 1.0D) * var4;
          } else {
             var12 = var4 + var2 - var2 * var4;
          }
 
-         double var14 = var4 * 2.0D - var12;
+         final double var14 = var4 * 2.0D - var12;
          double var16 = 0.3333333333333333D + var0;
          if(var16 > 1.0D) {
             --var16;
@@ -72,14 +72,13 @@ public enum class27 implements Enumerated {
          }
       }
 
-      int var22 = (int)(256.0D * var6);
-      int var13 = (int)(var8 * 256.0D);
-      int var23 = (int)(256.0D * var10);
-      int var15 = var23 + (var13 << 8) + (var22 << 16);
-      return var15;
+      final int var22 = (int)(256.0D * var6);
+      final int var13 = (int)(var8 * 256.0D);
+      final int var23 = (int)(256.0D * var10);
+       return var23 + (var13 << 8) + (var22 << 16);
    }
 
-   static int method247(int var0, int var1) {
+   static int method247(final int var0, int var1) {
       if(var0 == -2) {
          return 12345678;
       } else if(var0 == -1) {
@@ -107,28 +106,28 @@ public enum class27 implements Enumerated {
       return new class27[]{field399, field401, field400, field402};
    }
 
-   static final void method245(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
-      int[] var7 = Region.method2905(var0, var1, var2);
-      int[] var8 = Region.method2905(var3, var4, var5);
+   static void method245(final int var0, final int var1, final int var2, final int var3, final int var4, final int var5, final int var6) {
+      final int[] var7 = Region.method2905(var0, var1, var2);
+      final int[] var8 = Region.method2905(var3, var4, var5);
       Rasterizer2D.drawLine(var7[0], var7[1], var8[0], var8[1], var6);
    }
 
-   static final boolean method246(Widget var0) {
-      if(var0.tableActions == null) {
+   static boolean method246(final Widget widget) {
+      if(widget.tableActions == null) {
          return false;
       } else {
-         for(int var1 = 0; var1 < var0.tableActions.length; ++var1) {
-            int var2 = class308.method5486(var0, var1);
-            int var3 = var0.field2936[var1];
-            if(var0.tableActions[var1] == 2) {
+         for(int idx = 0; idx < widget.tableActions.length; ++idx) {
+            final int var2 = class308.method5486(widget, idx);
+            final int var3 = widget.field2936[idx];
+            if(widget.tableActions[idx] == 2) {
                if(var2 >= var3) {
                   return false;
                }
-            } else if(var0.tableActions[var1] == 3) {
+            } else if(widget.tableActions[idx] == 3) {
                if(var2 <= var3) {
                   return false;
                }
-            } else if(var0.tableActions[var1] == 4) {
+            } else if(widget.tableActions[idx] == 4) {
                if(var3 == var2) {
                   return false;
                }
@@ -141,16 +140,16 @@ public enum class27 implements Enumerated {
       }
    }
 
-   static final void method239(Widget var0, int var1, int var2) {
+   static void method239(final Widget widget, final int var1, final int var2) {
       if(Client.draggedWidget == null && !Client.isMenuOpen) {
-         if(var0 != null && WorldMapRegion.method533(var0) != null) {
-            Client.draggedWidget = var0;
-            Client.field937 = WorldMapRegion.method533(var0);
+         if(widget != null && WorldMapRegion.method533(widget) != null) {
+            Client.draggedWidget = widget;
+            Client.field937 = WorldMapRegion.method533(widget);
             Client.field1042 = var1;
             Client.field1114 = var2;
             class55.field660 = 0;
             Client.draggingWidget = false;
-            int var3 = Client.menuOptionCount - 1;
+            final int var3 = Client.menuOptionCount - 1;
             if(var3 != -1) {
                class22.method184(var3);
             }

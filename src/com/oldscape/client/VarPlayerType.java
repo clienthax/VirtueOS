@@ -2,7 +2,7 @@ package com.oldscape.client;
 
 public class VarPlayerType extends CacheableNode {
    public static IndexDataBase varplayer_ref;
-   public static NodeCache varplayers;
+   public static final NodeCache varplayers;
    public int configType;
 
    static {
@@ -13,9 +13,9 @@ public class VarPlayerType extends CacheableNode {
       this.configType = 0;
    }
 
-   public void decode(Buffer var1) {
+   public void decode(final Buffer var1) {
       while(true) {
-         int var2 = var1.readUnsignedByte();
+         final int var2 = var1.readUnsignedByte();
          if(var2 == 0) {
             return;
          }
@@ -24,14 +24,14 @@ public class VarPlayerType extends CacheableNode {
       }
    }
 
-   void decode(Buffer var1, int var2) {
+   private void decode(final Buffer var1, final int var2) {
       if(var2 == 5) {
          this.configType = var1.readUnsignedShort();
       }
 
    }
 
-   static final void method4736() {
+   static void method4736() {
       Client.field957.close();
       Overlay.overlays.reset();
       FloorUnderlayDefinition.underlays.reset();
@@ -77,7 +77,7 @@ public class VarPlayerType extends CacheableNode {
 
       System.gc();
       class229.field2687 = 1;
-      class185.field2511 = null;
+      Client.field2511 = null;
       VertexNormal.field1931 = -1;
       GrandExchangeEvents.field284 = -1;
       class86.field1330 = 0;

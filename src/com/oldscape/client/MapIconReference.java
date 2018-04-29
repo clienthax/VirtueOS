@@ -1,14 +1,14 @@
 package com.oldscape.client;
 
-public class MapIconReference {
+class MapIconReference {
    static boolean middleMouseMovesCamera;
    static UrlRequester urlRequester;
-   public int areaId;
-   public Coordinates field590;
-   public Coordinates field591;
+   public final int areaId;
+   public final Coordinates field590;
+   public final Coordinates field591;
 
-   public MapIconReference(int var1, Coordinates var2, Coordinates var3) {
-      this.areaId = var1;
+   public MapIconReference(final int areaId, final Coordinates var2, final Coordinates var3) {
+      this.areaId = areaId;
       this.field590 = var2;
       this.field591 = var3;
    }

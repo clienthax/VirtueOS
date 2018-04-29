@@ -3,12 +3,12 @@ package com.oldscape.client;
 import java.io.File;
 import java.io.IOException;
 
-public final class NPC extends Actor {
+final class NPC extends Actor {
    static String userHome;
    static int field1318;
    NPCComposition composition;
 
-   final void method1873(int var1, byte var2) {
+   final void method1873(final int var1, final byte var2) {
       int var3 = super.pathX[0];
       int var4 = super.pathY[0];
       if(var1 == 0) {
@@ -66,14 +66,14 @@ public final class NPC extends Actor {
       super.pathTraversed[0] = var2;
    }
 
-   final void method1874(int var1, int var2, boolean var3) {
+   final void method1874(final int var1, final int var2, final boolean var3) {
       if(super.animation != -1 && CombatInfo1.getAnimation(super.animation).priority == 1) {
          super.animation = -1;
       }
 
       if(!var3) {
-         int var4 = var1 - super.pathX[0];
-         int var5 = var2 - super.pathY[0];
+         final int var4 = var1 - super.pathX[0];
+         final int var5 = var2 - super.pathY[0];
          if(var4 >= -8 && var4 <= 8 && var5 >= -8 && var5 <= 8) {
             if(super.queueSize < 9) {
                ++super.queueSize;
@@ -97,36 +97,36 @@ public final class NPC extends Actor {
       super.field1158 = 0;
       super.pathX[0] = var1;
       super.pathY[0] = var2;
-      super.x = super.field1172 * 64 + super.pathX[0] * 128;
-      super.y = super.field1172 * 64 + super.pathY[0] * 128;
+      super.x = super.size * 64 + super.pathX[0] * 128;
+      super.y = super.size * 64 + super.pathY[0] * 128;
    }
 
    protected final Model getModel() {
       if(this.composition == null) {
          return null;
       } else {
-         Sequence var1 = super.animation != -1 && super.actionAnimationDisable == 0?CombatInfo1.getAnimation(super.animation):null;
-         Sequence var2 = super.poseAnimation == -1 || super.idlePoseAnimation == super.poseAnimation && var1 != null?null:CombatInfo1.getAnimation(super.poseAnimation);
-         Model var3 = this.composition.getModel(var1, super.actionFrame, var2, super.poseFrame);
-         if(var3 == null) {
+         final Sequence action = super.animation != -1 && super.actionAnimationDisable == 0?CombatInfo1.getAnimation(super.animation):null;
+         final Sequence pose = super.poseAnimation == -1 || super.idlePoseAnimation == super.poseAnimation && action != null?null:CombatInfo1.getAnimation(super.poseAnimation);
+         Model model = this.composition.getModel(action, super.actionFrame, pose, super.poseFrame);
+         if(model == null) {
             return null;
          } else {
-            var3.calculateBoundsCylinder();
-            super.logicalHeight = var3.modelHeight;
+            model.calculateBoundsCylinder();
+            super.logicalHeight = model.modelHeight;
             if(super.graphic != -1 && super.spotAnimFrame != -1) {
-               Model var4 = class86.getSpotAnimType(super.graphic).getModel(super.spotAnimFrame);
-               if(var4 != null) {
-                  var4.offsetBy(0, -super.field1198, 0);
-                  Model[] var5 = new Model[]{var3, var4};
-                  var3 = new Model(var5, 2);
+               final Model spotAnimModel = Spotanim.getSpotAnimType(super.graphic).getModel(super.spotAnimFrame);
+               if(spotAnimModel != null) {
+                  spotAnimModel.offsetBy(0, -super.field1198, 0);
+                  final Model[] modelParts = {model, spotAnimModel};
+                  model = new Model(modelParts, 2);
                }
             }
 
             if(this.composition.size == 1) {
-               var3.field1874 = true;
+               model.field1874 = true;
             }
 
-            return var3;
+            return model;
          }
       }
    }
@@ -135,38 +135,37 @@ public final class NPC extends Actor {
       return this.composition != null;
    }
 
-   static final boolean method1878(int var0, int var1, class178 var2, CollisionData var3) {
+   static boolean method1878(final int var0, final int var1, final class178 var2, final CollisionData collisionData) {
       int var4 = var0;
       int var5 = var1;
-      byte var6 = 64;
-      byte var7 = 64;
-      int var8 = var0 - var6;
-      int var9 = var1 - var7;
+      final byte var6 = 64;
+      final byte var7 = 64;
+      final int var8 = var0 - var6;
+      final int var9 = var1 - var7;
       class177.field2285[var6][var7] = 99;
       class177.field2286[var6][var7] = 0;
-      byte var10 = 0;
+      final byte var10 = 0;
       int var11 = 0;
       class177.field2290[var10] = var0;
-      byte var10001 = var10;
-      int var18 = var10 + 1;
-      class177.field2287[var10001] = var1;
-      int[][] var12 = var3.flags;
+       int var18 = var10 + 1;
+      class177.field2287[var10] = var1;
+      final int[][] var12 = collisionData.flags;
 
       while(var18 != var11) {
          var4 = class177.field2290[var11];
          var5 = class177.field2287[var11];
          var11 = var11 + 1 & 4095;
-         int var16 = var4 - var8;
-         int var17 = var5 - var9;
-         int var13 = var4 - var3.x;
-         int var14 = var5 - var3.y;
-         if(var2.vmethod3428(1, var4, var5, var3)) {
+         final int var16 = var4 - var8;
+         final int var17 = var5 - var9;
+         final int var13 = var4 - collisionData.x;
+         final int var14 = var5 - collisionData.y;
+         if(var2.vmethod3428(1, var4, var5, collisionData)) {
             class177.field2283 = var4;
             class177.field2289 = var5;
             return true;
          }
 
-         int var15 = class177.field2286[var16][var17] + 1;
+         final int var15 = class177.field2286[var16][var17] + 1;
          if(var16 > 0 && class177.field2285[var16 - 1][var17] == 0 && (var12[var13 - 1][var14] & 19136776) == 0) {
             class177.field2290[var18] = var4 - 1;
             class177.field2287[var18] = var5;
@@ -237,13 +236,12 @@ public final class NPC extends Actor {
       return false;
    }
 
-   public static FileOnDisk getPreferencesFile(String var0, String var1, boolean var2) {
-      File var3 = new File(class241.field2807, "preferences" + var0 + ".dat");
+   public static FileOnDisk getPreferencesFile(final String var0, final String var1, final boolean var2) {
+      final File var3 = new File(class241.field2807, "preferences" + var0 + ".dat");
       if(var3.exists()) {
          try {
-            FileOnDisk var10 = new FileOnDisk(var3, "rw", 10000L);
-            return var10;
-         } catch (IOException var9) {
+             return new FileOnDisk(var3, "rw", 10000L);
+         } catch (final IOException ignored) {
          }
       }
 
@@ -254,20 +252,20 @@ public final class NPC extends Actor {
          var4 = "_wip";
       }
 
-      File var5 = new File(userHome, "jagex_" + var1 + "_preferences" + var0 + var4 + ".dat");
+      final File var5 = new File(userHome, "jagex_" + var1 + "_preferences" + var0 + var4 + ".dat");
       FileOnDisk var6;
       if(!var2 && var5.exists()) {
          try {
             var6 = new FileOnDisk(var5, "rw", 10000L);
             return var6;
-         } catch (IOException var8) {
+         } catch (final IOException ignored) {
          }
       }
 
       try {
          var6 = new FileOnDisk(var3, "rw", 10000L);
          return var6;
-      } catch (IOException var7) {
+      } catch (final IOException var7) {
          throw new RuntimeException();
       }
    }

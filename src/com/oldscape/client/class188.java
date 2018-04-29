@@ -1,14 +1,13 @@
 package com.oldscape.client;
 
-public final class class188 {
-   static DState state;
+final class class188 {
+   private static final DState state;
 
    static {
       state = new DState();
    }
 
-   public static int Bzip2Decompressor_decompress(byte[] var0, int var1, byte[] var2, int var3, int var4) {
-      DState var5 = state;
+   public static int Bzip2Decompressor_decompress(final byte[] var0, int var1, final byte[] var2, final int var4) {
       synchronized(state) {
          state.strm = var2;
          state.next_in = var4;
@@ -27,17 +26,17 @@ public final class class188 {
       }
    }
 
-   static void method3464(DState var0) {
-      byte var2 = var0.out_ch;
-      int var3 = var0.out_len;
-      int var4 = var0.nblock_used;
-      int var5 = var0.k0;
-      int[] var6 = class18.tt;
-      int var7 = var0.tPos;
-      byte[] var8 = var0.out;
-      int var9 = var0.next_out;
-      int var10 = var0.field2553;
-      int var12 = var0.field2572 + 1;
+   private static void method3464(final DState dState) {
+      byte var2 = dState.out_ch;
+      int var3 = dState.out_len;
+      int var4 = dState.nblock_used;
+      int var5 = dState.k0;
+      final int[] var6 = class18.tt;
+      int var7 = dState.tPos;
+      final byte[] var8 = dState.out;
+      int var9 = dState.next_out;
+      int var10 = dState.field2553;
+      final int var12 = dState.field2572 + 1;
 
       label65:
       while(true) {
@@ -48,11 +47,6 @@ public final class class188 {
                }
 
                if(var3 == 1) {
-                  if(var10 == 0) {
-                     var3 = 1;
-                     break label65;
-                  }
-
                   var8[var9] = var2;
                   ++var9;
                   --var10;
@@ -138,41 +132,41 @@ public final class class188 {
          }
       }
 
-      int var13 = var0.total_out_hi32;
-      var0.total_out_hi32 += var10 - var10;
-      if(var0.total_out_hi32 < var13) {
+      final int var13 = dState.total_out_hi32;
+      dState.total_out_hi32 += 0;
+      if(dState.total_out_hi32 < var13) {
       }
 
-      var0.out_ch = var2;
-      var0.out_len = var3;
-      var0.nblock_used = var4;
-      var0.k0 = var5;
+      dState.out_ch = var2;
+      dState.out_len = var3;
+      dState.nblock_used = var4;
+      dState.k0 = var5;
       class18.tt = var6;
-      var0.tPos = var7;
-      var0.out = var8;
-      var0.next_out = var9;
-      var0.field2553 = var10;
+      dState.tPos = var7;
+      dState.out = var8;
+      dState.next_out = var9;
+      dState.field2553 = var10;
    }
 
-   static void method3476(DState var0) {
-      boolean var4 = false;
-      boolean var5 = false;
-      boolean var6 = false;
-      boolean var7 = false;
-      boolean var8 = false;
-      boolean var9 = false;
-      boolean var10 = false;
-      boolean var11 = false;
-      boolean var12 = false;
-      boolean var13 = false;
-      boolean var14 = false;
-      boolean var15 = false;
-      boolean var16 = false;
-      boolean var17 = false;
-      boolean var18 = false;
-      boolean var19 = false;
-      boolean var20 = false;
-      boolean var21 = false;
+   private static void method3476(final DState var0) {
+      final boolean var4 = false;
+      final boolean var5 = false;
+      final boolean var6 = false;
+      final boolean var7 = false;
+      final boolean var8 = false;
+      final boolean var9 = false;
+      final boolean var10 = false;
+      final boolean var11 = false;
+      final boolean var12 = false;
+      final boolean var13 = false;
+      final boolean var14 = false;
+      final boolean var15 = false;
+      final boolean var16 = false;
+      final boolean var17 = false;
+      final boolean var18 = false;
+      final boolean var19 = false;
+      final boolean var20 = false;
+      final boolean var21 = false;
       int var22 = 0;
       int[] var23 = null;
       int[] var24 = null;
@@ -215,11 +209,7 @@ public final class class188 {
             int var36;
             for(var36 = 0; var36 < 16; ++var36) {
                var1 = method3481(var0);
-               if(var1 == 1) {
-                  var0.field2561[var36] = true;
-               } else {
-                  var0.field2561[var36] = false;
-               }
+               var0.field2561[var36] = var1 == 1;
             }
 
             for(var36 = 0; var36 < 256; ++var36) {
@@ -239,9 +229,9 @@ public final class class188 {
             }
 
             method3469(var0);
-            int var39 = var0.nInUse + 2;
-            int var40 = method3468(3, var0);
-            int var41 = method3468(15, var0);
+            final int var39 = var0.nInUse + 2;
+            final int var40 = method3468(3, var0);
+            final int var41 = method3468(15, var0);
 
             for(var36 = 0; var36 < var41; ++var36) {
                var37 = 0;
@@ -257,7 +247,7 @@ public final class class188 {
                }
             }
 
-            byte[] var27 = new byte[6];
+            final byte[] var27 = new byte[6];
 
             byte var29;
             for(var29 = 0; var29 < var40; var27[var29] = var29++) {
@@ -266,7 +256,7 @@ public final class class188 {
             for(var36 = 0; var36 < var41; ++var36) {
                var29 = var0.field2566[var36];
 
-               byte var28;
+               final byte var28;
                for(var28 = var27[var29]; var29 > 0; --var29) {
                   var27[var29] = var27[var29 - 1];
                }
@@ -315,7 +305,7 @@ public final class class188 {
                var0.field2571[var38] = var2;
             }
 
-            int var42 = var0.nInUse + 1;
+            final int var42 = var0.nInUse + 1;
             int var43 = -1;
             byte var44 = 0;
 
@@ -369,7 +359,7 @@ public final class class188 {
                         var30 = var0.field2562[0];
 
                         for(var1 = var0.field2563[var30 + var33]; var33 > 3; var33 -= 4) {
-                           int var34 = var30 + var33;
+                           final int var34 = var30 + var33;
                            var0.field2563[var34] = var0.field2563[var34 - 1];
                            var0.field2563[var34 - 1] = var0.field2563[var34 - 2];
                            var0.field2563[var34 - 2] = var0.field2563[var34 - 3];
@@ -384,7 +374,7 @@ public final class class188 {
                         var0.field2563[var30] = var1;
                      } else {
                         int var31 = var33 / 16;
-                        int var32 = var33 % 16;
+                        final int var32 = var33 % 16;
                         var30 = var0.field2562[var31] + var32;
 
                         for(var1 = var0.field2563[var30]; var30 > var0.field2562[var31]; --var30) {
@@ -520,15 +510,15 @@ public final class class188 {
       }
    }
 
-   static byte method3466(DState var0) {
+   private static byte method3466(final DState var0) {
       return (byte)method3468(8, var0);
    }
 
-   static byte method3481(DState var0) {
+   private static byte method3481(final DState var0) {
       return (byte)method3468(1, var0);
    }
 
-   static int method3468(int var0, DState var1) {
+   private static int method3468(final int var0, final DState var1) {
       while(var1.total_in_lo32 < var0) {
          var1.total_in_hi32 = var1.total_in_hi32 << 8 | var1.strm[var1.next_in] & 255;
          var1.total_in_lo32 += 8;
@@ -538,12 +528,12 @@ public final class class188 {
          }
       }
 
-      int var3 = var1.total_in_hi32 >> var1.total_in_lo32 - var0 & (1 << var0) - 1;
+      final int var3 = var1.total_in_hi32 >> var1.total_in_lo32 - var0 & (1 << var0) - 1;
       var1.total_in_lo32 -= var0;
       return var3;
    }
 
-   static void method3469(DState var0) {
+   private static void method3469(final DState var0) {
       var0.nInUse = 0;
 
       for(int var1 = 0; var1 < 256; ++var1) {
@@ -555,7 +545,7 @@ public final class class188 {
 
    }
 
-   static void method3470(int[] var0, int[] var1, int[] var2, byte[] var3, int var4, int var5, int var6) {
+   private static void method3470(final int[] var0, final int[] var1, final int[] var2, final byte[] var3, final int var4, final int var5, final int var6) {
       int var7 = 0;
 
       int var8;

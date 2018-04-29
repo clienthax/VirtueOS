@@ -3,12 +3,12 @@ package com.oldscape.client;
 import java.io.IOException;
 
 public class MilliTimer extends Timer {
-   long[] field2181;
-   int field2180;
-   int sleepTime;
-   long field2183;
-   int field2184;
-   int field2185;
+   private final long[] field2181;
+   private int field2180;
+   private int sleepTime;
+   private long field2183;
+   private int field2184;
+   private int field2185;
 
    public MilliTimer() {
       this.field2181 = new long[10];
@@ -30,9 +30,9 @@ public class MilliTimer extends Timer {
 
    }
 
-   public int vmethod3328(int var1, int var2) {
-      int var3 = this.field2180;
-      int var4 = this.sleepTime;
+   public int vmethod3328(final int var1, final int var2) {
+      final int var3 = this.field2180;
+      final int var4 = this.sleepTime;
       this.field2180 = 300;
       this.sleepTime = 1;
       this.field2183 = class64.method1118();
@@ -40,7 +40,7 @@ public class MilliTimer extends Timer {
          this.field2180 = var3;
          this.sleepTime = var4;
       } else if(this.field2183 > this.field2181[this.field2185]) {
-         this.field2180 = (int)((long)(var1 * 2560) / (this.field2183 - this.field2181[this.field2185]));
+         this.field2180 = (int)((var1 * 2560) / (this.field2183 - this.field2181[this.field2185]));
       }
 
       if(this.field2180 < 25) {
@@ -49,7 +49,7 @@ public class MilliTimer extends Timer {
 
       if(this.field2180 > 256) {
          this.field2180 = 256;
-         this.sleepTime = (int)((long)var1 - (this.field2183 - this.field2181[this.field2185]) / 10L);
+         this.sleepTime = (int)(var1 - (this.field2183 - this.field2181[this.field2185]) / 10L);
       }
 
       if(this.sleepTime > var1) {
@@ -62,7 +62,7 @@ public class MilliTimer extends Timer {
       if(this.sleepTime > 1) {
          for(var5 = 0; var5 < 10; ++var5) {
             if(this.field2181[var5] != 0L) {
-               this.field2181[var5] += (long)this.sleepTime;
+               this.field2181[var5] += this.sleepTime;
             }
          }
       }
@@ -71,7 +71,7 @@ public class MilliTimer extends Timer {
          this.sleepTime = var2;
       }
 
-      ScriptVarType.method11((long)this.sleepTime);
+      ScriptVarType.method11(this.sleepTime);
 
       for(var5 = 0; this.field2184 < 256; this.field2184 += this.field2180) {
          ++var5;
@@ -82,7 +82,7 @@ public class MilliTimer extends Timer {
    }
 
    public static byte[] method3192() {
-      byte[] var0 = new byte[24];
+      final byte[] var0 = new byte[24];
 
       try {
          class167.randomDat.seek(0L);
@@ -95,7 +95,7 @@ public class MilliTimer extends Timer {
          if(var1 >= 24) {
             throw new IOException();
          }
-      } catch (Exception var4) {
+      } catch (final Exception var4) {
          for(int var2 = 0; var2 < 24; ++var2) {
             var0[var2] = -1;
          }
@@ -145,7 +145,7 @@ public class MilliTimer extends Timer {
                class90.loadingBarPercentage = 20;
                Client.loadingStage = 40;
             } else if(Client.loadingStage == 40) {
-               byte var16 = 0;
+               final byte var16 = 0;
                var0 = var16 + class71.indexInterfaces.percentage() * 4 / 100;
                var0 += class93.indexSoundEffects.percentage() * 4 / 100;
                var0 += Size.configsIndex.percentage() * 2 / 100;
@@ -187,12 +187,12 @@ public class MilliTimer extends Timer {
                }
             } else if(Client.loadingStage == 45) {
                CombatInfo1.method1677(22050, !Client.lowMemory, 2);
-               class230 var20 = new class230();
+               final class230 var20 = new class230();
                var20.method4191(9, 128);
-               class155.soundSystem0 = class294.method5239(GameEngine.taskManager, 0, 22050);
-               class155.soundSystem0.method2206(var20);
+               Client.soundSystem0 = class294.method5239(0, 22050);
+               Client.soundSystem0.method2206(var20);
                class2.method3(MouseRecorder.indexCache15, MapCacheArchiveNames.vorbisIndex, class55.indexCache4, var20);
-               class71.soundSystem1 = class294.method5239(GameEngine.taskManager, 1, 2048);
+               class71.soundSystem1 = class294.method5239(1, 2048);
                MouseInput.field727 = new class100();
                class71.soundSystem1.method2206(MouseInput.field727);
                WorldMapDecoration.field446 = new Resampler(22050, AbstractSoundSystem.sampleRate);
@@ -201,18 +201,18 @@ public class MilliTimer extends Timer {
                Client.loadingStage = 50;
                SceneTilePaint.fonts = new Fonts(class151.indexSprites, KeyFocusListener.indexCache13);
             } else if(Client.loadingStage == 50) {
-               FontName[] var19 = new FontName[]{FontName.FontName_plain11, FontName.FontName_plain12, FontName.FontName_bold12, FontName.field3881, FontName.field3882, FontName.field3886};
+               final FontName[] var19 = {FontName.FontName_plain11, FontName.FontName_plain12, FontName.FontName_bold12, FontName.FontName_verdana_plain11, FontName.FontName_verdana_plain13, FontName.FontName_verdana_plain15};
                var1 = var19.length;
-               Fonts var21 = SceneTilePaint.fonts;
-               FontName[] var22 = new FontName[]{FontName.FontName_plain11, FontName.FontName_plain12, FontName.FontName_bold12, FontName.field3881, FontName.field3882, FontName.field3886};
+               final Fonts var21 = SceneTilePaint.fonts;
+               final FontName[] var22 = {FontName.FontName_plain11, FontName.FontName_plain12, FontName.FontName_bold12, FontName.FontName_verdana_plain11, FontName.FontName_verdana_plain13, FontName.FontName_verdana_plain15};
                Client.fontsMap = var21.createMap(var22);
                if(Client.fontsMap.size() < var1) {
                   class90.loadingText = "Loading fonts - " + Client.fontsMap.size() * 100 / var1 + "%";
                   class90.loadingBarPercentage = 40;
                } else {
-                  class55.fontPlain11 = (Font)Client.fontsMap.get(FontName.FontName_plain11);
-                  class20.font_p12full = (Font)Client.fontsMap.get(FontName.FontName_plain12);
-                  MessageNode.fontBold12 = (Font)Client.fontsMap.get(FontName.FontName_bold12);
+                  class55.fontPlain11 = Client.fontsMap.get(FontName.FontName_plain11);
+                  class20.font_p12full = Client.fontsMap.get(FontName.FontName_plain12);
+                  MessageNode.fontBold12 = Client.fontsMap.get(FontName.FontName_bold12);
                   CombatInfo1.platformInfo = new MachineInfo(true);
                   class90.loadingText = "Loaded fonts";
                   class90.loadingBarPercentage = 40;
@@ -220,7 +220,7 @@ public class MilliTimer extends Timer {
                }
             } else {
                IndexData var12;
-               IndexData var23;
+               final IndexData var23;
                if(Client.loadingStage == 60) {
                   var23 = ClanMember.indexCache10;
                   var12 = class151.indexSprites;
@@ -289,8 +289,7 @@ public class MilliTimer extends Timer {
                      class90.loadingText = "Loading config - " + Size.configsIndex.loadPercent() + "%";
                      class90.loadingBarPercentage = 60;
                   } else {
-                     IndexData var18 = Size.configsIndex;
-                     TotalQuantityComparator.overlay_ref = var18;
+                      TotalQuantityComparator.overlay_ref = Size.configsIndex;
                      class240.method4410(Size.configsIndex);
                      var23 = Size.configsIndex;
                      var12 = class18.indexModels;
@@ -298,36 +297,34 @@ public class MilliTimer extends Timer {
                      KitDefinition.field3516 = var12;
                      KitDefinition.field3519 = KitDefinition.identKit_ref.fileCount(3);
                      class199.method3765(Size.configsIndex, class18.indexModels, Client.lowMemory);
-                     IndexData var13 = Size.configsIndex;
-                     IndexData var15 = class18.indexModels;
+                     final IndexData var13 = Size.configsIndex;
+                     final IndexData var15 = class18.indexModels;
                      NPCComposition.NpcDefinition_indexCache = var13;
                      NPCComposition.NpcDefinition_modelIndexCache = var15;
                      class7.method29(Size.configsIndex);
-                     IndexData var5 = Size.configsIndex;
-                     IndexData var6 = class18.indexModels;
-                     boolean var7 = Client.isMembers;
-                     Font var8 = class55.fontPlain11;
+                     final IndexData var5 = Size.configsIndex;
+                     final IndexData var6 = class18.indexModels;
+                     final boolean var7 = Client.isMembers;
+                     final Font var8 = class55.fontPlain11;
                      ItemComposition.item_ref = var5;
                      ItemComposition.ItemDefinition_modelIndexCache = var6;
                      class158.isMembersWorld = var7;
                      AbstractSoundSystem.field1583 = ItemComposition.item_ref.fileCount(10);
                      WorldMapDecoration.field445 = var8;
                      Item.method1951(Size.configsIndex, class71.indexInterfaces, class93.indexSoundEffects);
-                     WorldMapType3.method210(Size.configsIndex, class18.indexModels);
-                     IndexData var9 = Size.configsIndex;
-                     Varbit.varbit_ref = var9;
+                     Spotanim.method210(Size.configsIndex, class18.indexModels);
+                      Varbit.varbit_ref = Size.configsIndex;
                      class151.method3130(Size.configsIndex);
                      Projectile.method1938(WorldMapType3.indexCache3, class18.indexModels, class151.indexSprites, KeyFocusListener.indexCache13);
                      class23.method189(Size.configsIndex);
-                     class33.method409(Size.configsIndex);
+                     Enum.method409(Size.configsIndex);
                      TextureProvider.method2592(Size.configsIndex);
                      class21.method172(Size.configsIndex);
-                     IndexData var10 = Size.configsIndex;
-                     class278.field3547 = var10;
+                      ParamNode.param_ref = Size.configsIndex;
                      SceneTilePaint.varcs = new Varcs();
                      JagexGame.method4522(Size.configsIndex, class151.indexSprites, KeyFocusListener.indexCache13);
                      ObjectComposition.method5053(Size.configsIndex, class151.indexSprites);
-                     Player.method1232(Size.configsIndex, class151.indexSprites);
+                     Area.method1232(Size.configsIndex, class151.indexSprites);
                      class90.loadingText = "Loaded config";
                      class90.loadingBarPercentage = 60;
                      Client.loadingStage = 80;
@@ -339,7 +336,7 @@ public class MilliTimer extends Timer {
                      var12 = class151.indexSprites;
                      var3 = var12.getFile("compass");
                      var4 = var12.getChild(var3, "");
-                     var14 = SoundTaskDataProvider.method817(var12, var3, var4);
+                     var14 = class332.method817(var12, var3, var4);
                      class7.compass = var14;
                   } else {
                      ++var0;
@@ -349,7 +346,7 @@ public class MilliTimer extends Timer {
                      var12 = class151.indexSprites;
                      var3 = var12.getFile("mapedge");
                      var4 = var12.getChild(var3, "");
-                     var14 = SoundTaskDataProvider.method817(var12, var3, var4);
+                     var14 = class332.method817(var12, var3, var4);
                      Client.mapedge = var14;
                   } else {
                      ++var0;
@@ -391,8 +388,8 @@ public class MilliTimer extends Timer {
                      ++var0;
                   }
 
-                  if(class49.mapDots == null) {
-                     class49.mapDots = IndexDataBase.getSprites(class151.indexSprites, "mapdots", "");
+                  if(WorldMapType4.mapDots == null) {
+                     WorldMapType4.mapDots = IndexDataBase.getSprites(class151.indexSprites, "mapdots", "");
                   } else {
                      ++var0;
                   }
@@ -455,8 +452,7 @@ public class MilliTimer extends Timer {
                      class90.loadingText = "Loading wordpack - " + 0 + "%";
                      class90.loadingBarPercentage = 94;
                   } else {
-                     Huffman var17 = new Huffman(ClanMember.indexCache10.takeRecordByNames("huffman", ""));
-                     class313.huffman = var17;
+                      class313.huffman = new Huffman(ClanMember.indexCache10.takeRecordByNames("huffman", ""));
                      class90.loadingText = "Loaded wordpack";
                      class90.loadingBarPercentage = 94;
                      Client.loadingStage = 130;
@@ -499,7 +495,7 @@ public class MilliTimer extends Timer {
                }
             }
          } else {
-            int[] var11 = new int[9];
+            final int[] var11 = new int[9];
 
             for(var1 = 0; var1 < 9; ++var1) {
                var2 = var1 * 32 + 15 + 128;

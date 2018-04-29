@@ -1,7 +1,6 @@
 package com.oldscape.client;
 
-public class ContextMenuRow {
-   static String osName;
+class ContextMenuRow {
    int param0;
    int param1;
    String option;

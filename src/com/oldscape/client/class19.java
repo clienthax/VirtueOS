@@ -6,28 +6,28 @@ final class class19 implements Comparator {
    static IndexFile indexStore255;
    static SpritePixels[] mapMarkers;
 
-   int method155(GrandExchangeEvent var1, GrandExchangeEvent var2) {
-      return var1.field292 < var2.field292?-1:(var1.field292 == var2.field292?0:1);
+   private int doCompare(final GrandExchangeEvent var1, final GrandExchangeEvent var2) {
+      return Long.compare(var1.field292, var2.field292);
    }
 
-   public int compare(Object var1, Object var2) {
-      return this.method155((GrandExchangeEvent)var1, (GrandExchangeEvent)var2);
+   public int compare(final Object var1, final Object var2) {
+      return this.doCompare((GrandExchangeEvent)var1, (GrandExchangeEvent)var2);
    }
 
-   public boolean equals(Object var1) {
+   public boolean equals(final Object var1) {
       return super.equals(var1);
    }
 
-   public static int method167(String var0) {
+   public static int method167(final String var0) {
       return var0.length() + 2;
    }
 
-   public static void method166(int var0, int var1, int var2, boolean var3) {
-      PacketNode var4 = WorldMapRectangle.method280(ClientPacket.field2457, Client.field957.field1484);
-      var4.packetBuffer.method3559(var3?Client.field970:0);
-      var4.packetBuffer.method3528(var0);
-      var4.packetBuffer.method3543(var2);
-      var4.packetBuffer.putShort(var1);
-      Client.field957.method2052(var4);
+   public static void method166(final int x, final int y, final int plane, final boolean var3) {
+      final PacketNode packetNode = WorldMapRectangle.method280(ClientPacket.field2457, Client.field957.field1484);
+      packetNode.packetBuffer.method3559(var3?Client.field970:0);
+      packetNode.packetBuffer.method3528(x);
+      packetNode.packetBuffer.method3543(plane);
+      packetNode.packetBuffer.putShort(y);
+      Client.field957.method2052(packetNode);
    }
 }

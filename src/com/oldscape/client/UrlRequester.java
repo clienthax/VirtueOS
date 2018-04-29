@@ -8,23 +8,23 @@ import java.net.URLConnection;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class UrlRequester implements Runnable {
-   protected static Timer timer;
+class UrlRequester implements Runnable {
+   static Timer timer;
    static long field2126;
    static int selectedItemIndex;
-   final Thread thread;
-   volatile boolean isClosed;
-   Queue requests;
+   private final Thread thread;
+   private volatile boolean isClosed;
+   private final Queue<UrlRequest> requests;
 
    public UrlRequester() {
-      this.requests = new LinkedList();
+      this.requests = new LinkedList<>();
       this.thread = new Thread(this);
       this.thread.setPriority(1);
       this.thread.start();
    }
 
-   public UrlRequest request(URL var1) {
-      UrlRequest var2 = new UrlRequest(var1);
+   public UrlRequest request(final URL var1) {
+      final UrlRequest var2 = new UrlRequest(var1);
       synchronized(this) {
          this.requests.add(var2);
          this.notify();
@@ -41,7 +41,7 @@ public class UrlRequester implements Runnable {
          }
 
          this.thread.join();
-      } catch (InterruptedException var4) {
+      } catch (final InterruptedException ignored) {
       }
 
    }
@@ -49,13 +49,13 @@ public class UrlRequester implements Runnable {
    public void run() {
       while(!this.isClosed) {
          try {
-            UrlRequest var1;
+            final UrlRequest var1;
             synchronized(this) {
-               var1 = (UrlRequest)this.requests.poll();
+               var1 = this.requests.poll();
                if(var1 == null) {
                   try {
                      this.wait();
-                  } catch (InterruptedException var13) {
+                  } catch (final InterruptedException ignored) {
                   }
                   continue;
                }
@@ -70,39 +70,39 @@ public class UrlRequester implements Runnable {
                var3.setReadTimeout(5000);
                var3.setUseCaches(false);
                var3.setRequestProperty("Connection", "close");
-               int var7 = var3.getContentLength();
+               final int var7 = var3.getContentLength();
                if(var7 >= 0) {
-                  byte[] var5 = new byte[var7];
+                  final byte[] var5 = new byte[var7];
                   var2 = new DataInputStream(var3.getInputStream());
                   var2.readFully(var5);
                   var1.response0 = var5;
                }
 
                var1.isDone0 = true;
-            } catch (IOException var14) {
+            } catch (final IOException var14) {
                var1.isDone0 = true;
             } finally {
                if(var2 != null) {
                   var2.close();
                }
 
-               if(var3 != null && var3 instanceof HttpURLConnection) {
+               if(var3 instanceof HttpURLConnection) {
                   ((HttpURLConnection)var3).disconnect();
                }
 
             }
-         } catch (Exception var17) {
-            AttackOption.processClientError((String)null, var17);
+         } catch (final Exception var17) {
+            Signlink.processClientError(null, var17);
          }
       }
 
    }
 
-   static final void method3091(PacketBuffer var0) {
+   static void method3091(final PacketBuffer var0) {
       for(int var1 = 0; var1 < Client.pendingNpcFlagsCount; ++var1) {
-         int var2 = Client.pendingNpcFlagsIndices[var1];
-         NPC var3 = Client.cachedNPCs[var2];
-         int var4 = var0.readUnsignedByte();
+         final int var2 = Client.pendingNpcFlagsIndices[var1];
+         final NPC var3 = Client.cachedNPCs[var2];
+         final int var4 = var0.readUnsignedByte();
          int var5;
          int var6;
          int var7;
@@ -136,13 +136,13 @@ public class UrlRequester implements Runnable {
          }
 
          if((var4 & 64) != 0) {
-            var3.composition = class234.getNpcDefinition(var0.readUnsignedShort());
-            var3.field1172 = var3.composition.size;
-            var3.field1205 = var3.composition.rotation;
-            var3.field1165 = var3.composition.walkingAnimation;
-            var3.field1209 = var3.composition.rotate180Animation;
-            var3.field1167 = var3.composition.rotate90RightAnimation;
-            var3.field1177 = var3.composition.rotate90LeftAnimation;
+            var3.composition = NPCComposition.getNpcDefinition(var0.readUnsignedShort());
+            var3.size = var3.composition.size;
+            var3.rotation = var3.composition.rotation;
+            var3.walkingAnimation = var3.composition.walkingAnimation;
+            var3.rotate180Animation = var3.composition.rotate180Animation;
+            var3.rotate90RightAnimation = var3.composition.rotate90RightAnimation;
+            var3.rotate90LeftAnimation = var3.composition.rotate90LeftAnimation;
             var3.idlePoseAnimation = var3.composition.standingAnimation;
             var3.field1163 = var3.composition.field3716;
             var3.field1164 = var3.composition.field3714;
@@ -155,7 +155,7 @@ public class UrlRequester implements Runnable {
             var7 = var3.x - (var5 - class138.baseX - class138.baseX) * 64;
             var8 = var3.y - (var6 - class23.baseY - class23.baseY) * 64;
             if(var7 != 0 || var8 != 0) {
-               var3.field1185 = (int)(Math.atan2((double)var7, (double)var8) * 325.949D) & 2047;
+               var3.field1185 = (int)(Math.atan2(var7, var8) * 325.949D) & 2047;
             }
          }
 
@@ -201,7 +201,7 @@ public class UrlRequester implements Runnable {
                   if(var9 != 32767) {
                      var10 = var0.getUSmart();
                      var11 = var0.readUnsignedShortOb1();
-                     int var12 = var9 > 0?var0.readUnsignedShortOb1():var11;
+                     final int var12 = var9 > 0?var0.readUnsignedShortOb1():var11;
                      var3.setCombatInfo(var8, Client.gameCycle, var9, var10, var11, var12);
                   } else {
                      var3.method1659(var8);

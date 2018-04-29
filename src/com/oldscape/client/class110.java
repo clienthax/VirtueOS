@@ -5,29 +5,29 @@ import java.io.IOException;
 
 public class class110 {
    static int field1607;
-   IndexDataBase sfx_index;
-   IndexDataBase vorbis_index;
-   HashTable field1604;
-   HashTable field1601;
+   private final IndexDataBase sfx_index;
+   private final IndexDataBase vorbis_index;
+   private final HashTable field1604;
+   private final HashTable field1601;
 
-   public class110(IndexDataBase var1, IndexDataBase var2) {
+   public class110(final IndexDataBase var1, final IndexDataBase var2) {
       this.field1604 = new HashTable(256);
       this.field1601 = new HashTable(256);
       this.sfx_index = var1;
       this.vorbis_index = var2;
    }
 
-   RawAudioNode method2273(int var1, int var2, int[] var3) {
+   private RawAudioNode method2273(final int var1, final int var2, final int[] var3) {
       int var4 = var2 ^ (var1 << 4 & 65535 | var1 >>> 12);
       var4 |= var1 << 16;
-      long var5 = (long)var4;
+      final long var5 = var4;
       RawAudioNode var7 = (RawAudioNode)this.field1601.get(var5);
       if(var7 != null) {
          return var7;
       } else if(var3 != null && var3[0] <= 0) {
          return null;
       } else {
-         SoundEffect var8 = SoundEffect.getTrack(this.sfx_index, var1, var2);
+         final SoundEffect var8 = SoundEffect.getTrack(this.sfx_index, var1, var2);
          if(var8 == null) {
             return null;
          } else {
@@ -42,19 +42,19 @@ public class class110 {
       }
    }
 
-   RawAudioNode method2274(int var1, int var2, int[] var3) {
+   private RawAudioNode method2274(final int var1, final int var2, final int[] var3) {
       int var4 = var2 ^ (var1 << 4 & 65535 | var1 >>> 12);
       var4 |= var1 << 16;
-      long var5 = (long)var4 ^ 4294967296L;
+      final long var5 = var4 ^ 4294967296L;
       RawAudioNode var7 = (RawAudioNode)this.field1601.get(var5);
       if(var7 != null) {
          return var7;
       } else if(var3 != null && var3[0] <= 0) {
          return null;
       } else {
-         class104 var8 = (class104)this.field1604.get(var5);
+         Instrument var8 = (Instrument)this.field1604.get(var5);
          if(var8 == null) {
-            var8 = class104.getInstrument(this.vorbis_index, var1, var2);
+            var8 = Instrument.getInstrument(this.vorbis_index, var1, var2);
             if(var8 == null) {
                return null;
             }
@@ -73,7 +73,7 @@ public class class110 {
       }
    }
 
-   public RawAudioNode method2275(int var1, int[] var2) {
+   public RawAudioNode method2275(final int var1, final int[] var2) {
       if(this.sfx_index.size() == 1) {
          return this.method2273(0, var1, var2);
       } else if(this.sfx_index.fileCount(var1) == 1) {
@@ -83,7 +83,7 @@ public class class110 {
       }
    }
 
-   public RawAudioNode method2276(int var1, int[] var2) {
+   public RawAudioNode method2276(final int var1, final int[] var2) {
       if(this.vorbis_index.size() == 1) {
          return this.method2274(0, var1, var2);
       } else if(this.vorbis_index.fileCount(var1) == 1) {
@@ -93,10 +93,10 @@ public class class110 {
       }
    }
 
-   static void method2284(File var0, File var1) {
+   static void method2284(final File var0, final File var1) {
       try {
-         FileOnDisk var2 = new FileOnDisk(class167.jagexClDat, "rw", 10000L);
-         Buffer var3 = new Buffer(500);
+         final FileOnDisk var2 = new FileOnDisk(class167.jagexClDat, "rw", 10000L);
+         final Buffer var3 = new Buffer(500);
          var3.putByte(3);
          var3.putByte(var1 != null?1:0);
          var3.putCESU8(var0.getPath());
@@ -106,14 +106,14 @@ public class class110 {
 
          var2.write(var3.payload, 0, var3.offset);
          var2.close();
-      } catch (IOException var4) {
+      } catch (final IOException var4) {
          var4.printStackTrace();
       }
 
    }
 
-   static final void method2272(Widget var0, ItemComposition var1, int var2, int var3, boolean var4) {
-      String[] var5 = var1.inventoryActions;
+   static void method2272(final Widget var0, final ItemComposition var1, final int var2, final int var3, final boolean var4) {
+      final String[] var5 = var1.inventoryActions;
       byte var6 = -1;
       String var7 = null;
       if(var5 != null && var5[var3] != null) {
@@ -136,9 +136,9 @@ public class class110 {
       }
 
       if(var6 != -1 && var7 != null) {
-         String var9 = class45.getColTags(16748608) + var1.name;
-         int var11 = var1.id;
-         int var13 = var0.id;
+         final String var9 = class45.getColTags(16748608) + var1.name;
+         final int var11 = var1.id;
+         final int var13 = var0.id;
          if(!Client.isMenuOpen && Client.menuOptionCount < 500) {
             Client.menuOptions[Client.menuOptionCount] = var7;
             Client.menuTargets[Client.menuOptionCount] = var9;

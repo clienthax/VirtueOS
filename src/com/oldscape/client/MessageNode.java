@@ -3,23 +3,22 @@ package com.oldscape.client;
 import java.io.File;
 import java.io.RandomAccessFile;
 
-public class MessageNode extends CacheableNode {
+class MessageNode extends CacheableNode {
    static Font fontBold12;
    int id;
    int tick;
    int type;
    String name;
-   Name field824;
-   class303 field820;
-   class303 field821;
+   private Name field824;
+   private class303 field820;
+   private class303 field821;
    String sender;
    String value;
 
-   MessageNode(int var1, String var2, String var3, String var4) {
+   MessageNode(final int var1, final String var2, final String var3, final String var4) {
       this.field820 = class303.field3851;
       this.field821 = class303.field3851;
-      int var5 = ++class95.field1452 - 1;
-      this.id = var5;
+       this.id = ++class95.field1452 - 1;
       this.tick = Client.gameCycle;
       this.type = var1;
       this.name = var2;
@@ -28,9 +27,8 @@ public class MessageNode extends CacheableNode {
       this.value = var4;
    }
 
-   void setMessage(int var1, String var2, String var3, String var4) {
-      int var5 = ++class95.field1452 - 1;
-      this.id = var5;
+   void setMessage(final int var1, final String var2, final String var3, final String var4) {
+       this.id = ++class95.field1452 - 1;
       this.tick = Client.gameCycle;
       this.type = var1;
       this.name = var2;
@@ -51,7 +49,7 @@ public class MessageNode extends CacheableNode {
       return this.field820 == class303.field3850;
    }
 
-   void method1150() {
+   private void method1150() {
       this.field820 = WorldMapRectangle.friendManager.field1256.isMember(this.field824)?class303.field3850:class303.field3849;
    }
 
@@ -67,11 +65,11 @@ public class MessageNode extends CacheableNode {
       return this.field821 == class303.field3850;
    }
 
-   void method1161() {
+   private void method1161() {
       this.field821 = WorldMapRectangle.friendManager.field1254.isMember(this.field824)?class303.field3850:class303.field3849;
    }
 
-   final void method1153() {
+   private void method1153() {
       if(this.name != null) {
          this.field824 = new Name(FontName.method5489(this.name), GZipDecompressor.loginType);
       } else {
@@ -80,24 +78,24 @@ public class MessageNode extends CacheableNode {
 
    }
 
-   static File method1176(String var0) {
+   static File method1176(final String var0) {
       if(!class170.field2234) {
          throw new RuntimeException("");
       } else {
-         File var1 = (File)class170.field2232.get(var0);
+         final File var1 = class170.field2232.get(var0);
          if(var1 != null) {
             return var1;
          } else {
-            File var2 = new File(class170.field2233, var0);
+            final File var2 = new File(class170.field2233, var0);
             RandomAccessFile var3 = null;
 
             try {
-               File var4 = new File(var2.getParent());
+               final File var4 = new File(var2.getParent());
                if(!var4.exists()) {
                   throw new RuntimeException("");
                } else {
                   var3 = new RandomAccessFile(var2, "rw");
-                  int var5 = var3.read();
+                  final int var5 = var3.read();
                   var3.seek(0L);
                   var3.write(var5);
                   var3.seek(0L);
@@ -105,13 +103,12 @@ public class MessageNode extends CacheableNode {
                   class170.field2232.put(var0, var2);
                   return var2;
                }
-            } catch (Exception var8) {
+            } catch (final Exception var8) {
                try {
                   if(var3 != null) {
                      var3.close();
-                     var3 = null;
                   }
-               } catch (Exception var7) {
+               } catch (final Exception ignored) {
                }
 
                throw new RuntimeException();
@@ -120,64 +117,8 @@ public class MessageNode extends CacheableNode {
       }
    }
 
-   static int method1177(int var0, Script var1, boolean var2) {
-      int var3 = -1;
-      Widget var4;
-      if(var0 >= 2000) {
-         var0 -= 1000;
-         var3 = class81.intStack[--WorldComparator.intStackSize];
-         var4 = class44.getWidget(var3);
-      } else {
-         var4 = var2?class81.field1285:Signlink.field2218;
-      }
-
-      if(var0 == 1000) {
-         WorldComparator.intStackSize -= 4;
-         var4.originalX = class81.intStack[WorldComparator.intStackSize];
-         var4.originalY = class81.intStack[WorldComparator.intStackSize + 1];
-         var4.dynamicX = class81.intStack[WorldComparator.intStackSize + 2];
-         var4.dynamicY = class81.intStack[WorldComparator.intStackSize + 3];
-         FontName.method5490(var4);
-         class23.clientInstance.widgetMethod0(var4);
-         if(var3 != -1 && var4.type == 0) {
-            class86.method1889(MouseRecorder.widgets[var3 >> 16], var4, false);
-         }
-
-         return 1;
-      } else if(var0 == 1001) {
-         WorldComparator.intStackSize -= 4;
-         var4.originalWidth = class81.intStack[WorldComparator.intStackSize];
-         var4.originalHeight = class81.intStack[WorldComparator.intStackSize + 1];
-         var4.dynamicWidth = class81.intStack[WorldComparator.intStackSize + 2];
-         var4.buttonType = class81.intStack[WorldComparator.intStackSize + 3];
-         FontName.method5490(var4);
-         class23.clientInstance.widgetMethod0(var4);
-         if(var3 != -1 && var4.type == 0) {
-            class86.method1889(MouseRecorder.widgets[var3 >> 16], var4, false);
-         }
-
-         return 1;
-      } else if(var0 == 1003) {
-         boolean var5 = class81.intStack[--WorldComparator.intStackSize] == 1;
-         if(var5 != var4.isHidden) {
-            var4.isHidden = var5;
-            FontName.method5490(var4);
-         }
-
-         return 1;
-      } else if(var0 == 1005) {
-         var4.noClickThrough = class81.intStack[--WorldComparator.intStackSize] == 1;
-         return 1;
-      } else if(var0 == 1006) {
-         var4.noScrollThrough = class81.intStack[--WorldComparator.intStackSize] == 1;
-         return 1;
-      } else {
-         return 2;
-      }
-   }
-
-   static final boolean method1179(int var0, int var1) {
-      ObjectComposition var2 = GameCanvas.getObjectDefinition(var0);
+   static boolean method1179(final int var0, int var1) {
+      final ObjectComposition var2 = GameCanvas.getObjectDefinition(var0);
       if(var1 == 11) {
          var1 = 10;
       }
@@ -189,7 +130,7 @@ public class MessageNode extends CacheableNode {
       return var2.method4996(var1);
    }
 
-   static final void drawObject(int var0, int var1, int var2, int var3, int var4) {
+   static void drawObject(final int var0, final int var1, final int var2, final int var3, final int var4) {
       int var5 = class255.region.getWallObjectHash(var0, var1, var2);
       int var6;
       int var7;
@@ -206,16 +147,16 @@ public class MessageNode extends CacheableNode {
             var9 = var4;
          }
 
-         int[] var10 = BoundingBox2D.minimapSprite.pixels;
+         final int[] var10 = BoundingBox2D.minimapSprite.pixels;
          var11 = var1 * 4 + (103 - var2) * 2048 + 24624;
          var12 = var5 >> 14 & 32767;
-         ObjectComposition var13 = GameCanvas.getObjectDefinition(var12);
-         if(var13.mapSceneId != -1) {
-            IndexedSprite var14 = GroundObject.mapscene[var13.mapSceneId];
-            if(var14 != null) {
-               int var15 = (var13.width * 4 - var14.width) / 2;
-               int var16 = (var13.length * 4 - var14.height) / 2;
-               var14.method5825(var1 * 4 + var15 + 48, var16 + (104 - var2 - var13.length) * 4 + 48);
+         final ObjectComposition objectDefinition = GameCanvas.getObjectDefinition(var12);
+         if(objectDefinition.mapSceneId != -1) {
+            final IndexedSprite sprite = GroundObject.mapscene[objectDefinition.mapSceneId];
+            if(sprite != null) {
+               final int var15 = (objectDefinition.width * 4 - sprite.width) / 2;
+               final int var16 = (objectDefinition.length * 4 - sprite.height) / 2;
+               sprite.method5825(var1 * 4 + var15 + 48, var16 + (104 - var2 - objectDefinition.length) * 4 + 48);
             }
          } else {
             if(var8 == 0 || var8 == 2) {
@@ -286,10 +227,10 @@ public class MessageNode extends CacheableNode {
          var7 = var6 >> 6 & 3;
          var8 = var6 & 31;
          var9 = var5 >> 14 & 32767;
-         ObjectComposition var23 = GameCanvas.getObjectDefinition(var9);
-         int var18;
+         final ObjectComposition var23 = GameCanvas.getObjectDefinition(var9);
+         final int var18;
          if(var23.mapSceneId != -1) {
-            IndexedSprite var17 = GroundObject.mapscene[var23.mapSceneId];
+            final IndexedSprite var17 = GroundObject.mapscene[var23.mapSceneId];
             if(var17 != null) {
                var12 = (var23.width * 4 - var17.width) / 2;
                var18 = (var23.length * 4 - var17.height) / 2;
@@ -301,7 +242,7 @@ public class MessageNode extends CacheableNode {
                var11 = 15597568;
             }
 
-            int[] var22 = BoundingBox2D.minimapSprite.pixels;
+            final int[] var22 = BoundingBox2D.minimapSprite.pixels;
             var18 = var1 * 4 + (103 - var2) * 2048 + 24624;
             if(var7 != 0 && var7 != 2) {
                var22[var18] = var11;
@@ -320,13 +261,13 @@ public class MessageNode extends CacheableNode {
       var5 = class255.region.getGroundObjectHash(var0, var1, var2);
       if(var5 != 0) {
          var6 = var5 >> 14 & 32767;
-         ObjectComposition var19 = GameCanvas.getObjectDefinition(var6);
+         final ObjectComposition var19 = GameCanvas.getObjectDefinition(var6);
          if(var19.mapSceneId != -1) {
-            IndexedSprite var20 = GroundObject.mapscene[var19.mapSceneId];
-            if(var20 != null) {
-               var9 = (var19.width * 4 - var20.width) / 2;
-               int var21 = (var19.length * 4 - var20.height) / 2;
-               var20.method5825(var9 + var1 * 4 + 48, var21 + (104 - var2 - var19.length) * 4 + 48);
+            final IndexedSprite sprite = GroundObject.mapscene[var19.mapSceneId];
+            if(sprite != null) {
+               var9 = (var19.width * 4 - sprite.width) / 2;
+               final int var21 = (var19.length * 4 - sprite.height) / 2;
+               sprite.method5825(var9 + var1 * 4 + 48, var21 + (104 - var2 - var19.length) * 4 + 48);
             }
          }
       }

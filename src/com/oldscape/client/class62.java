@@ -1,8 +1,8 @@
 package com.oldscape.client;
 
-public final class class62 {
-   static int[][][] tileHeights;
-   static byte[][][] tileSettings;
+final class class62 {
+   static final int[][][] tileHeights;
+   static final byte[][][] tileSettings;
    static int field747;
    static byte[][][] tileUnderlayIds;
    static byte[][][] tileOverlayIds;

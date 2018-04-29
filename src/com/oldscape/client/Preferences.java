@@ -1,19 +1,18 @@
 package com.oldscape.client;
 
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
-public class Preferences {
+class Preferences {
    static RenderOverview renderOverview;
    static short[] field1248;
-   static int field1249;
+   private static final int field1249;
    boolean hideRoofs;
    boolean muted;
    int screenType;
    String rememberedUsername;
    boolean hideUsername;
-   LinkedHashMap preferences;
+   LinkedHashMap<Integer, Integer> preferences;
 
    static {
       field1249 = 6;
@@ -23,17 +22,17 @@ public class Preferences {
       this.screenType = 1;
       this.rememberedUsername = null;
       this.hideUsername = false;
-      this.preferences = new LinkedHashMap();
-      this.method1727(true);
+      this.preferences = new LinkedHashMap<>();
+      this.method1727();
    }
 
-   Preferences(Buffer var1) {
+   Preferences(final Buffer var1) {
       this.screenType = 1;
       this.rememberedUsername = null;
       this.hideUsername = false;
-      this.preferences = new LinkedHashMap();
+      this.preferences = new LinkedHashMap<>();
       if(var1 != null && var1.payload != null) {
-         int var2 = var1.readUnsignedByte();
+         final int var2 = var1.readUnsignedByte();
          if(var2 >= 0 && var2 <= field1249) {
             if(var1.readUnsignedByte() == 1) {
                this.hideRoofs = true;
@@ -48,12 +47,12 @@ public class Preferences {
             }
 
             if(var2 > 2) {
-               int var3 = var1.readUnsignedByte();
+               final int var3 = var1.readUnsignedByte();
 
                for(int var4 = 0; var4 < var3; ++var4) {
-                  int var5 = var1.readInt();
-                  int var6 = var1.readInt();
-                  this.preferences.put(Integer.valueOf(var5), Integer.valueOf(var6));
+                  final int var5 = var1.readInt();
+                  final int var6 = var1.readInt();
+                  this.preferences.put(var5, var6);
                }
             }
 
@@ -62,37 +61,35 @@ public class Preferences {
             }
 
             if(var2 > 5) {
-               this.hideUsername = var1.method3524();
+               this.hideUsername = var1.readUnsignedByteAsBool();
             }
          } else {
-            this.method1727(true);
+            this.method1727();
          }
       } else {
-         this.method1727(true);
+         this.method1727();
       }
 
    }
 
-   void method1727(boolean var1) {
+   private void method1727() {
    }
 
    Buffer serialize() {
-      Buffer var1 = new Buffer(100);
-      var1.putByte(field1249);
-      var1.putByte(this.hideRoofs?1:0);
-      var1.putByte(this.muted?1:0);
-      var1.putByte(this.screenType);
-      var1.putByte(this.preferences.size());
-      Iterator var2 = this.preferences.entrySet().iterator();
+      final Buffer buffer = new Buffer(100);
+      buffer.putByte(field1249);
+      buffer.putByte(this.hideRoofs?1:0);
+      buffer.putByte(this.muted?1:0);
+      buffer.putByte(this.screenType);
+      buffer.putByte(this.preferences.size());
 
-      while(var2.hasNext()) {
-         Entry var3 = (Entry)var2.next();
-         var1.putInt(((Integer)var3.getKey()).intValue());
-         var1.putInt(((Integer)var3.getValue()).intValue());
+      for (final Entry<Integer, Integer> entry : this.preferences.entrySet()) {
+         buffer.putInt(entry.getKey());
+         buffer.putInt(entry.getValue());
       }
 
-      var1.putString(this.rememberedUsername != null?this.rememberedUsername:"");
-      var1.writeBooleanAsByte(this.hideUsername);
-      return var1;
+      buffer.putString(this.rememberedUsername != null?this.rememberedUsername:"");
+      buffer.writeBooleanAsByte(this.hideUsername);
+      return buffer;
    }
 }

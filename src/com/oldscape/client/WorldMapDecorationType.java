@@ -29,7 +29,7 @@ public enum WorldMapDecorationType implements Enumerated {
 
    public final int rsOrdinal;
 
-   WorldMapDecorationType(int var3, int var4) {
+   WorldMapDecorationType(final int var3, final int var4) {
       this.rsOrdinal = var3;
    }
 
@@ -39,11 +39,11 @@ public enum WorldMapDecorationType implements Enumerated {
 
    static boolean loadWorlds() {
       try {
-         if(FaceNormal.listFetcher == null) {
-            FaceNormal.listFetcher = MapIconReference.urlRequester.request(new URL(Client.field876));
-         } else if(FaceNormal.listFetcher.isDone()) {
-            byte[] var0 = FaceNormal.listFetcher.getResponse();
-            Buffer var1 = new Buffer(var0);
+         if(Client.listFetcher == null) {
+            Client.listFetcher = MapIconReference.urlRequester.request(new URL(Client.field876));
+         } else if(Client.listFetcher.isDone()) {
+            final byte[] var0 = Client.listFetcher.getResponse();
+            final Buffer var1 = new Buffer(var0);
             var1.readInt();
             World.worldCount = var1.readUnsignedShort();
             World.worldList = new World[World.worldCount];
@@ -60,12 +60,12 @@ public enum WorldMapDecorationType implements Enumerated {
             }
 
             WorldMapType1.method308(World.worldList, 0, World.worldList.length - 1, World.field1230, World.field1229);
-            FaceNormal.listFetcher = null;
+            Client.listFetcher = null;
             return true;
          }
-      } catch (Exception var4) {
+      } catch (final Exception var4) {
          var4.printStackTrace();
-         FaceNormal.listFetcher = null;
+         Client.listFetcher = null;
       }
 
       return false;

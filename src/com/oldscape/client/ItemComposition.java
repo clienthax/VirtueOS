@@ -3,16 +3,16 @@ package com.oldscape.client;
 public class ItemComposition extends CacheableNode {
    public static IndexDataBase item_ref;
    public static IndexDataBase ItemDefinition_modelIndexCache;
-   public static NodeCache items;
-   public static NodeCache itemModelCache;
-   public static NodeCache itemSpriteCache;
+   public static final NodeCache items;
+   public static final NodeCache itemModelCache;
+   public static final NodeCache itemSpriteCache;
    public int id;
-   int inventoryModel;
+   private int inventoryModel;
    public String name;
-   short[] colourToReplace;
-   short[] colourToReplaceWith;
-   short[] textureToReplace;
-   short[] textToReplaceWith;
+   private short[] colourToReplace;
+   private short[] colourToReplaceWith;
+   private short[] textureToReplace;
+   private short[] textToReplaceWith;
    public int zoom2d;
    public int xan2d;
    public int yan2d;
@@ -25,25 +25,25 @@ public class ItemComposition extends CacheableNode {
    public String[] groundActions;
    public String[] inventoryActions;
    int shiftClickIndex;
-   int maleModel;
-   int maleModel1;
-   int maleOffset;
-   int femaleModel;
-   int femaleModel1;
-   int femaleOffset;
-   int maleModel2;
-   int femaleModel2;
-   int maleHeadModel;
-   int maleHeadModel2;
-   int femaleHeadModel;
-   int femaleHeadModel2;
+   private int maleModel;
+   private int maleModel1;
+   private int maleOffset;
+   private int femaleModel;
+   private int femaleModel1;
+   private int femaleOffset;
+   private int maleModel2;
+   private int femaleModel2;
+   private int maleHeadModel;
+   private int maleHeadModel2;
+   private int femaleHeadModel;
+   private int femaleHeadModel2;
    int[] countObj;
    int[] countCo;
    public int note;
    public int notedTemplate;
-   int resizeX;
-   int resizeY;
-   int resizeZ;
+   private int resizeX;
+   private int resizeY;
+   private int resizeZ;
    public int ambient;
    public int contrast;
    public int team;
@@ -101,12 +101,65 @@ public class ItemComposition extends CacheableNode {
       this.placeholderTemplateId = -1;
    }
 
-   void post() {
+    public static ItemComposition getItemDefinition(final int var0) {
+       ItemComposition var1 = (ItemComposition) items.get(var0);
+        if (var1 == null) {
+            final byte[] var2 = item_ref.getConfigData(10, var0);
+            var1 = new ItemComposition();
+            var1.id = var0;
+            if (var2 != null) {
+                var1.loadBuffer(new Buffer(var2));
+            }
+
+            var1.post();
+            if (var1.notedTemplate != -1) {
+                var1.updateNote(getItemDefinition(var1.notedTemplate), getItemDefinition(var1.note));
+            }
+
+            if (var1.notedId != -1) {
+                var1.method5059(getItemDefinition(var1.notedId), getItemDefinition(var1.unnotedId));
+            }
+
+            if (var1.placeholderTemplateId != -1) {
+                var1.method5076(getItemDefinition(var1.placeholderTemplateId), getItemDefinition(var1.placeholderId));
+            }
+
+            if (!class158.isMembersWorld && var1.isMembers) {
+                var1.name = "Members object";
+                var1.isTradable = false;
+                var1.groundActions = null;
+                var1.inventoryActions = null;
+                var1.shiftClickIndex = -1;
+                var1.team = 0;
+                if (var1.params != null) {
+                    boolean var3 = false;
+
+                    for (Node node = var1.params.getHead(); node != null; node = var1.params.getTail()) {
+                        final ParamNode param = ParamNode.method4877((int) node.hash);
+                        if (param.field3550) {
+                            node.unlink();
+                        } else {
+                            var3 = true;
+                        }
+                    }
+
+                    if (!var3) {
+                        var1.params = null;
+                    }
+                }
+            }
+
+            items.put(var1, var0);
+        }
+        return var1;
+    }
+
+    void post() {
    }
 
-   void loadBuffer(Buffer var1) {
+   void loadBuffer(final Buffer var1) {
       while(true) {
-         int var2 = var1.readUnsignedByte();
+         final int var2 = var1.readUnsignedByte();
          if(var2 == 0) {
             return;
          }
@@ -115,7 +168,7 @@ public class ItemComposition extends CacheableNode {
       }
    }
 
-   void populateFromBuffer(Buffer var1, int var2) {
+   private void populateFromBuffer(final Buffer var1, final int var2) {
       if(var2 == 1) {
          this.inventoryModel = var1.readUnsignedShort();
       } else if(var2 == 2) {
@@ -160,7 +213,7 @@ public class ItemComposition extends CacheableNode {
       } else if(var2 >= 35 && var2 < 40) {
          this.inventoryActions[var2 - 35] = var1.readString();
       } else {
-         int var3;
+         final int var3;
          int var4;
          if(var2 == 40) {
             var3 = var1.readUnsignedByte();
@@ -231,13 +284,13 @@ public class ItemComposition extends CacheableNode {
          } else if(var2 == 149) {
             this.placeholderTemplateId = var1.readUnsignedShort();
          } else if(var2 == 249) {
-            this.params = class28.readStringIntParameters(var1, this.params);
+            this.params = WorldMapDecorationInfo.readStringIntParameters(var1, this.params);
          }
       }
 
    }
 
-   void updateNote(ItemComposition var1, ItemComposition var2) {
+   void updateNote(final ItemComposition var1, final ItemComposition var2) {
       this.inventoryModel = var1.inventoryModel;
       this.zoom2d = var1.zoom2d;
       this.xan2d = var1.xan2d;
@@ -255,7 +308,7 @@ public class ItemComposition extends CacheableNode {
       this.isStackable = 1;
    }
 
-   void method5059(ItemComposition var1, ItemComposition var2) {
+   void method5059(final ItemComposition var1, final ItemComposition var2) {
       this.inventoryModel = var1.inventoryModel;
       this.zoom2d = var1.zoom2d;
       this.xan2d = var1.xan2d;
@@ -291,7 +344,7 @@ public class ItemComposition extends CacheableNode {
       this.price = 0;
    }
 
-   void method5076(ItemComposition var1, ItemComposition var2) {
+   void method5076(final ItemComposition var1, final ItemComposition var2) {
       this.inventoryModel = var1.inventoryModel;
       this.zoom2d = var1.zoom2d;
       this.xan2d = var1.xan2d;
@@ -310,7 +363,7 @@ public class ItemComposition extends CacheableNode {
       this.isTradable = false;
    }
 
-   public final ModelData method5089(int var1) {
+   public final ModelData method5089(final int var1) {
       int var3;
       if(this.countObj != null && var1 > 1) {
          int var2 = -1;
@@ -322,11 +375,11 @@ public class ItemComposition extends CacheableNode {
          }
 
          if(var2 != -1) {
-            return class47.getItemDefinition(var2).method5089(1);
+            return getItemDefinition(var2).method5089(1);
          }
       }
 
-      ModelData var4 = ModelData.method2645(ItemDefinition_modelIndexCache, this.inventoryModel, 0);
+      final ModelData var4 = ModelData.method2645(ItemDefinition_modelIndexCache, this.inventoryModel, 0);
       if(var4 == null) {
          return null;
       } else {
@@ -350,7 +403,7 @@ public class ItemComposition extends CacheableNode {
       }
    }
 
-   public final Model getModel(int var1) {
+   public final Model getModel(final int var1) {
       if(this.countObj != null && var1 > 1) {
          int var2 = -1;
 
@@ -361,15 +414,15 @@ public class ItemComposition extends CacheableNode {
          }
 
          if(var2 != -1) {
-            return class47.getItemDefinition(var2).getModel(1);
+            return getItemDefinition(var2).getModel(1);
          }
       }
 
-      Model var5 = (Model)itemModelCache.get((long)this.id);
+      Model var5 = (Model)itemModelCache.get(this.id);
       if(var5 != null) {
          return var5;
       } else {
-         ModelData var6 = ModelData.method2645(ItemDefinition_modelIndexCache, this.inventoryModel, 0);
+         final ModelData var6 = ModelData.method2645(ItemDefinition_modelIndexCache, this.inventoryModel, 0);
          if(var6 == null) {
             return null;
          } else {
@@ -392,13 +445,13 @@ public class ItemComposition extends CacheableNode {
 
             var5 = var6.light(this.ambient + 64, this.contrast * 5 + 768, -50, -10, -50);
             var5.field1874 = true;
-            itemModelCache.put(var5, (long)this.id);
+            itemModelCache.put(var5, this.id);
             return var5;
          }
       }
    }
 
-   public ItemComposition method5063(int var1) {
+   public ItemComposition method5063(final int var1) {
       if(this.countObj != null && var1 > 1) {
          int var2 = -1;
 
@@ -409,14 +462,14 @@ public class ItemComposition extends CacheableNode {
          }
 
          if(var2 != -1) {
-            return class47.getItemDefinition(var2);
+            return getItemDefinition(var2);
          }
       }
 
       return this;
    }
 
-   public final boolean readyWorn(boolean var1) {
+   public final boolean readyWorn(final boolean var1) {
       int var2 = this.maleModel;
       int var3 = this.maleModel1;
       int var4 = this.maleModel2;
@@ -446,7 +499,7 @@ public class ItemComposition extends CacheableNode {
       }
    }
 
-   public final ModelData getWornModelData(boolean var1) {
+   public final ModelData getWornModelData(final boolean var1) {
       int var2 = this.maleModel;
       int var3 = this.maleModel1;
       int var4 = this.maleModel2;
@@ -461,13 +514,13 @@ public class ItemComposition extends CacheableNode {
       } else {
          ModelData var5 = ModelData.method2645(ItemDefinition_modelIndexCache, var2, 0);
          if(var3 != -1) {
-            ModelData var6 = ModelData.method2645(ItemDefinition_modelIndexCache, var3, 0);
+            final ModelData var6 = ModelData.method2645(ItemDefinition_modelIndexCache, var3, 0);
             if(var4 != -1) {
-               ModelData var7 = ModelData.method2645(ItemDefinition_modelIndexCache, var4, 0);
-               ModelData[] var8 = new ModelData[]{var5, var6, var7};
+               final ModelData var7 = ModelData.method2645(ItemDefinition_modelIndexCache, var4, 0);
+               final ModelData[] var8 = {var5, var6, var7};
                var5 = new ModelData(var8, 3);
             } else {
-               ModelData[] var10 = new ModelData[]{var5, var6};
+               final ModelData[] var10 = {var5, var6};
                var5 = new ModelData(var10, 2);
             }
          }
@@ -497,7 +550,7 @@ public class ItemComposition extends CacheableNode {
       }
    }
 
-   public final boolean method5066(boolean var1) {
+   public final boolean method5066(final boolean var1) {
       int var2 = this.maleHeadModel;
       int var3 = this.maleHeadModel2;
       if(var1) {
@@ -521,7 +574,7 @@ public class ItemComposition extends CacheableNode {
       }
    }
 
-   public final ModelData method5062(boolean var1) {
+   public final ModelData method5062(final boolean var1) {
       int var2 = this.maleHeadModel;
       int var3 = this.maleHeadModel2;
       if(var1) {
@@ -534,8 +587,8 @@ public class ItemComposition extends CacheableNode {
       } else {
          ModelData var4 = ModelData.method2645(ItemDefinition_modelIndexCache, var2, 0);
          if(var3 != -1) {
-            ModelData var5 = ModelData.method2645(ItemDefinition_modelIndexCache, var3, 0);
-            ModelData[] var6 = new ModelData[]{var4, var5};
+            final ModelData var5 = ModelData.method2645(ItemDefinition_modelIndexCache, var3, 0);
+            final ModelData[] var6 = {var4, var5};
             var4 = new ModelData(var6, 2);
          }
 
@@ -556,13 +609,13 @@ public class ItemComposition extends CacheableNode {
       }
    }
 
-   public int method5068(int var1, int var2) {
-      IterableHashTable var4 = this.params;
-      int var3;
+   public int method5068(final int var1, final int var2) {
+      final IterableHashTable var4 = this.params;
+      final int var3;
       if(var4 == null) {
          var3 = var2;
       } else {
-         IntegerNode var5 = (IntegerNode)var4.get((long)var1);
+         final IntegerNode var5 = (IntegerNode)var4.get(var1);
          if(var5 == null) {
             var3 = var2;
          } else {
@@ -573,7 +626,7 @@ public class ItemComposition extends CacheableNode {
       return var3;
    }
 
-   public String method5069(int var1, String var2) {
+   public String method5069(final int var1, final String var2) {
       return WorldMapType1.method309(this.params, var1, var2);
    }
 

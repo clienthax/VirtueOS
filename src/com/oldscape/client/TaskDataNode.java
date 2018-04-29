@@ -6,7 +6,7 @@ public abstract class TaskDataNode extends Node {
    int field1659;
    AbstractIntegerNode0 data;
 
-   protected TaskDataNode() {
+   TaskDataNode() {
       this.field1660 = true;
    }
 
@@ -24,7 +24,7 @@ public abstract class TaskDataNode extends Node {
       return 255;
    }
 
-   final void method2495(int[] var1, int var2, int var3) {
+   final void method2495(final int[] var1, final int var2, final int var3) {
       if(this.field1660) {
          this.vmethod4317(var1, var2, var3);
       } else {

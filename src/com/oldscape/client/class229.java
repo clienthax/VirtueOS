@@ -1,8 +1,8 @@
 package com.oldscape.client;
 
-public class class229 {
+class class229 {
    public static IndexDataBase field2688;
-   public static IndexDataBase field2691;
+   public static IndexDataBase vorbisIdxRef;
    public static IndexDataBase field2689;
    public static class230 field2690;
    public static int field2687;
@@ -13,7 +13,7 @@ public class class229 {
       field2687 = 0;
    }
 
-   static final void loadTerrain(Buffer var0, int var1, int var2, int var3, int var4, int var5, int var6) {
+   static void loadTerrain(final Buffer var0, final int var1, final int var2, final int var3, final int var4, final int var5, final int var6) {
       int var7;
       if(var2 >= 0 && var2 < 104 && var3 >= 0 && var3 < 104) {
          class62.tileSettings[var1][var2][var3] = 0;

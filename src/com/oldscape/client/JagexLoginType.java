@@ -2,16 +2,16 @@ package com.oldscape.client;
 
 public class JagexLoginType {
    public static final JagexLoginType field4069;
-   static final JagexLoginType field4065;
-   static final JagexLoginType field4072;
-   static final JagexLoginType field4067;
-   static final JagexLoginType field4066;
-   static final JagexLoginType field4075;
-   static final JagexLoginType field4064;
-   static final JagexLoginType field4071;
+   private static final JagexLoginType field4065;
+   private static final JagexLoginType field4072;
+   private static final JagexLoginType field4067;
+   private static final JagexLoginType field4066;
+   private static final JagexLoginType field4075;
+   private static final JagexLoginType field4064;
+   private static final JagexLoginType field4071;
    public static final JagexLoginType field4070;
    public final int field4073;
-   final String identifier;
+   private final String identifier;
 
    static {
       field4069 = new JagexLoginType(8, 0, "", "");
@@ -25,12 +25,12 @@ public class JagexLoginType {
       field4070 = new JagexLoginType(4, -1, "", "", true, new JagexLoginType[]{field4069, field4065, field4072, field4066, field4067});
    }
 
-   JagexLoginType(int var1, int var2, String var3, String var4) {
+   private JagexLoginType(final int var1, final int var2, final String var3, final String var4) {
       this.field4073 = var1;
       this.identifier = var4;
    }
 
-   JagexLoginType(int var1, int var2, String var3, String var4, boolean var5, JagexLoginType[] var6) {
+   private JagexLoginType(final int var1, final int var2, final String var3, final String var4, final boolean var5, final JagexLoginType[] var6) {
       this.field4073 = var1;
       this.identifier = var4;
    }

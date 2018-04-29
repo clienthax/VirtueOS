@@ -2,12 +2,12 @@ package com.oldscape.client;
 
 import java.util.Iterator;
 
-public class class211 implements Iterator {
-   CombatInfoList field2632;
-   Node field2633;
-   Node field2634;
+class class211 implements Iterator {
+   private final CombatInfoList field2632;
+   private Node field2633;
+   private Node field2634;
 
-   class211(CombatInfoList var1) {
+   class211(final CombatInfoList var1) {
       this.field2634 = null;
       this.field2632 = var1;
       this.field2633 = this.field2632.node.next;

@@ -2,14 +2,14 @@ package com.oldscape.client;
 
 import java.lang.management.GarbageCollectorMXBean;
 
-public class IndexStoreActionHandler implements Runnable {
-   public static Deque IndexStoreActionHandler_requestQueue;
-   public static Deque IndexStoreActionHandler_responseQueue;
+class IndexStoreActionHandler implements Runnable {
+   public static final Deque IndexStoreActionHandler_requestQueue;
+   public static final Deque IndexStoreActionHandler_responseQueue;
    static IndexedSprite field3398;
    public static int field3401;
-   public static Object IndexStoreActionHandler_lock;
+   public static final Object IndexStoreActionHandler_lock;
    static int field3399;
-   protected static GarbageCollectorMXBean field3402;
+   static GarbageCollectorMXBean field3402;
 
    static {
       IndexStoreActionHandler_requestQueue = new Deque();
@@ -21,8 +21,7 @@ public class IndexStoreActionHandler implements Runnable {
    public void run() {
       try {
          while(true) {
-            Deque var2 = IndexStoreActionHandler_requestQueue;
-            FileSystem var1;
+            final FileSystem var1;
             synchronized(IndexStoreActionHandler_requestQueue) {
                var1 = (FileSystem)IndexStoreActionHandler_requestQueue.getFront();
             }
@@ -31,19 +30,16 @@ public class IndexStoreActionHandler implements Runnable {
             if(var1 != null) {
                if(var1.type == 0) {
                   var1.index.write((int)var1.hash, var1.field3367, var1.field3367.length);
-                  var2 = IndexStoreActionHandler_requestQueue;
                   synchronized(IndexStoreActionHandler_requestQueue) {
                      var1.unlink();
                   }
                } else if(var1.type == 1) {
                   var1.field3367 = var1.index.read((int)var1.hash);
-                  var2 = IndexStoreActionHandler_requestQueue;
                   synchronized(IndexStoreActionHandler_requestQueue) {
                      IndexStoreActionHandler_responseQueue.addFront(var1);
                   }
                }
 
-               var14 = IndexStoreActionHandler_lock;
                synchronized(IndexStoreActionHandler_lock) {
                   if(field3401 <= 1) {
                      field3401 = 0;
@@ -55,7 +51,6 @@ public class IndexStoreActionHandler implements Runnable {
                }
             } else {
                ScriptVarType.method11(100L);
-               var14 = IndexStoreActionHandler_lock;
                synchronized(IndexStoreActionHandler_lock) {
                   if(field3401 <= 1) {
                      field3401 = 0;
@@ -67,12 +62,12 @@ public class IndexStoreActionHandler implements Runnable {
                }
             }
          }
-      } catch (Exception var13) {
-         AttackOption.processClientError((String)null, var13);
+      } catch (final Exception var13) {
+         Signlink.processClientError(null, var13);
       }
    }
 
-   static final boolean method4629() {
+   static boolean method4629() {
       return class132.Viewport_containsMouse;
    }
 }

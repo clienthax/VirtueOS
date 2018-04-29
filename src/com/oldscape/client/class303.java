@@ -11,9 +11,9 @@ public class class303 {
       field3849 = new class303();
    }
 
-   public static String method5406(String var0) {
-      int var1 = var0.length();
-      char[] var2 = new char[var1];
+   public static String method5406(final String var0) {
+      final int var1 = var0.length();
+      final char[] var2 = new char[var1];
       byte var3 = 2;
 
       for(int var4 = 0; var4 < var1; ++var4) {

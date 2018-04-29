@@ -1,9 +1,9 @@
 package com.oldscape.client;
 
-public class Identifiers {
-   int[] table;
+class Identifiers {
+   private final int[] table;
 
-   public Identifiers(int[] var1) {
+   public Identifiers(final int[] var1) {
       int var2;
       for(var2 = 1; var2 <= (var1.length >> 1) + var1.length; var2 <<= 1) {
       }
@@ -25,12 +25,12 @@ public class Identifiers {
 
    }
 
-   public int getFile(int var1) {
-      int var2 = (this.table.length >> 1) - 1;
+   public int getFile(final int var1) {
+      final int var2 = (this.table.length >> 1) - 1;
       int var3 = var1 & var2;
 
       while(true) {
-         int var4 = this.table[var3 + var3 + 1];
+         final int var4 = this.table[var3 + var3 + 1];
          if(var4 == -1) {
             return -1;
          }

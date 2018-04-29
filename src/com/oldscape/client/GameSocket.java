@@ -3,17 +3,17 @@ package com.oldscape.client;
 import java.io.IOException;
 import java.io.OutputStream;
 
-public class GameSocket implements Runnable {
-   Thread field2262;
-   OutputStream field2263;
-   int field2260;
-   byte[] field2261;
-   int field2259;
-   int field2258;
-   IOException field2264;
-   boolean field2265;
+class GameSocket implements Runnable {
+   private final Thread field2262;
+   private final OutputStream field2263;
+   private final int field2260;
+   private final byte[] field2261;
+   private int field2259;
+   private int field2258;
+   private IOException field2264;
+   private boolean field2265;
 
-   GameSocket(OutputStream var1, int var2) {
+   GameSocket(final OutputStream var1, final int var2) {
       this.field2259 = 0;
       this.field2258 = 0;
       this.field2263 = var1;
@@ -24,14 +24,14 @@ public class GameSocket implements Runnable {
       this.field2262.start();
    }
 
-   boolean method3373() {
+   private boolean method3373() {
       if(this.field2265) {
          try {
             this.field2263.close();
             if(this.field2264 == null) {
                this.field2264 = new IOException("");
             }
-         } catch (IOException var2) {
+         } catch (final IOException var2) {
             if(this.field2264 == null) {
                this.field2264 = new IOException(var2);
             }
@@ -43,13 +43,13 @@ public class GameSocket implements Runnable {
       }
    }
 
-   void read(byte[] var1, int var2, int var3) throws IOException {
+   void read(final byte[] var1, final int var2, final int var3) throws IOException {
       if(var3 >= 0 && var2 >= 0 && var3 + var2 <= var1.length) {
          synchronized(this) {
             if(this.field2264 != null) {
                throw new IOException(this.field2264.toString());
             } else {
-               int var5;
+               final int var5;
                if(this.field2259 <= this.field2258) {
                   var5 = this.field2260 - this.field2258 + this.field2259 - 1;
                } else {
@@ -62,7 +62,7 @@ public class GameSocket implements Runnable {
                   if(var3 + this.field2258 <= this.field2260) {
                      System.arraycopy(var1, var2, this.field2261, this.field2258, var3);
                   } else {
-                     int var6 = this.field2260 - this.field2258;
+                     final int var6 = this.field2260 - this.field2258;
                      System.arraycopy(var1, var2, this.field2261, this.field2258, var6);
                      System.arraycopy(var1, var6 + var2, this.field2261, 0, var3 - var6);
                   }
@@ -85,7 +85,7 @@ public class GameSocket implements Runnable {
 
       try {
          this.field2262.join();
-      } catch (InterruptedException var3) {
+      } catch (final InterruptedException ignored) {
       }
 
    }
@@ -111,7 +111,7 @@ public class GameSocket implements Runnable {
 
                try {
                   this.field2263.flush();
-               } catch (IOException var11) {
+               } catch (final IOException var11) {
                   this.field2264 = var11;
                   return;
                }
@@ -122,7 +122,7 @@ public class GameSocket implements Runnable {
 
                try {
                   this.wait();
-               } catch (InterruptedException var12) {
+               } catch (final InterruptedException ignored) {
                }
             }
          }
@@ -131,14 +131,13 @@ public class GameSocket implements Runnable {
             if(var1 + this.field2259 <= this.field2260) {
                this.field2263.write(this.field2261, this.field2259, var1);
             } else {
-               int var7 = this.field2260 - this.field2259;
+               final int var7 = this.field2260 - this.field2259;
                this.field2263.write(this.field2261, this.field2259, var7);
                this.field2263.write(this.field2261, 0, var1 - var7);
             }
-         } catch (IOException var10) {
-            IOException var2 = var10;
-            synchronized(this) {
-               this.field2264 = var2;
+         } catch (final IOException var10) {
+             synchronized(this) {
+               this.field2264 = var10;
                return;
             }
          }

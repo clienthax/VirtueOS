@@ -8,7 +8,7 @@ public enum VerticalAlignment implements Enumerated {
    public final int value;
    final int field3443;
 
-   VerticalAlignment(int var3, int var4) {
+   VerticalAlignment(final int var3, final int var4) {
       this.value = var3;
       this.field3443 = var4;
    }
@@ -17,8 +17,8 @@ public enum VerticalAlignment implements Enumerated {
       return this.field3443;
    }
 
-   static String method4715(String var0, boolean var1) {
-      String var2 = var1?"https://":"http://";
+   static String method4715(String var0, final boolean var1) {
+      final String var2 = var1?"https://":"http://";
       if(Client.socketType == 1) {
          var0 = var0 + "-wtrc";
       } else if(Client.socketType == 2) {
@@ -36,7 +36,7 @@ public enum VerticalAlignment implements Enumerated {
          var3 = "/p=" + class55.sessionToken;
       }
 
-      String var4 = "runescape.com";
+      final String var4 = "runescape.com";
       return var2 + var0 + "." + var4 + "/l=" + Client.languageId + "/a=" + WidgetNode.field795 + var3 + "/";
    }
 }

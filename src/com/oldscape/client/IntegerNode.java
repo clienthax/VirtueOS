@@ -1,9 +1,9 @@
 package com.oldscape.client;
 
-public class IntegerNode extends Node {
-   public int value;
+class IntegerNode extends Node {
+   public final int value;
 
-   public IntegerNode(int var1) {
+   public IntegerNode(final int var1) {
       this.value = var1;
    }
 }

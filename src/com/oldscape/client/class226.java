@@ -2,29 +2,28 @@ package com.oldscape.client;
 
 import java.util.Iterator;
 
-public class class226 implements Iterator {
-   IterableDualNodeQueue field2671;
-   CacheableNode field2672;
-   CacheableNode field2673;
+class class226 implements Iterator {
+   private final IterableDualNodeQueue field2671;
+   private CacheableNode field2672;
+   private CacheableNode field2673;
 
-   class226(IterableDualNodeQueue var1) {
+   class226(final IterableDualNodeQueue var1) {
       this.field2673 = null;
       this.field2671 = var1;
       this.field2672 = this.field2671.sentinel.previous;
-      this.field2673 = null;
    }
 
    public Object next() {
-      CacheableNode var1 = this.field2672;
-      if(var1 == this.field2671.sentinel) {
-         var1 = null;
+      CacheableNode node = this.field2672;
+      if(node == this.field2671.sentinel) {
+         node = null;
          this.field2672 = null;
       } else {
-         this.field2672 = var1.previous;
+         this.field2672 = node.previous;
       }
 
-      this.field2673 = var1;
-      return var1;
+      this.field2673 = node;
+      return node;
    }
 
    public void remove() {

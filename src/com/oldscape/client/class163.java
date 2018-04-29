@@ -4,16 +4,16 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class class163 implements Runnable {
-   Thread field2186;
-   InputStream field2187;
-   int field2188;
-   byte[] field2189;
-   int field2192;
-   int field2191;
-   IOException field2190;
+class class163 implements Runnable {
+   private final Thread field2186;
+   private final InputStream field2187;
+   private final int field2188;
+   private final byte[] field2189;
+   private int field2192;
+   private int field2191;
+   private IOException field2190;
 
-   class163(InputStream var1, int var2) {
+   class163(final InputStream var1, final int var2) {
       this.field2192 = 0;
       this.field2191 = 0;
       this.field2187 = var1;
@@ -24,12 +24,12 @@ public class class163 implements Runnable {
       this.field2186.start();
    }
 
-   boolean method3200(int var1) throws IOException {
+   boolean method3200(final int var1) throws IOException {
       if(var1 == 0) {
          return true;
       } else if(var1 > 0 && var1 < this.field2188) {
          synchronized(this) {
-            int var3;
+            final int var3;
             if(this.field2192 <= this.field2191) {
                var3 = this.field2191 - this.field2192;
             } else {
@@ -54,7 +54,7 @@ public class class163 implements Runnable {
 
    int method3196() throws IOException {
       synchronized(this) {
-         int var2;
+         final int var2;
          if(this.field2192 <= this.field2191) {
             var2 = this.field2191 - this.field2192;
          } else {
@@ -79,7 +79,7 @@ public class class163 implements Runnable {
                return -1;
             }
          } else {
-            int var2 = this.field2189[this.field2192] & 255;
+            final int var2 = this.field2189[this.field2192] & 255;
             this.field2192 = (this.field2192 + 1) % this.field2188;
             this.notifyAll();
             return var2;
@@ -87,10 +87,10 @@ public class class163 implements Runnable {
       }
    }
 
-   int method3198(byte[] var1, int var2, int var3) throws IOException {
+   int method3198(final byte[] var1, final int var2, int var3) throws IOException {
       if(var3 >= 0 && var2 >= 0 && var3 + var2 <= var1.length) {
          synchronized(this) {
-            int var5;
+            final int var5;
             if(this.field2192 <= this.field2191) {
                var5 = this.field2191 - this.field2192;
             } else {
@@ -107,7 +107,7 @@ public class class163 implements Runnable {
                if(var3 + this.field2192 <= this.field2188) {
                   System.arraycopy(this.field2189, this.field2192, var1, var2, var3);
                } else {
-                  int var6 = this.field2188 - this.field2192;
+                  final int var6 = this.field2188 - this.field2192;
                   System.arraycopy(this.field2189, this.field2192, var1, var2, var6);
                   System.arraycopy(this.field2189, 0, var1, var6 + var2, var3 - var6);
                }
@@ -133,7 +133,7 @@ public class class163 implements Runnable {
 
       try {
          this.field2186.join();
-      } catch (InterruptedException var3) {
+      } catch (final InterruptedException ignored) {
       }
 
    }
@@ -161,21 +161,20 @@ public class class163 implements Runnable {
 
                try {
                   this.wait();
-               } catch (InterruptedException var10) {
+               } catch (final InterruptedException ignored) {
                }
             }
          }
 
-         int var7;
+         final int var7;
          try {
             var7 = this.field2187.read(this.field2189, this.field2191, var1);
             if(var7 == -1) {
                throw new EOFException();
             }
-         } catch (IOException var11) {
-            IOException var3 = var11;
-            synchronized(this) {
-               this.field2190 = var3;
+         } catch (final IOException var11) {
+             synchronized(this) {
+               this.field2190 = var11;
                return;
             }
          }
@@ -186,9 +185,9 @@ public class class163 implements Runnable {
       }
    }
 
-   public static void method3213(int var0, IndexDataBase var1, int var2, int var3, int var4, boolean var5) {
+   public static void method3213(final int var0, final IndexDataBase var1, final int var2, final int var3, final int var4, final boolean var5) {
       class229.field2687 = 1;
-      class185.field2511 = var1;
+      Client.field2511 = var1;
       VertexNormal.field1931 = var2;
       GrandExchangeEvents.field284 = var3;
       class86.field1330 = var4;

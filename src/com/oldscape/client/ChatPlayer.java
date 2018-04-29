@@ -1,6 +1,6 @@
 package com.oldscape.client;
 
-public class ChatPlayer extends Nameable {
+class ChatPlayer extends Nameable {
    public int world;
    public int field3845;
    public int rank;
@@ -9,7 +9,7 @@ public class ChatPlayer extends Nameable {
       this.world = -1;
    }
 
-   void method5389(int var1, int var2) {
+   void method5389(final int var1, final int var2) {
       this.world = var1;
       this.field3845 = var2;
    }
@@ -22,8 +22,8 @@ public class ChatPlayer extends Nameable {
       return this.world > 0;
    }
 
-   public static String getString(byte[] var0, int var1, int var2) {
-      char[] var3 = new char[var2];
+   public static String getString(final byte[] var0, final int var1, final int var2) {
+      final char[] var3 = new char[var2];
       int var4 = 0;
 
       for(int var5 = 0; var5 < var2; ++var5) {

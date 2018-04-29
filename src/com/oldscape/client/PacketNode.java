@@ -1,7 +1,7 @@
 package com.oldscape.client;
 
 public class PacketNode extends Node {
-   static PacketNode[] packetBufferNodes;
+   static final PacketNode[] packetBufferNodes;
    static int field2502;
    public ClientPacket clientPacket;
    public int field2503;
@@ -19,9 +19,9 @@ public class PacketNode extends Node {
       }
    }
 
-   public static void method3442(IndexDataBase var0, int var1, int var2, int var3, boolean var4) {
+   public static void method3442(final IndexDataBase var0, final int var1, final int var2, final int var3, final boolean var4) {
       class229.field2687 = 1;
-      class185.field2511 = var0;
+      Client.field2511 = var0;
       VertexNormal.field1931 = var1;
       GrandExchangeEvents.field284 = var2;
       class86.field1330 = var3;

@@ -1,53 +1,52 @@
 package com.oldscape.client;
 
-public class class150 extends class297 {
-   final boolean field2143;
+class class150 extends class297 {
+   private final boolean field2143;
 
-   public class150(boolean var1) {
+   public class150(final boolean var1) {
       this.field2143 = var1;
    }
 
-   int method3121(ChatPlayer var1, ChatPlayer var2) {
-      return Client.world == var1.world && var2.world == Client.world?(this.field2143?var1.method5271().compareCleanName(var2.method5271()):var2.method5271().compareCleanName(var1.method5271())):this.method5282(var1, var2);
+   private int doCompare(final ChatPlayer var1, final ChatPlayer var2) {
+      return Client.world == var1.world && var2.world == Client.world?(this.field2143?var1.getCurrentName().compareCleanName(var2.getCurrentName()):var2.getCurrentName().compareCleanName(var1.getCurrentName())): this.doCompare(var1, var2);
    }
 
-   public int compare(Object var1, Object var2) {
-      return this.method3121((ChatPlayer)var1, (ChatPlayer)var2);
+   @Override
+   public int compare(final Object var1, final Object var2) {
+      return this.doCompare((ChatPlayer)var1, (ChatPlayer)var2);
    }
 
    public static void method3111() {
       class326.classInfos = new CombatInfoList();
    }
 
-   public static int method3118(byte[] var0, int var1) {
+   public static int method3118(final byte[] var0, final int var1) {
       return ClanMember.method5252(var0, 0, var1);
    }
 
-   public static VarPlayerType method3119(int var0) {
-      VarPlayerType var1 = (VarPlayerType)VarPlayerType.varplayers.get((long)var0);
-      if(var1 != null) {
-         return var1;
-      } else {
-         byte[] var2 = VarPlayerType.varplayer_ref.getConfigData(16, var0);
+   public static VarPlayerType method3119(final int var0) {
+      VarPlayerType var1 = (VarPlayerType)VarPlayerType.varplayers.get(var0);
+      if (var1 == null) {
+         final byte[] var2 = VarPlayerType.varplayer_ref.getConfigData(16, var0);
          var1 = new VarPlayerType();
-         if(var2 != null) {
+         if (var2 != null) {
             var1.decode(new Buffer(var2));
          }
 
-         VarPlayerType.varplayers.put(var1, (long)var0);
-         return var1;
+         VarPlayerType.varplayers.put(var1, var0);
       }
+      return var1;
    }
 
-   public static int parseInt(CharSequence var0, int var1, boolean var2) {
+   public static int parseInt(final CharSequence var0, final int var1) {
       if(var1 >= 2 && var1 <= 36) {
          boolean var3 = false;
          boolean var4 = false;
          int var5 = 0;
-         int var6 = var0.length();
+         final int var6 = var0.length();
 
          for(int var7 = 0; var7 < var6; ++var7) {
-            char var8 = var0.charAt(var7);
+            final char var8 = var0.charAt(var7);
             if(var7 == 0) {
                if(var8 == '-') {
                   var3 = true;
@@ -80,7 +79,7 @@ public class class150 extends class297 {
                var10 = -var10;
             }
 
-            int var9 = var5 * var1 + var10;
+            final int var9 = var5 * var1 + var10;
             if(var9 / var1 != var5) {
                throw new NumberFormatException();
             }
@@ -99,7 +98,7 @@ public class class150 extends class297 {
       }
    }
 
-   static synchronized void method3110(byte[] var0) {
+   static synchronized void method3110(final byte[] var0) {
       if(var0.length == 100 && class195.field2583 < 1000) {
          class195.field2580[++class195.field2583 - 1] = var0;
       } else if(var0.length == 5000 && class195.field2579 < 250) {

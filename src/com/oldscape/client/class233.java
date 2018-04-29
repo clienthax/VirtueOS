@@ -1,16 +1,16 @@
 package com.oldscape.client;
 
-public class class233 extends Node {
-   int field2762;
-   RawAudioNode[] field2757;
-   short[] field2759;
-   byte[] field2756;
-   byte[] field2760;
-   class228[] field2763;
-   byte[] field2761;
-   int[] field2758;
+class class233 extends Node {
+   final int field2762;
+   final RawAudioNode[] field2757;
+   final short[] field2759;
+   final byte[] field2756;
+   final byte[] field2760;
+   final class228[] field2763;
+   final byte[] field2761;
+   private int[] field2758;
 
-   class233(byte[] var1) {
+   class233(final byte[] var1) {
       this.field2757 = new RawAudioNode[128];
       this.field2759 = new short[128];
       this.field2756 = new byte[128];
@@ -18,13 +18,13 @@ public class class233 extends Node {
       this.field2763 = new class228[128];
       this.field2761 = new byte[128];
       this.field2758 = new int[128];
-      Buffer var2 = new Buffer(var1);
+      final Buffer var2 = new Buffer(var1);
 
       int var3;
       for(var3 = 0; var2.payload[var3 + var2.offset] != 0; ++var3) {
       }
 
-      byte[] var4 = new byte[var3];
+      final byte[] var4 = new byte[var3];
 
       int var5;
       for(var5 = 0; var5 < var3; ++var5) {
@@ -40,7 +40,7 @@ public class class233 extends Node {
       for(var6 = 0; var2.payload[var6 + var2.offset] != 0; ++var6) {
       }
 
-      byte[] var7 = new byte[var6];
+      final byte[] var7 = new byte[var6];
 
       int var8;
       for(var8 = 0; var8 < var6; ++var8) {
@@ -56,7 +56,7 @@ public class class233 extends Node {
       for(var9 = 0; var2.payload[var9 + var2.offset] != 0; ++var9) {
       }
 
-      byte[] var10 = new byte[var9];
+      final byte[] var10 = new byte[var9];
 
       for(int var11 = 0; var11 < var9; ++var11) {
          var10[var11] = var2.readByte();
@@ -64,7 +64,7 @@ public class class233 extends Node {
 
       ++var2.offset;
       ++var9;
-      byte[] var36 = new byte[var9];
+      final byte[] var36 = new byte[var9];
       int var12;
       int var14;
       if(var9 > 1) {
@@ -90,7 +90,7 @@ public class class233 extends Node {
          var12 = var9;
       }
 
-      class228[] var37 = new class228[var12];
+      final class228[] var37 = new class228[var12];
 
       class228 var38;
       for(var14 = 0; var14 < var37.length; ++var14) {
@@ -108,15 +108,15 @@ public class class233 extends Node {
       }
 
       var14 = var2.readUnsignedByte();
-      byte[] var45 = var14 > 0?new byte[var14 * 2]:null;
+      final byte[] var45 = var14 > 0?new byte[var14 * 2]:null;
       var14 = var2.readUnsignedByte();
-      byte[] var39 = var14 > 0?new byte[var14 * 2]:null;
+      final byte[] var39 = var14 > 0?new byte[var14 * 2]:null;
 
       int var17;
       for(var17 = 0; var2.payload[var17 + var2.offset] != 0; ++var17) {
       }
 
-      byte[] var18 = new byte[var17];
+      final byte[] var18 = new byte[var17];
 
       int var19;
       for(var19 = 0; var19 < var17; ++var19) {
@@ -326,7 +326,7 @@ public class class233 extends Node {
 
          for(var29 = 2; var29 < var45.length; var29 += 2) {
             var30 = var45[var29];
-            byte var31 = var45[var29 + 1];
+            final byte var31 = var45[var29 + 1];
             var32 = var41 * (var30 - var44) + (var30 - var44) / 2;
 
             for(var33 = var44; var33 < var30; ++var33) {
@@ -343,7 +343,6 @@ public class class233 extends Node {
             this.field2756[var42] = (byte)(var41 * this.field2756[var42] + 32 >> 6);
          }
 
-         var38 = null;
       }
 
       if(var39 != null) {
@@ -409,7 +408,6 @@ public class class233 extends Node {
             this.field2760[var42] = (byte)var43;
          }
 
-         Object var46 = null;
       }
 
       for(var27 = 0; var27 < var12; ++var27) {
@@ -451,7 +449,7 @@ public class class233 extends Node {
 
    }
 
-   boolean method4307(class110 var1, byte[] var2, int[] var3) {
+   boolean method4307(final class110 var1, final byte[] var2, final int[] var3) {
       boolean var4 = true;
       int var5 = 0;
       RawAudioNode var6 = null;

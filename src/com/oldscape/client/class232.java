@@ -1,33 +1,33 @@
 package com.oldscape.client;
 
-public class class232 {
-   static final byte[] field2751;
-   Buffer field2754;
+class class232 {
+   private static final byte[] field2751;
+   private Buffer field2754;
    int field2743;
-   int[] field2744;
-   int[] field2745;
+   private int[] field2744;
+   private int[] field2745;
    int[] field2753;
-   int[] field2742;
-   int field2747;
-   long field2750;
+   private int[] field2742;
+   private int field2747;
+   private long field2750;
 
    static {
       field2751 = new byte[]{(byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)1, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)2, (byte)0, (byte)1, (byte)2, (byte)1, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0};
    }
 
-   class232(byte[] var1) {
-      this.field2754 = new Buffer((byte[])null);
+   class232(final byte[] var1) {
+      this.field2754 = new Buffer(null);
       this.method4298(var1);
    }
 
    class232() {
-      this.field2754 = new Buffer((byte[])null);
+      this.field2754 = new Buffer(null);
    }
 
-   void method4298(byte[] var1) {
+   void method4298(final byte[] var1) {
       this.field2754.payload = var1;
       this.field2754.offset = 10;
-      int var2 = this.field2754.readUnsignedShort();
+      final int var2 = this.field2754.readUnsignedShort();
       this.field2743 = this.field2754.readUnsignedShort();
       this.field2747 = 500000;
       this.field2744 = new int[var2];
@@ -35,7 +35,7 @@ public class class232 {
       int var3;
       int var5;
       for(var3 = 0; var3 < var2; this.field2754.offset += var5) {
-         int var4 = this.field2754.readInt();
+         final int var4 = this.field2754.readInt();
          var5 = this.field2754.readInt();
          if(var4 == 1297379947) {
             this.field2744[var3] = this.field2754.offset;
@@ -70,11 +70,11 @@ public class class232 {
       return this.field2745.length;
    }
 
-   void method4271(int var1) {
+   void method4271(final int var1) {
       this.field2754.offset = this.field2745[var1];
    }
 
-   void method4272(int var1) {
+   void method4272(final int var1) {
       this.field2745[var1] = this.field2754.offset;
    }
 
@@ -82,19 +82,18 @@ public class class232 {
       this.field2754.offset = -1;
    }
 
-   void method4274(int var1) {
-      int var2 = this.field2754.readVarInt();
+   void method4274(final int var1) {
+      final int var2 = this.field2754.readVarInt();
       this.field2753[var1] += var2;
    }
 
-   int method4275(int var1) {
-      int var2 = this.method4276(var1);
-      return var2;
+   int method4275(final int var1) {
+      return this.method4276(var1);
    }
 
-   int method4276(int var1) {
-      byte var2 = this.field2754.payload[this.field2754.offset];
-      int var5;
+   private int method4276(final int var1) {
+      final byte var2 = this.field2754.payload[this.field2754.offset];
+      final int var5;
       if(var2 < 0) {
          var5 = var2 & 255;
          this.field2742[var1] = var5;
@@ -106,9 +105,9 @@ public class class232 {
       if(var5 != 240 && var5 != 247) {
          return this.method4281(var1, var5);
       } else {
-         int var3 = this.field2754.readVarInt();
+         final int var3 = this.field2754.readVarInt();
          if(var5 == 247 && var3 > 0) {
-            int var4 = this.field2754.payload[this.field2754.offset] & 255;
+            final int var4 = this.field2754.payload[this.field2754.offset] & 255;
             if(var4 >= 241 && var4 <= 243 || var4 == 246 || var4 == 248 || var4 >= 250 && var4 <= 252 || var4 == 254) {
                ++this.field2754.offset;
                this.field2742[var1] = var4;
@@ -121,19 +120,19 @@ public class class232 {
       }
    }
 
-   int method4281(int var1, int var2) {
+   private int method4281(final int var1, final int var2) {
       int var4;
       if(var2 == 255) {
-         int var7 = this.field2754.readUnsignedByte();
+         final int var7 = this.field2754.readUnsignedByte();
          var4 = this.field2754.readVarInt();
          if(var7 == 47) {
             this.field2754.offset += var4;
             return 1;
          } else if(var7 == 81) {
-            int var5 = this.field2754.read24BitInt();
+            final int var5 = this.field2754.read24BitInt();
             var4 -= 3;
-            int var6 = this.field2753[var1];
-            this.field2750 += (long)var6 * (long)(this.field2747 - var5);
+            final int var6 = this.field2753[var1];
+            this.field2750 += (long)var6 * (this.field2747 - var5);
             this.field2747 = var5;
             this.field2754.offset += var4;
             return 2;
@@ -142,7 +141,7 @@ public class class232 {
             return 3;
          }
       } else {
-         byte var3 = field2751[var2 - 128];
+         final byte var3 = field2751[var2 - 128];
          var4 = var2;
          if(var3 >= 1) {
             var4 = var2 | this.field2754.readUnsignedByte() << 8;
@@ -156,12 +155,12 @@ public class class232 {
       }
    }
 
-   long method4296(int var1) {
-      return this.field2750 + (long)var1 * (long)this.field2747;
+   long method4296(final int var1) {
+      return this.field2750 + (long)var1 * this.field2747;
    }
 
    int method4279() {
-      int var1 = this.field2745.length;
+      final int var1 = this.field2745.length;
       int var2 = -1;
       int var3 = Integer.MAX_VALUE;
 
@@ -176,20 +175,19 @@ public class class232 {
    }
 
    boolean method4280() {
-      int var1 = this.field2745.length;
 
-      for(int var2 = 0; var2 < var1; ++var2) {
-         if(this.field2745[var2] >= 0) {
-            return false;
-         }
-      }
+      for (final int aField2745 : this.field2745) {
+           if (aField2745 >= 0) {
+               return false;
+           }
+       }
 
       return true;
    }
 
-   void method4285(long var1) {
+   void method4285(final long var1) {
       this.field2750 = var1;
-      int var3 = this.field2745.length;
+      final int var3 = this.field2745.length;
 
       for(int var4 = 0; var4 < var3; ++var4) {
          this.field2753[var4] = 0;

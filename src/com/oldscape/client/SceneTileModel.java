@@ -1,13 +1,13 @@
 package com.oldscape.client;
 
-public final class SceneTileModel {
-   static int[] tmpScreenX;
-   static int[] tmpScreenY;
-   static int[] vertexSceneX;
-   static int[] vertexSceneY;
-   static int[] vertexSceneZ;
-   static final int[][] field1790;
-   static final int[][] field1791;
+final class SceneTileModel {
+   static final int[] tmpScreenX;
+   static final int[] tmpScreenY;
+   static final int[] vertexSceneX;
+   static final int[] vertexSceneY;
+   static final int[] vertexSceneZ;
+   private static final int[][] field1790;
+   private static final int[][] field1791;
    int[] vertexX;
    int[] vertexY;
    int[] vertexZ;
@@ -34,29 +34,26 @@ public final class SceneTileModel {
       field1791 = new int[][]{{0, 1, 2, 3, 0, 0, 1, 3}, {1, 1, 2, 3, 1, 0, 1, 3}, {0, 1, 2, 3, 1, 0, 1, 3}, {0, 0, 1, 2, 0, 0, 2, 4, 1, 0, 4, 3}, {0, 0, 1, 4, 0, 0, 4, 3, 1, 1, 2, 4}, {0, 0, 4, 3, 1, 0, 1, 2, 1, 0, 2, 4}, {0, 1, 2, 4, 1, 0, 1, 4, 1, 0, 4, 3}, {0, 4, 1, 2, 0, 4, 2, 5, 1, 0, 4, 5, 1, 0, 5, 3}, {0, 4, 1, 2, 0, 4, 2, 3, 0, 4, 3, 5, 1, 0, 4, 5}, {0, 0, 4, 5, 1, 4, 1, 2, 1, 4, 2, 3, 1, 4, 3, 5}, {0, 0, 1, 5, 0, 1, 4, 5, 0, 1, 2, 4, 1, 0, 5, 3, 1, 5, 4, 3, 1, 4, 2, 3}, {1, 0, 1, 5, 1, 1, 4, 5, 1, 1, 2, 4, 0, 0, 5, 3, 0, 5, 4, 3, 0, 4, 2, 3}, {1, 0, 5, 4, 1, 0, 1, 5, 0, 0, 4, 3, 0, 4, 5, 3, 0, 5, 2, 3, 0, 1, 2, 5}};
    }
 
-   SceneTileModel(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19) {
-      this.flatShade = true;
-      if(var7 != var6 || var8 != var6 || var9 != var6) {
-         this.flatShade = false;
-      }
+   SceneTileModel(final int var1, final int var2, final int var3, final int var4, final int var5, final int var6, final int var7, final int var8, final int var9, final int var10, final int var11, final int var12, final int var13, final int var14, final int var15, final int var16, final int var17, final int var18, final int var19) {
+      this.flatShade = var7 == var6 && var8 == var6 && var9 == var6;
 
       this.shape = var1;
       this.rotation = var2;
       this.underlay = var18;
       this.overlay = var19;
-      short var20 = 128;
-      int var21 = var20 / 2;
-      int var22 = var20 / 4;
-      int var23 = var20 * 3 / 4;
-      int[] var24 = field1790[var1];
-      int var25 = var24.length;
+      final short var20 = 128;
+      final int var21 = var20 / 2;
+      final int var22 = var20 / 4;
+      final int var23 = var20 * 3 / 4;
+      final int[] var24 = field1790[var1];
+      final int var25 = var24.length;
       this.vertexX = new int[var25];
       this.vertexY = new int[var25];
       this.vertexZ = new int[var25];
-      int[] var26 = new int[var25];
-      int[] var27 = new int[var25];
-      int var28 = var20 * var4;
-      int var29 = var5 * var20;
+      final int[] var26 = new int[var25];
+      final int[] var27 = new int[var25];
+      final int var28 = var20 * var4;
+      final int var29 = var5 * var20;
 
       int var31;
       int var32;
@@ -183,7 +180,7 @@ public final class SceneTileModel {
          var27[var30] = var36;
       }
 
-      int[] var38 = field1791[var1];
+      final int[] var38 = field1791[var1];
       var31 = var38.length / 4;
       this.field1772 = new int[var31];
       this.field1774 = new int[var31];
@@ -261,7 +258,6 @@ public final class SceneTileModel {
          var34 = var9;
       }
 
-      var33 /= 14;
       var34 /= 14;
    }
 }

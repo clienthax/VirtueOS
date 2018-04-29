@@ -2,25 +2,25 @@ package com.oldscape.client;
 
 public class class281 extends CacheableNode {
    static IndexDataBase field3585;
-   public static NodeCache field3568;
-   public static NodeCache field3569;
-   public static NodeCache field3570;
-   int field3573;
+   public static final NodeCache field3568;
+   public static final NodeCache field3569;
+   public static final NodeCache field3570;
+   private int field3573;
    public int field3574;
    public int field3575;
-   int field3576;
-   int field3578;
-   int field3580;
-   int field3579;
+   private int field3576;
+   private int field3578;
+   private int field3580;
+   private int field3579;
    public int field3571;
    public int field3581;
    public int field3582;
-   String field3583;
+   private String field3583;
    public int field3588;
    public int field3584;
    public int[] field3586;
-   int field3587;
-   int field3567;
+   private int field3587;
+   private int field3567;
 
    static {
       field3568 = new NodeCache(64);
@@ -46,9 +46,9 @@ public class class281 extends CacheableNode {
       this.field3567 = -1;
    }
 
-   void method4965(Buffer var1) {
+   void method4965(final Buffer var1) {
       while(true) {
-         int var2 = var1.readUnsignedByte();
+         final int var2 = var1.readUnsignedByte();
          if(var2 == 0) {
             return;
          }
@@ -57,7 +57,7 @@ public class class281 extends CacheableNode {
       }
    }
 
-   void method4961(Buffer var1, int var2) {
+   private void method4961(final Buffer var1, final int var2) {
       if(var2 == 1) {
          this.field3573 = var1.method3576();
       } else if(var2 == 2) {
@@ -105,7 +105,7 @@ public class class281 extends CacheableNode {
             }
          }
 
-         int var4 = var1.readUnsignedByte();
+         final int var4 = var1.readUnsignedByte();
          this.field3586 = new int[var4 + 2];
 
          for(int var5 = 0; var5 <= var4; ++var5) {
@@ -123,12 +123,12 @@ public class class281 extends CacheableNode {
    public final class281 method4962() {
       int var1 = -1;
       if(this.field3587 != -1) {
-         var1 = DynamicObject.getVarbit(this.field3587);
+         var1 = Varbit.getVarbit(this.field3587);
       } else if(this.field3567 != -1) {
-         var1 = class237.clientVarps[this.field3567];
+         var1 = VarpStorage.clientVarps[this.field3567];
       }
 
-      int var2;
+      final int var2;
       if(var1 >= 0 && var1 < this.field3586.length - 1) {
          var2 = this.field3586[var1];
       } else {
@@ -138,11 +138,11 @@ public class class281 extends CacheableNode {
       return var2 != -1?Huffman.method3457(var2):null;
    }
 
-   public String method4963(int var1) {
+   public String method4963(final int var1) {
       String var2 = this.field3583;
 
       while(true) {
-         int var3 = var2.indexOf("%1");
+         final int var3 = var2.indexOf("%1");
          if(var3 < 0) {
             return var2;
          }
@@ -155,17 +155,15 @@ public class class281 extends CacheableNode {
       if(this.field3576 < 0) {
          return null;
       } else {
-         SpritePixels var1 = (SpritePixels)field3569.get((long)this.field3576);
-         if(var1 != null) {
-            return var1;
-         } else {
-            var1 = SoundTaskDataProvider.method817(class5.field35, this.field3576, 0);
-            if(var1 != null) {
-               field3569.put(var1, (long)this.field3576);
+         SpritePixels var1 = (SpritePixels)field3569.get(this.field3576);
+         if (var1 == null) {
+            var1 = class332.method817(class5.field35, this.field3576, 0);
+            if (var1 != null) {
+               field3569.put(var1, this.field3576);
             }
 
-            return var1;
          }
+         return var1;
       }
    }
 
@@ -173,13 +171,13 @@ public class class281 extends CacheableNode {
       if(this.field3578 < 0) {
          return null;
       } else {
-         SpritePixels var1 = (SpritePixels)field3569.get((long)this.field3578);
+         SpritePixels var1 = (SpritePixels)field3569.get(this.field3578);
          if(var1 != null) {
             return var1;
          } else {
-            var1 = SoundTaskDataProvider.method817(class5.field35, this.field3578, 0);
+            var1 = class332.method817(class5.field35, this.field3578, 0);
             if(var1 != null) {
-               field3569.put(var1, (long)this.field3578);
+               field3569.put(var1, this.field3578);
             }
 
             return var1;
@@ -191,13 +189,13 @@ public class class281 extends CacheableNode {
       if(this.field3580 < 0) {
          return null;
       } else {
-         SpritePixels var1 = (SpritePixels)field3569.get((long)this.field3580);
+         SpritePixels var1 = (SpritePixels)field3569.get(this.field3580);
          if(var1 != null) {
             return var1;
          } else {
-            var1 = SoundTaskDataProvider.method817(class5.field35, this.field3580, 0);
+            var1 = class332.method817(class5.field35, this.field3580, 0);
             if(var1 != null) {
-               field3569.put(var1, (long)this.field3580);
+               field3569.put(var1, this.field3580);
             }
 
             return var1;
@@ -209,13 +207,13 @@ public class class281 extends CacheableNode {
       if(this.field3579 < 0) {
          return null;
       } else {
-         SpritePixels var1 = (SpritePixels)field3569.get((long)this.field3579);
+         SpritePixels var1 = (SpritePixels)field3569.get(this.field3579);
          if(var1 != null) {
             return var1;
          } else {
-            var1 = SoundTaskDataProvider.method817(class5.field35, this.field3579, 0);
+            var1 = class332.method817(class5.field35, this.field3579, 0);
             if(var1 != null) {
-               field3569.put(var1, (long)this.field3579);
+               field3569.put(var1, this.field3579);
             }
 
             return var1;
@@ -227,13 +225,13 @@ public class class281 extends CacheableNode {
       if(this.field3573 == -1) {
          return null;
       } else {
-         Font var1 = (Font)field3570.get((long)this.field3573);
+         Font var1 = (Font)field3570.get(this.field3573);
          if(var1 != null) {
             return var1;
          } else {
             var1 = FontName.method5488(class5.field35, class156.field2167, this.field3573, 0);
             if(var1 != null) {
-               field3570.put(var1, (long)this.field3573);
+               field3570.put(var1, this.field3573);
             }
 
             return var1;

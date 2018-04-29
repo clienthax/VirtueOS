@@ -1,14 +1,14 @@
 package com.oldscape.client;
 
 public final class ISAACCipher {
-   int valuesRemaining;
-   int[] randResult;
-   int[] mm;
-   int field2613;
-   int field2611;
-   int field2612;
+   private int valuesRemaining;
+   private final int[] randResult;
+   private final int[] mm;
+   private int field2613;
+   private int field2611;
+   private int field2612;
 
-   public ISAACCipher(int[] var1) {
+   public ISAACCipher(final int[] var1) {
       this.mm = new int[256];
       this.randResult = new int[256];
 
@@ -35,11 +35,11 @@ public final class ISAACCipher {
       return this.randResult[this.valuesRemaining - 1];
    }
 
-   final void generateMoreResults() {
+   private void generateMoreResults() {
       this.field2611 += ++this.field2612;
 
       for(int var1 = 0; var1 < 256; ++var1) {
-         int var2 = this.mm[var1];
+         final int var2 = this.mm[var1];
          if((var1 & 2) == 0) {
             if((var1 & 1) == 0) {
                this.field2613 ^= this.field2613 << 13;
@@ -53,14 +53,14 @@ public final class ISAACCipher {
          }
 
          this.field2613 += this.mm[var1 + 128 & 255];
-         int var3;
+         final int var3;
          this.mm[var1] = var3 = this.mm[(var2 & 1020) >> 2] + this.field2613 + this.field2611;
          this.randResult[var1] = this.field2611 = this.mm[(var3 >> 8 & 1020) >> 2] + var2;
       }
 
    }
 
-   final void method3812() {
+   private void method3812() {
       int var9 = -1640531527;
       int var8 = -1640531527;
       int var7 = -1640531527;
@@ -188,15 +188,15 @@ public final class ISAACCipher {
       this.valuesRemaining = 256;
    }
 
-   static final void method3809(boolean var0) {
+   static void method3809(final boolean var0) {
       for(int var1 = 0; var1 < Client.npcIndexesCount; ++var1) {
-         NPC var2 = Client.cachedNPCs[Client.npcIndices[var1]];
+         final NPC var2 = Client.cachedNPCs[Client.npcIndices[var1]];
          int var3 = (Client.npcIndices[var1] << 14) + 536870912;
          if(var2 != null && var2.hasConfig() && var2.composition.isVisible == var0 && var2.composition.method5123()) {
-            int var4 = var2.x >> 7;
-            int var5 = var2.y >> 7;
+            final int var4 = var2.x >> 7;
+            final int var5 = var2.y >> 7;
             if(var4 >= 0 && var4 < 104 && var5 >= 0 && var5 < 104) {
-               if(var2.field1172 == 1 && (var2.x & 127) == 64 && (var2.y & 127) == 64) {
+               if(var2.size == 1 && (var2.x & 127) == 64 && (var2.y & 127) == 64) {
                   if(Client.field966[var4][var5] == Client.field1137) {
                      continue;
                   }
@@ -209,7 +209,7 @@ public final class ISAACCipher {
                }
 
                var2.field1161 = Client.gameCycle;
-               class255.region.method2863(BoundingBox3DDrawMode.plane, var2.x, var2.y, class265.getTileHeight(var2.field1172 * 64 - 64 + var2.x, var2.field1172 * 64 - 64 + var2.y, BoundingBox3DDrawMode.plane), var2.field1172 * 64 - 64 + 60, var2, var2.angle, var3, var2.field1159);
+               class255.region.method2863(BoundingBox3DDrawMode.plane, var2.x, var2.y, WorldMapManager.getTileHeight(var2.size * 64 - 64 + var2.x, var2.size * 64 - 64 + var2.y, BoundingBox3DDrawMode.plane), var2.size * 64 - 64 + 60, var2, var2.angle, var3, var2.field1159);
             }
          }
       }

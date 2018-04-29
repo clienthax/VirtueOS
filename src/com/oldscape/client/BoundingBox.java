@@ -1,18 +1,18 @@
 package com.oldscape.client;
 
-public abstract class BoundingBox extends Node {
+abstract class BoundingBox extends Node {
    static boolean field249;
    static int field253;
    static int field251;
 
    public abstract void vmethod46();
 
-   static int method41(int var0, int var1) {
-      ItemContainer var2 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
+   static int method41(final int var0, final int var1) {
+      final ItemContainer var2 = (ItemContainer)ItemContainer.itemContainers.get(var0);
       return var2 == null?0:(var1 >= 0 && var1 < var2.stackSizes.length?var2.stackSizes[var1]:0);
    }
 
-   static final void method44(Actor var0) {
+   static void method44(final Actor var0) {
       var0.field1159 = false;
       Sequence var1;
       if(var0.poseAnimation != -1) {
@@ -22,13 +22,13 @@ public abstract class BoundingBox extends Node {
             if(var0.poseFrame < var1.frameIDs.length && var0.poseFrameCycle > var1.frameLengths[var0.poseFrame]) {
                var0.poseFrameCycle = 1;
                ++var0.poseFrame;
-               class278.queueAnimationSound(var1, var0.poseFrame, var0.x, var0.y);
+               ParamNode.queueAnimationSound(var1, var0.poseFrame, var0.x, var0.y);
             }
 
             if(var0.poseFrame >= var1.frameIDs.length) {
                var0.poseFrameCycle = 0;
                var0.poseFrame = 0;
-               class278.queueAnimationSound(var1, var0.poseFrame, var0.x, var0.y);
+               ParamNode.queueAnimationSound(var1, var0.poseFrame, var0.x, var0.y);
             }
          } else {
             var0.poseAnimation = -1;
@@ -40,15 +40,15 @@ public abstract class BoundingBox extends Node {
             var0.spotAnimFrame = 0;
          }
 
-         int var3 = class86.getSpotAnimType(var0.graphic).field3497;
+         final int var3 = Spotanim.getSpotAnimType(var0.graphic).field3497;
          if(var3 != -1) {
-            Sequence var2 = CombatInfo1.getAnimation(var3);
+            final Sequence var2 = CombatInfo1.getAnimation(var3);
             if(var2 != null && var2.frameIDs != null) {
                ++var0.spotAnimFrameCycle;
                if(var0.spotAnimFrame < var2.frameIDs.length && var0.spotAnimFrameCycle > var2.frameLengths[var0.spotAnimFrame]) {
                   var0.spotAnimFrameCycle = 1;
                   ++var0.spotAnimFrame;
-                  class278.queueAnimationSound(var2, var0.spotAnimFrame, var0.x, var0.y);
+                  ParamNode.queueAnimationSound(var2, var0.spotAnimFrame, var0.x, var0.y);
                }
 
                if(var0.spotAnimFrame >= var2.frameIDs.length && (var0.spotAnimFrame < 0 || var0.spotAnimFrame >= var2.frameIDs.length)) {
@@ -77,7 +77,7 @@ public abstract class BoundingBox extends Node {
             if(var0.actionFrame < var1.frameIDs.length && var0.actionFrameCycle > var1.frameLengths[var0.actionFrame]) {
                var0.actionFrameCycle = 1;
                ++var0.actionFrame;
-               class278.queueAnimationSound(var1, var0.actionFrame, var0.x, var0.y);
+               ParamNode.queueAnimationSound(var1, var0.actionFrame, var0.x, var0.y);
             }
 
             if(var0.actionFrame >= var1.frameIDs.length) {
@@ -86,7 +86,7 @@ public abstract class BoundingBox extends Node {
                if(var0.field1193 >= var1.maxLoops) {
                   var0.animation = -1;
                } else if(var0.actionFrame >= 0 && var0.actionFrame < var1.frameIDs.length) {
-                  class278.queueAnimationSound(var1, var0.actionFrame, var0.x, var0.y);
+                  ParamNode.queueAnimationSound(var1, var0.actionFrame, var0.x, var0.y);
                } else {
                   var0.animation = -1;
                }
@@ -104,14 +104,13 @@ public abstract class BoundingBox extends Node {
 
    }
 
-   static final void method45(int var0) {
+   static void method45(final int var0) {
       if(class189.loadWidget(var0)) {
-         Widget[] var1 = MouseRecorder.widgets[var0];
+         final Widget[] var1 = MouseRecorder.widgets[var0];
 
-         for(int var2 = 0; var2 < var1.length; ++var2) {
-            Widget var3 = var1[var2];
-            if(var3 != null) {
-               var3.field2935 = 0;
+         for (final Widget var3 : var1) {
+            if (var3 != null) {
+               var3.sequenceFrameId = 0;
                var3.field2945 = 0;
             }
          }

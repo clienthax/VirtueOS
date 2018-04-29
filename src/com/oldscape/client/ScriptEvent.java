@@ -2,7 +2,7 @@ package com.oldscape.client;
 
 import java.io.IOException;
 
-public class ScriptEvent extends Node {
+class ScriptEvent extends Node {
    Object[] objs;
    boolean boolean1;
    Widget widget;
@@ -20,19 +20,19 @@ public class ScriptEvent extends Node {
       this.field800 = class245.field2972;
    }
 
-   public void method1137(Object[] var1) {
+   public void method1137(final Object[] var1) {
       this.objs = var1;
    }
 
-   public void method1138(class245 var1) {
+   public void method1138(final class245 var1) {
       this.field800 = var1;
    }
 
-   public static void method1143(class169 var0, boolean var1) {
+   public static void method1143(final class169 var0, final boolean var1) {
       if(class264.NetCache_socket != null) {
          try {
             class264.NetCache_socket.vmethod3331();
-         } catch (Exception var6) {
+         } catch (final Exception ignored) {
          }
 
          class264.NetCache_socket = null;
@@ -41,7 +41,7 @@ public class ScriptEvent extends Node {
       class264.NetCache_socket = var0;
       GraphicsObject.sendConInfo(var1);
       class264.NetCache_responseHeaderBuffer.offset = 0;
-      class49.currentRequest = null;
+      WorldMapType4.currentRequest = null;
       class47.NetCache_responseArchiveBuffer = null;
       class264.field3426 = 0;
 
@@ -53,15 +53,15 @@ public class ScriptEvent extends Node {
                if(var2 == null) {
                   if(class264.field3429 != 0) {
                      try {
-                        Buffer var7 = new Buffer(4);
+                        final Buffer var7 = new Buffer(4);
                         var7.putByte(4);
                         var7.putByte(class264.field3429);
                         var7.putShort(0);
                         class264.NetCache_socket.vmethod3337(var7.payload, 0, 4);
-                     } catch (IOException var5) {
+                     } catch (final IOException var5) {
                         try {
                            class264.NetCache_socket.vmethod3331();
-                        } catch (Exception var4) {
+                        } catch (final Exception ignored) {
                         }
 
                         ++class264.field3431;
@@ -87,60 +87,60 @@ public class ScriptEvent extends Node {
       }
    }
 
-   static boolean decodeRegionHash(PacketBuffer var0, int var1) {
-      int var2 = var0.getBits(2);
-      int var3;
-      int var4;
-      int var7;
+   static boolean decodeRegionHash(final PacketBuffer buffer, final int playerIdx) {
+      final int var2 = buffer.getBits(2);
+      final int var3;
+      final int var4;
+      final int var7;
       int var8;
       int var9;
-      int var10;
+      final int var10;
       if(var2 == 0) {
-         if(var0.getBits(1) != 0) {
-            decodeRegionHash(var0, var1);
+         if(buffer.getBits(1) != 0) {
+            decodeRegionHash(buffer, playerIdx);
          }
 
-         var3 = var0.getBits(13);
-         var4 = var0.getBits(13);
-         boolean var12 = var0.getBits(1) == 1;
+         var3 = buffer.getBits(13);
+         var4 = buffer.getBits(13);
+         final boolean var12 = buffer.getBits(1) == 1;
          if(var12) {
-            class93.field1439[++class93.field1438 - 1] = var1;
+            class93.field1439[++class93.field1438 - 1] = playerIdx;
          }
 
-         if(Client.cachedPlayers[var1] != null) {
+         if(Client.cachedPlayers[playerIdx] != null) {
             throw new RuntimeException();
          } else {
-            Player var6 = Client.cachedPlayers[var1] = new Player();
-            var6.playerId = var1;
-            if(class93.field1430[var1] != null) {
-               var6.decodeApperance(class93.field1430[var1]);
+            final Player var6 = Client.cachedPlayers[playerIdx] = new Player();
+            var6.playerId = playerIdx;
+            if(class93.field1430[playerIdx] != null) {
+               var6.decodeApperance(class93.field1430[playerIdx]);
             }
 
-            var6.orientation = class93.Players_orientations[var1];
-            var6.interacting = class93.Players_targetIndices[var1];
-            var7 = class93.Players_regions[var1];
+            var6.orientation = class93.Players_orientations[playerIdx];
+            var6.interacting = class93.Players_targetIndices[playerIdx];
+            var7 = class93.Players_regions[playerIdx];
             var8 = var7 >> 28;
             var9 = var7 >> 14 & 255;
             var10 = var7 & 255;
-            var6.pathTraversed[0] = class93.field1429[var1];
-            var6.field856 = (byte)var8;
+            var6.pathTraversed[0] = class93.field1429[playerIdx];
+            var6.plane = (byte)var8;
             var6.method1196((var9 << 13) + var3 - class138.baseX, (var10 << 13) + var4 - class23.baseY);
             var6.field860 = false;
             return true;
          }
       } else if(var2 == 1) {
-         var3 = var0.getBits(2);
-         var4 = class93.Players_regions[var1];
-         class93.Players_regions[var1] = (((var4 >> 28) + var3 & 3) << 28) + (var4 & 268435455);
+         var3 = buffer.getBits(2);
+         var4 = class93.Players_regions[playerIdx];
+         class93.Players_regions[playerIdx] = (((var4 >> 28) + var3 & 3) << 28) + (var4 & 268435455);
          return false;
       } else {
-         int var5;
-         int var11;
+         final int var5;
+         final int var11;
          if(var2 == 2) {
-            var3 = var0.getBits(5);
+            var3 = buffer.getBits(5);
             var4 = var3 >> 3;
             var5 = var3 & 7;
-            var11 = class93.Players_regions[var1];
+            var11 = class93.Players_regions[playerIdx];
             var7 = (var11 >> 28) + var4 & 3;
             var8 = var11 >> 14 & 255;
             var9 = var11 & 255;
@@ -180,26 +180,25 @@ public class ScriptEvent extends Node {
                ++var9;
             }
 
-            class93.Players_regions[var1] = (var8 << 14) + var9 + (var7 << 28);
-            return false;
+            class93.Players_regions[playerIdx] = (var8 << 14) + var9 + (var7 << 28);
          } else {
-            var3 = var0.getBits(18);
+            var3 = buffer.getBits(18);
             var4 = var3 >> 16;
             var5 = var3 >> 8 & 255;
             var11 = var3 & 255;
-            var7 = class93.Players_regions[var1];
+            var7 = class93.Players_regions[playerIdx];
             var8 = (var7 >> 28) + var4 & 3;
             var9 = var5 + (var7 >> 14) & 255;
             var10 = var11 + var7 & 255;
-            class93.Players_regions[var1] = (var9 << 14) + var10 + (var8 << 28);
-            return false;
+            class93.Players_regions[playerIdx] = (var9 << 14) + var10 + (var8 << 28);
          }
+          return false;
       }
    }
 
-   static final void method1141(int var0) {
-      int[] var1 = BoundingBox2D.minimapSprite.pixels;
-      int var2 = var1.length;
+   static void method1141(final int var0) {
+      final int[] var1 = BoundingBox2D.minimapSprite.pixels;
+      final int var2 = var1.length;
 
       int var3;
       for(var3 = 0; var3 < var2; ++var3) {
@@ -248,9 +247,9 @@ public class ScriptEvent extends Node {
             int var7 = class255.region.getGroundObjectHash(BoundingBox3DDrawMode.plane, var5, var6);
             if(var7 != 0) {
                var7 = var7 >> 14 & 32767;
-               int var8 = GameCanvas.getObjectDefinition(var7).mapIconId;
+               final int var8 = GameCanvas.getObjectDefinition(var7).mapIconId;
                if(var8 >= 0) {
-                  Client.mapIcons[Client.field1093] = Area.mapAreaType[var8].getMapIcon(false);
+                  Client.mapIcons[Client.field1093] = Area.mapAreaType[var8].getMapIcon();
                   Client.field1094[Client.field1093] = var5;
                   Client.field1095[Client.field1093] = var6;
                   ++Client.field1093;

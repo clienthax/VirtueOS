@@ -1,14 +1,14 @@
 package com.oldscape.client;
 
-public class SoundEffect3 {
-   static float[][] minimisedCoefficients;
-   static int[][] coefficients;
-   static float fowardMinimisedCoefficientMultiplier;
+class SoundEffect3 {
+   private static final float[][] minimisedCoefficients;
+   static final int[][] coefficients;
+   private static float fowardMinimisedCoefficientMultiplier;
    static int fowardMultiplier;
    int[] pairs;
-   int[][][] phases;
-   int[][][] magnitudes;
-   int[] unity;
+   private int[][][] phases;
+   private int[][][] magnitudes;
+   private int[] unity;
 
    static {
       minimisedCoefficients = new float[2][8];
@@ -22,24 +22,24 @@ public class SoundEffect3 {
       this.unity = new int[2];
    }
 
-   float interpolateMagniture(int var1, int var2, float var3) {
-      float var4 = (float)this.magnitudes[var1][0][var2] + var3 * (float)(this.magnitudes[var1][1][var2] - this.magnitudes[var1][0][var2]);
+   private float interpolateMagniture(final int var1, final int var2, final float var3) {
+      float var4 = this.magnitudes[var1][0][var2] + var3 * (this.magnitudes[var1][1][var2] - this.magnitudes[var1][0][var2]);
       var4 *= 0.0015258789F;
-      return 1.0F - (float)Math.pow(10.0D, (double)(-var4 / 20.0F));
+      return 1.0F - (float)Math.pow(10.0D, (-var4 / 20.0F));
    }
 
-   float interpolatePhase(int var1, int var2, float var3) {
-      float var4 = (float)this.phases[var1][0][var2] + var3 * (float)(this.phases[var1][1][var2] - this.phases[var1][0][var2]);
+   private float interpolatePhase(final int var1, final int var2, final float var3) {
+      float var4 = this.phases[var1][0][var2] + var3 * (this.phases[var1][1][var2] - this.phases[var1][0][var2]);
       var4 *= 1.2207031E-4F;
       return normalise(var4);
    }
 
-   int compute(int var1, float var2) {
+   int compute(final int var1, final float var2) {
       float var3;
       if(var1 == 0) {
-         var3 = (float)this.unity[0] + (float)(this.unity[1] - this.unity[0]) * var2;
+         var3 = this.unity[0] + (this.unity[1] - this.unity[0]) * var2;
          var3 *= 0.0030517578F;
-         fowardMinimisedCoefficientMultiplier = (float)Math.pow(0.1D, (double)(var3 / 20.0F));
+         fowardMinimisedCoefficientMultiplier = (float)Math.pow(0.1D, (var3 / 20.0F));
          fowardMultiplier = (int)(fowardMinimisedCoefficientMultiplier * 65536.0F);
       }
 
@@ -47,14 +47,14 @@ public class SoundEffect3 {
          return 0;
       } else {
          var3 = this.interpolateMagniture(var1, 0, var2);
-         minimisedCoefficients[var1][0] = -2.0F * var3 * (float)Math.cos((double)this.interpolatePhase(var1, 0, var2));
+         minimisedCoefficients[var1][0] = -2.0F * var3 * (float)Math.cos(this.interpolatePhase(var1, 0, var2));
          minimisedCoefficients[var1][1] = var3 * var3;
 
          int var4;
          for(var4 = 1; var4 < this.pairs[var1]; ++var4) {
             var3 = this.interpolateMagniture(var1, var4, var2);
-            float var5 = -2.0F * var3 * (float)Math.cos((double)this.interpolatePhase(var1, var4, var2));
-            float var6 = var3 * var3;
+            final float var5 = -2.0F * var3 * (float)Math.cos(this.interpolatePhase(var1, var4, var2));
+            final float var6 = var3 * var3;
             minimisedCoefficients[var1][var4 * 2 + 1] = minimisedCoefficients[var1][var4 * 2 - 1] * var6;
             minimisedCoefficients[var1][var4 * 2] = minimisedCoefficients[var1][var4 * 2 - 1] * var5 + minimisedCoefficients[var1][var4 * 2 - 2] * var6;
 
@@ -80,14 +80,14 @@ public class SoundEffect3 {
       }
    }
 
-   final void decode(Buffer var1, AudioEnvelope var2) {
-      int var3 = var1.readUnsignedByte();
+   final void decode(final Buffer var1, final AudioEnvelope var2) {
+      final int var3 = var1.readUnsignedByte();
       this.pairs[0] = var3 >> 4;
       this.pairs[1] = var3 & 15;
       if(var3 != 0) {
          this.unity[0] = var1.readUnsignedShort();
          this.unity[1] = var1.readUnsignedShort();
-         int var4 = var1.readUnsignedByte();
+         final int var4 = var1.readUnsignedByte();
 
          int var5;
          int var6;
@@ -114,15 +114,15 @@ public class SoundEffect3 {
             var2.decodeSegments(var1);
          }
       } else {
-         int[] var7 = this.unity;
+         final int[] var7 = this.unity;
          this.unity[1] = 0;
          var7[0] = 0;
       }
 
    }
 
-   static float normalise(float var0) {
-      float var1 = 32.703197F * (float)Math.pow(2.0D, (double)var0);
+   private static float normalise(final float var0) {
+      final float var1 = 32.703197F * (float)Math.pow(2.0D, var0);
       return var1 * 3.1415927F / 11025.0F;
    }
 }

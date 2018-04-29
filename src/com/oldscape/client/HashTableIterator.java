@@ -2,19 +2,19 @@ package com.oldscape.client;
 
 import java.util.Iterator;
 
-public class HashTableIterator implements Iterator {
-   IterableHashTable table;
-   Node tail;
-   int index;
-   Node head;
+class HashTableIterator implements Iterator {
+   private final IterableHashTable table;
+   private Node tail;
+   private int index;
+   private Node head;
 
-   HashTableIterator(IterableHashTable var1) {
+   HashTableIterator(final IterableHashTable var1) {
       this.head = null;
       this.table = var1;
       this.reset();
    }
 
-   void reset() {
+   private void reset() {
       this.tail = this.table.buckets[0].next;
       this.index = 1;
       this.head = null;
@@ -50,9 +50,6 @@ public class HashTableIterator implements Iterator {
       Node var1;
       if(this.table.buckets[this.index - 1] != this.tail) {
          var1 = this.tail;
-         this.tail = var1.next;
-         this.head = var1;
-         return var1;
       } else {
          do {
             if(this.index >= this.table.size) {
@@ -62,9 +59,9 @@ public class HashTableIterator implements Iterator {
             var1 = this.table.buckets[this.index++].next;
          } while(var1 == this.table.buckets[this.index - 1]);
 
-         this.tail = var1.next;
-         this.head = var1;
-         return var1;
       }
+       this.tail = var1.next;
+       this.head = var1;
+       return var1;
    }
 }

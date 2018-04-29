@@ -1,28 +1,28 @@
 package com.oldscape.client;
 
 public final class PacketBuffer extends Buffer {
-   static final int[] field2602;
+   private static final int[] field2602;
    static IndexData indexTrack1;
-   ISAACCipher cipher;
-   int bitPosition;
+   private ISAACCipher cipher;
+   private int bitPosition;
 
    static {
       field2602 = new int[]{0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767, 65535, 131071, 262143, 524287, 1048575, 2097151, 4194303, 8388607, 16777215, 33554431, 67108863, 134217727, 268435455, 536870911, 1073741823, Integer.MAX_VALUE, -1};
    }
 
-   public PacketBuffer(int var1) {
+   public PacketBuffer(final int var1) {
       super(var1);
    }
 
-   public void seed(int[] var1) {
+   public void seed(final int[] var1) {
       this.cipher = new ISAACCipher(var1);
    }
 
-   public void setIsaacCipher(ISAACCipher var1) {
+   public void setIsaacCipher(final ISAACCipher var1) {
       this.cipher = var1;
    }
 
-   public void putOpcode(int var1) {
+   public void putOpcode(final int var1) {
       super.payload[++super.offset - 1] = (byte)(var1 + this.cipher.nextInt());
    }
 
@@ -31,12 +31,12 @@ public final class PacketBuffer extends Buffer {
    }
 
    public boolean method3780() {
-      int var1 = super.payload[super.offset] - this.cipher.method3813() & 255;
+      final int var1 = super.payload[super.offset] - this.cipher.method3813() & 255;
       return var1 >= 128;
    }
 
    public int method3783() {
-      int var1 = super.payload[++super.offset - 1] - this.cipher.nextInt() & 255;
+      final int var1 = super.payload[++super.offset - 1] - this.cipher.nextInt() & 255;
       return var1 < 128?var1:(var1 - 128 << 8) + (super.payload[++super.offset - 1] - this.cipher.nextInt() & 255);
    }
 
@@ -67,194 +67,16 @@ public final class PacketBuffer extends Buffer {
       super.offset = (this.bitPosition + 7) / 8;
    }
 
-   public int bitsAvail(int var1) {
+   public int bitsAvail(final int var1) {
       return var1 * 8 - this.bitPosition;
    }
 
-   static int method3806(int var0, Script var1, boolean var2) {
-      int var4 = -1;
-      Widget var3;
-      if(var0 >= 2000) {
-         var0 -= 1000;
-         var4 = class81.intStack[--WorldComparator.intStackSize];
-         var3 = class44.getWidget(var4);
-      } else {
-         var3 = var2?class81.field1285:Signlink.field2218;
-      }
-
-      if(var0 == 1100) {
-         WorldComparator.intStackSize -= 2;
-         var3.scrollX = class81.intStack[WorldComparator.intStackSize];
-         if(var3.scrollX > var3.scrollWidth - var3.width) {
-            var3.scrollX = var3.scrollWidth - var3.width;
-         }
-
-         if(var3.scrollX < 0) {
-            var3.scrollX = 0;
-         }
-
-         var3.scrollY = class81.intStack[WorldComparator.intStackSize + 1];
-         if(var3.scrollY > var3.scrollHeight - var3.height) {
-            var3.scrollY = var3.scrollHeight - var3.height;
-         }
-
-         if(var3.scrollY < 0) {
-            var3.scrollY = 0;
-         }
-
-         FontName.method5490(var3);
-         return 1;
-      } else if(var0 == 1101) {
-         var3.textColor = class81.intStack[--WorldComparator.intStackSize];
-         FontName.method5490(var3);
-         return 1;
-      } else if(var0 == 1102) {
-         var3.filled = class81.intStack[--WorldComparator.intStackSize] == 1;
-         FontName.method5490(var3);
-         return 1;
-      } else if(var0 == 1103) {
-         var3.opacity = class81.intStack[--WorldComparator.intStackSize];
-         FontName.method5490(var3);
-         return 1;
-      } else if(var0 == 1104) {
-         var3.lineWidth = class81.intStack[--WorldComparator.intStackSize];
-         FontName.method5490(var3);
-         return 1;
-      } else if(var0 == 1105) {
-         var3.spriteId = class81.intStack[--WorldComparator.intStackSize];
-         FontName.method5490(var3);
-         return 1;
-      } else if(var0 == 1106) {
-         var3.textureId = class81.intStack[--WorldComparator.intStackSize];
-         FontName.method5490(var3);
-         return 1;
-      } else if(var0 == 1107) {
-         var3.spriteTiling = class81.intStack[--WorldComparator.intStackSize] == 1;
-         FontName.method5490(var3);
-         return 1;
-      } else if(var0 == 1108) {
-         var3.modelType = 1;
-         var3.modelId = class81.intStack[--WorldComparator.intStackSize];
-         FontName.method5490(var3);
-         return 1;
-      } else if(var0 == 1109) {
-         WorldComparator.intStackSize -= 6;
-         var3.offsetX2d = class81.intStack[WorldComparator.intStackSize];
-         var3.offsetY2d = class81.intStack[WorldComparator.intStackSize + 1];
-         var3.rotationX = class81.intStack[WorldComparator.intStackSize + 2];
-         var3.rotationZ = class81.intStack[WorldComparator.intStackSize + 3];
-         var3.rotationY = class81.intStack[WorldComparator.intStackSize + 4];
-         var3.modelZoom = class81.intStack[WorldComparator.intStackSize + 5];
-         FontName.method5490(var3);
-         return 1;
-      } else {
-         int var9;
-         if(var0 == 1110) {
-            var9 = class81.intStack[--WorldComparator.intStackSize];
-            if(var9 != var3.field2869) {
-               var3.field2869 = var9;
-               var3.field2935 = 0;
-               var3.field2945 = 0;
-               FontName.method5490(var3);
-            }
-
-            return 1;
-         } else if(var0 == 1111) {
-            var3.field2879 = class81.intStack[--WorldComparator.intStackSize] == 1;
-            FontName.method5490(var3);
-            return 1;
-         } else if(var0 == 1112) {
-            String var8 = class81.scriptStringStack[--KeyFocusListener.scriptStringStackSize];
-            if(!var8.equals(var3.text)) {
-               var3.text = var8;
-               FontName.method5490(var3);
-            }
-
-            return 1;
-         } else if(var0 == 1113) {
-            var3.fontId = class81.intStack[--WorldComparator.intStackSize];
-            FontName.method5490(var3);
-            return 1;
-         } else if(var0 == 1114) {
-            WorldComparator.intStackSize -= 3;
-            var3.field2885 = class81.intStack[WorldComparator.intStackSize];
-            var3.field2833 = class81.intStack[WorldComparator.intStackSize + 1];
-            var3.field2884 = class81.intStack[WorldComparator.intStackSize + 2];
-            FontName.method5490(var3);
-            return 1;
-         } else if(var0 == 1115) {
-            var3.textShadowed = class81.intStack[--WorldComparator.intStackSize] == 1;
-            FontName.method5490(var3);
-            return 1;
-         } else if(var0 == 1116) {
-            var3.borderThickness = class81.intStack[--WorldComparator.intStackSize];
-            FontName.method5490(var3);
-            return 1;
-         } else if(var0 == 1117) {
-            var3.sprite2 = class81.intStack[--WorldComparator.intStackSize];
-            FontName.method5490(var3);
-            return 1;
-         } else if(var0 == 1118) {
-            var3.flippedVertically = class81.intStack[--WorldComparator.intStackSize] == 1;
-            FontName.method5490(var3);
-            return 1;
-         } else if(var0 == 1119) {
-            var3.flippedHorizontally = class81.intStack[--WorldComparator.intStackSize] == 1;
-            FontName.method5490(var3);
-            return 1;
-         } else if(var0 == 1120) {
-            WorldComparator.intStackSize -= 2;
-            var3.scrollWidth = class81.intStack[WorldComparator.intStackSize];
-            var3.scrollHeight = class81.intStack[WorldComparator.intStackSize + 1];
-            FontName.method5490(var3);
-            if(var4 != -1 && var3.type == 0) {
-               class86.method1889(MouseRecorder.widgets[var4 >> 16], var3, false);
-            }
-
-            return 1;
-         } else if(var0 == 1121) {
-            TotalQuantityComparator.method98(var3.id, var3.index);
-            Client.field1033 = var3;
-            FontName.method5490(var3);
-            return 1;
-         } else if(var0 == 1122) {
-            var3.field2858 = class81.intStack[--WorldComparator.intStackSize];
-            FontName.method5490(var3);
-            return 1;
-         } else if(var0 == 1123) {
-            var3.field2841 = class81.intStack[--WorldComparator.intStackSize];
-            FontName.method5490(var3);
-            return 1;
-         } else if(var0 == 1124) {
-            var3.field2854 = class81.intStack[--WorldComparator.intStackSize];
-            FontName.method5490(var3);
-            return 1;
-         } else if(var0 == 1125) {
-            var9 = class81.intStack[--WorldComparator.intStackSize];
-            class329[] var6 = new class329[]{class329.field3966, class329.field3965, class329.field3968, class329.field3969, class329.field3967};
-            class329 var7 = (class329)Permission.forOrdinal(var6, var9);
-            if(var7 != null) {
-               var3.field2909 = var7;
-               FontName.method5490(var3);
-            }
-
-            return 1;
-         } else if(var0 == 1126) {
-            boolean var5 = class81.intStack[--WorldComparator.intStackSize] == 1;
-            var3.field2903 = var5;
-            return 1;
-         } else {
-            return 2;
-         }
-      }
-   }
-
-   static final void menuAction(int var0, int var1, int var2, int var3, String var4, String var5, int var6, int var7) {
+   static void menuAction(final int var0, final int var1, int var2, final int var3, final String var5, final int var6, final int var7) {
       if(var2 >= 2000) {
          var2 -= 2000;
       }
 
-      PacketNode var8;
+      final PacketNode var8;
       if(var2 == 1) {
          Client.lastLeftClickX = var6;
          Client.lastLeftClickY = var7;
@@ -293,7 +115,7 @@ public final class PacketBuffer extends Buffer {
          Client.field972 = 0;
          Client.destinationX = var0;
          Client.destinationY = var1;
-         var8 = WorldMapRectangle.method280(ClientPacket.field2394, Client.field957.field1484);
+         var8 = WorldMapRectangle.method280(ClientPacket.OBJECT_ACTION_1, Client.field957.field1484);
          var8.packetBuffer.putShort(class23.baseY + var1);
          var8.packetBuffer.method3550(var0 + class138.baseX);
          var8.packetBuffer.method3543(KeyFocusListener.keyPressed[82]?1:0);
@@ -306,7 +128,7 @@ public final class PacketBuffer extends Buffer {
          Client.field972 = 0;
          Client.destinationX = var0;
          Client.destinationY = var1;
-         var8 = WorldMapRectangle.method280(ClientPacket.field2466, Client.field957.field1484);
+         var8 = WorldMapRectangle.method280(ClientPacket.OBJECT_ACTION_2, Client.field957.field1484);
          var8.packetBuffer.putShort(var0 + class138.baseX);
          var8.packetBuffer.putShort(class23.baseY + var1);
          var8.packetBuffer.method3541(KeyFocusListener.keyPressed[82]?1:0);
@@ -319,7 +141,7 @@ public final class PacketBuffer extends Buffer {
          Client.field972 = 0;
          Client.destinationX = var0;
          Client.destinationY = var1;
-         var8 = WorldMapRectangle.method280(ClientPacket.field2469, Client.field957.field1484);
+         var8 = WorldMapRectangle.method280(ClientPacket.OBJECT_ACTION_3, Client.field957.field1484);
          var8.packetBuffer.method3551(var3 >> 14 & 32767);
          var8.packetBuffer.method3542(KeyFocusListener.keyPressed[82]?1:0);
          var8.packetBuffer.method3551(class23.baseY + var1);
@@ -332,15 +154,15 @@ public final class PacketBuffer extends Buffer {
          Client.field972 = 0;
          Client.destinationX = var0;
          Client.destinationY = var1;
-         var8 = WorldMapRectangle.method280(ClientPacket.field2451, Client.field957.field1484);
+         var8 = WorldMapRectangle.method280(ClientPacket.OBJECT_ACTION_4, Client.field957.field1484);
          var8.packetBuffer.method3543(KeyFocusListener.keyPressed[82]?1:0);
          var8.packetBuffer.putShort(var3 >> 14 & 32767);
          var8.packetBuffer.method3528(var0 + class138.baseX);
          var8.packetBuffer.method3550(class23.baseY + var1);
          Client.field957.method2052(var8);
       } else {
-         PacketNode var9;
-         NPC var16;
+         final PacketNode var9;
+         final NPC var16;
          if(var2 == 7) {
             var16 = Client.cachedNPCs[var3];
             if(var16 != null) {
@@ -383,7 +205,7 @@ public final class PacketBuffer extends Buffer {
                Client.field972 = 0;
                Client.destinationX = var0;
                Client.destinationY = var1;
-               var9 = WorldMapRectangle.method280(ClientPacket.field2420, Client.field957.field1484);
+               var9 = WorldMapRectangle.method280(ClientPacket.NPC_ACTION_1, Client.field957.field1484);
                var9.packetBuffer.method3543(KeyFocusListener.keyPressed[82]?1:0);
                var9.packetBuffer.method3550(var3);
                Client.field957.method2052(var9);
@@ -445,7 +267,7 @@ public final class PacketBuffer extends Buffer {
                Client.field957.method2052(var9);
             }
          } else {
-            Player var18;
+            final Player var18;
             if(var2 == 14) {
                var18 = Client.cachedPlayers[var3];
                if(var18 != null) {
@@ -582,8 +404,8 @@ public final class PacketBuffer extends Buffer {
                   class255.region.method2889(BoundingBox3DDrawMode.plane, var0, var1, true);
                }
             } else {
-               PacketNode var14;
-               Widget var22;
+               final PacketNode var14;
+               final Widget var22;
                if(var2 == 24) {
                   var22 = class44.getWidget(var1);
                   boolean var13 = true;
@@ -603,10 +425,10 @@ public final class PacketBuffer extends Buffer {
                         class154.method3156();
                         class55.method834(var1, var0, class250.method4502(GroundObject.getWidgetClickMask(var22)), var22.itemId);
                         Client.itemSelectionState = 0;
-                        String var24;
+                        final String var24;
                         if(class250.method4502(GroundObject.getWidgetClickMask(var22)) == 0) {
                            var24 = null;
-                        } else if(var22.targetVerb != null && var22.targetVerb.trim().length() != 0) {
+                        } else if(var22.targetVerb != null && !var22.targetVerb.trim().isEmpty()) {
                            var24 = var22.targetVerb;
                         } else {
                            var24 = null;
@@ -642,8 +464,8 @@ public final class PacketBuffer extends Buffer {
                         Client.field1033 = null;
                      }
                   } else {
-                     int var10;
-                     Widget var19;
+                     final int var10;
+                     final Widget var19;
                      if(var2 == 28) {
                         var8 = WorldMapRectangle.method280(ClientPacket.field2460, Client.field957.field1484);
                         var8.packetBuffer.putInt(var1);
@@ -651,7 +473,7 @@ public final class PacketBuffer extends Buffer {
                         var19 = class44.getWidget(var1);
                         if(var19.dynamicValues != null && var19.dynamicValues[0][0] == 5) {
                            var10 = var19.dynamicValues[0][1];
-                           class237.clientVarps[var10] = 1 - class237.clientVarps[var10];
+                           VarpStorage.clientVarps[var10] = 1 - VarpStorage.clientVarps[var10];
                            class18.method142(var10);
                         }
                      } else if(var2 == 29) {
@@ -661,8 +483,8 @@ public final class PacketBuffer extends Buffer {
                         var19 = class44.getWidget(var1);
                         if(var19.dynamicValues != null && var19.dynamicValues[0][0] == 5) {
                            var10 = var19.dynamicValues[0][1];
-                           if(class237.clientVarps[var10] != var19.field2936[0]) {
-                              class237.clientVarps[var10] = var19.field2936[0];
+                           if(VarpStorage.clientVarps[var10] != var19.field2936[0]) {
+                              VarpStorage.clientVarps[var10] = var19.field2936[0];
                               class18.method142(var10);
                            }
                         }
@@ -749,7 +571,7 @@ public final class PacketBuffer extends Buffer {
                            BoundingBox.field251 = var1;
                            class2.field16 = var3;
                            FontName.method5490(var22);
-                           Client.lastSelectedItemName = class45.getColTags(16748608) + class47.getItemDefinition(var3).name + class45.getColTags(16777215);
+                           Client.lastSelectedItemName = class45.getColTags(16748608) + ItemComposition.getItemDefinition(var3).name + class45.getColTags(16777215);
                            if(Client.lastSelectedItemName == null) {
                               Client.lastSelectedItemName = "null";
                            }
@@ -939,7 +761,7 @@ public final class PacketBuffer extends Buffer {
                                     Client.field972 = 0;
                                     Client.destinationX = var0;
                                     Client.destinationY = var1;
-                                    var8 = WorldMapRectangle.method280(ClientPacket.field2443, Client.field957.field1484);
+                                    var8 = WorldMapRectangle.method280(ClientPacket.OBJECT_ACTION_5, Client.field957.field1484);
                                     var8.packetBuffer.method3528(class23.baseY + var1);
                                     var8.packetBuffer.method3528(var3 >> 14 & 32767);
                                     var8.packetBuffer.method3543(KeyFocusListener.keyPressed[82]?1:0);
@@ -994,7 +816,7 @@ public final class PacketBuffer extends Buffer {
                                  if(var2 == 1005) {
                                     var22 = class44.getWidget(var1);
                                     if(var22 != null && var22.itemQuantities[var0] >= 100000) {
-                                       class57.sendGameMessage(27, "", var22.itemQuantities[var0] + " x " + class47.getItemDefinition(var3).name);
+                                       class57.sendGameMessage(27, "", var22.itemQuantities[var0] + " x " + ItemComposition.getItemDefinition(var3).name);
                                     } else {
                                        var9 = WorldMapRectangle.method280(ClientPacket.field2438, Client.field957.field1484);
                                        var9.packetBuffer.method3528(var3);
@@ -1017,11 +839,11 @@ public final class PacketBuffer extends Buffer {
 
                               var22 = FontName.getWidgetChild(var1, var0);
                               if(var22 != null) {
-                                 int var20 = var22.itemId;
-                                 Widget var21 = FontName.getWidgetChild(var1, var0);
+                                 final int var20 = var22.itemId;
+                                 final Widget var21 = FontName.getWidgetChild(var1, var0);
                                  if(var21 != null) {
                                     if(var21.onOpListener != null) {
-                                       ScriptEvent var11 = new ScriptEvent();
+                                       final ScriptEvent var11 = new ScriptEvent();
                                        var11.widget = var21;
                                        var11.field801 = var3;
                                        var11.string = var5;
@@ -1037,7 +859,7 @@ public final class PacketBuffer extends Buffer {
                                     if(var15 && DynamicObject.method2021(GroundObject.getWidgetClickMask(var21), var3 - 1)) {
                                        PacketNode var12;
                                        if(var3 == 1) {
-                                          var12 = WorldMapRectangle.method280(ClientPacket.field2468, Client.field957.field1484);
+                                          var12 = WorldMapRectangle.method280(ClientPacket.BUTTON_ACTION_1, Client.field957.field1484);
                                           var12.packetBuffer.putInt(var1);
                                           var12.packetBuffer.putShort(var0);
                                           var12.packetBuffer.putShort(var20);
@@ -1045,7 +867,7 @@ public final class PacketBuffer extends Buffer {
                                        }
 
                                        if(var3 == 2) {
-                                          var12 = WorldMapRectangle.method280(ClientPacket.field2421, Client.field957.field1484);
+                                          var12 = WorldMapRectangle.method280(ClientPacket.BUTTON_ACTION_2, Client.field957.field1484);
                                           var12.packetBuffer.putInt(var1);
                                           var12.packetBuffer.putShort(var0);
                                           var12.packetBuffer.putShort(var20);
@@ -1053,7 +875,7 @@ public final class PacketBuffer extends Buffer {
                                        }
 
                                        if(var3 == 3) {
-                                          var12 = WorldMapRectangle.method280(ClientPacket.field2417, Client.field957.field1484);
+                                          var12 = WorldMapRectangle.method280(ClientPacket.BUTTON_ACTION_3, Client.field957.field1484);
                                           var12.packetBuffer.putInt(var1);
                                           var12.packetBuffer.putShort(var0);
                                           var12.packetBuffer.putShort(var20);
@@ -1061,7 +883,7 @@ public final class PacketBuffer extends Buffer {
                                        }
 
                                        if(var3 == 4) {
-                                          var12 = WorldMapRectangle.method280(ClientPacket.field2445, Client.field957.field1484);
+                                          var12 = WorldMapRectangle.method280(ClientPacket.BUTTON_ACTION_4, Client.field957.field1484);
                                           var12.packetBuffer.putInt(var1);
                                           var12.packetBuffer.putShort(var0);
                                           var12.packetBuffer.putShort(var20);
@@ -1069,7 +891,7 @@ public final class PacketBuffer extends Buffer {
                                        }
 
                                        if(var3 == 5) {
-                                          var12 = WorldMapRectangle.method280(ClientPacket.field2422, Client.field957.field1484);
+                                          var12 = WorldMapRectangle.method280(ClientPacket.BUTTON_ACTION_5, Client.field957.field1484);
                                           var12.packetBuffer.putInt(var1);
                                           var12.packetBuffer.putShort(var0);
                                           var12.packetBuffer.putShort(var20);
@@ -1077,7 +899,7 @@ public final class PacketBuffer extends Buffer {
                                        }
 
                                        if(var3 == 6) {
-                                          var12 = WorldMapRectangle.method280(ClientPacket.field2478, Client.field957.field1484);
+                                          var12 = WorldMapRectangle.method280(ClientPacket.BUTTON_ACTION_6, Client.field957.field1484);
                                           var12.packetBuffer.putInt(var1);
                                           var12.packetBuffer.putShort(var0);
                                           var12.packetBuffer.putShort(var20);
@@ -1085,7 +907,7 @@ public final class PacketBuffer extends Buffer {
                                        }
 
                                        if(var3 == 7) {
-                                          var12 = WorldMapRectangle.method280(ClientPacket.field2430, Client.field957.field1484);
+                                          var12 = WorldMapRectangle.method280(ClientPacket.BUTTON_ACTION_7, Client.field957.field1484);
                                           var12.packetBuffer.putInt(var1);
                                           var12.packetBuffer.putShort(var0);
                                           var12.packetBuffer.putShort(var20);
@@ -1093,7 +915,7 @@ public final class PacketBuffer extends Buffer {
                                        }
 
                                        if(var3 == 8) {
-                                          var12 = WorldMapRectangle.method280(ClientPacket.field2479, Client.field957.field1484);
+                                          var12 = WorldMapRectangle.method280(ClientPacket.BUTTON_ACTION_8, Client.field957.field1484);
                                           var12.packetBuffer.putInt(var1);
                                           var12.packetBuffer.putShort(var0);
                                           var12.packetBuffer.putShort(var20);
@@ -1101,7 +923,7 @@ public final class PacketBuffer extends Buffer {
                                        }
 
                                        if(var3 == 9) {
-                                          var12 = WorldMapRectangle.method280(ClientPacket.field2403, Client.field957.field1484);
+                                          var12 = WorldMapRectangle.method280(ClientPacket.BUTTON_ACTION_9, Client.field957.field1484);
                                           var12.packetBuffer.putInt(var1);
                                           var12.packetBuffer.putShort(var0);
                                           var12.packetBuffer.putShort(var20);
@@ -1109,7 +931,7 @@ public final class PacketBuffer extends Buffer {
                                        }
 
                                        if(var3 == 10) {
-                                          var12 = WorldMapRectangle.method280(ClientPacket.field2429, Client.field957.field1484);
+                                          var12 = WorldMapRectangle.method280(ClientPacket.BUTTON_ACTION_10, Client.field957.field1484);
                                           var12.packetBuffer.putInt(var1);
                                           var12.packetBuffer.putShort(var0);
                                           var12.packetBuffer.putShort(var20);

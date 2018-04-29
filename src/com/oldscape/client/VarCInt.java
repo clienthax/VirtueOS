@@ -2,7 +2,7 @@ package com.oldscape.client;
 
 public class VarCInt extends CacheableNode {
    static IndexDataBase field3476;
-   static NodeCache field3475;
+   static final NodeCache field3475;
    public boolean field3474;
 
    static {
@@ -13,26 +13,40 @@ public class VarCInt extends CacheableNode {
       this.field3474 = false;
    }
 
-   void method4773(Buffer var1) {
+    static VarCInt method4414(final int var0) {
+       VarCInt var1 = (VarCInt) field3475.get(var0);
+        if (var1 == null) {
+            final byte[] var2 = field3476.getConfigData(19, var0);
+            var1 = new VarCInt();
+            if (var2 != null) {
+                var1.decode(new Buffer(var2));
+            }
+
+            field3475.put(var1, var0);
+        }
+        return var1;
+    }
+
+    private void decode(final Buffer buffer) {
       while(true) {
-         int var2 = var1.readUnsignedByte();
-         if(var2 == 0) {
+         final int opcode = buffer.readUnsignedByte();
+         if(opcode == 0) {
             return;
          }
 
-         this.method4774(var1, var2);
+         this.readNext(opcode);
       }
    }
 
-   void method4774(Buffer var1, int var2) {
+   private void readNext(final int var2) {
       if(var2 == 2) {
          this.field3474 = true;
       }
 
    }
 
-   static String method4785(char var0, int var1) {
-      char[] var2 = new char[var1];
+   static String method4785(final char var0, final int var1) {
+      final char[] var2 = new char[var1];
 
       for(int var3 = 0; var3 < var1; ++var3) {
          var2[var3] = var0;

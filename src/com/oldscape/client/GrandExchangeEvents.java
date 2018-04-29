@@ -6,14 +6,14 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class GrandExchangeEvents {
-   public static Comparator field283;
-   public static Comparator field290;
-   public static Comparator field285;
-   public static Comparator field288;
-   public static int field284;
+class GrandExchangeEvents {
+   static final Comparator field283;
+   static final Comparator field290;
+   static final Comparator field285;
+   static final Comparator field288;
+   static int field284;
    static int[] field287;
-   public final List events;
+   final List<GrandExchangeEvent> events;
 
    static {
       field283 = new class19();
@@ -23,35 +23,35 @@ public class GrandExchangeEvents {
       field288 = new TotalQuantityComparator();
    }
 
-   public GrandExchangeEvents(Buffer var1, boolean var2) {
-      int var3 = var1.readUnsignedShort();
-      boolean var4 = var1.readUnsignedByte() == 1;
-      byte var5;
+   public GrandExchangeEvents(final Buffer buffer) {
+      final int var3 = buffer.readUnsignedShort();
+      final boolean var4 = buffer.readUnsignedByte() == 1;
+      final byte var5;
       if(var4) {
          var5 = 1;
       } else {
          var5 = 0;
       }
 
-      int var6 = var1.readUnsignedShort();
-      this.events = new ArrayList(var6);
+      final int var6 = buffer.readUnsignedShort();
+      this.events = new ArrayList<>(var6);
 
       for(int var7 = 0; var7 < var6; ++var7) {
-         this.events.add(new GrandExchangeEvent(var1, var5, var3));
+         this.events.add(new GrandExchangeEvent(buffer, var5, var3));
       }
 
    }
 
-   public void sort(Comparator var1, boolean var2) {
+   public void sort(final Comparator var1, final boolean var2) {
       if(var2) {
-         Collections.sort(this.events, var1);
+         this.events.sort(var1);
       } else {
-         Collections.sort(this.events, Collections.reverseOrder(var1));
+         this.events.sort(Collections.reverseOrder(var1));
       }
 
    }
 
-   public static void method76(Applet var0, String var1) {
+   public static void method76(final Applet var0, final String var1) {
       class57.field674 = var0;
       if(var1 != null) {
          class57.field667 = var1;
@@ -154,14 +154,14 @@ public class GrandExchangeEvents {
       }
    }*/ // TODO
 
-   static void method72(String var0, boolean var1) {
+   static void method72(String var0, final boolean var1) {
       var0 = var0.toLowerCase();
       short[] var2 = new short[16];
       int var3 = 0;
 
       for(int var4 = 0; var4 < AbstractSoundSystem.field1583; ++var4) {
-         ItemComposition var5 = class47.getItemDefinition(var4);
-         if((!var1 || var5.isTradable) && var5.notedTemplate == -1 && var5.name.toLowerCase().indexOf(var0) != -1) {
+         final ItemComposition item = ItemComposition.getItemDefinition(var4);
+         if((!var1 || item.isTradable) && item.notedTemplate == -1 && item.name.toLowerCase().contains(var0)) {
             if(var3 >= 250) {
                class61.field737 = -1;
                Preferences.field1248 = null;
@@ -169,7 +169,7 @@ public class GrandExchangeEvents {
             }
 
             if(var3 >= var2.length) {
-               short[] var6 = new short[var2.length * 2];
+               final short[] var6 = new short[var2.length * 2];
 
                 System.arraycopy(var2, 0, var6, 0, var3);
 
@@ -183,13 +183,13 @@ public class GrandExchangeEvents {
       Preferences.field1248 = var2;
       class81.field1287 = 0;
       class61.field737 = var3;
-      String[] var8 = new String[class61.field737];
+      final String[] var8 = new String[class61.field737];
 
       for(int var9 = 0; var9 < class61.field737; ++var9) {
-         var8[var9] = class47.getItemDefinition(var2[var9]).name;
+         var8[var9] = ItemComposition.getItemDefinition(var2[var9]).name;
       }
 
-      short[] var10 = Preferences.field1248;
+      final short[] var10 = Preferences.field1248;
       AbstractByteBuffer.method3757(var8, var10, 0, var8.length - 1);
    }
 }

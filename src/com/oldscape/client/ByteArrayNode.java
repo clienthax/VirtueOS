@@ -1,9 +1,9 @@
 package com.oldscape.client;
 
-public class ByteArrayNode extends Node {
-   public byte[] byteArray;
+class ByteArrayNode extends Node {
+   public final byte[] byteArray;
 
-   public ByteArrayNode(byte[] var1) {
+   public ByteArrayNode(final byte[] var1) {
       this.byteArray = var1;
    }
 }

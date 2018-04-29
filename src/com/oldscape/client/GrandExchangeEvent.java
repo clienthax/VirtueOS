@@ -5,24 +5,24 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class GrandExchangeEvent {
+class GrandExchangeEvent {
    static int field300;
    static int[] field298;
    static Task socket;
    static int field301;
    public final int world;
-   public final long field292;
-   public final GrandExchangeOffer grandExchangeOffer;
-   String string1;
-   String string2;
+   final long field292;
+   final GrandExchangeOffer grandExchangeOffer;
+   private final String string1;
+   private final String string2;
 
-   GrandExchangeEvent(Buffer var1, byte var2, int var3) {
+   GrandExchangeEvent(final Buffer var1, final byte var2, final int var3) {
       this.string1 = var1.readString();
       this.string2 = var1.readString();
       this.world = var1.readUnsignedShort();
       this.field292 = var1.readLong();
-      int var4 = var1.readInt();
-      int var5 = var1.readInt();
+      final int var4 = var1.readInt();
+      final int var5 = var1.readInt();
       this.grandExchangeOffer = new GrandExchangeOffer();
       this.grandExchangeOffer.method109(2);
       this.grandExchangeOffer.method104(var2);
@@ -43,36 +43,35 @@ public class GrandExchangeEvent {
 
    static long method89() {
       try {
-         URL var0 = new URL(VerticalAlignment.method4715("services", false) + "m=accountappeal/login.ws");
-         URLConnection var1 = var0.openConnection();
+         final URL var0 = new URL(VerticalAlignment.method4715("services", false) + "m=accountappeal/login.ws");
+         final URLConnection var1 = var0.openConnection();
          var1.setRequestProperty("connection", "close");
          var1.setDoInput(true);
          var1.setDoOutput(true);
          var1.setConnectTimeout(5000);
-         OutputStreamWriter var2 = new OutputStreamWriter(var1.getOutputStream());
+         final OutputStreamWriter var2 = new OutputStreamWriter(var1.getOutputStream());
          var2.write("data1=req");
          var2.flush();
-         InputStream var3 = var1.getInputStream();
-         Buffer var4 = new Buffer(new byte[1000]);
+         final InputStream var3 = var1.getInputStream();
+         final Buffer var4 = new Buffer(new byte[1000]);
 
          do {
-            int var5 = var3.read(var4.payload, var4.offset, 1000 - var4.offset);
+            final int var5 = var3.read(var4.payload, var4.offset, 1000 - var4.offset);
             if(var5 == -1) {
                var4.offset = 0;
-               long var7 = var4.readLong();
-               return var7;
+                return var4.readLong();
             }
 
             var4.offset += var5;
          } while(var4.offset < 1000);
 
          return 0L;
-      } catch (Exception var9) {
+      } catch (final Exception var9) {
          return 0L;
       }
    }
 
-   public static int method83(char var0, int var1) {
+   public static int method83(char var0) {
       int var2 = var0 << 4;
       if(Character.isUpperCase(var0) || Character.isTitleCase(var0)) {
          var0 = Character.toLowerCase(var0);
@@ -82,12 +81,12 @@ public class GrandExchangeEvent {
       return var2;
    }
 
-   static final void method85(byte[] var0, int var1, int var2, Region var3, CollisionData[] var4) {
-      Buffer var5 = new Buffer(var0);
+   static void method85(final byte[] var0, final int var1, final int var2, final Region var3, final CollisionData[] var4) {
+      final Buffer var5 = new Buffer(var0);
       int var6 = -1;
 
       while(true) {
-         int var7 = var5.getUSmart();
+         final int var7 = var5.getUSmart();
          if(var7 == 0) {
             return;
          }
@@ -96,20 +95,20 @@ public class GrandExchangeEvent {
          int var8 = 0;
 
          while(true) {
-            int var9 = var5.getUSmart();
+            final int var9 = var5.getUSmart();
             if(var9 == 0) {
                break;
             }
 
             var8 += var9 - 1;
-            int var10 = var8 & 63;
-            int var11 = var8 >> 6 & 63;
-            int var12 = var8 >> 12;
-            int var13 = var5.readUnsignedByte();
-            int var14 = var13 >> 2;
-            int var15 = var13 & 3;
-            int var16 = var11 + var1;
-            int var17 = var10 + var2;
+            final int var10 = var8 & 63;
+            final int var11 = var8 >> 6 & 63;
+            final int var12 = var8 >> 12;
+            final int var13 = var5.readUnsignedByte();
+            final int var14 = var13 >> 2;
+            final int var15 = var13 & 3;
+            final int var16 = var11 + var1;
+            final int var17 = var10 + var2;
             if(var16 > 0 && var17 > 0 && var16 < 103 && var17 < 103) {
                int var18 = var12;
                if((class62.tileSettings[1][var16][var17] & 2) == 2) {
@@ -127,7 +126,7 @@ public class GrandExchangeEvent {
       }
    }
 
-   static final void method90(Widget var0, int var1, int var2, int var3, int var4, int var5, int var6) {
+   static void method90(final Widget var0, final int var1, final int var2, final int var3, final int var4, final int var5, final int var6) {
       if(Client.field936) {
          Client.field919 = 32;
       } else {
@@ -149,8 +148,8 @@ public class GrandExchangeEvent {
                var7 = 8;
             }
 
-            int var8 = var6 - var2 - 16 - var7 / 2;
-            int var9 = var3 - 32 - var7;
+            final int var8 = var6 - var2 - 16 - var7 / 2;
+            final int var9 = var3 - 32 - var7;
             var0.scrollY = var8 * (var4 - var3) / var9;
             FontName.method5490(var0);
             Client.field936 = true;
@@ -167,9 +166,9 @@ public class GrandExchangeEvent {
 
    }
 
-   static final void method80(String var0) {
+   static void method80(final String var0) {
       if(GameEngine.clanMemberManager != null) {
-         PacketNode var1 = WorldMapRectangle.method280(ClientPacket.field2392, Client.field957.field1484);
+         final PacketNode var1 = WorldMapRectangle.method280(ClientPacket.field2392, Client.field957.field1484);
          var1.packetBuffer.putByte(WorldMapRegion.getLength(var0));
          var1.packetBuffer.putString(var0);
          Client.field957.method2052(var1);

@@ -3,7 +3,7 @@ package com.oldscape.client;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-public class class55 {
+class class55 {
    static GrandExchangeEvents grandExchangeEvents;
    static int[] floorHues;
    static String sessionToken;
@@ -16,7 +16,7 @@ public class class55 {
       ImageIO.setUseCache(false);
    }
 
-   static final void method837(TaskDataNode var0) {
+   static void method837(final TaskDataNode var0) {
       var0.field1660 = false;
       if(var0.data != null) {
          var0.data.int1 = 0;
@@ -28,18 +28,18 @@ public class class55 {
 
    }
 
-   static final void flush(boolean var0) {
+   static void flush(final boolean var0) {
       BoundingBox2D.method36();
       ++Client.field957.field1485;
       if(Client.field957.field1485 >= 50 || var0) {
          Client.field957.field1485 = 0;
          if(!Client.socketError && Client.field957.getSocket() != null) {
-            PacketNode var1 = WorldMapRectangle.method280(ClientPacket.field2452, Client.field957.field1484);
+            final PacketNode var1 = WorldMapRectangle.method280(ClientPacket.field2452, Client.field957.field1484);
             Client.field957.method2052(var1);
 
             try {
                Client.field957.method2039();
-            } catch (IOException var3) {
+            } catch (final IOException var3) {
                Client.socketError = true;
             }
          }
@@ -47,10 +47,10 @@ public class class55 {
       }
    }
 
-   static void method834(int var0, int var1, int var2, int var3) {
-      Widget var4 = FontName.getWidgetChild(var0, var1);
+   static void method834(final int var0, final int var1, final int var2, final int var3) {
+      final Widget var4 = FontName.getWidgetChild(var0, var1);
       if(var4 != null && var4.onTargetEnterListener != null) {
-         ScriptEvent var5 = new ScriptEvent();
+         final ScriptEvent var5 = new ScriptEvent();
          var5.widget = var4;
          var5.objs = var4.onTargetEnterListener;
          AbstractSoundSystem.method2256(var5);

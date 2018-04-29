@@ -2,7 +2,7 @@ package com.oldscape.client;
 
 import java.text.DecimalFormat;
 
-public class class90 {
+class class90 {
    static MouseWheel mouseWheel;
    static boolean field1387;
    static int field1359;
@@ -12,7 +12,7 @@ public class class90 {
    static IndexedSprite field1363;
    static IndexedSprite field1393;
    static int loginWindowX;
-   static int[] field1366;
+   static final int[] field1366;
    static int field1367;
    static int field1358;
    static int field1369;

@@ -3,12 +3,12 @@ package com.oldscape.client;
 import java.io.IOException;
 
 public class NetWriter {
-   class169 rssocket;
-   CombatInfoList packetBufferNodes;
-   int field1482;
-   Buffer buffer;
+   private class169 rssocket;
+   private final CombatInfoList packetBufferNodes;
+   private int field1482;
+   private final Buffer buffer;
    public ISAACCipher field1484;
-   PacketBuffer packetBuffer;
+   final PacketBuffer packetBuffer;
    ServerPacket serverPacket;
    int packetLength;
    boolean field1489;
@@ -40,7 +40,7 @@ public class NetWriter {
          this.buffer.offset = 0;
 
          while(true) {
-            PacketNode var1 = (PacketNode)this.packetBufferNodes.last();
+            final PacketNode var1 = (PacketNode)this.packetBufferNodes.last();
             if(var1 == null || var1.field2505 > this.buffer.payload.length - this.buffer.offset) {
                this.rssocket.vmethod3337(this.buffer.payload, 0, this.buffer.offset);
                this.field1485 = 0;
@@ -57,14 +57,14 @@ public class NetWriter {
 
    }
 
-   public final void method2052(PacketNode var1) {
+   public final void method2052(final PacketNode var1) {
       this.packetBufferNodes.addFirst(var1);
       var1.field2505 = var1.packetBuffer.offset;
       var1.packetBuffer.offset = 0;
       this.field1482 += var1.field2505;
    }
 
-   void setSocket(class169 var1) {
+   void setSocket(final class169 var1) {
       this.rssocket = var1;
    }
 

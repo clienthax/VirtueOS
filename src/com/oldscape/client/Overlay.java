@@ -1,7 +1,7 @@
 package com.oldscape.client;
 
 public class Overlay extends CacheableNode {
-   public static NodeCache overlays;
+   public static final NodeCache overlays;
    public int color;
    public int texture;
    public boolean isHidden;
@@ -35,9 +35,9 @@ public class Overlay extends CacheableNode {
       this.setHSL(this.color);
    }
 
-   void decode(Buffer var1, int var2) {
+   void decode(final Buffer var1, final int var2) {
       while(true) {
-         int var3 = var1.readUnsignedByte();
+         final int var3 = var1.readUnsignedByte();
          if(var3 == 0) {
             return;
          }
@@ -46,7 +46,7 @@ public class Overlay extends CacheableNode {
       }
    }
 
-   void readNext(Buffer var1, int var2, int var3) {
+   private void readNext(final Buffer var1, final int var2, final int var3) {
       if(var2 == 1) {
          this.color = var1.read24BitInt();
       } else if(var2 == 2) {
@@ -60,10 +60,10 @@ public class Overlay extends CacheableNode {
 
    }
 
-   void setHSL(int var1) {
-      double var2 = (double)(var1 >> 16 & 255) / 256.0D;
-      double var4 = (double)(var1 >> 8 & 255) / 256.0D;
-      double var6 = (double)(var1 & 255) / 256.0D;
+   private void setHSL(final int var1) {
+      final double var2 = (var1 >> 16 & 255) / 256.0D;
+      final double var4 = (var1 >> 8 & 255) / 256.0D;
+      final double var6 = (var1 & 255) / 256.0D;
       double var8 = var2;
       if(var4 < var2) {
          var8 = var4;
@@ -84,7 +84,7 @@ public class Overlay extends CacheableNode {
 
       double var12 = 0.0D;
       double var14 = 0.0D;
-      double var16 = (var10 + var8) / 2.0D;
+      final double var16 = (var10 + var8) / 2.0D;
       if(var10 != var8) {
          if(var16 < 0.5D) {
             var14 = (var10 - var8) / (var8 + var10);

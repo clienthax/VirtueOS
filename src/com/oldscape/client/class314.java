@@ -1,6 +1,6 @@
 package com.oldscape.client;
 
-public class class314 {
+class class314 {
    public static final char[] cp1252AsciiExtension;
 
    static {

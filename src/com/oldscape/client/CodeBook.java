@@ -1,52 +1,52 @@
 package com.oldscape.client;
 
-public class CodeBook {
-   int dimensions;
-   int entries;
-   int[] entryLengths;
-   int[] field1501;
-   float[][] valueVector;
-   int[] field1500;
+class CodeBook {
+   final int dimensions;
+   private final int entries;
+   private final int[] entryLengths;
+   private int[] field1501;
+   private float[][] valueVector;
+   private int[] field1500;
 
    CodeBook() {
-      class104.getInt(24);
-      this.dimensions = class104.getInt(16);
-      this.entries = class104.getInt(24);
+      Instrument.getInt(24);
+      this.dimensions = Instrument.getInt(16);
+      this.entries = Instrument.getInt(24);
       this.entryLengths = new int[this.entries];
-      boolean var1 = class104.getBit() != 0;
+      final boolean var1 = Instrument.getBit() != 0;
       int var2;
       int var3;
       int var5;
       if(var1) {
          var2 = 0;
 
-         for(var3 = class104.getInt(5) + 1; var2 < this.entries; ++var3) {
-            int var4 = class104.getInt(MouseInput.ilog(this.entries - var2));
+         for(var3 = Instrument.getInt(5) + 1; var2 < this.entries; ++var3) {
+            final int var4 = Instrument.getInt(MouseInput.ilog(this.entries - var2));
 
             for(var5 = 0; var5 < var4; ++var5) {
                this.entryLengths[var2++] = var3;
             }
          }
       } else {
-         boolean var14 = class104.getBit() != 0;
+         final boolean var14 = Instrument.getBit() != 0;
 
          for(var3 = 0; var3 < this.entries; ++var3) {
-            if(var14 && class104.getBit() == 0) {
+            if(var14 && Instrument.getBit() == 0) {
                this.entryLengths[var3] = 0;
             } else {
-               this.entryLengths[var3] = class104.getInt(5) + 1;
+               this.entryLengths[var3] = Instrument.getInt(5) + 1;
             }
          }
       }
 
       this.createHuffmanTree();
-      var2 = class104.getInt(4);
+      var2 = Instrument.getInt(4);
       if(var2 > 0) {
-         float var15 = class104.float32Unpack(class104.getInt(32));
-         float var16 = class104.float32Unpack(class104.getInt(32));
-         var5 = class104.getInt(4) + 1;
-         boolean var6 = class104.getBit() != 0;
-         int var7;
+         final float var15 = float32Unpack(Instrument.getInt(32));
+         final float var16 = float32Unpack(Instrument.getInt(32));
+         var5 = Instrument.getInt(4) + 1;
+         final boolean var6 = Instrument.getBit() != 0;
+         final int var7;
          if(var2 == 1) {
             var7 = method2110(this.entries, this.dimensions);
          } else {
@@ -57,7 +57,7 @@ public class CodeBook {
 
          int var8;
          for(var8 = 0; var8 < var7; ++var8) {
-            this.field1501[var8] = class104.getInt(var5);
+            this.field1501[var8] = Instrument.getInt(var5);
          }
 
          this.valueVector = new float[this.entries][this.dimensions];
@@ -70,8 +70,8 @@ public class CodeBook {
                var10 = 1;
 
                for(var11 = 0; var11 < this.dimensions; ++var11) {
-                  int var12 = var8 / var10 % var7;
-                  float var13 = (float)this.field1501[var12] * var16 + var15 + var9;
+                  final int var12 = var8 / var10 % var7;
+                  final float var13 = this.field1501[var12] * var16 + var15 + var9;
                   this.valueVector[var8][var11] = var13;
                   if(var6) {
                      var9 = var13;
@@ -86,7 +86,7 @@ public class CodeBook {
                var10 = var8 * this.dimensions;
 
                for(var11 = 0; var11 < this.dimensions; ++var11) {
-                  float var17 = (float)this.field1501[var10] * var16 + var15 + var9;
+                  final float var17 = this.field1501[var10] * var16 + var15 + var9;
                   this.valueVector[var8][var11] = var17;
                   if(var6) {
                      var9 = var17;
@@ -100,9 +100,20 @@ public class CodeBook {
 
    }
 
-   void createHuffmanTree() {
-      int[] var1 = new int[this.entries];
-      int[] var2 = new int[33];
+   static float float32Unpack(final int var0) {
+      int var1 = var0 & 2097151;
+      final int var2 = var0 & Integer.MIN_VALUE;
+      final int var3 = (var0 & 2145386496) >> 21;
+      if(var2 != 0) {
+         var1 = -var1;
+      }
+
+      return (float)(var1 * Math.pow(2.0D, (var3 - 788)));
+   }
+
+   private void createHuffmanTree() {
+      final int[] var1 = new int[this.entries];
+      final int[] var2 = new int[33];
 
       int var3;
       int var4;
@@ -172,7 +183,7 @@ public class CodeBook {
                }
 
                if(var6 >= this.field1500.length) {
-                  int[] var9 = new int[this.field1500.length * 2];
+                  final int[] var9 = new int[this.field1500.length * 2];
 
                   for(var10 = 0; var10 < this.field1500.length; ++var10) {
                      var9[var10] = this.field1500[var10];
@@ -181,7 +192,6 @@ public class CodeBook {
                   this.field1500 = var9;
                }
 
-               var8 >>>= 1;
             }
 
             this.field1500[var6] = ~var3;
@@ -195,7 +205,7 @@ public class CodeBook {
 
    int getHuffmanRoot() {
       int var1;
-      for(var1 = 0; this.field1500[var1] >= 0; var1 = class104.getBit() != 0?this.field1500[var1]:var1 + 1) {
+      for(var1 = 0; this.field1500[var1] >= 0; var1 = Instrument.getBit() != 0?this.field1500[var1]:var1 + 1) {
       }
 
       return ~this.field1500[var1];
@@ -205,8 +215,8 @@ public class CodeBook {
       return this.valueVector[this.getHuffmanRoot()];
    }
 
-   static int method2110(int var0, int var1) {
-      int var2 = (int)Math.pow((double)var0, 1.0D / (double)var1) + 1;
+   private static int method2110(final int var0, final int var1) {
+      int var2 = (int)Math.pow(var0, 1.0D / var1) + 1;
 
       while(true) {
          int var4 = var2;
@@ -221,7 +231,7 @@ public class CodeBook {
             var4 *= var4;
          }
 
-         int var3;
+         final int var3;
          if(var5 == 1) {
             var3 = var6 * var4;
          } else {

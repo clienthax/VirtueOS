@@ -1,19 +1,19 @@
 package com.oldscape.client;
 
-public abstract class Actor extends Renderable {
+abstract class Actor extends Renderable {
    int x;
    int y;
    int angle;
    boolean field1159;
-   int field1172;
+   int size;
    int field1161;
    int idlePoseAnimation;
    int field1163;
    int field1164;
-   int field1165;
-   int field1209;
-   int field1167;
-   int field1177;
+   int walkingAnimation;
+   int rotate180Animation;
+   int rotate90RightAnimation;
+   int rotate90LeftAnimation;
    int field1169;
    String overhead;
    boolean field1168;
@@ -21,13 +21,13 @@ public abstract class Actor extends Renderable {
    int overheadTextCyclesRemaining;
    int field1174;
    int field1175;
-   byte field1176;
-   int[] field1180;
-   int[] hitsplatTypes;
-   int[] hitsplatCycles;
-   int[] field1183;
-   int[] field1181;
-   CombatInfoList combatInfoList;
+   private byte field1176;
+   final int[] field1180;
+   final int[] hitsplatTypes;
+   final int[] hitsplatCycles;
+   final int[] field1183;
+   final int[] field1181;
+   final CombatInfoList combatInfoList;
    int interacting;
    boolean field1156;
    int field1185;
@@ -55,24 +55,24 @@ public abstract class Actor extends Renderable {
    int logicalHeight;
    int orientation;
    int field1184;
-   int field1205;
+   int rotation;
    int queueSize;
-   int[] pathX;
-   int[] pathY;
-   byte[] pathTraversed;
+   final int[] pathX;
+   final int[] pathY;
+   final byte[] pathTraversed;
    int field1158;
    int field1216;
 
    Actor() {
       this.field1159 = false;
-      this.field1172 = 1;
+      this.size = 1;
       this.idlePoseAnimation = -1;
       this.field1163 = -1;
       this.field1164 = -1;
-      this.field1165 = -1;
-      this.field1209 = -1;
-      this.field1167 = -1;
-      this.field1177 = -1;
+      this.walkingAnimation = -1;
+      this.rotate180Animation = -1;
+      this.rotate90RightAnimation = -1;
+      this.rotate90LeftAnimation = -1;
       this.field1169 = -1;
       this.overhead = null;
       this.field1157 = false;
@@ -103,7 +103,7 @@ public abstract class Actor extends Renderable {
       this.npcCycle = 0;
       this.logicalHeight = 200;
       this.field1184 = 0;
-      this.field1205 = 32;
+      this.rotation = 32;
       this.queueSize = 0;
       this.pathX = new int[10];
       this.pathY = new int[10];
@@ -121,7 +121,7 @@ public abstract class Actor extends Renderable {
       this.field1216 = 0;
    }
 
-   final void method1657(int var1, int var2, int var3, int var4, int var5, int var6) {
+   final void method1657(final int var1, final int var2, final int var3, final int var4, final int var5, final int var6) {
       boolean var7 = true;
       boolean var8 = true;
 
@@ -138,7 +138,7 @@ public abstract class Actor extends Renderable {
       int var10 = -1;
       int var11 = 0;
       if(var1 >= 0) {
-         class281 var12 = Huffman.method3457(var1);
+         final class281 var12 = Huffman.method3457(var1);
          var10 = var12.field3588;
          var11 = var12.field3575;
       }
@@ -178,7 +178,7 @@ public abstract class Actor extends Renderable {
          }
 
          for(var14 = 0; var14 < 4; ++var14) {
-            byte var15 = this.field1176;
+            final byte var15 = this.field1176;
             this.field1176 = (byte)((this.field1176 + 1) % 4);
             if(this.hitsplatCycles[var15] <= var5) {
                var9 = var15;
@@ -196,19 +196,19 @@ public abstract class Actor extends Renderable {
       }
    }
 
-   final void setCombatInfo(int var1, int var2, int var3, int var4, int var5, int var6) {
-      CombatInfo2 var8 = (CombatInfo2)CombatInfo2.field3524.get((long)var1);
-      CombatInfo2 var7;
+   final void setCombatInfo(final int var1, final int var2, final int var3, final int var4, final int var5, final int var6) {
+      CombatInfo2 var8 = (CombatInfo2)CombatInfo2.field3524.get(var1);
+      final CombatInfo2 var7;
       if(var8 != null) {
          var7 = var8;
       } else {
-         byte[] var9 = CombatInfo2.field3532.getConfigData(33, var1);
+         final byte[] var9 = CombatInfo2.field3532.getConfigData(33, var1);
          var8 = new CombatInfo2();
          if(var9 != null) {
             var8.read(new Buffer(var9));
          }
 
-         CombatInfo2.field3524.put(var8, (long)var1);
+         CombatInfo2.field3524.put(var8, var1);
          var7 = var8;
       }
 
@@ -252,19 +252,19 @@ public abstract class Actor extends Renderable {
       }
    }
 
-   final void method1659(int var1) {
-      CombatInfo2 var3 = (CombatInfo2)CombatInfo2.field3524.get((long)var1);
-      CombatInfo2 var2;
+   final void method1659(final int var1) {
+      CombatInfo2 var3 = (CombatInfo2)CombatInfo2.field3524.get(var1);
+      final CombatInfo2 var2;
       if(var3 != null) {
          var2 = var3;
       } else {
-         byte[] var4 = CombatInfo2.field3532.getConfigData(33, var1);
+         final byte[] var4 = CombatInfo2.field3532.getConfigData(33, var1);
          var3 = new CombatInfo2();
          if(var4 != null) {
             var3.read(new Buffer(var4));
          }
 
-         CombatInfo2.field3524.put(var3, (long)var1);
+         CombatInfo2.field3524.put(var3, var1);
          var2 = var3;
       }
 
@@ -279,33 +279,4 @@ public abstract class Actor extends Renderable {
 
    }
 
-   static void setItemTableSlot(int var0, int var1, int var2, int var3) {
-      ItemContainer var4 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-      if(var4 == null) {
-         var4 = new ItemContainer();
-         ItemContainer.itemContainers.put(var4, (long)var0);
-      }
-
-      if(var4.itemIds.length <= var1) {
-         int[] var5 = new int[var1 + 1];
-         int[] var6 = new int[var1 + 1];
-
-         int var7;
-         for(var7 = 0; var7 < var4.itemIds.length; ++var7) {
-            var5[var7] = var4.itemIds[var7];
-            var6[var7] = var4.stackSizes[var7];
-         }
-
-         for(var7 = var4.itemIds.length; var7 < var1; ++var7) {
-            var5[var7] = -1;
-            var6[var7] = 0;
-         }
-
-         var4.itemIds = var5;
-         var4.stackSizes = var6;
-      }
-
-      var4.itemIds[var1] = var2;
-      var4.stackSizes[var1] = var3;
-   }
 }

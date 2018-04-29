@@ -2,16 +2,16 @@ package com.oldscape.client;
 
 import java.awt.FontMetrics;
 
-public class ChatLineBuffer {
+class ChatLineBuffer {
    static FontMetrics field1479;
-   MessageNode[] lines;
-   int length;
+   private final MessageNode[] lines;
+   private int length;
 
    ChatLineBuffer() {
       this.lines = new MessageNode[100];
    }
 
-   MessageNode addMessage(int var1, String var2, String var3, String var4) {
+   MessageNode addMessage(final int var1, final String var2, final String var3, final String var4) {
       MessageNode var5 = this.lines[99];
 
       for(int var6 = this.length; var6 > 0; --var6) {
@@ -36,7 +36,7 @@ public class ChatLineBuffer {
       return var5;
    }
 
-   MessageNode getMessage(int var1) {
+   MessageNode getMessage(final int var1) {
       return var1 >= 0 && var1 < this.length?this.lines[var1]:null;
    }
 

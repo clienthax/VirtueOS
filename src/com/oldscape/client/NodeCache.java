@@ -2,13 +2,13 @@ package com.oldscape.client;
 
 public final class NodeCache {
 
-   CacheableNode field2638;
-   int capacity;
-   int remainingCapacity;
-   HashTable table;
-   Node2LinkedList list;
+   private CacheableNode field2638;
+   private final int capacity;
+   private int remainingCapacity;
+   private final HashTable table;
+   private final Node2LinkedList list;
 
-   public NodeCache(int var1) {
+   public NodeCache(final int var1) {
       this.field2638 = new CacheableNode();
       this.list = new Node2LinkedList();
       this.capacity = var1;
@@ -21,8 +21,8 @@ public final class NodeCache {
       this.table = new HashTable(var2);
    }
 
-   public CacheableNode get(long var1) {
-      CacheableNode var3 = (CacheableNode)this.table.get(var1);
+   public CacheableNode get(final long var1) {
+      final CacheableNode var3 = (CacheableNode)this.table.get(var1);
       if(var3 != null) {
          this.list.push(var3);
       }
@@ -30,8 +30,8 @@ public final class NodeCache {
       return var3;
    }
 
-   public void remove(long var1) {
-      CacheableNode var3 = (CacheableNode)this.table.get(var1);
+   public void remove(final long var1) {
+      final CacheableNode var3 = (CacheableNode)this.table.get(var1);
       if(var3 != null) {
          var3.unlink();
          var3.unlinkDual();
@@ -40,7 +40,7 @@ public final class NodeCache {
 
    }
 
-   public void put(CacheableNode var1, long var2) {
+   public void put(final CacheableNode var1, final long var2) {
       if(this.remainingCapacity == 0) {
          CacheableNode var4 = this.list.pop();
          var4.unlink();

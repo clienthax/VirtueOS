@@ -2,22 +2,22 @@ package com.oldscape.client;
 
 import java.util.Comparator;
 
-public class class322 implements Comparator {
-   final boolean field3939;
+class class322 implements Comparator {
+   private final boolean field3939;
 
-   public class322(boolean var1) {
+   public class322(final boolean var1) {
       this.field3939 = var1;
    }
 
-   int method5665(Nameable var1, Nameable var2) {
-      return this.field3939?var1.method5271().compareCleanName(var2.method5271()):var2.method5271().compareCleanName(var1.method5271());
+   private int method5665(final Nameable var1, final Nameable var2) {
+      return this.field3939?var1.getCurrentName().compareCleanName(var2.getCurrentName()):var2.getCurrentName().compareCleanName(var1.getCurrentName());
    }
 
-   public int compare(Object var1, Object var2) {
+   public int compare(final Object var1, final Object var2) {
       return this.method5665((Nameable)var1, (Nameable)var2);
    }
 
-   public boolean equals(Object var1) {
+   public boolean equals(final Object var1) {
       return super.equals(var1);
    }
 }

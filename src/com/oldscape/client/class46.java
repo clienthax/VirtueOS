@@ -1,20 +1,20 @@
 package com.oldscape.client;
 
-public class class46 extends class28 {
+class class46 extends WorldMapDecorationInfo {
    static class320 field579;
    static int field578;
-   int field580;
-   int field575;
-   int field576;
-   int field577;
+   private int field580;
+   private int field575;
+   private int field576;
+   private int field577;
 
-   void method677(Buffer var1, Buffer var2) {
+   void method677(final Buffer var1, final Buffer var2) {
       int var3 = var2.readUnsignedByte();
       if(var3 != class37.field498.field500) {
          throw new IllegalStateException("");
       } else {
          super.field410 = var2.readUnsignedByte();
-         super.field411 = var2.readUnsignedByte();
+         super.planes = var2.readUnsignedByte();
          super.field406 = var2.readUnsignedShort();
          super.field407 = var2.readUnsignedShort();
          this.field580 = var2.readUnsignedByte();
@@ -23,20 +23,20 @@ public class class46 extends class28 {
          super.field409 = var2.readUnsignedShort();
          this.field576 = var2.readUnsignedByte();
          this.field577 = var2.readUnsignedByte();
-         super.field411 = Math.min(super.field411, 4);
-         super.field414 = new short[1][64][64];
-         super.field413 = new short[super.field411][64][64];
-         super.field408 = new byte[super.field411][64][64];
-         super.field415 = new byte[super.field411][64][64];
-         super.decorations = new WorldMapDecoration[super.field411][64][64][];
+         super.planes = Math.min(super.planes, 4);
+         super.worldMapUnderlayColors = new short[1][64][64];
+         super.worldMapOverlayColors = new short[super.planes][64][64];
+         super.worldMapOverlayShapes = new byte[super.planes][64][64];
+         super.worldMapOverlayRotations = new byte[super.planes][64][64];
+         super.decorations = new WorldMapDecoration[super.planes][64][64][];
          var3 = var1.readUnsignedByte();
          if(var3 != class36.field493.field496) {
             throw new IllegalStateException("");
          } else {
-            int var4 = var1.readUnsignedByte();
-            int var5 = var1.readUnsignedByte();
-            int var6 = var1.readUnsignedByte();
-            int var7 = var1.readUnsignedByte();
+            final int var4 = var1.readUnsignedByte();
+            final int var5 = var1.readUnsignedByte();
+            final int var6 = var1.readUnsignedByte();
+            final int var7 = var1.readUnsignedByte();
             if(var4 == super.field420 && var5 == super.field409 && var6 == this.field576 && var7 == this.field577) {
                for(int var8 = 0; var8 < 8; ++var8) {
                   for(int var9 = 0; var9 < 8; ++var9) {
@@ -51,8 +51,8 @@ public class class46 extends class28 {
       }
    }
 
-   boolean method678(int var1, int var2) {
-      return var1 < this.field576 * 8?false:(var2 < this.field577 * 8?false:(var1 >= this.field576 * 8 + 8?false:var2 < this.field577 * 8 + 8));
+   boolean method678(final int var1, final int var2) {
+      return var1 >= this.field576 * 8 && (var2 >= this.field577 * 8 && (var1 < this.field576 * 8 + 8 && var2 < this.field577 * 8 + 8));
    }
 
    int method679() {
@@ -71,12 +71,12 @@ public class class46 extends class28 {
       return this.field577;
    }
 
-   public boolean equals(Object var1) {
+   public boolean equals(final Object var1) {
       if(!(var1 instanceof class46)) {
          return false;
       } else {
-         class46 var2 = (class46)var1;
-         return var2.field420 == super.field420 && super.field409 == var2.field409?this.field576 == var2.field576 && this.field577 == var2.field577:false;
+         final class46 var2 = (class46)var1;
+         return (var2.field420 == super.field420 && super.field409 == var2.field409) && (this.field576 == var2.field576 && this.field577 == var2.field577);
       }
    }
 
@@ -84,21 +84,21 @@ public class class46 extends class28 {
       return super.field420 | super.field409 << 8 | this.field576 << 16 | this.field577 << 24;
    }
 
-   static final boolean method705(int var0, int var1, int var2, class178 var3, CollisionData var4) {
+   static boolean method705(final int var0, final int var1, final int var2, final class178 var3, final CollisionData collisionData) {
       int var5 = var0;
       int var6 = var1;
-      byte var7 = 64;
-      byte var8 = 64;
-      int var9 = var0 - var7;
-      int var10 = var1 - var8;
+      final byte var7 = 64;
+      final byte var8 = 64;
+      final int var9 = var0 - var7;
+      final int var10 = var1 - var8;
       class177.field2285[var7][var8] = 99;
       class177.field2286[var7][var8] = 0;
-      byte var11 = 0;
+      final byte var11 = 0;
       int var12 = 0;
       class177.field2290[var11] = var0;
       int var20 = var11 + 1;
       class177.field2287[var11] = var1;
-      int[][] var13 = var4.flags;
+      final int[][] var13 = collisionData.flags;
 
       while(true) {
          label304:
@@ -125,9 +125,9 @@ public class class46 extends class28 {
                         var12 = var12 + 1 & 4095;
                         var18 = var5 - var9;
                         var19 = var6 - var10;
-                        var14 = var5 - var4.x;
-                        var15 = var6 - var4.y;
-                        if(var3.vmethod3428(var2, var5, var6, var4)) {
+                        var14 = var5 - collisionData.x;
+                        var15 = var6 - collisionData.y;
+                        if(var3.vmethod3428(var2, var5, var6, collisionData)) {
                            class177.field2283 = var5;
                            class177.field2289 = var6;
                            return true;
@@ -293,77 +293,77 @@ public class class46 extends class28 {
       }
    }
 
-   static final void method685(Actor var0) {
-      if(var0.field1205 != 0) {
-         if(var0.interacting != -1) {
-            Object var1 = null;
-            if(var0.interacting < 32768) {
-               var1 = Client.cachedNPCs[var0.interacting];
-            } else if(var0.interacting >= 32768) {
-               var1 = Client.cachedPlayers[var0.interacting - 32768];
+   static void method685(final Actor actor) {
+      if(actor.rotation != 0) {
+         if(actor.interacting != -1) {
+            final Actor cachedActor;
+            if(actor.interacting < 32768) {
+               cachedActor = Client.cachedNPCs[actor.interacting];
+            } else {
+               cachedActor = Client.cachedPlayers[actor.interacting - 32768];
             }
 
-            if(var1 != null) {
-               int var2 = var0.x - ((Actor)var1).x;
-               int var3 = var0.y - ((Actor)var1).y;
+            if(cachedActor != null) {
+               final int var2 = actor.x - cachedActor.x;
+               final int var3 = actor.y - cachedActor.y;
                if(var2 != 0 || var3 != 0) {
-                  var0.orientation = (int)(Math.atan2((double)var2, (double)var3) * 325.949D) & 2047;
+                  actor.orientation = (int)(Math.atan2(var2, var3) * 325.949D) & 2047;
                }
-            } else if(var0.field1156) {
-               var0.interacting = -1;
-               var0.field1156 = false;
+            } else if(actor.field1156) {
+               actor.interacting = -1;
+               actor.field1156 = false;
             }
          }
 
-         if(var0.field1185 != -1 && (var0.queueSize == 0 || var0.field1158 > 0)) {
-            var0.orientation = var0.field1185;
-            var0.field1185 = -1;
+         if(actor.field1185 != -1 && (actor.queueSize == 0 || actor.field1158 > 0)) {
+            actor.orientation = actor.field1185;
+            actor.field1185 = -1;
          }
 
-         int var4 = var0.orientation - var0.angle & 2047;
-         if(var4 == 0 && var0.field1156) {
-            var0.interacting = -1;
-            var0.field1156 = false;
+         final int var4 = actor.orientation - actor.angle & 2047;
+         if(var4 == 0 && actor.field1156) {
+            actor.interacting = -1;
+            actor.field1156 = false;
          }
 
          if(var4 != 0) {
-            ++var0.field1184;
+            ++actor.field1184;
             boolean var6;
             if(var4 > 1024) {
-               var0.angle -= var0.field1205;
+               actor.angle -= actor.rotation;
                var6 = true;
-               if(var4 < var0.field1205 || var4 > 2048 - var0.field1205) {
-                  var0.angle = var0.orientation;
+               if(var4 < actor.rotation || var4 > 2048 - actor.rotation) {
+                  actor.angle = actor.orientation;
                   var6 = false;
                }
 
-               if(var0.idlePoseAnimation == var0.poseAnimation && (var0.field1184 > 25 || var6)) {
-                  if(var0.field1163 != -1) {
-                     var0.poseAnimation = var0.field1163;
+               if(actor.idlePoseAnimation == actor.poseAnimation && (actor.field1184 > 25 || var6)) {
+                  if(actor.field1163 != -1) {
+                     actor.poseAnimation = actor.field1163;
                   } else {
-                     var0.poseAnimation = var0.field1165;
+                     actor.poseAnimation = actor.walkingAnimation;
                   }
                }
             } else {
-               var0.angle += var0.field1205;
+               actor.angle += actor.rotation;
                var6 = true;
-               if(var4 < var0.field1205 || var4 > 2048 - var0.field1205) {
-                  var0.angle = var0.orientation;
+               if(var4 < actor.rotation || var4 > 2048 - actor.rotation) {
+                  actor.angle = actor.orientation;
                   var6 = false;
                }
 
-               if(var0.idlePoseAnimation == var0.poseAnimation && (var0.field1184 > 25 || var6)) {
-                  if(var0.field1164 != -1) {
-                     var0.poseAnimation = var0.field1164;
+               if(actor.idlePoseAnimation == actor.poseAnimation && (actor.field1184 > 25 || var6)) {
+                  if(actor.field1164 != -1) {
+                     actor.poseAnimation = actor.field1164;
                   } else {
-                     var0.poseAnimation = var0.field1165;
+                     actor.poseAnimation = actor.walkingAnimation;
                   }
                }
             }
 
-            var0.angle &= 2047;
+            actor.angle &= 2047;
          } else {
-            var0.field1184 = 0;
+            actor.field1184 = 0;
          }
 
       }

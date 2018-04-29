@@ -1,13 +1,13 @@
 package com.oldscape.client;
 
-public class CollisionData {
-   int x;
-   int y;
-   int width;
-   int height;
-   public int[][] flags;
+class CollisionData {
+   final int x;
+   final int y;
+   private final int width;
+   private final int height;
+   public final int[][] flags;
 
-   public CollisionData(int var1, int var2) {
+   public CollisionData(final int var1, final int var2) {
       this.x = 0;
       this.y = 0;
       this.width = var1;
@@ -29,7 +29,7 @@ public class CollisionData {
 
    }
 
-   public void method3391(int var1, int var2, int var3, int var4, boolean var5) {
+   public void method3391(int var1, int var2, final int var3, final int var4, final boolean var5) {
       var1 -= this.x;
       var2 -= this.y;
       if(var3 == 0) {
@@ -176,7 +176,7 @@ public class CollisionData {
 
    }
 
-   public void addObject(int var1, int var2, int var3, int var4, boolean var5) {
+   public void addObject(int var1, int var2, final int var3, final int var4, final boolean var5) {
       int var6 = 256;
       if(var5) {
          var6 += 131072;
@@ -209,11 +209,11 @@ public class CollisionData {
       this.flags[var1][var2] |= 262144;
    }
 
-   void add(int var1, int var2, int var3) {
+   private void add(final int var1, final int var2, final int var3) {
       this.flags[var1][var2] |= var3;
    }
 
-   public void removeWall(int var1, int var2, int var3, int var4, boolean var5) {
+   public void removeWall(int var1, int var2, final int var3, final int var4, final boolean var5) {
       var1 -= this.x;
       var2 -= this.y;
       if(var3 == 0) {
@@ -360,7 +360,7 @@ public class CollisionData {
 
    }
 
-   public void removeObject(int var1, int var2, int var3, int var4, int var5, boolean var6) {
+   public void removeObject(int var1, int var2, int var3, int var4, final int var5, final boolean var6) {
       int var7 = 256;
       if(var6) {
          var7 += 131072;
@@ -387,7 +387,7 @@ public class CollisionData {
 
    }
 
-   void remove(int var1, int var2, int var3) {
+   private void remove(final int var1, final int var2, final int var3) {
       this.flags[var1][var2] &= ~var3;
    }
 

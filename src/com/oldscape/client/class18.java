@@ -7,39 +7,39 @@ final class class18 implements Comparator {
    static IndexData indexModels;
    static IndexedSprite[] scrollbarSprites;
 
-   int method140(GrandExchangeEvent var1, GrandExchangeEvent var2) {
+   private int method140(final GrandExchangeEvent var1, final GrandExchangeEvent var2) {
       return var1.method81().compareTo(var2.method81());
    }
 
-   public int compare(Object var1, Object var2) {
+   public int compare(final Object var1, final Object var2) {
       return this.method140((GrandExchangeEvent)var1, (GrandExchangeEvent)var2);
    }
 
-   public boolean equals(Object var1) {
+   public boolean equals(final Object var1) {
       return super.equals(var1);
    }
 
-   static byte[] method146(byte[] var0) {
-      int var1 = var0.length;
-      byte[] var2 = new byte[var1];
+   static byte[] method146(final byte[] var0) {
+      final int var1 = var0.length;
+      final byte[] var2 = new byte[var1];
       System.arraycopy(var0, 0, var2, 0, var1);
       return var2;
    }
 
-   static final void groundItemSpawned(int var0, int var1) {
-      Deque var2 = Client.groundItemDeque[BoundingBox3DDrawMode.plane][var0][var1];
+   static void groundItemSpawned(final int x, final int y) {
+      final Deque var2 = Client.groundItemDeque[BoundingBox3DDrawMode.plane][x][y];
       if(var2 == null) {
-         class255.region.removeGroundItemPile(BoundingBox3DDrawMode.plane, var0, var1);
+         class255.region.removeGroundItemPile(BoundingBox3DDrawMode.plane, x, y);
       } else {
          long var3 = -99999999L;
          Item var5 = null;
 
          Item var6;
          for(var6 = (Item)var2.getFront(); var6 != null; var6 = (Item)var2.getNext()) {
-            ItemComposition var7 = class47.getItemDefinition(var6.id);
-            long var8 = (long)var7.price;
+            final ItemComposition var7 = ItemComposition.getItemDefinition(var6.id);
+            long var8 = var7.price;
             if(var7.isStackable == 1) {
-               var8 *= (long)(var6.quantity + 1);
+               var8 *= (var6.quantity + 1);
             }
 
             if(var8 > var3) {
@@ -49,7 +49,7 @@ final class class18 implements Comparator {
          }
 
          if(var5 == null) {
-            class255.region.removeGroundItemPile(BoundingBox3DDrawMode.plane, var0, var1);
+            class255.region.removeGroundItemPile(BoundingBox3DDrawMode.plane, x, y);
          } else {
             var2.addTail(var5);
             Item var11 = null;
@@ -67,24 +67,24 @@ final class class18 implements Comparator {
                }
             }
 
-            int var9 = var0 + (var1 << 7) + 1610612736;
-            class255.region.addItemPile(BoundingBox3DDrawMode.plane, var0, var1, class265.getTileHeight(var0 * 128 + 64, var1 * 128 + 64, BoundingBox3DDrawMode.plane), var5, var9, var11, var10);
+            final int var9 = x + (y << 7) + 1610612736;
+            class255.region.addItemPile(BoundingBox3DDrawMode.plane, x, y, WorldMapManager.getTileHeight(x * 128 + 64, y * 128 + 64, BoundingBox3DDrawMode.plane), var5, var9, var11, var10);
          }
       }
    }
 
-   static final void method142(int var0) {
+   static void method142(final int var0) {
       class250.method4503();
 
       for(class80 var1 = (class80)class80.field1263.getFront(); var1 != null; var1 = (class80)class80.field1263.getNext()) {
-         if(var1.field1272 != null) {
+         if(var1.objectComposition != null) {
             var1.method1794();
          }
       }
 
-      int var4 = class150.method3119(var0).configType;
+      final int var4 = class150.method3119(var0).configType;
       if(var4 != 0) {
-         int var2 = class237.clientVarps[var0];
+         final int var2 = VarpStorage.clientVarps[var0];
          if(var4 == 1) {
             if(var2 == 1) {
                Graphics3D.setBrightness(0.9D);
@@ -136,7 +136,7 @@ final class class18 implements Comparator {
                   PacketNode.method3442(PacketBuffer.indexTrack1, Client.field1026, 0, var3, false);
                   Client.field1102 = false;
                } else if(var3 == 0) {
-                  class155.method3165();
+                  Client.method3165();
                   Client.field1102 = false;
                } else {
                   class319.method5650(var3);
@@ -207,7 +207,7 @@ final class class18 implements Comparator {
          }
 
          if(var4 == 18) {
-            Client.playerAttackOption = (AttackOption)Permission.forOrdinal(class45.method667(), var2);
+            Client.playerAttackOption = (AttackOption) Enumerated.forOrdinal(class45.method667(), var2);
             if(Client.playerAttackOption == null) {
                Client.playerAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
             }
@@ -222,7 +222,7 @@ final class class18 implements Comparator {
          }
 
          if(var4 == 22) {
-            Client.npcAttackOption = (AttackOption)Permission.forOrdinal(class45.method667(), var2);
+            Client.npcAttackOption = (AttackOption) Enumerated.forOrdinal(class45.method667(), var2);
             if(Client.npcAttackOption == null) {
                Client.npcAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
             }

@@ -2,7 +2,7 @@ package com.oldscape.client;
 
 import java.io.File;
 
-public class class167 {
+class class167 {
    static File jagexClDat;
    static CacheFile randomDat;
    public static CacheFile dat2File;
@@ -15,16 +15,13 @@ public class class167 {
       idx255File = null;
    }
 
-   static final void method3256(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
+   static void method3256(final int var0, final int var1, final int var2, final int var3, final int var4, final int var5, final int var6) {
       if(var2 >= 1 && var3 >= 1 && var2 <= 102 && var3 <= 102) {
          if(Client.lowMemory && var0 != BoundingBox3DDrawMode.plane) {
             return;
          }
 
          int var7 = 0;
-         boolean var8 = true;
-         boolean var9 = false;
-         boolean var10 = false;
          if(var1 == 0) {
             var7 = class255.region.getWallObjectHash(var0, var2, var3);
          }
@@ -44,9 +41,9 @@ public class class167 {
          int var11;
          if(var7 != 0) {
             var11 = class255.region.getObjectFlags(var0, var2, var3, var7);
-            int var13 = var7 >> 14 & 32767;
-            int var14 = var11 & 31;
-            int var15 = var11 >> 6 & 3;
+            final int var13 = var7 >> 14 & 32767;
+            final int var14 = var11 & 31;
+            final int var15 = var11 >> 6 & 3;
             ObjectComposition var12;
             if(var1 == 0) {
                class255.region.removeBoundaryObject(var0, var2, var3);

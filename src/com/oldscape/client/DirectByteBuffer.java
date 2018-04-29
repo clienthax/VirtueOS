@@ -2,19 +2,21 @@ package com.oldscape.client;
 
 import java.nio.ByteBuffer;
 
-public class DirectByteBuffer extends AbstractByteBuffer {
-   ByteBuffer buffer;
+class DirectByteBuffer extends AbstractByteBuffer {
+   private ByteBuffer buffer;
 
+   @Override
    byte[] get() {
-      byte[] var1 = new byte[this.buffer.capacity()];
+      final byte[] bytes = new byte[this.buffer.capacity()];
       this.buffer.position(0);
-      this.buffer.get(var1);
-      return var1;
+      this.buffer.get(bytes);
+      return bytes;
    }
 
-   void put(byte[] var1) {
-      this.buffer = ByteBuffer.allocateDirect(var1.length);
+   @Override
+   void put(final byte[] bytes) {
+      this.buffer = ByteBuffer.allocateDirect(bytes.length);
       this.buffer.position(0);
-      this.buffer.put(var1);
+      this.buffer.put(bytes);
    }
 }

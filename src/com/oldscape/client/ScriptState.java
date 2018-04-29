@@ -1,6 +1,6 @@
 package com.oldscape.client;
 
-public class ScriptState {
+class ScriptState {
    static int field755;
    static int[] field762;
    static int field761;
@@ -14,7 +14,7 @@ public class ScriptState {
       this.invokedFromPc = -1;
    }
 
-   static int method1110(World var0, World var1, int var2, boolean var3) {
+   static int method1110(final World var0, final World var1, final int var2, final boolean var3) {
       if(var2 == 1) {
          int var4 = var0.playerCount;
          int var5 = var1.playerCount;
@@ -34,15 +34,15 @@ public class ScriptState {
       }
    }
 
-   static void method1108(IndexData var0, String var1) {
-      class64 var2 = new class64(var0, var1);
+   static void method1108(final IndexData var0, final String var1) {
+      final class64 var2 = new class64(var0, var1);
       Client.field871.add(var2);
    }
 
    static void method1109() {
       for(int var0 = 0; var0 < Client.menuOptionCount; ++var0) {
-         int var2 = Client.menuTypes[var0];
-         boolean var1 = var2 == 57 || var2 == 58 || var2 == 1007 || var2 == 25 || var2 == 30;
+         final int var2 = Client.menuTypes[var0];
+         final boolean var1 = var2 == 57 || var2 == 58 || var2 == 1007 || var2 == 25 || var2 == 30;
          if(var1) {
             if(var0 < Client.menuOptionCount - 1) {
                for(int var3 = var0; var3 < Client.menuOptionCount - 1; ++var3) {

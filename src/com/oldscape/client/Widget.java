@@ -2,147 +2,148 @@ package com.oldscape.client;
 
 public class Widget extends Node {
    static IndexDataBase field2815;
-   static NodeCache field2817;
-   static NodeCache Widget_cachedModels;
-   static NodeCache Widget_cachedFonts;
-   static NodeCache field2819;
-   public static boolean field2820;
+   static final NodeCache field2817;
+   static final NodeCache Widget_cachedModels;
+   static final NodeCache Widget_cachedFonts;
+   static final NodeCache field2819;
+   static boolean field2820;
+   static IndexDataBase field1471;
    public boolean hasScript;
    public int id;
    public int index;
    public int type;
-   public int field2932;
-   public int contentType;
-   public int dynamicX;
-   public int dynamicY;
-   public int dynamicWidth;
-   public int buttonType;
-   public int originalX;
-   public int originalY;
+   int field2932;
+   int contentType;
+   int dynamicX;
+   int dynamicY;
+   int dynamicWidth;
+   int buttonType;
+   int originalX;
+   int originalY;
    public int originalWidth;
-   public int originalHeight;
-   public int relativeX;
-   public int relativeY;
+   int originalHeight;
+   int relativeX;
+   int relativeY;
    public int width;
    public int height;
-   public int field2839;
-   public int field2840;
+   int field2839;
+   int field2840;
    public int parentId;
    public boolean isHidden;
    public int scrollX;
    public int scrollY;
-   public int scrollWidth;
+   int scrollWidth;
    public int scrollHeight;
    public int textColor;
-   public int field2841;
-   public int field2849;
-   public int field2908;
-   public boolean filled;
-   public class329 field2909;
-   public int opacity;
-   public int field2854;
-   public int lineWidth;
-   public boolean field2903;
-   public int spriteId;
-   public int field2858;
-   public int textureId;
-   public boolean spriteTiling;
-   public int borderThickness;
-   public int sprite2;
-   public boolean flippedVertically;
-   public boolean flippedHorizontally;
-   public int modelType;
-   public int modelId;
-   int field2867;
-   int field2868;
-   public int field2869;
-   public int field2855;
+   int field2841;
+   int field2849;
+   int field2908;
+   boolean filled;
+   class329 field2909;
+   int opacity;
+   int field2854;
+   int lineWidth;
+   boolean field2903;
+   int spriteId;
+   int field2858;
+   int textureId;
+   boolean spriteTiling;
+   int borderThickness;
+   int sprite2;
+   boolean flippedVertically;
+   boolean flippedHorizontally;
+   int modelType;
+   int modelId;
+   private int field2867;
+   private int field2868;
+   int field2869;
+   int field2855;
    public int offsetX2d;
    public int offsetY2d;
-   public int rotationX;
-   public int rotationZ;
-   public int rotationY;
-   public int modelZoom;
-   public int field2880;
-   public int field2904;
-   public boolean field2879;
-   public int field2853;
-   public int fontId;
+   int rotationX;
+   int rotationZ;
+   int rotationY;
+   int modelZoom;
+   int field2880;
+   int field2904;
+   boolean field2879;
+   int field2853;
+   int fontId;
    public String text;
-   public String string1;
-   public int field2884;
-   public int field2885;
-   public int field2833;
-   public boolean textShadowed;
-   public int paddingX;
-   public int paddingY;
-   public int[] xSprites;
-   public int[] field2915;
-   public int[] field2892;
-   public String[] configActions;
-   public int clickMask;
-   public String opBase;
+   String string1;
+   int field2884;
+   int field2885;
+   int field2833;
+   boolean textShadowed;
+   int paddingX;
+   int paddingY;
+   int[] xSprites;
+   int[] field2915;
+   int[] field2892;
+   String[] configActions;
+   int clickMask;
+   String opBase;
    public String[] actions;
-   public Widget dragParent;
-   public int dragDeadZone;
-   public int dragDeadTime;
-   public boolean dragRenderBehavior;
-   public String targetVerb;
-   public boolean hasListener;
-   public Object[] onLoadListener;
-   public Object[] onClickListener;
-   public Object[] onClickRepeatListener;
-   public Object[] onReleaseListener;
-   public Object[] onHoldListener;
-   public Object[] onMouseOverListener;
-   public Object[] onMouseRepeatListener;
-   public Object[] onMouseLeaveListener;
-   public Object[] onDragListener;
-   public Object[] onDragCompleteListener;
-   public Object[] onTargetEnterListener;
-   public Object[] onTargetLeaveListener;
-   public Object[] onVarTransmitListener;
-   public int[] varTransmitTriggers;
-   public Object[] onInvTransmitListener;
-   public int[] invTransmitTriggers;
-   public Object[] onStatTransmitListener;
-   public int[] statTransmitTriggers;
-   public Object[] onTimerListener;
-   public Object[] onOpListener;
-   public Object[] onScrollWheelListener;
-   public Object[] onChatTransmitListener;
-   public Object[] onKeyListener;
-   public Object[] onFriendTransmitListener;
-   public Object[] onClanTransmitListener;
-   public Object[] onMiscTransmitListener;
-   public Object[] onDialogAbortListener;
-   public Object[] onSubChangeListener;
-   public Object[] onResizeListener;
-   public Object[] onStockTransmitListener;
-   public Object[] onCamFinishedListener;
-   public int[][] dynamicValues;
-   public int[] tableActions;
-   public int[] field2936;
-   public int field2937;
-   public String spellName;
-   public String tooltip;
-   public int[] itemIds;
-   public int[] itemQuantities;
-   public int itemId;
-   public int itemQuantity;
-   public int field2935;
-   public int field2945;
+   Widget dragParent;
+   int dragDeadZone;
+   int dragDeadTime;
+   boolean dragRenderBehavior;
+   String targetVerb;
+   boolean hasListener;
+   Object[] onLoadListener;
+   Object[] onClickListener;
+   Object[] onClickRepeatListener;
+   Object[] onReleaseListener;
+   Object[] onHoldListener;
+   Object[] onMouseOverListener;
+   Object[] onMouseRepeatListener;
+   Object[] onMouseLeaveListener;
+   Object[] onDragListener;
+   Object[] onDragCompleteListener;
+   Object[] onTargetEnterListener;
+   Object[] onTargetLeaveListener;
+   Object[] onVarTransmitListener;
+   int[] varTransmitTriggers;
+   Object[] onInvTransmitListener;
+   int[] invTransmitTriggers;
+   Object[] onStatTransmitListener;
+   int[] statTransmitTriggers;
+   Object[] onTimerListener;
+   Object[] onOpListener;
+   Object[] onScrollWheelListener;
+   Object[] onChatTransmitListener;
+   Object[] onKeyListener;
+   Object[] onFriendTransmitListener;
+   Object[] onClanTransmitListener;
+   Object[] onMiscTransmitListener;
+   Object[] onDialogAbortListener;
+   Object[] onSubChangeListener;
+   Object[] onResizeListener;
+   Object[] onStockTransmitListener;
+   Object[] onCamFinishedListener;
+   int[][] dynamicValues;
+   int[] tableActions;
+   int[] field2936;
+   int field2937;
+   String spellName;
+   String tooltip;
+   int[] itemIds;
+   int[] itemQuantities;
+   int itemId;
+   int itemQuantity;
+   int sequenceFrameId;
+   int field2945;
    public Widget[] children;
-   public boolean field2835;
-   public boolean field2948;
-   public int field2949;
-   public int field2950;
-   public int field2951;
-   public int field2856;
-   public int boundsIndex;
-   public int loopCycle;
-   public boolean noClickThrough;
-   public boolean noScrollThrough;
+   boolean field2835;
+   boolean field2948;
+   int field2949;
+   int field2950;
+   int field2951;
+   int field2856;
+   int boundsIndex;
+   int loopCycle;
+   boolean noClickThrough;
+   boolean noScrollThrough;
 
    static {
       field2817 = new NodeCache(200);
@@ -232,7 +233,7 @@ public class Widget extends Node {
       this.tooltip = "Ok";
       this.itemId = -1;
       this.itemQuantity = 0;
-      this.field2935 = 0;
+      this.sequenceFrameId = 0;
       this.field2945 = 0;
       this.field2835 = false;
       this.field2948 = false;
@@ -246,7 +247,23 @@ public class Widget extends Node {
       this.noScrollThrough = false;
    }
 
-   void decode(Buffer var1) {
+    static Widget method4692(Widget widget) {
+       final int widgetClickMask = FriendManager.method1792(GroundObject.getWidgetClickMask(widget));
+       if(widgetClickMask == 0) {
+          return null;
+       } else {
+          for(int var2 = 0; var2 < widgetClickMask; ++var2) {
+             widget = class44.getWidget(widget.parentId);
+             if(widget == null) {
+                return null;
+             }
+          }
+
+          return widget;
+       }
+    }
+
+    void decode(final Buffer var1) {
       this.hasScript = false;
       this.type = var1.readUnsignedByte();
       this.field2932 = var1.readUnsignedByte();
@@ -268,7 +285,7 @@ public class Widget extends Node {
          this.field2937 = -1;
       }
 
-      int var2 = var1.readUnsignedByte();
+      final int var2 = var1.readUnsignedByte();
       int var3;
       if(var2 > 0) {
          this.tableActions = new int[var2];
@@ -328,7 +345,7 @@ public class Widget extends Node {
             this.clickMask |= Integer.MIN_VALUE;
          }
 
-         int var7 = var1.readUnsignedByte();
+         final int var7 = var1.readUnsignedByte();
          if(var7 == 1) {
             this.clickMask |= 536870912;
          }
@@ -341,7 +358,7 @@ public class Widget extends Node {
 
          int var8;
          for(var8 = 0; var8 < 20; ++var8) {
-            int var9 = var1.readUnsignedByte();
+            final int var9 = var1.readUnsignedByte();
             if(var9 == 1) {
                this.xSprites[var8] = var1.readShort();
                this.field2915[var8] = var1.readShort();
@@ -354,8 +371,8 @@ public class Widget extends Node {
          this.configActions = new String[5];
 
          for(var8 = 0; var8 < 5; ++var8) {
-            String var11 = var1.readString();
-            if(var11.length() > 0) {
+            final String var11 = var1.readString();
+            if(!var11.isEmpty()) {
                this.configActions[var8] = var11;
                this.clickMask |= 1 << var8 + 23;
             }
@@ -447,8 +464,8 @@ public class Widget extends Node {
          this.configActions = new String[5];
 
          for(var5 = 0; var5 < 5; ++var5) {
-            String var10 = var1.readString();
-            if(var10.length() > 0) {
+            final String var10 = var1.readString();
+            if(!var10.isEmpty()) {
                this.configActions[var5] = var10;
                this.clickMask |= 1 << var5 + 23;
             }
@@ -468,7 +485,7 @@ public class Widget extends Node {
 
       if(this.field2932 == 1 || this.field2932 == 4 || this.field2932 == 5 || this.field2932 == 6) {
          this.tooltip = var1.readString();
-         if(this.tooltip.length() == 0) {
+         if(this.tooltip.isEmpty()) {
             if(this.field2932 == 1) {
                this.tooltip = "Ok";
             }
@@ -497,7 +514,7 @@ public class Widget extends Node {
 
    }
 
-   void decodeActive(Buffer var1) {
+   void decodeActive(final Buffer var1) {
       var1.readUnsignedByte();
       this.hasScript = true;
       this.type = var1.readUnsignedByte();
@@ -597,7 +614,7 @@ public class Widget extends Node {
 
       this.clickMask = var1.read24BitInt();
       this.opBase = var1.readString();
-      int var2 = var1.readUnsignedByte();
+      final int var2 = var1.readUnsignedByte();
       if(var2 > 0) {
          this.actions = new String[var2];
 
@@ -633,17 +650,17 @@ public class Widget extends Node {
       this.statTransmitTriggers = this.decodeTransmitList(var1);
    }
 
-   Object[] decodeListener(Buffer var1) {
-      int var2 = var1.readUnsignedByte();
+   private Object[] decodeListener(final Buffer var1) {
+      final int var2 = var1.readUnsignedByte();
       if(var2 == 0) {
          return null;
       } else {
-         Object[] var3 = new Object[var2];
+         final Object[] var3 = new Object[var2];
 
          for(int var4 = 0; var4 < var2; ++var4) {
-            int var5 = var1.readUnsignedByte();
+            final int var5 = var1.readUnsignedByte();
             if(var5 == 0) {
-               var3[var4] = new Integer(var1.readInt());
+               var3[var4] = var1.readInt();
             } else if(var5 == 1) {
                var3[var4] = var1.readString();
             }
@@ -654,12 +671,12 @@ public class Widget extends Node {
       }
    }
 
-   int[] decodeTransmitList(Buffer var1) {
-      int var2 = var1.readUnsignedByte();
+   private int[] decodeTransmitList(final Buffer var1) {
+      final int var2 = var1.readUnsignedByte();
       if(var2 == 0) {
          return null;
       } else {
-         int[] var3 = new int[var2];
+         final int[] var3 = new int[var2];
 
          for(int var4 = 0; var4 < var2; ++var4) {
             var3[var4] = var1.readInt();
@@ -669,7 +686,7 @@ public class Widget extends Node {
       }
    }
 
-   public void method4461(int var1, int var2) {
+   public void method4461(final int var1, final int var2) {
       int var3 = this.itemIds[var2];
       this.itemIds[var2] = this.itemIds[var1];
       this.itemIds[var1] = var3;
@@ -678,9 +695,9 @@ public class Widget extends Node {
       this.itemQuantities[var1] = var3;
    }
 
-   public SpritePixels method4431(boolean var1) {
+   public SpritePixels method4431(final boolean var1) {
       field2820 = false;
-      int var2;
+      final int var2;
       if(var1) {
          var2 = this.field2858;
       } else {
@@ -690,12 +707,12 @@ public class Widget extends Node {
       if(var2 == -1) {
          return null;
       } else {
-         long var3 = ((long)this.sprite2 << 40) + ((this.flippedVertically?1L:0L) << 38) + ((long)this.borderThickness << 36) + (long)var2 + ((this.flippedHorizontally?1L:0L) << 39);
+         final long var3 = ((long)this.sprite2 << 40) + ((this.flippedVertically?1L:0L) << 38) + ((long)this.borderThickness << 36) + var2 + ((this.flippedHorizontally?1L:0L) << 39);
          SpritePixels var5 = (SpritePixels)field2817.get(var3);
          if(var5 != null) {
             return var5;
          } else {
-            var5 = SoundTaskDataProvider.method817(field2815, var2, 0);
+            var5 = class332.method817(field2815, var2, 0);
             if(var5 == null) {
                field2820 = true;
                return null;
@@ -736,52 +753,48 @@ public class Widget extends Node {
       if(this.fontId == -1) {
          return null;
       } else {
-         Font var1 = (Font)Widget_cachedFonts.get((long)this.fontId);
-         if(var1 != null) {
-            return var1;
-         } else {
-            var1 = FontName.method5488(field2815, DynamicObject.field1471, this.fontId, 0);
-            if(var1 != null) {
-               Widget_cachedFonts.put(var1, (long)this.fontId);
-            } else {
-               field2820 = true;
-            }
+         Font var1 = (Font)Widget_cachedFonts.get(this.fontId);
+          if (var1 == null) {
+              var1 = FontName.method5488(field2815, field1471, this.fontId, 0);
+              if (var1 != null) {
+                  Widget_cachedFonts.put(var1, this.fontId);
+              } else {
+                  field2820 = true;
+              }
 
-            return var1;
-         }
+          }
+          return var1;
       }
    }
 
-   public SpritePixels method4423(int var1) {
+   public SpritePixels method4423(final int var1) {
       field2820 = false;
       if(var1 >= 0 && var1 < this.field2892.length) {
-         int var2 = this.field2892[var1];
+         final int var2 = this.field2892[var1];
          if(var2 == -1) {
             return null;
          } else {
-            SpritePixels var3 = (SpritePixels)field2817.get((long)var2);
-            if(var3 != null) {
-               return var3;
-            } else {
-               var3 = SoundTaskDataProvider.method817(field2815, var2, 0);
-               if(var3 != null) {
-                  field2817.put(var3, (long)var2);
-               } else {
-                  field2820 = true;
-               }
+            SpritePixels var3 = (SpritePixels)field2817.get(var2);
+             if (var3 == null) {
+                 var3 = class332.method817(field2815, var2, 0);
+                 if (var3 != null) {
+                     field2817.put(var3, var2);
+                 } else {
+                     field2820 = true;
+                 }
 
-               return var3;
-            }
+             }
+             return var3;
          }
       } else {
          return null;
       }
    }
 
-   public Model getModel(Sequence var1, int var2, boolean var3, PlayerComposition var4) {
+   public Model getModel(final Sequence sequence, final int sequenceFrame, final boolean var3, final PlayerComposition playerComposition) {
       field2820 = false;
-      int var5;
-      int var6;
+      final int var5;
+      final int var6;
       if(var3) {
          var5 = this.field2867;
          var6 = this.field2868;
@@ -795,8 +808,8 @@ public class Widget extends Node {
       } else if(var5 == 1 && var6 == -1) {
          return null;
       } else {
-         Model var7 = (Model)Widget_cachedModels.get((long)(var6 + (var5 << 16)));
-         if(var7 == null) {
+         Model model = (Model)Widget_cachedModels.get((var6 + (var5 << 16)));
+         if(model == null) {
             ModelData var8;
             if(var5 == 1) {
                var8 = ModelData.method2645(Friend.field3864, var6, 0);
@@ -805,52 +818,52 @@ public class Widget extends Node {
                   return null;
                }
 
-               var7 = var8.light(64, 768, -50, -10, -50);
+               model = var8.light(64, 768, -50, -10, -50);
             }
 
             if(var5 == 2) {
-               var8 = class234.getNpcDefinition(var6).method5148();
+               var8 = NPCComposition.getNpcDefinition(var6).method5148();
                if(var8 == null) {
                   field2820 = true;
                   return null;
                }
 
-               var7 = var8.light(64, 768, -50, -10, -50);
+               model = var8.light(64, 768, -50, -10, -50);
             }
 
             if(var5 == 3) {
-               if(var4 == null) {
+               if(playerComposition == null) {
                   return null;
                }
 
-               var8 = var4.method4384();
+               var8 = playerComposition.method4384();
                if(var8 == null) {
                   field2820 = true;
                   return null;
                }
 
-               var7 = var8.light(64, 768, -50, -10, -50);
+               model = var8.light(64, 768, -50, -10, -50);
             }
 
             if(var5 == 4) {
-               ItemComposition var9 = class47.getItemDefinition(var6);
+               final ItemComposition var9 = ItemComposition.getItemDefinition(var6);
                var8 = var9.method5089(10);
                if(var8 == null) {
                   field2820 = true;
                   return null;
                }
 
-               var7 = var8.light(var9.ambient + 64, var9.contrast * 5 + 768, -50, -10, -50);
+               model = var8.light(var9.ambient + 64, var9.contrast * 5 + 768, -50, -10, -50);
             }
 
-            Widget_cachedModels.put(var7, (long)(var6 + (var5 << 16)));
+            Widget_cachedModels.put(model, (var6 + (var5 << 16)));
          }
 
-         if(var1 != null) {
-            var7 = var1.method5180(var7, var2);
+         if(sequence != null) {
+            model = sequence.method5180(model, sequenceFrame);
          }
 
-         return var7;
+         return model;
       }
    }
 
@@ -859,22 +872,22 @@ public class Widget extends Node {
          var1 = false;
       }
 
-      int var2 = var1?this.field2858:this.spriteId;
+      final int var2 = var1?this.field2858:this.spriteId;
       if(var2 == -1) {
          return null;
       } else {
-         long var3 = ((long)this.sprite2 << 40) + ((long)this.borderThickness << 36) + (long)var2 + ((this.flippedVertically?1L:0L) << 38) + ((this.flippedHorizontally?1L:0L) << 39);
+         final long var3 = ((long)this.sprite2 << 40) + ((long)this.borderThickness << 36) + var2 + ((this.flippedVertically?1L:0L) << 38) + ((this.flippedHorizontally?1L:0L) << 39);
          class236 var5 = (class236)field2819.get(var3);
          if(var5 != null) {
             return var5;
          } else {
-            SpritePixels var6 = this.method4431(var1);
+            final SpritePixels var6 = this.method4431(var1);
             if(var6 == null) {
                return null;
             } else {
-               SpritePixels var7 = var6.copy();
-               int[] var8 = new int[var7.height];
-               int[] var9 = new int[var7.height];
+               final SpritePixels var7 = var6.copy();
+               final int[] var8 = new int[var7.height];
+               final int[] var9 = new int[var7.height];
 
                for(int var10 = 0; var10 < var7.height; ++var10) {
                   int var11 = 0;
@@ -899,7 +912,7 @@ public class Widget extends Node {
                   var9[var10] = var12 - var11;
                }
 
-               var5 = new class236(var7.width, var7.height, var9, var8, var2);
+               var5 = new class236(var7.width, var7.height, var9, var8);
                field2819.put(var5, var3);
                return var5;
             }
@@ -907,9 +920,9 @@ public class Widget extends Node {
       }
    }
 
-   public void setAction(int var1, String var2) {
+   public void setAction(final int var1, final String var2) {
       if(this.actions == null || this.actions.length <= var1) {
-         String[] var3 = new String[var1 + 1];
+         final String[] var3 = new String[var1 + 1];
          if(this.actions != null) {
              System.arraycopy(this.actions, 0, var3, 0, this.actions.length);
          }
@@ -920,61 +933,61 @@ public class Widget extends Node {
       this.actions[var1] = var2;
    }
 
-   static final void method4465() {
+   static void method4465() {
       int var0 = ScriptState.field755 * 128 + 64;
       int var1 = class37.field497 * 128 + 64;
-      int var2 = class265.getTileHeight(var0, var1, BoundingBox3DDrawMode.plane) - Renderable.field2051;
+      int var2 = WorldMapManager.getTileHeight(var0, var1, BoundingBox3DDrawMode.plane) - Renderable.field2051;
       if(Player.cameraX < var0) {
-         Player.cameraX = (var0 - Player.cameraX) * class255.field3331 / 1000 + Player.cameraX + class28.field416;
+         Player.cameraX = (var0 - Player.cameraX) * class255.field3331 / 1000 + Player.cameraX + Client.field416;
          if(Player.cameraX > var0) {
             Player.cameraX = var0;
          }
       }
 
       if(Player.cameraX > var0) {
-         Player.cameraX -= class255.field3331 * (Player.cameraX - var0) / 1000 + class28.field416;
+         Player.cameraX -= class255.field3331 * (Player.cameraX - var0) / 1000 + Client.field416;
          if(Player.cameraX < var0) {
             Player.cameraX = var0;
          }
       }
 
       if(GameObject.cameraZ < var2) {
-         GameObject.cameraZ = (var2 - GameObject.cameraZ) * class255.field3331 / 1000 + GameObject.cameraZ + class28.field416;
+         GameObject.cameraZ = (var2 - GameObject.cameraZ) * class255.field3331 / 1000 + GameObject.cameraZ + Client.field416;
          if(GameObject.cameraZ > var2) {
             GameObject.cameraZ = var2;
          }
       }
 
       if(GameObject.cameraZ > var2) {
-         GameObject.cameraZ -= class255.field3331 * (GameObject.cameraZ - var2) / 1000 + class28.field416;
+         GameObject.cameraZ -= class255.field3331 * (GameObject.cameraZ - var2) / 1000 + Client.field416;
          if(GameObject.cameraZ < var2) {
             GameObject.cameraZ = var2;
          }
       }
 
       if(class20.cameraY < var1) {
-         class20.cameraY = (var1 - class20.cameraY) * class255.field3331 / 1000 + class20.cameraY + class28.field416;
+         class20.cameraY = (var1 - class20.cameraY) * class255.field3331 / 1000 + class20.cameraY + Client.field416;
          if(class20.cameraY > var1) {
             class20.cameraY = var1;
          }
       }
 
       if(class20.cameraY > var1) {
-         class20.cameraY -= class255.field3331 * (class20.cameraY - var1) / 1000 + class28.field416;
+         class20.cameraY -= class255.field3331 * (class20.cameraY - var1) / 1000 + Client.field416;
          if(class20.cameraY < var1) {
             class20.cameraY = var1;
          }
       }
 
-      var0 = HorizontalAlignment.field3697 * 128 + 64;
+      var0 = Client.field3697 * 128 + 64;
       var1 = BoundingBox2D.field248 * 128 + 64;
-      var2 = class265.getTileHeight(var0, var1, BoundingBox3DDrawMode.plane) - Signlink.field2217;
-      int var3 = var0 - Player.cameraX;
-      int var4 = var2 - GameObject.cameraZ;
-      int var5 = var1 - class20.cameraY;
-      int var6 = (int)Math.sqrt((double)(var5 * var5 + var3 * var3));
-      int var7 = (int)(Math.atan2((double)var4, (double)var6) * 325.949D) & 2047;
-      int var8 = (int)(Math.atan2((double)var3, (double)var5) * -325.949D) & 2047;
+      var2 = WorldMapManager.getTileHeight(var0, var1, BoundingBox3DDrawMode.plane) - Signlink.field2217;
+      final int var3 = var0 - Player.cameraX;
+      final int var4 = var2 - GameObject.cameraZ;
+      final int var5 = var1 - class20.cameraY;
+      final int var6 = (int)Math.sqrt((var5 * var5 + var3 * var3));
+      int var7 = (int)(Math.atan2(var4, var6) * 325.949D) & 2047;
+      final int var8 = (int)(Math.atan2(var3, var5) * -325.949D) & 2047;
       if(var7 < 128) {
          var7 = 128;
       }
@@ -997,7 +1010,7 @@ public class Widget extends Node {
          }
       }
 
-      int var9 = var8 - class28.cameraYaw;
+      int var9 = var8 - Client.cameraYaw;
       if(var9 > 1024) {
          var9 -= 2048;
       }
@@ -1007,16 +1020,16 @@ public class Widget extends Node {
       }
 
       if(var9 > 0) {
-         class28.cameraYaw = var9 * ScriptVarType.field230 / 1000 + class28.cameraYaw + TotalQuantityComparator.field302;
-         class28.cameraYaw &= 2047;
+         Client.cameraYaw = var9 * ScriptVarType.field230 / 1000 + Client.cameraYaw + TotalQuantityComparator.field302;
+         Client.cameraYaw &= 2047;
       }
 
       if(var9 < 0) {
-         class28.cameraYaw -= -var9 * ScriptVarType.field230 / 1000 + TotalQuantityComparator.field302;
-         class28.cameraYaw &= 2047;
+         Client.cameraYaw -= -var9 * ScriptVarType.field230 / 1000 + TotalQuantityComparator.field302;
+         Client.cameraYaw &= 2047;
       }
 
-      int var10 = var8 - class28.cameraYaw;
+      int var10 = var8 - Client.cameraYaw;
       if(var10 > 1024) {
          var10 -= 2048;
       }
@@ -1026,7 +1039,7 @@ public class Widget extends Node {
       }
 
       if(var10 < 0 && var9 > 0 || var10 > 0 && var9 < 0) {
-         class28.cameraYaw = var8;
+         Client.cameraYaw = var8;
       }
 
    }

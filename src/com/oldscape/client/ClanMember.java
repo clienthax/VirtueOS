@@ -1,9 +1,9 @@
 package com.oldscape.client;
 
-public class ClanMember extends ChatPlayer {
+class ClanMember extends ChatPlayer {
    static IndexData indexCache10;
-   class303 field3827;
-   class303 field3826;
+   private class303 field3827;
+   private class303 field3826;
 
    ClanMember() {
       this.field3827 = class303.field3851;
@@ -22,8 +22,8 @@ public class ClanMember extends ChatPlayer {
       return this.field3827 == class303.field3850;
    }
 
-   void method5243() {
-      this.field3827 = WorldMapRectangle.friendManager.field1256.isMember(super.name)?class303.field3850:class303.field3849;
+   private void method5243() {
+      this.field3827 = WorldMapRectangle.friendManager.field1256.isMember(super.currentName)?class303.field3850:class303.field3849;
    }
 
    void method5258() {
@@ -38,11 +38,11 @@ public class ClanMember extends ChatPlayer {
       return this.field3826 == class303.field3850;
    }
 
-   void method5246() {
-      this.field3826 = WorldMapRectangle.friendManager.field1254.isMember(super.name)?class303.field3850:class303.field3849;
+   private void method5246() {
+      this.field3826 = WorldMapRectangle.friendManager.field1254.isMember(super.currentName)?class303.field3850:class303.field3849;
    }
 
-   static int method5252(byte[] var0, int var1, int var2) {
+   static int method5252(final byte[] var0, final int var1, final int var2) {
       int var3 = -1;
 
       for(int var4 = var1; var4 < var2; ++var4) {
@@ -53,7 +53,7 @@ public class ClanMember extends ChatPlayer {
       return var3;
    }
 
-   static char method5259(char var0) {
+   static char method5259(final char var0) {
       switch(var0) {
       case ' ':
       case '-':

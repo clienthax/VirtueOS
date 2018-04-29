@@ -1,11 +1,13 @@
 package com.oldscape.client;
 
-public class class7 {
-   public static boolean drawBoundingBoxes3D;
-   public static boolean drawBoundingBoxes2D;
-   public static boolean drawObjectGeometry2D;
-   public static BoundingBox3DDrawMode boundingBox3DDrawMode;
-   public static CombatInfoList boundingBoxes;
+class class7 {
+
+   static boolean drawBoundingBoxes3D;
+   static final boolean drawBoundingBoxes2D;
+   static final boolean drawObjectGeometry2D;
+   static BoundingBox3DDrawMode boundingBox3DDrawMode;
+   static final CombatInfoList boundingBoxes;
+
    static SpritePixels compass;
    static Widget field234;
 
@@ -17,14 +19,14 @@ public class class7 {
       boundingBoxes = new CombatInfoList();
    }
 
-   public static boolean method27(CharSequence var0) {
+   public static boolean method27(final CharSequence var0) {
       boolean var2 = false;
       boolean var3 = false;
       int var4 = 0;
-      int var5 = var0.length();
+      final int var5 = var0.length();
       int var6 = 0;
 
-      boolean var1;
+      final boolean var1;
       while(true) {
          if(var6 >= var5) {
             var1 = var3;
@@ -32,7 +34,7 @@ public class class7 {
          }
 
          label84: {
-            char var7 = var0.charAt(var6);
+            final char var7 = var0.charAt(var6);
             if(var6 == 0) {
                if(var7 == '-') {
                   var2 = true;
@@ -67,7 +69,7 @@ public class class7 {
                var9 = -var9;
             }
 
-            int var8 = var9 + var4 * 10;
+            final int var8 = var9 + var4 * 10;
             if(var4 != var8 / 10) {
                var1 = false;
                break;
@@ -83,7 +85,7 @@ public class class7 {
       return var1;
    }
 
-   public static void method29(IndexDataBase var0) {
+   public static void method29(final IndexDataBase var0) {
       class279.field3552 = var0;
    }
 }

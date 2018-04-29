@@ -1,6 +1,6 @@
 package com.oldscape.client;
 
-public class class326 {
+class class326 {
    public static CombatInfoList classInfos;
 
    static {

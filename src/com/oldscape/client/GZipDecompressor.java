@@ -2,19 +2,19 @@ package com.oldscape.client;
 
 import java.util.zip.Inflater;
 
-public class GZipDecompressor {
+class GZipDecompressor {
    static int[][][] field2520;
    static JagexLoginType loginType;
-   Inflater inflator;
+   private Inflater inflator;
 
-   GZipDecompressor(int var1, int var2, int var3) {
+   private GZipDecompressor(final int var1, final int var2, final int var3) {
    }
 
    public GZipDecompressor() {
       this(-1, 1000000, 1000000);
    }
 
-   public void decompress(Buffer var1, byte[] var2) {
+   public void decompress(final Buffer var1, final byte[] var2) {
       if(var1.payload[var1.offset] == 31 && var1.payload[var1.offset + 1] == -117) {
          if(this.inflator == null) {
             this.inflator = new Inflater(true);
@@ -23,7 +23,7 @@ public class GZipDecompressor {
          try {
             this.inflator.setInput(var1.payload, var1.offset + 10, var1.payload.length - (var1.offset + 8 + 10));
             this.inflator.inflate(var2);
-         } catch (Exception var4) {
+         } catch (final Exception var4) {
             this.inflator.reset();
             throw new RuntimeException("");
          }
@@ -34,8 +34,8 @@ public class GZipDecompressor {
       }
    }
 
-   static final boolean method3461(Widget var0) {
-      int var1 = var0.contentType;
+   static boolean method3461(final Widget var0) {
+      final int var1 = var0.contentType;
       if(var1 == 205) {
          Client.field915 = 250;
          return true;
@@ -63,7 +63,7 @@ public class GZipDecompressor {
          }
 
          if(var1 == 326) {
-            PacketNode var4 = WorldMapRectangle.method280(ClientPacket.field2435, Client.field957.field1484);
+            final PacketNode var4 = WorldMapRectangle.method280(ClientPacket.field2435, Client.field957.field1484);
             Client.field1132.method4398(var4.packetBuffer);
             Client.field957.method2052(var4);
             return true;

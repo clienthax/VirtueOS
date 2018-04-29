@@ -2,25 +2,25 @@ package com.oldscape.client;
 
 public class Huffman {
    static int[] field2513;
-   int[] masks;
-   byte[] bits;
-   int[] keys;
+   private final int[] masks;
+   private final byte[] bits;
+   private int[] keys;
 
-   public Huffman(byte[] var1) {
-      int var2 = var1.length;
+   public Huffman(final byte[] var1) {
+      final int var2 = var1.length;
       this.masks = new int[var2];
       this.bits = var1;
-      int[] var3 = new int[33];
+      final int[] var3 = new int[33];
       this.keys = new int[8];
       int var4 = 0;
 
       for(int var5 = 0; var5 < var2; ++var5) {
-         byte var6 = var1[var5];
+         final byte var6 = var1[var5];
          if(var6 != 0) {
-            int var7 = 1 << 32 - var6;
-            int var8 = var3[var6];
+            final int var7 = 1 << 32 - var6;
+            final int var8 = var3[var6];
             this.masks[var5] = var8;
-            int var9;
+            final int var9;
             int var10;
             int var11;
             int var12;
@@ -68,14 +68,13 @@ public class Huffman {
                }
 
                if(var10 >= this.keys.length) {
-                  int[] var13 = new int[this.keys.length * 2];
+                  final int[] var13 = new int[this.keys.length * 2];
 
                    System.arraycopy(this.keys, 0, var13, 0, this.keys.length);
 
                   this.keys = var13;
                }
 
-               var12 >>>= 1;
             }
 
             this.keys[var10] = ~var5;
@@ -87,14 +86,14 @@ public class Huffman {
 
    }
 
-   public int compress(byte[] var1, int var2, int var3, byte[] var4, int var5) {
+   public int compress(final byte[] var1, int var2, int var3, final byte[] var4, final int var5) {
       int var6 = 0;
       int var7 = var5 << 3;
 
       for(var3 += var2; var2 < var3; ++var2) {
-         int var8 = var1[var2] & 255;
-         int var9 = this.masks[var8];
-         byte var10 = this.bits[var8];
+         final int var8 = var1[var2] & 255;
+         final int var9 = this.masks[var8];
+         final byte var10 = this.bits[var8];
          if(var10 == 0) {
             throw new RuntimeException("");
          }
@@ -102,7 +101,7 @@ public class Huffman {
          int var11 = var7 >> 3;
          int var12 = var7 & 7;
          var6 &= -var12 >> 31;
-         int var13 = (var12 + var10 - 1 >> 3) + var11;
+         final int var13 = (var12 + var10 - 1 >> 3) + var11;
          var12 += 24;
          var4[var11] = (byte)(var6 |= var9 >>> var12);
          if(var11 < var13) {
@@ -132,7 +131,7 @@ public class Huffman {
       return (var7 + 7 >> 3) - var5;
    }
 
-   public int decompress(byte[] var1, int var2, byte[] var3, int var4, int var5) {
+   public int decompress(final byte[] var1, final int var2, final byte[] var3, int var4, int var5) {
       if(var5 == 0) {
          return 0;
       } else {
@@ -141,7 +140,7 @@ public class Huffman {
          int var7 = var2;
 
          while(true) {
-            byte var8 = var1[var7];
+            final byte var8 = var1[var7];
             if(var8 < 0) {
                var6 = this.keys[var6];
             } else {
@@ -270,19 +269,17 @@ public class Huffman {
       }
    }
 
-   public static class281 method3457(int var0) {
-      class281 var1 = (class281)class281.field3568.get((long)var0);
-      if(var1 != null) {
-         return var1;
-      } else {
-         byte[] var2 = class281.field3585.getConfigData(32, var0);
-         var1 = new class281();
-         if(var2 != null) {
-            var1.method4965(new Buffer(var2));
-         }
+   public static class281 method3457(final int var0) {
+      class281 var1 = (class281)class281.field3568.get(var0);
+       if (var1 == null) {
+           final byte[] var2 = class281.field3585.getConfigData(32, var0);
+           var1 = new class281();
+           if (var2 != null) {
+               var1.method4965(new Buffer(var2));
+           }
 
-         class281.field3568.put(var1, (long)var0);
-         return var1;
-      }
+           class281.field3568.put(var1, var0);
+       }
+       return var1;
    }
 }

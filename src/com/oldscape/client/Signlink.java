@@ -1,19 +1,24 @@
 package com.oldscape.client;
 
 import java.io.DataInputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.URL;
 
-public class Signlink implements Runnable {
+class Signlink implements Runnable {
+   public static String osNameLC;
    static int field2217;
    public static String javaVendor;
    public static String javaVersion;
    static Widget field2218;
-   Task currentTask;
-   Task cachedTask;
-   Thread sysEventQueue;
-   boolean closed;
+   static String osName;
+   private Task currentTask;
+   private Task cachedTask;
+   private final Thread sysEventQueue;
+   private boolean closed;
 
    public Signlink() {
       this.currentTask = null;
@@ -25,7 +30,7 @@ public class Signlink implements Runnable {
       try {
          javaVendor = System.getProperty("java.vendor");
          javaVersion = System.getProperty("java.version");
-      } catch (Exception var2) {
+      } catch (final Exception ignored) {
       }
 
       this.closed = false;
@@ -35,7 +40,272 @@ public class Signlink implements Runnable {
       this.sysEventQueue.start();
    }
 
-   public final void join() {
+    public static void method2684(final String var0, final String var1, final int var2, final int var3) throws IOException {
+       class37.idxCount = var3;
+       BoundingBox.field253 = var2;
+
+       try {
+          osName = System.getProperty("os.name");
+       } catch (final Exception var30) {
+          osName = "Unknown";
+       }
+
+       osNameLC = osName.toLowerCase();
+
+       try {
+          NPC.userHome = System.getProperty("user.home");
+          if(NPC.userHome != null) {
+             NPC.userHome = NPC.userHome + "/";
+          }
+       } catch (final Exception ignored) {
+       }
+
+       try {
+          if(osNameLC.startsWith("win")) {
+             if(NPC.userHome == null) {
+                NPC.userHome = System.getenv("USERPROFILE");
+             }
+          } else if(NPC.userHome == null) {
+             NPC.userHome = System.getenv("HOME");
+          }
+
+          if(NPC.userHome != null) {
+             NPC.userHome = NPC.userHome + "/";
+          }
+       } catch (final Exception ignored) {
+       }
+
+       if(NPC.userHome == null) {
+          NPC.userHome = "~/";
+       }
+
+       WorldMapData.cacheLocations = new String[]{"c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", NPC.userHome, "/tmp/", ""};
+       Resampler.field1627 = new String[]{".jagex_cache_" + BoundingBox.field253, ".file_store_" + BoundingBox.field253};
+       int var18 = 0;
+
+       File var5;
+       label279:
+       while(var18 < 4) {
+          final String var6 = var18 == 0?"":"" + var18;
+          class167.jagexClDat = new File(NPC.userHome, "jagex_cl_" + var0 + "_" + var1 + var6 + ".dat");
+          String var7 = null;
+          String var8 = null;
+          boolean var9 = false;
+          File var38;
+          if(class167.jagexClDat.exists()) {
+             try {
+                final FileOnDisk var10 = new FileOnDisk(class167.jagexClDat, "rw", 10000L);
+
+                final Buffer var11;
+                int var12;
+                for(var11 = new Buffer((int)var10.length()); var11.offset < var11.payload.length; var11.offset += var12) {
+                   var12 = var10.read(var11.payload, var11.offset, var11.payload.length - var11.offset);
+                   if(var12 == -1) {
+                      throw new IOException();
+                   }
+                }
+
+                var11.offset = 0;
+                var12 = var11.readUnsignedByte();
+                if(var12 < 1 || var12 > 3) {
+                   throw new IOException("" + var12);
+                }
+
+                int var13 = 0;
+                if(var12 > 1) {
+                   var13 = var11.readUnsignedByte();
+                }
+
+                if(var12 <= 2) {
+                   var7 = var11.getJagString();
+                   if(var13 == 1) {
+                      var8 = var11.getJagString();
+                   }
+                } else {
+                   var7 = var11.getCESU8();
+                   if(var13 == 1) {
+                      var8 = var11.getCESU8();
+                   }
+                }
+
+                var10.close();
+             } catch (final IOException var33) {
+                var33.printStackTrace();
+             }
+
+             if(var7 != null) {
+                var38 = new File(var7);
+                if(!var38.exists()) {
+                   var7 = null;
+                }
+             }
+
+             if(var7 != null) {
+                var38 = new File(var7, "test.dat");
+                if(!method70(var38, true)) {
+                   var7 = null;
+                }
+             }
+          }
+
+          if(var7 == null && var18 == 0) {
+             label254:
+             for(int var19 = 0; var19 < Resampler.field1627.length; ++var19) {
+                for(int var20 = 0; var20 < WorldMapData.cacheLocations.length; ++var20) {
+                   final File var21 = new File(WorldMapData.cacheLocations[var20] + Resampler.field1627[var19] + File.separatorChar + var0 + File.separatorChar);
+                   if(var21.exists() && method70(new File(var21, "test.dat"), true)) {
+                      var7 = var21.toString();
+                      var9 = true;
+                      break label254;
+                   }
+                }
+             }
+          }
+
+          if(var7 == null) {
+             var7 = NPC.userHome + File.separatorChar + "jagexcache" + var6 + File.separatorChar + var0 + File.separatorChar + var1 + File.separatorChar;
+             var9 = true;
+          }
+
+          if(var8 != null) {
+             final File var37 = new File(var8);
+             var38 = new File(var7);
+
+             try {
+
+                for (final File var15 : var37.listFiles()) {
+                     final File var16 = new File(var38, var15.getName());
+                     final boolean var17 = var15.renameTo(var16);
+                     if (!var17) {
+                         throw new IOException();
+                     }
+                 }
+             } catch (final Exception var32) {
+                var32.printStackTrace();
+             }
+
+             var9 = true;
+          }
+
+          if(var9) {
+             class110.method2284(new File(var7), null);
+          }
+
+          var5 = new File(var7);
+          class241.field2807 = var5;
+          if(!class241.field2807.exists()) {
+             class241.field2807.mkdirs();
+          }
+
+          final File[] var34 = class241.field2807.listFiles();
+          if(var34 != null) {
+
+             for (final File var24 : var34) {
+                  if (!method70(var24, false)) {
+                      ++var18;
+                      continue label279;
+                  }
+              }
+          }
+          break;
+       }
+
+       class170.field2233 = class241.field2807;
+       if(!class170.field2233.exists()) {
+          throw new RuntimeException("");
+       } else {
+          class170.field2234 = true;
+
+          try {
+             var5 = new File(NPC.userHome, "random.dat");
+             int var26;
+             if(var5.exists()) {
+                class167.randomDat = new CacheFile(new FileOnDisk(var5, "rw", 25L), 24, 0);
+             } else {
+                label205:
+                for(int var25 = 0; var25 < Resampler.field1627.length; ++var25) {
+                   for(var26 = 0; var26 < WorldMapData.cacheLocations.length; ++var26) {
+                      final File var36 = new File(WorldMapData.cacheLocations[var26] + Resampler.field1627[var25] + File.separatorChar + "random.dat");
+                      if(var36.exists()) {
+                         class167.randomDat = new CacheFile(new FileOnDisk(var36, "rw", 25L), 24, 0);
+                         break label205;
+                      }
+                   }
+                }
+             }
+
+             if(class167.randomDat == null) {
+                final RandomAccessFile var35 = new RandomAccessFile(var5, "rw");
+                var26 = var35.read();
+                var35.seek(0L);
+                var35.write(var26);
+                var35.seek(0L);
+                var35.close();
+                class167.randomDat = new CacheFile(new FileOnDisk(var5, "rw", 25L), 24, 0);
+             }
+          } catch (final IOException ignored) {
+          }
+
+          class167.dat2File = new CacheFile(new FileOnDisk(MessageNode.method1176("main_file_cache.dat2"), "rw", 1048576000L), 5200, 0);
+          class167.idx255File = new CacheFile(new FileOnDisk(MessageNode.method1176("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
+          Size.idxFiles = new CacheFile[class37.idxCount];
+
+          for(int var27 = 0; var27 < class37.idxCount; ++var27) {
+             Size.idxFiles[var27] = new CacheFile(new FileOnDisk(MessageNode.method1176("main_file_cache.idx" + var27), "rw", 1048576L), 6000, 0);
+          }
+
+       }
+    }
+
+    static boolean method70(final File file, final boolean delete) {
+       try {
+          final RandomAccessFile var2 = new RandomAccessFile(file, "rw");
+          final int var3 = var2.read();
+          var2.seek(0L);
+          var2.write(var3);
+          var2.seek(0L);
+          var2.close();
+          if(delete) {
+             file.delete();
+          }
+
+          return true;
+       } catch (final Exception var4) {
+          return false;
+       }
+    }
+
+    public static void processClientError(final String var0, final Throwable var1) {
+       if(var1 != null) {
+          var1.printStackTrace();
+       } else {
+          try {
+             String var2 = "";
+
+             if(var0 != null) {
+                var2 = var2 + var0;
+             }
+
+             System.out.println("Error: " + var2);
+             var2 = var2.replace(':', '.');
+             var2 = var2.replace('@', '_');
+             var2 = var2.replace('&', '_');
+             var2 = var2.replace('#', '_');
+             if(RunException.field2198 == null) {
+                return;
+             }
+
+             final URL var3 = new URL(RunException.field2198.getCodeBase(), "clienterror.ws?c=" + RunException.revision + "&u=" + RunException.field2194 + "&v1=" + javaVendor + "&v2=" + javaVersion + "&e=" + var2);
+             final DataInputStream var4 = new DataInputStream(var3.openStream());
+             var4.read();
+             var4.close();
+          } catch (final Exception ignored) {
+          }
+
+       }
+    }
+
+    public final void join() {
       synchronized(this) {
          this.closed = true;
          this.notifyAll();
@@ -43,40 +313,40 @@ public class Signlink implements Runnable {
 
       try {
          this.sysEventQueue.join();
-      } catch (InterruptedException var3) {
+      } catch (final InterruptedException ignored) {
       }
 
    }
 
-   final Task newTask(int var1, int var2, int var3, Object var4) {
-      Task var5 = new Task();
-      var5.type = var1;
-      var5.intArgument = var2;
-      var5.objectArgument = var4;
+   private Task newTask(final int type, final int intArg, final Object objectArg) {
+      final Task task = new Task();
+      task.type = type;
+      task.intArgument = intArg;
+      task.objectArgument = objectArg;
       synchronized(this) {
          if(this.cachedTask != null) {
-            this.cachedTask.task = var5;
-            this.cachedTask = var5;
+            this.cachedTask.task = task;
+            this.cachedTask = task;
          } else {
-            this.cachedTask = this.currentTask = var5;
+            this.cachedTask = this.currentTask = task;
          }
 
          this.notify();
-         return var5;
+         return task;
       }
    }
 
-   public final Task createSocket(String var1, int var2) {
-      return this.newTask(1, var2, 0, var1);
+   public final Task createSocket(final String stringArg, final int var2) {
+      return this.newTask(1, var2, stringArg);
    }
 
-   public final Task createRunnable(Runnable var1, int var2) {
-      return this.newTask(2, var2, 0, var1);
+   public final Task createRunnable(final Runnable objectArg, final int var2) {
+      return this.newTask(2, var2, objectArg);
    }
 
    public final void run() {
       while(true) {
-         Task var1;
+         final Task task;
          synchronized(this) {
             while(true) {
                if(this.closed) {
@@ -84,7 +354,7 @@ public class Signlink implements Runnable {
                }
 
                if(this.currentTask != null) {
-                  var1 = this.currentTask;
+                  task = this.currentTask;
                   this.currentTask = this.currentTask.task;
                   if(this.currentTask == null) {
                      this.cachedTask = null;
@@ -94,47 +364,47 @@ public class Signlink implements Runnable {
 
                try {
                   this.wait();
-               } catch (InterruptedException var8) {
+               } catch (final InterruptedException ignored) {
                }
             }
          }
 
          try {
-            int var5 = var1.type;
-            if(var5 == 1) {
-               var1.value = new Socket(InetAddress.getByName((String)var1.objectArgument), var1.intArgument);
-            } else if(var5 == 2) {
-               Thread var3 = new Thread((Runnable)var1.objectArgument);
-               var3.setDaemon(true);
-               var3.start();
-               var3.setPriority(var1.intArgument);
-               var1.value = var3;
-            } else if(var5 == 4) {
-               var1.value = new DataInputStream(((URL)var1.objectArgument).openStream());
+            final int type = task.type;
+            if(type == 1) {
+               task.value = new Socket(InetAddress.getByName((String)task.objectArgument), task.intArgument);
+            } else if(type == 2) {
+               final Thread thread = new Thread((Runnable)task.objectArgument);
+               thread.setDaemon(true);
+               thread.start();
+               thread.setPriority(task.intArgument);
+               task.value = thread;
+            } else if(type == 4) {
+               task.value = new DataInputStream(((URL)task.objectArgument).openStream());
             }
 
-            var1.status = 1;
-         } catch (ThreadDeath var6) {
+            task.status = 1;
+         } catch (final ThreadDeath var6) {
             throw var6;
-         } catch (Throwable var7) {
-            var1.status = 2;
+         } catch (final Throwable var7) {
+            task.status = 2;
          }
       }
    }
 
-   static Script newScript(byte[] var0) {
-      Script var1 = new Script();
-      Buffer var2 = new Buffer(var0);
+   static Script newScript(final byte[] var0) {
+      final Script var1 = new Script();
+      final Buffer var2 = new Buffer(var0);
       var2.offset = var2.payload.length - 2;
-      int var3 = var2.readUnsignedShort();
-      int var4 = var2.payload.length - 2 - var3 - 12;
+      final int var3 = var2.readUnsignedShort();
+      final int var4 = var2.payload.length - 2 - var3 - 12;
       var2.offset = var4;
-      int var5 = var2.readInt();
+      final int var5 = var2.readInt();
       var1.localIntCount = var2.readUnsignedShort();
       var1.localStringCount = var2.readUnsignedShort();
       var1.intStackCount = var2.readUnsignedShort();
       var1.stringStackCount = var2.readUnsignedShort();
-      int var6 = var2.readUnsignedByte();
+      final int var6 = var2.readUnsignedByte();
       int var7;
       int var8;
       if(var6 > 0) {
@@ -142,13 +412,13 @@ public class Signlink implements Runnable {
 
          for(var7 = 0; var7 < var6; ++var7) {
             var8 = var2.readUnsignedShort();
-            IterableHashTable var9 = new IterableHashTable(var8 > 0?GraphicsObject.nextPowerOfTwo(var8):1);
+            final IterableHashTable var9 = new IterableHashTable(var8 > 0?GraphicsObject.nextPowerOfTwo(var8):1);
             var1.switches[var7] = var9;
 
             while(var8-- > 0) {
-               int var10 = var2.readInt();
-               int var11 = var2.readInt();
-               var9.put(new IntegerNode(var11), (long)var10);
+               final int var10 = var2.readInt();
+               final int var11 = var2.readInt();
+               var9.put(new IntegerNode(var11), var10);
             }
          }
       }
@@ -173,14 +443,14 @@ public class Signlink implements Runnable {
       return var1;
    }
 
-   static final void method3241(Player var0, int var1, int var2, int var3) {
-      if(SoundTaskDataProvider.localPlayer != var0) {
+   static void method3241(final Player player, final int var1, final int var2, final int var3) {
+      if(Client.localPlayer != player) {
          if(Client.menuOptionCount < 400) {
-            String var4;
-            if(var0.totalLevel == 0) {
-               var4 = var0.actions[0] + var0.name + var0.actions[1] + PendingSpawn.method1653(var0.combatLevel, SoundTaskDataProvider.localPlayer.combatLevel) + " " + " (" + "level-" + var0.combatLevel + ")" + var0.actions[2];
+            final String var4;
+            if(player.totalLevel == 0) {
+               var4 = player.actions[0] + player.name + player.actions[1] + PendingSpawn.method1653(player.combatLevel, Client.localPlayer.combatLevel) + " " + " (" + "level-" + player.combatLevel + ")" + player.actions[2];
             } else {
-               var4 = var0.actions[0] + var0.name + var0.actions[1] + " " + " (" + "skill-" + var0.totalLevel + ")" + var0.actions[2];
+               var4 = player.actions[0] + player.name + player.actions[1] + " " + " (" + "skill-" + player.totalLevel + ")" + player.actions[2];
             }
 
             int var5;
@@ -199,12 +469,12 @@ public class Signlink implements Runnable {
                            continue;
                         }
 
-                        if(AttackOption.AttackOption_alwaysRightClick == Client.playerAttackOption || AttackOption.AttackOption_dependsOnCombatLevels == Client.playerAttackOption && var0.combatLevel > SoundTaskDataProvider.localPlayer.combatLevel) {
+                        if(AttackOption.AttackOption_alwaysRightClick == Client.playerAttackOption || AttackOption.AttackOption_dependsOnCombatLevels == Client.playerAttackOption && player.combatLevel > Client.localPlayer.combatLevel) {
                            var6 = 2000;
                         }
 
-                        if(SoundTaskDataProvider.localPlayer.team != 0 && var0.team != 0) {
-                           if(var0.team == SoundTaskDataProvider.localPlayer.team) {
+                        if(Client.localPlayer.team != 0 && player.team != 0) {
+                           if(player.team == Client.localPlayer.team) {
                               var6 = 2000;
                            } else {
                               var6 = 0;
@@ -214,8 +484,7 @@ public class Signlink implements Runnable {
                         var6 = 2000;
                      }
 
-                     boolean var7 = false;
-                     int var8 = Client.playerMenuTypes[var5] + var6;
+                     final int var8 = Client.playerMenuTypes[var5] + var6;
                      TextureProvider.addMenuEntry(Client.playerOptions[var5], class45.getColTags(16777215) + var4, var8, var1, var2, var3);
                   }
                }

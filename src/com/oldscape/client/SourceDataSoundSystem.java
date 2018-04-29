@@ -6,26 +6,35 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.DataLine.Info;
 
-public class SourceDataSoundSystem extends AbstractSoundSystem {
-   AudioFormat audioFormat;
-   SourceDataLine source;
-   int size;
-   byte[] bytes;
+class SourceDataSoundSystem extends AbstractSoundSystem {
+   private AudioFormat audioFormat;
+   private SourceDataLine source;
+   private int size;
+   private byte[] bytes;
+
+   public static int method4507(int var0) {
+      var0 = (var0 & 1431655765) + (var0 >>> 1 & 1431655765);
+      var0 = (var0 >>> 2 & 858993459) + (var0 & 858993459);
+      var0 = var0 + (var0 >>> 4) & 252645135;
+      var0 += var0 >>> 8;
+      var0 += var0 >>> 16;
+      return var0 & 255;
+   }
 
    protected void vmethod2247() {
-      this.audioFormat = new AudioFormat((float) sampleRate, 16, audioHighMemory ?2:1, true, false);
+      this.audioFormat = new AudioFormat(sampleRate, 16, audioHighMemory ?2:1, true, false);
       this.bytes = new byte[256 << (audioHighMemory ?2:1)];
    }
 
-   protected void create(int var1) throws LineUnavailableException {
+   void create(final int var1) throws LineUnavailableException {
       try {
-         Info var2 = new Info(SourceDataLine.class, this.audioFormat, var1 << (audioHighMemory ?2:1));
+         final Info var2 = new Info(SourceDataLine.class, this.audioFormat, var1 << (audioHighMemory ?2:1));
          this.source = (SourceDataLine)AudioSystem.getLine(var2);
          this.source.open();
          this.source.start();
          this.size = var1;
-      } catch (LineUnavailableException var3) {
-         if(class253.method4507(var1) != 1) {
+      } catch (final LineUnavailableException var3) {
+         if(method4507(var1) != 1) {
             this.create(GraphicsObject.nextPowerOfTwo(var1));
          } else {
             this.source = null;

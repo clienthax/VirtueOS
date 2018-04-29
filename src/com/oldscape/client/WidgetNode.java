@@ -1,6 +1,6 @@
 package com.oldscape.client;
 
-public class WidgetNode extends Node {
+class WidgetNode extends Node {
    static SoundTask task;
    static int field795;
    static int field794;
@@ -16,7 +16,7 @@ public class WidgetNode extends Node {
       Client.mouseLastLastPressedTimeMillis = 1L;
       Client.field885 = -1;
       WorldMapType2.mouseRecorder.index = 0;
-      PlayerComposition.field2798 = true;
+      PlayerComposition.gameFocused = true;
       Client.field886 = true;
       Client.field1091 = -1L;
       class150.method3111();
@@ -33,7 +33,7 @@ public class WidgetNode extends Node {
       Client.hintArrowTargetType = 0;
       Client.menuOptionCount = 0;
       Client.isMenuOpen = false;
-      class25.method200(0);
+      class25.setMouseIdleTicks(0);
       class95.chatLineMap.clear();
       class95.messages.clear();
       class95.field1453.clear();
@@ -84,24 +84,22 @@ public class WidgetNode extends Node {
       WorldMapRectangle.friendManager.method1756();
 
       for(var0 = 0; var0 < class289.field3777; ++var0) {
-         VarPlayerType var4 = (VarPlayerType)VarPlayerType.varplayers.get((long)var0);
-         VarPlayerType var5;
-         if(var4 != null) {
-            var5 = var4;
-         } else {
-            byte[] var3 = VarPlayerType.varplayer_ref.getConfigData(16, var0);
-            var4 = new VarPlayerType();
-            if(var3 != null) {
-               var4.decode(new Buffer(var3));
-            }
+         VarPlayerType var4 = (VarPlayerType)VarPlayerType.varplayers.get(var0);
+         final VarPlayerType var5;
+          if (var4 == null) {
+              final byte[] var3 = VarPlayerType.varplayer_ref.getConfigData(16, var0);
+              var4 = new VarPlayerType();
+              if (var3 != null) {
+                  var4.decode(new Buffer(var3));
+              }
 
-            VarPlayerType.varplayers.put(var4, (long)var0);
-            var5 = var4;
-         }
+              VarPlayerType.varplayers.put(var4, var0);
+          }
+          var5 = var4;
 
-         if(var5 != null) {
-            class237.serverVarps[var0] = 0;
-            class237.clientVarps[var0] = 0;
+          if(var5 != null) {
+            VarpStorage.serverVarps[var0] = 0;
+            VarpStorage.clientVarps[var0] = 0;
          }
       }
 
@@ -142,7 +140,7 @@ public class WidgetNode extends Node {
       Client.field1033 = null;
       Client.menuOptionCount = 0;
       Client.isMenuOpen = false;
-      Client.field1132.method4396((int[])null, new int[]{0, 0, 0, 0, 0}, false, -1);
+      Client.field1132.method4396(null, new int[]{0, 0, 0, 0, 0}, false, -1);
 
       for(var0 = 0; var0 < 8; ++var0) {
          Client.playerOptions[var0] = null;
@@ -170,7 +168,7 @@ public class WidgetNode extends Node {
       return (Client.playerNameMask & 4) != 0;
    }
 
-   static final void method1133() {
+   static void method1133() {
       boolean var0 = false;
 
       while(!var0) {
@@ -178,10 +176,10 @@ public class WidgetNode extends Node {
 
          for(int var1 = 0; var1 < Client.menuOptionCount - 1; ++var1) {
             if(Client.menuTypes[var1] < 1000 && Client.menuTypes[var1 + 1] > 1000) {
-               String var2 = Client.menuTargets[var1];
+               final String var2 = Client.menuTargets[var1];
                Client.menuTargets[var1] = Client.menuTargets[var1 + 1];
                Client.menuTargets[var1 + 1] = var2;
-               String var3 = Client.menuOptions[var1];
+               final String var3 = Client.menuOptions[var1];
                Client.menuOptions[var1] = Client.menuOptions[var1 + 1];
                Client.menuOptions[var1 + 1] = var3;
                int var4 = Client.menuTypes[var1];
@@ -196,7 +194,7 @@ public class WidgetNode extends Node {
                var4 = Client.menuIdentifiers[var1];
                Client.menuIdentifiers[var1] = Client.menuIdentifiers[var1 + 1];
                Client.menuIdentifiers[var1 + 1] = var4;
-               boolean var5 = Client.menuBooleanArray[var1];
+               final boolean var5 = Client.menuBooleanArray[var1];
                Client.menuBooleanArray[var1] = Client.menuBooleanArray[var1 + 1];
                Client.menuBooleanArray[var1 + 1] = var5;
                var0 = false;
@@ -206,18 +204,18 @@ public class WidgetNode extends Node {
 
    }
 
-   static String method1135(String var0, Widget var1) {
-      if(var0.indexOf("%") != -1) {
+   static String method1135(String var0, final Widget var1) {
+      if(var0.contains("%")) {
          for(int var2 = 1; var2 <= 5; ++var2) {
             while(true) {
-               int var3 = var0.indexOf("%" + var2);
+               final int var3 = var0.indexOf("%" + var2);
                if(var3 == -1) {
                   break;
                }
 
-               String var4 = var0.substring(0, var3);
-               int var6 = class308.method5486(var1, var2 - 1);
-               String var5;
+               final String var4 = var0.substring(0, var3);
+               final int var6 = class308.method5486(var1, var2 - 1);
+               final String var5;
                if(var6 < 999999999) {
                   var5 = Integer.toString(var6);
                } else {

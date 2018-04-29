@@ -7,15 +7,15 @@ public enum class329 implements Enumerated {
    field3968(3, 3),
    field3969(4, 4);
 
-   public final int field3970;
-   final int field3972;
+   public final int value;
+   final int ordinal;
 
-   class329(int var3, int var4) {
-      this.field3970 = var3;
-      this.field3972 = var4;
+   class329(final int var3, final int var4) {
+      this.value = var3;
+      this.ordinal = var4;
    }
 
    public int rsOrdinal() {
-      return this.field3972;
+      return this.ordinal;
    }
 }

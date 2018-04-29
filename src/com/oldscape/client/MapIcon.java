@@ -4,66 +4,66 @@ public class MapIcon {
    public final int areaId;
    public final Coordinates field532;
    public final Coordinates field524;
-   final int field525;
-   final int field526;
-   final MapLabel field527;
+   private final int width;
+   private final int height;
+   final MapLabel mapLabel;
    int screenX;
    int screenY;
 
-   MapIcon(int var1, Coordinates var2, Coordinates var3, MapLabel var4) {
-      this.areaId = var1;
+   MapIcon(final int areaId, final Coordinates var2, final Coordinates var3, final MapLabel mapLabel) {
+      this.areaId = areaId;
       this.field524 = var2;
       this.field532 = var3;
-      this.field527 = var4;
-      Area var5 = Area.mapAreaType[this.areaId];
-      SpritePixels var6 = var5.getMapIcon(false);
-      if(var6 != null) {
-         this.field525 = var6.width;
-         this.field526 = var6.height;
+      this.mapLabel = mapLabel;
+      final Area area = Area.mapAreaType[this.areaId];
+      final SpritePixels spritePixels = area.getMapIcon();
+      if(spritePixels != null) {
+         this.width = spritePixels.width;
+         this.height = spritePixels.height;
       } else {
-         this.field525 = 0;
-         this.field526 = 0;
+         this.width = 0;
+         this.height = 0;
       }
 
    }
 
-   boolean method583(int var1, int var2) {
-      return this.method580(var1, var2)?true:this.method581(var1, var2);
+   boolean method583(final int var1, final int var2) {
+      return this.method580(var1, var2) || this.method581(var1, var2);
    }
 
-   boolean method580(int var1, int var2) {
-      Area var3 = Area.mapAreaType[this.areaId];
-      switch(var3.horizontalAlignment.value) {
+   private boolean method580(final int var1, final int var2) {
+      final Area area = Area.mapAreaType[this.areaId];
+      switch(area.horizontalAlignment.value) {
       case 0:
-         if(var1 < this.screenX - this.field525 / 2 || var1 > this.field525 / 2 + this.screenX) {
+         if(var1 < this.screenX - this.width / 2 || var1 > this.width / 2 + this.screenX) {
             return false;
          }
          break;
       case 1:
-         if(var1 >= this.screenX && var1 < this.screenX + this.field525) {
+         if(var1 >= this.screenX && var1 < this.screenX + this.width) {
             break;
          }
 
          return false;
       case 2:
-         if(var1 <= this.screenX - this.field525 || var1 > this.screenX) {
+         if(var1 <= this.screenX - this.width || var1 > this.screenX) {
             return false;
          }
       }
 
-      switch(var3.verticalAlignment.value) {
+      switch(area.verticalAlignment.value) {
       case 0:
-         if(var2 <= this.screenY - this.field526 || var2 > this.screenY) {
+         if(var2 <= this.screenY - this.height || var2 > this.screenY) {
             return false;
          }
          break;
       case 1:
-         if(var2 < this.screenY - this.field526 / 2 || var2 > this.field526 / 2 + this.screenY) {
+         if(var2 < this.screenY - this.height / 2 || var2 > this.height / 2 + this.screenY) {
             return false;
          }
          break;
       case 2:
-         if(var2 < this.screenY || var2 >= this.screenY + this.field526) {
+         if(var2 < this.screenY || var2 >= this.screenY + this.height) {
             return false;
          }
       }
@@ -71,8 +71,8 @@ public class MapIcon {
       return true;
    }
 
-   boolean method581(int var1, int var2) {
-      return this.field527 == null?false:(var1 >= this.screenX - this.field527.field470 / 2 && var1 <= this.field527.field470 / 2 + this.screenX?var2 >= this.screenY && var2 <= this.field527.field469 + this.screenY:false);
+   private boolean method581(final int var1, final int var2) {
+      return this.mapLabel != null && ((var1 >= this.screenX - this.mapLabel.field470 / 2 && var1 <= this.mapLabel.field470 / 2 + this.screenX) && (var2 >= this.screenY && var2 <= this.mapLabel.field469 + this.screenY));
    }
 
    public static void method587() {
@@ -85,7 +85,7 @@ public class MapIcon {
 
          class167.idx255File.close();
          class167.randomDat.close();
-      } catch (Exception var2) {
+      } catch (final Exception ignored) {
       }
 
    }

@@ -1,8 +1,8 @@
 package com.oldscape.client;
 
 public class class220 {
-   class221 field2661;
-   class221 field2660;
+   private final class221 field2661;
+   private class221 field2660;
 
    public class220() {
       this.field2661 = new class221();
@@ -10,7 +10,7 @@ public class class220 {
       this.field2661.field2662 = this.field2661;
    }
 
-   public void method4057(class221 var1) {
+   public void method4057(final class221 var1) {
       if(var1.field2662 != null) {
          var1.method4067();
       }
@@ -22,7 +22,7 @@ public class class220 {
    }
 
    public class221 method4061() {
-      class221 var1 = this.field2661.field2663;
+      final class221 var1 = this.field2661.field2663;
       if(var1 == this.field2661) {
          this.field2660 = null;
          return null;
@@ -33,7 +33,7 @@ public class class220 {
    }
 
    public class221 method4060() {
-      class221 var1 = this.field2660;
+      final class221 var1 = this.field2660;
       if(var1 == this.field2661) {
          this.field2660 = null;
          return null;

@@ -3,52 +3,48 @@ package com.oldscape.client;
 public class Ignore extends Nameable {
    int field3844;
 
-   int method5380(Ignore var1) {
+   private int method5380(final Ignore var1) {
       return this.field3844 - var1.field3844;
    }
 
-   public int vmethod5448(Nameable var1) {
+   public int doCompare(final Nameable var1) {
       return this.method5380((Ignore)var1);
    }
 
-   public int compareTo(Object var1) {
+   public int compareTo(final Object var1) {
       return this.method5380((Ignore)var1);
-   }
-
-   public static class320[] method5386() {
-      return new class320[]{class320.field3933, class320.field3935, class320.field3934};
    }
 
    static VerticalAlignment[] method5387() {
       return new VerticalAlignment[]{VerticalAlignment.field3442, VerticalAlignment.field3440, VerticalAlignment.field3439};
    }
 
-   static final void method5385() {
+   static void method5385() {
       int var0;
       int var1;
       int var2;
-      int var3;
-      int var4;
+      final int var3;
+      final int var4;
       int var5;
       if(Client.field960 == 0) {
-         var0 = SoundTaskDataProvider.localPlayer.x;
-         var1 = SoundTaskDataProvider.localPlayer.y;
-         if(class169.field2228 - var0 < -500 || class169.field2228 - var0 > 500 || class46.field578 - var1 < -500 || class46.field578 - var1 > 500) {
-            class169.field2228 = var0;
+         var0 = Client.localPlayer.x;
+         var1 = Client.localPlayer.y;
+         if(GameCanvas.field2228 - var0 < -500 || GameCanvas.field2228 - var0 > 500 || class46.field578 - var1 < -500 || class46.field578 - var1 > 500) {
+            GameCanvas.field2228 = var0;
             class46.field578 = var1;
          }
 
-         if(var0 != class169.field2228) {
-            class169.field2228 += (var0 - class169.field2228) / 16;
+         if(var0 != GameCanvas.field2228) {
+            GameCanvas.field2228 += (var0 - GameCanvas.field2228) / 16;
          }
 
          if(var1 != class46.field578) {
             class46.field578 += (var1 - class46.field578) / 16;
          }
 
-         var2 = class169.field2228 >> 7;
+         var2 = GameCanvas.field2228 >> 7;
          var3 = class46.field578 >> 7;
-         var4 = class265.getTileHeight(class169.field2228, class46.field578, BoundingBox3DDrawMode.plane);
+         var4 = WorldMapManager.getTileHeight(GameCanvas.field2228, class46.field578, BoundingBox3DDrawMode.plane);
          var5 = 0;
          int var6;
          if(var2 > 3 && var3 > 3 && var2 < 100 && var3 < 100) {
@@ -59,7 +55,7 @@ public class Ignore extends Nameable {
                      ++var8;
                   }
 
-                  int var9 = var4 - class62.tileHeights[var8][var6][var7];
+                  final int var9 = var4 - class62.tileHeights[var8][var6][var7];
                   if(var9 > var5) {
                      var5 = var9;
                   }
@@ -82,19 +78,19 @@ public class Ignore extends Nameable {
             Client.field884 += (var6 - Client.field884) / 80;
          }
 
-         ObjectComposition.field3640 = class265.getTileHeight(SoundTaskDataProvider.localPlayer.x, SoundTaskDataProvider.localPlayer.y, BoundingBox3DDrawMode.plane) - Client.field945;
+         ObjectComposition.field3640 = WorldMapManager.getTileHeight(Client.localPlayer.x, Client.localPlayer.y, BoundingBox3DDrawMode.plane) - Client.field945;
       } else if(Client.field960 == 1) {
-         if(Client.field1061 && SoundTaskDataProvider.localPlayer != null) {
-            var0 = SoundTaskDataProvider.localPlayer.pathX[0];
-            var1 = SoundTaskDataProvider.localPlayer.pathY[0];
+         if(Client.field1061 && Client.localPlayer != null) {
+            var0 = Client.localPlayer.pathX[0];
+            var1 = Client.localPlayer.pathY[0];
             if(var0 >= 0 && var1 >= 0 && var0 < 104 && var1 < 104) {
-               class169.field2228 = SoundTaskDataProvider.localPlayer.x;
-               var2 = class265.getTileHeight(SoundTaskDataProvider.localPlayer.x, SoundTaskDataProvider.localPlayer.y, BoundingBox3DDrawMode.plane) - Client.field945;
+               GameCanvas.field2228 = Client.localPlayer.x;
+               var2 = WorldMapManager.getTileHeight(Client.localPlayer.x, Client.localPlayer.y, BoundingBox3DDrawMode.plane) - Client.field945;
                if(var2 < ObjectComposition.field3640) {
                   ObjectComposition.field3640 = var2;
                }
 
-               class46.field578 = SoundTaskDataProvider.localPlayer.y;
+               class46.field578 = Client.localPlayer.y;
                Client.field1061 = false;
             }
          }
@@ -151,10 +147,10 @@ public class Ignore extends Nameable {
          if(Client.field946 > 0) {
             var3 = Client.field946 / 16;
             if(Client.field947 >= 0) {
-               var0 = Client.field947 - class28.cameraYaw & 2047;
+               var0 = Client.field947 - Client.cameraYaw & 2047;
                var4 = Graphics3D.SINE[var0];
                var5 = Graphics3D.COSINE[var0];
-               class169.field2228 += var4 * var3 / 65536;
+               GameCanvas.field2228 += var4 * var3 / 65536;
                class46.field578 += var3 * var5 / 65536;
             }
 

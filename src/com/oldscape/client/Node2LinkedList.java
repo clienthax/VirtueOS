@@ -1,7 +1,7 @@
 package com.oldscape.client;
 
-public final class Node2LinkedList {
-   CacheableNode sentinel;
+final class Node2LinkedList {
+   private final CacheableNode sentinel;
 
    public Node2LinkedList() {
       this.sentinel = new CacheableNode();
@@ -9,7 +9,7 @@ public final class Node2LinkedList {
       this.sentinel.next = this.sentinel;
    }
 
-   public void push(CacheableNode var1) {
+   public void push(final CacheableNode var1) {
       if(var1.next != null) {
          var1.unlinkDual();
       }
@@ -20,7 +20,7 @@ public final class Node2LinkedList {
       var1.previous.next = var1;
    }
 
-   public void setHead(CacheableNode var1) {
+   public void setHead(final CacheableNode var1) {
       if(var1.next != null) {
          var1.unlinkDual();
       }
@@ -32,7 +32,7 @@ public final class Node2LinkedList {
    }
 
    CacheableNode pop() {
-      CacheableNode var1 = this.sentinel.previous;
+      final CacheableNode var1 = this.sentinel.previous;
       if(var1 == this.sentinel) {
          return null;
       } else {
@@ -42,13 +42,13 @@ public final class Node2LinkedList {
    }
 
    public CacheableNode peek() {
-      CacheableNode var1 = this.sentinel.previous;
+      final CacheableNode var1 = this.sentinel.previous;
       return var1 == this.sentinel?null:var1;
    }
 
    void clear() {
       while(true) {
-         CacheableNode var1 = this.sentinel.previous;
+         final CacheableNode var1 = this.sentinel.previous;
          if(var1 == this.sentinel) {
             return;
          }
@@ -57,7 +57,7 @@ public final class Node2LinkedList {
       }
    }
 
-   static void method3860(CacheableNode var0, CacheableNode var1) {
+   static void method3860(final CacheableNode var0, final CacheableNode var1) {
       if(var0.next != null) {
          var0.unlinkDual();
       }

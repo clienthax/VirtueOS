@@ -18,13 +18,13 @@ public class MapCacheArchiveNames {
       LABELS = new MapCacheArchiveNames("labels");
    }
 
-   MapCacheArchiveNames(String var1) {
+   private MapCacheArchiveNames(final String var1) {
       this.name = var1;
    }
 
-   static final void method588() {
+   static void method588() {
       for(int var0 = 0; var0 < class93.playerIndexesCount; ++var0) {
-         Player var1 = Client.cachedPlayers[class93.playerIndices[var0]];
+         final Player var1 = Client.cachedPlayers[class93.playerIndices[var0]];
          var1.method1191();
       }
 

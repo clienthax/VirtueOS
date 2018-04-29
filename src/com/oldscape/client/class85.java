@@ -2,7 +2,7 @@ package com.oldscape.client;
 
 import java.math.BigInteger;
 
-public class class85 {
+class class85 {
    static final BigInteger field1322;
    static final BigInteger field1323;
 
@@ -17,18 +17,18 @@ public class class85 {
    }
 
    static SpritePixels[] method1886() {
-      SpritePixels[] var0 = new SpritePixels[class332.indexedSpriteCount];
+      final SpritePixels[] var0 = new SpritePixels[class332.indexedSpriteCount];
 
       for(int var1 = 0; var1 < class332.indexedSpriteCount; ++var1) {
-         SpritePixels var2 = var0[var1] = new SpritePixels();
+         final SpritePixels var2 = var0[var1] = new SpritePixels();
          var2.maxWidth = class332.indexedSpriteWidth;
          var2.maxHeight = class332.indexedSpriteHeight;
          var2.offsetX = class332.indexedSpriteOffsetXs[var1];
-         var2.offsetY = FileSystem.indexedSpriteOffsetYs[var1];
-         var2.width = WorldMapDecoration.indexSpriteWidths[var1];
+         var2.offsetY = class332.indexedSpriteOffsetYs[var1];
+         var2.width = class332.indexSpriteWidths[var1];
          var2.height = class332.indexedSpriteHeights[var1];
-         int var3 = var2.height * var2.width;
-         byte[] var4 = class332.spritePixels[var1];
+         final int var3 = var2.height * var2.width;
+         final byte[] var4 = class332.spritePixels[var1];
          var2.pixels = new int[var3];
 
          for(int var5 = 0; var5 < var3; ++var5) {
@@ -36,7 +36,7 @@ public class class85 {
          }
       }
 
-      class36.method541();
+      class332.clearSprites();
       return var0;
    }
 }

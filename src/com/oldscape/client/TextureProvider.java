@@ -1,15 +1,15 @@
 package com.oldscape.client;
 
 public class TextureProvider implements ITextureLoader {
-   Texture[] textures;
-   Deque deque;
-   int maxSize;
-   int size;
-   double brightness;
-   int width;
-   IndexDataBase sprites;
+   private final Texture[] textures;
+   private Deque deque;
+   private final int maxSize;
+   private int size;
+   private double brightness;
+   private int width;
+   private final IndexDataBase sprites;
 
-   public TextureProvider(IndexDataBase var1, IndexDataBase var2, int var3, double var4, int var6) {
+   public TextureProvider(final IndexDataBase var1, final IndexDataBase var2, final int var3, final double var4, final int var6) {
       this.deque = new Deque();
       this.size = 0;
       this.brightness = 1.0D;
@@ -19,36 +19,33 @@ public class TextureProvider implements ITextureLoader {
       this.size = this.maxSize;
       this.brightness = var4;
       this.width = var6;
-      int[] var7 = var1.getChilds(0);
-      int var8 = var7.length;
-      this.textures = new Texture[var1.fileCount(0)];
+      final int[] var7 = var1.getChilds(0);
+       this.textures = new Texture[var1.fileCount(0)];
 
-      for(int var9 = 0; var9 < var8; ++var9) {
-         Buffer var10 = new Buffer(var1.getConfigData(0, var7[var9]));
-         this.textures[var7[var9]] = new Texture(var10);
-      }
+       for (final int aVar7 : var7) {
+           final Buffer var10 = new Buffer(var1.getConfigData(0, aVar7));
+           this.textures[aVar7] = new Texture(var10);
+       }
 
    }
 
    public int method2572() {
       int var1 = 0;
       int var2 = 0;
-      Texture[] var3 = this.textures;
+      final Texture[] var3 = this.textures;
 
-      for(int var4 = 0; var4 < var3.length; ++var4) {
-         Texture var5 = var3[var4];
-         if(var5 != null && var5.fileIds != null) {
-            var1 += var5.fileIds.length;
-            int[] var6 = var5.fileIds;
+       for (final Texture var5 : var3) {
+           if (var5 != null && var5.fileIds != null) {
+               var1 += var5.fileIds.length;
+               final int[] var6 = var5.fileIds;
 
-            for(int var7 = 0; var7 < var6.length; ++var7) {
-               int var8 = var6[var7];
-               if(this.sprites.method4615(var8)) {
-                  ++var2;
+               for (final int var8 : var6) {
+                   if (this.sprites.method4615(var8)) {
+                       ++var2;
+                   }
                }
-            }
-         }
-      }
+           }
+       }
 
       if(var1 == 0) {
          return 0;
@@ -57,13 +54,13 @@ public class TextureProvider implements ITextureLoader {
       }
    }
 
-   public void brightness(double var1) {
+   public void brightness(final double var1) {
       this.brightness = var1;
       this.reset();
    }
 
-   public int[] load(int var1) {
-      Texture var2 = this.textures[var1];
+   public int[] load(final int var1) {
+      final Texture var2 = this.textures[var1];
       if(var2 != null) {
          if(var2.pixels != null) {
             this.deque.addTail(var2);
@@ -71,10 +68,10 @@ public class TextureProvider implements ITextureLoader {
             return var2.pixels;
          }
 
-         boolean var3 = var2.method2675(this.brightness, this.width, this.sprites);
+         final boolean var3 = var2.method2675(this.brightness, this.width, this.sprites);
          if(var3) {
             if(this.size == 0) {
-               Texture var4 = (Texture)this.deque.popTail();
+               final Texture var4 = (Texture)this.deque.popTail();
                var4.resetPixels();
             } else {
                --this.size;
@@ -89,46 +86,48 @@ public class TextureProvider implements ITextureLoader {
       return null;
    }
 
-   public int getAverageTextureRGB(int var1) {
-      return this.textures[var1] != null?this.textures[var1].field1803:0;
+   @Override
+   public int getAverageTextureRGB(final int textureId) {
+      return this.textures[textureId] != null?this.textures[textureId].field1803:0;
    }
 
-   public boolean vmethod3069(int var1) {
-      return this.textures[var1].field1806;
+   @Override
+   public boolean vmethod3069(final int textureId) {
+      return this.textures[textureId].field1806;
    }
 
-   public boolean vmethod3077(int var1) {
+   @Override
+   public boolean isLowMem(final int var1) {
       return this.width == 64;
    }
 
    public void reset() {
-      for(int var1 = 0; var1 < this.textures.length; ++var1) {
-         if(this.textures[var1] != null) {
-            this.textures[var1].resetPixels();
-         }
-      }
+       for (final Texture texture : this.textures) {
+           if (texture != null) {
+               texture.resetPixels();
+           }
+       }
 
       this.deque = new Deque();
       this.size = this.maxSize;
    }
 
-   public void checkTextures(int var1) {
-      for(int var2 = 0; var2 < this.textures.length; ++var2) {
-         Texture var3 = this.textures[var2];
-         if(var3 != null && var3.field1810 != 0 && var3.loaded) {
-            var3.method2674(var1);
-            var3.loaded = false;
-         }
-      }
+   public void checkTextures(final int var1) {
+       for (final Texture var3 : this.textures) {
+           if (var3 != null && var3.field1810 != 0 && var3.loaded) {
+               var3.method2674(var1);
+               var3.loaded = false;
+           }
+       }
 
    }
 
-   public static void method2592(IndexDataBase var0) {
+   public static void method2592(final IndexDataBase var0) {
       VarCInt.field3476 = var0;
    }
 
-   public static final void addMenuEntry(String var0, String var1, int var2, int var3, int var4, int var5) {
-      boolean var12 = false;
+   public static void addMenuEntry(final String var0, final String var1, final int var2, final int var3, final int var4, final int var5) {
+      final boolean var12 = false;
       if(!Client.isMenuOpen && Client.menuOptionCount < 500) {
          Client.menuOptions[Client.menuOptionCount] = var0;
          Client.menuTargets[Client.menuOptionCount] = var1;

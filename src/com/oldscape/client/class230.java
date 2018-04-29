@@ -1,33 +1,33 @@
 package com.oldscape.client;
 
 public class class230 extends TaskDataNode {
-   HashTable field2720;
-   int field2695;
-   int field2696;
-   int[] field2697;
-   int[] field2698;
-   int[] field2699;
-   int[] field2700;
-   int[] field2701;
-   int[] field2694;
-   int[] field2703;
-   int[] field2704;
-   int[] field2702;
-   int[] field2716;
-   int[] field2708;
-   int[] field2717;
-   int[] field2709;
-   int[] field2718;
-   int[] field2711;
-   class231[][] field2712;
-   class231[][] field2713;
-   class232 field2706;
-   boolean field2715;
-   int field2705;
-   int field2707;
-   long field2710;
-   long field2719;
-   class234 field2714;
+   private final HashTable field2720;
+   private int field2695;
+   private final int field2696;
+   private final int[] field2697;
+   private final int[] field2698;
+   private final int[] field2699;
+   private final int[] field2700;
+   private final int[] field2701;
+   private final int[] field2694;
+   private final int[] field2703;
+   private final int[] field2704;
+   private final int[] field2702;
+   final int[] field2716;
+   private final int[] field2708;
+   private final int[] field2717;
+   final int[] field2709;
+   private final int[] field2718;
+   final int[] field2711;
+   private final class231[][] field2712;
+   private final class231[][] field2713;
+   private final class232 field2706;
+   private boolean field2715;
+   private int field2705;
+   private int field2707;
+   private long field2710;
+   private long field2719;
+   private final class234 field2714;
 
    public class230() {
       this.field2695 = 256;
@@ -55,7 +55,7 @@ public class class230 extends TaskDataNode {
       this.method4138();
    }
 
-   public synchronized void method4134(int var1) {
+   public synchronized void method4134(final int var1) {
       this.field2695 = var1;
    }
 
@@ -63,7 +63,7 @@ public class class230 extends TaskDataNode {
       return this.field2695;
    }
 
-   public synchronized boolean method4136(Track1 var1, IndexDataBase var2, class110 var3, int var4) {
+   public synchronized boolean method4136(final Track1 var1, final IndexDataBase var2, final class110 var3, final int var4) {
       var1.method4337();
       boolean var5 = true;
       int[] var6 = null;
@@ -72,8 +72,8 @@ public class class230 extends TaskDataNode {
       }
 
       for(ByteArrayNode var7 = (ByteArrayNode)var1.field2770.first(); var7 != null; var7 = (ByteArrayNode)var1.field2770.next()) {
-         int var8 = (int)var7.hash;
-         class233 var9 = (class233)this.field2720.get((long)var8);
+         final int var8 = (int)var7.hash;
+         class233 var9 = (class233)this.field2720.get(var8);
          if(var9 == null) {
             var9 = WorldMapRegion.method536(var2, var8);
             if(var9 == null) {
@@ -81,7 +81,7 @@ public class class230 extends TaskDataNode {
                continue;
             }
 
-            this.field2720.put(var9, (long)var8);
+            this.field2720.put(var9, var8);
          }
 
          if(!var9.method4307(var3, var7.byteArray, var6)) {
@@ -122,19 +122,19 @@ public class class230 extends TaskDataNode {
       return 0;
    }
 
-   protected synchronized void vmethod4317(int[] var1, int var2, int var3) {
+   protected synchronized void vmethod4317(final int[] var1, int var2, int var3) {
       if(this.field2706.method4269()) {
-         int var4 = this.field2706.field2743 * this.field2696 / AbstractSoundSystem.sampleRate;
+         final int var4 = this.field2706.field2743 * this.field2696 / AbstractSoundSystem.sampleRate;
 
          do {
-            long var5 = (long)var3 * (long)var4 + this.field2710;
+            final long var5 = (long)var3 * var4 + this.field2710;
             if(this.field2719 - var5 >= 0L) {
                this.field2710 = var5;
                break;
             }
 
-            int var7 = (int)(((long)var4 + (this.field2719 - this.field2710) - 1L) / (long)var4);
-            this.field2710 += (long)var4 * (long)var7;
+            final int var7 = (int)((var4 + (this.field2719 - this.field2710) - 1L) / var4);
+            this.field2710 += (long)var4 * var7;
             this.field2714.vmethod4317(var1, var2, var7);
             var2 += var7;
             var3 -= var7;
@@ -145,12 +145,12 @@ public class class230 extends TaskDataNode {
       this.field2714.vmethod4317(var1, var2, var3);
    }
 
-   public synchronized void method4139(Track1 var1, boolean var2) {
+   public synchronized void method4139(final Track1 var1, final boolean var2) {
       this.method4140();
       this.field2706.method4298(var1.field2769);
       this.field2715 = var2;
       this.field2710 = 0L;
-      int var3 = this.field2706.method4270();
+      final int var3 = this.field2706.method4270();
 
       for(int var4 = 0; var4 < var3; ++var4) {
          this.field2706.method4271(var4);
@@ -165,17 +165,17 @@ public class class230 extends TaskDataNode {
 
    protected synchronized void vmethod4319(int var1) {
       if(this.field2706.method4269()) {
-         int var2 = this.field2706.field2743 * this.field2696 / AbstractSoundSystem.sampleRate;
+         final int var2 = this.field2706.field2743 * this.field2696 / AbstractSoundSystem.sampleRate;
 
          do {
-            long var3 = this.field2710 + (long)var1 * (long)var2;
+            final long var3 = this.field2710 + (long)var1 * var2;
             if(this.field2719 - var3 >= 0L) {
                this.field2710 = var3;
                break;
             }
 
-            int var5 = (int)((this.field2719 - this.field2710 + (long)var2 - 1L) / (long)var2);
-            this.field2710 += (long)var2 * (long)var5;
+            final int var5 = (int)((this.field2719 - this.field2710 + var2 - 1L) / var2);
+            this.field2710 += (long)var2 * var5;
             this.field2714.vmethod4319(var5);
             var1 -= var5;
             this.method4230();
@@ -194,17 +194,17 @@ public class class230 extends TaskDataNode {
       return this.field2706.method4269();
    }
 
-   public synchronized void method4191(int var1, int var2) {
+   public synchronized void method4191(final int var1, final int var2) {
       this.method4241(var1, var2);
    }
 
-   void method4241(int var1, int var2) {
+   private void method4241(final int var1, final int var2) {
       this.field2700[var1] = var2;
       this.field2694[var1] = var2 & -128;
       this.method4143(var1, var2);
    }
 
-   void method4143(int var1, int var2) {
+   private void method4143(final int var1, final int var2) {
       if(var2 != this.field2701[var1]) {
          this.field2701[var1] = var2;
 
@@ -215,14 +215,14 @@ public class class230 extends TaskDataNode {
 
    }
 
-   void method4144(int var1, int var2, int var3) {
+   private void method4144(final int var1, final int var2, final int var3) {
       this.method4153(var1, var2, 64);
       if((this.field2716[var1] & 2) != 0) {
          for(class231 var4 = (class231)this.field2714.field2765.getTail(); var4 != null; var4 = (class231)this.field2714.field2765.getPrevious()) {
             if(var4.field2734 == var1 && var4.field2740 < 0) {
                this.field2712[var1][var4.field2726] = null;
                this.field2712[var1][var2] = var4;
-               int var5 = (var4.field2721 * var4.field2730 >> 12) + var4.field2733;
+               final int var5 = (var4.field2721 * var4.field2730 >> 12) + var4.field2733;
                var4.field2733 += var2 - var4.field2726 << 8;
                var4.field2730 = var5 - var4.field2733;
                var4.field2721 = 4096;
@@ -232,11 +232,11 @@ public class class230 extends TaskDataNode {
          }
       }
 
-      class233 var9 = (class233)this.field2720.get((long)this.field2701[var1]);
+      final class233 var9 = (class233)this.field2720.get(this.field2701[var1]);
       if(var9 != null) {
-         RawAudioNode var8 = var9.field2757[var2];
+         final RawAudioNode var8 = var9.field2757[var2];
          if(var8 != null) {
-            class231 var6 = new class231();
+            final class231 var6 = new class231();
             var6.field2734 = var1;
             var6.field2722 = var9;
             var6.field2729 = var8;
@@ -263,7 +263,7 @@ public class class230 extends TaskDataNode {
             }
 
             if(var6.field2725 >= 0) {
-               class231 var7 = this.field2713[var1][var6.field2725];
+               final class231 var7 = this.field2713[var1][var6.field2725];
                if(var7 != null && var7.field2740 < 0) {
                   this.field2712[var1][var7.field2726] = null;
                   var7.field2740 = 0;
@@ -278,26 +278,26 @@ public class class230 extends TaskDataNode {
       }
    }
 
-   void method4145(class231 var1, boolean var2) {
+   void method4145(final class231 var1, final boolean var2) {
       int var3 = var1.field2729.audioBuffer.length;
       int var4;
       if(var2 && var1.field2729.field1548) {
-         int var5 = var3 + var3 - var1.field2729.startPosition;
-         var4 = (int)((long)this.field2709[var1.field2734] * (long)var5 >> 6);
+         final int var5 = var3 + var3 - var1.field2729.startPosition;
+         var4 = (int)((long)this.field2709[var1.field2734] * var5 >> 6);
          var3 <<= 8;
          if(var4 >= var3) {
             var4 = var3 + var3 - 1 - var4;
             var1.field2739.method2327();
          }
       } else {
-         var4 = (int)((long)this.field2709[var1.field2734] * (long)var3 >> 6);
+         var4 = (int)((long)this.field2709[var1.field2734] * var3 >> 6);
       }
 
       var1.field2739.method2315(var4);
    }
 
-   void method4153(int var1, int var2, int var3) {
-      class231 var4 = this.field2712[var1][var2];
+   private void method4153(final int var1, final int var2, final int var3) {
+      final class231 var4 = this.field2712[var1][var2];
       if(var4 != null) {
          this.field2712[var1][var2] = null;
          if((this.field2716[var1] & 2) != 0) {
@@ -314,17 +314,17 @@ public class class230 extends TaskDataNode {
       }
    }
 
-   void method4147(int var1, int var2, int var3) {
+   private void method4147(final int var1, final int var2, final int var3) {
    }
 
-   void method4238(int var1, int var2) {
+   private void method4238(final int var1, final int var2) {
    }
 
-   void method4149(int var1, int var2) {
+   private void method4149(final int var1, final int var2) {
       this.field2703[var1] = var2;
    }
 
-   void method4187(int var1) {
+   private void method4187(final int var1) {
       for(class231 var2 = (class231)this.field2714.field2765.getFront(); var2 != null; var2 = (class231)this.field2714.field2765.getNext()) {
          if(var1 < 0 || var2.field2734 == var1) {
             if(var2.field2739 != null) {
@@ -346,7 +346,7 @@ public class class230 extends TaskDataNode {
 
    }
 
-   void method4235(int var1) {
+   private void method4235(int var1) {
       if(var1 >= 0) {
          this.field2697[var1] = 12800;
          this.field2698[var1] = 8192;
@@ -369,7 +369,7 @@ public class class230 extends TaskDataNode {
       }
    }
 
-   void method4152(int var1) {
+   private void method4152(final int var1) {
       for(class231 var2 = (class231)this.field2714.field2765.getFront(); var2 != null; var2 = (class231)this.field2714.field2765.getNext()) {
          if((var1 < 0 || var2.field2734 == var1) && var2.field2740 < 0) {
             this.field2712[var2.field2734][var2.field2726] = null;
@@ -379,7 +379,7 @@ public class class230 extends TaskDataNode {
 
    }
 
-   void method4138() {
+   private void method4138() {
       this.method4187(-1);
       this.method4235(-1);
 
@@ -394,7 +394,7 @@ public class class230 extends TaskDataNode {
 
    }
 
-   void method4154(int var1) {
+   private void method4154(final int var1) {
       if((this.field2716[var1] & 2) != 0) {
          for(class231 var2 = (class231)this.field2714.field2765.getFront(); var2 != null; var2 = (class231)this.field2714.field2765.getNext()) {
             if(var2.field2734 == var1 && this.field2712[var1][var2.field2726] == null && var2.field2740 < 0) {
@@ -405,7 +405,7 @@ public class class230 extends TaskDataNode {
 
    }
 
-   void method4155(int var1) {
+   private void method4155(final int var1) {
       if((this.field2716[var1] & 4) != 0) {
          for(class231 var2 = (class231)this.field2714.field2765.getFront(); var2 != null; var2 = (class231)this.field2714.field2765.getNext()) {
             if(var2.field2734 == var1) {
@@ -416,11 +416,11 @@ public class class230 extends TaskDataNode {
 
    }
 
-   void method4181(int var1) {
+   private void method4181(final int var1) {
       int var2 = var1 & 240;
-      int var3;
-      int var4;
-      int var5;
+      final int var3;
+      final int var4;
+      final int var5;
       if(var2 == 128) {
          var3 = var1 & 15;
          var4 = var1 >> 8 & 127;
@@ -598,40 +598,40 @@ public class class230 extends TaskDataNode {
       }
    }
 
-   void method4164(int var1, int var2) {
+   private void method4164(final int var1, final int var2) {
       this.field2718[var1] = var2;
-      this.field2711[var1] = (int)(2097152.0D * Math.pow(2.0D, (double)var2 * 5.4931640625E-4D) + 0.5D);
+      this.field2711[var1] = (int)(2097152.0D * Math.pow(2.0D, var2 * 5.4931640625E-4D) + 0.5D);
    }
 
-   int method4158(class231 var1) {
+   private int method4158(final class231 var1) {
       int var2 = (var1.field2730 * var1.field2721 >> 12) + var1.field2733;
       var2 += (this.field2703[var1.field2734] - 8192) * this.field2717[var1.field2734] >> 12;
-      class228 var3 = var1.field2724;
+      final class228 var3 = var1.field2724;
       int var4;
       if(var3.field2683 > 0 && (var3.field2682 > 0 || this.field2704[var1.field2734] > 0)) {
          var4 = var3.field2682 << 2;
-         int var5 = var3.field2678 << 1;
+         final int var5 = var3.field2678 << 1;
          if(var1.field2737 < var5) {
             var4 = var4 * var1.field2737 / var5;
          }
 
          var4 += this.field2704[var1.field2734] >> 7;
-         double var6 = Math.sin(0.01227184630308513D * (double)(var1.field2738 & 511));
-         var2 += (int)(var6 * (double)var4);
+         final double var6 = Math.sin(0.01227184630308513D * (var1.field2738 & 511));
+         var2 += (int)(var6 * var4);
       }
 
-      var4 = (int)((double)(var1.field2729.sampleRate * 256) * Math.pow(2.0D, 3.255208333333333E-4D * (double)var2) / (double)AbstractSoundSystem.sampleRate + 0.5D);
+      var4 = (int)((var1.field2729.sampleRate * 256) * Math.pow(2.0D, 3.255208333333333E-4D * var2) / AbstractSoundSystem.sampleRate + 0.5D);
       return var4 < 1?1:var4;
    }
 
-   int method4159(class231 var1) {
-      class228 var2 = var1.field2724;
+   private int method4159(final class231 var1) {
+      final class228 var2 = var1.field2724;
       int var3 = this.field2697[var1.field2734] * this.field2699[var1.field2734] + 4096 >> 13;
       var3 = var3 * var3 + 16384 >> 15;
       var3 = var3 * var1.field2727 + 16384 >> 15;
       var3 = var3 * this.field2695 + 128 >> 8;
       if(var2.field2676 > 0) {
-         var3 = (int)((double)var3 * Math.pow(0.5D, (double)var2.field2676 * 1.953125E-5D * (double)var1.field2732) + 0.5D);
+         var3 = (int)(var3 * Math.pow(0.5D, var2.field2676 * 1.953125E-5D * var1.field2732) + 0.5D);
       }
 
       int var4;
@@ -665,12 +665,12 @@ public class class230 extends TaskDataNode {
       return var3;
    }
 
-   int method4226(class231 var1) {
-      int var2 = this.field2698[var1.field2734];
+   private int method4226(final class231 var1) {
+      final int var2 = this.field2698[var1.field2734];
       return var2 < 8192?var2 * var1.field2728 + 32 >> 6:16384 - ((128 - var1.field2728) * (16384 - var2) + 32 >> 6);
    }
 
-   void method4230() {
+   private void method4230() {
       int var1 = this.field2705;
       int var2 = this.field2707;
 
@@ -678,7 +678,7 @@ public class class230 extends TaskDataNode {
       for(var3 = this.field2719; var2 == this.field2707; var3 = this.field2706.method4296(var2)) {
          while(var2 == this.field2706.field2753[var1]) {
             this.field2706.method4271(var1);
-            int var5 = this.field2706.method4275(var1);
+            final int var5 = this.field2706.method4275(var1);
             if(var5 == 1) {
                this.field2706.method4273();
                this.field2706.method4272(var1);
@@ -711,7 +711,7 @@ public class class230 extends TaskDataNode {
       this.field2719 = var3;
    }
 
-   boolean method4167(class231 var1) {
+   boolean method4167(final class231 var1) {
       if(var1.field2739 == null) {
          if(var1.field2740 >= 0) {
             var1.unlink();
@@ -726,12 +726,12 @@ public class class230 extends TaskDataNode {
       }
    }
 
-   boolean method4146(class231 var1, int[] var2, int var3, int var4) {
+   boolean method4146(final class231 var1, final int[] var2, final int var3, final int var4) {
       var1.field2723 = AbstractSoundSystem.sampleRate / 100;
       if(var1.field2740 < 0 || var1.field2739 != null && !var1.field2739.method2399()) {
          int var5 = var1.field2721;
          if(var5 > 0) {
-            var5 -= (int)(16.0D * Math.pow(2.0D, 4.921259842519685E-4D * (double)this.field2702[var1.field2734]) + 0.5D);
+            var5 -= (int)(16.0D * Math.pow(2.0D, 4.921259842519685E-4D * this.field2702[var1.field2734]) + 0.5D);
             if(var5 < 0) {
                var5 = 0;
             }
@@ -740,14 +740,14 @@ public class class230 extends TaskDataNode {
          }
 
          var1.field2739.method2332(this.method4158(var1));
-         class228 var6 = var1.field2724;
+         final class228 var6 = var1.field2724;
          boolean var7 = false;
          ++var1.field2737;
          var1.field2738 += var6.field2683;
-         double var8 = 5.086263020833333E-6D * (double)((var1.field2726 - 60 << 8) + (var1.field2721 * var1.field2730 >> 12));
+         final double var8 = 5.086263020833333E-6D * ((var1.field2726 - 60 << 8) + (var1.field2721 * var1.field2730 >> 12));
          if(var6.field2676 > 0) {
             if(var6.field2681 > 0) {
-               var1.field2732 += (int)(128.0D * Math.pow(2.0D, (double)var6.field2681 * var8) + 0.5D);
+               var1.field2732 += (int)(128.0D * Math.pow(2.0D, var6.field2681 * var8) + 0.5D);
             } else {
                var1.field2732 += 128;
             }
@@ -755,7 +755,7 @@ public class class230 extends TaskDataNode {
 
          if(var6.field2680 != null) {
             if(var6.field2679 > 0) {
-               var1.field2731 += (int)(128.0D * Math.pow(2.0D, var8 * (double)var6.field2679) + 0.5D);
+               var1.field2731 += (int)(128.0D * Math.pow(2.0D, var8 * var6.field2679) + 0.5D);
             } else {
                var1.field2731 += 128;
             }
@@ -771,7 +771,7 @@ public class class230 extends TaskDataNode {
 
          if(var1.field2740 >= 0 && var6.field2684 != null && (this.field2716[var1.field2734] & 1) == 0 && (var1.field2725 < 0 || var1 != this.field2713[var1.field2734][var1.field2725])) {
             if(var6.field2677 > 0) {
-               var1.field2740 += (int)(128.0D * Math.pow(2.0D, (double)var6.field2677 * var8) + 0.5D);
+               var1.field2740 += (int)(128.0D * Math.pow(2.0D, var6.field2677 * var8) + 0.5D);
             } else {
                var1.field2740 += 128;
             }

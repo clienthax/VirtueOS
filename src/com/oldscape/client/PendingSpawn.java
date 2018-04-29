@@ -1,6 +1,6 @@
 package com.oldscape.client;
 
-public final class PendingSpawn extends Node {
+final class PendingSpawn extends Node {
    int level;
    int type;
    int x;
@@ -19,8 +19,16 @@ public final class PendingSpawn extends Node {
       this.hitpoints = -1;
    }
 
-   static final String method1653(int var0, int var1) {
-      int var2 = var1 - var0;
-      return var2 < -9?class45.getColTags(16711680):(var2 < -6?class45.getColTags(16723968):(var2 < -3?class45.getColTags(16740352):(var2 < 0?class45.getColTags(16756736):(var2 > 9?class45.getColTags(65280):(var2 > 6?class45.getColTags(4259584):(var2 > 3?class45.getColTags(8453888):(var2 > 0?class45.getColTags(12648192):class45.getColTags(16776960))))))));
+   static String method1653(final int var0, final int var1) {
+      final int var2 = var1 - var0;
+      if (var2 < -9) return class45.getColTags(16711680);
+      else if (var2 < -6) return class45.getColTags(16723968);
+      else if (var2 < -3) return class45.getColTags(16740352);
+      else if (var2 < 0) return class45.getColTags(16756736);
+      else if (var2 > 9) return class45.getColTags(65280);
+      else if (var2 > 6) return class45.getColTags(4259584);
+      else if (var2 > 3) return class45.getColTags(8453888);
+      else if (var2 > 0) return class45.getColTags(12648192);
+      else return class45.getColTags(16776960);
    }
 }

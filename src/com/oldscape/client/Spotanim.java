@@ -3,20 +3,20 @@ package com.oldscape.client;
 public class Spotanim extends CacheableNode {
    static IndexDataBase SpotAnimationDefinition_indexCache;
    static IndexDataBase SpotAnimationDefinition_modelIndexCache;
-   static NodeCache spotanims;
-   static NodeCache SpotAnimationDefinition_cachedModels;
+   static final NodeCache spotanims;
+   static final NodeCache SpotAnimationDefinition_cachedModels;
    int id;
-   int field3487;
+   private int field3487;
    public int field3497;
-   short[] field3488;
-   short[] field3490;
-   short[] field3491;
-   short[] field3492;
-   int widthScale;
-   int heightScale;
-   int orientation;
-   int field3496;
-   int field3489;
+   private short[] field3488;
+   private short[] field3490;
+   private short[] field3491;
+   private short[] field3492;
+   private int widthScale;
+   private int heightScale;
+   private int orientation;
+   private int field3496;
+   private int field3489;
 
    static {
       spotanims = new NodeCache(64);
@@ -32,9 +32,29 @@ public class Spotanim extends CacheableNode {
       this.field3489 = 0;
    }
 
-   void decode(Buffer var1) {
+    static void method210(final IndexDataBase var0, final IndexDataBase var1) {
+       SpotAnimationDefinition_indexCache = var0;
+       SpotAnimationDefinition_modelIndexCache = var1;
+    }
+
+    public static Spotanim getSpotAnimType(final int var0) {
+       Spotanim var1 = (Spotanim) spotanims.get(var0);
+        if (var1 == null) {
+            final byte[] var2 = SpotAnimationDefinition_indexCache.getConfigData(13, var0);
+            var1 = new Spotanim();
+            var1.id = var0;
+            if (var2 != null) {
+                var1.decode(new Buffer(var2));
+            }
+
+            spotanims.put(var1, var0);
+        }
+        return var1;
+    }
+
+    void decode(final Buffer var1) {
       while(true) {
-         int var2 = var1.readUnsignedByte();
+         final int var2 = var1.readUnsignedByte();
          if(var2 == 0) {
             return;
          }
@@ -43,7 +63,7 @@ public class Spotanim extends CacheableNode {
       }
    }
 
-   void readNext(Buffer var1, int var2) {
+   private void readNext(final Buffer var1, final int var2) {
       if(var2 == 1) {
          this.field3487 = var1.readUnsignedShort();
       } else if(var2 == 2) {
@@ -59,7 +79,7 @@ public class Spotanim extends CacheableNode {
       } else if(var2 == 8) {
          this.field3489 = var1.readUnsignedByte();
       } else {
-         int var3;
+         final int var3;
          int var4;
          if(var2 == 40) {
             var3 = var1.readUnsignedByte();
@@ -84,10 +104,10 @@ public class Spotanim extends CacheableNode {
 
    }
 
-   public final Model getModel(int var1) {
-      Model var2 = (Model)SpotAnimationDefinition_cachedModels.get((long)this.id);
+   public final Model getModel(final int var1) {
+      Model var2 = (Model)SpotAnimationDefinition_cachedModels.get(this.id);
       if(var2 == null) {
-         ModelData var3 = ModelData.method2645(SpotAnimationDefinition_modelIndexCache, this.field3487, 0);
+         final ModelData var3 = ModelData.method2645(SpotAnimationDefinition_modelIndexCache, this.field3487, 0);
          if(var3 == null) {
             return null;
          }
@@ -106,10 +126,10 @@ public class Spotanim extends CacheableNode {
          }
 
          var2 = var3.light(this.field3496 + 64, this.field3489 + 850, -30, -50, -30);
-         SpotAnimationDefinition_cachedModels.put(var2, (long)this.id);
+         SpotAnimationDefinition_cachedModels.put(var2, this.id);
       }
 
-      Model var5;
+      final Model var5;
       if(this.field3497 != -1 && var1 != -1) {
          var5 = CombatInfo1.getAnimation(this.field3497).transformSpotAnimModel(var2, var1);
       } else {

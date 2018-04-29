@@ -4,14 +4,14 @@ public class KitDefinition extends CacheableNode {
    public static IndexDataBase identKit_ref;
    public static IndexDataBase field3516;
    public static int field3519;
-   public static NodeCache identKits;
+   public static final NodeCache identKits;
    public int bodyPartId;
-   int[] modelIds;
-   short[] recolorToFind;
-   short[] recolorToReplace;
-   short[] retextureToFind;
-   short[] retextureToReplace;
-   int[] models;
+   private int[] modelIds;
+   private short[] recolorToFind;
+   private short[] recolorToReplace;
+   private short[] retextureToFind;
+   private short[] retextureToReplace;
+   private int[] models;
    public boolean nonSelectable;
 
    static {
@@ -24,9 +24,9 @@ public class KitDefinition extends CacheableNode {
       this.nonSelectable = false;
    }
 
-   void decode(Buffer var1) {
+   void decode(final Buffer var1) {
       while(true) {
-         int var2 = var1.readUnsignedByte();
+         final int var2 = var1.readUnsignedByte();
          if(var2 == 0) {
             return;
          }
@@ -35,11 +35,11 @@ public class KitDefinition extends CacheableNode {
       }
    }
 
-   void readNext(Buffer var1, int var2) {
+   private void readNext(final Buffer var1, final int var2) {
       if(var2 == 1) {
          this.bodyPartId = var1.readUnsignedByte();
       } else {
-         int var3;
+         final int var3;
          int var4;
          if(var2 == 2) {
             var3 = var1.readUnsignedByte();
@@ -81,11 +81,11 @@ public class KitDefinition extends CacheableNode {
       } else {
          boolean var1 = true;
 
-         for(int var2 = 0; var2 < this.modelIds.length; ++var2) {
-            if(!field3516.tryLoadRecord(this.modelIds[var2], 0)) {
-               var1 = false;
-            }
-         }
+          for (final int modelId : this.modelIds) {
+              if (!field3516.tryLoadRecord(modelId, 0)) {
+                  var1 = false;
+              }
+          }
 
          return var1;
       }
@@ -95,13 +95,13 @@ public class KitDefinition extends CacheableNode {
       if(this.modelIds == null) {
          return null;
       } else {
-         ModelData[] var1 = new ModelData[this.modelIds.length];
+         final ModelData[] var1 = new ModelData[this.modelIds.length];
 
          for(int var2 = 0; var2 < this.modelIds.length; ++var2) {
             var1[var2] = ModelData.method2645(field3516, this.modelIds[var2], 0);
          }
 
-         ModelData var4;
+         final ModelData var4;
          if(var1.length == 1) {
             var4 = var1[0];
          } else {
@@ -138,7 +138,7 @@ public class KitDefinition extends CacheableNode {
    }
 
    public ModelData method4837() {
-      ModelData[] var1 = new ModelData[5];
+      final ModelData[] var1 = new ModelData[5];
       int var2 = 0;
 
       for(int var3 = 0; var3 < 5; ++var3) {
@@ -147,7 +147,7 @@ public class KitDefinition extends CacheableNode {
          }
       }
 
-      ModelData var5 = new ModelData(var1, var2);
+      final ModelData var5 = new ModelData(var1, var2);
       int var4;
       if(this.recolorToFind != null) {
          for(var4 = 0; var4 < this.recolorToFind.length; ++var4) {

@@ -1,8 +1,8 @@
 package com.oldscape.client;
 
-public class InvType extends CacheableNode {
+class InvType extends CacheableNode {
    public static IndexDataBase field3449;
-   public static NodeCache inventoryCache;
+   public static final NodeCache inventoryCache;
    public int size;
 
    static {
@@ -13,9 +13,9 @@ public class InvType extends CacheableNode {
       this.size = 0;
    }
 
-   public void decode(Buffer var1) {
+   public void decode(final Buffer var1) {
       while(true) {
-         int var2 = var1.readUnsignedByte();
+         final int var2 = var1.readUnsignedByte();
          if(var2 == 0) {
             return;
          }
@@ -24,7 +24,7 @@ public class InvType extends CacheableNode {
       }
    }
 
-   void method4716(Buffer var1, int var2) {
+   private void method4716(final Buffer var1, final int var2) {
       if(var2 == 2) {
          this.size = var1.readUnsignedShort();
       }

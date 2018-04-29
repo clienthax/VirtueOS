@@ -2,7 +2,7 @@ package com.oldscape.client;
 
 public class GrandExchangeOffer {
    static int cameraPitch;
-   byte state;
+   private byte state;
    public int itemId;
    public int price;
    public int totalQuantity;
@@ -12,7 +12,7 @@ public class GrandExchangeOffer {
    public GrandExchangeOffer() {
    }
 
-   public GrandExchangeOffer(Buffer var1, boolean var2) {
+   public GrandExchangeOffer(final Buffer var1) {
       this.state = var1.readByte();
       this.itemId = var1.readUnsignedShort();
       this.price = var1.readInt();
@@ -29,12 +29,12 @@ public class GrandExchangeOffer {
       return (this.state & 8) == 8?1:0;
    }
 
-   void method109(int var1) {
+   void method109(final int var1) {
       this.state &= -8;
       this.state = (byte)(this.state | var1 & 7);
    }
 
-   void method104(int var1) {
+   void method104(final int var1) {
       this.state &= -9;
       if(var1 == 1) {
          this.state = (byte)(this.state | 8);
@@ -42,193 +42,156 @@ public class GrandExchangeOffer {
 
    }
 
-   static synchronized byte[] method127(int var0) {
-      return class195.method3729(var0, false);
+   static synchronized byte[] method127(final int var0) {
+      return class195.method3729(var0);
    }
 
-   static int method110(int var0, Script var1, boolean var2) {
-      if(var0 == 5306) {
-         int[] var3 = class81.intStack;
-         int var4 = ++WorldComparator.intStackSize - 1;
-         int var5 = Client.isResized?2:1;
-         var3[var4] = var5;
-         return 1;
+   static void method125(final Actor actor) {
+      actor.poseAnimation = actor.idlePoseAnimation;
+      if(actor.queueSize == 0) {
+         actor.field1158 = 0;
       } else {
-         int var6;
-         if(var0 == 5307) {
-            var6 = class81.intStack[--WorldComparator.intStackSize];
-            if(var6 == 1 || var6 == 2) {
-               GameCanvas.method832(var6);
-            }
-
-            return 1;
-         } else if(var0 == 5308) {
-            class81.intStack[++WorldComparator.intStackSize - 1] = Client.preferences.screenType;
-            return 1;
-         } else if(var0 != 5309) {
-            return 2;
-         } else {
-            var6 = class81.intStack[--WorldComparator.intStackSize];
-            if(var6 == 1 || var6 == 2) {
-               Client.preferences.screenType = var6;
-               MouseInput.method1062();
-            }
-
-            return 1;
-         }
-      }
-   }
-
-   static final void method125(Actor var0) {
-      var0.poseAnimation = var0.idlePoseAnimation;
-      if(var0.queueSize == 0) {
-         var0.field1158 = 0;
-      } else {
-         if(var0.animation != -1 && var0.actionAnimationDisable == 0) {
-            Sequence var1 = CombatInfo1.getAnimation(var0.animation);
-            if(var0.field1216 > 0 && var1.precedenceAnimating == 0) {
-               ++var0.field1158;
+         if(actor.animation != -1 && actor.actionAnimationDisable == 0) {
+            final Sequence sequence = CombatInfo1.getAnimation(actor.animation);
+            if(actor.field1216 > 0 && sequence.precedenceAnimating == 0) {
+               ++actor.field1158;
                return;
             }
 
-            if(var0.field1216 <= 0 && var1.priority == 0) {
-               ++var0.field1158;
+            if(actor.field1216 <= 0 && sequence.priority == 0) {
+               ++actor.field1158;
                return;
             }
          }
 
-         int var10 = var0.x;
-         int var2 = var0.y;
-         int var3 = var0.pathX[var0.queueSize - 1] * 128 + var0.field1172 * 64;
-         int var4 = var0.pathY[var0.queueSize - 1] * 128 + var0.field1172 * 64;
-         if(var10 < var3) {
-            if(var2 < var4) {
-               var0.orientation = 1280;
-            } else if(var2 > var4) {
-               var0.orientation = 1792;
+         final int var10 = actor.x;
+         final int var2 = actor.y;
+         final int x = actor.pathX[actor.queueSize - 1] * 128 + actor.size * 64;
+         final int y = actor.pathY[actor.queueSize - 1] * 128 + actor.size * 64;
+         if(var10 < x) {
+            if(var2 < y) {
+               actor.orientation = 1280;
+            } else if(var2 > y) {
+               actor.orientation = 1792;
             } else {
-               var0.orientation = 1536;
+               actor.orientation = 1536;
             }
-         } else if(var10 > var3) {
-            if(var2 < var4) {
-               var0.orientation = 768;
-            } else if(var2 > var4) {
-               var0.orientation = 256;
+         } else if(var10 > x) {
+            if(var2 < y) {
+               actor.orientation = 768;
+            } else if(var2 > y) {
+               actor.orientation = 256;
             } else {
-               var0.orientation = 512;
+               actor.orientation = 512;
             }
-         } else if(var2 < var4) {
-            var0.orientation = 1024;
-         } else if(var2 > var4) {
-            var0.orientation = 0;
+         } else if(var2 < y) {
+            actor.orientation = 1024;
+         } else if(var2 > y) {
+            actor.orientation = 0;
          }
 
-         byte var5 = var0.pathTraversed[var0.queueSize - 1];
-         if(var3 - var10 <= 256 && var3 - var10 >= -256 && var4 - var2 <= 256 && var4 - var2 >= -256) {
-            int var6 = var0.orientation - var0.angle & 2047;
+         final byte var5 = actor.pathTraversed[actor.queueSize - 1];
+         if(x - var10 <= 256 && x - var10 >= -256 && y - var2 <= 256 && y - var2 >= -256) {
+            int var6 = actor.orientation - actor.angle & 2047;
             if(var6 > 1024) {
                var6 -= 2048;
             }
 
-            int var7 = var0.field1209;
+            int var7 = actor.rotate180Animation;
             if(var6 >= -256 && var6 <= 256) {
-               var7 = var0.field1165;
+               var7 = actor.walkingAnimation;
             } else if(var6 >= 256 && var6 < 768) {
-               var7 = var0.field1177;
+               var7 = actor.rotate90LeftAnimation;
             } else if(var6 >= -768 && var6 <= -256) {
-               var7 = var0.field1167;
+               var7 = actor.rotate90RightAnimation;
             }
 
             if(var7 == -1) {
-               var7 = var0.field1165;
+               var7 = actor.walkingAnimation;
             }
 
-            var0.poseAnimation = var7;
+            actor.poseAnimation = var7;
             int var8 = 4;
             boolean var9 = true;
-            if(var0 instanceof NPC) {
-               var9 = ((NPC)var0).composition.isClickable;
+            if(actor instanceof NPC) {
+               var9 = ((NPC)actor).composition.isClickable;
             }
 
             if(var9) {
-               if(var0.angle != var0.orientation && var0.interacting == -1 && var0.field1205 != 0) {
+               if(actor.angle != actor.orientation && actor.interacting == -1 && actor.rotation != 0) {
                   var8 = 2;
                }
 
-               if(var0.queueSize > 2) {
+               if(actor.queueSize > 2) {
                   var8 = 6;
                }
 
-               if(var0.queueSize > 3) {
+               if(actor.queueSize > 3) {
                   var8 = 8;
                }
 
-               if(var0.field1158 > 0 && var0.queueSize > 1) {
-                  var8 = 8;
-                  --var0.field1158;
-               }
             } else {
-               if(var0.queueSize > 1) {
+               if(actor.queueSize > 1) {
                   var8 = 6;
                }
 
-               if(var0.queueSize > 2) {
+               if(actor.queueSize > 2) {
                   var8 = 8;
                }
 
-               if(var0.field1158 > 0 && var0.queueSize > 1) {
-                  var8 = 8;
-                  --var0.field1158;
-               }
             }
+             if(actor.field1158 > 0 && actor.queueSize > 1) {
+                var8 = 8;
+                --actor.field1158;
+             }
 
-            if(var5 == 2) {
+             if(var5 == 2) {
                var8 <<= 1;
             }
 
-            if(var8 >= 8 && var0.poseAnimation == var0.field1165 && var0.field1169 != -1) {
-               var0.poseAnimation = var0.field1169;
+            if(var8 >= 8 && actor.poseAnimation == actor.walkingAnimation && actor.field1169 != -1) {
+               actor.poseAnimation = actor.field1169;
             }
 
-            if(var10 != var3 || var2 != var4) {
-               if(var10 < var3) {
-                  var0.x += var8;
-                  if(var0.x > var3) {
-                     var0.x = var3;
+            if(var10 != x || var2 != y) {
+               if(var10 < x) {
+                  actor.x += var8;
+                  if(actor.x > x) {
+                     actor.x = x;
                   }
-               } else if(var10 > var3) {
-                  var0.x -= var8;
-                  if(var0.x < var3) {
-                     var0.x = var3;
+               } else if(var10 > x) {
+                  actor.x -= var8;
+                  if(actor.x < x) {
+                     actor.x = x;
                   }
                }
 
-               if(var2 < var4) {
-                  var0.y += var8;
-                  if(var0.y > var4) {
-                     var0.y = var4;
+               if(var2 < y) {
+                  actor.y += var8;
+                  if(actor.y > y) {
+                     actor.y = y;
                   }
-               } else if(var2 > var4) {
-                  var0.y -= var8;
-                  if(var0.y < var4) {
-                     var0.y = var4;
+               } else if(var2 > y) {
+                  actor.y -= var8;
+                  if(actor.y < y) {
+                     actor.y = y;
                   }
                }
             }
 
-            if(var3 == var0.x && var4 == var0.y) {
-               --var0.queueSize;
-               if(var0.field1216 > 0) {
-                  --var0.field1216;
+            if(x == actor.x && y == actor.y) {
+               --actor.queueSize;
+               if(actor.field1216 > 0) {
+                  --actor.field1216;
                }
             }
 
          } else {
-            var0.x = var3;
-            var0.y = var4;
-            --var0.queueSize;
-            if(var0.field1216 > 0) {
-               --var0.field1216;
+            actor.x = x;
+            actor.y = y;
+            --actor.queueSize;
+            if(actor.field1216 > 0) {
+               --actor.field1216;
             }
 
          }

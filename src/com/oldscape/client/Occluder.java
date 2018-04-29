@@ -1,6 +1,6 @@
 package com.oldscape.client;
 
-public final class Occluder {
+final class Occluder {
    int minTileX;
    int maxTIleX;
    int minTileZ;

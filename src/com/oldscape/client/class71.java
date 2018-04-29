@@ -5,12 +5,12 @@ public class class71 extends class178 {
    static long field834;
    static IndexData indexInterfaces;
 
-   protected boolean vmethod3428(int var1, int var2, int var3, CollisionData var4) {
+   protected boolean vmethod3428(final int var1, final int var2, final int var3, final CollisionData collisionData) {
       return var2 == super.field2296 && var3 == super.field2293;
    }
 
-   static final void method1184(int var0) {
-      short var1 = 256;
+   static void method1184(final int var0) {
+      final short var1 = 256;
       class90.field1369 += var0 * 128;
       int var2;
       if(class90.field1369 > MouseRecorder.field819.length) {
@@ -20,8 +20,8 @@ public class class71 extends class178 {
       }
 
       var2 = 0;
-      int var3 = var0 * 128;
-      int var4 = (var1 - var0) * 128;
+      final int var3 = var0 * 128;
+      final int var4 = (var1 - var0) * 128;
 
       int var5;
       int var6;
@@ -58,7 +58,7 @@ public class class71 extends class178 {
       }
 
       if(class90.field1367 == 0 && class90.field1358 == 0) {
-         var5 = (int)(Math.random() * (double)(2000 / var0));
+         var5 = (int)(Math.random() * (2000 / var0));
          if(var5 == 0) {
             class90.field1367 = 1024;
          }
@@ -73,7 +73,7 @@ public class class71 extends class178 {
       }
 
       for(var5 = var1 - var0; var5 < var1; ++var5) {
-         class90.field1366[var5] = (int)(Math.sin((double)class90.field1368 / 14.0D) * 16.0D + Math.sin((double)class90.field1368 / 15.0D) * 14.0D + Math.sin((double)class90.field1368 / 16.0D) * 12.0D);
+         class90.field1366[var5] = (int)(Math.sin(class90.field1368 / 14.0D) * 16.0D + Math.sin(class90.field1368 / 15.0D) * 14.0D + Math.sin(class90.field1368 / 16.0D) * 12.0D);
          ++class90.field1368;
       }
 
@@ -130,10 +130,10 @@ public class class71 extends class178 {
 
    }
 
-   static final void method1181(Widget var0, int var1, int var2) {
+   static void method1181(final Widget var0, final int var1, final int var2) {
       if(Client.field1099 == 0 || Client.field1099 == 3) {
          if(MouseInput.mouseLastButton == 1 || !MapIconReference.middleMouseMovesCamera && MouseInput.mouseLastButton == 4) {
-            class236 var3 = var0.method4425(true);
+            final class236 var3 = var0.method4425(true);
             if(var3 == null) {
                return;
             }
@@ -141,16 +141,16 @@ public class class71 extends class178 {
             int var4 = MouseInput.mouseLastPressedX - var1;
             int var5 = MouseInput.mouseLastPressedY - var2;
             if(var3.method4346(var4, var5)) {
-               var4 -= var3.field2773 / 2;
-               var5 -= var3.field2772 / 2;
-               int var6 = Client.mapAngle & 2047;
-               int var7 = Graphics3D.SINE[var6];
-               int var8 = Graphics3D.COSINE[var6];
-               int var9 = var5 * var7 + var8 * var4 >> 11;
-               int var10 = var8 * var5 - var4 * var7 >> 11;
-               int var11 = var9 + SoundTaskDataProvider.localPlayer.x >> 7;
-               int var12 = SoundTaskDataProvider.localPlayer.y - var10 >> 7;
-               PacketNode var13 = WorldMapRectangle.method280(ClientPacket.field2396, Client.field957.field1484);
+               var4 -= var3.width / 2;
+               var5 -= var3.height / 2;
+               final int var6 = Client.mapAngle & 2047;
+               final int var7 = Graphics3D.SINE[var6];
+               final int var8 = Graphics3D.COSINE[var6];
+               final int var9 = var5 * var7 + var8 * var4 >> 11;
+               final int var10 = var8 * var5 - var4 * var7 >> 11;
+               final int var11 = var9 + Client.localPlayer.x >> 7;
+               final int var12 = Client.localPlayer.y - var10 >> 7;
+               final PacketNode var13 = WorldMapRectangle.method280(ClientPacket.field2396, Client.field957.field1484);
                var13.packetBuffer.putByte(18);
                var13.packetBuffer.method3542(KeyFocusListener.keyPressed[82]?(KeyFocusListener.keyPressed[81]?2:1):0);
                var13.packetBuffer.method3550(var12 + class23.baseY);
@@ -162,8 +162,8 @@ public class class71 extends class178 {
                var13.packetBuffer.putByte(0);
                var13.packetBuffer.putByte(0);
                var13.packetBuffer.putByte(89);
-               var13.packetBuffer.putShort(SoundTaskDataProvider.localPlayer.x);
-               var13.packetBuffer.putShort(SoundTaskDataProvider.localPlayer.y);
+               var13.packetBuffer.putShort(Client.localPlayer.x);
+               var13.packetBuffer.putShort(Client.localPlayer.y);
                var13.packetBuffer.putByte(63);
                Client.field957.method2052(var13);
                Client.destinationX = var11;

@@ -44,12 +44,12 @@ public class MouseInput implements MouseListener, MouseMotionListener, FocusList
       mouseLastPressedTimeMillis = 0L;
    }
 
-   final int method1036(MouseEvent var1) {
-      int var2 = var1.getButton();
+   private int method1036(final MouseEvent var1) {
+      final int var2 = var1.getButton();
       return !var1.isAltDown() && var2 != 2?(!var1.isMetaDown() && var2 != 3?1:2):4;
    }
 
-   public final synchronized void mouseDragged(MouseEvent var1) {
+   public final synchronized void mouseDragged(final MouseEvent var1) {
       if(mouse != null) {
          mouseIdleTicks = 0;
          mouseX = var1.getX();
@@ -58,7 +58,7 @@ public class MouseInput implements MouseListener, MouseMotionListener, FocusList
 
    }
 
-   public final synchronized void mousePressed(MouseEvent var1) {
+   public final synchronized void mousePressed(final MouseEvent var1) {
       if(mouse != null) {
          mouseIdleTicks = 0;
          MouseHandler_lastPressedX = var1.getX();
@@ -76,7 +76,7 @@ public class MouseInput implements MouseListener, MouseMotionListener, FocusList
 
    }
 
-   public final synchronized void mouseReleased(MouseEvent var1) {
+   public final synchronized void mouseReleased(final MouseEvent var1) {
       if(mouse != null) {
          mouseIdleTicks = 0;
          MouseHandler_currentButton = 0;
@@ -88,14 +88,14 @@ public class MouseInput implements MouseListener, MouseMotionListener, FocusList
 
    }
 
-   public final void mouseClicked(MouseEvent var1) {
+   public final void mouseClicked(final MouseEvent var1) {
       if(var1.isPopupTrigger()) {
          var1.consume();
       }
 
    }
 
-   public final synchronized void mouseExited(MouseEvent var1) {
+   public final synchronized void mouseExited(final MouseEvent var1) {
       if(mouse != null) {
          mouseIdleTicks = 0;
          mouseX = -1;
@@ -104,7 +104,7 @@ public class MouseInput implements MouseListener, MouseMotionListener, FocusList
 
    }
 
-   public final synchronized void mouseEntered(MouseEvent var1) {
+   public final synchronized void mouseEntered(final MouseEvent var1) {
       if(mouse != null) {
          mouseIdleTicks = 0;
          mouseX = var1.getX();
@@ -113,7 +113,7 @@ public class MouseInput implements MouseListener, MouseMotionListener, FocusList
 
    }
 
-   public final synchronized void mouseMoved(MouseEvent var1) {
+   public final synchronized void mouseMoved(final MouseEvent var1) {
       if(mouse != null) {
          mouseIdleTicks = 0;
          mouseX = var1.getX();
@@ -122,10 +122,10 @@ public class MouseInput implements MouseListener, MouseMotionListener, FocusList
 
    }
 
-   public final void focusGained(FocusEvent var1) {
+   public final void focusGained(final FocusEvent var1) {
    }
 
-   public final synchronized void focusLost(FocusEvent var1) {
+   public final synchronized void focusLost(final FocusEvent var1) {
       if(mouse != null) {
          MouseHandler_currentButton = 0;
       }
@@ -141,16 +141,16 @@ public class MouseInput implements MouseListener, MouseMotionListener, FocusList
 
       try {
          var0 = NPC.getPreferencesFile("", class265.field3435.name, true);
-         Buffer var1 = Client.preferences.serialize();
+         final Buffer var1 = Client.preferences.serialize();
          var0.write(var1.payload, 0, var1.offset);
-      } catch (Exception var3) {
+      } catch (final Exception ignored) {
       }
 
       try {
          if(var0 != null) {
             var0.closeSync(true);
          }
-      } catch (Exception var2) {
+      } catch (final Exception ignored) {
       }
 
    }
@@ -185,7 +185,7 @@ public class MouseInput implements MouseListener, MouseMotionListener, FocusList
       return var0 + var1;
    }
 
-   static void method1051(int var0) {
+   static void method1051(final int var0) {
       if(var0 == -3) {
          BoundingBox3DDrawMode.method53("Connection timed out.", "Please try using a different world.", "");
       } else if(var0 == -2) {

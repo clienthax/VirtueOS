@@ -1,27 +1,26 @@
 package com.oldscape.client;
 
-public class class289 {
+class class289 {
    public static int field3777;
 
-   static final void method5207(int var0, int var1, boolean var2) {
+   static void method5207(final int var0, final int var1, final boolean var2) {
       if(!var2 || var0 != ScriptState.field761 || GrandExchangeEvent.field301 != var1) {
          ScriptState.field761 = var0;
          GrandExchangeEvent.field301 = var1;
          class64.setGameState(25);
-         CombatInfo1.method1681("Loading - please wait.", true);
-         int var3 = class138.baseX;
+         Client.method1681("Loading - please wait.", true);
+         final int var3 = class138.baseX;
          int var4 = class23.baseY;
          class138.baseX = (var0 - 6) * 8;
          class23.baseY = (var1 - 6) * 8;
-         int var5 = class138.baseX - var3;
-         int var6 = class23.baseY - var4;
-         var3 = class138.baseX;
+         final int var5 = class138.baseX - var3;
+         final int var6 = class23.baseY - var4;
          var4 = class23.baseY;
 
          int var7;
          int var9;
          for(var7 = 0; var7 < 32768; ++var7) {
-            NPC var8 = Client.cachedNPCs[var7];
+            final NPC var8 = Client.cachedNPCs[var7];
             if(var8 != null) {
                for(var9 = 0; var9 < 10; ++var9) {
                   var8.pathX[var9] -= var5;
@@ -34,7 +33,7 @@ public class class289 {
          }
 
          for(var7 = 0; var7 < 2048; ++var7) {
-            Player var21 = Client.cachedPlayers[var7];
+            final Player var21 = Client.cachedPlayers[var7];
             if(var21 != null) {
                for(var9 = 0; var9 < 10; ++var9) {
                   var21.pathX[var9] -= var5;
@@ -67,8 +66,8 @@ public class class289 {
          int var14;
          for(int var13 = var20; var13 != var18; var13 += var22) {
             for(var14 = var10; var11 != var14; var14 += var12) {
-               int var15 = var13 + var5;
-               int var16 = var6 + var14;
+               final int var15 = var13 + var5;
+               final int var16 = var6 + var14;
 
                for(int var17 = 0; var17 < 4; ++var17) {
                   if(var15 >= 0 && var16 >= 0 && var15 < 104 && var16 < 104) {
@@ -97,7 +96,7 @@ public class class289 {
          Client.field1111 = false;
          Player.cameraX -= var5 << 7;
          class20.cameraY -= var6 << 7;
-         class169.field2228 -= var5 << 7;
+         GameCanvas.field2228 -= var5 << 7;
          class46.field578 -= var6 << 7;
          Client.field881 = -1;
          Client.graphicsObjectDeque.clear();

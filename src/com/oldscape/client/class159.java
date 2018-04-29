@@ -1,4 +1,4 @@
 package com.oldscape.client;
 
-public interface class159 {
+interface class159 {
 }

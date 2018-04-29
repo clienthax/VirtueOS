@@ -1,18 +1,18 @@
 package com.oldscape.client;
 
-public final class SceneTilePaint {
+final class SceneTilePaint {
    static Varcs varcs;
    public static class110 field1965;
    static Fonts fonts;
-   int swColor;
-   int seColor;
-   int neColor;
-   int nwColor;
-   int texture;
+   final int swColor;
+   final int seColor;
+   final int neColor;
+   final int nwColor;
+   final int texture;
    boolean flatShade;
-   int rgb;
+   final int rgb;
 
-   SceneTilePaint(int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
+   SceneTilePaint(final int var1, final int var2, final int var3, final int var4, final int var5, final int var6, final boolean var7) {
       this.flatShade = true;
       this.swColor = var1;
       this.seColor = var2;

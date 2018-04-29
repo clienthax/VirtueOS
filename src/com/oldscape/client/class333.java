@@ -1,18 +1,18 @@
 package com.oldscape.client;
 
-public class class333 {
-   String field4000;
-   IndexDataBase field4003;
-   int field4004;
-   boolean field4005;
+class class333 {
+   private String field4000;
+   private final IndexDataBase field4003;
+   private int field4004;
+   private boolean field4005;
 
-   class333(IndexDataBase var1) {
+   class333(final IndexDataBase var1) {
       this.field4004 = 0;
       this.field4005 = false;
       this.field4003 = var1;
    }
 
-   void method5995(String var1) {
+   void method5995(final String var1) {
       if(var1 != null && !var1.isEmpty()) {
          if(var1 != this.field4000) {
             this.field4000 = var1;

@@ -1,7 +1,7 @@
 package com.oldscape.client;
 
-public class Script extends CacheableNode {
-   static NodeCache field1459;
+class Script extends CacheableNode {
+   static final NodeCache field1459;
    static int field1455;
    int[] instructions;
    int[] intOperands;
@@ -16,7 +16,7 @@ public class Script extends CacheableNode {
       field1459 = new NodeCache(128);
    }
 
-   IterableHashTable[] method2016(int var1) {
+   IterableHashTable[] method2016(final int var1) {
       return new IterableHashTable[var1];
    }
 }

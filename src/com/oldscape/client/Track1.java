@@ -4,10 +4,10 @@ public class Track1 extends Node {
    HashTable field2770;
    byte[] field2769;
 
-   Track1(Buffer var1) {
+   private Track1(final Buffer var1) {
       var1.offset = var1.payload.length - 3;
-      int var2 = var1.readUnsignedByte();
-      int var3 = var1.readUnsignedShort();
+      final int var2 = var1.readUnsignedByte();
+      final int var3 = var1.readUnsignedShort();
       int var4 = var2 * 10 + 14;
       var1.offset = 0;
       int var5 = 0;
@@ -164,7 +164,7 @@ public class Track1 extends Node {
       int var50 = var1.offset;
       var1.offset += var5 * 3;
       this.field2769 = new byte[var4];
-      Buffer var51 = new Buffer(this.field2769);
+      final Buffer var51 = new Buffer(this.field2769);
       var51.putInt(1297377380);
       var51.putInt(6);
       var51.putShort(var2 > 1?1:0);
@@ -178,22 +178,22 @@ public class Track1 extends Node {
       int var56 = 0;
       int var57 = 0;
       int var58 = 0;
-      int[] var59 = new int[128];
+      final int[] var59 = new int[128];
       var28 = 0;
 
       label226:
       for(int var60 = 0; var60 < var2; ++var60) {
          var51.putInt(1297379947);
          var51.offset += 4;
-         int var61 = var51.offset;
+         final int var61 = var51.offset;
          int var62 = -1;
 
          while(true) {
             while(true) {
-               int var63 = var1.readVarInt();
+               final int var63 = var1.readVarInt();
                var51.putVarInt(var63);
-               int var64 = var1.payload[var29++] & 255;
-               boolean var65 = var64 != var62;
+               final int var64 = var1.payload[var29++] & 255;
+               final boolean var65 = var64 != var62;
                var62 = var64 & 15;
                if(var64 == 7) {
                   if(var65) {
@@ -243,7 +243,7 @@ public class Track1 extends Node {
 
                      var28 = var28 + var1.payload[var15++] & 127;
                      var51.putByte(var28);
-                     byte var66;
+                     final byte var66;
                      if(var28 != 0 && var28 != 32) {
                         if(var28 == 1) {
                            var66 = var1.payload[var34++];
@@ -274,7 +274,7 @@ public class Track1 extends Node {
                         var66 = var1.payload[var44++];
                      }
 
-                     int var67 = var66 + var59[var28];
+                     final int var67 = var66 + var59[var28];
                      var59[var28] = var67;
                      var51.putByte(var67 & 127);
                   } else if(var62 == 3) {
@@ -323,12 +323,12 @@ public class Track1 extends Node {
    void method4337() {
       if(this.field2770 == null) {
          this.field2770 = new HashTable(16);
-         int[] var1 = new int[16];
-         int[] var2 = new int[16];
+         final int[] var1 = new int[16];
+         final int[] var2 = new int[16];
          var2[9] = 128;
          var1[9] = 128;
-         class232 var4 = new class232(this.field2769);
-         int var5 = var4.method4270();
+         final class232 var4 = new class232(this.field2769);
+         final int var5 = var4.method4270();
 
          int var6;
          for(var6 = 0; var6 < var5; ++var6) {
@@ -341,18 +341,18 @@ public class Track1 extends Node {
          do {
             while(true) {
                var6 = var4.method4279();
-               int var7 = var4.field2753[var6];
+               final int var7 = var4.field2753[var6];
 
                while(var7 == var4.field2753[var6]) {
                   var4.method4271(var6);
-                  int var8 = var4.method4275(var6);
+                  final int var8 = var4.method4275(var6);
                   if(var8 == 1) {
                      var4.method4273();
                      var4.method4272(var6);
                      continue label53;
                   }
 
-                  int var9 = var8 & 240;
+                  final int var9 = var8 & 240;
                   int var10;
                   int var11;
                   int var12;
@@ -380,11 +380,11 @@ public class Track1 extends Node {
                      var11 = var8 >> 8 & 127;
                      var12 = var8 >> 16 & 127;
                      if(var12 > 0) {
-                        int var13 = var2[var10];
-                        ByteArrayNode var14 = (ByteArrayNode)this.field2770.get((long)var13);
+                        final int var13 = var2[var10];
+                        ByteArrayNode var14 = (ByteArrayNode)this.field2770.get(var13);
                         if(var14 == null) {
                            var14 = new ByteArrayNode(new byte[128]);
-                           this.field2770.put(var14, (long)var13);
+                           this.field2770.put(var14, var13);
                         }
 
                         var14.byteArray[var11] = 1;
@@ -404,8 +404,8 @@ public class Track1 extends Node {
       this.field2770 = null;
    }
 
-   public static Track1 getMusicFile(IndexDataBase var0, int var1, int var2) {
-      byte[] var3 = var0.getConfigData(var1, var2);
+   public static Track1 getMusicFile(final IndexDataBase var0, final int var1, final int var2) {
+      final byte[] var3 = var0.getConfigData(var1, var2);
       return var3 == null?null:new Track1(new Buffer(var3));
    }
 }

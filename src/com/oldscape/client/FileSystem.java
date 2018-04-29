@@ -1,19 +1,18 @@
 package com.oldscape.client;
 
-public class FileSystem extends Node {
-   static int[] indexedSpriteOffsetYs;
-   int type;
+class FileSystem extends Node {
+    int type;
    public byte[] field3367;
    public IndexFile index;
    public IndexData data;
 
-   static final WidgetNode method4523(int var0, int var1, int var2) {
-      WidgetNode var3 = new WidgetNode();
+   static WidgetNode method4523(final int var0, final int var1, final int var2) {
+      final WidgetNode var3 = new WidgetNode();
       var3.id = var1;
       var3.owner = var2;
-      Client.componentTable.put(var3, (long)var0);
+      Client.componentTable.put(var3, var0);
       BoundingBox.method45(var1);
-      Widget var4 = class44.getWidget(var0);
+      final Widget var4 = class44.getWidget(var0);
       FontName.method5490(var4);
       if(Client.field1033 != null) {
          FontName.method5490(Client.field1033);

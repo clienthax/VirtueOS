@@ -1,5 +1,5 @@
 package com.oldscape.client;
 
-public interface MouseWheel {
+interface MouseWheel {
    int useRotation();
 }

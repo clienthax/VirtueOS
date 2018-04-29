@@ -1,12 +1,12 @@
 package com.oldscape.client;
 
-public class BuildType {
-   static final BuildType RC;
-   static final BuildType WIP;
-   static final BuildType LIVE;
-   static final BuildType BUILD_LIVE;
-   public final String identifier;
-   final int field3358;
+class BuildType {
+   private static final BuildType RC;
+   private static final BuildType WIP;
+   private static final BuildType LIVE;
+   private static final BuildType BUILD_LIVE;
+   final String identifier;
+   final int id;
 
    static {
       RC = new BuildType("LIVE", 0);
@@ -15,8 +15,19 @@ public class BuildType {
       BUILD_LIVE = new BuildType("WIP", 2);
    }
 
-   BuildType(String var1, int var2) {
-      this.identifier = var1;
-      this.field3358 = var2;
+   private BuildType(final String identifier, final int id) {
+      this.identifier = identifier;
+      this.id = id;
+   }
+
+   static BuildType getFromOrdinal(final int id) {
+
+      for (final BuildType buildType : new BuildType[]{WIP, RC, LIVE, BUILD_LIVE}) {
+           if (id == buildType.id) {
+               return buildType;
+           }
+       }
+
+      return null;
    }
 }

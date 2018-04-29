@@ -3,17 +3,17 @@ package com.oldscape.client;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class class294 {
-   long field3818;
-   long field3817;
+class class294 {
+   private long field3818;
+   private long field3817;
    public boolean field3825;
-   long field3819;
-   long field3820;
-   long field3821;
-   int field3824;
-   int field3823;
-   int field3816;
-   int field3822;
+   private long field3819;
+   private long field3820;
+   private final long field3821;
+   private int field3824;
+   private int field3823;
+   private int field3816;
+   private final int field3822;
 
    public class294() {
       this.field3818 = -1L;
@@ -40,7 +40,7 @@ public class class294 {
 
    }
 
-   public void method5212(int var1) {
+   public void method5212(final int var1) {
       this.field3817 = class64.method1118();
       this.field3824 = var1;
    }
@@ -64,7 +64,7 @@ public class class294 {
       this.method5213();
    }
 
-   public void method5225(Buffer var1) {
+   public void method5225(final Buffer var1) {
       long var2 = this.field3820;
       var2 /= 10L;
       if(var2 < 0L) {
@@ -98,7 +98,7 @@ public class class294 {
       var1.putShort(this.field3822);
    }
 
-   public static final AbstractSoundSystem method5239(Signlink var0, int var1, int var2) {
+   public static AbstractSoundSystem method5239(final int var1, int var2) {
       if(AbstractSoundSystem.sampleRate == 0) {
          throw new IllegalStateException();
       } else if(var1 >= 0 && var1 < 2) {
@@ -107,7 +107,7 @@ public class class294 {
          }
 
          try {
-            AbstractSoundSystem var3 = AbstractSoundSystem.soundTaskDataProvider.vmethod2099();
+            final AbstractSoundSystem var3 = AbstractSoundSystem.soundTaskDataProvider.getNewSoundSystem();
             var3.samples = new int[(AbstractSoundSystem.audioHighMemory?2:1) * 256];
             var3.field1570 = var2;
             var3.vmethod2247();
@@ -119,8 +119,8 @@ public class class294 {
             var3.create(var3.offset);
             if(Varbit.field3538 > 0 && WidgetNode.task == null) {
                WidgetNode.task = new SoundTask();
-               class316.field3925 = Executors.newScheduledThreadPool(1);
-               class316.field3925.scheduleAtFixedRate(WidgetNode.task, 0L, 10L, TimeUnit.MILLISECONDS);
+               class316.scheduledExecutorService = Executors.newScheduledThreadPool(1);
+               class316.scheduledExecutorService.scheduleAtFixedRate(WidgetNode.task, 0L, 10L, TimeUnit.MILLISECONDS);
             }
 
             if(WidgetNode.task != null) {
@@ -132,7 +132,7 @@ public class class294 {
             }
 
             return var3;
-         } catch (Throwable var4) {
+         } catch (final Throwable var4) {
             return new AbstractSoundSystem();
          }
       } else {

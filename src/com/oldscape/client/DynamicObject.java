@@ -1,132 +1,108 @@
 package com.oldscape.client;
 
-public class DynamicObject extends Renderable {
-   static IndexDataBase field1471;
-   int id;
-   int type;
-   int orientation;
-   int level;
-   int sceneX;
-   int sceneY;
-   Sequence field1466;
-   int animFrame;
-   int animCycleCount;
+class DynamicObject extends Renderable {
+   private final int id;
+   private final int type;
+   private final int orientation;
+   private final int level;
+   private final int sceneX;
+   private final int sceneY;
+   private Sequence animation;
+   private int animFrame;
+   private int animCycleCount;
 
-   DynamicObject(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8, Renderable var9) {
-      this.id = var1;
-      this.type = var2;
-      this.orientation = var3;
-      this.level = var4;
-      this.sceneX = var5;
-      this.sceneY = var6;
-      if(var7 != -1) {
-         this.field1466 = CombatInfo1.getAnimation(var7);
+   DynamicObject(final int id, final int type, final int orientation, final int level, final int sceneX, final int sceneY, final int animation, final boolean var8, final Renderable renderable) {
+      this.id = id;
+      this.type = type;
+      this.orientation = orientation;
+      this.level = level;
+      this.sceneX = sceneX;
+      this.sceneY = sceneY;
+      if(animation != -1) {
+         this.animation = CombatInfo1.getAnimation(animation);
          this.animFrame = 0;
          this.animCycleCount = Client.gameCycle - 1;
-         if(this.field1466.replyMode == 0 && var9 != null && var9 instanceof DynamicObject) {
-            DynamicObject var10 = (DynamicObject)var9;
-            if(var10.field1466 == this.field1466) {
-               this.animFrame = var10.animFrame;
-               this.animCycleCount = var10.animCycleCount;
+         if(this.animation.replyMode == 0 && renderable instanceof DynamicObject) {
+            final DynamicObject dynamicObject = (DynamicObject)renderable;
+            if(dynamicObject.animation == this.animation) {
+               this.animFrame = dynamicObject.animFrame;
+               this.animCycleCount = dynamicObject.animCycleCount;
                return;
             }
          }
 
-         if(var8 && this.field1466.frameStep != -1) {
-            this.animFrame = (int)(Math.random() * (double)this.field1466.frameIDs.length);
-            this.animCycleCount -= (int)(Math.random() * (double)this.field1466.frameLengths[this.animFrame]);
+         if(var8 && this.animation.frameStep != -1) {
+            this.animFrame = (int)(Math.random() * this.animation.frameIDs.length);
+            this.animCycleCount -= (int)(Math.random() * this.animation.frameLengths[this.animFrame]);
          }
       }
 
    }
 
    protected final Model getModel() {
-      if(this.field1466 != null) {
+      if(this.animation != null) {
          int var1 = Client.gameCycle - this.animCycleCount;
-         if(var1 > 100 && this.field1466.frameStep > 0) {
+         if(var1 > 100 && this.animation.frameStep > 0) {
             var1 = 100;
          }
 
          label55: {
             do {
                do {
-                  if(var1 <= this.field1466.frameLengths[this.animFrame]) {
+                  if(var1 <= this.animation.frameLengths[this.animFrame]) {
                      break label55;
                   }
 
-                  var1 -= this.field1466.frameLengths[this.animFrame];
+                  var1 -= this.animation.frameLengths[this.animFrame];
                   ++this.animFrame;
-               } while(this.animFrame < this.field1466.frameIDs.length);
+               } while(this.animFrame < this.animation.frameIDs.length);
 
-               this.animFrame -= this.field1466.frameStep;
-            } while(this.animFrame >= 0 && this.animFrame < this.field1466.frameIDs.length);
+               this.animFrame -= this.animation.frameStep;
+            } while(this.animFrame >= 0 && this.animFrame < this.animation.frameIDs.length);
 
-            this.field1466 = null;
+            this.animation = null;
          }
 
          this.animCycleCount = Client.gameCycle - var1;
       }
 
-      ObjectComposition var12 = GameCanvas.getObjectDefinition(this.id);
-      if(var12.impostorIds != null) {
-         var12 = var12.getImpostor();
+      ObjectComposition objectDefinition = GameCanvas.getObjectDefinition(this.id);
+      if(objectDefinition.impostorIds != null) {
+         objectDefinition = objectDefinition.getImpostor();
       }
 
-      if(var12 == null) {
+      if(objectDefinition == null) {
          return null;
       } else {
-         int var2;
-         int var3;
+         final int x;
+         final int y;
          if(this.orientation != 1 && this.orientation != 3) {
-            var2 = var12.width;
-            var3 = var12.length;
+            x = objectDefinition.width;
+            y = objectDefinition.length;
          } else {
-            var2 = var12.length;
-            var3 = var12.width;
+            x = objectDefinition.length;
+            y = objectDefinition.width;
          }
 
-         int var4 = (var2 >> 1) + this.sceneX;
-         int var5 = (var2 + 1 >> 1) + this.sceneX;
-         int var6 = (var3 >> 1) + this.sceneY;
-         int var7 = (var3 + 1 >> 1) + this.sceneY;
-         int[][] var8 = class62.tileHeights[this.level];
-         int var9 = var8[var5][var7] + var8[var4][var7] + var8[var4][var6] + var8[var5][var6] >> 2;
-         int var10 = (this.sceneX << 7) + (var2 << 6);
-         int var11 = (this.sceneY << 7) + (var3 << 6);
-         return var12.method5000(this.type, this.orientation, var8, var10, var9, var11, this.field1466, this.animFrame);
+         final int var4 = (x >> 1) + this.sceneX;
+         final int var5 = (x + 1 >> 1) + this.sceneX;
+         final int var6 = (y >> 1) + this.sceneY;
+         final int var7 = (y + 1 >> 1) + this.sceneY;
+         final int[][] tileHeight = class62.tileHeights[this.level];
+         final int var9 = tileHeight[var5][var7] + tileHeight[var4][var7] + tileHeight[var4][var6] + tileHeight[var5][var6] >> 2;
+         final int var10 = (this.sceneX << 7) + (x << 6);
+         final int var11 = (this.sceneY << 7) + (y << 6);
+         return objectDefinition.method5000(this.type, this.orientation, tileHeight, var10, var9, var11, this.animation, this.animFrame);
       }
    }
 
-   public static int getVarbit(int var0) {
-      Varbit var2 = (Varbit)Varbit.varbits.get((long)var0);
-      Varbit var1;
-      if(var2 != null) {
-         var1 = var2;
-      } else {
-         byte[] var7 = Varbit.varbit_ref.getConfigData(14, var0);
-         var2 = new Varbit();
-         if(var7 != null) {
-            var2.decode(new Buffer(var7));
-         }
-
-         Varbit.varbits.put(var2, (long)var0);
-         var1 = var2;
-      }
-
-      int var3 = var1.configId;
-      int var4 = var1.leastSignificantBit;
-      int var5 = var1.mostSignificantBit;
-      int var6 = class237.varpsMasks[var5 - var4];
-      return class237.clientVarps[var3] >> var4 & var6;
-   }
-
-   public static boolean method2021(int var0, int var1) {
+   public static boolean method2021(final int var0, final int var1) {
       return (var0 >> var1 + 1 & 1) != 0;
    }
 
-   static void method2024(int var0, int var1) {
-      int[] var2 = new int[4];
-      int[] var3 = new int[4];
+   static void method2024(final int var0, final int var1) {
+      final int[] var2 = new int[4];
+      final int[] var3 = new int[4];
       var2[0] = var0;
       var3[0] = var1;
       int var4 = 1;
@@ -144,7 +120,7 @@ public class DynamicObject extends Renderable {
       WorldMapType1.method308(World.worldList, 0, World.worldList.length - 1, World.field1230, World.field1229);
    }
 
-   static final void method2026(int var0, int var1) {
+   static void method2026(final int var0, final int var1) {
       if(class189.loadWidget(var0)) {
          class236.method4345(MouseRecorder.widgets[var0], var1);
       }

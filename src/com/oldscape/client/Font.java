@@ -1,15 +1,15 @@
 package com.oldscape.client;
 
 public final class Font extends FontTypeFace {
-   public Font(byte[] var1, int[] var2, int[] var3, int[] var4, int[] var5, int[] var6, byte[][] var7) {
-      super(var1, var2, var3, var4, var5, var6, var7);
+   public Font(final byte[] var1, final int[] var2, final int[] var3, final int[] var4, final int[] var5, final byte[][] var7) {
+      super(var1, var2, var3, var4, var5, var7);
    }
 
-   public Font(byte[] var1) {
+   public Font(final byte[] var1) {
       super(var1);
    }
 
-   final void renderRGB(byte[] var1, int var2, int var3, int var4, int var5, int var6) {
+   final void renderRGB(final byte[] var1, int var2, int var3, int var4, int var5, final int var6) {
       int var7 = var3 * graphicsPixelsWidth + var2;
       int var8 = graphicsPixelsWidth - var4;
       int var9 = 0;
@@ -49,7 +49,7 @@ public final class Font extends FontTypeFace {
       }
    }
 
-   final void renderRGBA(byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   final void renderRGBA(final byte[] var1, int var2, int var3, int var4, int var5, final int var6, final int var7) {
       int var8 = var3 * graphicsPixelsWidth + var2;
       int var9 = graphicsPixelsWidth - var4;
       int var10 = 0;

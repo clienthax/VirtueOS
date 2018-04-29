@@ -2,7 +2,7 @@ package com.oldscape.client;
 
 import java.math.BigInteger;
 
-public class class88 {
+class class88 {
    static final BigInteger RSA_EXPONENT;
    static final BigInteger RSA_MODULUS;
 
@@ -13,7 +13,7 @@ public class class88 {
       RSA_MODULUS = new BigInteger("165865706435016682110653568563251120094278686912987295809145491806194715902716739338411927793058925228087565434562948389222225588420069703784252638483569608159614392485969864899137973999614056797405232846059198315441808544524190866210655169682670028293787208173603935453834899795395794572295868565624049196373");
    }
 
-   static final void method1893(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   static void method1893(final int var0, final int var1, final int var2, final int var3, final int var4, final int var5, final int var6, final int var7) {
       if(class189.loadWidget(var0)) {
          class66.field785 = null;
          GameCanvas.gameDraw(MouseRecorder.widgets[var0], -1, var1, var2, var3, var4, var5, var6, var7);
@@ -34,42 +34,42 @@ public class class88 {
       }
    }
 
-   static final void method1894(Widget var0) {
-      int var1 = var0.contentType;
-      if(var1 == 324) {
+   static void method1894(final Widget widget) {
+      final int contentType = widget.contentType;
+      if(contentType == 324) {
          if(Client.field1044 == -1) {
-            Client.field1044 = var0.spriteId;
-            Client.field1138 = var0.field2858;
+            Client.field1044 = widget.spriteId;
+            Client.field1138 = widget.field2858;
          }
 
          if(Client.field1132.isFemale) {
-            var0.spriteId = Client.field1044;
+            widget.spriteId = Client.field1044;
          } else {
-            var0.spriteId = Client.field1138;
+            widget.spriteId = Client.field1138;
          }
 
-      } else if(var1 == 325) {
+      } else if(contentType == 325) {
          if(Client.field1044 == -1) {
-            Client.field1044 = var0.spriteId;
-            Client.field1138 = var0.field2858;
+            Client.field1044 = widget.spriteId;
+            Client.field1138 = widget.field2858;
          }
 
          if(Client.field1132.isFemale) {
-            var0.spriteId = Client.field1138;
+            widget.spriteId = Client.field1138;
          } else {
-            var0.spriteId = Client.field1044;
+            widget.spriteId = Client.field1044;
          }
 
-      } else if(var1 == 327) {
-         var0.rotationX = 150;
-         var0.rotationZ = (int)(Math.sin((double)Client.gameCycle / 40.0D) * 256.0D) & 2047;
-         var0.modelType = 5;
-         var0.modelId = 0;
-      } else if(var1 == 328) {
-         var0.rotationX = 150;
-         var0.rotationZ = (int)(Math.sin((double)Client.gameCycle / 40.0D) * 256.0D) & 2047;
-         var0.modelType = 5;
-         var0.modelId = 1;
+      } else if(contentType == 327) {
+         widget.rotationX = 150;
+         widget.rotationZ = (int)(Math.sin(Client.gameCycle / 40.0D) * 256.0D) & 2047;
+         widget.modelType = 5;
+         widget.modelId = 0;
+      } else if(contentType == 328) {
+         widget.rotationX = 150;
+         widget.rotationZ = (int)(Math.sin(Client.gameCycle / 40.0D) * 256.0D) & 2047;
+         widget.modelType = 5;
+         widget.modelId = 1;
       }
    }
 }

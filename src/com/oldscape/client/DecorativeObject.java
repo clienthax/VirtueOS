@@ -18,16 +18,15 @@ public final class DecorativeObject {
       this.renderInfoBitPacked = 0;
    }
 
-   static final void method3082(long var0) {
+   static void method3082(final long var0) {
       try {
          Thread.sleep(var0);
-      } catch (InterruptedException var3) {
+      } catch (final InterruptedException ignored) {
       }
 
    }
 
    public static void method3081() {
-      KeyFocusListener var0 = KeyFocusListener.keyboard;
       synchronized(KeyFocusListener.keyboard) {
          ++KeyFocusListener.keyboardIdleTicks;
          KeyFocusListener.field620 = KeyFocusListener.field623;

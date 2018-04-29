@@ -1,65 +1,64 @@
 package com.oldscape.client;
 
 public class WorldMapType1 implements WorldMapSectionBase {
-   int field435;
-   int field438;
-   int field429;
-   int field431;
-   int field440;
-   int field432;
-   int field427;
-   int field434;
-   int field428;
-   int field436;
+   private int plane;
+   private int field438;
+   private int field429;
+   private int field431;
+   private int field440;
+   private int field432;
+   private int field427;
+   private int field434;
+   private int field428;
+   private int field436;
 
-   public void vmethod767(WorldMapData var1) {
-      if(var1.minX > this.field427) {
-         var1.minX = this.field427;
+   public void vmethod767(final WorldMapData worldMapData) {
+      if(worldMapData.minX > this.field427) {
+         worldMapData.minX = this.field427;
       }
 
-      if(var1.field455 < this.field428) {
-         var1.field455 = this.field428;
+      if(worldMapData.maxX < this.field428) {
+         worldMapData.maxX = this.field428;
       }
 
-      if(var1.minY > this.field434) {
-         var1.minY = this.field434;
+      if(worldMapData.minY > this.field434) {
+         worldMapData.minY = this.field434;
       }
 
-      if(var1.field457 < this.field436) {
-         var1.field457 = this.field436;
+      if(worldMapData.maxY < this.field436) {
+         worldMapData.maxY = this.field436;
       }
 
    }
 
-   public boolean containsCoord(int var1, int var2, int var3) {
-      return var1 >= this.field435 && var1 < this.field438 + this.field435?var2 >> 6 >= this.field429 && var2 >> 6 <= this.field440 && var3 >> 6 >= this.field431 && var3 >> 6 <= this.field432:false;
+   public boolean containsCoord(final int plane, final int worldX, final int worldY) {
+      return (plane >= this.plane && plane < this.field438 + this.plane) && (worldX >> 6 >= this.field429 && worldX >> 6 <= this.field440 && worldY >> 6 >= this.field431 && worldY >> 6 <= this.field432);
    }
 
-   public boolean vmethod768(int var1, int var2) {
-      return var1 >> 6 >= this.field427 && var1 >> 6 <= this.field428 && var2 >> 6 >= this.field434 && var2 >> 6 <= this.field436;
+   public boolean vmethod768(final int worldX, final int worldY) {
+      return worldX >> 6 >= this.field427 && worldX >> 6 <= this.field428 && worldY >> 6 >= this.field434 && worldY >> 6 <= this.field436;
    }
 
-   public int[] vmethod753(int var1, int var2, int var3) {
-      if(!this.containsCoord(var1, var2, var3)) {
+   public int[] vmethod753(final int plane, final int worldX, final int worldY) {
+      if(!this.containsCoord(plane, worldX, worldY)) {
          return null;
       } else {
-         int[] var4 = new int[]{this.field427 * 64 - this.field429 * 64 + var2, var3 + (this.field434 * 64 - this.field431 * 64)};
-         return var4;
+          return new int[]{this.field427 * 64 - this.field429 * 64 + worldX, worldY + (this.field434 * 64 - this.field431 * 64)};
       }
    }
 
-   public Coordinates vmethod758(int var1, int var2) {
+   public Coordinates vmethod758(final int var1, final int var2) {
       if(!this.vmethod768(var1, var2)) {
          return null;
       } else {
-         int var3 = this.field429 * 64 - this.field427 * 64 + var1;
-         int var4 = this.field431 * 64 - this.field434 * 64 + var2;
-         return new Coordinates(this.field435, var3, var4);
+         final int x = this.field429 * 64 - this.field427 * 64 + var1;
+         final int y = this.field431 * 64 - this.field434 * 64 + var2;
+         return new Coordinates(this.plane, x, y);
       }
    }
 
-   public void vmethod754(Buffer var1) {
-      this.field435 = var1.readUnsignedByte();
+   public void decode(final Buffer var1) {
+      this.plane = var1.readUnsignedByte();
       this.field438 = var1.readUnsignedByte();
       this.field429 = var1.readUnsignedShort();
       this.field431 = var1.readUnsignedShort();
@@ -72,24 +71,24 @@ public class WorldMapType1 implements WorldMapSectionBase {
       this.method288();
    }
 
-   void method288() {
+   private void method288() {
    }
 
-   static String method309(IterableHashTable var0, int var1, String var2) {
-      if(var0 == null) {
-         return var2;
+   static String method309(final IterableHashTable params, final int id, final String defaultValue) {
+      if(params == null) {
+         return defaultValue;
       } else {
-         ObjectNode var3 = (ObjectNode)var0.get((long)var1);
-         return var3 == null?var2:(String)var3.value;
+         final ObjectNode var3 = (ObjectNode)params.get(id);
+         return var3 == null?defaultValue:(String)var3.value;
       }
    }
 
-   static void method308(World[] var0, int var1, int var2, int[] var3, int[] var4) {
+   static void method308(final World[] var0, final int var1, final int var2, final int[] var3, final int[] var4) {
       if(var1 < var2) {
          int var5 = var1 - 1;
          int var6 = var2 + 1;
-         int var7 = (var2 + var1) / 2;
-         World var8 = var0[var7];
+         final int var7 = (var2 + var1) / 2;
+         final World var8 = var0[var7];
          var0[var7] = var0[var1];
          var0[var1] = var8;
 
@@ -178,7 +177,7 @@ public class WorldMapType1 implements WorldMapSectionBase {
             } while(var9);
 
             if(var5 < var6) {
-               World var13 = var0[var5];
+               final World var13 = var0[var5];
                var0[var5] = var0[var6];
                var0[var6] = var13;
             }

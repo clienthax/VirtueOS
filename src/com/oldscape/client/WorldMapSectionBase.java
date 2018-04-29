@@ -1,15 +1,17 @@
 package com.oldscape.client;
 
-public interface WorldMapSectionBase {
-   void vmethod767(WorldMapData var1);
+interface WorldMapSectionBase {
 
-   boolean containsCoord(int var1, int var2, int var3);
+   void vmethod767(WorldMapData worldMapData);
 
-   boolean vmethod768(int var1, int var2);
+   boolean containsCoord(int plane, int worldX, int worldY);
 
-   int[] vmethod753(int var1, int var2, int var3);
+   boolean vmethod768(int worldX, int worldY);
+
+   int[] vmethod753(int plane, int worldX, int worldY);
 
    Coordinates vmethod758(int var1, int var2);
 
-   void vmethod754(Buffer var1);
+   void decode(Buffer var1);
+
 }

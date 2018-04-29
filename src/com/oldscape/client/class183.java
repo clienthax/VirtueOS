@@ -26,6 +26,6 @@ public class class183 {
       field2498 = new class183(4);
    }
 
-   class183(int var1) {
+   private class183(final int var1) {
    }
 }

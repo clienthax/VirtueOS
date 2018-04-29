@@ -3,56 +3,56 @@ package com.oldscape.client;
 public class ObjectComposition extends CacheableNode {
    static boolean objectCompositionLowDetail;
    static IndexDataBase objects_ref;
-   static IndexDataBase field3591;
-   static NodeCache objects;
-   public static NodeCache field3593;
-   static NodeCache cachedModels;
-   static NodeCache field3595;
-   static ModelData[] field3596;
+   static IndexDataBase models_ref;
+   static final NodeCache objects;
+   public static final NodeCache field3593;
+   static final NodeCache cachedModels;
+   static final NodeCache field3595;
+   private static final ModelData[] field3596;
    static int field3640;
    public int id;
-   int[] objectModels;
-   int[] objectTypes;
+   private int[] objectModels;
+   private int[] objectTypes;
    public String name;
-   short[] recolorToFind;
-   short[] recolorToReplace;
-   short[] textureToFind;
-   short[] textureToReplace;
+   private short[] recolorToFind;
+   private short[] recolorToReplace;
+   private short[] textureToFind;
+   private short[] textureToReplace;
    public int width;
    public int length;
    public int clipType;
    public boolean blocksProjectile;
    public int int1;
-   int contouredGround;
-   boolean nonFlatShading;
+   private int contouredGround;
+   private boolean nonFlatShading;
    public boolean modelClipped;
    public int animationId;
    public int decorDisplacement;
-   int ambient;
-   int contrast;
+   private int ambient;
+   private int contrast;
    public String[] actions;
    public int mapIconId;
    public int mapSceneId;
-   boolean isRotated;
+   private boolean isRotated;
    public boolean clipped;
-   int modelSizeX;
-   int modelSizeHeight;
-   int modelSizeY;
-   int offsetX;
-   int offsetHeight;
-   int offsetY;
+   private int modelSizeX;
+   private int modelSizeHeight;
+   private int modelSizeY;
+   private int offsetX;
+   private int offsetHeight;
+   private int offsetY;
    public boolean obstructsGround;
    boolean isHollow;
    public int supportItems;
    public int[] impostorIds;
-   int varpId;
-   int configId;
+   private int varpId;
+   private int configId;
    public int ambientSoundId;
    public int int4;
    public int int5;
    public int int6;
    public int[] field3614;
-   IterableHashTable params;
+   private IterableHashTable params;
 
    static {
       objectCompositionLowDetail = false;
@@ -119,9 +119,9 @@ public class ObjectComposition extends CacheableNode {
 
    }
 
-   void decode(Buffer var1) {
+   void decode(final Buffer var1) {
       while(true) {
-         int var2 = var1.readUnsignedByte();
+         final int var2 = var1.readUnsignedByte();
          if(var2 == 0) {
             return;
          }
@@ -130,7 +130,7 @@ public class ObjectComposition extends CacheableNode {
       }
    }
 
-   void loadData(Buffer var1, int var2) {
+   private void loadData(final Buffer var1, final int var2) {
       int var3;
       int var4;
       if(var2 == 1) {
@@ -262,7 +262,7 @@ public class ObjectComposition extends CacheableNode {
          } else if(var2 == 82) {
             this.mapIconId = var1.readUnsignedShort();
          } else if(var2 == 249) {
-            this.params = class28.readStringIntParameters(var1, this.params);
+            this.params = WorldMapDecorationInfo.readStringIntParameters(var1, this.params);
          }
       } else {
          this.varpId = var1.readUnsignedShort();
@@ -298,11 +298,11 @@ public class ObjectComposition extends CacheableNode {
 
    }
 
-   public final boolean method4996(int var1) {
+   public final boolean method4996(final int var1) {
       if(this.objectTypes != null) {
          for(int var4 = 0; var4 < this.objectTypes.length; ++var4) {
             if(this.objectTypes[var4] == var1) {
-               return field3591.tryLoadRecord(this.objectModels[var4] & 65535, 0);
+               return models_ref.tryLoadRecord(this.objectModels[var4] & 65535, 0);
             }
          }
 
@@ -314,9 +314,9 @@ public class ObjectComposition extends CacheableNode {
       } else {
          boolean var2 = true;
 
-         for(int var3 = 0; var3 < this.objectModels.length; ++var3) {
-            var2 &= field3591.tryLoadRecord(this.objectModels[var3] & 65535, 0);
-         }
+          for (final int objectModel : this.objectModels) {
+              var2 &= models_ref.tryLoadRecord(objectModel & 65535, 0);
+          }
 
          return var2;
       }
@@ -328,25 +328,25 @@ public class ObjectComposition extends CacheableNode {
       } else {
          boolean var1 = true;
 
-         for(int var2 = 0; var2 < this.objectModels.length; ++var2) {
-            var1 &= field3591.tryLoadRecord(this.objectModels[var2] & 65535, 0);
-         }
+          for (final int objectModel : this.objectModels) {
+              var1 &= models_ref.tryLoadRecord(objectModel & 65535, 0);
+          }
 
          return var1;
       }
    }
 
-   public final Renderable getModel(int var1, int var2, int[][] var3, int var4, int var5, int var6) {
-      long var7;
+   public final Renderable getModel(final int var1, final int var2, final int[][] var3, final int var4, final int var5, final int var6) {
+      final long var7;
       if(this.objectTypes == null) {
-         var7 = (long)(var2 + (this.id << 10));
+         var7 = (var2 + (this.id << 10));
       } else {
-         var7 = (long)(var2 + (var1 << 3) + (this.id << 10));
+         var7 = (var2 + (var1 << 3) + (this.id << 10));
       }
 
-      Object var9 = (Renderable)cachedModels.get(var7);
+      Object var9 = cachedModels.get(var7);
       if(var9 == null) {
-         ModelData var10 = this.getModel(var1, var2);
+         final ModelData var10 = this.getModel(var1, var2);
          if(var10 == null) {
             return null;
          }
@@ -371,24 +371,24 @@ public class ObjectComposition extends CacheableNode {
          if(var9 instanceof Model) {
             var9 = ((Model)var9).method2686(var3, var4, var5, var6, true, this.contouredGround);
          } else if(var9 instanceof ModelData) {
-            var9 = ((ModelData)var9).method2601(var3, var4, var5, var6, true, this.contouredGround);
+            var9 = ((ModelData)var9).method2601(var3, var4, var5, var6, this.contouredGround);
          }
       }
 
       return (Renderable)var9;
    }
 
-   public final Model method4999(int var1, int var2, int[][] var3, int var4, int var5, int var6) {
-      long var7;
+   public final Model method4999(final int var1, final int var2, final int[][] var3, final int var4, final int var5, final int var6) {
+      final long var7;
       if(this.objectTypes == null) {
-         var7 = (long)(var2 + (this.id << 10));
+         var7 = (var2 + (this.id << 10));
       } else {
-         var7 = (long)(var2 + (var1 << 3) + (this.id << 10));
+         var7 = (var2 + (var1 << 3) + (this.id << 10));
       }
 
       Model var9 = (Model)field3595.get(var7);
       if(var9 == null) {
-         ModelData var10 = this.getModel(var1, var2);
+         final ModelData var10 = this.getModel(var1, var2);
          if(var10 == null) {
             return null;
          }
@@ -404,49 +404,47 @@ public class ObjectComposition extends CacheableNode {
       return var9;
    }
 
-   public final Model method5000(int var1, int var2, int[][] var3, int var4, int var5, int var6, Sequence var7, int var8) {
-      long var9;
+   final Model method5000(final int objectType, final int orientation, final int[][] tileHeight, final int var4, final int var5, final int var6, final Sequence sequence, final int animationFrame) {
+      final long var9;
       if(this.objectTypes == null) {
-         var9 = (long)(var2 + (this.id << 10));
+         var9 = (orientation + (this.id << 10));
       } else {
-         var9 = (long)(var2 + (var1 << 3) + (this.id << 10));
+         var9 = (orientation + (objectType << 3) + (this.id << 10));
       }
 
-      Model var11 = (Model)field3595.get(var9);
-      if(var11 == null) {
-         ModelData var12 = this.getModel(var1, var2);
-         if(var12 == null) {
+      Model model = (Model)field3595.get(var9);
+      if(model == null) {
+         final ModelData modelData = this.getModel(objectType, orientation);
+         if(modelData == null) {
             return null;
          }
 
-         var11 = var12.light(this.ambient + 64, this.contrast + 768, -50, -10, -50);
-         field3595.put(var11, var9);
+         model = modelData.light(this.ambient + 64, this.contrast + 768, -50, -10, -50);
+         field3595.put(model, var9);
       }
 
-      if(var7 == null && this.contouredGround == -1) {
-         return var11;
-      } else {
-         if(var7 != null) {
-            var11 = var7.transformObjectModel(var11, var8, var2);
-         } else {
-            var11 = var11.toSharedModel(true);
-         }
+       if (sequence != null || this.contouredGround != -1) {
+           if (sequence != null) {
+               model = sequence.transformObjectModel(model, animationFrame, orientation);
+           } else {
+               model = model.toSharedModel(true);
+           }
 
-         if(this.contouredGround >= 0) {
-            var11 = var11.method2686(var3, var4, var5, var6, false, this.contouredGround);
-         }
+           if (this.contouredGround >= 0) {
+               model = model.method2686(tileHeight, var4, var5, var6, false, this.contouredGround);
+           }
 
-         return var11;
-      }
+       }
+       return model;
    }
 
-   final ModelData getModel(int var1, int var2) {
+   private ModelData getModel(final int objectType, int orientation) {
       ModelData var3 = null;
       boolean var4;
       int var5;
       int var7;
       if(this.objectTypes == null) {
-         if(var1 != 10) {
+         if(objectType != 10) {
             return null;
          }
 
@@ -455,7 +453,7 @@ public class ObjectComposition extends CacheableNode {
          }
 
          var4 = this.isRotated;
-         if(var1 == 2 && var2 > 3) {
+         if(objectType == 2 && orientation > 3) {
             var4 = !var4;
          }
 
@@ -467,9 +465,9 @@ public class ObjectComposition extends CacheableNode {
                var7 += 65536;
             }
 
-            var3 = (ModelData)field3593.get((long)var7);
+            var3 = (ModelData)field3593.get(var7);
             if(var3 == null) {
-               var3 = ModelData.method2645(field3591, var7 & 65535, 0);
+               var3 = ModelData.method2645(models_ref, var7 & 65535, 0);
                if(var3 == null) {
                   return null;
                }
@@ -478,7 +476,7 @@ public class ObjectComposition extends CacheableNode {
                   var3.method2614();
                }
 
-               field3593.put(var3, (long)var7);
+               field3593.put(var3, var7);
             }
 
             if(var5 > 1) {
@@ -493,7 +491,7 @@ public class ObjectComposition extends CacheableNode {
          int var9 = -1;
 
          for(var5 = 0; var5 < this.objectTypes.length; ++var5) {
-            if(this.objectTypes[var5] == var1) {
+            if(this.objectTypes[var5] == objectType) {
                var9 = var5;
                break;
             }
@@ -504,14 +502,14 @@ public class ObjectComposition extends CacheableNode {
          }
 
          var5 = this.objectModels[var9];
-         boolean var10 = this.isRotated ^ var2 > 3;
+         final boolean var10 = this.isRotated ^ orientation > 3;
          if(var10) {
             var5 += 65536;
          }
 
-         var3 = (ModelData)field3593.get((long)var5);
+         var3 = (ModelData)field3593.get(var5);
          if(var3 == null) {
-            var3 = ModelData.method2645(field3591, var5 & 65535, 0);
+            var3 = ModelData.method2645(models_ref, var5 & 65535, 0);
             if(var3 == null) {
                return null;
             }
@@ -520,35 +518,27 @@ public class ObjectComposition extends CacheableNode {
                var3.method2614();
             }
 
-            field3593.put(var3, (long)var5);
+            field3593.put(var3, var5);
          }
       }
 
-      if(this.modelSizeX == 128 && this.modelSizeHeight == 128 && this.modelSizeY == 128) {
-         var4 = false;
-      } else {
-         var4 = true;
-      }
+      var4 = this.modelSizeX != 128 || this.modelSizeHeight != 128 || this.modelSizeY != 128;
 
-      boolean var11;
-      if(this.offsetX == 0 && this.offsetHeight == 0 && this.offsetY == 0) {
-         var11 = false;
-      } else {
-         var11 = true;
-      }
+      final boolean var11;
+       var11 = this.offsetX != 0 || this.offsetHeight != 0 || this.offsetY != 0;
 
-      ModelData var8 = new ModelData(var3, var2 == 0 && !var4 && !var11, this.recolorToFind == null, null == this.textureToFind, true);
-      if(var1 == 4 && var2 > 3) {
+      final ModelData var8 = new ModelData(var3, orientation == 0 && !var4 && !var11, this.recolorToFind == null, null == this.textureToFind);
+      if(objectType == 4 && orientation > 3) {
          var8.method2606(256);
          var8.method2611(45, 0, -45);
       }
 
-      var2 &= 3;
-      if(var2 == 1) {
+      orientation &= 3;
+      if(orientation == 1) {
          var8.method2607();
-      } else if(var2 == 2) {
+      } else if(orientation == 2) {
          var8.method2625();
-      } else if(var2 == 3) {
+      } else if(orientation == 3) {
          var8.method2610();
       }
 
@@ -578,12 +568,12 @@ public class ObjectComposition extends CacheableNode {
    public final ObjectComposition getImpostor() {
       int var1 = -1;
       if(this.varpId != -1) {
-         var1 = DynamicObject.getVarbit(this.varpId);
+         var1 = Varbit.getVarbit(this.varpId);
       } else if(this.configId != -1) {
-         var1 = class237.clientVarps[this.configId];
+         var1 = VarpStorage.clientVarps[this.configId];
       }
 
-      int var2;
+      final int var2;
       if(var1 >= 0 && var1 < this.impostorIds.length - 1) {
          var2 = this.impostorIds[var1];
       } else {
@@ -593,11 +583,11 @@ public class ObjectComposition extends CacheableNode {
       return var2 != -1?GameCanvas.getObjectDefinition(var2):null;
    }
 
-   public int method5003(int var1, int var2) {
+   public int method5003(final int var1, final int var2) {
       return Frames.method3062(this.params, var1, var2);
    }
 
-   public String method5008(int var1, String var2) {
+   public String method5008(final int var1, final String var2) {
       return WorldMapType1.method309(this.params, var1, var2);
    }
 
@@ -605,32 +595,32 @@ public class ObjectComposition extends CacheableNode {
       if(this.impostorIds == null) {
          return this.ambientSoundId != -1 || this.field3614 != null;
       } else {
-         for(int var1 = 0; var1 < this.impostorIds.length; ++var1) {
-            if(this.impostorIds[var1] != -1) {
-               ObjectComposition var2 = GameCanvas.getObjectDefinition(this.impostorIds[var1]);
-               if(var2.ambientSoundId != -1 || var2.field3614 != null) {
-                  return true;
-               }
-            }
-         }
+          for (final int impostorId : this.impostorIds) {
+              if (impostorId != -1) {
+                  final ObjectComposition var2 = GameCanvas.getObjectDefinition(impostorId);
+                  if (var2.ambientSoundId != -1 || var2.field3614 != null) {
+                      return true;
+                  }
+              }
+          }
 
          return false;
       }
    }
 
-   public static void method5053(IndexDataBase var0, IndexDataBase var1) {
+   public static void method5053(final IndexDataBase var0, final IndexDataBase var1) {
       CombatInfo2.field3532 = var0;
       CombatInfo2.field3528 = var1;
    }
 
-   static final void method5018(Actor var0) {
+   static void method5018(final Actor var0) {
       if(var0.field1204 == Client.gameCycle || var0.animation == -1 || var0.actionAnimationDisable != 0 || var0.actionFrameCycle + 1 > CombatInfo1.getAnimation(var0.animation).frameLengths[var0.actionFrame]) {
-         int var1 = var0.field1204 - var0.field1166;
-         int var2 = Client.gameCycle - var0.field1166;
-         int var3 = var0.field1203 * 128 + var0.field1172 * 64;
-         int var4 = var0.field1199 * 128 + var0.field1172 * 64;
-         int var5 = var0.field1200 * 128 + var0.field1172 * 64;
-         int var6 = var0.field1202 * 128 + var0.field1172 * 64;
+         final int var1 = var0.field1204 - var0.field1166;
+         final int var2 = Client.gameCycle - var0.field1166;
+         final int var3 = var0.field1203 * 128 + var0.size * 64;
+         final int var4 = var0.field1199 * 128 + var0.size * 64;
+         final int var5 = var0.field1200 * 128 + var0.size * 64;
+         final int var6 = var0.field1202 * 128 + var0.size * 64;
          var0.x = (var5 * var2 + var3 * (var1 - var2)) / var1;
          var0.y = (var6 * var2 + var4 * (var1 - var2)) / var1;
       }

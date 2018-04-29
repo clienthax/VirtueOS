@@ -1,23 +1,23 @@
 package com.oldscape.client;
 
-public class Texture extends Node {
-   static int[] field1813;
-   int field1803;
-   boolean field1806;
+class Texture extends Node {
+   private static int[] field1813;
+   final int field1803;
+   final boolean field1806;
    int[] fileIds;
-   int[] field1801;
-   int[] field1807;
-   int[] field1808;
+   private int[] field1801;
+   private int[] field1807;
+   private int[] field1808;
    int field1810;
-   int field1809;
+   private int field1809;
    int[] pixels;
    boolean loaded;
 
-   Texture(Buffer var1) {
+   Texture(final Buffer var1) {
       this.loaded = false;
       this.field1803 = var1.readUnsignedShort();
       this.field1806 = var1.readUnsignedByte() == 1;
-      int var2 = var1.readUnsignedByte();
+      final int var2 = var1.readUnsignedByte();
       if(var2 >= 1 && var2 <= 4) {
          this.fileIds = new int[var2];
 
@@ -56,7 +56,7 @@ public class Texture extends Node {
       }
    }
 
-   boolean method2675(double var1, int var3, IndexDataBase var4) {
+   boolean method2675(final double var1, final int var3, final IndexDataBase var4) {
       int var5;
       for(var5 = 0; var5 < this.fileIds.length; ++var5) {
          if(var4.getRecordFlat(this.fileIds[var5]) == null) {
@@ -68,11 +68,11 @@ public class Texture extends Node {
       this.pixels = new int[var5];
 
       for(int var6 = 0; var6 < this.fileIds.length; ++var6) {
-         IndexedSprite var7 = class243.method4486(var4, this.fileIds[var6]);
+         final IndexedSprite var7 = IndexedSprite.method4486(var4, this.fileIds[var6]);
          var7.normalize();
-         byte[] var8 = var7.pixels;
-         int[] var9 = var7.palette;
-         int var10 = this.field1808[var6];
+         final byte[] var8 = var7.pixels;
+         final int[] var9 = var7.palette;
+         final int var10 = this.field1808[var6];
          if((var10 & -16777216) == 16777216) {
          }
 
@@ -151,7 +151,7 @@ public class Texture extends Node {
       this.pixels = null;
    }
 
-   void method2674(int var1) {
+   void method2674(final int var1) {
       if(this.pixels != null) {
          short var2;
          int var3;
@@ -208,8 +208,8 @@ public class Texture extends Node {
 
             for(var6 = 0; var6 < var3; var6 += var2) {
                for(var7 = 0; var7 < var2; ++var7) {
-                  int var8 = var6 + var7;
-                  int var9 = var6 + (var7 + var4 & var5);
+                  final int var8 = var6 + var7;
+                  final int var9 = var6 + (var7 + var4 & var5);
                   field1813[var8] = this.pixels[var9];
                }
             }

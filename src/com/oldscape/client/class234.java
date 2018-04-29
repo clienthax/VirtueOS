@@ -2,22 +2,22 @@ package com.oldscape.client;
 
 public class class234 extends TaskDataNode {
    static int field2768;
-   class230 field2764;
-   Deque field2765;
-   class100 field2766;
+   private final class230 field2764;
+   final Deque field2765;
+   final class100 field2766;
 
-   class234(class230 var1) {
+   class234(final class230 var1) {
       this.field2765 = new Deque();
       this.field2766 = new class100();
       this.field2764 = var1;
    }
 
-   void method4320(class231 var1, int[] var2, int var3, int var4, int var5) {
+   private void method4320(final class231 var1, final int[] var2, int var3, int var4, final int var5) {
       if((this.field2764.field2716[var1.field2734] & 4) != 0 && var1.field2740 < 0) {
-         int var6 = this.field2764.field2711[var1.field2734] / AbstractSoundSystem.sampleRate;
+         final int var6 = this.field2764.field2711[var1.field2734] / AbstractSoundSystem.sampleRate;
 
          while(true) {
-            int var7 = (var6 + 1048575 - var1.field2741) / var6;
+            final int var7 = (var6 + 1048575 - var1.field2741) / var6;
             if(var7 > var4) {
                var1.field2741 += var6 * var4;
                break;
@@ -28,12 +28,12 @@ public class class234 extends TaskDataNode {
             var4 -= var7;
             var1.field2741 += var6 * var7 - 1048576;
             int var8 = AbstractSoundSystem.sampleRate / 100;
-            int var9 = 262144 / var6;
+            final int var9 = 262144 / var6;
             if(var9 < var8) {
                var8 = var9;
             }
 
-            class115 var10 = var1.field2739;
+            final class115 var10 = var1.field2739;
             if(this.field2764.field2709[var1.field2734] == 0) {
                var1.field2739 = class115.method2318(var1.field2729, var10.method2374(), var10.method2392(), var10.method2336());
             } else {
@@ -57,10 +57,10 @@ public class class234 extends TaskDataNode {
       var1.field2739.vmethod4317(var2, var3, var4);
    }
 
-   void method4315(class231 var1, int var2) {
+   private void method4315(final class231 var1, int var2) {
       if((this.field2764.field2716[var1.field2734] & 4) != 0 && var1.field2740 < 0) {
-         int var3 = this.field2764.field2711[var1.field2734] / AbstractSoundSystem.sampleRate;
-         int var4 = (var3 + 1048575 - var1.field2741) / var3;
+         final int var3 = this.field2764.field2711[var1.field2734] / AbstractSoundSystem.sampleRate;
+         final int var4 = (var3 + 1048575 - var1.field2741) / var3;
          var1.field2741 = var3 * var2 + var1.field2741 & 1048575;
          if(var4 <= var2) {
             if(this.field2764.field2709[var1.field2734] == 0) {
@@ -82,8 +82,8 @@ public class class234 extends TaskDataNode {
    }
 
    protected TaskDataNode vmethod4330() {
-      class231 var1 = (class231)this.field2765.getFront();
-      return (TaskDataNode)(var1 == null?null:(var1.field2739 != null?var1.field2739:this.vmethod4321()));
+      final class231 var1 = (class231)this.field2765.getFront();
+      return var1 == null?null:(var1.field2739 != null?var1.field2739:this.vmethod4321());
    }
 
    protected TaskDataNode vmethod4321() {
@@ -102,7 +102,7 @@ public class class234 extends TaskDataNode {
       return 0;
    }
 
-   protected void vmethod4317(int[] var1, int var2, int var3) {
+   protected void vmethod4317(final int[] var1, final int var2, final int var3) {
       this.field2766.vmethod4317(var1, var2, var3);
 
       for(class231 var6 = (class231)this.field2765.getFront(); var6 != null; var6 = (class231)this.field2765.getNext()) {
@@ -126,7 +126,7 @@ public class class234 extends TaskDataNode {
 
    }
 
-   protected void vmethod4319(int var1) {
+   protected void vmethod4319(final int var1) {
       this.field2766.vmethod4319(var1);
 
       for(class231 var3 = (class231)this.field2765.getFront(); var3 != null; var3 = (class231)this.field2765.getNext()) {
@@ -142,49 +142,31 @@ public class class234 extends TaskDataNode {
 
                this.method4315(var3, var3.field2723);
                var2 -= var3.field2723;
-            } while(!this.field2764.method4146(var3, (int[])null, 0, var2));
+            } while(!this.field2764.method4146(var3, null, 0, var2));
          }
       }
 
    }
 
-   public static NPCComposition getNpcDefinition(int var0) {
-      NPCComposition var1 = (NPCComposition)NPCComposition.npcs.get((long)var0);
-      if(var1 != null) {
-         return var1;
-      } else {
-         byte[] var2 = NPCComposition.NpcDefinition_indexCache.getConfigData(9, var0);
-         var1 = new NPCComposition();
-         var1.id = var0;
-         if(var2 != null) {
-            var1.decode(new Buffer(var2));
-         }
-
-         var1.post();
-         NPCComposition.npcs.put(var1, (long)var0);
-         return var1;
-      }
-   }
-
-   static void drawLoginScreen(Font var0, Font var1, Font var2, boolean var3) {
+   static void drawLoginScreen(final Font var0, final Font var1, final Font var2, final boolean var3) {
       if(var3) {
-         class90.field1359 = (MapLabel.canvasWidth - 765) / 2;
+         class90.field1359 = (GameEngine.canvasWidth - 765) / 2;
          class90.loginWindowX = class90.field1359 + 202;
-         WorldComparator.field279 = class90.loginWindowX + 180;
+         class171.field279 = class90.loginWindowX + 180;
       }
 
       if(class90.worldSelectShown) {
-         class37.method542(var0, var1);
+         class37.drawWorldSelect(var0, var1);
       } else {
          if(var3) {
             class321.field3938.method5856(class90.field1359, 0);
             class90.field1381.method5856(class90.field1359 + 382, 0);
-            class33.logoSprite.method5825(class90.field1359 + 382 - class33.logoSprite.width / 2, 18);
+            class171.logoSprite.method5825(class90.field1359 + 382 - class171.logoSprite.width / 2, 18);
          }
 
          int var5;
          if(Client.gameState == 0 || Client.gameState == 5) {
-            byte var4 = 20;
+            final byte var4 = 20;
             var0.drawTextCentered("RuneScape is loading - please wait...", class90.loginWindowX + 180, 245 - var4, 16777215, -1);
             var5 = 253 - var4;
             Rasterizer2D.drawRectangle(class90.loginWindowX + 180 - 152, var5, 304, 34, 9179409);
@@ -220,7 +202,6 @@ public class class234 extends TaskDataNode {
                var0.method5510(FontTypeFace.appendTags(var7), class90.loginWindowX + 180 - 70, var19, 16777215, 0);
                var19 += 15;
                var0.method5510("Password: " + Enum.method4958(class90.password), class90.loginWindowX + 180 - 108, var19, 16777215, 0);
-               var19 += 15;
             }
          }
 
@@ -233,7 +214,6 @@ public class class234 extends TaskDataNode {
             if(class90.loginIndex == 0) {
                var18 = 251;
                var0.drawTextCentered("Welcome to RuneScape", class90.loginWindowX + 180, var18, 16776960, 0);
-               var19 = var18 + 30;
                var5 = class90.loginWindowX + 180 - 80;
                var15 = 291;
                class90.field1388.method5825(var5 - 73, var15 - 20);
@@ -249,7 +229,6 @@ public class class234 extends TaskDataNode {
                var0.drawTextCentered(class90.loginMessage2, class90.loginWindowX + 180, var19, 16777215, 0);
                var19 += 15;
                var0.drawTextCentered(class90.loginMessage3, class90.loginWindowX + 180, var19, 16777215, 0);
-               var19 += 15;
                var5 = class90.loginWindowX + 180 - 80;
                var15 = 321;
                class90.field1388.method5825(var5 - 73, var15 - 20);
@@ -259,45 +238,43 @@ public class class234 extends TaskDataNode {
                var0.drawTextCentered("Cancel", var5, var15 + 5, 16777215, 0);
             } else if(class90.loginIndex == 2) {
                var18 = 201;
-               var0.drawTextCentered(class90.loginMessage1, WorldComparator.field279, var18, 16776960, 0);
+               var0.drawTextCentered(class90.loginMessage1, class171.field279, var18, 16776960, 0);
                var19 = var18 + 15;
-               var0.drawTextCentered(class90.loginMessage2, WorldComparator.field279, var19, 16776960, 0);
+               var0.drawTextCentered(class90.loginMessage2, class171.field279, var19, 16776960, 0);
                var19 += 15;
-               var0.drawTextCentered(class90.loginMessage3, WorldComparator.field279, var19, 16776960, 0);
+               var0.drawTextCentered(class90.loginMessage3, class171.field279, var19, 16776960, 0);
                var19 += 15;
                var19 += 7;
-               var0.method5510("Login: ", WorldComparator.field279 - 110, var19, 16777215, 0);
+               var0.method5510("Login: ", class171.field279 - 110, var19, 16777215, 0);
                var20 = 200;
                var6 = Client.preferences.hideUsername?Enum.method4958(class90.username):class90.username;
 
                for(var7 = var6; var0.getTextWidth(var7) > var20; var7 = var7.substring(1)) {
                }
 
-               var0.method5510(FontTypeFace.appendTags(var7) + (class90.field1386 == 0 & Client.gameCycle % 40 < 20?class45.getColTags(16776960) + "|":""), WorldComparator.field279 - 70, var19, 16777215, 0);
+               var0.method5510(FontTypeFace.appendTags(var7) + (class90.field1386 == 0 & Client.gameCycle % 40 < 20?class45.getColTags(16776960) + "|":""), class171.field279 - 70, var19, 16777215, 0);
                var19 += 15;
-               var0.method5510("Password: " + Enum.method4958(class90.password) + (class90.field1386 == 1 & Client.gameCycle % 40 < 20?class45.getColTags(16776960) + "|":""), WorldComparator.field279 - 108, var19, 16777215, 0);
-               var19 += 15;
+               var0.method5510("Password: " + Enum.method4958(class90.password) + (class90.field1386 == 1 & Client.gameCycle % 40 < 20?class45.getColTags(16776960) + "|":""), class171.field279 - 108, var19, 16777215, 0);
                var18 = 277;
-               var8 = WorldComparator.field279 + -117;
+               var8 = class171.field279 - 117;
                IndexedSprite var17 = VertexNormal.method2778(class90.Login_isUsernameRemembered, class90.field1374);
                var17.method5825(var8, var18);
                var8 = var8 + var17.width + 5;
                var1.method5510("Remember username", var8, var18 + 13, 16776960, 0);
-               var8 = WorldComparator.field279 + 24;
+               var8 = class171.field279 + 24;
                var17 = VertexNormal.method2778(Client.preferences.hideUsername, class90.field1384);
                var17.method5825(var8, var18);
                var8 = var8 + var17.width + 5;
                var1.method5510("Hide username", var8, var18 + 13, 16776960, 0);
-               var19 = var18 + 15;
-               var10 = WorldComparator.field279 - 80;
-               short var11 = 321;
+               var10 = class171.field279 - 80;
+               final short var11 = 321;
                class90.field1388.method5825(var10 - 73, var11 - 20);
                var0.drawTextCentered("Login", var10, var11 + 5, 16777215, 0);
-               var10 = WorldComparator.field279 + 80;
+               var10 = class171.field279 + 80;
                class90.field1388.method5825(var10 - 73, var11 - 20);
                var0.drawTextCentered("Cancel", var10, var11 + 5, 16777215, 0);
                var18 = 357;
-               var1.drawTextCentered("Forgotten your password? <col=ffffff>Click here.", WorldComparator.field279, var18, 16776960, 0);
+               var1.drawTextCentered("Forgotten your password? <col=ffffff>Click here.", class171.field279, var18, 16776960, 0);
             } else if(class90.loginIndex == 3) {
                var18 = 201;
                var0.drawTextCentered("Invalid username or password.", class90.loginWindowX + 180, var18, 16776960, 0);
@@ -305,7 +282,6 @@ public class class234 extends TaskDataNode {
                var1.drawTextCentered("For accounts created after 24th November 2010, please use your", class90.loginWindowX + 180, var19, 16776960, 0);
                var19 += 15;
                var1.drawTextCentered("email address to login. Otherwise please login with your username.", class90.loginWindowX + 180, var19, 16776960, 0);
-               var19 += 15;
                var5 = class90.loginWindowX + 180;
                var15 = 276;
                class90.field1388.method5825(var5 - 73, var15 - 20);
@@ -315,7 +291,7 @@ public class class234 extends TaskDataNode {
                class90.field1388.method5825(var5 - 73, var15 - 20);
                var2.drawTextCentered("Forgotten password?", var5, var15 + 5, 16777215, 0);
             } else {
-               short var9;
+               final short var9;
                if(class90.loginIndex == 4) {
                   var0.drawTextCentered("Authenticator", class90.loginWindowX + 180, 201, 16776960, 0);
                   var18 = 236;
@@ -332,7 +308,7 @@ public class class234 extends TaskDataNode {
                   var0.method5510("for 30 days: ", class90.loginWindowX + 180 - 9, var19, 16776960, 0);
                   var5 = 180 + class90.loginWindowX - 9 + var0.getTextWidth("for 30 days: ") + 15;
                   var24 = var19 - var0.verticalSpace;
-                  IndexedSprite var21;
+                  final IndexedSprite var21;
                   if(class90.field1385) {
                      var21 = class90.field1393;
                   } else {
@@ -340,7 +316,6 @@ public class class234 extends TaskDataNode {
                   }
 
                   var21.method5825(var5, var24);
-                  var19 += 15;
                   var8 = class90.loginWindowX + 180 - 80;
                   var9 = 321;
                   class90.field1388.method5825(var8 - 73, var9 - 20);
@@ -367,7 +342,6 @@ public class class234 extends TaskDataNode {
                   }
 
                   var0.method5510(FontTypeFace.appendTags(var7) + (Client.gameCycle % 40 < 20?class45.getColTags(16776960) + "|":""), class90.loginWindowX + 180 - 34, var19, 16777215, 0);
-                  var19 += 15;
                   var8 = class90.loginWindowX + 180 - 80;
                   var9 = 321;
                   class90.field1388.method5825(var8 - 73, var9 - 20);
@@ -382,7 +356,6 @@ public class class234 extends TaskDataNode {
                   var0.drawTextCentered(class90.loginMessage2, class90.loginWindowX + 180, var19, 16776960, 0);
                   var19 += 15;
                   var0.drawTextCentered(class90.loginMessage3, class90.loginWindowX + 180, var19, 16776960, 0);
-                  var19 += 15;
                   var5 = class90.loginWindowX + 180;
                   var15 = 321;
                   class90.field1388.method5825(var5 - 73, var15 - 20);
@@ -493,11 +466,11 @@ public class class234 extends TaskDataNode {
             if(class167.field2223 != null) {
                var19 = class90.field1359 + 5;
                var20 = 463;
-               byte var26 = 100;
-               byte var25 = 35;
+               final byte var26 = 100;
+               final byte var25 = 35;
                class167.field2223.method5825(var19, var20);
                var0.drawTextCentered("World" + " " + Client.world, var26 / 2 + var19, var25 / 2 + var20 - 2, 16777215, 0);
-               if(FaceNormal.listFetcher != null) {
+               if(Client.listFetcher != null) {
                   var1.drawTextCentered("Loading...", var26 / 2 + var19, var25 / 2 + var20 + 12, 16777215, 0);
                } else {
                   var1.drawTextCentered("Click to switch", var26 / 2 + var19, var25 / 2 + var20 + 12, 16777215, 0);

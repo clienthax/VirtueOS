@@ -2,9 +2,9 @@ package com.oldscape.client;
 
 import java.util.Iterator;
 
-public class IterableDualNodeQueue implements Iterable {
-   public CacheableNode sentinel;
-   CacheableNode field2674;
+class IterableDualNodeQueue implements Iterable {
+   public final CacheableNode sentinel;
+   private CacheableNode field2674;
 
    public IterableDualNodeQueue() {
       this.sentinel = new CacheableNode();
@@ -19,7 +19,7 @@ public class IterableDualNodeQueue implements Iterable {
 
    }
 
-   public void add(CacheableNode var1) {
+   public void add(final CacheableNode var1) {
       if(var1.next != null) {
          var1.unlinkDual();
       }
@@ -31,7 +31,7 @@ public class IterableDualNodeQueue implements Iterable {
    }
 
    CacheableNode method4104() {
-      CacheableNode var1 = this.sentinel.previous;
+      final CacheableNode var1 = this.sentinel.previous;
       if(var1 == this.sentinel) {
          return null;
       } else {
@@ -41,11 +41,11 @@ public class IterableDualNodeQueue implements Iterable {
    }
 
    CacheableNode method4118() {
-      return this.method4106((CacheableNode)null);
+      return this.method4106(null);
    }
 
-   CacheableNode method4106(CacheableNode var1) {
-      CacheableNode var2;
+   private CacheableNode method4106(final CacheableNode var1) {
+      final CacheableNode var2;
       if(var1 == null) {
          var2 = this.sentinel.previous;
       } else {
@@ -62,7 +62,7 @@ public class IterableDualNodeQueue implements Iterable {
    }
 
    CacheableNode method4107() {
-      CacheableNode var1 = this.field2674;
+      final CacheableNode var1 = this.field2674;
       if(var1 == this.sentinel) {
          this.field2674 = null;
          return null;

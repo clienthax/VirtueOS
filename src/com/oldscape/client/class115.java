@@ -1,27 +1,27 @@
 package com.oldscape.client;
 
 public class class115 extends TaskDataNode {
-   int field1638;
-   int field1631;
-   int field1630;
-   int field1633;
-   int field1634;
-   int field1635;
-   int field1641;
-   int field1637;
-   int startPosition;
-   int endPosition;
-   boolean field1640;
-   int field1639;
-   int field1636;
-   int field1643;
-   int field1644;
+   private int field1638;
+   private int field1631;
+   private int field1630;
+   private int field1633;
+   private int field1634;
+   private int field1635;
+   private int field1641;
+   private int field1637;
+   private final int startPosition;
+   private final int endPosition;
+   private final boolean field1640;
+   private int field1639;
+   private int field1636;
+   private int field1643;
+   private int field1644;
 
-   class115(RawAudioNode var1, int var2, int var3, int var4) {
-      super.data = var1;
-      this.startPosition = var1.startPosition;
-      this.endPosition = var1.endPosition;
-      this.field1640 = var1.field1548;
+   private class115(final RawAudioNode rawAudioNode, final int var2, final int var3, final int var4) {
+      super.data = rawAudioNode;
+      this.startPosition = rawAudioNode.startPosition;
+      this.endPosition = rawAudioNode.endPosition;
+      this.field1640 = rawAudioNode.field1548;
       this.field1631 = var2;
       this.field1630 = var3;
       this.field1633 = var4;
@@ -29,11 +29,11 @@ public class class115 extends TaskDataNode {
       this.method2319();
    }
 
-   class115(RawAudioNode var1, int var2, int var3) {
-      super.data = var1;
-      this.startPosition = var1.startPosition;
-      this.endPosition = var1.endPosition;
-      this.field1640 = var1.field1548;
+   private class115(final RawAudioNode rawAudioNode, final int var2, final int var3) {
+      super.data = rawAudioNode;
+      this.startPosition = rawAudioNode.startPosition;
+      this.endPosition = rawAudioNode.endPosition;
+      this.field1640 = rawAudioNode.field1548;
       this.field1631 = var2;
       this.field1630 = var3;
       this.field1633 = 8192;
@@ -41,7 +41,7 @@ public class class115 extends TaskDataNode {
       this.method2319();
    }
 
-   void method2319() {
+   private void method2319() {
       this.field1634 = this.field1630;
       this.field1635 = method2441(this.field1630, this.field1633);
       this.field1641 = method2314(this.field1630, this.field1633);
@@ -59,15 +59,15 @@ public class class115 extends TaskDataNode {
       return this.field1630 == 0 && this.field1639 == 0?0:1;
    }
 
-   public synchronized void vmethod4317(int[] var1, int var2, int var3) {
+   public synchronized void vmethod4317(final int[] var1, final int var2, int var3) {
       if(this.field1630 == 0 && this.field1639 == 0) {
          this.vmethod4319(var3);
       } else {
-         RawAudioNode var4 = (RawAudioNode)super.data;
-         int var5 = this.startPosition << 8;
-         int var6 = this.endPosition << 8;
-         int var7 = var4.audioBuffer.length << 8;
-         int var8 = var6 - var5;
+         final RawAudioNode var4 = (RawAudioNode)super.data;
+         final int var5 = this.startPosition << 8;
+         final int var6 = this.endPosition << 8;
+         final int var7 = var4.audioBuffer.length << 8;
+         final int var8 = var6 - var5;
          if(var8 <= 0) {
             this.field1637 = 0;
          }
@@ -239,7 +239,7 @@ public class class115 extends TaskDataNode {
       }
    }
 
-   public synchronized void method2320(int var1) {
+   public synchronized void method2320(final int var1) {
       this.field1637 = var1;
    }
 
@@ -265,11 +265,11 @@ public class class115 extends TaskDataNode {
          }
       }
 
-      RawAudioNode var2 = (RawAudioNode)super.data;
-      int var3 = this.startPosition << 8;
-      int var4 = this.endPosition << 8;
-      int var5 = var2.audioBuffer.length << 8;
-      int var6 = var4 - var3;
+      final RawAudioNode var2 = (RawAudioNode)super.data;
+      final int var3 = this.startPosition << 8;
+      final int var4 = this.endPosition << 8;
+      final int var5 = var2.audioBuffer.length << 8;
+      final int var6 = var4 - var3;
       if(var6 <= 0) {
          this.field1637 = 0;
       }
@@ -369,7 +369,7 @@ public class class115 extends TaskDataNode {
                   } while(--this.field1637 != 0);
                }
             } else {
-               int var7;
+               final int var7;
                if(this.field1631 < 0) {
                   if(this.field1638 >= var3) {
                      return;
@@ -383,7 +383,6 @@ public class class115 extends TaskDataNode {
                   }
 
                   this.field1638 += var6 * this.field1637;
-                  this.field1637 = 0;
                } else {
                   if(this.field1638 < var4) {
                      return;
@@ -397,8 +396,8 @@ public class class115 extends TaskDataNode {
                   }
 
                   this.field1638 -= var6 * this.field1637;
-                  this.field1637 = 0;
                }
+                this.field1637 = 0;
             }
          }
 
@@ -417,15 +416,15 @@ public class class115 extends TaskDataNode {
       }
    }
 
-   public synchronized void method2321(int var1) {
+   public synchronized void method2321(final int var1) {
       this.method2323(var1 << 6, this.method2336());
    }
 
-   synchronized void method2322(int var1) {
+   private synchronized void method2322(final int var1) {
       this.method2323(var1, this.method2336());
    }
 
-   synchronized void method2323(int var1, int var2) {
+   private synchronized void method2323(final int var1, final int var2) {
       this.field1630 = var1;
       this.field1633 = var2;
       this.field1639 = 0;
@@ -441,7 +440,7 @@ public class class115 extends TaskDataNode {
    }
 
    public synchronized void method2315(int var1) {
-      int var2 = ((RawAudioNode)super.data).audioBuffer.length << 8;
+      final int var2 = ((RawAudioNode)super.data).audioBuffer.length << 8;
       if(var1 < -1) {
          var1 = -1;
       }
@@ -458,7 +457,7 @@ public class class115 extends TaskDataNode {
       this.field1631 = -this.field1631;
    }
 
-   void method2328() {
+   private void method2328() {
       if(this.field1639 != 0) {
          if(this.field1630 == Integer.MIN_VALUE) {
             this.field1630 = 0;
@@ -470,16 +469,16 @@ public class class115 extends TaskDataNode {
 
    }
 
-   public synchronized void method2352(int var1, int var2) {
+   public synchronized void method2352(final int var1, final int var2) {
       this.method2330(var1, var2, this.method2336());
    }
 
-   public synchronized void method2330(int var1, int var2, int var3) {
+   public synchronized void method2330(int var1, final int var2, final int var3) {
       if(var1 == 0) {
          this.method2323(var2, var3);
       } else {
-         int var4 = method2441(var2, var3);
-         int var5 = method2314(var2, var3);
+         final int var4 = method2441(var2, var3);
+         final int var5 = method2314(var2, var3);
          if(var4 == this.field1635 && var5 == this.field1641) {
             this.field1639 = 0;
          } else {
@@ -561,7 +560,7 @@ public class class115 extends TaskDataNode {
       }
    }
 
-   public synchronized void method2332(int var1) {
+   public synchronized void method2332(final int var1) {
       if(this.field1631 < 0) {
          this.field1631 = -var1;
       } else {
@@ -582,7 +581,7 @@ public class class115 extends TaskDataNode {
       return this.field1639 != 0;
    }
 
-   int method2340(int[] var1, int var2, int var3, int var4, int var5) {
+   private int method2340(final int[] var1, int var2, final int var3, final int var4, final int var5) {
       while(true) {
          if(this.field1639 > 0) {
             int var6 = var2 + this.field1639;
@@ -593,14 +592,14 @@ public class class115 extends TaskDataNode {
             this.field1639 += var2;
             if(this.field1631 == 256 && (this.field1638 & 255) == 0) {
                if(AbstractSoundSystem.audioHighMemory) {
-                  var2 = method2396(0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, this.field1643, this.field1644, 0, var6, var3, this);
+                  var2 = method2396(0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, this.field1643, this.field1644, var6, var3, this);
                } else {
-                  var2 = method2376(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, this.field1636, 0, var6, var3, this);
+                  var2 = method2376(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, this.field1636, var6, var3, this);
                }
             } else if(AbstractSoundSystem.audioHighMemory) {
-               var2 = method2356(0, 0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, this.field1643, this.field1644, 0, var6, var3, this, this.field1631, var5);
+               var2 = method2356(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, this.field1643, this.field1644, var6, var3, this, this.field1631, var5);
             } else {
-               var2 = method2355(0, 0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, this.field1636, 0, var6, var3, this, this.field1631, var5);
+               var2 = method2355(0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, this.field1636, var6, var3, this, this.field1631, var5);
             }
 
             this.field1639 -= var2;
@@ -617,21 +616,21 @@ public class class115 extends TaskDataNode {
 
          if(this.field1631 == 256 && (this.field1638 & 255) == 0) {
             if(AbstractSoundSystem.audioHighMemory) {
-               return method2331(0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, 0, var4, var3, this);
+               return method2331(0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, var4, var3, this);
             }
 
-            return method2344(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, 0, var4, var3, this);
+            return method2344(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, var4, var3, this);
          }
 
          if(AbstractSoundSystem.audioHighMemory) {
-            return method2348(0, 0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, 0, var4, var3, this, this.field1631, var5);
+            return method2348(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, var4, var3, this, this.field1631, var5);
          }
 
-         return method2347(0, 0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, 0, var4, var3, this, this.field1631, var5);
+         return method2347(0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, var4, var3, this, this.field1631, var5);
       }
    }
 
-   int method2408(int[] var1, int var2, int var3, int var4, int var5) {
+   private int method2408(final int[] var1, int var2, final int var3, final int var4, final int var5) {
       while(true) {
          if(this.field1639 > 0) {
             int var6 = var2 + this.field1639;
@@ -642,14 +641,14 @@ public class class115 extends TaskDataNode {
             this.field1639 += var2;
             if(this.field1631 == -256 && (this.field1638 & 255) == 0) {
                if(AbstractSoundSystem.audioHighMemory) {
-                  var2 = method2354(0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, this.field1643, this.field1644, 0, var6, var3, this);
+                  var2 = method2354(0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, this.field1643, this.field1644, var6, var3, this);
                } else {
-                  var2 = method2342(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, this.field1636, 0, var6, var3, this);
+                  var2 = method2342(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, this.field1636, var6, var3, this);
                }
             } else if(AbstractSoundSystem.audioHighMemory) {
-               var2 = method2463(0, 0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, this.field1643, this.field1644, 0, var6, var3, this, this.field1631, var5);
+               var2 = method2463(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, this.field1643, this.field1644, var6, var3, this, this.field1631, var5);
             } else {
-               var2 = method2357(0, 0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, this.field1636, 0, var6, var3, this, this.field1631, var5);
+               var2 = method2357(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, this.field1636, var6, var3, this, this.field1631, var5);
             }
 
             this.field1639 -= var2;
@@ -666,24 +665,24 @@ public class class115 extends TaskDataNode {
 
          if(this.field1631 == -256 && (this.field1638 & 255) == 0) {
             if(AbstractSoundSystem.audioHighMemory) {
-               return method2346(0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, 0, var4, var3, this);
+               return method2346(0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, var4, var3, this);
             }
 
-            return method2345(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, 0, var4, var3, this);
+            return method2345(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, var4, var3, this);
          }
 
          if(AbstractSoundSystem.audioHighMemory) {
-            return method2350(0, 0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, 0, var4, var3, this, this.field1631, var5);
+            return method2350(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1635, this.field1641, var4, var3, this, this.field1631, var5);
          }
 
-         return method2349(0, 0, ((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, 0, var4, var3, this, this.field1631, var5);
+         return method2349(((RawAudioNode)super.data).audioBuffer, var1, this.field1638, var2, this.field1634, var4, var3, this, this.field1631, var5);
       }
    }
 
-   boolean method2343() {
+   private boolean method2343() {
       int var1 = this.field1630;
-      int var2;
-      int var3;
+      final int var2;
+      final int var3;
       if(var1 == Integer.MIN_VALUE) {
          var3 = 0;
          var2 = 0;
@@ -760,26 +759,27 @@ public class class115 extends TaskDataNode {
       return var1 > 255?255:var1;
    }
 
-   static int method2441(int var0, int var1) {
-      return var1 < 0?var0:(int)((double)var0 * Math.sqrt((double)(16384 - var1) * 1.220703125E-4D) + 0.5D);
+   private static int method2441(final int var0, final int var1) {
+      return var1 < 0?var0:(int)(var0 * Math.sqrt((16384 - var1) * 1.220703125E-4D) + 0.5D);
    }
 
-   static int method2314(int var0, int var1) {
-      return var1 < 0?-var0:(int)((double)var0 * Math.sqrt((double)var1 * 1.220703125E-4D) + 0.5D);
+   private static int method2314(final int var0, final int var1) {
+      return var1 < 0?-var0:(int)(var0 * Math.sqrt(var1 * 1.220703125E-4D) + 0.5D);
    }
 
-   public static class115 method2317(RawAudioNode var0, int var1, int var2) {
-      return var0.audioBuffer != null && var0.audioBuffer.length != 0?new class115(var0, (int)((long)var0.sampleRate * 256L * (long)var1 / (long)(AbstractSoundSystem.sampleRate * 100)), var2 << 6):null;
+   public static class115 method2317(final RawAudioNode var0, final int var1, final int var2) {
+      return var0.audioBuffer != null && var0.audioBuffer.length != 0?new class115(var0, (int)(var0.sampleRate * 256L * var1 / (AbstractSoundSystem.sampleRate * 100)), var2 << 6):null;
    }
 
-   public static class115 method2318(RawAudioNode var0, int var1, int var2, int var3) {
+   public static class115 method2318(final RawAudioNode var0, final int var1, final int var2, final int var3) {
       return var0.audioBuffer != null && var0.audioBuffer.length != 0?new class115(var0, var1, var2, var3):null;
    }
 
-   static int method2344(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, class115 var8) {
+   private static int method2344(final byte[] var0, final int[] var1, int var2, int var3, int var4, final int var6, int var7, final class115 var8) {
       var2 >>= 8;
       var7 >>= 8;
       var4 <<= 2;
+      int var5;
       if((var5 = var3 + var7 - var2) > var6) {
          var5 = var6;
       }
@@ -803,11 +803,12 @@ public class class115 extends TaskDataNode {
       return var3;
    }
 
-   static int method2331(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, class115 var10) {
+   private static int method2331(final int var0, final byte[] var1, final int[] var2, int var3, int var4, int var5, int var6, final int var8, int var9, final class115 var10) {
       var3 >>= 8;
       var9 >>= 8;
       var5 <<= 2;
       var6 <<= 2;
+      int var7;
       if((var7 = var4 + var9 - var3) > var8) {
          var7 = var8;
       }
@@ -850,10 +851,11 @@ public class class115 extends TaskDataNode {
       return var4 >> 1;
    }
 
-   static int method2345(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, class115 var8) {
+   private static int method2345(final byte[] var0, final int[] var1, int var2, int var3, int var4, final int var6, int var7, final class115 var8) {
       var2 >>= 8;
       var7 >>= 8;
       var4 <<= 2;
+      int var5;
       if((var5 = var3 + var2 - (var7 - 1)) > var6) {
          var5 = var6;
       }
@@ -877,11 +879,12 @@ public class class115 extends TaskDataNode {
       return var3;
    }
 
-   static int method2346(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, class115 var10) {
+   private static int method2346(final int var0, final byte[] var1, final int[] var2, int var3, int var4, int var5, int var6, final int var8, int var9, final class115 var10) {
       var3 >>= 8;
       var9 >>= 8;
       var5 <<= 2;
       var6 <<= 2;
+      int var7;
       if((var7 = var3 + var4 - (var9 - 1)) > var8) {
          var7 = var8;
       }
@@ -924,13 +927,15 @@ public class class115 extends TaskDataNode {
       return var4 >> 1;
    }
 
-   static int method2347(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, class115 var10, int var11, int var12) {
+   private static int method2347(final int var0, final byte[] var2, final int[] var3, int var4, int var5, final int var6, final int var8, final int var9, final class115 var10, final int var11, final int var12) {
+      int var7;
       if(var11 == 0 || (var7 = var5 + (var11 + (var9 - var4) - 257) / var11) > var8) {
          var7 = var8;
       }
 
       byte var13;
       int var10001;
+      int var1;
       while(var5 < var7) {
          var1 = var4 >> 8;
          var13 = var2[var1];
@@ -953,7 +958,8 @@ public class class115 extends TaskDataNode {
       return var5;
    }
 
-   static int method2348(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, class115 var11, int var12, int var13) {
+   private static int method2348(final byte[] var2, final int[] var3, int var4, int var5, final int var6, final int var7, final int var9, final int var10, final class115 var11, final int var12, final int var13) {
+      int var8;
       if(var12 == 0 || (var8 = var5 + (var10 - var4 + var12 - 257) / var12) > var9) {
          var8 = var9;
       }
@@ -962,6 +968,8 @@ public class class115 extends TaskDataNode {
 
       byte var14;
       int var10001;
+      int var1;
+      int var0;
       for(var8 <<= 1; var5 < var8; var4 += var12) {
          var1 = var4 >> 8;
          var14 = var2[var1];
@@ -991,15 +999,17 @@ public class class115 extends TaskDataNode {
       return var5 >> 1;
    }
 
-   static int method2349(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, class115 var10, int var11, int var12) {
+   private static int method2349(final byte[] var2, final int[] var3, int var4, int var5, final int var6, final int var8, final int var9, final class115 var10, final int var11, final int var12) {
+      int var7;
       if(var11 == 0 || (var7 = var5 + (var11 + (var9 + 256 - var4)) / var11) > var8) {
          var7 = var8;
       }
 
       int var10001;
+      int var1;
       while(var5 < var7) {
          var1 = var4 >> 8;
-         byte var13 = var2[var1 - 1];
+         final byte var13 = var2[var1 - 1];
          var10001 = var5++;
          var3[var10001] += ((var13 << 8) + (var2[var1] - var13) * (var4 & 255)) * var6 >> 6;
          var4 += var11;
@@ -1009,7 +1019,7 @@ public class class115 extends TaskDataNode {
          var7 = var8;
       }
 
-      var0 = var12;
+      final int var0 = var12;
 
       for(var1 = var11; var5 < var7; var4 += var1) {
          var10001 = var5++;
@@ -1020,7 +1030,8 @@ public class class115 extends TaskDataNode {
       return var5;
    }
 
-   static int method2350(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, class115 var11, int var12, int var13) {
+   private static int method2350(final byte[] var2, final int[] var3, int var4, int var5, final int var6, final int var7, final int var9, final int var10, final class115 var11, final int var12, final int var13) {
+      int var8;
       if(var12 == 0 || (var8 = var5 + (var10 + 256 - var4 + var12) / var12) > var9) {
          var8 = var9;
       }
@@ -1028,9 +1039,11 @@ public class class115 extends TaskDataNode {
       var5 <<= 1;
 
       int var10001;
+      int var1;
+      int var0;
       for(var8 <<= 1; var5 < var8; var4 += var12) {
          var1 = var4 >> 8;
-         byte var14 = var2[var1 - 1];
+         final byte var14 = var2[var1 - 1];
          var0 = (var2[var1] - var14) * (var4 & 255) + (var14 << 8);
          var10001 = var5++;
          var3[var10001] += var0 * var6 >> 6;
@@ -1056,11 +1069,12 @@ public class class115 extends TaskDataNode {
       return var5 >> 1;
    }
 
-   static int method2376(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, class115 var9) {
+   private static int method2376(final byte[] var0, final int[] var1, int var2, int var3, int var4, int var5, final int var7, int var8, final class115 var9) {
       var2 >>= 8;
       var8 >>= 8;
       var4 <<= 2;
       var5 <<= 2;
+      int var6;
       if((var6 = var3 + var8 - var2) > var7) {
          var6 = var7;
       }
@@ -1093,13 +1107,14 @@ public class class115 extends TaskDataNode {
       return var3;
    }
 
-   static int method2396(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, class115 var12) {
+   private static int method2396(final int var0, final byte[] var1, final int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, final int var10, int var11, final class115 var12) {
       var3 >>= 8;
       var11 >>= 8;
       var5 <<= 2;
       var6 <<= 2;
       var7 <<= 2;
       var8 <<= 2;
+      int var9;
       if((var9 = var11 + var4 - var3) > var10) {
          var9 = var10;
       }
@@ -1155,11 +1170,12 @@ public class class115 extends TaskDataNode {
       return var4 >> 1;
    }
 
-   static int method2342(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, class115 var9) {
+   private static int method2342(final byte[] var0, final int[] var1, int var2, int var3, int var4, int var5, final int var7, int var8, final class115 var9) {
       var2 >>= 8;
       var8 >>= 8;
       var4 <<= 2;
       var5 <<= 2;
+      int var6;
       if((var6 = var3 + var2 - (var8 - 1)) > var7) {
          var6 = var7;
       }
@@ -1192,13 +1208,14 @@ public class class115 extends TaskDataNode {
       return var3;
    }
 
-   static int method2354(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, class115 var12) {
+   private static int method2354(final int var0, final byte[] var1, final int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, final int var10, int var11, final class115 var12) {
       var3 >>= 8;
       var11 >>= 8;
       var5 <<= 2;
       var6 <<= 2;
       var7 <<= 2;
       var8 <<= 2;
+      int var9;
       if((var9 = var3 + var4 - (var11 - 1)) > var10) {
          var9 = var10;
       }
@@ -1254,15 +1271,17 @@ public class class115 extends TaskDataNode {
       return var4 >> 1;
    }
 
-   static int method2355(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, class115 var11, int var12, int var13) {
+   private static int method2355(final int var0, final byte[] var2, final int[] var3, int var4, int var5, int var6, final int var7, final int var9, final int var10, final class115 var11, final int var12, final int var13) {
       var11.field1635 -= var11.field1643 * var5;
       var11.field1641 -= var11.field1644 * var5;
+      int var8;
       if(var12 == 0 || (var8 = var5 + (var10 - var4 + var12 - 257) / var12) > var9) {
          var8 = var9;
       }
 
       byte var14;
       int var10001;
+      int var1;
       while(var5 < var8) {
          var1 = var4 >> 8;
          var14 = var2[var1];
@@ -1290,8 +1309,9 @@ public class class115 extends TaskDataNode {
       return var5;
    }
 
-   static int method2356(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, class115 var13, int var14, int var15) {
+   private static int method2356(final byte[] var2, final int[] var3, int var4, int var5, int var6, int var7, final int var8, final int var9, final int var11, final int var12, final class115 var13, final int var14, final int var15) {
       var13.field1634 -= var5 * var13.field1636;
+      int var10;
       if(var14 == 0 || (var10 = var5 + (var12 - var4 + var14 - 257) / var14) > var11) {
          var10 = var11;
       }
@@ -1300,6 +1320,8 @@ public class class115 extends TaskDataNode {
 
       byte var16;
       int var10001;
+      int var1;
+      int var0;
       for(var10 <<= 1; var5 < var10; var4 += var14) {
          var1 = var4 >> 8;
          var16 = var2[var1];
@@ -1337,17 +1359,19 @@ public class class115 extends TaskDataNode {
       return var5;
    }
 
-   static int method2357(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, class115 var11, int var12, int var13) {
+   private static int method2357(final byte[] var2, final int[] var3, int var4, int var5, int var6, final int var7, final int var9, final int var10, final class115 var11, final int var12, final int var13) {
       var11.field1635 -= var11.field1643 * var5;
       var11.field1641 -= var11.field1644 * var5;
+      int var8;
       if(var12 == 0 || (var8 = var5 + (var10 + 256 - var4 + var12) / var12) > var9) {
          var8 = var9;
       }
 
       int var10001;
+      int var1;
       while(var5 < var8) {
          var1 = var4 >> 8;
-         byte var14 = var2[var1 - 1];
+         final byte var14 = var2[var1 - 1];
          var10001 = var5++;
          var3[var10001] += ((var14 << 8) + (var2[var1] - var14) * (var4 & 255)) * var6 >> 6;
          var6 += var7;
@@ -1358,7 +1382,7 @@ public class class115 extends TaskDataNode {
          var8 = var9;
       }
 
-      var0 = var13;
+      final int var0 = var13;
 
       for(var1 = var12; var5 < var8; var4 += var1) {
          var10001 = var5++;
@@ -1373,8 +1397,9 @@ public class class115 extends TaskDataNode {
       return var5;
    }
 
-   static int method2463(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, class115 var13, int var14, int var15) {
+   private static int method2463(final byte[] var2, final int[] var3, int var4, int var5, int var6, int var7, final int var8, final int var9, final int var11, final int var12, final class115 var13, final int var14, final int var15) {
       var13.field1634 -= var5 * var13.field1636;
+      int var10;
       if(var14 == 0 || (var10 = var5 + (var12 + 256 - var4 + var14) / var14) > var11) {
          var10 = var11;
       }
@@ -1382,9 +1407,11 @@ public class class115 extends TaskDataNode {
       var5 <<= 1;
 
       int var10001;
+      int var1;
+      int var0;
       for(var10 <<= 1; var5 < var10; var4 += var14) {
          var1 = var4 >> 8;
-         byte var16 = var2[var1 - 1];
+         final byte var16 = var2[var1 - 1];
          var0 = (var2[var1] - var16) * (var4 & 255) + (var16 << 8);
          var10001 = var5++;
          var3[var10001] += var0 * var6 >> 6;

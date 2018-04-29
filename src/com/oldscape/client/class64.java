@@ -3,15 +3,17 @@ package com.oldscape.client;
 import java.io.IOException;
 import java.net.Socket;
 
-public class class64 {
-   final IndexData field764;
-   final int field766;
-   int field763;
+class class64 {
+   private final IndexData field764;
+   private final int field766;
+   private int field763;
+   private final String info;
 
-   class64(IndexData var1, String var2) {
+   class64(final IndexData var1, final String var2) {
       this.field763 = 0;
       this.field764 = var1;
       this.field766 = var1.size();
+      this.info = var2;
    }
 
    boolean method1117() {
@@ -27,7 +29,7 @@ public class class64 {
    }
 
    public static synchronized long method1118() {
-      long var0 = System.currentTimeMillis();
+      final long var0 = System.currentTimeMillis();
       if(var0 < class138.field2048) {
          class196.field2587 += class138.field2048 - var0;
       }
@@ -36,19 +38,19 @@ public class class64 {
       return var0 + class196.field2587;
    }
 
-   public static class169 method1119(Socket var0, int var1, int var2) throws IOException {
+   public static class169 method1119(final Socket var0, final int var1, final int var2) throws IOException {
       return new class171(var0, var1, var2);
    }
 
-   public static boolean method1112(int var0) {
+   public static boolean method1112(final int var0) {
       return var0 >= WorldMapDecorationType.field2988.rsOrdinal && var0 <= WorldMapDecorationType.field2993.rsOrdinal;
    }
 
-   public static boolean method1111(char var0) {
+   public static boolean method1111(final char var0) {
       return var0 >= '0' && var0 <= '9';
    }
 
-   static void setGameState(int var0) {
+   static void setGameState(final int var0) {
       if(var0 != Client.gameState) {
          if(Client.gameState == 0) {
             class23.clientInstance.method922();
@@ -64,9 +66,9 @@ public class class64 {
             }
          }
 
-         if(var0 != 20 && var0 != 40 && FaceNormal.field2069 != null) {
-            FaceNormal.field2069.vmethod3331();
-            FaceNormal.field2069 = null;
+         if(var0 != 20 && var0 != 40 && Client.field2069 != null) {
+            Client.field2069.vmethod3331();
+            Client.field2069 = null;
          }
 
          if(Client.gameState == 25) {
@@ -88,13 +90,13 @@ public class class64 {
                class90.runeSprites = null;
                class321.field3938 = null;
                class90.field1381 = null;
-               class33.logoSprite = null;
+               class171.logoSprite = null;
                class57.titlemuteSprite = null;
                class90.field1363 = null;
                class90.field1393 = null;
                class5.field40 = null;
                BoundingBox3DDrawMode.slFlagSprites = null;
-               class237.slArrowSprites = null;
+               VarpStorage.slArrowSprites = null;
                World.slStarSprites = null;
                class167.field2223 = null;
                class21.field347 = null;
@@ -106,7 +108,7 @@ public class class64 {
                Huffman.field2513 = null;
                AbstractSoundSystem.field1585 = null;
                class229.field2687 = 1;
-               class185.field2511 = null;
+               Client.field2511 = null;
                VertexNormal.field1931 = -1;
                GrandExchangeEvents.field284 = -1;
                class86.field1330 = 0;

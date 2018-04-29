@@ -1,9 +1,9 @@
 package com.oldscape.client;
 
-public class class246 {
+class class246 {
    static IndexedSprite field2979;
 
-   static final int method4490(int var0, int var1, int var2) {
+   static int method4490(final int var0, int var1, final int var2) {
       if(var2 > 179) {
          var1 /= 2;
       }
@@ -20,14 +20,13 @@ public class class246 {
          var1 /= 2;
       }
 
-      int var3 = (var1 / 32 << 7) + (var0 / 4 << 10) + var2 / 2;
-      return var3;
+       return (var1 / 32 << 7) + (var0 / 4 << 10) + var2 / 2;
    }
 
-   static final void method4491() {
+   static void method4491() {
       Client.myPlayerIndex = 0;
-      int x = (SoundTaskDataProvider.localPlayer.x >> 7) + class138.baseX;
-      int y = (SoundTaskDataProvider.localPlayer.y >> 7) + class23.baseY;
+      final int x = (Client.localPlayer.x >> 7) + class138.baseX;
+      final int y = (Client.localPlayer.y >> 7) + class23.baseY;
       if(x >= 3053 && x <= 3156 && y >= 3056 && y <= 3136) {
          Client.myPlayerIndex = 1;
       }

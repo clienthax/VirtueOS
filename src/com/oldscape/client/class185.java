@@ -6,28 +6,26 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-public class class185 {
-   public static IndexDataBase field2511;
+class class185 {
 
-   public static final SpritePixels method3448(byte[] var0) {
-      BufferedImage var1 = null;
+   public static SpritePixels method3448(final byte[] var0) {
+      final BufferedImage var1;
 
       try {
          var1 = ImageIO.read(new ByteArrayInputStream(var0));
-         int var2 = var1.getWidth();
-         int var3 = var1.getHeight();
-         int[] var4 = new int[var3 * var2];
-         PixelGrabber var5 = new PixelGrabber(var1, 0, 0, var2, var3, var4, 0, var2);
-         var5.grabPixels();
-         return new SpritePixels(var4, var2, var3);
-      } catch (IOException var7) {
-      } catch (InterruptedException var8) {
+         final int width = var1.getWidth();
+         final int height = var1.getHeight();
+         final int[] pixels = new int[height * width];
+         final PixelGrabber pixelGrabber = new PixelGrabber(var1, 0, 0, width, height, pixels, 0, width);
+         pixelGrabber.grabPixels();
+         return new SpritePixels(pixels, width, height);
+      } catch (final IOException | InterruptedException ignored) {
       }
 
-      return new SpritePixels(0, 0);
+       return new SpritePixels(0, 0);
    }
 
-   public static char method3443(char var0, int var1) {
+   public static char method3443(final char var0) {
       if(var0 >= 192 && var0 <= 255) {
          if(var0 >= 192 && var0 <= 198) {
             return 'A';

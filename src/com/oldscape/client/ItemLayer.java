@@ -1,6 +1,6 @@
 package com.oldscape.client;
 
-public final class ItemLayer {
+final class ItemLayer {
    int hash;
    int x;
    int y;

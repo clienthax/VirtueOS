@@ -1,18 +1,18 @@
 package com.oldscape.client;
 
-public class Floor1 {
-   static final int[] RANGES;
-   static final float[] field1550;
-   static int[] xList;
-   static int[] yList;
-   static boolean[] field1549;
-   int[] field1551;
-   int multiplier;
-   int[] paritionClassList;
-   int[] classDimensions;
-   int[] classSubClasses;
-   int[] classMasterbooks;
-   int[][] subclassBooks;
+class Floor1 {
+   private static final int[] RANGES;
+   private static final float[] field1550;
+   private static int[] xList;
+   private static int[] yList;
+   private static boolean[] field1549;
+   private int[] field1551;
+   private int multiplier;
+   private int[] paritionClassList;
+   private int[] classDimensions;
+   private int[] classSubClasses;
+   private int[] classMasterbooks;
+   private int[][] subclassBooks;
 
    static {
       RANGES = new int[]{256, 128, 86, 64};
@@ -20,18 +20,18 @@ public class Floor1 {
    }
 
    Floor1() {
-      int var1 = class104.getInt(16);
+      final int var1 = Instrument.getInt(16);
       if(var1 != 1) {
          throw new RuntimeException();
       } else {
-         int var2 = class104.getInt(5);
+         final int var2 = Instrument.getInt(5);
          int var3 = 0;
          this.paritionClassList = new int[var2];
 
          int var4;
          int var5;
          for(var4 = 0; var4 < var2; ++var4) {
-            var5 = class104.getInt(4);
+            var5 = Instrument.getInt(4);
             this.paritionClassList[var4] = var5;
             if(var5 >= var3) {
                var3 = var5 + 1;
@@ -45,23 +45,23 @@ public class Floor1 {
 
          int var7;
          for(var4 = 0; var4 < var3; ++var4) {
-            this.classDimensions[var4] = class104.getInt(3) + 1;
-            var5 = this.classSubClasses[var4] = class104.getInt(2);
+            this.classDimensions[var4] = Instrument.getInt(3) + 1;
+            var5 = this.classSubClasses[var4] = Instrument.getInt(2);
             if(var5 != 0) {
-               this.classMasterbooks[var4] = class104.getInt(8);
+               this.classMasterbooks[var4] = Instrument.getInt(8);
             }
 
             var5 = 1 << var5;
-            int[] var6 = new int[var5];
+            final int[] var6 = new int[var5];
             this.subclassBooks[var4] = var6;
 
             for(var7 = 0; var7 < var5; ++var7) {
-               var6[var7] = class104.getInt(8) - 1;
+               var6[var7] = Instrument.getInt(8) - 1;
             }
          }
 
-         this.multiplier = class104.getInt(2) + 1;
-         var4 = class104.getInt(4);
+         this.multiplier = Instrument.getInt(2) + 1;
+         var4 = Instrument.getInt(4);
          var5 = 2;
 
          int var9;
@@ -78,7 +78,7 @@ public class Floor1 {
             var7 = this.paritionClassList[var9];
 
             for(int var8 = 0; var8 < this.classDimensions[var7]; ++var8) {
-               this.field1551[var5++] = class104.getInt(var4);
+               this.field1551[var5++] = Instrument.getInt(var4);
             }
          }
 
@@ -91,23 +91,23 @@ public class Floor1 {
       }
    }
 
-   int method2172(int var1, int var2, int var3, int var4, int var5) {
-      int var6 = var4 - var2;
-      int var7 = var3 - var1;
-      int var8 = var6 < 0?-var6:var6;
-      int var9 = (var5 - var1) * var8;
-      int var10 = var9 / var7;
+   private int method2172(final int var1, final int var2, final int var3, final int var4, final int var5) {
+      final int var6 = var4 - var2;
+      final int var7 = var3 - var1;
+      final int var8 = var6 < 0?-var6:var6;
+      final int var9 = (var5 - var1) * var8;
+      final int var10 = var9 / var7;
       return var6 < 0?var2 - var10:var10 + var2;
    }
 
-   void method2173(int var1, int var2, int var3, int var4, float[] var5, int var6) {
-      int var7 = var4 - var2;
-      int var8 = var3 - var1;
+   private void method2173(final int var1, final int var2, int var3, final int var4, final float[] var5, final int var6) {
+      final int var7 = var4 - var2;
+      final int var8 = var3 - var1;
       int var9 = var7 < 0?-var7:var7;
-      int var10 = var7 / var8;
+      final int var10 = var7 / var8;
       int var11 = var2;
       int var12 = 0;
-      int var13 = var7 < 0?var10 - 1:var10 + 1;
+      final int var13 = var7 < 0?var10 - 1:var10 + 1;
       var9 -= (var10 < 0?-var10:var10) * var8;
       var5[var1] *= field1550[var2];
       if(var3 > var6) {
@@ -128,15 +128,15 @@ public class Floor1 {
 
    }
 
-   void method2190(int var1, int var2) {
+   private void method2190(final int var1, final int var2) {
       if(var1 < var2) {
          int var3 = var1;
-         int var4 = xList[var1];
-         int var5 = yList[var1];
-         boolean var6 = field1549[var1];
+         final int var4 = xList[var1];
+         final int var5 = yList[var1];
+         final boolean var6 = field1549[var1];
 
          for(int var7 = var1 + 1; var7 <= var2; ++var7) {
-            int var8 = xList[var7];
+            final int var8 = xList[var7];
             if(var8 < var4) {
                xList[var3] = var8;
                yList[var3] = yList[var7];
@@ -157,11 +157,11 @@ public class Floor1 {
    }
 
    boolean decodedFloor() {
-      boolean var1 = class104.getBit() != 0;
+      final boolean var1 = Instrument.getBit() != 0;
       if(!var1) {
          return false;
       } else {
-         int var2 = this.field1551.length;
+         final int var2 = this.field1551.length;
 
          int var3;
          for(var3 = 0; var3 < var2; ++var3) {
@@ -169,36 +169,35 @@ public class Floor1 {
          }
 
          var3 = RANGES[this.multiplier - 1];
-         int var4 = MouseInput.ilog(var3 - 1);
-         yList[0] = class104.getInt(var4);
-         yList[1] = class104.getInt(var4);
+         final int var4 = MouseInput.ilog(var3 - 1);
+         yList[0] = Instrument.getInt(var4);
+         yList[1] = Instrument.getInt(var4);
          int var5 = 2;
 
-         for(int var6 = 0; var6 < this.paritionClassList.length; ++var6) {
-            int var7 = this.paritionClassList[var6];
-            int var8 = this.classDimensions[var7];
-            int var9 = this.classSubClasses[var7];
-            int var10 = (1 << var9) - 1;
-            int var11 = 0;
-            if(var9 > 0) {
-               var11 = class104.codeBooks[this.classMasterbooks[var7]].getHuffmanRoot();
-            }
+          for (final int var7 : this.paritionClassList) {
+              final int var8 = this.classDimensions[var7];
+              final int var9 = this.classSubClasses[var7];
+              final int var10 = (1 << var9) - 1;
+              int var11 = 0;
+              if (var9 > 0) {
+                  var11 = Instrument.codeBooks[this.classMasterbooks[var7]].getHuffmanRoot();
+              }
 
-            for(int var12 = 0; var12 < var8; ++var12) {
-               int var13 = this.subclassBooks[var7][var11 & var10];
-               var11 >>>= var9;
-               yList[var5++] = var13 >= 0?class104.codeBooks[var13].getHuffmanRoot():0;
-            }
-         }
+              for (int var12 = 0; var12 < var8; ++var12) {
+                  final int var13 = this.subclassBooks[var7][var11 & var10];
+                  var11 >>>= var9;
+                  yList[var5++] = var13 >= 0 ? Instrument.codeBooks[var13].getHuffmanRoot() : 0;
+              }
+          }
 
          return true;
       }
    }
 
-   void computeFloor(float[] var1, int var2) {
-      int var3 = this.field1551.length;
-      int var4 = RANGES[this.multiplier - 1];
-      boolean[] var5 = field1549;
+   void computeFloor(final float[] var1, final int var2) {
+      final int var3 = this.field1551.length;
+      final int var4 = RANGES[this.multiplier - 1];
+      final boolean[] var5 = field1549;
       field1549[1] = true;
       var5[0] = true;
 
@@ -212,10 +211,10 @@ public class Floor1 {
          var8 = method2171(xList, var6);
          var9 = this.method2172(xList[var7], yList[var7], xList[var8], yList[var8], xList[var6]);
          var10 = yList[var6];
-         int var11 = var4 - var9;
-         int var13 = (var11 < var9?var11:var9) << 1;
+         final int var11 = var4 - var9;
+         final int var13 = (var11 < var9?var11:var9) << 1;
          if(var10 != 0) {
-            boolean[] var14 = field1549;
+            final boolean[] var14 = field1549;
             field1549[var8] = true;
             var14[var7] = true;
             field1549[var6] = true;
@@ -248,7 +247,7 @@ public class Floor1 {
          }
       }
 
-      float var16 = field1550[var7];
+      final float var16 = field1550[var7];
 
       for(var9 = var6; var9 < var2; ++var9) {
          var1[var9] *= var16;
@@ -256,13 +255,13 @@ public class Floor1 {
 
    }
 
-   static int method2174(int[] var0, int var1) {
-      int var2 = var0[var1];
+   private static int method2174(final int[] var0, final int var1) {
+      final int var2 = var0[var1];
       int var3 = -1;
       int var4 = Integer.MIN_VALUE;
 
       for(int var5 = 0; var5 < var1; ++var5) {
-         int var6 = var0[var5];
+         final int var6 = var0[var5];
          if(var6 < var2 && var6 > var4) {
             var3 = var5;
             var4 = var6;
@@ -272,13 +271,13 @@ public class Floor1 {
       return var3;
    }
 
-   static int method2171(int[] var0, int var1) {
-      int var2 = var0[var1];
+   private static int method2171(final int[] var0, final int var1) {
+      final int var2 = var0[var1];
       int var3 = -1;
       int var4 = Integer.MAX_VALUE;
 
       for(int var5 = 0; var5 < var1; ++var5) {
-         int var6 = var0[var5];
+         final int var6 = var0[var5];
          if(var6 > var2 && var6 < var4) {
             var3 = var5;
             var4 = var6;

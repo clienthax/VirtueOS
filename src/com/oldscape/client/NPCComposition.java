@@ -3,13 +3,13 @@ package com.oldscape.client;
 public class NPCComposition extends CacheableNode {
    public static IndexDataBase NpcDefinition_indexCache;
    public static IndexDataBase NpcDefinition_modelIndexCache;
-   static NodeCache npcs;
-   static NodeCache npcModelCache;
+   static final NodeCache npcs;
+   static final NodeCache npcModelCache;
    public int id;
    public String name;
    public int size;
-   int[] models;
-   int[] additionalModels;
+   private int[] models;
+   private int[] additionalModels;
    public int standingAnimation;
    public int field3716;
    public int field3714;
@@ -17,27 +17,27 @@ public class NPCComposition extends CacheableNode {
    public int rotate180Animation;
    public int rotate90RightAnimation;
    public int rotate90LeftAnimation;
-   short[] colors;
-   short[] modifiedColors;
-   short[] textureToReplace;
-   short[] textureToReplaceWith;
+   private short[] colors;
+   private short[] modifiedColors;
+   private short[] textureToReplace;
+   private short[] textureToReplaceWith;
    public String[] actions;
    public boolean isMinimapVisible;
    public int combatLevel;
-   int widthScale;
-   int heightScale;
+   private int widthScale;
+   private int heightScale;
    public boolean isVisible;
-   int ambient;
-   int contrast;
+   private int ambient;
+   private int contrast;
    public int headIcon;
    public int rotation;
    public int[] configs;
-   int varpIndex;
-   int varp32Index;
+   private int varpIndex;
+   private int varp32Index;
    public boolean field3724;
    public boolean isClickable;
    public boolean field3738;
-   IterableHashTable params;
+   private IterableHashTable params;
 
    static {
       npcs = new NodeCache(64);
@@ -71,12 +71,28 @@ public class NPCComposition extends CacheableNode {
       this.field3738 = false;
    }
 
-   void post() {
+    public static NPCComposition getNpcDefinition(final int var0) {
+       NPCComposition var1 = (NPCComposition) npcs.get(var0);
+        if (var1 == null) {
+            final byte[] var2 = NpcDefinition_indexCache.getConfigData(9, var0);
+            var1 = new NPCComposition();
+            var1.id = var0;
+            if (var2 != null) {
+                var1.decode(new Buffer(var2));
+            }
+
+            var1.post();
+            npcs.put(var1, var0);
+        }
+        return var1;
+    }
+
+    void post() {
    }
 
-   void decode(Buffer var1) {
+   void decode(final Buffer var1) {
       while(true) {
-         int var2 = var1.readUnsignedByte();
+         final int var2 = var1.readUnsignedByte();
          if(var2 == 0) {
             return;
          }
@@ -85,7 +101,7 @@ public class NPCComposition extends CacheableNode {
       }
    }
 
-   void readNext(Buffer var1, int var2) {
+   private void readNext(final Buffer var1, final int var2) {
       int var3;
       int var4;
       if(var2 == 1) {
@@ -162,13 +178,13 @@ public class NPCComposition extends CacheableNode {
          this.rotation = var1.readUnsignedShort();
       } else if(var2 != 106 && var2 != 118) {
          if(var2 == 107) {
-            this.field3724 = false;
+            this.field3724 = false;//hasactions ?
          } else if(var2 == 109) {
             this.isClickable = false;
          } else if(var2 == 111) {
             this.field3738 = true;
          } else if(var2 == 249) {
-            this.params = class28.readStringIntParameters(var1, this.params);
+            this.params = WorldMapDecorationInfo.readStringIntParameters(var1, this.params);
          }
       } else {
          this.varpIndex = var1.readUnsignedShort();
@@ -204,64 +220,64 @@ public class NPCComposition extends CacheableNode {
 
    }
 
-   public final Model getModel(Sequence var1, int var2, Sequence var3, int var4) {
+   public final Model getModel(final Sequence action, final int actionFrame, final Sequence pose, final int poseFrame) {
       if(this.configs != null) {
-         NPCComposition var12 = this.transform();
-         return var12 == null?null:var12.getModel(var1, var2, var3, var4);
+         final NPCComposition npcComposition = this.transform();
+         return npcComposition == null?null:npcComposition.getModel(action, actionFrame, pose, poseFrame);
       } else {
-         Model var5 = (Model)npcModelCache.get((long)this.id);
-         if(var5 == null) {
+         Model model = (Model)npcModelCache.get(this.id);
+         if(model == null) {
             boolean var6 = false;
 
-            for(int var7 = 0; var7 < this.models.length; ++var7) {
-               if(!NpcDefinition_modelIndexCache.tryLoadRecord(this.models[var7], 0)) {
-                  var6 = true;
-               }
-            }
+             for (final int modelID : this.models) {
+                 if (!NpcDefinition_modelIndexCache.tryLoadRecord(modelID, 0)) {
+                     var6 = true;
+                 }
+             }
 
             if(var6) {
                return null;
             }
 
-            ModelData[] var8 = new ModelData[this.models.length];
+            final ModelData[] modelDatas = new ModelData[this.models.length];
 
             int var9;
             for(var9 = 0; var9 < this.models.length; ++var9) {
-               var8[var9] = ModelData.method2645(NpcDefinition_modelIndexCache, this.models[var9], 0);
+               modelDatas[var9] = ModelData.method2645(NpcDefinition_modelIndexCache, this.models[var9], 0);
             }
 
-            ModelData var11;
-            if(var8.length == 1) {
-               var11 = var8[0];
+            final ModelData modelData;
+            if(modelDatas.length == 1) {
+               modelData = modelDatas[0];
             } else {
-               var11 = new ModelData(var8, var8.length);
+               modelData = new ModelData(modelDatas, modelDatas.length);
             }
 
             if(this.colors != null) {
                for(var9 = 0; var9 < this.colors.length; ++var9) {
-                  var11.recolor(this.colors[var9], this.modifiedColors[var9]);
+                  modelData.recolor(this.colors[var9], this.modifiedColors[var9]);
                }
             }
 
             if(this.textureToReplace != null) {
                for(var9 = 0; var9 < this.textureToReplace.length; ++var9) {
-                  var11.method2613(this.textureToReplace[var9], this.textureToReplaceWith[var9]);
+                  modelData.method2613(this.textureToReplace[var9], this.textureToReplaceWith[var9]);
                }
             }
 
-            var5 = var11.light(this.ambient + 64, this.contrast * 5 + 850, -30, -50, -30);
-            npcModelCache.put(var5, (long)this.id);
+            model = modelData.light(this.ambient + 64, this.contrast * 5 + 850, -30, -50, -30);
+            npcModelCache.put(model, this.id);
          }
 
-         Model var10;
-         if(var1 != null && var3 != null) {
-            var10 = var1.applyTransformations(var5, var2, var3, var4);
-         } else if(var1 != null) {
-            var10 = var1.transformActorModel(var5, var2);
-         } else if(var3 != null) {
-            var10 = var3.transformActorModel(var5, var4);
+         final Model var10;
+         if(action != null && pose != null) {
+            var10 = action.applyTransformations(model, actionFrame, pose, poseFrame);
+         } else if(action != null) {
+            var10 = action.transformActorModel(model, actionFrame);
+         } else if(pose != null) {
+            var10 = pose.transformActorModel(model, poseFrame);
          } else {
-            var10 = var5.toSharedModel(true);
+            var10 = model.toSharedModel(true);
          }
 
          if(this.widthScale != 128 || this.heightScale != 128) {
@@ -274,29 +290,29 @@ public class NPCComposition extends CacheableNode {
 
    public final ModelData method5148() {
       if(this.configs != null) {
-         NPCComposition var1 = this.transform();
+         final NPCComposition var1 = this.transform();
          return var1 == null?null:var1.method5148();
       } else if(this.additionalModels == null) {
          return null;
       } else {
          boolean var5 = false;
 
-         for(int var2 = 0; var2 < this.additionalModels.length; ++var2) {
-            if(!NpcDefinition_modelIndexCache.tryLoadRecord(this.additionalModels[var2], 0)) {
-               var5 = true;
-            }
-         }
+          for (final int additionalModel : this.additionalModels) {
+              if (!NpcDefinition_modelIndexCache.tryLoadRecord(additionalModel, 0)) {
+                  var5 = true;
+              }
+          }
 
          if(var5) {
             return null;
          } else {
-            ModelData[] var6 = new ModelData[this.additionalModels.length];
+            final ModelData[] var6 = new ModelData[this.additionalModels.length];
 
             for(int var3 = 0; var3 < this.additionalModels.length; ++var3) {
                var6[var3] = ModelData.method2645(NpcDefinition_modelIndexCache, this.additionalModels[var3], 0);
             }
 
-            ModelData var7;
+            final ModelData var7;
             if(var6.length == 1) {
                var7 = var6[0];
             } else {
@@ -322,45 +338,45 @@ public class NPCComposition extends CacheableNode {
    }
 
    public final NPCComposition transform() {
-      int var1 = -1;
+      int varp = -1;
       if(this.varpIndex != -1) {
-         var1 = DynamicObject.getVarbit(this.varpIndex);
+         varp = Varbit.getVarbit(this.varpIndex);
       } else if(this.varp32Index != -1) {
-         var1 = class237.clientVarps[this.varp32Index];
+         varp = VarpStorage.clientVarps[this.varp32Index];
       }
 
-      int var2;
-      if(var1 >= 0 && var1 < this.configs.length - 1) {
-         var2 = this.configs[var1];
+      final int id;
+      if(varp >= 0 && varp < this.configs.length - 1) {
+         id = this.configs[varp];
       } else {
-         var2 = this.configs[this.configs.length - 1];
+         id = this.configs[this.configs.length - 1];
       }
 
-      return var2 != -1?class234.getNpcDefinition(var2):null;
+      return id != -1?getNpcDefinition(id):null;
    }
 
    public boolean method5123() {
       if(this.configs == null) {
          return true;
       } else {
-         int var1 = -1;
+         int varp = -1;
          if(this.varpIndex != -1) {
-            var1 = DynamicObject.getVarbit(this.varpIndex);
+            varp = Varbit.getVarbit(this.varpIndex);
          } else if(this.varp32Index != -1) {
-            var1 = class237.clientVarps[this.varp32Index];
+            varp = VarpStorage.clientVarps[this.varp32Index];
          }
 
-         return var1 >= 0 && var1 < this.configs.length?this.configs[var1] != -1:this.configs[this.configs.length - 1] != -1;
+         return varp >= 0 && varp < this.configs.length?this.configs[varp] != -1:this.configs[this.configs.length - 1] != -1;
       }
    }
 
-   public int method5124(int var1, int var2) {
-      IterableHashTable var4 = this.params;
-      int var3;
+   public int method5124(final int var1, final int var2) {
+      final IterableHashTable var4 = this.params;
+      final int var3;
       if(var4 == null) {
          var3 = var2;
       } else {
-         IntegerNode var5 = (IntegerNode)var4.get((long)var1);
+         final IntegerNode var5 = (IntegerNode)var4.get(var1);
          if(var5 == null) {
             var3 = var2;
          } else {
@@ -371,7 +387,7 @@ public class NPCComposition extends CacheableNode {
       return var3;
    }
 
-   public String method5125(int var1, String var2) {
+   public String method5125(final int var1, final String var2) {
       return WorldMapType1.method309(this.params, var1, var2);
    }
 }
