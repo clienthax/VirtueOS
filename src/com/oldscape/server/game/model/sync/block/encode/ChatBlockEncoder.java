@@ -34,7 +34,7 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 public class ChatBlockEncoder extends SynchronizationBlockEncoder {
 
 	public ChatBlockEncoder() {
-		super(0x10, 0);
+		super(8, 0);
 	}
 
 	/* (non-Javadoc)

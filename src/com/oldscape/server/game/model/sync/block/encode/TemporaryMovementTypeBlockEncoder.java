@@ -34,7 +34,7 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 public class TemporaryMovementTypeBlockEncoder extends SynchronizationBlockEncoder {
 
 	public TemporaryMovementTypeBlockEncoder() {
-		super(0x400, 0);
+		super(4096, 0);
 	}
 
 	/* (non-Javadoc)

@@ -36,7 +36,7 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 public class HitUpdateBlockEncoder extends SynchronizationBlockEncoder {
 
 	public HitUpdateBlockEncoder() {
-		super(0x20, 0x4);
+		super(32, 4);
 	}
 
 	/* (non-Javadoc)

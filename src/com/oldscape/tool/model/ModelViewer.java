@@ -65,7 +65,7 @@ public class ModelViewer {
 		double aspect = 1;
 		double near = 1; // near should be chosen as far into the scene as possible
 		double far = 1000;
-		double fov = 1; // 1 gives you a 90° field of view. It's tan(fov_angle)/2.
+		double fov = 1; // 1 gives you a 90 field of view. It's tan(fov_angle)/2.
 		GL11.glFrustum(-aspect * near * fov, aspect * near * fov, -fov, fov, near, far);
 
 		GL11.glCullFace(GL11.GL_BACK);

@@ -36,7 +36,9 @@ public enum BlockType {
 	FORCE_CHAT,
 	
 	FORCE_MOVEMENT,
-	
+
+	CONTEXT_MENU,
+
 	GRAPHIC,
 	
 	HIT_UPDATE,

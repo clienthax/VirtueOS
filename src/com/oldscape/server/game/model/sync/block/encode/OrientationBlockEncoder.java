@@ -36,7 +36,7 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 public class OrientationBlockEncoder extends SynchronizationBlockEncoder {
 
 	public OrientationBlockEncoder() {
-		super(0x10, 0x2);
+		super(16, 2);
 		//was 0x80 0x8
 		//168 0x10 0x2
 	}

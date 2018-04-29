@@ -36,7 +36,7 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 public class AnimationBlockEncoder extends SynchronizationBlockEncoder {
 
 	public AnimationBlockEncoder() {
-		super(0x1, 0x2);
+		super(1, 2);
 	}
 
 	/* (non-Javadoc)

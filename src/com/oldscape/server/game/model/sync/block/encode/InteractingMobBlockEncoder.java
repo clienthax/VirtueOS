@@ -35,7 +35,7 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 public class InteractingMobBlockEncoder extends SynchronizationBlockEncoder {
 
 	public InteractingMobBlockEncoder() {
-		super(0x80, 0x20);
+		super(64, 32);
 	}
 
 	/* (non-Javadoc)

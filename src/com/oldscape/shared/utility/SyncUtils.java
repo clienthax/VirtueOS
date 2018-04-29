@@ -5,20 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.oldscape.server.game.model.sync.block.encode.AnimationBlockEncoder;
-import com.oldscape.server.game.model.sync.block.encode.AppearanceBlockEncoder;
-import com.oldscape.server.game.model.sync.block.encode.ChatBlockEncoder;
-import com.oldscape.server.game.model.sync.block.encode.ForceChatBlockEncoder;
-import com.oldscape.server.game.model.sync.block.encode.ForceMovementBlockEncoder;
-import com.oldscape.server.game.model.sync.block.encode.GraphicBlockEncoder;
-import com.oldscape.server.game.model.sync.block.encode.HitUpdateBlockEncoder;
-import com.oldscape.server.game.model.sync.block.encode.InteractingMobBlockEncoder;
-import com.oldscape.server.game.model.sync.block.encode.MovementTypeBlockEncoder;
-import com.oldscape.server.game.model.sync.block.encode.OrientationBlockEncoder;
-import com.oldscape.server.game.model.sync.block.encode.SecondaryHitUpdateBlockEncoder;
-import com.oldscape.server.game.model.sync.block.encode.SynchronizationBlockEncoder;
-import com.oldscape.server.game.model.sync.block.encode.TemporaryMovementTypeBlockEncoder;
-import com.oldscape.server.game.model.sync.block.encode.TransformBlockEncoder;
+import com.oldscape.server.game.model.sync.block.encode.*;
 import com.oldscape.server.game.model.sync.descriptor.CycleEndDescriptor;
 import com.oldscape.server.game.model.sync.descriptor.CycleStartDescriptor;
 import com.oldscape.server.game.model.sync.descriptor.NpcAdditionDescriptor;
@@ -63,18 +50,42 @@ public class SyncUtils {
 		nDescriptors.put(SegmentType.RUN, new NpcRunDescriptor());
 		nDescriptors.put(SegmentType.NO_MOVEMENT, new NpcStillDescriptor());
 
-		pBlocks.add(new AppearanceBlockEncoder());
-		pBlocks.add(new AnimationBlockEncoder());
-		pBlocks.add(new InteractingMobBlockEncoder());
-		pBlocks.add(new ForceChatBlockEncoder());
-		pBlocks.add(new HitUpdateBlockEncoder());
-		pBlocks.add(new OrientationBlockEncoder());
-		pBlocks.add(new ChatBlockEncoder());
-		pBlocks.add(new GraphicBlockEncoder());
-		pBlocks.add(new ForceMovementBlockEncoder());
-		pBlocks.add(new SecondaryHitUpdateBlockEncoder());
-		pBlocks.add(new MovementTypeBlockEncoder());
-		pBlocks.add(new TemporaryMovementTypeBlockEncoder());
+		//TODO these need to match up with the clients ordering, or else they will be read out of order
+		/**
+		 * Correct order for 168
+		 * 4 - forcechat
+		 * 64 - face entity
+		 * 16 - orientation
+		 * 128 - hitmasks
+		 * 2048 - context menu -- doesn't seem to be in this yet
+		 * 1 - animation
+		 * 256 - gfx
+		 * 8 - chat masks
+		 * 512 - movement mask
+		 * 1024 - forced movement
+		 * 4096 - unknown - temp movement?
+		 * 2 - appearance
+		 *
+		 * TODO hit updates need to be remade for 168
+		 * TODO implement context menu
+		 *
+		 */
+		pBlocks.add(new ForceChatBlockEncoder());//4
+		pBlocks.add(new InteractingMobBlockEncoder());//64
+		pBlocks.add(new OrientationBlockEncoder());//16
+		pBlocks.add(new HitUpdateBlockEncoder());//TODO update
+		pBlocks.add(new ContextMenuBlockEncoder());//2048
+		pBlocks.add(new AnimationBlockEncoder());//1
+		pBlocks.add(new GraphicBlockEncoder());//256
+		pBlocks.add(new ChatBlockEncoder());//8
+		pBlocks.add(new MovementTypeBlockEncoder());//512
+		pBlocks.add(new ForceMovementBlockEncoder());//1024
+		pBlocks.add(new TemporaryMovementTypeBlockEncoder());//4096
+		pBlocks.add(new AppearanceBlockEncoder());//2
+
+		//pBlocks.add(new HitUpdateBlockEncoder());
+		//pBlocks.add(new SecondaryHitUpdateBlockEncoder());
+
 
 		nBlocks.add(new HitUpdateBlockEncoder());
 		nBlocks.add(new InteractingMobBlockEncoder());

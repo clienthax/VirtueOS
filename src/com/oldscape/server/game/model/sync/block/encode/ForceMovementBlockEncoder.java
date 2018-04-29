@@ -36,7 +36,7 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 public class ForceMovementBlockEncoder extends SynchronizationBlockEncoder {
 
 	public ForceMovementBlockEncoder() {
-		super(0x200, 0);
+		super(1024, 0);
 	}
 
 	/* (non-Javadoc)

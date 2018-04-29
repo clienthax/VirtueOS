@@ -17,7 +17,7 @@ public final class LoginEventListener implements EventListener<LoginEvent, Login
 			System.out.println("Wrong client version");
 		}
 
-		if (!event.getToken().equals("p1cxIGuofoL*Cxh6XInci7jdO6eoWyjw4JDOroxQCWofrlANnxj8Eg")) {//TODO load from config
+		if (!event.getToken().equals("ElZAIrq5NpKN6D3mDdihco3oPeYN2KFy2DCquj7JMmECPmLrDP3Bnw")) {//TODO load from config
 			context.sendLoginFailure(Response.SERVER_UPDATED);
 			System.out.println("Wrong client token");
 		}

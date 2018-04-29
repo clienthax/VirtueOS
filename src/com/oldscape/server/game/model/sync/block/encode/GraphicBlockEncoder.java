@@ -37,7 +37,7 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 public class GraphicBlockEncoder extends SynchronizationBlockEncoder {
 
 	public GraphicBlockEncoder() {
-		super(0x800, 0x1);
+		super(256, 1);
 	}
 
 	/* (non-Javadoc)
@@ -50,10 +50,8 @@ public class GraphicBlockEncoder extends SynchronizationBlockEncoder {
 			builder.put(DataType.SHORT, graphic.getId());
 			builder.put(DataType.INT, (graphic.getDelay() << 16 | graphic.getHeight()));
 		} else {
-			builder.put(DataType.SHORT, DataOrder.LITTLE, DataTransformation.ADD,
-				graphic.getId());
-			builder.put(DataType.INT, DataOrder.INVERSED_MIDDLE,
-				(graphic.getDelay() << 16 | graphic.getHeight()));
+			builder.put(DataType.SHORT, DataOrder.LITTLE, DataTransformation.ADD, graphic.getId());
+			builder.put(DataType.INT, DataOrder.INVERSED_MIDDLE, (graphic.getDelay() << 16 | graphic.getHeight()));
 		}
 	}
 	

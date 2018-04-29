@@ -41,7 +41,7 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 public class AppearanceBlockEncoder extends SynchronizationBlockEncoder {
 
 	public AppearanceBlockEncoder() {
-		super(0x2, 0);
+		super(2, 0);
 	}
 
 	/*

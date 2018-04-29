@@ -22,21 +22,21 @@
 package com.oldscape.server.game.model.sync.block.encode;
 
 import com.oldscape.server.game.model.sync.block.BlockType;
-import com.oldscape.server.game.model.sync.block.HitUpdateBlock;
+import com.oldscape.server.game.model.sync.block.ContextMenuBlock;
+import com.oldscape.server.game.model.sync.block.ForceChatBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
-import com.oldscape.shared.network.game.DataOrder;
-import com.oldscape.shared.network.game.DataTransformation;
-import com.oldscape.shared.network.game.DataType;
 import com.oldscape.shared.network.game.GameFrameBuilder;
+
+import java.util.List;
 
 /**
  * @author Kyle Friz
  * @since  Aug 31, 2015
  */
-public class SecondaryHitUpdateBlockEncoder extends SynchronizationBlockEncoder {
+public class ContextMenuBlockEncoder extends SynchronizationBlockEncoder {
 
-	public SecondaryHitUpdateBlockEncoder() {
-		super(4096, 64);
+	public ContextMenuBlockEncoder() {
+		super(2048, 0);
 	}
 
 	/* (non-Javadoc)
@@ -44,25 +44,18 @@ public class SecondaryHitUpdateBlockEncoder extends SynchronizationBlockEncoder 
 	 */
 	@Override
 	public void encodeBlock(SynchronizationBlock block, GameFrameBuilder builder, boolean player) {
-		HitUpdateBlock hit = (HitUpdateBlock) block;
-		if (player) {
-			builder.put(DataType.SHORT, hit.getDamage());
-			builder.put(DataType.BYTE, hit.getHitType());
-			builder.put(DataType.BYTE, hit.getCurrentHealth());
-			builder.put(DataType.BYTE, hit.getMaximumHealth());
-		} else {
-			builder.put(DataType.BYTE, DataTransformation.SUBTRACT, hit.getDamage());
-			builder.put(DataType.BYTE, hit.getHitType());
-			builder.put(DataType.SHORT, DataOrder.LITTLE, hit.getCurrentHealth());
-			builder.put(DataType.SHORT, DataOrder.LITTLE, hit.getMaximumHealth());}
+		ContextMenuBlock contextMenuBlock = (ContextMenuBlock) block;
+		builder.putString(contextMenuBlock.getFirstAction());
+		builder.putString(contextMenuBlock.getSecondAction());
+		builder.putString(contextMenuBlock.getThirdAction());
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see com.oldscape.server.game.model.sync.block.encode.SynchronizationBlockEncoder#getType()
 	 */
 	@Override
 	public BlockType getType() {
-		return BlockType.SECONDARY_HIT_UPDATE;
+		return BlockType.CONTEXT_MENU;
 	}
-
+	
 }
