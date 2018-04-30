@@ -98,76 +98,82 @@ class UrlRequester implements Runnable {
 
    }
 
-   static void method3091(final PacketBuffer var0) {
-      for(int var1 = 0; var1 < Client.pendingNpcFlagsCount; ++var1) {
-         final int var2 = Client.pendingNpcFlagsIndices[var1];
-         final NPC var3 = Client.cachedNPCs[var2];
-         final int var4 = var0.readUnsignedByte();
+   static void processNpcUpdateFlags(final PacketBuffer buffer) {
+      for(int npcIdx = 0; npcIdx < Client.pendingNpcFlagsCount; ++npcIdx) {
+         final int var2 = Client.pendingNpcFlagsIndices[npcIdx];
+         final NPC npc = Client.cachedNPCs[var2];
+         final int flags = buffer.readUnsignedByte();
          int var5;
          int var6;
          int var7;
-         if((var4 & 4) != 0) {
-            var5 = var0.readUnsignedShort();
+         int var8;
+
+         //animations
+         if((flags & 4) != 0) {
+            var5 = buffer.readUnsignedShort();
             if(var5 == 65535) {
                var5 = -1;
             }
 
-            var6 = var0.readUnsignedShortOb1();
-            if(var5 == var3.animation && var5 != -1) {
+            var6 = buffer.readUnsignedShortOb1();
+            if(var5 == npc.animation && var5 != -1) {
                var7 = CombatInfo1.getAnimation(var5).replyMode;
                if(var7 == 1) {
-                  var3.actionFrame = 0;
-                  var3.actionFrameCycle = 0;
-                  var3.actionAnimationDisable = var6;
-                  var3.field1193 = 0;
+                  npc.actionFrame = 0;
+                  npc.actionFrameCycle = 0;
+                  npc.actionAnimationDisable = var6;
+                  npc.field1193 = 0;
                }
 
                if(var7 == 2) {
-                  var3.field1193 = 0;
+                  npc.field1193 = 0;
                }
-            } else if(var5 == -1 || var3.animation == -1 || CombatInfo1.getAnimation(var5).forcedPriority >= CombatInfo1.getAnimation(var3.animation).forcedPriority) {
-               var3.animation = var5;
-               var3.actionFrame = 0;
-               var3.actionFrameCycle = 0;
-               var3.actionAnimationDisable = var6;
-               var3.field1193 = 0;
-               var3.field1216 = var3.queueSize;
+            } else if(var5 == -1 || npc.animation == -1 || CombatInfo1.getAnimation(var5).forcedPriority >= CombatInfo1.getAnimation(npc.animation).forcedPriority) {
+               npc.animation = var5;
+               npc.actionFrame = 0;
+               npc.actionFrameCycle = 0;
+               npc.actionAnimationDisable = var6;
+               npc.field1193 = 0;
+               npc.field1216 = npc.queueSize;
             }
          }
 
-         if((var4 & 64) != 0) {
-            var3.composition = NPCComposition.getNpcDefinition(var0.readUnsignedShort());
-            var3.size = var3.composition.size;
-            var3.rotation = var3.composition.rotation;
-            var3.walkingAnimation = var3.composition.walkingAnimation;
-            var3.rotate180Animation = var3.composition.rotate180Animation;
-            var3.rotate90RightAnimation = var3.composition.rotate90RightAnimation;
-            var3.rotate90LeftAnimation = var3.composition.rotate90LeftAnimation;
-            var3.idlePoseAnimation = var3.composition.standingAnimation;
-            var3.field1163 = var3.composition.field3716;
-            var3.field1164 = var3.composition.field3714;
+         //transform
+         if((flags & 64) != 0) {
+            npc.composition = NPCComposition.getNpcDefinition(buffer.readUnsignedShort());
+            npc.size = npc.composition.size;
+            npc.rotation = npc.composition.rotation;
+            npc.walkingAnimation = npc.composition.walkingAnimation;
+            npc.rotate180Animation = npc.composition.rotate180Animation;
+            npc.rotate90RightAnimation = npc.composition.rotate90RightAnimation;
+            npc.rotate90LeftAnimation = npc.composition.rotate90LeftAnimation;
+            npc.idlePoseAnimation = npc.composition.standingAnimation;
+            npc.field1163 = npc.composition.field3716;
+            npc.field1164 = npc.composition.field3714;
          }
 
-         int var8;
-         if((var4 & 2) != 0) {
-            var5 = var0.readUnsignedShort();
-            var6 = var0.method3554();
-            var7 = var3.x - (var5 - class138.baseX - class138.baseX) * 64;
-            var8 = var3.y - (var6 - class23.baseY - class23.baseY) * 64;
+         //orientation
+         if((flags & 2) != 0) {
+            var5 = buffer.readUnsignedShort();
+            var6 = buffer.method3554();
+            var7 = npc.x - (var5 - class138.baseX - class138.baseX) * 64;
+            var8 = npc.y - (var6 - class23.baseY - class23.baseY) * 64;
             if(var7 != 0 || var8 != 0) {
-               var3.field1185 = (int)(Math.atan2(var7, var8) * 325.949D) & 2047;
+               npc.field1185 = (int)(Math.atan2(var7, var8) * 325.949D) & 2047;
             }
          }
 
-         if((var4 & 32) != 0) {
-            var3.interacting = var0.method3555();
-            if(var3.interacting == 65535) {
-               var3.interacting = -1;
+         //face entity
+         if((flags & 32) != 0) {
+            npc.interacting = buffer.method3555();
+            if(npc.interacting == 65535) {
+               npc.interacting = -1;
             }
          }
 
-         if((var4 & 16) != 0) {
-            var5 = var0.method3538();
+         //hitmasks
+         if((flags & 16) != 0) {
+            var5 = buffer.method3538();
             int var9;
             int var10;
             int var11;
@@ -176,59 +182,61 @@ class UrlRequester implements Runnable {
                   var8 = -1;
                   var9 = -1;
                   var10 = -1;
-                  var7 = var0.getUSmart();
+                  var7 = buffer.getUSmart();
                   if(var7 == 32767) {
-                     var7 = var0.getUSmart();
-                     var9 = var0.getUSmart();
-                     var8 = var0.getUSmart();
-                     var10 = var0.getUSmart();
+                     var7 = buffer.getUSmart();
+                     var9 = buffer.getUSmart();
+                     var8 = buffer.getUSmart();
+                     var10 = buffer.getUSmart();
                   } else if(var7 != 32766) {
-                     var9 = var0.getUSmart();
+                     var9 = buffer.getUSmart();
                   } else {
                      var7 = -1;
                   }
 
-                  var11 = var0.getUSmart();
-                  var3.method1657(var7, var9, var8, var10, Client.gameCycle, var11);
+                  var11 = buffer.getUSmart();
+                  npc.method1657(var7, var9, var8, var10, Client.gameCycle, var11);
                }
             }
 
-            var6 = var0.method3538();
+            var6 = buffer.method3538();
             if(var6 > 0) {
                for(var7 = 0; var7 < var6; ++var7) {
-                  var8 = var0.getUSmart();
-                  var9 = var0.getUSmart();
+                  var8 = buffer.getUSmart();
+                  var9 = buffer.getUSmart();
                   if(var9 != 32767) {
-                     var10 = var0.getUSmart();
-                     var11 = var0.readUnsignedShortOb1();
-                     final int var12 = var9 > 0?var0.readUnsignedShortOb1():var11;
-                     var3.setCombatInfo(var8, Client.gameCycle, var9, var10, var11, var12);
+                     var10 = buffer.getUSmart();
+                     var11 = buffer.readUnsignedShortOb1();
+                     final int var12 = var9 > 0?buffer.readUnsignedShortOb1():var11;
+                     npc.setCombatInfo(var8, Client.gameCycle, var9, var10, var11, var12);
                   } else {
-                     var3.method1659(var8);
+                     npc.method1659(var8);
                   }
                }
             }
          }
 
-         if((var4 & 1) != 0) {
-            var3.graphic = var0.method3555();
-            var5 = var0.method3562();
-            var3.field1198 = var5 >> 16;
-            var3.graphicsDelay = (var5 & 65535) + Client.gameCycle;
-            var3.spotAnimFrame = 0;
-            var3.spotAnimFrameCycle = 0;
-            if(var3.graphicsDelay > Client.gameCycle) {
-               var3.spotAnimFrame = -1;
+         //gfx
+         if((flags & 1) != 0) {
+            npc.graphic = buffer.method3555();
+            var5 = buffer.method3562();
+            npc.field1198 = var5 >> 16;
+            npc.graphicsDelay = (var5 & 65535) + Client.gameCycle;
+            npc.spotAnimFrame = 0;
+            npc.spotAnimFrameCycle = 0;
+            if(npc.graphicsDelay > Client.gameCycle) {
+               npc.spotAnimFrame = -1;
             }
 
-            if(var3.graphic == 65535) {
-               var3.graphic = -1;
+            if(npc.graphic == 65535) {
+               npc.graphic = -1;
             }
          }
 
-         if((var4 & 8) != 0) {
-            var3.overhead = var0.readString();
-            var3.overheadTextCyclesRemaining = 100;
+         //force chat
+         if((flags & 8) != 0) {
+            npc.overhead = buffer.readString();
+            npc.overheadTextCyclesRemaining = 100;
          }
       }
 

@@ -948,7 +948,7 @@ class WorldMapRegion {
          }
 
          WorldMapDecorationInfo.method274(var0, var1);
-         UrlRequester.method3091(var1);
+         UrlRequester.processNpcUpdateFlags(var1);
 
          int var12;
          for(var12 = 0; var12 < Client.field990; ++var12) {

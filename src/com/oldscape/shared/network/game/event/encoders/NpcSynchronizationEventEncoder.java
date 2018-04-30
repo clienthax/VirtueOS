@@ -1,13 +1,22 @@
 package com.oldscape.shared.network.game.event.encoders;
 
+import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
+import com.oldscape.server.game.model.sync.block.encode.SynchronizationBlockEncoder;
+import com.oldscape.server.game.model.sync.descriptor.SynchronizationDescriptor;
+import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
+import com.oldscape.shared.network.game.DataType;
+import com.oldscape.shared.network.game.FrameType;
 import com.oldscape.shared.network.game.GameFrame;
+import com.oldscape.shared.network.game.GameFrameBuilder;
+import com.oldscape.shared.network.game.event.EncoderOpcode;
 import com.oldscape.shared.network.game.event.GameMessageEncoder;
 import com.oldscape.shared.network.game.event.impl.NpcSynchronizationEvent;
 
+import com.oldscape.shared.utility.SyncUtils;
 import io.netty.buffer.ByteBufAllocator;
 
 /**
- * A {@link MessageEncoder} for the {@link NpcSynchronizationEvent}.
+ * A {@link GameMessageEncoder} for the {@link NpcSynchronizationEvent}.
  *
  * @author Major
  */
@@ -22,7 +31,7 @@ public final class NpcSynchronizationEventEncoder implements GameMessageEncoder<
 	 */
 	@Override
 	public GameFrame encode(ByteBufAllocator alloc, NpcSynchronizationEvent event) {
-/*		GameFrameBuilder builder = new GameFrameBuilder(alloc,
+		GameFrameBuilder builder = new GameFrameBuilder(alloc,
 				(event.isLargeScene() ? EncoderOpcode.NPC_SYNC_LARGE : EncoderOpcode.NPC_SYNC),
 				FrameType.VARIABLE_SHORT);
 		builder.switchToBitAccess();
@@ -39,7 +48,7 @@ public final class NpcSynchronizationEventEncoder implements GameMessageEncoder<
 			desc = SyncUtils.getNpcDescriptor(segment.getType());
 			desc.encodeDescriptor(event, segment, builder);
 
-			for (int index = 0; index < 8; index++) {
+			for (int index = 0; index < 7; index++) {//TODO change to use list
 				encd = SyncUtils.getNpcBlock(index);
 				block = segment.getBlockSet().get(encd.getType());
 				if (block != null) {
@@ -66,8 +75,7 @@ public final class NpcSynchronizationEventEncoder implements GameMessageEncoder<
 			return null;//prevent crashing client
 		}
 
-		return builder.toGameFrame();*/
-return null;
+		return builder.toGameFrame();
 	}
 
 }

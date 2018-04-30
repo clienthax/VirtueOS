@@ -83,18 +83,29 @@ public class SyncUtils {
 		pBlocks.add(new TemporaryMovementTypeBlockEncoder());//4096
 		pBlocks.add(new AppearanceBlockEncoder());//2
 
-		//pBlocks.add(new HitUpdateBlockEncoder());
 		//pBlocks.add(new SecondaryHitUpdateBlockEncoder());
 
 
-		nBlocks.add(new HitUpdateBlockEncoder());
-		nBlocks.add(new InteractingMobBlockEncoder());
-		nBlocks.add(new ForceChatBlockEncoder());
-		nBlocks.add(new OrientationBlockEncoder());
-		nBlocks.add(new GraphicBlockEncoder());
-		nBlocks.add(new SecondaryHitUpdateBlockEncoder());
-		nBlocks.add(new AnimationBlockEncoder());
-		nBlocks.add(new TransformBlockEncoder());
+		/**
+		 * Correct order for 168
+		 * 4	- animation
+		 * 64	- transform
+		 * 2	-
+		 * 32	- face entity
+		 * 16	- hitmasks?
+		 * 1	- gfx
+		 * 8	-
+		 */
+
+		nBlocks.add(new AnimationBlockEncoder());//4
+		nBlocks.add(new TransformBlockEncoder());//64
+		nBlocks.add(new OrientationBlockEncoder());//2
+		nBlocks.add(new InteractingMobBlockEncoder());//32
+		nBlocks.add(new HitUpdateBlockEncoder());//TODO update
+		nBlocks.add(new GraphicBlockEncoder());//1
+		nBlocks.add(new ForceChatBlockEncoder());//8
+
+		//nBlocks.add(new SecondaryHitUpdateBlockEncoder());
 	}
 
 	public static SynchronizationDescriptor getPlayerDescriptor(SegmentType type) {
