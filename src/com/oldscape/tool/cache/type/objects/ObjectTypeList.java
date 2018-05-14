@@ -74,14 +74,7 @@ public class ObjectTypeList implements TypeList<ObjectType> {
 				ObjectType type = new ObjectType(id);
 				type.decode(buffer);
 				objs[id] = type;
-				count++;
-				if(type.getName() != "null") {
-					try(BufferedWriter out = new BufferedWriter(new FileWriter("./test.txt", true))) {
-						out.write(String.valueOf(type.getID()));
-						out.newLine();
-					}
-				}
-				
+				count++;				
 			}
 		} catch (IOException e) {
 			logger.log(Level.SEVERE, "Error Loading ObjectType(s)!", e);
