@@ -1,8 +1,0 @@
-sendOpenInterfaceSub(162, 38, 231, false)
-setInterfaceNpcHead(231, 0, 1305)
-setInterfaceAnim(231, 0, 568)
-setInterfaceText(231, 1, "Hairdresser")
-setInterfaceText(231, 3, "Good afternoon madam. In need of a haircut are we?<br>The service costs 2000 coins.")
-cs2Script(600, new Object[]{[1, 1, 28, 15138819]});//iiiI
-sendSetInterfaceClickMask(231, 2, -1, -1, 1)
-setInterfaceText(231, 2, "Click here to continue")

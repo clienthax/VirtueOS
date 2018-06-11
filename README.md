@@ -1,6 +1,6 @@
 # VirtueOS #
 
-Open-source community OldSchool RuneScape™ Private server project.
+Open-source community OldSchool RuneScapeï¿½ Private server project.
 
 ### How do I get set up? ###
 
@@ -10,7 +10,7 @@ Open-source community OldSchool RuneScape™ Private server project.
 
 If not using RuneLite deob (Not functional yet)
 * Execute com.oldscape.tool.asm.Application, if there is no transformed.jar in '/repository/applet/'
-* Execute com.oldscape.tool.applet.GameApplet
+* Execute com.oldscape.client.applet.GameApplet
 
 ### Credit List ###
 * Sean

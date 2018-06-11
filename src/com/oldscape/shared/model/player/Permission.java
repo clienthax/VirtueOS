@@ -5,5 +5,5 @@ package com.oldscape.shared.model.player;
  */
 public enum Permission {
 
-	PLAYER, MODERATOR, ADMINISTRATOR;
+    PLAYER, MODERATOR, ADMINISTRATOR;
 }

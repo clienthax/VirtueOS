@@ -9,14 +9,14 @@ import com.oldscape.shared.network.game.event.impl.NpcActionEvent;
 
 public class NpcFifthClickDecoder implements GameMessageDecoder<NpcActionEvent> {
 
-	@Override
-	public NpcActionEvent decode(GameFrameReader frame) {
+    @Override
+    public NpcActionEvent decode(GameFrameReader frame) {
 
-		int index = (int) frame.getUnsigned(DataType.SHORT, DataOrder.LITTLE, DataTransformation.ADD);//todo not exactly right
-	    int type = (int) frame.getUnsigned(DataType.BYTE);//todo
+        int index = (int) frame.getUnsigned(DataType.SHORT, DataOrder.LITTLE, DataTransformation.ADD);//todo not exactly right
+        int type = (int) frame.getUnsigned(DataType.BYTE);//todo
 
-        System.out.println("npcclick "+type+" "+index);
-		return new NpcActionEvent(1, index);
-	}
+        System.out.println("npcclick " + type + " " + index);
+        return new NpcActionEvent(1, index);
+    }
 
 }

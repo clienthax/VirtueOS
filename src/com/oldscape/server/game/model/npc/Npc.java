@@ -1,16 +1,16 @@
 /**
  * Copyright (c) 2015 Virtue Studios
- *
+ * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ * <p>
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
+ * <p>
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -21,11 +21,11 @@
  */
 package com.oldscape.server.game.model.npc;
 
-import java.util.Optional;
-
 import com.oldscape.server.game.model.MobileEntity;
+import com.oldscape.shared.cache.type.TypeListManager;
 import com.oldscape.shared.model.Position;
-import com.oldscape.tool.cache.type.TypeListManager;
+
+import java.util.Optional;
 
 /**
  * @author Im Frizzy <skype:kfriz1998>
@@ -35,35 +35,35 @@ import com.oldscape.tool.cache.type.TypeListManager;
  * @since Mar 21, 2015
  */
 public class Npc extends MobileEntity {
-	
-	public Npc(int id, int x, int y) {
-		this.npcType = Optional.of(TypeListManager.lookupNpc(id));
-		this.setPosition(new Position(x, y, 0));
-	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.etoile.shared.model.Node#initialise()
-	 */
-	@Override
-	public void initialize() {
+    public Npc(int id, int x, int y) {
+        this.npcType = Optional.of(TypeListManager.lookupNpc(id));
+        this.setPosition(new Position(x, y, 0));
+    }
 
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see com.etoile.shared.model.Node#initialise()
+     */
+    @Override
+    public void initialize() {
 
-	/**
-	 * @return
-	 */
-	public int getId() {
-		return getNpcType().getID();
-	}
-	
-	public boolean isAttackable () {
-		for (String option : getNpcType().getOptions()) {
-			if ("Attack".equalsIgnoreCase(option)) {
-				return true;
-			}
-		}
-		return false;
-	}
+    }
+
+    /**
+     * @return
+     */
+    public int getId() {
+        return getNpcType().getID();
+    }
+
+    public boolean isAttackable() {
+        for (String option : getNpcType().getOptions()) {
+            if ("Attack".equalsIgnoreCase(option)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

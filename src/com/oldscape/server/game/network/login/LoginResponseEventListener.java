@@ -8,8 +8,8 @@ import com.oldscape.shared.network.login.LoginResponseEvent;
  */
 public final class LoginResponseEventListener implements EventListener<LoginResponseEvent, LoginSessionContext> {
 
-	@Override
-	public void onEvent(LoginResponseEvent event, LoginSessionContext context) {
-		context.sendLoginFailure(event.getResponse());
-	}
+    @Override
+    public void onEvent(LoginResponseEvent event, LoginSessionContext context) {
+        context.sendLoginFailure(event.getResponse());
+    }
 }

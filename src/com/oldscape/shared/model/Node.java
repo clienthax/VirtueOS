@@ -5,32 +5,31 @@ package com.oldscape.shared.model;
  */
 public abstract class Node {
 
-	/**
-	 * The index of the node in the collection.
-	 */
-	protected int index;
+    /**
+     * The index of the node in the collection.
+     */
+    protected int index;
 
-	/**
-	 * Initialises the {@link com.oldscape.shared.model.Node}.
-	 */
-	public abstract void initialize();
+    /**
+     * Initialises the {@link com.oldscape.shared.model.Node}.
+     */
+    public abstract void initialize();
 
-	/**
-	 * Gets the index of the node.
-	 * 
-	 * @return The {@code index}.
-	 */
-	public int getIndex() {
-		return index;
-	}
+    /**
+     * Gets the index of the node.
+     *
+     * @return The {@code index}.
+     */
+    public int getIndex() {
+        return index;
+    }
 
-	/**
-	 * Sets the index.
-	 * 
-	 * @param index
-	 *            The index to set.
-	 */
-	public void setIndex(int index) {
-		this.index = index;
-	}
+    /**
+     * Sets the index.
+     *
+     * @param index The index to set.
+     */
+    public void setIndex(int index) {
+        this.index = index;
+    }
 }

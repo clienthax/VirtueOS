@@ -1,311 +1,298 @@
 package com.oldscape.server.game.model;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Queue;
-
 import com.google.common.base.MoreObjects;
 import com.oldscape.server.game.model.sync.reference.Direction;
 import com.oldscape.shared.model.Position;
 import com.oldscape.shared.model.region.RegionManager;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Queue;
+
 /**
  * A queue of {@link Direction}s which a {@link Mob} will follow.
- * 
+ *
  * @author Graham
  */
 public final class WalkingQueue {
 
-	/**
-	 * Represents a single point in the queue.
-	 * 
-	 * @author Graham
-	 */
-	private static final class Point {
+    /**
+     * The maximum size of the queue. If any additional steps are added, they
+     * are discarded.
+     */
+    private static final int MAXIMUM_SIZE = 128;
+    /**
+     * The mob whose walking queue this is.
+     */
+    private final MobileEntity mob;
+    /**
+     * The old queue of directions.
+     */
+    private final Deque<Point> oldPoints = new ArrayDeque<>();
+    /**
+     * The queue of directions.
+     */
+    private final Deque<Point> points = new ArrayDeque<>();
+    /**
+     * Flag indicating if this queue (only) should be ran.
+     */
+    private boolean runningQueue = true;
 
-		/**
-		 * The direction to walk to this point.
-		 */
-		private final Direction direction;
+    /**
+     * Creates a walking queue for the specified mob.
+     *
+     * @param mob The mob.
+     */
+    public WalkingQueue(MobileEntity mob) {
+        this.mob = mob;
+    }
 
-		/**
-		 * The point's position.
-		 */
-		private final Position position;
+    /**
+     * Adds the first step to the queue, attempting to connect the server and
+     * client position by looking at the previous queue.
+     *
+     * @param clientPosition The first step.
+     * @return {@code true} if the queues could be connected correctly,
+     * {@code false} if not.
+     */
+    public boolean addFirstStep(Position clientPosition) {
+        Position serverPosition = mob.getPosition();
 
-		/**
-		 * Creates a point.
-		 * 
-		 * @param position
-		 *            The position.
-		 * @param direction
-		 *            The direction.
-		 */
-		public Point(Position position, Direction direction) {
-			this.position = position;
-			this.direction = direction;
-		}
+        int deltaX = clientPosition.getX() - serverPosition.getX();
+        int deltaY = clientPosition.getY() - serverPosition.getY();
 
-		@Override
-		public String toString() {
-			return MoreObjects.toStringHelper(this).add("direction", direction).add("position", position).toString();
-		}
+        if (Direction.isConnectable(deltaX, deltaY)) {
+            points.clear();
+            oldPoints.clear();
 
-	}
+            addStep(clientPosition);
+            return true;
+        }
 
-	/**
-	 * The maximum size of the queue. If any additional steps are added, they
-	 * are discarded.
-	 */
-	private static final int MAXIMUM_SIZE = 128;
+        Queue<Position> travelBackQueue = new ArrayDeque<>();
 
-	/**
-	 * The mob whose walking queue this is.
-	 */
-	private final MobileEntity mob;
+        Point oldPoint;
+        while ((oldPoint = oldPoints.pollLast()) != null) {
+            Position oldPosition = oldPoint.position;
 
-	/**
-	 * The old queue of directions.
-	 */
-	private final Deque<Point> oldPoints = new ArrayDeque<>();
+            deltaX = oldPosition.getX() - serverPosition.getX();
+            deltaY = oldPosition.getX() - serverPosition.getY();
 
-	/**
-	 * The queue of directions.
-	 */
-	private final Deque<Point> points = new ArrayDeque<>();
+            travelBackQueue.add(oldPosition);
 
-	/**
-	 * Flag indicating if this queue (only) should be ran.
-	 */
-	private boolean runningQueue = true;
+            if (Direction.isConnectable(deltaX, deltaY)) {
+                points.clear();
+                oldPoints.clear();
 
-	/**
-	 * Creates a walking queue for the specified mob.
-	 * 
-	 * @param mob
-	 *            The mob.
-	 */
-	public WalkingQueue(MobileEntity mob) {
-		this.mob = mob;
-	}
+                for (Position travelBackPosition : travelBackQueue) {
+                    addStep(travelBackPosition);
+                }
 
-	/**
-	 * Adds the first step to the queue, attempting to connect the server and
-	 * client position by looking at the previous queue.
-	 * 
-	 * @param clientPosition
-	 *            The first step.
-	 * @return {@code true} if the queues could be connected correctly,
-	 *         {@code false} if not.
-	 */
-	public boolean addFirstStep(Position clientPosition) {
-		Position serverPosition = mob.getPosition();
+                addStep(clientPosition);
+                return true;
+            }
+        }
 
-		int deltaX = clientPosition.getX() - serverPosition.getX();
-		int deltaY = clientPosition.getY() - serverPosition.getY();
+        oldPoints.clear();
+        return false;
+    }
 
-		if (Direction.isConnectable(deltaX, deltaY)) {
-			points.clear();
-			oldPoints.clear();
+    /**
+     * Adds a step.
+     *
+     * @param x The x coordinate of this step.
+     * @param y The y coordinate of this step.
+     */
+    private void addStep(int x, int y) {
+        if (points.size() >= MAXIMUM_SIZE) {
+            return;
+        }
 
-			addStep(clientPosition);
-			return true;
-		}
+        Point last = getLast();
 
-		Queue<Position> travelBackQueue = new ArrayDeque<>();
+        int deltaX = x - last.position.getX();
+        int deltaY = y - last.position.getY();
 
-		Point oldPoint;
-		while ((oldPoint = oldPoints.pollLast()) != null) {
-			Position oldPosition = oldPoint.position;
+        Direction direction = Direction.fromDeltas(deltaX, deltaY);
 
-			deltaX = oldPosition.getX() - serverPosition.getX();
-			deltaY = oldPosition.getX() - serverPosition.getY();
+        if (direction != Direction.NONE) {
+            Point point = new Point(new Position(x, y, mob.getPosition().getHeight()), direction);
+            points.add(point);
+            oldPoints.add(point);
+        }
+    }
 
-			travelBackQueue.add(oldPosition);
+    /**
+     * Adds a step to the queue.
+     *
+     * @param step The step to add.
+     */
+    public void addStep(Position step) {
+        int x = step.getX(), y = step.getY();
+        Point last = getLast();
 
-			if (Direction.isConnectable(deltaX, deltaY)) {
-				points.clear();
-				oldPoints.clear();
+        int deltaX = x - last.position.getX();
+        int deltaY = y - last.position.getY();
 
-				for (Position travelBackPosition : travelBackQueue) {
-					addStep(travelBackPosition);
-				}
+        int max = Math.max(Math.abs(deltaX), Math.abs(deltaY));
 
-				addStep(clientPosition);
-				return true;
-			}
-		}
+        for (int i = 0; i < max; i++) {
+            if (deltaX < 0) {
+                deltaX++;
+            } else if (deltaX > 0) {
+                deltaX--;
+            }
 
-		oldPoints.clear();
-		return false;
-	}
+            if (deltaY < 0) {
+                deltaY++;
+            } else if (deltaY > 0) {
+                deltaY--;
+            }
 
-	/**
-	 * Adds a step.
-	 * 
-	 * @param x
-	 *            The x coordinate of this step.
-	 * @param y
-	 *            The y coordinate of this step.
-	 */
-	private void addStep(int x, int y) {
-		if (points.size() >= MAXIMUM_SIZE) {
-			return;
-		}
+            addStep(x - deltaX, y - deltaY);
+        }
+    }
 
-		Point last = getLast();
+    /**
+     * Adds a step to the queue.
+     *
+     * @param step The step to add.
+     */
+    public void addStep(Position step, RegionManager manager) {
+        int x = step.getX(), y = step.getY();
+        Point last = getLast();
 
-		int deltaX = x - last.position.getX();
-		int deltaY = y - last.position.getY();
+        int deltaX = x - last.position.getX();
+        int deltaY = y - last.position.getY();
 
-		Direction direction = Direction.fromDeltas(deltaX, deltaY);
+        int max = Math.max(Math.abs(deltaX), Math.abs(deltaY));
 
-		if (direction != Direction.NONE) {
-			Point point = new Point(new Position(x, y, mob.getPosition().getHeight()), direction);
-			points.add(point);
-			oldPoints.add(point);
-		}
-	}
+        for (int i = 0; i < max; i++) {
+            if (deltaX < 0) {
+                deltaX++;
+            } else if (deltaX > 0) {
+                deltaX--;
+            }
 
-	/**
-	 * Adds a step to the queue.
-	 * 
-	 * @param step
-	 *            The step to add.
-	 */
-	public void addStep(Position step) {
-		int x = step.getX(), y = step.getY();
-		Point last = getLast();
+            if (deltaY < 0) {
+                deltaY++;
+            } else if (deltaY > 0) {
+                deltaY--;
+            }
 
-		int deltaX = x - last.position.getX();
-		int deltaY = y - last.position.getY();
+            // Position pos = new Position(x - deltaX, y - deltaY,
+            // step.getHeight());
+            // Region region = manager.lookup(pos.getRegionID());
+            // System.out.println("Tile: [ " + pos.getX() + ", " + pos.getY() +
+            // " ], Blocked: [ " +
+            // region.getClipMap().isClipped(step.getHeight(),
+            // pos.getXInRegion(), pos.getYInRegion(), 1,
+            // ClipFlag.FLOOR_BLOCKSWALK) + " ]");
 
-		int max = Math.max(Math.abs(deltaX), Math.abs(deltaY));
+            addStep(x - deltaX, y - deltaY);
+        }
+    }
 
-		for (int i = 0; i < max; i++) {
-			if (deltaX < 0) {
-				deltaX++;
-			} else if (deltaX > 0) {
-				deltaX--;
-			}
+    /**
+     * Clears the walking queue.
+     */
+    public void clear() {
+        points.clear();
+        oldPoints.clear();
+    }
 
-			if (deltaY < 0) {
-				deltaY++;
-			} else if (deltaY > 0) {
-				deltaY--;
-			}
+    /**
+     * Gets the last point.
+     *
+     * @return The last point.
+     */
+    private Point getLast() {
+        Point last = points.peekLast();
+        if (last == null) {
+            return new Point(mob.getPosition(), Direction.NONE);
+        }
+        return last;
+    }
 
-			addStep(x - deltaX, y - deltaY);
-		}
-	}
+    /**
+     * Called every pulse, updates the queue.
+     */
+    public void pulse() {
+        Position position = mob.getPosition();
+        Direction first = Direction.NONE, second = Direction.NONE;
 
-	/**
-	 * Adds a step to the queue.
-	 * 
-	 * @param step
-	 *            The step to add.
-	 */
-	public void addStep(Position step, RegionManager manager) {
-		int x = step.getX(), y = step.getY();
-		Point last = getLast();
+        Point next = points.poll();
+        if (next != null) {
+            first = next.direction;
+            position = next.position;
 
-		int deltaX = x - last.position.getX();
-		int deltaY = y - last.position.getY();
+            if (runningQueue /* and enough energy */) {
+                next = points.poll();
+                if (next != null) {
+                    second = next.direction;
+                    position = next.position;
+                }
+            }
+            mob.setPosition(position);
+        }
+        mob.setDirections(first, second);
+    }
 
-		int max = Math.max(Math.abs(deltaX), Math.abs(deltaY));
+    /**
+     * Sets the running queue flag.
+     *
+     * @param running The running queue flag.
+     */
+    public void flipRunningQueue() {
+        runningQueue ^= true;
+    }
 
-		for (int i = 0; i < max; i++) {
-			if (deltaX < 0) {
-				deltaX++;
-			} else if (deltaX > 0) {
-				deltaX--;
-			}
+    public boolean runningQueue() {
+        return runningQueue;
+    }
 
-			if (deltaY < 0) {
-				deltaY++;
-			} else if (deltaY > 0) {
-				deltaY--;
-			}
+    /**
+     * Gets the size of the queue.
+     *
+     * @return The size of the queue.
+     */
+    public int size() {
+        return points.size();
+    }
 
-			// Position pos = new Position(x - deltaX, y - deltaY,
-			// step.getHeight());
-			// Region region = manager.lookup(pos.getRegionID());
-			// System.out.println("Tile: [ " + pos.getX() + ", " + pos.getY() +
-			// " ], Blocked: [ " +
-			// region.getClipMap().isClipped(step.getHeight(),
-			// pos.getXInRegion(), pos.getYInRegion(), 1,
-			// ClipFlag.FLOOR_BLOCKSWALK) + " ]");
+    /**
+     * Represents a single point in the queue.
+     *
+     * @author Graham
+     */
+    private static final class Point {
 
-			addStep(x - deltaX, y - deltaY);
-		}
-	}
+        /**
+         * The direction to walk to this point.
+         */
+        private final Direction direction;
 
-	/**
-	 * Clears the walking queue.
-	 */
-	public void clear() {
-		points.clear();
-		oldPoints.clear();
-	}
+        /**
+         * The point's position.
+         */
+        private final Position position;
 
-	/**
-	 * Gets the last point.
-	 * 
-	 * @return The last point.
-	 */
-	private Point getLast() {
-		Point last = points.peekLast();
-		if (last == null) {
-			return new Point(mob.getPosition(), Direction.NONE);
-		}
-		return last;
-	}
+        /**
+         * Creates a point.
+         *
+         * @param position  The position.
+         * @param direction The direction.
+         */
+        public Point(Position position, Direction direction) {
+            this.position = position;
+            this.direction = direction;
+        }
 
-	/**
-	 * Called every pulse, updates the queue.
-	 */
-	public void pulse() {
-		Position position = mob.getPosition();
-		Direction first = Direction.NONE, second = Direction.NONE;
+        @Override
+        public String toString() {
+            return MoreObjects.toStringHelper(this).add("direction", direction).add("position", position).toString();
+        }
 
-		Point next = points.poll();
-		if (next != null) {
-			first = next.direction;
-			position = next.position;
-
-			if (runningQueue /* and enough energy */) {
-				next = points.poll();
-				if (next != null) {
-					second = next.direction;
-					position = next.position;
-				}
-			}
-			mob.setPosition(position);
-		}
-		mob.setDirections(first, second);
-	}
-
-	/**
-	 * Sets the running queue flag.
-	 * 
-	 * @param running
-	 *            The running queue flag.
-	 */
-	public void flipRunningQueue() {
-		runningQueue ^= true;
-	}
-
-	public boolean runningQueue() {
-		return runningQueue;
-	}
-
-	/**
-	 * Gets the size of the queue.
-	 * 
-	 * @return The size of the queue.
-	 */
-	public int size() {
-		return points.size();
-	}
+    }
 
 }

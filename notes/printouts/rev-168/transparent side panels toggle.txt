@@ -1,2 +1,0 @@
-setVarpLarge(1055, 266240)//on
-setVarpLarge(1055, 267264)//off

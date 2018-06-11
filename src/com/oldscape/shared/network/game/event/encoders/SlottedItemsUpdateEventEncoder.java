@@ -3,22 +3,20 @@ package com.oldscape.shared.network.game.event.encoders;
 import com.oldscape.shared.network.game.GameFrame;
 import com.oldscape.shared.network.game.event.GameMessageEncoder;
 import com.oldscape.shared.network.game.event.impl.SlottedItemsUpdateEvent;
-
 import io.netty.buffer.ByteBufAllocator;
 
 /**
- * 
  * @author Kyle Friz
  * @author Kayla Friz
  * @since May 27, 2015
  */
 public class SlottedItemsUpdateEventEncoder implements GameMessageEncoder<SlottedItemsUpdateEvent> {
 
-	@Override
-	public GameFrame encode(ByteBufAllocator alloc, SlottedItemsUpdateEvent event) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public GameFrame encode(ByteBufAllocator alloc, SlottedItemsUpdateEvent event) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
 //	@Override
 //	public GameFrame encode(ByteBufAllocator alloc, SlottedItemsUpdateEvent event) {
@@ -44,5 +42,5 @@ public class SlottedItemsUpdateEventEncoder implements GameMessageEncoder<Slotte
 //
 //		return builder.toGameFrame();
 //	}
-	
+
 }

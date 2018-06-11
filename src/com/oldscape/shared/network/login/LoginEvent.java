@@ -8,61 +8,61 @@ import com.oldscape.shared.utility.IsaacRandom;
  */
 public final class LoginEvent implements Event {
 
-	private final int major;
+    private final int major;
 
-	private final String token;
+    private final String token;
 
-	private final String username;
+    private final String username;
 
-	private final String password;
+    private final String password;
 
-	private final int[] crcValues;
+    private final int[] crcValues;
 
-	private final IsaacRandom encodingRandom;
+    private final IsaacRandom encodingRandom;
 
-	private final IsaacRandom decodingRandom;
+    private final IsaacRandom decodingRandom;
 
-	public LoginEvent(int major, String token, String username, String password, int[] crcValues, IsaacRandom encodingRandom, IsaacRandom decodingRandom) {
-		this.major = major;
-		this.token = token;
-		this.username = username;
-		this.password = password;
-		this.crcValues = crcValues;
-		this.encodingRandom = encodingRandom;
-		this.decodingRandom = decodingRandom;
-	}
+    public LoginEvent(int major, String token, String username, String password, int[] crcValues, IsaacRandom encodingRandom, IsaacRandom decodingRandom) {
+        this.major = major;
+        this.token = token;
+        this.username = username;
+        this.password = password;
+        this.crcValues = crcValues;
+        this.encodingRandom = encodingRandom;
+        this.decodingRandom = decodingRandom;
+    }
 
-	/**
-	 * @return the major
-	 */
-	public int getMajor() {
-		return major;
-	}
+    /**
+     * @return the major
+     */
+    public int getMajor() {
+        return major;
+    }
 
-	/**
-	 * @return the token
-	 */
-	public String getToken() {
-		return token;
-	}
+    /**
+     * @return the token
+     */
+    public String getToken() {
+        return token;
+    }
 
-	public IsaacRandom getDecodingRandom() {
-		return decodingRandom;
-	}
+    public IsaacRandom getDecodingRandom() {
+        return decodingRandom;
+    }
 
-	public int[] getCrcValues() {
-		return crcValues;
-	}
+    public int[] getCrcValues() {
+        return crcValues;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public IsaacRandom getEncodingRandom() {
-		return encodingRandom;
-	}
+    public IsaacRandom getEncodingRandom() {
+        return encodingRandom;
+    }
 
-	public String getUserName() {
-		return username;
-	}
+    public String getUserName() {
+        return username;
+    }
 }

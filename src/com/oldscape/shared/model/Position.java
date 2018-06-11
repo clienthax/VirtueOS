@@ -5,138 +5,134 @@ package com.oldscape.shared.model;
  */
 public final class Position {
 
-	public static final int DEFAULT_DISTANCE = 15;
+    public static final int DEFAULT_DISTANCE = 15;
+    private final RegionSize mapSize;
+    private final int x;
+    private final int y;
+    private final int height;
 
-	public static enum RegionSize {
-		
-		DEFAULT(104), 
-		LARGE(120), 
-		XLARGE(136), 
-		XXLARGE(168);
+    public Position(int x, int y, int height) {
+        this(x, y, height, RegionSize.DEFAULT);
+    }
 
-		private final int size;
+    public Position(int x, int y, int height, RegionSize mapSize) {
+        this.x = x;
+        this.y = y;
+        this.height = height;
+        this.mapSize = mapSize;
+    }
 
-		RegionSize(int size) {
-			this.size = size;
-		}
+    public Position(int localX, int localY, int height, int regionId, RegionSize mapSize) {
+        this(localX + (((regionId >> 8) & 0xff) << 6), localX
+                + ((regionId & 0xff) << 6), height, mapSize);
+    }
 
-		public int getSize() {
-			return size;
-		}
-	}
+    public boolean withinDistance(Position tile, int distance) {
+        if (tile.getHeight() != height)
+            return false;
+        int deltaX = tile.x - x, deltaY = tile.y - y;
+        return deltaX <= distance && deltaX >= -distance && deltaY <= distance
+                && deltaY >= -distance;
+    }
 
-	private final RegionSize mapSize;
+    public boolean withinDistance(Position position) {
+        return withinDistance(position, DEFAULT_DISTANCE);
+    }
 
-	private final int x;
+    public int getLongestDelta(Position other) {
+        int deltaX = Math.abs(getX() - other.getX());
+        int deltaY = Math.abs(getY() - other.getY());
+        return Math.max(deltaX, deltaY);
+    }
 
-	private final int y;
+    public int toRegionPacked() {
+        return getRegionY() + (getRegionX() << 8) + (getHeight() << 16);
+    }
 
-	private final int height;
+    public int toPositionPacked() {
+        return y + (x << 14) + (height << 28);
+    }
 
-	public Position(int x, int y, int height) {
-		this(x, y, height, RegionSize.DEFAULT);
-	}
-	
-	public Position(int x, int y, int height, RegionSize mapSize) {
-		this.x = x;
-		this.y = y;
-		this.height = height;
-		this.mapSize = mapSize;
-	}
+    public int getXInRegion() {
+        return x & 0x3F;
+    }
 
-	public Position(int localX, int localY, int height, int regionId, RegionSize mapSize) {
-		this(localX + (((regionId >> 8) & 0xff) << 6), localX
-				+ ((regionId & 0xff) << 6), height, mapSize);
-	}
+    public int getYInRegion() {
+        return y & 0x3F;
+    }
 
-	public boolean withinDistance(Position tile, int distance) {
-		if (tile.getHeight() != height)
-			return false;
-		int deltaX = tile.x - x, deltaY = tile.y - y;
-		return deltaX <= distance && deltaX >= -distance && deltaY <= distance
-				&& deltaY >= -distance;
-	}
+    public int getLocalX() {
+        return x - 8 * (getChunkX() - (mapSize.getSize() >> 4));
+    }
 
-	public boolean withinDistance(Position position) {
-		return withinDistance(position, DEFAULT_DISTANCE);
-	}
+    public int getLocalY() {
+        return y - 8 * (getChunkY() - (mapSize.getSize() >> 4));
+    }
 
-	public int getLongestDelta(Position other) {
-		int deltaX = Math.abs(getX() - other.getX());
-		int deltaY = Math.abs(getY() - other.getY());
-		return Math.max(deltaX, deltaY);
-	}
+    public int getLocalX(Position pos) {
+        return x - 8 * (pos.getChunkX() - (mapSize.getSize() >> 4));
+    }
 
-	public int toRegionPacked() {
-		return getRegionY() + (getRegionX() << 8) + (getHeight() << 16);
-	}
+    public int getLocalY(Position pos) {
+        return y - 8 * (pos.getChunkY() - (mapSize.getSize() >> 4));
+    }
 
-	public int toPositionPacked() {
-		return y + (x << 14) + (height << 28);
-	}
+    public int getChunkX() {
+        return (x >> 3);
+    }
 
-	public int getXInRegion() {
-		return x & 0x3F;
-	}
+    public int getChunkY() {
+        return (y >> 3);
+    }
 
-	public int getYInRegion() {
-		return y & 0x3F;
-	}
+    public int getRegionX() {
+        return (x >> 6);
+    }
 
-	public int getLocalX() {
-		return x - 8 * (getChunkX() - (mapSize.getSize() >> 4));
-	}
+    public int getRegionY() {
+        return (y >> 6);
+    }
 
-	public int getLocalY() {
-		return y - 8 * (getChunkY() - (mapSize.getSize() >> 4));
-	}
+    public int getRegionID() {
+        return ((getRegionX() << 8) + getRegionY());
+    }
 
-	public int getLocalX(Position pos) {
-		return x - 8 * (pos.getChunkX() - (mapSize.getSize() >> 4));
-	}
+    public int getX() {
+        return x;
+    }
 
-	public int getLocalY(Position pos) {
-		return y - 8 * (pos.getChunkY() - (mapSize.getSize() >> 4));
-	}
+    public int getY() {
+        return y;
+    }
 
-	public int getChunkX() {
-		return (x >> 3);
-	}
+    public int getHeight() {
+        return height;
+    }
 
-	public int getChunkY() {
-		return (y >> 3);
-	}
-	
-	public int getRegionX() {
-		return (x >> 6);
-	}
+    public RegionSize getMapSize() {
+        return mapSize;
+    }
 
-	public int getRegionY() {
-		return (y >> 6);
-	}
-	
-	public int getRegionID() {
-		return ((getRegionX() << 8) + getRegionY());
-	}
+    @Override
+    public String toString() {
+        return "X: " + getX() + ", Y: " + getY() + ", Height: " + getHeight();
+    }
 
-	public int getX() {
-		return x;
-	}
+    public static enum RegionSize {
 
-	public int getY() {
-		return y;
-	}
+        DEFAULT(104),
+        LARGE(120),
+        XLARGE(136),
+        XXLARGE(168);
 
-	public int getHeight() {
-		return height;
-	}
+        private final int size;
 
-	public RegionSize getMapSize() {
-		return mapSize;
-	}
-	
-	@Override
-	public String toString() {
-		return "X: " + getX() + ", Y: " + getY() + ", Height: " + getHeight();
-	}
+        RegionSize(int size) {
+            this.size = size;
+        }
+
+        public int getSize() {
+            return size;
+        }
+    }
 }

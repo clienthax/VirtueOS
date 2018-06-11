@@ -5,14 +5,12 @@ package com.oldscape.shared.event;
  */
 public interface EventListener<E extends Event, C extends EventContext> {
 
-	/**
-	 * Handles a specific type of {@link Event}
-	 * 
-	 * @param event
-	 *            The {@link com.oldscape.shared.event.Event} to handle.
-	 * @param context
-	 *            The {@link com.oldscape.shared.event.EventContext} of the type of
-	 *            {@link com.oldscape.shared.event.EventHub}.
-	 */
-	public void onEvent(E event, C context);
+    /**
+     * Handles a specific type of {@link Event}
+     *
+     * @param event   The {@link com.oldscape.shared.event.Event} to handle.
+     * @param context The {@link com.oldscape.shared.event.EventContext} of the type of
+     *                {@link com.oldscape.shared.event.EventHub}.
+     */
+    public void onEvent(E event, C context);
 }
