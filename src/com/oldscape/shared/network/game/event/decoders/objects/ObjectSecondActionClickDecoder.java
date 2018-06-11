@@ -9,15 +9,15 @@ import com.oldscape.shared.network.game.event.impl.ObjectClickEvent;
 
 public class ObjectSecondActionClickDecoder implements GameMessageDecoder<ObjectClickEvent> {
 
-	@Override
-	public ObjectClickEvent decode(GameFrameReader frame) {
-		int y = (int) frame.getUnsigned(DataType.SHORT);
-		int x = (int) frame.getUnsigned(DataType.SHORT);
-		int type = (int) frame.getUnsigned(DataType.BYTE, DataTransformation.ADD);
-		int object = (int) frame.getUnsigned(DataType.SHORT, DataOrder.LITTLE, DataTransformation.ADD);
+    @Override
+    public ObjectClickEvent decode(GameFrameReader frame) {
+        int y = (int) frame.getUnsigned(DataType.SHORT);
+        int x = (int) frame.getUnsigned(DataType.SHORT);
+        int type = (int) frame.getUnsigned(DataType.BYTE, DataTransformation.ADD);
+        int object = (int) frame.getUnsigned(DataType.SHORT, DataOrder.LITTLE, DataTransformation.ADD);
 
-		System.out.println("secondclick X: "+x+", Y:"+y+", type:"+type+" obj:"+object);
-		return new ObjectClickEvent(1, object, x, y);
-	}
+        System.out.println("secondclick X: " + x + ", Y:" + y + ", type:" + type + " obj:" + object);
+        return new ObjectClickEvent(1, object, x, y);
+    }
 
 }

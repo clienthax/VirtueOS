@@ -14,29 +14,28 @@ import com.oldscape.server.game.Server;
  * {@code synchronizers.xml} configuration file. The default implementation is
  * currently {@link ParallelClientSynchronizer} as the vast majority of machines
  * today have two or more cores.
- * 
+ *
  * @author Graham
  */
 public abstract class ClientSynchronizer {
 
-	/**
-	 * The {@link com.oldscape.server.game.Server} reference.
-	 */
-	protected Server server;
+    /**
+     * The {@link com.oldscape.server.game.Server} reference.
+     */
+    protected Server server;
 
-	/**
-	 * Creates a new {@link ClientSynchronizer}.
-	 * 
-	 * @param server
-	 *            The {@link com.oldscape.server.game.Server} reference.
-	 */
-	public ClientSynchronizer(Server server) {
-		this.server = server;
-	}
+    /**
+     * Creates a new {@link ClientSynchronizer}.
+     *
+     * @param server The {@link com.oldscape.server.game.Server} reference.
+     */
+    public ClientSynchronizer(Server server) {
+        this.server = server;
+    }
 
-	/**
-	 * Synchronizes the state of the clients with the state of the server.
-	 */
-	public abstract void synchronize();
+    /**
+     * Synchronizes the state of the clients with the state of the server.
+     */
+    public abstract void synchronize();
 
 }

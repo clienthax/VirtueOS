@@ -7,44 +7,42 @@ import com.oldscape.server.game.model.player.Player;
  */
 public class PlayerLoginContextPair {
 
-	/**
-	 * The {@link com.oldscape.server.game.model.player.Player} of the succesfull login.
-	 */
-	private final Player player;
+    /**
+     * The {@link com.oldscape.server.game.model.player.Player} of the succesfull login.
+     */
+    private final Player player;
 
-	/**
-	 * The {@link com.oldscape.server.game.network.login.LoginSessionContext}.
-	 */
-	private final LoginSessionContext context;
+    /**
+     * The {@link com.oldscape.server.game.network.login.LoginSessionContext}.
+     */
+    private final LoginSessionContext context;
 
-	/**
-	 * Creates a new {@link com.oldscape.server.game.network.login.PlayerLoginContextPair}
-	 * 
-	 * @param composition
-	 *            The {@link com.oldscape.server.game.model.player.Player}.
-	 * @param context
-	 *            The {@link com.oldscape.server.game.network.login.LoginSessionContext}.
-	 */
-	public PlayerLoginContextPair(Player composition, LoginSessionContext context) {
-		this.player = composition;
-		this.context = context;
-	}
+    /**
+     * Creates a new {@link com.oldscape.server.game.network.login.PlayerLoginContextPair}
+     *
+     * @param composition The {@link com.oldscape.server.game.model.player.Player}.
+     * @param context     The {@link com.oldscape.server.game.network.login.LoginSessionContext}.
+     */
+    public PlayerLoginContextPair(Player composition, LoginSessionContext context) {
+        this.player = composition;
+        this.context = context;
+    }
 
-	/**
-	 * Gets the {@link com.oldscape.server.game.network.login.LoginSessionContext}.
-	 * 
-	 * @return The {@code context}.
-	 */
-	public LoginSessionContext getContext() {
-		return context;
-	}
+    /**
+     * Gets the {@link com.oldscape.server.game.network.login.LoginSessionContext}.
+     *
+     * @return The {@code context}.
+     */
+    public LoginSessionContext getContext() {
+        return context;
+    }
 
-	/**
-	 * Gets the {@link com.oldscape.server.game.model.player.Player}.
-	 * 
-	 * @return The {@code player}.
-	 */
-	public Player getPlayer() {
-		return player;
-	}
+    /**
+     * Gets the {@link com.oldscape.server.game.model.player.Player}.
+     *
+     * @return The {@code player}.
+     */
+    public Player getPlayer() {
+        return player;
+    }
 }

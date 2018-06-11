@@ -6,56 +6,55 @@ import com.oldscape.shared.model.Position;
 
 public abstract class Entity {
 
-	/**
-	 * The Position of this Entity.
-	 */
-	protected Position position;
+    /**
+     * The World containing this Entity.
+     */
+    protected final GameWorld world;
+    /**
+     * The Position of this Entity.
+     */
+    protected Position position;
 
-	/**
-	 * The World containing this Entity.
-	 */
-	protected final GameWorld world;
+    /**
+     * Creates the Entity.
+     *
+     * @param world    The {@link World} containing the Entity.
+     * @param position The {@link Position} of the Entity.
+     */
+    public Entity(GameWorld world, Position position) {
+        this.world = world;
+        this.position = position;
+    }
 
-	/**
-	 * Creates the Entity.
-	 *
-	 * @param world The {@link World} containing the Entity.
-	 * @param position The {@link Position} of the Entity.
-	 */
-	public Entity(GameWorld world, Position position) {
-		this.world = world;
-		this.position = position;
-	}
+    @Override
+    public abstract boolean equals(Object obj);
 
-	@Override
-	public abstract boolean equals(Object obj);
+    /**
+     * Gets the {@link Position} of this Entity.
+     *
+     * @return The Position.
+     */
+    public final Position getPosition() {
+        return position;
+    }
 
-	/**
-	 * Gets the {@link Position} of this Entity.
-	 *
-	 * @return The Position.
-	 */
-	public final Position getPosition() {
-		return position;
-	}
+    /**
+     * Gets the {@link World} this Entity is in.
+     *
+     * @return The World.
+     */
+    public GameWorld getWorld() {
+        return world;
+    }
 
-	/**
-	 * Gets the {@link World} this Entity is in.
-	 *
-	 * @return The World.
-	 */
-	public GameWorld getWorld() {
-		return world;
-	}
+    /**
+     * Gets the {@link EntityType} of this Entity.
+     *
+     * @return The EntityType.
+     */
+    public abstract EntityType getEntityType();
 
-	/**
-	 * Gets the {@link EntityType} of this Entity.
-	 *
-	 * @return The EntityType.
-	 */
-	public abstract EntityType getEntityType();
-
-	@Override
-	public abstract int hashCode();
+    @Override
+    public abstract int hashCode();
 
 }

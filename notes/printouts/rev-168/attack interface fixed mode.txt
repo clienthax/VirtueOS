@@ -1,5 +1,0 @@
-setVarpSmall(event 965, state 1)
-setVarpSmall(event 965, state 1)
-cs2Script(917, new Object[]{[4600861, 80]});//ii
-sendOpenInterfaceSub(548, 21, 214, false)
-sendSetInterfaceClickMask(214, 8, 0, 99, 0)

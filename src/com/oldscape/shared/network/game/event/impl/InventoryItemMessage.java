@@ -1,91 +1,91 @@
 package com.oldscape.shared.network.game.event.impl;
 
+import com.oldscape.shared.event.Event;
+
 import java.util.NoSuchElementException;
 import java.util.OptionalInt;
 
-import com.oldscape.shared.event.Event;
-
 public class InventoryItemMessage implements Event {
-	
-	/**
-	 * The item id.
-	 */
-	private final int id;
 
-	/**
-	 * The interface id.
-	 */
-	private final int interfaceId;
+    /**
+     * The item id.
+     */
+    private final int id;
 
-	/**
-	 * The option number (1-5 if present).
-	 */
-	private final OptionalInt option;
+    /**
+     * The interface id.
+     */
+    private final int interfaceId;
 
-	/**
-	 * The item's slot.
-	 */
-	private final int slot;
+    /**
+     * The option number (1-5 if present).
+     */
+    private final OptionalInt option;
 
-	/**
-	 * Creates the InventoryItemMessage.
-	 *
-	 * @param option The option number, if applicable.
-	 * @param interfaceId The interface id.
-	 * @param id The id.
-	 * @param slot The slot.
-	 */
-	protected InventoryItemMessage(OptionalInt option, int interfaceId, int id, int slot) {
-		this.option = option;
-		this.interfaceId = interfaceId;
-		this.id = id;
-		this.slot = slot;
-	}
+    /**
+     * The item's slot.
+     */
+    private final int slot;
 
-	/**
-	 * Gets the item id.
-	 *
-	 * @return The item id.
-	 */
-	public final int getId() {
-		return id;
-	}
+    /**
+     * Creates the InventoryItemMessage.
+     *
+     * @param option      The option number, if applicable.
+     * @param interfaceId The interface id.
+     * @param id          The id.
+     * @param slot        The slot.
+     */
+    protected InventoryItemMessage(OptionalInt option, int interfaceId, int id, int slot) {
+        this.option = option;
+        this.interfaceId = interfaceId;
+        this.id = id;
+        this.slot = slot;
+    }
 
-	/**
-	 * Gets the interface id.
-	 *
-	 * @return The interface id.
-	 */
-	public final int getInterfaceId() {
-		return interfaceId;
-	}
+    /**
+     * Gets the item id.
+     *
+     * @return The item id.
+     */
+    public final int getId() {
+        return id;
+    }
 
-	/**
-	 * Gets the option number.
-	 *
-	 * @return The option number.
-	 * @throws NoSuchElementException If there is no option.
-	 */
-	public final int getOption() {
-		return option.getAsInt();
-	}
+    /**
+     * Gets the interface id.
+     *
+     * @return The interface id.
+     */
+    public final int getInterfaceId() {
+        return interfaceId;
+    }
 
-	/**
-	 * Gets the slot.
-	 *
-	 * @return The slot.
-	 */
-	public final int getSlot() {
-		return slot;
-	}
+    /**
+     * Gets the option number.
+     *
+     * @return The option number.
+     * @throws NoSuchElementException If there is no option.
+     */
+    public final int getOption() {
+        return option.getAsInt();
+    }
 
-	/**
-	 * Returns whether or not this InventoryItemMessage has an option number.
-	 *
-	 * @return {@code true} iff this InventoryItemMessage has an option number.
-	 */
-	public final boolean hasOption() {
-		return option.isPresent();
-	}
+    /**
+     * Gets the slot.
+     *
+     * @return The slot.
+     */
+    public final int getSlot() {
+        return slot;
+    }
+
+    /**
+     * Returns whether or not this InventoryItemMessage has an option number.
+     *
+     * @return {@code true} iff this InventoryItemMessage has an option number.
+     */
+    public final boolean hasOption() {
+        return option.isPresent();
+    }
 
 }

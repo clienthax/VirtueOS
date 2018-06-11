@@ -8,6 +8,6 @@ import com.oldscape.shared.network.game.GameFrameReader;
  */
 public interface GameMessageDecoder<T extends Event> {
 
-	public T decode(GameFrameReader frame);
+    public T decode(GameFrameReader frame);
 
 }

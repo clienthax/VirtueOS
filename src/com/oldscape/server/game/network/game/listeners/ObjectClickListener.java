@@ -7,19 +7,17 @@ import com.oldscape.shared.model.Position;
 import com.oldscape.shared.network.game.event.impl.ObjectClickEvent;
 
 /**
- * 
  * @author Giovanni
- *
  */
 public class ObjectClickListener implements EventListener<ObjectClickEvent, GameSessionContext> {
 
-	@Override
-	public void onEvent(ObjectClickEvent event, GameSessionContext context) {
-		System.out.println("object clicked");
-		Player player = context.getPlayer();
-		player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()));
-		// TODO: Handle the action of the object here
+    @Override
+    public void onEvent(ObjectClickEvent event, GameSessionContext context) {
+        System.out.println("object clicked");
+        Player player = context.getPlayer();
+        player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()));
+        // TODO: Handle the action of the object here
 
-	}
+    }
 
 }

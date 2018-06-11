@@ -9,14 +9,14 @@ import com.oldscape.shared.network.game.event.impl.NpcActionEvent;
 
 public class NpcFirstClickDecoder implements GameMessageDecoder<NpcActionEvent> {
 
-	@Override
-	public NpcActionEvent decode(GameFrameReader frame) {
+    @Override
+    public NpcActionEvent decode(GameFrameReader frame) {
 
-	    int type = (int) frame.getUnsigned(DataType.BYTE, DataTransformation.ADD);//todo
-		int index = (int) frame.getUnsigned(DataType.SHORT, DataOrder.LITTLE);
+        int type = (int) frame.getUnsigned(DataType.BYTE, DataTransformation.ADD);//todo
+        int index = (int) frame.getUnsigned(DataType.SHORT, DataOrder.LITTLE);
 
-        System.out.println("npcclick "+type+" "+index);
-		return new NpcActionEvent(1, index);
-	}
+        System.out.println("npcclick " + type + " " + index);
+        return new NpcActionEvent(1, index);
+    }
 
 }
