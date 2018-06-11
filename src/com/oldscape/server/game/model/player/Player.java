@@ -104,6 +104,21 @@ public class Player extends MobileEntity {
 	protected final ItemContainer bank = new ItemContainer(ContainerConstants.BANK_CAPACITY, StackMode.STACK_ALWAYS);
 
 	/**
+	 * Amount of items in each bank tab
+	 */
+	protected int[] bankTabItems = new int[10];
+
+	public int[] getBankTabItems()
+	{
+		return bankTabItems;
+	}
+
+	public void setBankTabItems(int[] bankTabItems)
+	{
+		this.bankTabItems = bankTabItems;
+	}
+
+	/**
 	 * This mob's inventory.
 	 */
 	protected final ItemContainer inventory = new ItemContainer(ContainerConstants.INVENTORY_CAPACITY, StackMode.STACK_ALWAYS);
@@ -678,6 +693,10 @@ public class Player extends MobileEntity {
 		write(new InterfaceSetClickMaskEvent(root, component, from, to, settings));
 	}
 
+	public void sendInterfaceSetClickMask(int from, int to, int option, int interfaceHash) {
+		write(new InterfaceSetClickMaskEvent(interfaceHash>>16, interfaceHash&65535, from, to, option));
+	}
+
 	public void sendRegionUpdate(Position position) {
 		write(new RegionUpdateEvent(position));
 	}
@@ -706,7 +725,7 @@ public class Player extends MobileEntity {
 		write(new SetRootInterfaceEvent(interfaceId));
 	}
 
-	public void sendCS2Script(int id, Object[] params) {
+	public void sendCS2Script(int id, Object... params) {
 		// TODO Temp Fix. params are encoded/decoded backwards.
 		write(new CS2ScriptEvent(id, Lists.reverse(Arrays.asList(params)).toArray()));
 	}
