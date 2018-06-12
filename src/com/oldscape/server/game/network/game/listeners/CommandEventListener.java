@@ -37,13 +37,6 @@ import java.util.Arrays;
  */
 public class CommandEventListener implements EventListener<CommandEvent, GameSessionContext> {
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see
-     * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.Event,
-     * com.oldscape.shared.event.EventContext)
-     */
     @Override
     public void onEvent(CommandEvent event, GameSessionContext context) {
         System.out.println(event.getSyntax() + ", " + Arrays.toString(event.getArgs()));
@@ -86,30 +79,30 @@ public class CommandEventListener implements EventListener<CommandEvent, GameSes
         if (event.getSyntax().equals("resize_p")) {
             Player player = context.getPlayer();
             context.getPlayer().setDisplay(DisplayMode.RESIZE_PANELS);
-            player.sendSetRootInterface(player.getDisplay().getId());
+            player.sendSetRootWidget(player.getDisplay().getId());
             if (player.getDisplay().equals(DisplayMode.RESIZE_PANELS)) {
-                player.sendSetInterfaceMoveSubEvent(165, 1, 164, 19);
-                player.sendSetInterfaceMoveSubEvent(165, 4, 164, 8);
-                player.sendSetInterfaceMoveSubEvent(165, 2, 164, 3);
-                player.sendSetInterfaceMoveSubEvent(165, 3, 164, 6);
-                player.sendSetInterfaceMoveSubEvent(165, 5, 164, 52);
-                player.sendSetInterfaceMoveSubEvent(165, 6, 164, 54);
-                player.sendSetInterfaceMoveSubEvent(165, 7, 164, 55);
-                player.sendSetInterfaceMoveSubEvent(165, 8, 164, 56);
-                player.sendSetInterfaceMoveSubEvent(165, 9, 164, 57);
-                player.sendSetInterfaceMoveSubEvent(165, 10, 164, 58);
-                player.sendSetInterfaceMoveSubEvent(165, 11, 164, 59);
-                player.sendSetInterfaceMoveSubEvent(165, 12, 164, 60);
-                player.sendSetInterfaceMoveSubEvent(165, 13, 164, 61);
-                player.sendSetInterfaceMoveSubEvent(165, 14, 164, 62);
-                player.sendSetInterfaceMoveSubEvent(165, 15, 164, 63);
-                player.sendSetInterfaceMoveSubEvent(165, 16, 164, 64);
-                player.sendSetInterfaceMoveSubEvent(165, 17, 164, 65);
-                player.sendSetInterfaceMoveSubEvent(165, 18, 164, 66);
-                player.sendSetInterfaceMoveSubEvent(165, 19, 164, 67);
-                player.sendSetInterfaceMoveSubEvent(165, 20, 164, 4);
-                player.sendSetInterfaceMoveSubEvent(165, 21, 164, 7);
-                player.sendSetInterfaceMoveSubEvent(165, 22, 164, 16);
+                player.sendSetWidgetMoveSubEvent(165, 1, 164, 19);
+                player.sendSetWidgetMoveSubEvent(165, 4, 164, 8);
+                player.sendSetWidgetMoveSubEvent(165, 2, 164, 3);
+                player.sendSetWidgetMoveSubEvent(165, 3, 164, 6);
+                player.sendSetWidgetMoveSubEvent(165, 5, 164, 52);
+                player.sendSetWidgetMoveSubEvent(165, 6, 164, 54);
+                player.sendSetWidgetMoveSubEvent(165, 7, 164, 55);
+                player.sendSetWidgetMoveSubEvent(165, 8, 164, 56);
+                player.sendSetWidgetMoveSubEvent(165, 9, 164, 57);
+                player.sendSetWidgetMoveSubEvent(165, 10, 164, 58);
+                player.sendSetWidgetMoveSubEvent(165, 11, 164, 59);
+                player.sendSetWidgetMoveSubEvent(165, 12, 164, 60);
+                player.sendSetWidgetMoveSubEvent(165, 13, 164, 61);
+                player.sendSetWidgetMoveSubEvent(165, 14, 164, 62);
+                player.sendSetWidgetMoveSubEvent(165, 15, 164, 63);
+                player.sendSetWidgetMoveSubEvent(165, 16, 164, 64);
+                player.sendSetWidgetMoveSubEvent(165, 17, 164, 65);
+                player.sendSetWidgetMoveSubEvent(165, 18, 164, 66);
+                player.sendSetWidgetMoveSubEvent(165, 19, 164, 67);
+                player.sendSetWidgetMoveSubEvent(165, 20, 164, 4);
+                player.sendSetWidgetMoveSubEvent(165, 21, 164, 7);
+                player.sendSetWidgetMoveSubEvent(165, 22, 164, 16);
             }
         }
 
@@ -125,11 +118,11 @@ public class CommandEventListener implements EventListener<CommandEvent, GameSes
             if (event.getArgs().length > 1) {
                 return;
             }
-            context.getPlayer().sendOpenInterfaceSub(548, 22, Integer.parseInt(event.getArgs()[0]), false);
+            context.getPlayer().sendOpenWidgetSub(548, 22, Integer.parseInt(event.getArgs()[0]), false);
         }
 
         if (event.getSyntax().equals("closeinter")) {
-            context.getPlayer().sendCloseInterfaceSub(548, 22);
+            context.getPlayer().sendCloseWidgetSub(548, 22);
         }
 
         /*
@@ -164,7 +157,7 @@ public class CommandEventListener implements EventListener<CommandEvent, GameSes
          * context.getPlayer().getEquipment().set(2, new Item(necklace)); }
          *
          * if (event.getSyntax().equals("inter")) { if (event.getArgs().length >
-         * 1) { return; } context.getPlayer().sendOpenInterfaceSub(548, 104,
+         * 1) { return; } context.getPlayer().sendOpenWidgetSub(548, 104,
          * Integer.parseInt(event.getArgs()[0]), false); }
          *
          * if (event.getSyntax().equals("item")) { int itemID =

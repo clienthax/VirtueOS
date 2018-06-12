@@ -2,41 +2,40 @@ package com.oldscape.shared.network.game.event.impl;
 
 import com.oldscape.shared.event.Event;
 
-public final class InterfaceOpenSubEvent implements Event {
+public final class WidgetOpenSubEvent implements Event {
 
     /**
      * The xtea key for the interface.
      */
     private final int[] key;
-    private int rootInterfaceId;
+    private int rootWidgetId;
     private int childId;
-    private int interfaceId;
+    private int widgetId;
     private boolean clickable;
 
-    public InterfaceOpenSubEvent(int rootInterfaceId, int childId, int interfaceId,
-                                 boolean clickable) {
-        this(rootInterfaceId, childId, interfaceId, clickable, new int[4]);
+    public WidgetOpenSubEvent(int rootWidgetId, int childId, int widgetId, boolean clickable) {
+        this(rootWidgetId, childId, widgetId, clickable, new int[4]);
     }
 
-    public InterfaceOpenSubEvent(int rootInterfaceId, int childId, int interfaceId,
-                                 boolean clickable, int[] keys) {
-        this.rootInterfaceId = rootInterfaceId;
+    public WidgetOpenSubEvent(int rootWidgetId, int childId, int widgetId,
+                              boolean clickable, int[] keys) {
+        this.rootWidgetId = rootWidgetId;
         this.childId = childId;
-        this.interfaceId = interfaceId;
+        this.widgetId = widgetId;
         this.clickable = clickable;
         this.key = keys;
     }
 
-    public int getRootInterfaceId() {
-        return rootInterfaceId;
+    public int getRootWidgetId() {
+        return rootWidgetId;
     }
 
     public int getChildId() {
         return childId;
     }
 
-    public int getInterfaceId() {
-        return interfaceId;
+    public int getWidgetId() {
+        return widgetId;
     }
 
     public boolean isClickable() {

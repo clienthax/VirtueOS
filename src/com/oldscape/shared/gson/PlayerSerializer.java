@@ -102,6 +102,7 @@ public class PlayerSerializer implements JsonSerializer<Player>, JsonDeserialize
         Player player = new Player(1, credentials, mode);
         player.setPosition(position);
         player.setLastPosition(position);
+        player.setLastKnownRegion(position);
 
         /**
          * Returns the {@code com.oldscape.shared.model.player.AccountCredentials}.

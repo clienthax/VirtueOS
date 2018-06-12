@@ -2,14 +2,14 @@ package com.oldscape.shared.network.game.event;
 
 import com.oldscape.server.game.Server;
 import com.oldscape.shared.event.Event;
-import com.oldscape.shared.network.game.event.decoders.ClientDimensionsDecoder;
+import com.oldscape.shared.network.game.event.decoders.client.ClientDimensionsDecoder;
 import com.oldscape.shared.network.game.event.decoders.DummyDecoder;
 import com.oldscape.shared.network.game.event.decoders.chat.CommandDecoder;
 import com.oldscape.shared.network.game.event.decoders.chat.PublicChatDecoder;
 import com.oldscape.shared.network.game.event.decoders.client.ClientFocusDecoder;
-import com.oldscape.shared.network.game.event.decoders.interfaces.ButtonClickDecoder;
-import com.oldscape.shared.network.game.event.decoders.npcs.*;
-import com.oldscape.shared.network.game.event.decoders.objects.*;
+import com.oldscape.shared.network.game.event.decoders.widget.WidgetButtonClickDecoder;
+import com.oldscape.shared.network.game.event.decoders.npc.*;
+import com.oldscape.shared.network.game.event.decoders.object.*;
 import com.oldscape.shared.network.game.event.decoders.walking.MiniMapWalkDecoder;
 import com.oldscape.shared.network.game.event.decoders.walking.WalkDecoder;
 import com.oldscape.shared.network.game.event.encoders.*;
@@ -30,7 +30,7 @@ public final class GameEventRepository {
 
     /*
      * The {@link java.util.Map} of {@link
-     * com.etoile.shared.network.game.event.GameMessageDecoder}s. allocated with
+     * com.oldscape.shared.network.game.event.GameMessageDecoder}s. allocated with
      * the maximum size defined in the constant {@code MAXIMUM_MESSAGES}.
      */
     private final GameMessageDecoder<?>[] opcodeTable = new GameMessageDecoder<?>[MAXIMUM_MESSAGES];
@@ -47,26 +47,26 @@ public final class GameEventRepository {
      */
     public GameEventRepository(Server server) {
         addMessageEncoder(RegionUpdateEvent.class, new RegionUpdateEventEncoder(server));
-        addMessageEncoder(SetRootInterfaceEvent.class, new SetRootInterfaceEncoder());
+        addMessageEncoder(SetRootWigetEvent.class, new SetRootWidgetEncoder());
         addMessageEncoder(VarpEvent.class, new VarpEventEncoder());
-        addMessageEncoder(InterfaceOpenSubEvent.class, new InterfaceOpenSubEventEncoder());
-        addMessageEncoder(InterfaceSetClickMaskEvent.class, new InterfaceSetClickMaskEventEncoder());
+        addMessageEncoder(WidgetOpenSubEvent.class, new WidgetOpenSubEventEncoder());
+        addMessageEncoder(WidgetSetClickMaskEvent.class, new WidgetSetClickMaskEventEncoder());
         addMessageEncoder(CS2ScriptEvent.class, new CS2ScriptEventEncoder());
         addMessageEncoder(PlayerSynchronizationEvent.class, new PlayerSynchronizationEventEncoder());
         addMessageEncoder(NpcSynchronizationEvent.class, new NpcSynchronizationEventEncoder());
         addMessageEncoder(LogoutEvent.class, new LogoutEventEncoder());
         addMessageEncoder(SlottedItemsUpdateEvent.class, new SlottedItemsUpdateEventEncoder());
-        addMessageEncoder(ItemsUpdateEvent.class, new ItemsUpdateEventEncoder());
-        addMessageEncoder(InterfaceSetTextEvent.class, new InterfaceSetTextEventEncoder());
+        addMessageEncoder(WidgetItemUpdateEvent.class, new WidgetItemUpdateEventEncoder());
+        addMessageEncoder(WidgetSetTextEvent.class, new WidgetSetTextEventEncoder());
         addMessageEncoder(ExternalIPEvent.class, new ExternalIPEventEncoder());
-        addMessageEncoder(InterfaceMoveSubEvent.class, new InterfaceMoveSubEventEncoder());
+        addMessageEncoder(WidgetMoveSubEvent.class, new WidgetMoveSubEventEncoder());
         addMessageEncoder(RunEnergyEvent.class, new RunEnergyEventEncoder());
         addMessageEncoder(SkillEvent.class, new SkillEventEncoder());
         addMessageEncoder(VarpResetEvent.class, new VarpResetEventEncoder());
         addMessageEncoder(VarpRecacheEvent.class, new VarpRecacheEventEncoder());
         addMessageEncoder(MusicEvent.class, new MusicEventEncoder());
         addMessageEncoder(MessageEvent.class, new MessageEventEncoder());
-        addMessageEncoder(InterfaceCloseSubEvent.class, new InterfaceCloseSubEventEncoder());
+        addMessageEncoder(WidgetCloseSubEvent.class, new WidgetCloseSubEventEncoder());
 
         //deob168
         //not sure on 93
@@ -75,7 +75,7 @@ public final class GameEventRepository {
 
         addMessageDecoder(12, new WalkDecoder());//works
         addMessageDecoder(13, new MiniMapWalkDecoder());//works
-        addMessageDecoder(17, new ButtonClickDecoder());//17 int clicks?
+        addMessageDecoder(17, new WidgetButtonClickDecoder());//17 int clicks?
 
         addMessageDecoder(57, new ClientDimensionsDecoder());
 
@@ -88,11 +88,11 @@ public final class GameEventRepository {
         //29 examine object
 
         //Npc options
-        addMessageDecoder(37, new NpcFirstClickDecoder());
-        addMessageDecoder(91, new NpcSecondClickDecoder());
-        addMessageDecoder(81, new NpcThirdClickDecoder());
-        addMessageDecoder(62, new NpcForthClickDecoder());
-        addMessageDecoder(71, new NpcFifthClickDecoder());
+        addMessageDecoder(37, new NpcFirstActionDecoder());
+        addMessageDecoder(91, new NpcSecondActionDecoder());
+        addMessageDecoder(81, new NpcThirdActionDecoder());
+        addMessageDecoder(62, new NpcForthActionDecoder());
+        addMessageDecoder(71, new NpcFifthActionDecoder());
         //53 examine npc
 
 
@@ -107,13 +107,13 @@ public final class GameEventRepository {
 
 		/*
 		addMessageDecoder(new int[] {24, 40, 41, 70, 212, 254}, new DummyDecoder());
-		addMessageDecoder(new int[] {60, 77, 109, 135, 142, 152, 177, 195, 244, 246}, new InterfaceClickDecoder());
+		addMessageDecoder(new int[] {60, 77, 109, 135, 142, 152, 177, 195, 244, 246}, new WidgetClickDecoder());
 		*/
 
 
 //		addMessageDecoder(1, new AttackNpcDecoder());
-//		addMessageDecoder(new int[] { 13, 245, 76, 125, 240, 236, 108, 103, 104, 193, 112, 163 }, new InterfaceClickDecoder());
-//		addMessageDecoder(232, new ItemOptionDecoder()); //
+//		addMessageDecoder(new int[] { 13, 245, 76, 125, 240, 236, 108, 103, 104, 193, 112, 163 }, new WidgetClickDecoder());
+//		addMessageDecoder(232, new ItemActionDecoder()); //
     }
 
     /**

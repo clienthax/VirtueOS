@@ -44,11 +44,16 @@ public class WalkEventListener implements EventListener<WalkEvent, GameSessionCo
     public void onEvent(WalkEvent event, GameSessionContext context) {
         Player player = context.getPlayer();
 
-        //Close any open interfaces
-        player.sendCloseInterfaceSub(548, 22);
+        /* Close any open Interfaces */
+        // TODO: add a check for any widget not including Gameframe.
+        player.sendCloseWidgetSub(548, 22);
 
-        player.getWalkingQueue().clear();
-        player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()), context.getServer().getRegionManager());
+        if(event.getType() == 0) {
+            player.getWalkingQueue().clear();
+            player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()), context.getServer().getRegionManager());
+        } else {
+            player.teleport(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()));
+        }
     }
 
 }

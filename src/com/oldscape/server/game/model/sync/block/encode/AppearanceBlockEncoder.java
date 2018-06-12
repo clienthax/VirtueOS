@@ -44,14 +44,6 @@ public class AppearanceBlockEncoder extends SynchronizationBlockEncoder {
         super(2, 0);
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see
-     * com.oldscape.server.game.model.sync.block.encode.SynchronizationBlockEncoder#
-     * encodeBlock(com.oldscape.server.game.model.sync.block.SynchronizationBlock,
-     * com.oldscape.shared.network.game.GameFrameBuilder)
-     */
     @Override
     public void encodeBlock(SynchronizationBlock block, GameFrameBuilder builder, boolean player) {
         AppearanceBlock aBlock = (AppearanceBlock) block;
@@ -147,13 +139,13 @@ public class AppearanceBlockEncoder extends SynchronizationBlockEncoder {
             props.put(DataType.BYTE, color);
         }
 
-        props.put(DataType.SHORT, aBlock.getEquipment().getStandAnim()); // stand
-        props.put(DataType.SHORT, 0x337); // stand turn
-        props.put(DataType.SHORT, aBlock.getEquipment().getWalkAnim()); // walk
-        props.put(DataType.SHORT, 0x334); // turn 180
-        props.put(DataType.SHORT, 0x335); // turn 90 cw
-        props.put(DataType.SHORT, 0x336); // turn 90 ccw
-        props.put(DataType.SHORT, aBlock.getEquipment().getRunAnim()); // run
+        props.put(DataType.SHORT, aBlock.getEquipment().getStandAnim());
+        props.put(DataType.SHORT, aBlock.getEquipment().getStandTurnAnim());
+        props.put(DataType.SHORT, aBlock.getEquipment().getWalkAnim());
+        props.put(DataType.SHORT, aBlock.getEquipment().getTurn180Anim());
+        props.put(DataType.SHORT, aBlock.getEquipment().getTurn90cwAnim());
+        props.put(DataType.SHORT, aBlock.getEquipment().getTurn90ccwAnim());
+        props.put(DataType.SHORT, aBlock.getEquipment().getRunAnim());
 
         props.putString(aBlock.getName());
 

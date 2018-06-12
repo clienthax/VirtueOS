@@ -22,11 +22,14 @@ public abstract class MobileEntity extends Node {
      * This mob's walking queue.
      */
     protected final WalkingQueue walkingQueue = new WalkingQueue(this);
+
     //3250 3423 --varock east
     //3222 3222 --lumby
     protected int X = 3250;
     protected int Y = 3423;
+
     protected Position position = new Position(X, Y, 0, Position.RegionSize.DEFAULT);
+
     protected Position lastPosition = new Position(X, Y, 0, Position.RegionSize.DEFAULT);
     /**
      * This mob's set of synchronization blocks.
@@ -74,6 +77,16 @@ public abstract class MobileEntity extends Node {
     protected Optional<NpcType> npcType = Optional.empty();
 
     protected Region region;
+
+    protected Position lastKnownRegion = null;
+
+    public Position getLastKnownRegion() {
+        return lastKnownRegion;
+    }
+
+    public void setLastKnownRegion(Position lastKnownRegion) {
+        this.lastKnownRegion = lastKnownRegion;
+    }
 
     /**
      * Gets the entity's current position
@@ -308,9 +321,16 @@ public abstract class MobileEntity extends Node {
      * @param position The position.
      */
     public void teleport(Position position) {
+        setLastPosition(getPosition());
         setPosition(position);
-        teleporting = true;
+
+        walkingQueue.handleRegionChange();
+
+        setTeleporting(true);
+
         walkingQueue.clear();
+
+        addBlock(SynchronizationBlock.createMovementTypeBlock(getWalkingQueue().runningQueue(), isTeleporting()));
 
     }
 
@@ -333,7 +353,7 @@ public abstract class MobileEntity extends Node {
     }
 
     /**
-     * Gets this mob's {@link NpcDefinition}.
+     * Gets this mob's {@link NpcType}.
      *
      * @return The npc definition.
      */
@@ -342,7 +362,7 @@ public abstract class MobileEntity extends Node {
     }
 
     /**
-     * Returns whether or not this mob has an {@link NpcDefinition}.
+     * Returns whether or not this mob has an {@link NpcType}.
      *
      * @return {@code true} if this mob has an npc definition, {@code false} if
      * not.

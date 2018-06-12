@@ -13,6 +13,7 @@ public class SyncUtils {
 
     private static final Map<SegmentType, SynchronizationDescriptor> pDescriptors = new HashMap<>();
     private static final Map<SegmentType, SynchronizationDescriptor> nDescriptors = new HashMap<>();
+
     private static final List<SynchronizationBlockEncoder> pBlocks = new ArrayList<>(12);
     private static final List<SynchronizationBlockEncoder> nBlocks = new ArrayList<>(8);
 
@@ -36,62 +37,28 @@ public class SyncUtils {
         nDescriptors.put(SegmentType.RUN, new NpcRunDescriptor());
         nDescriptors.put(SegmentType.NO_MOVEMENT, new NpcStillDescriptor());
 
-        //TODO these need to match up with the clients ordering, or else they will be read out of order
-        /**
-         * Correct order for 168
-         * 4 - forcechat
-         * 64 - face entity
-         * 16 - orientation
-         * 128 - hitmasks
-         * 2048 - context menu -- doesn't seem to be in this yet
-         * 1 - animation
-         * 256 - gfx
-         * 8 - chat masks
-         * 512 - movement mask
-         * 1024 - forced movement
-         * 4096 - unknown - temp movement?
-         * 2 - appearance
-         *
-         * TODO hit updates need to be remade for 168
-         * TODO implement context menu
-         *
-         */
-        pBlocks.add(new ForceChatBlockEncoder());//4
-        pBlocks.add(new InteractingMobBlockEncoder());//64
-        pBlocks.add(new OrientationBlockEncoder());//16
-        pBlocks.add(new HitUpdateBlockEncoder());//TODO update
-        pBlocks.add(new ContextMenuBlockEncoder());//2048
-        pBlocks.add(new AnimationBlockEncoder());//1
-        pBlocks.add(new GraphicBlockEncoder());//256
-        pBlocks.add(new ChatBlockEncoder());//8
-        pBlocks.add(new MovementTypeBlockEncoder());//512
-        pBlocks.add(new ForceMovementBlockEncoder());//1024
-        pBlocks.add(new TemporaryMovementTypeBlockEncoder());//4096
-        pBlocks.add(new AppearanceBlockEncoder());//2
+        pBlocks.add(new ForceChatBlockEncoder());
+        pBlocks.add(new InteractingMobBlockEncoder());
+        pBlocks.add(new OrientationBlockEncoder());
+//        pBlocks.add(new HitUpdateBlockEncoder());// TODO: add, updated HItUpdateBlock.
+        pBlocks.add(new ContextMenuBlockEncoder());// TODO: finish, needs implementing.
+        pBlocks.add(new AnimationBlockEncoder());
+        pBlocks.add(new GraphicBlockEncoder());
+        pBlocks.add(new ChatBlockEncoder());
+        pBlocks.add(new MovementTypeBlockEncoder());
+        pBlocks.add(new ForceMovementBlockEncoder());
+        pBlocks.add(new TemporaryMovementTypeBlockEncoder());
+        pBlocks.add(new AppearanceBlockEncoder());
+//        pBlocks.add(new SecondaryHitUpdateBlockEncoder());// TODO: remove, this is no longer used.
 
-        //pBlocks.add(new SecondaryHitUpdateBlockEncoder());
-
-
-        /**
-         * Correct order for 168
-         * 4	- animation
-         * 64	- transform
-         * 2	-
-         * 32	- face entity
-         * 16	- hitmasks?
-         * 1	- gfx
-         * 8	-
-         */
-
-        nBlocks.add(new AnimationBlockEncoder());//4
-        nBlocks.add(new TransformBlockEncoder());//64
-        nBlocks.add(new OrientationBlockEncoder());//2
-        nBlocks.add(new InteractingMobBlockEncoder());//32
-        nBlocks.add(new HitUpdateBlockEncoder());//TODO update
-        nBlocks.add(new GraphicBlockEncoder());//1
-        nBlocks.add(new ForceChatBlockEncoder());//8
-
-        //nBlocks.add(new SecondaryHitUpdateBlockEncoder());
+        nBlocks.add(new AnimationBlockEncoder());
+        nBlocks.add(new TransformBlockEncoder());
+        nBlocks.add(new OrientationBlockEncoder());
+        nBlocks.add(new InteractingMobBlockEncoder());
+        nBlocks.add(new HitUpdateBlockEncoder());// TODO add, updated HitUpdateBlock.
+        nBlocks.add(new GraphicBlockEncoder());
+        nBlocks.add(new ForceChatBlockEncoder());
+//        nBlocks.add(new SecondaryHitUpdateBlockEncoder());// TODO: remove, this is no longer used.
     }
 
     public static SynchronizationDescriptor getPlayerDescriptor(SegmentType type) {

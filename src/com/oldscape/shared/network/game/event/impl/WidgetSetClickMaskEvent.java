@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015 Kyle Friz & Kayla Friz
+ * Copyright (c) 2014 RSE Studios
  * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,43 +23,41 @@ package com.oldscape.shared.network.game.event.impl;
 
 import com.oldscape.shared.event.Event;
 
-/**
- * @author Kyle Friz
- * @author Kayla Friz
- * @since Jun 5, 2015
- */
-public class InterfaceSetTextEvent implements Event {
+public class WidgetSetClickMaskEvent implements Event {
 
-    private final int root;
-    private final int child;
-    private final String message;
+    public int widgetId;
+    public int childId;
+    public int fromSlot;
+    public int toSlot;
+    public int settingsHash;
 
-    public InterfaceSetTextEvent(int root, int child, String message) {
-        this.root = root;
-        this.child = child;
-        this.message = message;
+    public WidgetSetClickMaskEvent(int widgetId, int childId,
+                                   int fromSlot, int toSlot, int settingsHash) {
+        this.widgetId = widgetId;
+        this.childId = childId;
+        this.fromSlot = fromSlot;
+        this.toSlot = toSlot;
+        this.settingsHash = settingsHash;
     }
 
-    /**
-     * @return the root
-     */
     public int getRoot() {
-        return root;
+        return widgetId;
     }
 
-    /**
-     * @return the child
-     */
-    public int getChild() {
-        return child;
+    public int getComponent() {
+        return childId;
     }
 
-    /**
-     * @return the message
-     */
-    public String getMessage() {
-        return message;
+    public int getFrom() {
+        return fromSlot;
     }
 
+    public int getTo() {
+        return toSlot;
+    }
+
+    public int getSettings() {
+        return settingsHash;
+    }
 
 }

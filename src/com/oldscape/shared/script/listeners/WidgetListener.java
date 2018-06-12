@@ -29,21 +29,21 @@ import com.oldscape.server.game.model.player.Player;
  * @author Kayla Friz
  * @since May 29, 2015
  */
-public interface InterfaceListener {
+public interface WidgetListener {
 
     /**
      * Gets the widget ids which are bound to this listener
      *
      * @return an array of integers containing the ids to bind to
      */
-    public int[] getIDs();
+    public Integer[] getPossibleWidgets();
 
     /**
      * Called whenever a player clicks a button on the widget
      *
      * @param player
      *            The player who clicked the button
-     * @param interfaceId
+     * @param widgetId
      *            The id of the widget clicked
      * @param buttonId
      *            The id of the button clicked
@@ -56,6 +56,6 @@ public interface InterfaceListener {
      *            The option selected. Ranges from 1 to 10
      * @return True if the interaction was handled, false otherwise
      */
-    public boolean handle(Player player, int interfaceId, int buttonId, int itemId, int slotId, int option);
+    public boolean handle(Player player, int widgetId, int buttonId, int itemId, int slotId, int option);
 
 }

@@ -1,4 +1,5 @@
 # VirtueOS #
+[![Discord](https://img.shields.io/discord/233752666059046912.svg)](https://discord.gg/eCz3y4r)
 
 Open-source community OldSchool RuneScape Private Server with Client loader project.
 

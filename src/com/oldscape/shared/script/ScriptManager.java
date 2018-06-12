@@ -22,7 +22,7 @@
 package com.oldscape.shared.script;
 
 import com.oldscape.shared.script.listeners.CommandListener;
-import com.oldscape.shared.script.listeners.InterfaceListener;
+import com.oldscape.shared.script.listeners.WidgetListener;
 import com.oldscape.shared.script.listeners.LocationListener;
 import com.oldscape.shared.utility.FileUtils;
 
@@ -46,7 +46,7 @@ public class ScriptManager {
 
     private Logger logger = Logger.getLogger(ScriptManager.class.getName());
     private Map<String, CommandListener> commandListeners = new HashMap<>();
-    private Map<Integer, InterfaceListener> interfaceListeners = new HashMap<>();
+    private Map<Integer, WidgetListener> interfaceListeners = new HashMap<>();
 
     private Map<Integer, LocationListener> locationListeners = new HashMap<>();
 
@@ -64,7 +64,7 @@ public class ScriptManager {
             }
         });
         logger.info("Loaded " + commandListeners.size() + " CommandListener(s), " + interfaceListeners.size()
-                + " InterfaceListener(s).");
+                + " WidgetListener(s).");
     }
 
     public void setCommandListener(CommandListener listener, String... syntaxes) {
@@ -77,13 +77,13 @@ public class ScriptManager {
         return commandListeners.get(syntax);
     }
 
-    public void setInterfaceListener(InterfaceListener listener, Integer... ids) {
+    public void setInterfaceListener(WidgetListener listener, Integer... ids) {
         Arrays.stream(ids).forEach((Integer id) -> {
             interfaceListeners.put(id, listener);
         });
     }
 
-    public InterfaceListener forInterface(Integer id) {
+    public WidgetListener forWidget(Integer id) {
         return interfaceListeners.get(id);
     }
 

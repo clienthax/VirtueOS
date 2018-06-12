@@ -143,45 +143,45 @@ public class Player extends MobileEntity {
 
         //TODO figure out the varps etc
 		/*
-		sendSetInterfaceText(378, 14, "Never tell anyone your password, even if they claim to work for Jagex!");
-		sendSetInterfaceText(378, 15, "You have 0 unread messages in your message centre.");
-		sendSetInterfaceText(378, 18, "You are not a member. Subscribe to access extra skills, areas and quests, and much<br>more besides.");
-		sendSetInterfaceText(378, 20, "A membership subscription grants access to the members-only features of both versions of RuneScape.");
-		sendSetInterfaceText(378, 21, "Keep your account secure.");
-		sendSetInterfaceText(378, 13, "You last logged in <col=ff0000>earlier today<col=000000>.");
-		sendSetInterfaceText(378, 16, "You do not have a Bank PIN. Please visit a bank if you would like one.");
-		sendSetInterfaceText(50, 3, "Organise your teleport scrolls in the new <col=6f007f>Master Scroll Book</col> available from treasure trails. Also you can now recolour <col=003fbf>rock golems</col> with lovekite, elemental or daeyalt ore!");
-		sendSetInterfaceText(593, 1, "Unarmed");
-		sendSetInterfaceText(593, 2, "Combat Lvl: 3");
-		sendSetInterfaceText(239, 5, "AUTO");
+		sendSetWidgetText(378, 14, "Never tell anyone your password, even if they claim to work for Jagex!");
+		sendSetWidgetText(378, 15, "You have 0 unread messages in your message centre.");
+		sendSetWidgetText(378, 18, "You are not a member. Subscribe to access extra skills, areas and quests, and much<br>more besides.");
+		sendSetWidgetText(378, 20, "A membership subscription grants access to the members-only features of both versions of RuneScape.");
+		sendSetWidgetText(378, 21, "Keep your account secure.");
+		sendSetWidgetText(378, 13, "You last logged in <col=ff0000>earlier today<col=000000>.");
+		sendSetWidgetText(378, 16, "You do not have a Bank PIN. Please visit a bank if you would like one.");
+		sendSetWidgetText(50, 3, "Organise your teleport scrolls in the new <col=6f007f>Master Scroll Book</col> available from treasure trails. Also you can now recolour <col=003fbf>rock golems</col> with lovekite, elemental or daeyalt ore!");
+		sendSetWidgetText(593, 1, "Unarmed");
+		sendSetWidgetText(593, 2, "Combat Lvl: 3");
+		sendSetWidgetText(239, 5, "AUTO");
 
-		sendSetRootInterface(165);
+		sendSetRootWidget(165);
 		
-		sendOpenInterfaceSub(165, 1, 162, true);
-		sendOpenInterfaceSub(165, 8, 593, true);
-		sendOpenInterfaceSub(165, 9, 320, true);
-		sendOpenInterfaceSub(165, 10, 76, true);
-		sendOpenInterfaceSub(165, 11, 149, true);
-		sendOpenInterfaceSub(165, 12, 387, true);
-		sendOpenInterfaceSub(165, 13, 541, true);
-		sendOpenInterfaceSub(165, 14, 218, true);
-		sendOpenInterfaceSub(165, 15, 7, true);
-		sendOpenInterfaceSub(165, 16, 429, true);
-		sendOpenInterfaceSub(165, 17, 432, true);
-		sendOpenInterfaceSub(165, 18, 182, true);
-		sendOpenInterfaceSub(165, 19, 261, true);
-		sendOpenInterfaceSub(165, 20, 216, true);
-		sendOpenInterfaceSub(165, 21, 239, true);
-		sendOpenInterfaceSub(165, 23, 163, true);
-		sendOpenInterfaceSub(165, 24, 160, true);
-		sendOpenInterfaceSub(165, 28, 50, false);//50 = theme
-		sendOpenInterfaceSub(165, 29, 378, false);
+		sendOpenWidgetSub(165, 1, 162, true);
+		sendOpenWidgetSub(165, 8, 593, true);
+		sendOpenWidgetSub(165, 9, 320, true);
+		sendOpenWidgetSub(165, 10, 76, true);
+		sendOpenWidgetSub(165, 11, 149, true);
+		sendOpenWidgetSub(165, 12, 387, true);
+		sendOpenWidgetSub(165, 13, 541, true);
+		sendOpenWidgetSub(165, 14, 218, true);
+		sendOpenWidgetSub(165, 15, 7, true);
+		sendOpenWidgetSub(165, 16, 429, true);
+		sendOpenWidgetSub(165, 17, 432, true);
+		sendOpenWidgetSub(165, 18, 182, true);
+		sendOpenWidgetSub(165, 19, 261, true);
+		sendOpenWidgetSub(165, 20, 216, true);
+		sendOpenWidgetSub(165, 21, 239, true);
+		sendOpenWidgetSub(165, 23, 163, true);
+		sendOpenWidgetSub(165, 24, 160, true);
+		sendOpenWidgetSub(165, 28, 50, false);//50 = theme
+		sendOpenWidgetSub(165, 29, 378, false);
 		
 		sendCS2Script(233, new Object[] { 3276804, 33179, 0, 0, 468, 1897, 0, 392, -1});
 		sendCS2Script(233, new Object[] { 3276805, 33194, 0, 56, 54, 74, 0, 660, -1});
 		
-		sendInterfaceSetClickMask(216, 1, 0, 46, 2);
-		sendInterfaceSetClickMask(239, 1, 0, 535, 2);
+		sendWidgetSetClickMask(216, 1, 0, 46, 2);
+		sendWidgetSetClickMask(239, 1, 0, 535, 2);
 
 		sendVarp(18, 1);
 		sendVarp(20, 131072);
@@ -238,7 +238,7 @@ public class Player extends MobileEntity {
 
 		sendMessage("Welcome to Unnamed #155.");
 
-		// sendSetInterfaceText(12, 4, "Bank of Unnamed #149.");
+		// sendSetWidgetText(12, 4, "Bank of Unnamed #149.");
 
 		// sendSkill(0, 99, 200000000);
 		// sendSkill(1, 99, 200000000);
@@ -274,43 +274,43 @@ public class Player extends MobileEntity {
 
 
 		/*
-		sendSetInterfaceText(378, 14, "Never tell anyone your password, even if they claim to work for Jagex!");
-		sendSetInterfaceText(378, 15, "You have 0 unread messages in your message centre");
-		sendSetInterfaceText(378, 18, "You are not a member Subscribe to access extra skills, areas and quests, and much<br>more besides");
-		sendSetInterfaceText(378, 20, "A membership subscription grants access to the members-only features of both versions of RuneScape");
-		sendSetInterfaceText(378, 21, "Keep your account secure");
-		sendSetInterfaceText(378, 13, "You last logged in <col=ff0000>earlier today<col=000000>");
-		sendSetInterfaceText(378, 16, "You do not have a Bank PIN Please visit a bank if you would like one");
-		sendSetRootInterface(165);
-		sendOpenInterfaceSub(165, 1, 162, true);
-		sendOpenInterfaceSub(165, 23, 163, true);
-		sendOpenInterfaceSub(165, 24, 160, true);
-		//sendOpenInterfaceSub(165, 29, 378, false);//heh, seems to be missing on 168
+		sendSetWidgetText(378, 14, "Never tell anyone your password, even if they claim to work for Jagex!");
+		sendSetWidgetText(378, 15, "You have 0 unread messages in your message centre");
+		sendSetWidgetText(378, 18, "You are not a member Subscribe to access extra skills, areas and quests, and much<br>more besides");
+		sendSetWidgetText(378, 20, "A membership subscription grants access to the members-only features of both versions of RuneScape");
+		sendSetWidgetText(378, 21, "Keep your account secure");
+		sendSetWidgetText(378, 13, "You last logged in <col=ff0000>earlier today<col=000000>");
+		sendSetWidgetText(378, 16, "You do not have a Bank PIN Please visit a bank if you would like one");
+		sendSetRootWidget(165);
+		sendOpenWidgetSub(165, 1, 162, true);
+		sendOpenWidgetSub(165, 23, 163, true);
+		sendOpenWidgetSub(165, 24, 160, true);
+		//sendOpenWidgetSub(165, 29, 378, false);//heh, seems to be missing on 168
 
 		int loginTheme = 50;
 
-		sendOpenInterfaceSub(165, 28, loginTheme, false);
-		sendSetInterfaceText(50, 3, "Once you've had a <col=cfcfcf>graceful set</col> repainted <col=2f2fff>blue</col> in <col=4f2f1f>Brimhaven</col>,<br>you can get <col=003600>individual pieces</col> repainted<br>Next week, <col=9f005f>Halloween</col>!");
+		sendOpenWidgetSub(165, 28, loginTheme, false);
+		sendSetWidgetText(50, 3, "Once you've had a <col=cfcfcf>graceful set</col> repainted <col=2f2fff>blue</col> in <col=4f2f1f>Brimhaven</col>,<br>you can get <col=003600>individual pieces</col> repainted<br>Next week, <col=9f005f>Halloween</col>!");
 		sendCS2Script(233, new Object[] {3276804, 7085, 0, 0, 434, 1912, 0, 400, -1});
 		sendCS2Script(233, new Object[] {3276805, 32817, 0, 100, 93, 179, 0, 800, 820});
 		sendCS2Script(1080, new Object[] {});
-		sendOpenInterfaceSub(165, 9, 320, true);
-		sendOpenInterfaceSub(165, 10, 399, true);
-		sendOpenInterfaceSub(165, 11, 149, true);
-		sendOpenInterfaceSub(165, 12, 387, true);
-		sendOpenInterfaceSub(165, 13, 541, true);
-		sendOpenInterfaceSub(165, 14, 218, true);
-		sendOpenInterfaceSub(165, 16, 429, true);
-		sendOpenInterfaceSub(165, 17, 432, true);
-		sendOpenInterfaceSub(165, 18, 182, true);
-		sendOpenInterfaceSub(165, 19, 261, true);
-		sendOpenInterfaceSub(165, 20, 216, true);
-		sendOpenInterfaceSub(165, 21, 239, true);
-		sendOpenInterfaceSub(165, 15, 7, true);
-		sendOpenInterfaceSub(165, 8, 593, true);
-		sendSetInterfaceText(593, 1, "Unarmed");
-		sendSetInterfaceText(593, 2, "Combat Lvl: 126");
-		sendSetInterfaceText(239, 5, "AUTO");
+		sendOpenWidgetSub(165, 9, 320, true);
+		sendOpenWidgetSub(165, 10, 399, true);
+		sendOpenWidgetSub(165, 11, 149, true);
+		sendOpenWidgetSub(165, 12, 387, true);
+		sendOpenWidgetSub(165, 13, 541, true);
+		sendOpenWidgetSub(165, 14, 218, true);
+		sendOpenWidgetSub(165, 16, 429, true);
+		sendOpenWidgetSub(165, 17, 432, true);
+		sendOpenWidgetSub(165, 18, 182, true);
+		sendOpenWidgetSub(165, 19, 261, true);
+		sendOpenWidgetSub(165, 20, 216, true);
+		sendOpenWidgetSub(165, 21, 239, true);
+		sendOpenWidgetSub(165, 15, 7, true);
+		sendOpenWidgetSub(165, 8, 593, true);
+		sendSetWidgetText(593, 1, "Unarmed");
+		sendSetWidgetText(593, 2, "Combat Lvl: 126");
+		sendSetWidgetText(239, 5, "AUTO");
 		sendCS2Script(2014, new Object[] {0, 0, 0, 0, 0, 0});
 		sendCS2Script(2015, new Object[] {0});
 		sendVarp(18, 1);
@@ -564,46 +564,46 @@ public class Player extends MobileEntity {
 
         sendCS2Script(828, new Object[]{1});
         ;
-        sendSetInterfaceText(378, 70, "You do not have a Bank PIN.<br>Please visit a bank if you would like one.");
-        sendSetInterfaceText(378, 3, "Delve into the history of <col=ff0000>Shayzien House</col> and uncover a conspiracy a thousand years in the making in our new quest, <col=ffff00>Tale of the Righteous</col>.");
+        sendSetWidgetText(378, 70, "You do not have a Bank PIN.<br>Please visit a bank if you would like one.");
+        sendSetWidgetText(378, 3, "Delve into the history of <col=ff0000>Shayzien House</col> and uncover a conspiracy a thousand years in the making in our new quest, <col=ffff00>Tale of the Righteous</col>.");
         sendCS2Script(233, new Object[]{24772660, 30685, 0, 120, 94, 110, 0, 1800, -1});
         sendCS2Script(233, new Object[]{24772661, 16356, 0, 190, 0, 122, 0, 3000, -1});
 
 
-        sendSetRootInterface(165);
+        sendSetRootWidget(165);
         sendCS2Script(1105, new Object[]{1});
-        sendOpenInterfaceSub(165, 1, 162, true);
-        sendOpenInterfaceSub(165, 23, 163, true);
-        sendOpenInterfaceSub(165, 24, 160, true);
-        sendOpenInterfaceSub(165, 27, 378, false);
+        sendOpenWidgetSub(165, 1, 162, true);
+        sendOpenWidgetSub(165, 23, 163, true);
+        sendOpenWidgetSub(165, 24, 160, true);
+        sendOpenWidgetSub(165, 27, 378, false);
         sendCS2Script(1080, new Object[]{});
         //resetCamera();
-        sendOpenInterfaceSub(165, 9, 320, true);
-        sendOpenInterfaceSub(165, 10, 399, true);
-        sendInterfaceSetClickMask(399, 7, 0, 19, 2);
-        sendInterfaceSetClickMask(399, 8, 0, 116, 2);
-        sendInterfaceSetClickMask(399, 9, 0, 11, 2);
-        sendOpenInterfaceSub(165, 11, 149, true);
-        sendOpenInterfaceSub(165, 12, 387, true);
-        sendOpenInterfaceSub(165, 13, 541, true);
-        sendOpenInterfaceSub(165, 14, 218, true);
-        sendOpenInterfaceSub(165, 16, 429, true);
-        sendOpenInterfaceSub(165, 17, 432, true);
-        sendOpenInterfaceSub(165, 18, 182, true);
-        sendOpenInterfaceSub(165, 19, 261, true);
-        sendInterfaceSetClickMask(261, 85, 1, 4, 2);
-        sendInterfaceSetClickMask(261, 86, 1, 4, 2);
-        sendOpenInterfaceSub(165, 20, 216, true);
-        sendInterfaceSetClickMask(216, 1, 0, 47, 2);
-        sendOpenInterfaceSub(165, 21, 239, true);
-        sendInterfaceSetClickMask(239, 1, 0, 556, 6);
-        sendOpenInterfaceSub(165, 15, 7, true);
-        sendOpenInterfaceSub(165, 8, 593, true);
-        sendSetInterfaceText(593, 1, "Rune scimitar");
-        sendSetInterfaceText(593, 2, "Combat Lvl: 57");
+        sendOpenWidgetSub(165, 9, 320, true);
+        sendOpenWidgetSub(165, 10, 399, true);
+        sendWidgetSetClickMask(399, 7, 0, 19, 2);
+        sendWidgetSetClickMask(399, 8, 0, 116, 2);
+        sendWidgetSetClickMask(399, 9, 0, 11, 2);
+        sendOpenWidgetSub(165, 11, 149, true);
+        sendOpenWidgetSub(165, 12, 387, true);
+        sendOpenWidgetSub(165, 13, 541, true);
+        sendOpenWidgetSub(165, 14, 218, true);
+        sendOpenWidgetSub(165, 16, 429, true);
+        sendOpenWidgetSub(165, 17, 432, true);
+        sendOpenWidgetSub(165, 18, 182, true);
+        sendOpenWidgetSub(165, 19, 261, true);
+        sendWidgetSetClickMask(261, 85, 1, 4, 2);
+        sendWidgetSetClickMask(261, 86, 1, 4, 2);
+        sendOpenWidgetSub(165, 20, 216, true);
+        sendWidgetSetClickMask(216, 1, 0, 47, 2);
+        sendOpenWidgetSub(165, 21, 239, true);
+        sendWidgetSetClickMask(239, 1, 0, 556, 6);
+        sendOpenWidgetSub(165, 15, 7, true);
+        sendOpenWidgetSub(165, 8, 593, true);
+        sendSetWidgetText(593, 1, "Rune scimitar");
+        sendSetWidgetText(593, 2, "Combat Lvl: 57");
 
-        sendSetInterfaceText(239, 5, "AUTO");
-        sendOpenInterfaceSub(165, 24, 160, true);
+        sendSetWidgetText(239, 5, "AUTO");
+        sendOpenWidgetSub(165, 24, 160, true);
 
         for (int i = 0; i < 25; i++)
             sendSkill(i, 99, 200000000);
@@ -637,8 +637,8 @@ public class Player extends MobileEntity {
         server.getSaveService().addPlayerSave(this);
     }
 
-    public void sendInterfaceSetClickMask(int root, int component, int from, int to, int settings) {
-        write(new InterfaceSetClickMaskEvent(root, component, from, to, settings));
+    public void sendWidgetSetClickMask(int root, int component, int from, int to, int settings) {
+        write(new WidgetSetClickMaskEvent(root, component, from, to, settings));
     }
 
     public void sendRegionUpdate(Position position) {
@@ -649,24 +649,24 @@ public class Player extends MobileEntity {
         write(new RegionUpdateEvent(position, builder));
     }
 
-    public void sendOpenInterfaceSub(int root, int child, int interfaceId, boolean clickable) {
-        write(new InterfaceOpenSubEvent(root, child, interfaceId, clickable));
+    public void sendOpenWidgetSub(int root, int child, int interfaceId, boolean clickable) {
+        write(new WidgetOpenSubEvent(root, child, interfaceId, clickable));
     }
 
-    public void sendSetInterfaceText(int root, int child, String message) {
-        write(new InterfaceSetTextEvent(root, child, message));
+    public void sendSetWidgetText(int root, int child, String message) {
+        write(new WidgetSetTextEvent(root, child, message));
     }
 
-    public void sendCloseInterfaceSub(int root, int child) {
-        write(new InterfaceCloseSubEvent(root, child));
+    public void sendCloseWidgetSub(int root, int child) {
+        write(new WidgetCloseSubEvent(root, child));
     }
 
     public void sendVarp(int i, int val) {
         write(new VarpEvent(i, val));
     }
 
-    public void sendSetRootInterface(int interfaceId) {
-        write(new SetRootInterfaceEvent(interfaceId));
+    public void sendSetRootWidget(int interfaceId) {
+        write(new SetRootWigetEvent(interfaceId));
     }
 
     public void sendCS2Script(int id, Object[] params) {
@@ -674,8 +674,8 @@ public class Player extends MobileEntity {
         write(new CS2ScriptEvent(id, Lists.reverse(Arrays.asList(params)).toArray()));
     }
 
-    public void sendSetInterfaceMoveSubEvent(int root, int child, int root1, int child1) {
-        write(new InterfaceMoveSubEvent(root, child, root1, child1));
+    public void sendSetWidgetMoveSubEvent(int root, int child, int root1, int child1) {
+        write(new WidgetMoveSubEvent(root, child, root1, child1));
     }
 
     public void sendPlayerSynchronization(List<SynchronizationSegment> segments) {
@@ -700,7 +700,7 @@ public class Player extends MobileEntity {
     }
 
     public void sendItems(int id, int channel, Item... items) {
-        write(new ItemsUpdateEvent(id, channel, items));
+        write(new WidgetItemUpdateEvent(id, channel, items));
     }
 
     public void sendSkill(int id, int lvl, int xp) {

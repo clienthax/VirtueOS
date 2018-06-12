@@ -21,13 +21,6 @@ import io.netty.buffer.ByteBufAllocator;
  */
 public final class NpcSynchronizationEventEncoder implements GameMessageEncoder<NpcSynchronizationEvent> {
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see
-     * com.oldscape.shared.network.game.event.GameMessageEncoder#encode(io.netty
-     * .buffer.ByteBufAllocator, com.oldscape.shared.event.Event)
-     */
     @Override
     public GameFrame encode(ByteBufAllocator alloc, NpcSynchronizationEvent event) {
         GameFrameBuilder builder = new GameFrameBuilder(alloc,
@@ -47,7 +40,7 @@ public final class NpcSynchronizationEventEncoder implements GameMessageEncoder<
             desc = SyncUtils.getNpcDescriptor(segment.getType());
             desc.encodeDescriptor(event, segment, builder);
 
-            for (int index = 0; index < 7; index++) {//TODO change to use list
+            for (int index = 0; index < 7; index++) {//FIXME: change to use list
                 encd = SyncUtils.getNpcBlock(index);
                 block = segment.getBlockSet().get(encd.getType());
                 if (block != null) {
@@ -70,8 +63,8 @@ public final class NpcSynchronizationEventEncoder implements GameMessageEncoder<
         blockBuilder.release();
 
         if (builder.getLength() == 0) {
-            System.out.println("not sending 0 length update");
-            return null;//prevent crashing client
+            System.err.println("NpcSynchronizationEventEncoder: not sending 0 length update");
+            return null;
         }
 
         return builder.toGameFrame();

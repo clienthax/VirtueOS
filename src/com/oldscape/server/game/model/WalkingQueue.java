@@ -1,6 +1,8 @@
 package com.oldscape.server.game.model;
 
 import com.google.common.base.MoreObjects;
+import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.reference.Direction;
 import com.oldscape.shared.model.Position;
 import com.oldscape.shared.model.region.RegionManager;
@@ -233,18 +235,55 @@ public final class WalkingQueue {
                     position = next.position;
                 }
             }
+            mob.setLastPosition(mob.getPosition().clone());
             mob.setPosition(position);
         }
         mob.setDirections(first, second);
+
+        handleRegionChange();
     }
+
+    public void handleRegionChange() {
+        if(!(mob instanceof Player)) {
+            return;
+        }
+
+        Player player = (Player) mob;
+
+        if (!player.hasLastKnownPosition() || needsRegionUpdate()) {
+            player.setRegionChange(true);
+
+            Position position = player.getPosition().clone();
+
+            player.setLastKnownRegion(position);
+            player.sendRegionUpdate(position);
+        }
+    }
+
+    private boolean needsRegionUpdate() {
+        if(!(mob instanceof  Player)) {
+            return false;
+        }
+
+        Player player = (Player)mob;
+
+        Position current = player.getPosition();
+        Position last = player.getLastKnownRegion();
+
+        int deltaX = current.getLocalX(last);
+        int deltaY = current.getLocalY(last);
+
+        return deltaX < 16 || deltaX >= 88 || deltaY < 16 || deltaY >= 88;
+    }
+
 
     /**
      * Sets the running queue flag.
-     *
-     * @param running The running queue flag.
      */
     public void flipRunningQueue() {
         runningQueue ^= true;
+
+        mob.addBlock(SynchronizationBlock.createMovementTypeBlock(mob.getWalkingQueue().runningQueue(), mob.isTeleporting()));
     }
 
     public boolean runningQueue() {

@@ -12,7 +12,7 @@ import com.oldscape.shared.utility.SyncUtils;
 import io.netty.buffer.ByteBufAllocator;
 
 /**
- * A {@link MessageEncoder} for the {@link PlayerSynchronizationEvent}.
+ * A {@link GameMessageEncoder} for the {@link PlayerSynchronizationEvent}.
  *
  * @author Graham
  * @author Major
@@ -40,7 +40,6 @@ public final class PlayerSynchronizationEventEncoder implements GameMessageEncod
                 encd = SyncUtils.getPlayerBlock(index);
                 block = segment.getBlockSet().get(encd.getType());
                 if (block != null) {
-                    System.out.println("encoding player block " + encd.getType());
                     encd.encodeBlock(block, blockBuilder, true);
                     flags |= encd.getFlag(true);
                 }

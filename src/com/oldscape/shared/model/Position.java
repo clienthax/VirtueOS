@@ -113,6 +113,10 @@ public final class Position {
         return mapSize;
     }
 
+    public Position clone() {
+        return new Position(this.getX(), this.getY(), this.getHeight());
+    }
+
     @Override
     public String toString() {
         return "X: " + getX() + ", Y: " + getY() + ", Height: " + getHeight();

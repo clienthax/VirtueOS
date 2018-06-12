@@ -19,7 +19,7 @@ public class AttackNpcEventListener implements EventListener<AttackNpcEvent, Gam
             context.getPlayer().getWalkingQueue().addStep(new Position((npc.getPosition().getX()), (npc.getPosition().getY()), npc.getPosition().getHeight()));
             context.getPlayer().addBlock(SynchronizationBlock.createInteractingMobBlock(event.getNpcIndex()));
         }
-        System.out.println("npc was clicked, index: " + event.getNpcIndex() + ", bool: " + event.isBool());
+        System.out.println("ATTACK_NPC_EVENT_LISTENER index: " + event.getNpcIndex() + ", bool: " + event.isBool());
     }
 
 }

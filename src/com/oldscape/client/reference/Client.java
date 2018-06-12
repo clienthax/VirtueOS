@@ -3741,7 +3741,7 @@ public final class Client extends GameEngine implements class302 {
                 if (ServerPacket.IF_CLOSE_SUB == var1.serverPacket) {
                     var23 = var3.readInt();
 
-                    System.out.println(String.format("sendCloseInterfaceSub(%d, %d)", var23 >> 16, var23 & 0xFF));
+                    System.out.println(String.format("sendCloseWidgetSub(%d, %d)", var23 >> 16, var23 & 0xFF));
 
                     final WidgetNode var72 = (WidgetNode) componentTable.get(var23);
                     if (var72 != null) {
@@ -3962,7 +3962,7 @@ public final class Client extends GameEngine implements class302 {
                     var24 = var3.readUnsignedShortOb1();
                     var6 = var3.method3553();
 
-                    System.out.println(String.format("sendOpenInterfaceSub(%d, %d, %d, %b)", var23 >> 16, var23 & 0xFF, var6, var24 == 1));
+                    System.out.println(String.format("sendOpenWidgetSub(%d, %d, %d, %b)", var23 >> 16, var23 & 0xFF, var6, var24 == 1));
 
                     var7 = (WidgetNode) componentTable.get(var23);
                     if (var7 != null) {
@@ -5241,7 +5241,7 @@ public final class Client extends GameEngine implements class302 {
 
                 long var47;
                 if (ServerPacket.IF_PREBUILD_TOP_LEVEL == var1.serverPacket) {//widget flags? -- BATCHSET
-                    //it sets toplevel interfaces, adds sub interfaces and sets click masks - polar
+                    //it sets toplevel widget, adds sub widget and sets click masks - polar
                     var23 = var3.offset + var1.packetLength;
                     var24 = var3.readUnsignedShort();
                     var6 = var3.readUnsignedShort();

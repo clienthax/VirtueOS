@@ -24,6 +24,7 @@ package com.oldscape.server.game.model.sync.block.encode;
 import com.oldscape.server.game.model.sync.block.BlockType;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.block.TemporaryMovementTypeBlock;
+import com.oldscape.shared.network.game.DataTransformation;
 import com.oldscape.shared.network.game.DataType;
 import com.oldscape.shared.network.game.GameFrameBuilder;
 
@@ -37,17 +38,11 @@ public class TemporaryMovementTypeBlockEncoder extends SynchronizationBlockEncod
         super(4096, 0);
     }
 
-    /* (non-Javadoc)
-     * @see com.oldscape.server.game.model.sync.block.encode.SynchronizationBlockEncoder#encodeBlock(com.oldscape.server.game.model.sync.block.SynchronizationBlock, com.oldscape.shared.network.game.GameFrameBuilder, boolean)
-     */
     @Override
     public void encodeBlock(SynchronizationBlock block, GameFrameBuilder builder, boolean player) {
-        builder.put(DataType.BYTE, ((TemporaryMovementTypeBlock) block).getMovementType());
+        builder.put(DataType.BYTE, DataTransformation.NEGATE, ((TemporaryMovementTypeBlock) block).getMovementType());
     }
 
-    /* (non-Javadoc)
-     * @see com.oldscape.server.game.model.sync.block.encode.SynchronizationBlockEncoder#getType()
-     */
     @Override
     public BlockType getType() {
         return BlockType.TEMPORARY_MOVEMENT_TYPE;

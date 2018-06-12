@@ -45,6 +45,11 @@ public final class ItemContainer {
     private int runAnim = 0x338, standAnim = 0x328, walkAnim = 0x333;
 
     /**
+     * Turning
+     */
+    private int standTurn = 0x337, turn180 = 0x334, turn90cw = 0x335, turn90ccw = 0x336;
+
+    /**
      * Creates an inventory.
      *
      * @param capacity The capacity.
@@ -685,6 +690,29 @@ public final class ItemContainer {
         return runAnim;
     }
 
+    public int getStandTurnAnim(){
+        if (standTurn == -1)
+            return getStandTurnAnim();
+        return standTurn;
+    }
+
+    public int getTurn180Anim(){
+        if (turn180 == -1)
+            return getTurn180Anim();
+        return turn180;
+    }
+
+    public int getTurn90cwAnim(){
+        if(turn90cw == -1)
+            return getTurn90cwAnim();
+        return turn90cw;
+    }
+
+    public int getTurn90ccwAnim(){
+        if(turn90ccw == -1)
+            return getTurn90ccwAnim();
+        return turn90ccw;
+    }
     /**
      * An enumeration containing the different 'stacking modes' of an
      * {@link ItemContainer}.
