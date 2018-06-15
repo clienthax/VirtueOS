@@ -47,8 +47,14 @@ public class WalkEventListener implements EventListener<WalkEvent, GameSessionCo
 		//Close any open interfaces
 		player.sendCloseInterfaceSub(548, 22);
 
-		player.getWalkingQueue().clear();
-		player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()), context.getServer().getRegionManager());
+		if(event.getType() == 0) {
+			player.getWalkingQueue().clear();
+			player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()), context.getServer().getRegionManager());
+		}
+		else
+		{
+			player.teleport(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()));
+		}
 	}
 
 }

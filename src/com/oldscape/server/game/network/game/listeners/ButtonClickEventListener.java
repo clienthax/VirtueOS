@@ -61,6 +61,9 @@ public class ButtonClickEventListener implements EventListener<ButtonClickEvent,
 					player.sendOpenInterfaceSub(548, 22, 595, true);
 //					player.setInterfaceClickMask(595, 17, 0, 4, 2);//TODO
 					break;
+				case 22:
+					player.getWalkingQueue().flipRunningQueue();
+					break;
 			}
 		 }
 

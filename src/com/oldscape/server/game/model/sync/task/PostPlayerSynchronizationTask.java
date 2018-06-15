@@ -31,7 +31,6 @@ public final class PostPlayerSynchronizationTask extends SynchronizationTask {
 	public void run() {
 		if(player.isTeleporting()) {
 			player.setTeleporting(false);
-			player.addBlock(SynchronizationBlock.createMovementTypeBlock(player.getWalkingQueue().runningQueue(), player.isTeleporting()));//TODO is this the best way to do this?
 		}
 
 		player.setRegionChange(false);

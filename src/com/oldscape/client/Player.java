@@ -271,7 +271,9 @@ final class Player extends Actor {
 
        //Temp movement??
        if((flags & 4096) != 0) {
-          class93.field1429[playerIdx] = buffer.method3634();
+          int type = buffer.method3634();
+          System.out.println(type);
+          class93.field1429[playerIdx] = (byte)type;
        }
 
        //Appearance

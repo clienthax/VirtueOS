@@ -161,7 +161,7 @@ public abstract class SynchronizationBlock {
 		if(teleporting) {
 			return new MovementTypeBlock((byte) 127);
 		} else {
-			return new MovementTypeBlock((byte) (running ? 2 : 1));
+			return new TemporaryMovementTypeBlock((byte) (running ? 2 : 1));
 		}
 	}
 

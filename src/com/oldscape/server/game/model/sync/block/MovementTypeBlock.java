@@ -28,15 +28,15 @@ package com.oldscape.server.game.model.sync.block;
 public class MovementTypeBlock extends SynchronizationBlock {
 
 	private final byte type;
-	
+
 	public MovementTypeBlock(byte type) {
 		this.type = type;
 	}
-	
+
 	public byte getMovementType() {
 		return type;
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see com.oldscape.server.game.model.sync.block.SynchronizationBlock#getType()
 	 */

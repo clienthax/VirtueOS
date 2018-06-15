@@ -78,6 +78,18 @@ public abstract class MobileEntity extends Node {
 
 	protected Region region;
 
+	protected Position lastKnownRegion = null;
+
+	public Position getLastKnownRegion()
+	{
+		return lastKnownRegion;
+	}
+
+	public void setLastKnownRegion(Position lastKnownRegion)
+	{
+		this.lastKnownRegion = lastKnownRegion;
+	}
+
 	/**
 	 * Sets the entity's current position
 	 * 
@@ -322,10 +334,12 @@ public abstract class MobileEntity extends Node {
 	 *            The position.
 	 */
 	public void teleport(Position position) {
+		setLastPosition(getPosition());
 		setPosition(position);
+		walkingQueue.handleRegionChange();
 		teleporting = true;
 		walkingQueue.clear();
-
+		addBlock(SynchronizationBlock.createMovementTypeBlock(getWalkingQueue().runningQueue(), isTeleporting()));
 	}
 
 	/**
