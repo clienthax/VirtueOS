@@ -75,10 +75,12 @@ public final class LoginSessionContext extends SessionEventContext {
                 pipeline.remove(LoginDecoder.class.getName());
                 pipeline.remove(LoginResponseEncoder.class);
 
-                player.initGameFrameCodec();
-                player.initialize();
-                player.onLogin();
+
             }
         });
+
+        player.initGameFrameCodec();
+        player.initialize();
+        player.onLogin();
     }
 }

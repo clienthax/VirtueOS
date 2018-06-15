@@ -12,10 +12,10 @@ public class MiniMapWalkDecoder implements GameMessageDecoder<WalkEvent> {
     @Override
     public WalkEvent decode(GameFrameReader frame) {
         int type = (int) frame.getUnsigned(DataType.BYTE, DataTransformation.NEGATE);
-        int posY = (int) frame.getUnsigned(DataType.SHORT, DataOrder.LITTLE);//, DataOrder.LITTLE
+        int posY = (int) frame.getUnsigned(DataType.SHORT, DataOrder.LITTLE);
         int posX = (int) frame.getUnsigned(DataType.SHORT, DataTransformation.ADD);
 
-        System.out.println("walkEvent:  " + posY + " " + posX + " " + type);
+        System.out.println("walkEvent: " + posY + " " + posX + " " + type);
         return new WalkEvent(posX, posY, type);
     }
 

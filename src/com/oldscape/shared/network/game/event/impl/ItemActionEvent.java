@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015 Kyle Friz
+ * Copyright (c) 2014 RSE Studios
  * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -19,36 +19,57 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.oldscape.server.game.model.sync.descriptor;
+package com.oldscape.shared.network.game.event.impl;
 
-import com.oldscape.server.game.model.sync.segment.PlayerAdditionSegment;
-import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
 import com.oldscape.shared.event.Event;
-import com.oldscape.shared.model.Position;
-import com.oldscape.shared.network.game.GameFrameBuilder;
 
-/**
- * @author Kyle Friz
- * @since Aug 29, 2015
- */
-public class PlayerAdditionDescriptor extends SynchronizationDescriptor {
+public class ItemActionEvent implements Event {
 
-    @Override
-    public void encodeDescriptor(Event event, SynchronizationSegment segment, GameFrameBuilder builder) {
-        Position position = ((PlayerAdditionSegment) segment).getPosition();
-        boolean update = ((PlayerAdditionSegment) segment).isUpdate();
+    private final int opcode;
+    private final int id;
+    private final int slot;
+    private final int hash;
 
-        builder.putBit(true);
-        builder.putBits(2, 0);
+    public ItemActionEvent(int op, int id, int slt, int hsh) {
+        this.opcode = op;
+        this.id = id;
+        this.slot = slt;
+        this.hash = hsh;
+    }
 
-        builder.putBit(update);
-        if (update) {
-            encodeRegion(builder, ((PlayerAdditionSegment) segment).getRegionHash(), position.toRegionPacked());
-        }
+    /**
+     * @return the opcode
+     */
+    public int getOpcode() {
+        return opcode;
+    }
 
-        builder.putBits(6, position.getXInRegion());
-        builder.putBits(6, position.getYInRegion());
-        builder.putBit(true);
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @return the slot
+     */
+    public int getSlot() {
+        return slot;
+    }
+
+    /**
+     * @return the hash
+     */
+    public int getRoot() {
+        return hash >> 0x10;
+    }
+
+    /**
+     * @return the hash
+     */
+    public int getChild() {
+        return hash & 0xFFFF;
     }
 
 }

@@ -11,11 +11,14 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
+import java.util.logging.Logger;
 
 /**
  * Created by sean on 16/07/14.
  */
 public final class Main {
+
+    private static Logger logger = Logger.getLogger(Main.class.getName());
 
     /**
      * Starts the application.
@@ -62,6 +65,8 @@ public final class Main {
              * and binds the server.
              */
             new Server(ctx).initialize().bind();
+
+            logger.info("Server ONLINE and ready for new connections!\n");
         }
 
     }

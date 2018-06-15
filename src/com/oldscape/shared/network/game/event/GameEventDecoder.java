@@ -33,8 +33,8 @@ public final class GameEventDecoder extends MessageToMessageDecoder<GameFrame> {
         GameMessageDecoder<Event> decoder = (GameMessageDecoder<Event>) repository.getMessageDecoder(msg.getOpcode());
 
         if (decoder == null) {
-
             System.err.println("No Decoder for: " + msg.getOpcode() + ", " + msg.getPayload().readableBytes());
+
             new GameFrameReader(msg).getBytes(new byte[msg.getPayload().readableBytes()]);
             return;
         } else {

@@ -11,11 +11,14 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Created by sean on 23/07/14.
  */
 public final class LoginDecoder extends ByteToMessageDecoder {
+
+    private Logger logger = Logger.getLogger(LoginDecoder.class.getName());
 
     /**
      * The Login Modulus RSA Key
@@ -37,24 +40,27 @@ public final class LoginDecoder extends ByteToMessageDecoder {
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf buf, List<Object> out) throws Exception {
 
-        if (!buf.isReadable())
+        if (!buf.isReadable()) {
             return;
+        }
 
         int type = buf.readUnsignedByte();
 
-        if (type != LOGIN_TYPE && type != RECONNECTION_TYPE)
-            throw new IOException("Invalid login type: " + type);
+        if (type != LOGIN_TYPE && type != RECONNECTION_TYPE) {
+            throw new IOException("Login Decoder: Invalid login type: " + type);
+        }
 
-        if (type == RECONNECTION_TYPE)
+        if (type == RECONNECTION_TYPE) {
             userReconnecting = true;
+        }
 
         int size = buf.readUnsignedShort();
 
-        if (buf.readableBytes() < size)
+        if (buf.readableBytes() < size) {
             return;
+        }
 
         int major = buf.readInt();
-        System.out.println(major);
 
         int rsaBlockSize = buf.readUnsignedShort();
         byte[] rsaBlockBytes = new byte[rsaBlockSize];
@@ -62,8 +68,9 @@ public final class LoginDecoder extends ByteToMessageDecoder {
         ByteBuf rBuf = Unpooled.wrappedBuffer(new BigInteger(rsaBlockBytes).modPow(LOGIN_EXPONENT, LOGIN_MODULUS).toByteArray());
 
         int blockMagic = rBuf.readUnsignedByte();
-        if (blockMagic != 1)
-            throw new IllegalStateException("Invalid RSA Block Header.");
+        if (blockMagic != 1) {
+            throw new IllegalStateException("Login Decoder: Invalid RSA Block Header.");
+        }
 
         int blockType = rBuf.readUnsignedByte();
 
@@ -73,10 +80,10 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 
         if (blockType == 2) {
             rBuf.readerIndex(rBuf.readerIndex() + 8);
-        } else if (blockType == 3 || blockType == 1) {// Authenticator
+        } else if (blockType == 3 || blockType == 1) { // Authenticator
             rBuf.readUnsignedMedium();
             rBuf.readerIndex(rBuf.readerIndex() + 5);
-        } else if (blockType == 0) {// TrustedComputer
+        } else if (blockType == 0) { // Trusted Computer
             rBuf.readInt();
             rBuf.readerIndex(rBuf.readerIndex() + 4);
         }
@@ -90,10 +97,10 @@ public final class LoginDecoder extends ByteToMessageDecoder {
         ByteBuf xBuf = Unpooled.wrappedBuffer(xteaBlockBytes);
 
         String username = BufferUtils.getString(xBuf);
-        xBuf.readUnsignedByte();// low mem
+        xBuf.readUnsignedByte();// Low Memory
 
-        xBuf.readUnsignedShort();// width
-        xBuf.readUnsignedShort();// height
+        xBuf.readUnsignedShort();// Width
+        xBuf.readUnsignedShort();// Height
 
         byte[] random = new byte[24];
         for (int i = 0; i < random.length; i++) {
@@ -101,48 +108,51 @@ public final class LoginDecoder extends ByteToMessageDecoder {
         }
 
         String token = BufferUtils.getString(xBuf);
-        xBuf.readInt();// affiliate id
+        xBuf.readInt(); // Affiliate Id
 
-        xBuf.readUnsignedByte();// 6
-        xBuf.readUnsignedByte();// OS Type
-        xBuf.readUnsignedByte();// 64-Bit OS
-        xBuf.readUnsignedByte();// OS Version
-        xBuf.readUnsignedByte();// Java Vendor
-        xBuf.readUnsignedByte();// Something todo with Java
-        xBuf.readUnsignedByte();// Something todo with Java
-        xBuf.readUnsignedByte();
-        xBuf.readUnsignedByte();// 0
-        xBuf.readUnsignedShort();// Max Mem
-        xBuf.readUnsignedByte();// Availible Processors
-        xBuf.readUnsignedMedium();// 0
-        xBuf.readUnsignedShort();// 0
-        BufferUtils.getJagString(xBuf);// usually null
-        BufferUtils.getJagString(xBuf);// usually null
-        BufferUtils.getJagString(xBuf);// usually null
-        BufferUtils.getJagString(xBuf);// usually null
-        xBuf.readUnsignedByte();
-        xBuf.readUnsignedShort();
-        BufferUtils.getJagString(xBuf);// usually null
-        BufferUtils.getJagString(xBuf);// usually null
-        xBuf.readUnsignedByte();
-        xBuf.readUnsignedByte();
+        xBuf.readUnsignedByte(); //
+        xBuf.readUnsignedByte(); // OS Type
+        xBuf.readUnsignedByte(); // 64-Bit OS
+        xBuf.readUnsignedByte(); // OS Version
+        xBuf.readUnsignedByte(); // Java Vendor
+        xBuf.readUnsignedByte(); //
+        xBuf.readUnsignedByte(); //
+        xBuf.readUnsignedByte(); //
+        xBuf.readUnsignedByte(); //
+        xBuf.readUnsignedShort(); // Max Memory
+        xBuf.readUnsignedByte(); // Available Processors
+        xBuf.readUnsignedMedium(); //
+        xBuf.readUnsignedShort(); //
+        BufferUtils.getJagString(xBuf); //
+        BufferUtils.getJagString(xBuf); //
+        BufferUtils.getJagString(xBuf); //
+        BufferUtils.getJagString(xBuf); //
+        xBuf.readUnsignedByte(); //
+        xBuf.readUnsignedShort(); //
+        BufferUtils.getJagString(xBuf); //
+        BufferUtils.getJagString(xBuf); //
+        xBuf.readUnsignedByte(); //
+        xBuf.readUnsignedByte(); //
 
         int[] var = new int[3];
-        for (int i = 0; i < var.length; i++)
+        for (int i = 0; i < var.length; i++) {
             var[i] = xBuf.readInt();
+        }
 
         xBuf.readInt();
         xBuf.readUnsignedByte();
 
-        int[] crc = new int[16];// xBuf.readableBytes() / 4
-        for (int i = 0; i < crc.length; i++)
+        int[] crc = new int[16]; // xBuf.readableBytes()
+        for (int i = 0; i < crc.length; i++) {
             crc[i] = xBuf.readInt();
+        }
 
         int[] sKeys = new int[cKeys.length];
-        for (int i = 0; i < sKeys.length; i++)
+        for (int i = 0; i < sKeys.length; i++) {
             sKeys[i] = cKeys[i] + 50;
+        }
 
-        System.out.println(username + ", " + password + ", " + token); // wtf why isnt it pritning shit? am i using th
+        logger.info(username + " logged in successfully.");
         out.add(new LoginEvent(major, token, username, password, crc, new IsaacRandom(sKeys), new IsaacRandom(cKeys)));
     }
 }

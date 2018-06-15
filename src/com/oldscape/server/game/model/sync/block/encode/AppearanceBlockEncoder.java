@@ -46,9 +46,6 @@ public class AppearanceBlockEncoder extends SynchronizationBlockEncoder {
 
     @Override
     public void encodeBlock(SynchronizationBlock block, GameFrameBuilder builder, boolean player) {
-
-        System.out.println(">> THIS MAKES IT WORK!?");
-
         AppearanceBlock aBlock = (AppearanceBlock) block;
         Appearance appearance = aBlock.getAppearance();
         GameFrameBuilder props = new GameFrameBuilder(builder.getAllocator());
