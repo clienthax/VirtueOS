@@ -69,15 +69,10 @@ public final class LoginSessionContext extends SessionEventContext {
 
         world.registerPlayer(player);
 
-        channel.writeAndFlush(new LoginResponseEvent(player)).addListener((ChannelFutureListener) future -> {
-            if (future.isSuccess()) {
+        channel.writeAndFlush(new LoginResponseEvent(player));
 
-                pipeline.remove(LoginDecoder.class.getName());
-                pipeline.remove(LoginResponseEncoder.class);
-
-
-            }
-        });
+        pipeline.remove(LoginDecoder.class.getName());
+        pipeline.remove(LoginResponseEncoder.class);
 
         player.initGameFrameCodec();
         player.initialize();
