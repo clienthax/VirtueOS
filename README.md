@@ -17,11 +17,4 @@ Though this will be used mainly for Players.
 * Execute com.oldscape.client.applet.GameApplet.main()
 
 ### Credit List ###
-* [Clienthax](https://rune-status.net/members/clienthax.370/)
-* [Sean_](https://rune-status.net/members/sean_.1187/)
-* [Kyle Friz](https://rune-status.net/members/kyle-friz.249/)
-* Graham
-* Major
-* Kayla
-* Giovanni
-* [Rune-Status.net](https://rune-status.net/) Community
+* [Clienthax](https://rune-status.net/members/clienthax.370/), [Sean_](https://rune-status.net/members/sean_.1187/), [Kyle Friz](https://rune-status.net/members/kyle-friz.249/), Polar, Kris, Sino, Frosty Teh Snowman, Sundays211, Graham, Major, Kayla, Giovanni Ian and the [Rune-Status.net](https://rune-status.net/) Community
