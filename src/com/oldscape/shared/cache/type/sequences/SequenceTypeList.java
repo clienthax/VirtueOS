@@ -45,7 +45,6 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class SequenceTypeList implements TypeList<SequenceType> {
@@ -54,9 +53,10 @@ public class SequenceTypeList implements TypeList<SequenceType> {
 
     private SequenceType[] seqs;
 
+    public int count = 0;
+
     @Override
     public void initialize(Cache cache) {
-        int count = 0;
         try {
             ReferenceTable table = cache.getReferenceTable(CacheIndex.CONFIGS);
             Entry entry = table.getEntry(ConfigArchive.SEQUENCE);
@@ -78,7 +78,7 @@ public class SequenceTypeList implements TypeList<SequenceType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading SequenceType(s)!", e);
         }
-        logger.info("Loaded " + count + " SequenceType(s)!");
+//        logger.info("Loaded " + count + " SequenceType(s)!");
     }
 
     @Override

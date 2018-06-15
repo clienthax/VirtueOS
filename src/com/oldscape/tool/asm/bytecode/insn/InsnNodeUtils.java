@@ -44,8 +44,7 @@ public final class InsnNodeUtils {
     /**
      * Creates a numeric push instruction.
      *
-     * @param num
-     *            The number to push.
+     * @param num The number to push.
      * @return The instruction node.
      */
     public static AbstractInsnNode createNumericPushInsn(Number num) {
@@ -80,8 +79,7 @@ public final class InsnNodeUtils {
      * {@code ICONST_*} instruction, an {@code BIPUSH} instruction, an
      * {@code SIPUSH} instruction or a {@code LDC_*} instruction.
      *
-     * @param push
-     *            The instruction node.
+     * @param push The instruction node.
      * @return The numeric value.
      */
     public static long getNumericPushValue(AbstractInsnNode push) {
@@ -114,10 +112,9 @@ public final class InsnNodeUtils {
     /**
      * Finds the next non-psuedo node following the specified node.
      *
-     * @param node
-     *            The node.
+     * @param node The node.
      * @return The next non-psuedo node, or {@code null} if the end of the
-     *         instruction list is reached.
+     * instruction list is reached.
      */
     public static AbstractInsnNode nextNonPsuedoNode(AbstractInsnNode node) {
         while ((node = node.getNext()) != null && node.getOpcode() == -1)
@@ -128,10 +125,9 @@ public final class InsnNodeUtils {
     /**
      * Finds the previous non-psuedo node following the specified node.
      *
-     * @param node
-     *            The node.
+     * @param node The node.
      * @return The previous non-psuedo node, or {@code null} if the start of the
-     *         instruction list is reached.
+     * instruction list is reached.
      */
     public static AbstractInsnNode previousNonPsuedoNode(AbstractInsnNode node) {
         while ((node = node.getPrevious()) != null && node.getOpcode() == -1)
@@ -142,10 +138,9 @@ public final class InsnNodeUtils {
     /**
      * Finds the next psuedo node following the specified node.
      *
-     * @param node
-     *            The node.
+     * @param node The node.
      * @return The next psuedo node, or {@code null} if the end of the
-     *         instruction list is reached.
+     * instruction list is reached.
      */
     public static AbstractInsnNode nextPsuedoNode(AbstractInsnNode node) {
         while ((node = node.getNext()) != null && node.getOpcode() != -1)
@@ -156,10 +151,9 @@ public final class InsnNodeUtils {
     /**
      * Finds the previous psuedo node following the specified node.
      *
-     * @param node
-     *            The node.
+     * @param node The node.
      * @return The previous psuedo node, or {@code null} if the start of the
-     *         instruction list is reached.
+     * instruction list is reached.
      */
     public static AbstractInsnNode previousPsuedoNode(AbstractInsnNode node) {
         while ((node = node.getPrevious()) != null && node.getOpcode() != -1)

@@ -23,7 +23,6 @@ package com.oldscape.shared.cache.type;
 
 /**
  * @author Kyle Friz
- *
  * @since May 27, 2015
  */
 public enum CacheIndex {

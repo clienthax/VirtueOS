@@ -45,7 +45,6 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class VarBitTypeList implements TypeList<VarBitType> {
@@ -54,9 +53,10 @@ public class VarBitTypeList implements TypeList<VarBitType> {
 
     private VarBitType[] varBits;
 
+    public int count = 0;
+
     @Override
     public void initialize(Cache cache) {
-        int count = 0;
         try {
             ReferenceTable table = cache.getReferenceTable(CacheIndex.CONFIGS);
             Entry entry = table.getEntry(ConfigArchive.VARBIT);
@@ -78,7 +78,7 @@ public class VarBitTypeList implements TypeList<VarBitType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading VarBitType(s)!", e);
         }
-        logger.info("Loaded " + count + " VarBitType(s)!");
+//        logger.info("Loaded " + count + " VarBitType(s)!");
     }
 
     @Override

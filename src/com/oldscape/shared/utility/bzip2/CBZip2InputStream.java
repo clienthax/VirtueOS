@@ -123,6 +123,7 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
     private int currentState = START_BLOCK_STATE;
     private int storedBlockCRC, storedCombinedCRC;
     private int computedBlockCRC, computedCombinedCRC;
+
     public CBZip2InputStream(InputStream zStream) {
         ll8 = null;
         tt = null;

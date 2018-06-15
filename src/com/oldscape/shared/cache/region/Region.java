@@ -28,7 +28,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author Kyle Friz
  * @since Jun 30, 2015
  */
@@ -56,8 +55,7 @@ public class Region {
     /**
      * Decodes terrain data stored in the specified {@link ByteBuffer}.
      *
-     * @param buffer
-     *            The ByteBuffer.
+     * @param buffer The ByteBuffer.
      */
     public void loadTerrain(ByteBuffer buf) {
         for (int z = 0; z < 4; z++) {
@@ -102,8 +100,7 @@ public class Region {
     /**
      * Decodes location data stored in the specified {@link ByteBuffer}.
      *
-     * @param buffer
-     *            The ByteBuffer.
+     * @param buffer The ByteBuffer.
      */
     public void loadLocations(ByteBuffer buf) {
         int id = -1;

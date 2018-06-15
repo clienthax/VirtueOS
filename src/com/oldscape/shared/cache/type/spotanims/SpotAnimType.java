@@ -139,8 +139,7 @@ public class SpotAnimType implements Type {
     }
 
     /**
-     * @param resizeX
-     *            the resizeX to set
+     * @param resizeX the resizeX to set
      */
     public void setResizeX(int resizeX) {
         this.resizeX = resizeX;
@@ -154,8 +153,7 @@ public class SpotAnimType implements Type {
     }
 
     /**
-     * @param retextureToFind
-     *            the retextureToFind to set
+     * @param retextureToFind the retextureToFind to set
      */
     public void setRetextureToFind(short[] retextureToFind) {
         this.retextureToFind = retextureToFind;
@@ -169,8 +167,7 @@ public class SpotAnimType implements Type {
     }
 
     /**
-     * @param recolorToReplace
-     *            the recolorToReplace to set
+     * @param recolorToReplace the recolorToReplace to set
      */
     public void setRecolorToReplace(short[] recolorToReplace) {
         this.recolorToReplace = recolorToReplace;
@@ -184,8 +181,7 @@ public class SpotAnimType implements Type {
     }
 
     /**
-     * @param animationID
-     *            the animationID to set
+     * @param animationID the animationID to set
      */
     public void setAnimationID(int animationID) {
         this.animationID = animationID;
@@ -199,8 +195,7 @@ public class SpotAnimType implements Type {
     }
 
     /**
-     * @param recolorToFind
-     *            the recolorToFind to set
+     * @param recolorToFind the recolorToFind to set
      */
     public void setRecolorToFind(short[] recolorToFind) {
         this.recolorToFind = recolorToFind;
@@ -214,8 +209,7 @@ public class SpotAnimType implements Type {
     }
 
     /**
-     * @param ambient
-     *            the ambient to set
+     * @param ambient the ambient to set
      */
     public void setAmbient(int ambient) {
         this.ambient = ambient;
@@ -229,8 +223,7 @@ public class SpotAnimType implements Type {
     }
 
     /**
-     * @param retextureToReplace
-     *            the retextureToReplace to set
+     * @param retextureToReplace the retextureToReplace to set
      */
     public void setRetextureToReplace(short[] retextureToReplace) {
         this.retextureToReplace = retextureToReplace;
@@ -244,8 +237,7 @@ public class SpotAnimType implements Type {
     }
 
     /**
-     * @param gfxID
-     *            the gfxID to set
+     * @param gfxID the gfxID to set
      */
     public void setGfxID(int gfxID) {
         this.gfxID = gfxID;
@@ -259,8 +251,7 @@ public class SpotAnimType implements Type {
     }
 
     /**
-     * @param resizeY
-     *            the resizeY to set
+     * @param resizeY the resizeY to set
      */
     public void setResizeY(int resizeY) {
         this.resizeY = resizeY;
@@ -274,8 +265,7 @@ public class SpotAnimType implements Type {
     }
 
     /**
-     * @param rotation
-     *            the rotation to set
+     * @param rotation the rotation to set
      */
     public void setRotation(int rotation) {
         this.rotation = rotation;
@@ -289,8 +279,7 @@ public class SpotAnimType implements Type {
     }
 
     /**
-     * @param modelID
-     *            the modelID to set
+     * @param modelID the modelID to set
      */
     public void setModelID(int modelID) {
         this.modelID = modelID;
@@ -304,8 +293,7 @@ public class SpotAnimType implements Type {
     }
 
     /**
-     * @param contrast
-     *            the contrast to set
+     * @param contrast the contrast to set
      */
     public void setContrast(int contrast) {
         this.contrast = contrast;

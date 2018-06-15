@@ -45,7 +45,6 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class UnderlayTypeList implements TypeList<UnderlayType> {
@@ -54,9 +53,10 @@ public class UnderlayTypeList implements TypeList<UnderlayType> {
 
     private UnderlayType[] lays;
 
+    public int count = 0;
+
     @Override
     public void initialize(Cache cache) {
-        int count = 0;
         try {
             ReferenceTable table = cache.getReferenceTable(CacheIndex.CONFIGS);
             Entry entry = table.getEntry(ConfigArchive.UNDERLAY);
@@ -78,7 +78,7 @@ public class UnderlayTypeList implements TypeList<UnderlayType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading UnderlayType(s)!", e);
         }
-        logger.info("Loaded " + count + " UnderlayType(s)!");
+//        logger.info("Loaded " + count + " UnderlayType(s)!");
     }
 
     @Override

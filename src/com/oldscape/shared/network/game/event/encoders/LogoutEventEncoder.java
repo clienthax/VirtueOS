@@ -35,6 +35,7 @@ public final class LogoutEventEncoder implements
     @Override
     public GameFrame encode(ByteBufAllocator alloc, LogoutEvent event) {
         GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.LOGOUT, FrameType.FIXED);
+
         return builder.toGameFrame();
     }
 

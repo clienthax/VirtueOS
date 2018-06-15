@@ -66,10 +66,8 @@ public final class Sprite {
     /**
      * Creates a new sprite with one frame.
      *
-     * @param width
-     *            The width of the sprite in pixels.
-     * @param height
-     *            The height of the sprite in pixels.
+     * @param width  The width of the sprite in pixels.
+     * @param height The height of the sprite in pixels.
      */
     public Sprite(int width, int height) {
         this(width, height, 1);
@@ -78,12 +76,9 @@ public final class Sprite {
     /**
      * Creates a new sprite with the specified number of frames.
      *
-     * @param width
-     *            The width of the sprite in pixels.
-     * @param height
-     *            The height of the sprite in pixels.
-     * @param size
-     *            The number of animation frames.
+     * @param width  The width of the sprite in pixels.
+     * @param height The height of the sprite in pixels.
+     * @param size   The number of animation frames.
      */
     public Sprite(int width, int height, int size) {
         if (size < 1)
@@ -97,8 +92,7 @@ public final class Sprite {
     /**
      * Decodes the {@link Sprite} from the specified {@link ByteBuffer}.
      *
-     * @param buffer
-     *            The buffer.
+     * @param buffer The buffer.
      * @return The sprite.
      */
     public static Sprite decode(ByteBuffer buffer) {
@@ -217,13 +211,12 @@ public final class Sprite {
 
     /**
      * Encodes this {@link Sprite} into a {@link ByteBuffer}.
-     * <p />
+     * <p/>
      * Please note that this is a fairly simple implementation which only supports
      * vertical encoding. It does not attempt to use the offsets to save space.
      *
      * @return The buffer.
-     * @throws IOException
-     *             if an I/O exception occurs.
+     * @throws IOException if an I/O exception occurs.
      */
     public ByteBuffer encode() throws IOException {
         ByteArrayOutputStream bout = new ByteArrayOutputStream();
@@ -331,8 +324,7 @@ public final class Sprite {
     /**
      * Gets the frame with the specified id.
      *
-     * @param id
-     *            The id.
+     * @param id The id.
      * @return The frame.
      */
     public BufferedImage getFrame(int id) {
@@ -360,10 +352,8 @@ public final class Sprite {
     /**
      * Sets the frame with the specified id.
      *
-     * @param id
-     *            The id.
-     * @param frame
-     *            The frame.
+     * @param id    The id.
+     * @param frame The frame.
      */
     public void setFrame(int id, BufferedImage frame) {
         if (frame.getWidth() != width || frame.getHeight() != height)

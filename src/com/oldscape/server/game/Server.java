@@ -115,15 +115,15 @@ public final class Server {
      */
     // private DatabaseService databaseService;
     /**
-     * The {@link com.oldscape.server.openrs.ChecksumTable}.
+     * The {@link com.oldscape.shared.cache.ChecksumTable}.
      */
     private final ChecksumTable checksumTable;
     /**
-     * The {@link com.oldscape.server.openrs.ChecksumTable}.
+     * The {@link com.oldscape.shared.cache.ChecksumTable}.
      */
     private final ByteBuffer checksumBuffer;
     /**
-     * The {@link com.oldscape.server.utility.Huffman}.
+     * The {@link com.oldscape.shared.utility.Huffman}.
      */
     private final Huffman huffman;
     /**
@@ -139,7 +139,7 @@ public final class Server {
      */
     private PlayerSaveService saveService = new PlayerSaveService();
     /**
-     * The {@link com.oldscape.shared.scripts.ScriptManager}.
+     * The {@link com.oldscape.shared.script.ScriptManager}.
      */
     private ScriptManager scriptManager = new ScriptManager();
     /**
@@ -161,7 +161,7 @@ public final class Server {
     }
 
     /**
-     * Gets the {@link com.oldscape.server.rs3.shared.db.DatabaseService}.
+     * Gets the {@link com.oldscape.shared.db.DatabaseService}.
      *
      * @return The {@code databaseService}.
      */
@@ -214,14 +214,14 @@ public final class Server {
         gameEventHub.subscribe(LoginStateEvent.class, new LoginStateEventListener());
 
         //TODO update when game updates
-        gameEventHub.subscribe(InterfaceClickEvent.class, new InterfaceClickEventListener());
-        gameEventHub.subscribe(ButtonClickEvent.class, new ButtonClickEventListener());
+        gameEventHub.subscribe(WidgetActionEvent.class, new WidgetActionEventListener());
+        gameEventHub.subscribe(WidgetButtonActionEvent.class, new WidgetButtonActionEventListener());
         gameEventHub.subscribe(CommandEvent.class, new CommandEventListener());
         gameEventHub.subscribe(WalkEvent.class, new WalkEventListener());
         gameEventHub.subscribe(AttackNpcEvent.class, new AttackNpcEventListener());
-        gameEventHub.subscribe(ObjectClickEvent.class, new ObjectClickListener());
-        gameEventHub.subscribe(NpcActionEvent.class, new NpcClickListener());
-        gameEventHub.subscribe(ItemOptionEvent.class, new ItemOptionEventListener());
+        gameEventHub.subscribe(ObjectActionEvent.class, new ObjectActionListener());
+        gameEventHub.subscribe(NpcActionEvent.class, new NpcActionListener());
+        gameEventHub.subscribe(ItemActionEvent.class, new ItemActionEventListener());
 
         gameEventHub.subscribe(PublicChatMessage.class, new PublicChatEventListener());
 

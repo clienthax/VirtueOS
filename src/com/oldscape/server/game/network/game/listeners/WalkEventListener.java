@@ -48,7 +48,7 @@ public class WalkEventListener implements EventListener<WalkEvent, GameSessionCo
         // TODO: add a check for any widget not including Gameframe.
         player.sendCloseWidgetSub(548, 22);
 
-        if(event.getType() == 0) {
+        if (event.getType() == 0) {
             player.getWalkingQueue().clear();
             player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()), context.getServer().getRegionManager());
         } else {

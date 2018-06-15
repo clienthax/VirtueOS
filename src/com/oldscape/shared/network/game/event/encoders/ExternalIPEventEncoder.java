@@ -12,7 +12,9 @@ public class ExternalIPEventEncoder implements
     @Override
     public GameFrame encode(ByteBufAllocator alloc, ExternalIPEvent event) {
         GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.EXTERN_IP, FrameType.FIXED);
+
         builder.put(DataType.INT, DataOrder.LITTLE, event.getHash());
+
         return builder.toGameFrame();
     }
 }

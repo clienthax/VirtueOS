@@ -45,18 +45,20 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class ObjectTypeList implements TypeList<ObjectType> {
 
     public int maxSize = 0;
+
     private Logger logger = Logger.getLogger(ObjectTypeList.class.getName());
+
     private ObjectType[] objs;
+
+    public int count = 0;
 
     @Override
     public void initialize(Cache cache) {
-        int count = 0;
         try {
             ReferenceTable table = cache.getReferenceTable(CacheIndex.CONFIGS);
             Entry entry = table.getEntry(ConfigArchive.OBJECT);
@@ -77,7 +79,7 @@ public class ObjectTypeList implements TypeList<ObjectType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading ObjectType(s)!", e);
         }
-        logger.info("Loaded " + count + " ObjectType(s)!");
+//        logger.info("Loaded " + count + " ObjectType(s)!");
     }
 
     @Override

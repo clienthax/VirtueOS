@@ -68,10 +68,8 @@ public final class Container {
     /**
      * Creates a new unversioned container.
      *
-     * @param type
-     *            The type of compression.
-     * @param data
-     *            The decompressed data.
+     * @param type The type of compression.
+     * @param data The decompressed data.
      */
     public Container(int type, ByteBuffer data) {
         this(type, data, -1);
@@ -80,12 +78,9 @@ public final class Container {
     /**
      * Creates a new versioned container.
      *
-     * @param type
-     *            The type of compression.
-     * @param data
-     *            The decompressed data.
-     * @param version
-     *            The version of the file within this container.
+     * @param type    The type of compression.
+     * @param data    The decompressed data.
+     * @param version The version of the file within this container.
      */
     public Container(int type, ByteBuffer data, int version) {
         this.type = type;
@@ -96,11 +91,9 @@ public final class Container {
     /**
      * Decodes and decompresses the container.
      *
-     * @param buffer
-     *            The buffer.
+     * @param buffer The buffer.
      * @return The decompressed container.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @throws IOException if an I/O error occurs.
      */
     public static Container decode(ByteBuffer buffer) throws IOException {
         return Container.decode(buffer, XTEAManager.NULL_KEYS);
@@ -109,13 +102,10 @@ public final class Container {
     /**
      * Decodes and decompresses the container.
      *
-     * @param buffer
-     *            The buffer.
-     * @param keys
-     *            The decryption keys
+     * @param buffer The buffer.
+     * @param keys   The decryption keys
      * @return The decompressed container.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @throws IOException if an I/O error occurs.
      */
     public static Container decode(ByteBuffer buffer, int[] keys) throws IOException {
         /* decode the type and length */
@@ -180,8 +170,7 @@ public final class Container {
      * Encodes and compresses this container.
      *
      * @return The buffer.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @throws IOException if an I/O error occurs.
      */
     public ByteBuffer encode() throws IOException {
         return encode(XTEAManager.NULL_KEYS);
@@ -190,11 +179,9 @@ public final class Container {
     /**
      * Encodes and compresses this container.
      *
-     * @param keys
-     *            The encryption keys
+     * @param keys The encryption keys
      * @return The buffer.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @throws IOException if an I/O error occurs.
      */
     public ByteBuffer encode(int[] keys) throws IOException {
         /* so we have a read only view, making this method thread safe */
@@ -269,8 +256,7 @@ public final class Container {
     /**
      * Sets the type of this container.
      *
-     * @param type
-     *            The compression type.
+     * @param type The compression type.
      */
     public void setType(int type) {
         this.type = type;
@@ -280,8 +266,7 @@ public final class Container {
      * Gets the version of the file in this container.
      *
      * @return The version of the file.
-     * @throws IllegalArgumentException
-     *             if this container is not versioned.
+     * @throws IllegalArgumentException if this container is not versioned.
      */
     public int getVersion() {
         if (!isVersioned())
@@ -293,8 +278,7 @@ public final class Container {
     /**
      * Sets the version of this container.
      *
-     * @param version
-     *            The version.
+     * @param version The version.
      */
     public void setVersion(int version) {
         this.version = version;

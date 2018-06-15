@@ -22,7 +22,7 @@
 package com.oldscape.server.game.model.sync.block.encode;
 
 import com.oldscape.server.game.model.EquipmentConstants;
-import com.oldscape.server.game.model.player.inv.Item;
+import com.oldscape.server.game.model.item.Item;
 import com.oldscape.server.game.model.player.inv.ItemContainer;
 import com.oldscape.server.game.model.sync.block.AppearanceBlock;
 import com.oldscape.server.game.model.sync.block.BlockType;
@@ -46,6 +46,9 @@ public class AppearanceBlockEncoder extends SynchronizationBlockEncoder {
 
     @Override
     public void encodeBlock(SynchronizationBlock block, GameFrameBuilder builder, boolean player) {
+
+        System.out.println(">> THIS MAKES IT WORK!?");
+
         AppearanceBlock aBlock = (AppearanceBlock) block;
         Appearance appearance = aBlock.getAppearance();
         GameFrameBuilder props = new GameFrameBuilder(builder.getAllocator());

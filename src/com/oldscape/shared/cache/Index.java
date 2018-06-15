@@ -49,10 +49,8 @@ public final class Index {
     /**
      * Creates a new index.
      *
-     * @param size
-     *            The size of the file in bytes.
-     * @param sector
-     *            The number of the first sector that contains the file.
+     * @param size   The size of the file in bytes.
+     * @param sector The number of the first sector that contains the file.
      */
     public Index(int size, int sector) {
         this.size = size;
@@ -62,8 +60,7 @@ public final class Index {
     /**
      * Decodes the specified {@link ByteBuffer} into an {@link Index} object.
      *
-     * @param buf
-     *            The buffer.
+     * @param buf The buffer.
      * @return The index.
      */
     public static Index decode(ByteBuffer buf) {

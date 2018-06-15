@@ -40,8 +40,7 @@ public final class Djb2 {
      * An implementation of Dan Bernstein's {@code djb2} hash function which is
      * slightly modified. Instead of the initial hash being 5381, it is zero.
      *
-     * @param str
-     *            The string to hash.
+     * @param str The string to hash.
      * @return The hash code.
      */
     public static int hash(String str) {

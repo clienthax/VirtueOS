@@ -69,6 +69,7 @@ public final class DefaultEventHub<C extends EventContext> extends EventHub<C> {
             //throw new IllegalArgumentException("No event listeners bound to " + event.getClass());
         }
 
+        // TODO: Catch Exceptions coming from scripts.
         eventHandlers.forEach((EventListener listener) -> {
             listener.onEvent(contextualEvent.getEvent(), contextualEvent.getContext());
         });

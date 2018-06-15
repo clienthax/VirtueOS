@@ -146,8 +146,7 @@ public final class InsnMatcher {
     /**
      * Creates a new instruction matcher.
      *
-     * @param list
-     *            The instruction list this matcher is matching against.
+     * @param list The instruction list this matcher is matching against.
      */
     public InsnMatcher(InsnList list) {
         this.list = list;
@@ -157,11 +156,9 @@ public final class InsnMatcher {
      * Converts an instruction to character(s) used to build the regular
      * expression.
      *
-     * @param name
-     *            The name of the instruction.
+     * @param name The name of the instruction.
      * @return The character(s) which represents this instruction.
-     * @throws IllegalArgumentException
-     *             if the name was not found.
+     * @throws IllegalArgumentException if the name was not found.
      */
     private static String insToChars(String name) {
         for (int i = 0; i < Printer.OPCODES.length; i++) {
@@ -195,8 +192,7 @@ public final class InsnMatcher {
      * the use of characters with special meaning in the regular expression
      * syntax.
      *
-     * @param opcode
-     *            The opcode.
+     * @param opcode The opcode.
      * @return The character.
      */
     private static char opcodeToChar(int opcode) {
@@ -208,8 +204,7 @@ public final class InsnMatcher {
      * internal character-based format used when actually attempting to find
      * matches.
      *
-     * @param expr
-     *            The readable pattern.
+     * @param expr The readable pattern.
      * @return The 'compiled' pattern.
      */
     private static String compilePattern(String expr) {
@@ -237,8 +232,7 @@ public final class InsnMatcher {
     /**
      * Matches the specified expression with no constraint.
      *
-     * @param expr
-     *            The expression.
+     * @param expr The expression.
      * @return An {@link Iterator} of {@code {@link AbstractInsnNode}[]}.
      */
     public Iterator<AbstractInsnNode[]> match(String expr) {
@@ -248,10 +242,8 @@ public final class InsnMatcher {
     /**
      * Matches the specified expression with the additional constraint.
      *
-     * @param expr
-     *            The expression.
-     * @param constraint
-     *            The constraint.
+     * @param expr       The expression.
+     * @param constraint The constraint.
      * @return An {@link Iterator} of {@code {@link AbstractInsnNode}[]}.
      */
     public Iterator<AbstractInsnNode[]> match(String expr, Constraint constraint) {
@@ -262,8 +254,7 @@ public final class InsnMatcher {
      * Matches the specified expression with no constraint. The instruction list
      * is searched in reverse.
      *
-     * @param expr
-     *            The expression.
+     * @param expr The expression.
      * @return An {@link Iterator} of {@code {@link AbstractInsnNode}[]}.
      */
     public Iterator<AbstractInsnNode[]> reverseMatch(String expr) {
@@ -274,10 +265,8 @@ public final class InsnMatcher {
      * Matches the specified expression with the additional constraint. The
      * instruction list is searched in reverse.
      *
-     * @param expr
-     *            The expression.
-     * @param constraint
-     *            The constraint.
+     * @param expr       The expression.
+     * @param constraint The constraint.
      * @return An {@link Iterator} of {@code {@link AbstractInsnNode}[]}.
      */
     public Iterator<AbstractInsnNode[]> reverseMatch(String expr,
@@ -288,12 +277,9 @@ public final class InsnMatcher {
     /**
      * Matches the specified expression with the additional constraint.
      *
-     * @param expr
-     *            The expression.
-     * @param constraint
-     *            The constraint.
-     * @param reverse
-     *            If the list should be reversed.
+     * @param expr       The expression.
+     * @param constraint The constraint.
+     * @param reverse    If the list should be reversed.
      * @return An {@link Iterator} of {@code {@link AbstractInsnNode}[]}.
      */
     @SuppressWarnings("unchecked")
@@ -357,8 +343,7 @@ public final class InsnMatcher {
         /**
          * Checks if the match satisfies this constraint.
          *
-         * @param match
-         *            The instructions that were matched.
+         * @param match The instructions that were matched.
          * @return {@code true} if so, {@code false} if not.
          */
         public boolean satisfies(AbstractInsnNode[] match);

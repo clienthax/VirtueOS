@@ -59,8 +59,7 @@ public class Region {
     /**
      * Decodes terrain data stored in the specified {@link ByteBuffer}.
      *
-     * @param buffer
-     *            The ByteBuffer.
+     * @param buffer The ByteBuffer.
      */
     public void loadTerrain(ByteBuffer buf) {
         for (int height = 0; height < 4; height++) {
@@ -94,8 +93,7 @@ public class Region {
     /**
      * Decodes object data stored in the specified {@link ByteBuffer}.
      *
-     * @param buffer
-     *            The ByteBuffer.
+     * @param buffer The ByteBuffer.
      */
     @SuppressWarnings("unused")
     public void loadNodes(ByteBuffer buffer) {
@@ -136,14 +134,10 @@ public class Region {
     /**
      * Decodes the attributes of a terrain file, blocking the tile if necessary.
      *
-     * @param attributes
-     *            The terrain attributes.
-     * @param x
-     *            The x coordinate of the tile the attributes belong to.
-     * @param y
-     *            The y coordinate of the tile the attributes belong to.
-     * @param height
-     *            The level level of the tile the attributes belong to.
+     * @param attributes The terrain attributes.
+     * @param x          The x coordinate of the tile the attributes belong to.
+     * @param y          The y coordinate of the tile the attributes belong to.
+     * @param height     The level level of the tile the attributes belong to.
      */
     private void decodeAttributes(int attributes, int x, int y, int height) {
         boolean block = false;
@@ -165,8 +159,7 @@ public class Region {
     }
 
     /**
-     * @param height
-     *            the Height Level
+     * @param height the Height Level
      * @return the Matrix
      */
     public CollisionMatrix getMatrix(int height) {

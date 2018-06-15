@@ -14,15 +14,15 @@ public class SlottedItemsUpdateEventEncoder implements GameMessageEncoder<Slotte
 
     @Override
     public GameFrame encode(ByteBufAllocator alloc, SlottedItemsUpdateEvent event) {
-        // TODO Auto-generated method stub
+        // TODO: Add.
         return null;
     }
 
 //	@Override
 //	public GameFrame encode(ByteBufAllocator alloc, SlottedItemsUpdateEvent event) {
 //		GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.SLOT_ITEMS, FrameType.VARIABLE_SHORT);
-//		builder.put(DataType.INT, event.getInterfaceID());
-//		builder.put(DataType.SHORT, event.getChannelID());
+//		builder.put(DataType.INT, event.getWidgetId());
+//		builder.put(DataType.SHORT, event.getChannelId());
 //
 //		for (SlottedItem item : event.getItems()) {
 //			builder.putSmart(item.getSlot());

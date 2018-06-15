@@ -1,6 +1,7 @@
 package com.oldscape.server.game.model.player.inv;
 
 import com.google.common.base.Preconditions;
+import com.oldscape.server.game.model.item.Item;
 import com.oldscape.shared.cache.type.TypeListManager;
 import com.oldscape.shared.cache.type.items.ItemType;
 
@@ -43,7 +44,6 @@ public final class ItemContainer {
      * Stand, Run, Walk
      */
     private int runAnim = 0x338, standAnim = 0x328, walkAnim = 0x333;
-
     /**
      * Turning
      */
@@ -690,29 +690,30 @@ public final class ItemContainer {
         return runAnim;
     }
 
-    public int getStandTurnAnim(){
+    public int getStandTurnAnim() {
         if (standTurn == -1)
             return getStandTurnAnim();
         return standTurn;
     }
 
-    public int getTurn180Anim(){
+    public int getTurn180Anim() {
         if (turn180 == -1)
             return getTurn180Anim();
         return turn180;
     }
 
-    public int getTurn90cwAnim(){
-        if(turn90cw == -1)
+    public int getTurn90cwAnim() {
+        if (turn90cw == -1)
             return getTurn90cwAnim();
         return turn90cw;
     }
 
-    public int getTurn90ccwAnim(){
-        if(turn90ccw == -1)
+    public int getTurn90ccwAnim() {
+        if (turn90ccw == -1)
             return getTurn90ccwAnim();
         return turn90ccw;
     }
+
     /**
      * An enumeration containing the different 'stacking modes' of an
      * {@link ItemContainer}.

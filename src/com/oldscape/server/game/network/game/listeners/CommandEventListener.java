@@ -53,23 +53,6 @@ public class CommandEventListener implements EventListener<CommandEvent, GameSes
         } else {
             System.out.println("Unknown command. [ " + event.getSyntax() + " ]");
         }
-/*
-		if (event.getSyntax().equals("tele")) {
-			try {
-				int coordX = Integer.parseInt(event.getArgs()[0]);
-				int coordY = Integer.parseInt(event.getArgs()[1]);
-				int height = Integer.parseInt(event.getArgs()[2]);
-				context.getPlayer().teleport(new Position(coordX, coordY, height));
-			} catch (Exception e) {
-				try {
-					int coordX = Integer.parseInt(event.getArgs()[0]);
-					int coordY = Integer.parseInt(event.getArgs()[1]);
-					context.getPlayer().teleport(new Position(coordX, coordY, context.getPlayer().getPosition().getHeight()));
-				} catch (Exception output) {
-					System.out.println("Use ::tele coordX coordY height");
-				}
-			}
-		}*/
 
 
         if (event.getSyntax().equals("logout")) {

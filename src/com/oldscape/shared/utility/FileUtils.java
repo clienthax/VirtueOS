@@ -28,7 +28,6 @@ import java.util.Enumeration;
 import java.util.List;
 
 /**
- *
  * @author Kyle Friz
  * @author Kayla Friz
  * @since May 29, 2015
@@ -38,8 +37,7 @@ public class FileUtils {
     /**
      * Returns an array of classes in a specified package
      *
-     * @param packageName
-     *            The package name to get the classes of
+     * @param packageName The package name to get the classes of
      * @return An array of classes in the package
      */
     @SuppressWarnings({"rawtypes"})
@@ -68,10 +66,8 @@ public class FileUtils {
     /**
      * Finds a list of classes in a specified directory
      *
-     * @param directory
-     *            The directory to look in
-     * @param packageName
-     *            The name of the package that contains the classes
+     * @param directory   The directory to look in
+     * @param packageName The name of the package that contains the classes
      * @return The {@code List} of classes
      */
     @SuppressWarnings("rawtypes")

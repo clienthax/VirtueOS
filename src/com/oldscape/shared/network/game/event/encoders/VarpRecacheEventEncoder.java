@@ -30,7 +30,7 @@ public final class VarpRecacheEventEncoder implements GameMessageEncoder<LogoutE
 
     @Override
     public GameFrame encode(ByteBufAllocator alloc, LogoutEvent event) {
-        // TODO Auto-generated method stub
+        // TODO: Add
         return null;
     }
 

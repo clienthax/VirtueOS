@@ -15,7 +15,7 @@ public class MiniMapWalkDecoder implements GameMessageDecoder<WalkEvent> {
         int posY = (int) frame.getUnsigned(DataType.SHORT, DataOrder.LITTLE);//, DataOrder.LITTLE
         int posX = (int) frame.getUnsigned(DataType.SHORT, DataTransformation.ADD);
 
-        System.out.println("minimap click " + type + " y" + posY + " x" + posX + " ");
+        System.out.println("walkEvent:  " + posY + " " + posX + " " + type);
         return new WalkEvent(posX, posY, type);
     }
 

@@ -12,7 +12,7 @@ public final class PlayerDesignVerificationListener extends MessageHandler<Playe
     /**
      * Creates the PlayerDesignVerificationHandler.
      *
-     * @param world The {@link World} the {@link PlayerDesignMessage} occurred in.
+     * @param world The {@link GameWorld} the {@link PlayerDesignMessage} occurred in.
      */
     public PlayerDesignVerificationListener(GameWorld world) {
         super(world);

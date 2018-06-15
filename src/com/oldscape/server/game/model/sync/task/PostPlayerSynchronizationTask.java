@@ -1,7 +1,6 @@
 package com.oldscape.server.game.model.sync.task;
 
 import com.oldscape.server.game.model.player.Player;
-import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 
 /**
  * A {@link SynchronizationTask} which does post-synchronization work for the

@@ -26,46 +26,16 @@ import com.oldscape.shared.network.game.DataType;
 import com.oldscape.shared.network.game.GameFrameReader;
 import com.oldscape.shared.network.game.event.GameMessageDecoder;
 import com.oldscape.shared.network.game.event.impl.PublicChatMessage;
+import com.oldscape.shared.utility.StringUtils;
 
 public class PublicChatDecoder implements GameMessageDecoder<PublicChatMessage> {
 
-    private static final char[] CHAR_ARRAY = new char[]{
-            8364, 0, 8218, 65533, 8222, 8230, 8224, 8225, 65533, 8240, 65533, 8249, 65533, 0, 711, 0, 0, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 65533, 8482, 65533, 8250, 65533, 0, 731, 65533
-    };
 
-    //From kris on discord
-    public static String decodeString(final byte[] buffer, final int offset, final int length) {
-        final char[] chars_0 = new char[length];
-        int int_2 = 0;
-        for (int int_3 = 0; int_3 < length; int_3++) {
-            int int_4 = buffer[int_3 + offset] & 0xFF;
-            if (int_4 != 0) {
-                if ((int_4 >= 128) && (int_4 < 160)) {
-                    char char_0 = CHAR_ARRAY[int_4 - 128];
-                    if (char_0 == 0) {
-                        char_0 = 63;
-                    }
-                    int_4 = char_0;
-                }
-                chars_0[int_2++] = (char) int_4;
-            }
-        }
 
-        return new String(chars_0, 0, int_2);
-    }
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see
-     * com.oldscape.shared.network.game.event.GameMessageDecoder#decode(com.oldscape.server
-     * .shared.network.game.GameFrameReader)
-     */
-    @SuppressWarnings("unused")
     @Override
     public PublicChatMessage decode(GameFrameReader frame) {
 
-        int meh2 = (int) frame.getUnsigned(DataType.BYTE);//unsure
+        int NAME_ME = (int) frame.getUnsigned(DataType.BYTE);// FIXME: What is this? Crown??
         int color = (int) frame.getUnsigned(DataType.BYTE);
         int effect = (int) frame.getUnsigned(DataType.BYTE);
         int decompressedLength = frame.getUnsignedSmart();
@@ -76,7 +46,7 @@ public class PublicChatDecoder implements GameMessageDecoder<PublicChatMessage> 
 
         frame.getBytes(compressedData);
         Server.getServer().getHuffman().decompress(compressedData, 0, decompressedData, 0, decompressedLength);
-        String chatMessage = decodeString(decompressedData, 0, decompressedLength);
+        String chatMessage = StringUtils.decodeString(decompressedData, 0, decompressedLength);
 
         return new PublicChatMessage(chatMessage, compressedData, color, effect);
     }

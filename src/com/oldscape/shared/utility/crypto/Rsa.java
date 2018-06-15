@@ -42,12 +42,9 @@ public final class Rsa {
     /**
      * Encrypts/decrypts the specified buffer with the key and modulus.
      *
-     * @param buffer
-     *            The input buffer.
-     * @param modulus
-     *            The modulus.
-     * @param key
-     *            The key.
+     * @param buffer  The input buffer.
+     * @param modulus The modulus.
+     * @param key     The key.
      * @return The output buffer.
      */
     public static ByteBuffer crypt(ByteBuffer buffer, BigInteger modulus, BigInteger key) {

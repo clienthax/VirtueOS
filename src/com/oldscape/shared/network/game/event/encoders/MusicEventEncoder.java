@@ -12,7 +12,9 @@ public class MusicEventEncoder implements
     @Override
     public GameFrame encode(ByteBufAllocator alloc, MusicEvent event) {
         GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.MUSIC, FrameType.FIXED);
+
         builder.put(DataType.SHORT, DataTransformation.ADD, event.getID());
+
         return builder.toGameFrame();
     }
 

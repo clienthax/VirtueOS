@@ -25,7 +25,7 @@ import java.math.BigInteger;
 
 /**
  * Generates Fowler-Noll-Vo hashes, which comes in 32 and 64 bit flavors
- *
+ * <p>
  * FNV_1: multiply xor FNV_1a: xor multiply
  *
  * @author Jake Douglas
@@ -66,8 +66,7 @@ public class FNVHash {
     /**
      * Generates a FNV_1 32-Bit hash
      *
-     * @param string
-     *            The String to hash
+     * @param string The String to hash
      * @return The BigInteger hash
      */
     public static String fnv1_32(String string) {
@@ -84,8 +83,7 @@ public class FNVHash {
     /**
      * Generates a FNV_1 64-Bit hash
      *
-     * @param string
-     *            The String to hash
+     * @param string The String to hash
      * @return The BigInteger hash
      */
     public static String fnv1_64(String string) {
@@ -102,8 +100,7 @@ public class FNVHash {
     /**
      * Generates a FNV_1a 32-Bit hash
      *
-     * @param string
-     *            The String to hash
+     * @param string The String to hash
      * @return The BigInteger hash
      */
     public static String fnv1a_32(String string) {
@@ -120,8 +117,7 @@ public class FNVHash {
     /**
      * Generates a FNV_1a 64-Bit hash
      *
-     * @param string
-     *            The String to hash
+     * @param string The String to hash
      * @return The BigInteger hash
      */
     public static String fnv1a_64(String string) {

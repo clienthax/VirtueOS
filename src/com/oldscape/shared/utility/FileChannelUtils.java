@@ -44,14 +44,10 @@ public final class FileChannelUtils {
     /**
      * Reads as much as possible from the channel into the buffer.
      *
-     * @param channel
-     *            The channel.
-     * @param buffer
-     *            The buffer.
-     * @param ptr
-     *            The initial position in the channel.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @param channel The channel.
+     * @param buffer  The buffer.
+     * @param ptr     The initial position in the channel.
+     * @throws IOException if an I/O error occurs.
      */
     public static void readFully(FileChannel channel, ByteBuffer buffer, long ptr) throws IOException {
         while (buffer.remaining() > 0) {

@@ -22,7 +22,6 @@
 package com.oldscape.shared.utility;
 
 /**
- *
  * @author Im Frizzy <skype:kfriz1998>
  * @since Sep 30, 2014
  */
@@ -85,8 +84,7 @@ public class NameUtils {
     /**
      * Formats a requested {@link String} for protocol services.
      *
-     * @param string
-     *            The {@link String} to format.
+     * @param string The {@link String} to format.
      * @return The {@link String}.
      */
     public static String protocol(String name) {
@@ -116,8 +114,7 @@ public class NameUtils {
     /**
      * Formats a requested {@link String} for display services.
      *
-     * @param name
-     *            The {@link String} to format.
+     * @param name The {@link String} to format.
      * @return The {@link String}.
      */
     public static String display(String name) {

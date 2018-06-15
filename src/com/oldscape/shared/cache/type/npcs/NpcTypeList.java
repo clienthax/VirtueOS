@@ -45,7 +45,6 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class NpcTypeList implements TypeList<NpcType> {
@@ -54,9 +53,10 @@ public class NpcTypeList implements TypeList<NpcType> {
 
     private NpcType[] npcs;
 
+    public int count = 0;
+
     @Override
     public void initialize(Cache cache) {
-        int count = 0;
         try {
             ReferenceTable table = cache.getReferenceTable(CacheIndex.CONFIGS);
             Entry entry = table.getEntry(ConfigArchive.NPC);
@@ -77,7 +77,7 @@ public class NpcTypeList implements TypeList<NpcType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading NpcType(s)!", e);
         }
-        logger.info("Loaded " + count + " NpcType(s)!");
+//        logger.info("Loaded " + count + " NpcType(s)!");
     }
 
     @Override

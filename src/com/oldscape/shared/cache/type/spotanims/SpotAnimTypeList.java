@@ -45,18 +45,20 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class SpotAnimTypeList implements TypeList<SpotAnimType> {
 
     public int maxSize = 0;
+
     private Logger logger = Logger.getLogger(SpotAnimTypeList.class.getName());
+
     private SpotAnimType[] spots;
+
+    public int count = 0;
 
     @Override
     public void initialize(Cache cache) {
-        int count = 0;
         try {
             ReferenceTable table = cache.getReferenceTable(CacheIndex.CONFIGS);
             Entry entry = table.getEntry(ConfigArchive.SPOTANIM);
@@ -78,7 +80,7 @@ public class SpotAnimTypeList implements TypeList<SpotAnimType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading SpotAnimType(s)!", e);
         }
-        logger.info("Loaded " + count + " SpotAnimType(s)!");
+//        logger.info("Loaded " + count + " SpotAnimType(s)!");
     }
 
     @Override

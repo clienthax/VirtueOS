@@ -188,8 +188,7 @@ public class Container {
     }
 
     /**
-     * @param revision
-     *            the revision to set
+     * @param revision the revision to set
      */
     public void setRevision(long revision) {
         this.revision = revision;

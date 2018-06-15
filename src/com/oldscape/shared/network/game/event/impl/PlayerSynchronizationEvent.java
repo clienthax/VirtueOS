@@ -40,18 +40,7 @@ public class PlayerSynchronizationEvent implements Event {
     /**
      * Creates the player synchronization message.
      *
-     * @param lastPosition
-     *            The last known sector.
-     * @param position
-     *            The player's current position.
-     * @param sectorChanged
-     *            A flag indicating if the sector has changed.
-     * @param segment
-     *            The current player's synchronization segment.
-     * @param localPlayers
-     *            The number of local players.
-     * @param segments
-     *            A list of segments.
+     * @param segments A list of segments.
      */
     public PlayerSynchronizationEvent(List<SynchronizationSegment> segments) {
         this.segments = segments;

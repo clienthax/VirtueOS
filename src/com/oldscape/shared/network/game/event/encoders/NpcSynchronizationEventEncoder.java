@@ -23,9 +23,7 @@ public final class NpcSynchronizationEventEncoder implements GameMessageEncoder<
 
     @Override
     public GameFrame encode(ByteBufAllocator alloc, NpcSynchronizationEvent event) {
-        GameFrameBuilder builder = new GameFrameBuilder(alloc,
-                (event.isLargeScene() ? EncoderOpcode.NPC_SYNC_LARGE : EncoderOpcode.NPC_SYNC),
-                FrameType.VARIABLE_SHORT);
+        GameFrameBuilder builder = new GameFrameBuilder(alloc, (event.isLargeScene() ? EncoderOpcode.NPC_SYNC_LARGE : EncoderOpcode.NPC_SYNC), FrameType.VARIABLE_SHORT);
         builder.switchToBitAccess();
 
         GameFrameBuilder blockBuilder = new GameFrameBuilder(alloc);
@@ -40,11 +38,11 @@ public final class NpcSynchronizationEventEncoder implements GameMessageEncoder<
             desc = SyncUtils.getNpcDescriptor(segment.getType());
             desc.encodeDescriptor(event, segment, builder);
 
-            for (int index = 0; index < 7; index++) {//FIXME: change to use list
+            for (int index = 0; index < 7; index++) {
                 encd = SyncUtils.getNpcBlock(index);
                 block = segment.getBlockSet().get(encd.getType());
                 if (block != null) {
-                    System.out.println("encoding npc block " + encd.getType());
+                    System.out.println("NpcSynchronizationEventEncoder: " + encd.getType());
                     encd.encodeBlock(block, blockBuilder, false);
                     flags |= encd.getFlag(false);
                 }
@@ -63,7 +61,6 @@ public final class NpcSynchronizationEventEncoder implements GameMessageEncoder<
         blockBuilder.release();
 
         if (builder.getLength() == 0) {
-            System.err.println("NpcSynchronizationEventEncoder: not sending 0 length update");
             return null;
         }
 

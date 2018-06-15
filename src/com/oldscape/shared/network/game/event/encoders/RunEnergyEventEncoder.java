@@ -17,7 +17,9 @@ public class RunEnergyEventEncoder implements GameMessageEncoder<RunEnergyEvent>
     @Override
     public GameFrame encode(ByteBufAllocator alloc, RunEnergyEvent event) {
         GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.RUN_ENERGY, FrameType.FIXED);
+
         builder.put(DataType.BYTE, event.getAmount());
+
         return builder.toGameFrame();
     }
 

@@ -21,13 +21,16 @@ public class MessageEventEncoder implements
     @Override
     public GameFrame encode(ByteBufAllocator alloc, MessageEvent event) {
         GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.GAME_MESSAGE, FrameType.VARIABLE_BYTE);
-        builder.putSmart(event.getType().getID());
 
+        builder.putSmart(event.getType().getID());
         builder.put(DataType.BYTE, (event.getType() == MessageType.CHAT) ? 1 : 0);
-        if (event.getType() == MessageType.CHAT)
+
+        if (event.getType() == MessageType.CHAT) {
             builder.putString(event.getFrom());
+        }
 
         builder.putString(event.getMessage());
+
         return builder.toGameFrame();
     }
 }

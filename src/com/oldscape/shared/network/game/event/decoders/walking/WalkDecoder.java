@@ -34,20 +34,13 @@ import com.oldscape.shared.network.game.event.impl.WalkEvent;
  */
 public class WalkDecoder implements GameMessageDecoder<WalkEvent> {
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see
-     * com.oldscape.shared.network.game.event.GameMessageDecoder#decode(com.oldscape.server
-     * .shared.network.game.GameFrameReader)
-     */
     @Override
     public WalkEvent decode(GameFrameReader frame) {
         int type = (int) frame.getUnsigned(DataType.BYTE, DataTransformation.NEGATE);
         int posY = (int) frame.getUnsigned(DataType.SHORT, DataOrder.LITTLE);//, DataOrder.LITTLE
         int posX = (int) frame.getUnsigned(DataType.SHORT, DataTransformation.ADD);
 
-        System.out.println("walkevent  " + posY + " " + posX + " " + type);
+        System.out.println("walkEvent: " + posY + " " + posX + " " + type);
         return new WalkEvent(posX, posY, type);
     }
 

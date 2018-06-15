@@ -1,0 +1,15 @@
+cs2Script(143, new Object[]{[280, 0]});//ii
+cameraLookat(48, 42, 1500, 2, 10);
+setInterfaceText(135, 12, "West to the Lumbridge Castle and Draynor Village. Beware the goblins!")
+setInterfaceText(135, 9, "South to the swamps of Lumbridge.")
+setInterfaceText(135, 3, "Head north towards Fred's farm and the windmill.")
+setInterfaceText(135, 8, "Cross the bridge and head east to Al Kharid or north to Varrock.")
+cs2Script(917, new Object[]{[10786175, 200]});//ii
+sendOpenInterfaceSub(161, 13, 135, false)
+
+
+onclose
+sendCloseInterfaceSub(161, 13)
+resetCamera()
+
+

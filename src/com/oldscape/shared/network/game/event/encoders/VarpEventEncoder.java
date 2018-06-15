@@ -13,23 +13,19 @@ public class VarpEventEncoder implements GameMessageEncoder<VarpEvent> {
         GameFrameBuilder builder = null;
 
         if (event.isBit()) {
-            //TODO ?
+            //FIXME: ?
         } else {
-            if (event.getState() <= Byte.MIN_VALUE
-                    || event.getState() >= Byte.MAX_VALUE) {
+            if (event.getState() <= Byte.MIN_VALUE || event.getState() >= Byte.MAX_VALUE) {
                 builder = new GameFrameBuilder(alloc, EncoderOpcode.VARP_LARGE, FrameType.FIXED);
                 builder.put(DataType.INT, event.getState());
                 builder.put(DataType.SHORT, event.getId());
-//				System.out.println("varp large: id "+event.getId()+" state "+event.getState());
-
             } else {
                 builder = new GameFrameBuilder(alloc, EncoderOpcode.VARP_SMALL, FrameType.FIXED);
                 builder.put(DataType.SHORT, DataTransformation.ADD, event.getId());
                 builder.put(DataType.BYTE, event.getState());
-
-//				System.out.println("varp small: id "+event.getId()+" state "+event.getState());
             }
         }
+
         return builder.toGameFrame();
     }
 }

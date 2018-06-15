@@ -22,7 +22,6 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
      * packet from becoming too large (the client uses a 5000 byte buffer) and
      * also stops old spec PCs from crashing when they login or teleport.
      */
-    @SuppressWarnings("unused")
     private static final int NEW_PLAYERS_PER_CYCLE = 20;
     /**
      * The player.

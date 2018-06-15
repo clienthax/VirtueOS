@@ -25,7 +25,6 @@ import com.oldscape.shared.cache.Cache;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public interface TypeList<T extends Type> {

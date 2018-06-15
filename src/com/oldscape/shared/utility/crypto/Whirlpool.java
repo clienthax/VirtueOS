@@ -161,6 +161,7 @@ public class Whirlpool {
     protected long[] L = new long[8];
     protected long[] block = new long[8]; // mu(buffer)
     protected long[] state = new long[8]; // the cipher state
+
     public Whirlpool() {
     }
 
@@ -184,12 +185,10 @@ public class Whirlpool {
     /**
      * Delivers input data to the hashing algorithm.
      *
-     * @param source
-     *            plaintext data to hash.
-     * @param sourceBits
-     *            how many bits of plaintext to process.
-     *
-     *            This method maintains the invariant: bufferBits < 512
+     * @param source     plaintext data to hash.
+     * @param sourceBits how many bits of plaintext to process.
+     *                   <p>
+     *                   This method maintains the invariant: bufferBits < 512
      */
     public void NESSIEadd(byte[] source, long sourceBits) {
         /*
@@ -272,10 +271,9 @@ public class Whirlpool {
     /**
      * Delivers string input data to the hashing algorithm.
      *
-     * @param source
-     *            plaintext data to hash (ASCII text string).
-     *
-     *            This method maintains the invariant: bufferBits < 512
+     * @param source plaintext data to hash (ASCII text string).
+     *               <p>
+     *               This method maintains the invariant: bufferBits < 512
      */
     public void NESSIEadd(String source) {
         if (source.length() > 0) {
@@ -289,7 +287,7 @@ public class Whirlpool {
 
     /**
      * Get the hash value from the hashing state.
-     *
+     * <p>
      * This method uses the invariant: bufferBits < 512
      */
     public void NESSIEfinalize(byte[] digest) {

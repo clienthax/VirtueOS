@@ -2,7 +2,7 @@ package com.oldscape.shared.network.game.event.impl;
 
 import java.util.OptionalInt;
 
-public class MagicOnItemMessage extends InventoryItemMessage {
+public class MagicOnItemMessage extends WidgetItemMessage {
 
     /**
      * The spell id.
@@ -12,13 +12,13 @@ public class MagicOnItemMessage extends InventoryItemMessage {
     /**
      * Creates a new magic on item message.
      *
-     * @param interfaceId The interface id.
-     * @param id          The item id.
-     * @param slot        The item slot.
-     * @param spell       The spell id.
+     * @param widgetId The interface id.
+     * @param id       The item id.
+     * @param slot     The item slot.
+     * @param spell    The spell id.
      */
-    public MagicOnItemMessage(int interfaceId, int id, int slot, int spell) {
-        super(OptionalInt.empty(), interfaceId, id, slot);
+    public MagicOnItemMessage(int widgetId, int id, int slot, int spell) {
+        super(OptionalInt.empty(), widgetId, id, slot);
         this.spell = spell;
     }
 

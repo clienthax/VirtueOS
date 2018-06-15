@@ -63,6 +63,7 @@ public class MethodElement {
 
     /**
      * Note: InsnList is not Thread Safe
+     *
      * @return
      */
     public InsnList insn() {

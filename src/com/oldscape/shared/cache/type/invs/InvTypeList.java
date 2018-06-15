@@ -45,7 +45,6 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class InvTypeList implements TypeList<InvType> {
@@ -54,9 +53,10 @@ public class InvTypeList implements TypeList<InvType> {
 
     private InvType[] invs;
 
+    public int count = 0;
+
     @Override
     public void initialize(Cache cache) {
-        int count = 0;
         try {
             ReferenceTable table = cache.getReferenceTable(CacheIndex.CONFIGS);
             Entry entry = table.getEntry(ConfigArchive.INV);
@@ -77,7 +77,7 @@ public class InvTypeList implements TypeList<InvType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading InvType(s)!", e);
         }
-        logger.info("Loaded " + count + " InvType(s)!");
+//        logger.info("Loaded " + count + " InvType(s)!");
     }
 
     @Override

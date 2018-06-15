@@ -45,7 +45,6 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class VarClientStringTypeList implements TypeList<VarClientStringType> {
@@ -54,9 +53,10 @@ public class VarClientStringTypeList implements TypeList<VarClientStringType> {
 
     private VarClientStringType[] varClients;
 
+    public int count = 0;
+
     @Override
     public void initialize(Cache cache) {
-        int count = 0;
         try {
             ReferenceTable table = cache.getReferenceTable(CacheIndex.CONFIGS);
             Entry entry = table.getEntry(ConfigArchive.VARCLIENTSTRING);
@@ -78,7 +78,7 @@ public class VarClientStringTypeList implements TypeList<VarClientStringType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading VarClientStringType(s)!", e);
         }
-        logger.info("Loaded " + count + " VarClientStringType(s)!");
+//        logger.info("Loaded " + count + " VarClientStringType(s)!");
     }
 
     @Override

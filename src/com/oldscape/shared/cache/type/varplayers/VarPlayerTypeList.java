@@ -45,7 +45,6 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class VarPlayerTypeList implements TypeList<VarPlayerType> {
@@ -54,9 +53,10 @@ public class VarPlayerTypeList implements TypeList<VarPlayerType> {
 
     private VarPlayerType[] varPlayers;
 
+    public int count = 0;
+
     @Override
     public void initialize(Cache cache) {
-        int count = 0;
         try {
             ReferenceTable table = cache.getReferenceTable(CacheIndex.CONFIGS);
             Entry entry = table.getEntry(ConfigArchive.VARPLAYER);
@@ -78,7 +78,7 @@ public class VarPlayerTypeList implements TypeList<VarPlayerType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading VarPlayerType(s)!", e);
         }
-        logger.info("Loaded " + count + " VarPlayerType(s)!");
+//        logger.info("Loaded " + count + " VarPlayerType(s)!");
     }
 
     @Override

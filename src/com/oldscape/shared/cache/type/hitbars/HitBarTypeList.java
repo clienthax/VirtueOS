@@ -45,7 +45,6 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class HitBarTypeList implements TypeList<HitBarType> {
@@ -54,9 +53,10 @@ public class HitBarTypeList implements TypeList<HitBarType> {
 
     private HitBarType[] hitbars;
 
+    public int count = 0;
+
     @Override
     public void initialize(Cache cache) {
-        int count = 0;
         try {
             ReferenceTable table = cache.getReferenceTable(CacheIndex.CONFIGS);
             Entry entry = table.getEntry(ConfigArchive.HITBAR);
@@ -78,7 +78,7 @@ public class HitBarTypeList implements TypeList<HitBarType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading HitBarType(s)!", e);
         }
-        logger.info("Loaded " + count + " HitBarType(s)!");
+//        logger.info("Loaded " + count + " HitBarType(s)!");
     }
 
     @Override

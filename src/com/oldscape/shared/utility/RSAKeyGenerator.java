@@ -85,12 +85,9 @@ public class RSAKeyGenerator {
     /**
      * Writes the key (public/private) to the specified file.
      *
-     * @param file
-     *            The file.
-     * @param modulus
-     *            The modulus of the key.
-     * @param exponent
-     *            The exponent of the key.
+     * @param file     The file.
+     * @param modulus  The modulus of the key.
+     * @param exponent The exponent of the key.
      */
     public static void writeKey(String file, BigInteger ondemand_modulus, BigInteger ondemand_exponent,
                                 BigInteger login_modulus, BigInteger login_exponent) {

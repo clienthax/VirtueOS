@@ -3,6 +3,7 @@ package com.oldscape.server.game.model.player;
 import com.google.common.collect.Lists;
 import com.oldscape.server.game.Server;
 import com.oldscape.server.game.model.MobileEntity;
+import com.oldscape.server.game.model.item.Item;
 import com.oldscape.server.game.model.player.inv.*;
 import com.oldscape.server.game.model.player.inv.ItemContainer.StackMode;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
@@ -56,6 +57,10 @@ public class Player extends MobileEntity {
      */
     private final Viewport viewport = new Viewport(this);
     /**
+     * Amount of items in each bank tab
+     */
+    protected int[] bankTabItems = new int[10];
+    /**
      * Gets the {@link com.oldscape.server.game.network.game.GameSessionContext}.
      */
     protected GameSessionContext sessionContext;
@@ -76,22 +81,18 @@ public class Player extends MobileEntity {
      * This player's prayer icon.
      */
     private int prayerIcon = -1;
-
     /**
      * Whether or not the player is skulled.
      */
     private boolean skulled = false;
-
     /**
      * Whether or not the player is hidden.
      */
     private boolean hidden = false;
-
     /**
      * If player is using side panels.
      */
     private boolean sidePanels = false;
-
     /**
      * If the player is past the welcome screen.
      */
@@ -108,6 +109,14 @@ public class Player extends MobileEntity {
         this.id = id;
         this.credentials = credentials;
         this.display = display;
+    }
+
+    public int[] getBankTabItems() {
+        return bankTabItems;
+    }
+
+    public void setBankTabItems(int[] bankTabItems) {
+        this.bankTabItems = bankTabItems;
     }
 
     // its possible the region packet is out of date, in osrs it also calls for
@@ -563,7 +572,7 @@ public class Player extends MobileEntity {
         sendVarp(1725, 866423);
 
         sendCS2Script(828, new Object[]{1});
-        ;
+
         sendSetWidgetText(378, 70, "You do not have a Bank PIN.<br>Please visit a bank if you would like one.");
         sendSetWidgetText(378, 3, "Delve into the history of <col=ff0000>Shayzien House</col> and uncover a conspiracy a thousand years in the making in our new quest, <col=ffff00>Tale of the Righteous</col>.");
         sendCS2Script(233, new Object[]{24772660, 30685, 0, 120, 94, 110, 0, 1800, -1});
@@ -669,7 +678,7 @@ public class Player extends MobileEntity {
         write(new SetRootWigetEvent(interfaceId));
     }
 
-    public void sendCS2Script(int id, Object[] params) {
+    public void sendCS2Script(int id, Object... params) {
         // TODO Temp Fix. params are encoded/decoded backwards.
         write(new CS2ScriptEvent(id, Lists.reverse(Arrays.asList(params)).toArray()));
     }

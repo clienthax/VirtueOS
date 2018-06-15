@@ -1,8 +1,6 @@
 package com.oldscape.server.game.model.sync.task;
 
 import com.oldscape.server.game.model.player.Player;
-import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
-import com.oldscape.shared.model.Position;
 
 /**
  * A {@link SynchronizationTask} which does pre-synchronization work for the

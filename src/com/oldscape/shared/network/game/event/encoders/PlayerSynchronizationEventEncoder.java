@@ -22,9 +22,6 @@ public final class PlayerSynchronizationEventEncoder implements GameMessageEncod
     @Override
     public GameFrame encode(ByteBufAllocator alloc, PlayerSynchronizationEvent event) {
 
-//		if(1 == 1)
-//			return null;//todo 168
-
         GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.PLAYER_SYNC, FrameType.VARIABLE_SHORT);
 
         GameFrameBuilder blockBuilder = new GameFrameBuilder(alloc);
@@ -33,36 +30,37 @@ public final class PlayerSynchronizationEventEncoder implements GameMessageEncod
         SynchronizationDescriptor desc;
         SynchronizationBlock block;
         SynchronizationBlockEncoder encd;
+
         for (SynchronizationSegment segment : event.getSegments()) {
+
             desc = SyncUtils.getPlayerDescriptor(segment.getType());
             desc.encodeDescriptor(event, segment, builder);
+
             for (int index = 0; index < 12; index++) {
                 encd = SyncUtils.getPlayerBlock(index);
-                block = segment.getBlockSet().get(encd.getType());
+                block = segment.getBlockSet().get(encd.getType()); //FIXME: Why is this null? When #encd isn't..
                 if (block != null) {
+                    System.out.println("PlayerSynchronizationEventEncoder: " + encd.getType());
                     encd.encodeBlock(block, blockBuilder, true);
                     flags |= encd.getFlag(true);
                 }
             }
         }
         if (blockBuilder.getLength() > 0) {
-            if (flags >= 0x100) {//256 0x100
-//				System.out.println("sending flags as short "+(flags| 32));
-                builder.put(DataType.SHORT, DataOrder.LITTLE, (flags | 32));//TODO update per revision
+            if (flags >= 0x100) {
+                builder.put(DataType.SHORT, DataOrder.LITTLE, (flags | 32));
             } else {
-                System.out.println("sending flags as byte");
                 builder.put(DataType.BYTE, flags);
             }
 
             builder.putRawBuilder(blockBuilder);
         }
 
-        blockBuilder.release();
-
         if (builder.getLength() == 0) {
-            //(new Throwable()).printStackTrace();
-            return null;//fucking bail out!
+            return null;
         }
+
+        blockBuilder.release();
 
         return builder.toGameFrame();
     }

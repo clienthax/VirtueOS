@@ -28,7 +28,6 @@ import java.util.Map;
 
 /**
  * @author Kyle Friz
- *
  * @since Jun 30, 2015
  */
 public class XTEAManager {

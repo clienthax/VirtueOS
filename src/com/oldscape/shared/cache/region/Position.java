@@ -22,7 +22,6 @@
 package com.oldscape.shared.cache.region;
 
 /**
- *
  * @author Kyle Friz
  * @since Apr 2, 2016
  */

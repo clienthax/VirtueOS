@@ -60,8 +60,7 @@ public final class Cache implements Closeable {
     /**
      * Creates a new {@link Cache} backed by the specified {@link FileStore}.
      *
-     * @param store
-     *            The {@link FileStore} that backs this {@link Cache}.
+     * @param store The {@link FileStore} that backs this {@link Cache}.
      * @throws IOException
      */
     public Cache(FileStore store) throws IOException {
@@ -96,8 +95,7 @@ public final class Cache implements Closeable {
      * part of the so-called "update keys".
      *
      * @return The {@link ChecksumTable}.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @throws IOException if an I/O error occurs.
      */
     public ChecksumTable createChecksumTable() throws IOException {
         /* create the checksum table */
@@ -141,11 +139,9 @@ public final class Cache implements Closeable {
     /**
      * Gets the number of files of the specified type.
      *
-     * @param type
-     *            The type.
+     * @param type The type.
      * @return The number of files.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @throws IOException if an I/O error occurs.
      */
     public int getFileCount(int type) throws IOException {
         return store.getFileCount(type);
@@ -164,8 +160,7 @@ public final class Cache implements Closeable {
      * Gets the number of index files, not including the meta index file.
      *
      * @return The number of index files.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @throws IOException if an I/O error occurs.
      */
     public int getTypeCount() throws IOException {
         return store.getTypeCount();
@@ -175,8 +170,7 @@ public final class Cache implements Closeable {
      * Reads a file from the cache.
      *
      * @return The file.
-     * @throws IOException
-     *             if an I/O error occurred.
+     * @throws IOException if an I/O error occurred.
      */
     public Container read(CacheIndex index, ConfigArchive archive) throws IOException {
         return read(index.getID(), archive.getID());
@@ -185,11 +179,9 @@ public final class Cache implements Closeable {
     /**
      * Reads a file from the cache.
      *
-     * @param file
-     *            The file id.
+     * @param file The file id.
      * @return The file.
-     * @throws IOException
-     *             if an I/O error occurred.
+     * @throws IOException if an I/O error occurred.
      */
     public Container read(CacheIndex index, int file) throws IOException {
         return read(index.getID(), file);
@@ -198,13 +190,10 @@ public final class Cache implements Closeable {
     /**
      * Reads a file from the cache.
      *
-     * @param type
-     *            The type of file.
-     * @param file
-     *            The file id.
+     * @param type The type of file.
+     * @param file The file id.
      * @return The file.
-     * @throws IOException
-     *             if an I/O error occurred.
+     * @throws IOException if an I/O error occurred.
      */
     public Container read(int type, int file) throws IOException {
         /* we don't want people reading/manipulating these manually */
@@ -218,15 +207,11 @@ public final class Cache implements Closeable {
     /**
      * Reads a file from the cache.
      *
-     * @param type
-     *            The type of file.
-     * @param file
-     *            The file id.
-     * @param keys
-     *            The decryption keys.
+     * @param type The type of file.
+     * @param file The file id.
+     * @param keys The decryption keys.
      * @return The file.
-     * @throws IOException
-     *             if an I/O error occurred.
+     * @throws IOException if an I/O error occurred.
      */
     public Container read(int type, int file, int[] keys) throws IOException {
         /* we don't want people reading/manipulating these manually */
@@ -240,15 +225,11 @@ public final class Cache implements Closeable {
     /**
      * Reads a file contained in an archive in the cache.
      *
-     * @param type
-     *            The type of the file.
-     * @param file
-     *            The archive id.
-     * @param file
-     *            The file within the archive.
+     * @param type The type of the file.
+     * @param file The archive id.
+     * @param file The file within the archive.
      * @return The file.
-     * @throws IOException
-     *             if an I/O error occurred.
+     * @throws IOException if an I/O error occurred.
      */
     public ByteBuffer read(int type, int file, int member) throws IOException {
         /* grab the container and the reference table */
@@ -269,10 +250,8 @@ public final class Cache implements Closeable {
     /**
      * Gets a file id from the cache by name
      *
-     * @param type
-     *            The type of file.
-     * @param name
-     *            The name of the file
+     * @param type The type of file.
+     * @param name The name of the file
      * @return The file id.
      * @throws java.io.IOException
      */
@@ -290,14 +269,10 @@ public final class Cache implements Closeable {
      * Writes a file to the cache and updates the {@link ReferenceTable} that it is
      * associated with.
      *
-     * @param type
-     *            The type of file.
-     * @param file
-     *            The file id.
-     * @param container
-     *            The {@link Container} to write.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @param type      The type of file.
+     * @param file      The file id.
+     * @param container The {@link Container} to write.
+     * @throws IOException if an I/O error occurs.
      */
     public void write(int type, int file, Container container) throws IOException {
         write(type, file, container, XTEAManager.NULL_KEYS);
@@ -307,16 +282,11 @@ public final class Cache implements Closeable {
      * Writes a file to the cache and updates the {@link ReferenceTable} that it is
      * associated with.
      *
-     * @param type
-     *            The type of file.
-     * @param file
-     *            The file id.
-     * @param container
-     *            The {@link Container} to write.
-     * @param keys
-     *            The encryption keys.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @param type      The type of file.
+     * @param file      The file id.
+     * @param container The {@link Container} to write.
+     * @param keys      The encryption keys.
+     * @throws IOException if an I/O error occurs.
      */
     public void write(int type, int file, Container container, int[] keys) throws IOException {
         /* we don't want people reading/manipulating these manually */
@@ -377,16 +347,11 @@ public final class Cache implements Closeable {
     /**
      * Writes a file contained in an archive to the cache.
      *
-     * @param type
-     *            The type of file.
-     * @param file
-     *            The id of the archive.
-     * @param member
-     *            The file within the archive.
-     * @param data
-     *            The data to write.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @param type   The type of file.
+     * @param file   The id of the archive.
+     * @param member The file within the archive.
+     * @param data   The data to write.
+     * @throws IOException if an I/O error occurs.
      */
     public void write(int type, int file, int member, ByteBuffer data) throws IOException {
         write(type, file, member, data, XTEAManager.NULL_KEYS);
@@ -395,18 +360,12 @@ public final class Cache implements Closeable {
     /**
      * Writes a file contained in an archive to the cache.
      *
-     * @param type
-     *            The type of file.
-     * @param file
-     *            The id of the archive.
-     * @param member
-     *            The file within the archive.
-     * @param data
-     *            The data to write.
-     * @param keys
-     *            The encryption keys.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @param type   The type of file.
+     * @param file   The id of the archive.
+     * @param member The file within the archive.
+     * @param data   The data to write.
+     * @param keys   The encryption keys.
+     * @throws IOException if an I/O error occurs.
      */
     public void write(int type, int file, int member, ByteBuffer data, int[] keys) throws IOException {
         /* grab the reference table */

@@ -244,7 +244,7 @@ public final class WalkingQueue {
     }
 
     public void handleRegionChange() {
-        if(!(mob instanceof Player)) {
+        if (!(mob instanceof Player)) {
             return;
         }
 
@@ -261,11 +261,11 @@ public final class WalkingQueue {
     }
 
     private boolean needsRegionUpdate() {
-        if(!(mob instanceof  Player)) {
+        if (!(mob instanceof Player)) {
             return false;
         }
 
-        Player player = (Player)mob;
+        Player player = (Player) mob;
 
         Position current = player.getPosition();
         Position last = player.getLastKnownRegion();

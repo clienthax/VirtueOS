@@ -173,8 +173,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param anIntArray2118
-     *            the anIntArray2118 to set
+     * @param anIntArray2118 the anIntArray2118 to set
      */
     public void setAnIntArray2118(int[] anIntArray2118) {
         this.anIntArray2118 = anIntArray2118;
@@ -188,8 +187,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param priority
-     *            the priority to set
+     * @param priority the priority to set
      */
     public void setPriority(int priority) {
         this.priority = priority;
@@ -203,8 +201,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param frameIDs
-     *            the frameIDs to set
+     * @param frameIDs the frameIDs to set
      */
     public void setFrameIDs(int[] frameIDs) {
         this.frameIDs = frameIDs;
@@ -218,8 +215,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param frameLengths
-     *            the frameLengths to set
+     * @param frameLengths the frameLengths to set
      */
     public void setFrameLengths(int[] frameLengths) {
         this.frameLengths = frameLengths;
@@ -233,8 +229,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param anIntArray2126
-     *            the anIntArray2126 to set
+     * @param anIntArray2126 the anIntArray2126 to set
      */
     public void setAnIntArray2126(int[] anIntArray2126) {
         this.anIntArray2126 = anIntArray2126;
@@ -248,8 +243,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param frameStep
-     *            the frameStep to set
+     * @param frameStep the frameStep to set
      */
     public void setFrameStep(int frameStep) {
         this.frameStep = frameStep;
@@ -263,8 +257,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param animationFlowControl
-     *            the animationFlowControl to set
+     * @param animationFlowControl the animationFlowControl to set
      */
     public void setAnimationFlowControl(int[] animationFlowControl) {
         this.animationFlowControl = animationFlowControl;
@@ -278,8 +271,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param oneSquareAnimation
-     *            the oneSquareAnimation to set
+     * @param oneSquareAnimation the oneSquareAnimation to set
      */
     public void setOneSquareAnimation(boolean oneSquareAnimation) {
         this.oneSquareAnimation = oneSquareAnimation;
@@ -293,8 +285,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param forcedPriority
-     *            the forcedPriority to set
+     * @param forcedPriority the forcedPriority to set
      */
     public void setForcedPriority(int forcedPriority) {
         this.forcedPriority = forcedPriority;
@@ -308,8 +299,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param leftHandItem
-     *            the leftHandItem to set
+     * @param leftHandItem the leftHandItem to set
      */
     public void setLeftHandItem(int leftHandItem) {
         this.leftHandItem = leftHandItem;
@@ -323,8 +313,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param anInt2133
-     *            the anInt2133 to set
+     * @param anInt2133 the anInt2133 to set
      */
     public void setAnInt2133(int anInt2133) {
         this.anInt2133 = anInt2133;
@@ -338,8 +327,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param rightHandItem
-     *            the rightHandItem to set
+     * @param rightHandItem the rightHandItem to set
      */
     public void setRightHandItem(int rightHandItem) {
         this.rightHandItem = rightHandItem;
@@ -353,8 +341,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param delayType
-     *            the delayType to set
+     * @param delayType the delayType to set
      */
     public void setDelayType(int delayType) {
         this.delayType = delayType;
@@ -368,8 +355,7 @@ public class SequenceType implements Type {
     }
 
     /**
-     * @param resetWhenWalk
-     *            the resetWhenWalk to set
+     * @param resetWhenWalk the resetWhenWalk to set
      */
     public void setResetWhenWalk(int resetWhenWalk) {
         this.resetWhenWalk = resetWhenWalk;

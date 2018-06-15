@@ -2,16 +2,16 @@ package com.oldscape.shared.network.game.event;
 
 import com.oldscape.server.game.Server;
 import com.oldscape.shared.event.Event;
-import com.oldscape.shared.network.game.event.decoders.client.ClientDimensionsDecoder;
 import com.oldscape.shared.network.game.event.decoders.DummyDecoder;
 import com.oldscape.shared.network.game.event.decoders.chat.CommandDecoder;
 import com.oldscape.shared.network.game.event.decoders.chat.PublicChatDecoder;
+import com.oldscape.shared.network.game.event.decoders.client.ClientDimensionsDecoder;
 import com.oldscape.shared.network.game.event.decoders.client.ClientFocusDecoder;
-import com.oldscape.shared.network.game.event.decoders.widget.WidgetButtonClickDecoder;
 import com.oldscape.shared.network.game.event.decoders.npc.*;
 import com.oldscape.shared.network.game.event.decoders.object.*;
 import com.oldscape.shared.network.game.event.decoders.walking.MiniMapWalkDecoder;
 import com.oldscape.shared.network.game.event.decoders.walking.WalkDecoder;
+import com.oldscape.shared.network.game.event.decoders.widget.WidgetButtonClickDecoder;
 import com.oldscape.shared.network.game.event.encoders.*;
 import com.oldscape.shared.network.game.event.impl.*;
 

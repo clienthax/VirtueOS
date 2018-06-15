@@ -31,20 +31,16 @@ import com.oldscape.shared.network.game.event.impl.CommandEvent;
  */
 public class CommandDecoder implements GameMessageDecoder<CommandEvent> {
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see
-     * com.oldscape.shared.network.game.event.GameMessageDecoder#decode(com.oldscape.server
-     * .shared.network.game.GameFrameReader)
-     */
     @Override
     public CommandEvent decode(GameFrameReader frame) {
         String string = frame.getString();
+
         String[] contents = string.split(" ");
         String syntax = contents[0];
         String[] params = new String[contents.length - 1];
+
         System.arraycopy(contents, 1, params, 0, params.length);
+
         return new CommandEvent(syntax, params);
     }
 

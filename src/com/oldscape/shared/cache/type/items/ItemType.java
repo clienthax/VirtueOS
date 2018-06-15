@@ -31,7 +31,6 @@ import java.util.Map;
 
 /**
  * @author Kyle Friz
- *
  * @since May 27, 2015
  */
 public class ItemType implements Type {

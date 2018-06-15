@@ -28,7 +28,6 @@ import java.nio.ByteBuffer;
 
 /**
  * @author Kyle Friz
- *
  * @since Jun 13, 2015
  */
 public class OverlayType implements Type {

@@ -1,5 +1,6 @@
 package com.oldscape.server.game.model.player.inv;
 
+import com.oldscape.server.game.model.item.Item;
 import com.oldscape.server.game.model.player.Player;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 

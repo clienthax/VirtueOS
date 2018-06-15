@@ -35,6 +35,7 @@ public final class VarpResetEventEncoder implements
     @Override
     public GameFrame encode(ByteBufAllocator alloc, LogoutEvent event) {
         GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.VARP_RESET, FrameType.FIXED);
+
         return builder.toGameFrame();
     }
 }

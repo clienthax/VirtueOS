@@ -35,7 +35,7 @@ import java.util.List;
 public class NpcSynchronizationEvent implements Event {
 
     /**
-     * The amount of local npcs.
+     * The amount of local npc.
      */
     private final int localNpcs;
 
@@ -57,12 +57,9 @@ public class NpcSynchronizationEvent implements Event {
     /**
      * Creates a new {@link NpcSynchronizationMessage}.
      *
-     * @param position
-     *            The position of the {@link Npc}.
-     * @param segments
-     *            The list of segments.
-     * @param localNpcs
-     *            The amount of local npcs.
+     * @param position  The position of the {@link Npc}.
+     * @param segments  The list of segments.
+     * @param localNpcs The amount of local npc.
      */
     public NpcSynchronizationEvent(Position position,
                                    List<SynchronizationSegment> segments, int localNpcs, boolean large) {
@@ -73,9 +70,9 @@ public class NpcSynchronizationEvent implements Event {
     }
 
     /**
-     * Gets the number of local npcs.
+     * Gets the number of local npc.
      *
-     * @return The number of local npcs.
+     * @return The number of local npc.
      */
     public int getLocalNpcCount() {
         return localNpcs;

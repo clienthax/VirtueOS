@@ -24,7 +24,6 @@ package com.oldscape.shared.script.listeners;
 import com.oldscape.server.game.model.player.Player;
 
 /**
- *
  * @author Kyle Friz
  * @author Kayla Friz
  * @since May 29, 2015
@@ -41,19 +40,13 @@ public interface WidgetListener {
     /**
      * Called whenever a player clicks a button on the widget
      *
-     * @param player
-     *            The player who clicked the button
-     * @param widgetId
-     *            The id of the widget clicked
-     * @param buttonId
-     *            The id of the button clicked
-     * @param itemId
-     *            The id of the item clicked, or 65535 if there was no item
-     * @param slotId
-     *            The slot within the component which was clicked, or 65535 if
-     *            the component has no slots
-     * @param option
-     *            The option selected. Ranges from 1 to 10
+     * @param player   The player who clicked the button
+     * @param widgetId The id of the widget clicked
+     * @param buttonId The id of the button clicked
+     * @param itemId   The id of the item clicked, or 65535 if there was no item
+     * @param slotId   The slot within the component which was clicked, or 65535 if
+     *                 the component has no slots
+     * @param option   The option selected. Ranges from 1 to 10
      * @return True if the interaction was handled, false otherwise
      */
     public boolean handle(Player player, int widgetId, int buttonId, int itemId, int slotId, int option);

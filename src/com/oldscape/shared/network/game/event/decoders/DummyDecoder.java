@@ -31,11 +31,6 @@ import com.oldscape.shared.network.game.event.impl.DummyEvent;
  */
 public class DummyDecoder implements GameMessageDecoder<DummyEvent> {
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see com.oldscape.shared.network.game.event.GameMessageDecoder#decode(com.oldscape.shared.network.game.GameFrameReader)
-     */
     @Override
     public DummyEvent decode(GameFrameReader frame) {
         return new DummyEvent();

@@ -45,7 +45,6 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class IdentkitTypeList implements TypeList<IdentkitType> {
@@ -54,9 +53,10 @@ public class IdentkitTypeList implements TypeList<IdentkitType> {
 
     private IdentkitType[] kits;
 
+    public int count = 0;
+
     @Override
     public void initialize(Cache cache) {
-        int count = 0;
         try {
             ReferenceTable table = cache.getReferenceTable(CacheIndex.CONFIGS);
             Entry entry = table.getEntry(ConfigArchive.IDENTKIT);
@@ -78,7 +78,7 @@ public class IdentkitTypeList implements TypeList<IdentkitType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading IdentkitType(s)!", e);
         }
-        logger.info("Loaded " + count + " IdentkitType(s)!");
+//        logger.info("Loaded " + count + " IdentkitType(s)!");
     }
 
     @Override

@@ -31,22 +31,22 @@ import com.oldscape.shared.event.Event;
  */
 public class SlottedItemsUpdateEvent implements Event {
 
-    private final int interfaceID;
-    private final int channelID;
+    private final int widgetId;
+    private final int channelId;
     private final SlottedItem[] items;
 
-    public SlottedItemsUpdateEvent(int id, int channel, SlottedItem... items) {
-        this.interfaceID = id;
-        this.channelID = channel;
+    public SlottedItemsUpdateEvent(int widgetId, int channelId, SlottedItem... items) {
+        this.widgetId = widgetId;
+        this.channelId = channelId;
         this.items = items;
     }
 
-    public int getInterfaceID() {
-        return interfaceID;
+    public int getWidgetId() {
+        return widgetId;
     }
 
-    public int getChannelID() {
-        return channelID;
+    public int getChannelId() {
+        return channelId;
     }
 
     public SlottedItem[] getItems() {

@@ -27,7 +27,6 @@ import java.nio.ByteBuffer;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class VarClientStringType implements Type {

@@ -61,9 +61,10 @@ import com.oldscape.shared.cache.type.varclientstrings.VarClientStringTypeList;
 import com.oldscape.shared.cache.type.varplayers.VarPlayerType;
 import com.oldscape.shared.cache.type.varplayers.VarPlayerTypeList;
 
+import java.util.logging.Logger;
+
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class TypeListManager {
@@ -87,6 +88,7 @@ public class TypeListManager {
     private static final StructTypeList struct = new StructTypeList();
     private static final HitMarkTypeList hitmark = new HitMarkTypeList();
     private static final HitBarTypeList hitbar = new HitBarTypeList();
+    private static Logger logger = Logger.getLogger(TypeListManager.class.getName());
 
     public static void initialize(Cache cache) {
         enm.initialize(cache);
@@ -108,6 +110,8 @@ public class TypeListManager {
         struct.initialize(cache);
         hitmark.initialize(cache);
         hitbar.initialize(cache);
+
+        logger.info("Loaded " + getAllTypeCount() + " Cache Type(s)!");
     }
 
     public static final int enumSize() {
@@ -282,6 +286,13 @@ public class TypeListManager {
         struct.print();
         hitmark.print();
         hitbar.print();
+    }
+
+    public static int getAllTypeCount() {
+        return item.count + ident.count + npc.count + varp.count + varbit.count + varc.count
+                + varcstr.count + under.count + over.count + enm.count + obj.count + spot.count
+                + seq.count + inv.count + area.count + param.count + struct.count + hitmark.count
+                + hitbar.count;
     }
 
 }

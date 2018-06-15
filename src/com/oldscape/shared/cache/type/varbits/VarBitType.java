@@ -28,7 +28,6 @@ import java.nio.ByteBuffer;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class VarBitType implements Type {

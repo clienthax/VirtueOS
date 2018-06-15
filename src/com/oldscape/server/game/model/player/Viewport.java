@@ -221,7 +221,7 @@ public class Viewport {
 
     /**
      * @param index the Index
-     * @param hash the Hash
+     * @param hash  the Hash
      * @return if they match
      */
     public boolean regionUpdate(int index, int hash) {
@@ -238,8 +238,9 @@ public class Viewport {
 
     /**
      * Sets the region hash
+     *
      * @param index the Index
-     * @param hash the Hash
+     * @param hash  the Hash
      */
     public void setRegionHash(int index, int hash) {
         regionHashes[index] = hash;

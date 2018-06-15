@@ -12,9 +12,11 @@ public class SkillEventEncoder implements GameMessageEncoder<SkillEvent> {
     @Override
     public GameFrame encode(ByteBufAllocator alloc, SkillEvent event) {
         GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.SKILL, FrameType.FIXED);
+
         builder.put(DataType.INT, DataOrder.LITTLE, event.getXp());
         builder.put(DataType.BYTE, DataTransformation.NEGATE, event.getId());
         builder.put(DataType.BYTE, DataTransformation.ADD, event.getLvl());
+
         return builder.toGameFrame();
     }
 

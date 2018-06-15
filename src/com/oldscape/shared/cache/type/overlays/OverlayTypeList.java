@@ -45,7 +45,6 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class OverlayTypeList implements TypeList<OverlayType> {
@@ -53,6 +52,8 @@ public class OverlayTypeList implements TypeList<OverlayType> {
     private Logger logger = Logger.getLogger(OverlayTypeList.class.getName());
 
     private OverlayType[] lays;
+
+    public int count = 0;
 
     @Override
     public void initialize(Cache cache) {
@@ -78,7 +79,7 @@ public class OverlayTypeList implements TypeList<OverlayType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading OverlayType(s)!", e);
         }
-        logger.info("Loaded " + count + " OverlayType(s)!");
+//        logger.info("Loaded " + count + " OverlayType(s)!");
     }
 
     @Override

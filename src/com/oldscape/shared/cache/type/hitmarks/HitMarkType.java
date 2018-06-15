@@ -27,7 +27,6 @@ import com.oldscape.shared.utility.ByteBufferUtils;
 import java.nio.ByteBuffer;
 
 /**
- *
  * Created by Kyle Fricilone on Jun 1, 2017.
  */
 public class HitMarkType implements Type {

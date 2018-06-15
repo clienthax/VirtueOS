@@ -23,7 +23,6 @@ public final class PlayerAdditionSegment extends SynchronizationSegment {
      * Creates the add player segment.
      *
      * @param blockSet The block set.
-     * @param index    The player's index.
      * @param position The position.
      */
     public PlayerAdditionSegment(SynchronizationBlockSet blockSet, Position position) {
@@ -37,8 +36,8 @@ public final class PlayerAdditionSegment extends SynchronizationSegment {
      * Creates the add player segment.
      *
      * @param blockSet The block set.
-     * @param index    The player's index.
      * @param position The position.
+     * @param regionHash The region.
      */
     public PlayerAdditionSegment(SynchronizationBlockSet blockSet, Position position, int regionHash) {
         super(blockSet);

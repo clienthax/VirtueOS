@@ -31,7 +31,6 @@ import java.util.Map;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class StructType implements Type {

@@ -50,14 +50,11 @@ public class RegionManager {
 
     public void initialize() {
         try {
-            // XTEAManager.loadFromRuneLite();
-
             for (File file : new File("repository/xtea/maps/").listFiles()) {
                 if (file.getName().endsWith(".txt")) {
                     List<Integer> keys = new ArrayList<Integer>();
                     Integer regionID = Integer.valueOf(file.getName().substring(0, file.getName().indexOf(".txt")));
 
-                    // int[] runeliteKeys = XTEAManager.lookupMap(regionID);
                     Files.lines(Paths.get(".").resolve("repository/xtea/maps/" + file.getName()))
                             .forEach((String line) -> {
                                 keys.add(Integer.valueOf(line));
@@ -74,19 +71,14 @@ public class RegionManager {
                     if (land != -1) {
                         try {
                             region.loadNodes(server.getCache().read(5, land, Ints.toArray(keys)).getData());
-                            /*
-                             * System.out.println("Correct xtea :( Coords: (" + ((regionID >> 8) << 6) +
-                             * ", " + ((regionID & 0xFF) << 6) + "), Region ID: " + regionID);
-                             */
                         } catch (Exception e) {
-                            System.out.println("Broken xtea :( Coords: (" + ((regionID >> 8) << 6) + ", "
-                                    + ((regionID & 0xFF) << 6) + "), Region ID: " + regionID);
+                            System.err.println("RegionManager: Broken Xtea: " + regionID);
                         }
                     }
                     regionLookup.put(regionID, new Region(regionID, keys));
                 }
             }
-            logger.info("Loaded " + regionLookup.size() + " Region(s).");
+            logger.info("Loaded " + regionLookup.size() + " Map Region(s).");
         } catch (Exception e) {
             e.printStackTrace();
         }

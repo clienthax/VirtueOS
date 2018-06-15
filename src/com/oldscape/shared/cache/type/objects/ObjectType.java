@@ -306,8 +306,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param retextureToFind
-     *            the retextureToFind to set
+     * @param retextureToFind the retextureToFind to set
      */
     public void setRetextureToFind(short[] retextureToFind) {
         this.retextureToFind = retextureToFind;
@@ -321,8 +320,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param anInt2069
-     *            the anInt2069 to set
+     * @param anInt2069 the anInt2069 to set
      */
     public void setAnInt2069(int anInt2069) {
         this.anInt2069 = anInt2069;
@@ -336,8 +334,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param isSolid
-     *            the isSolid to set
+     * @param isSolid the isSolid to set
      */
     public void setSolid(boolean isSolid) {
         this.isSolid = isSolid;
@@ -351,8 +348,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param name
-     *            the name to set
+     * @param name the name to set
      */
     public void setName(String name) {
         this.name = name;
@@ -366,8 +362,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param objectModels
-     *            the objectModels to set
+     * @param objectModels the objectModels to set
      */
     public void setObjectModels(int[] objectModels) {
         this.objectModels = objectModels;
@@ -381,8 +376,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param objectTypes
-     *            the objectTypes to set
+     * @param objectTypes the objectTypes to set
      */
     public void setObjectTypes(int[] objectTypes) {
         this.objectTypes = objectTypes;
@@ -396,8 +390,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param recolorToFind
-     *            the recolorToFind to set
+     * @param recolorToFind the recolorToFind to set
      */
     public void setRecolorToFind(short[] recolorToFind) {
         this.recolorToFind = recolorToFind;
@@ -411,8 +404,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param textureToReplace
-     *            the textureToReplace to set
+     * @param textureToReplace the textureToReplace to set
      */
     public void setTextureToReplace(short[] textureToReplace) {
         this.textureToReplace = textureToReplace;
@@ -426,8 +418,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param sizeX
-     *            the sizeX to set
+     * @param sizeX the sizeX to set
      */
     public void setSizeX(int sizeX) {
         this.sizeX = sizeX;
@@ -441,8 +432,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param sizeY
-     *            the sizeY to set
+     * @param sizeY the sizeY to set
      */
     public void setSizeY(int sizeY) {
         this.sizeY = sizeY;
@@ -456,8 +446,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param anInt2083
-     *            the anInt2083 to set
+     * @param anInt2083 the anInt2083 to set
      */
     public void setAnInt2083(int anInt2083) {
         this.anInt2083 = anInt2083;
@@ -471,8 +460,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param anIntArray2084
-     *            the anIntArray2084 to set
+     * @param anIntArray2084 the anIntArray2084 to set
      */
     public void setAnIntArray2084(int[] anIntArray2084) {
         this.anIntArray2084 = anIntArray2084;
@@ -486,8 +474,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param offsetX
-     *            the offsetX to set
+     * @param offsetX the offsetX to set
      */
     public void setOffsetX(int offsetX) {
         this.offsetX = offsetX;
@@ -501,8 +488,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param nonFlatShading
-     *            the nonFlatShading to set
+     * @param nonFlatShading the nonFlatShading to set
      */
     public void setNonFlatShading(boolean nonFlatShading) {
         this.nonFlatShading = nonFlatShading;
@@ -516,8 +502,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param anInt2088
-     *            the anInt2088 to set
+     * @param anInt2088 the anInt2088 to set
      */
     public void setAnInt2088(int anInt2088) {
         this.anInt2088 = anInt2088;
@@ -531,8 +516,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param animationID
-     *            the animationID to set
+     * @param animationID the animationID to set
      */
     public void setAnimationID(int animationID) {
         this.animationID = animationID;
@@ -546,8 +530,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param varpID
-     *            the varpID to set
+     * @param varpID the varpID to set
      */
     public void setVarpID(int varpID) {
         this.varpID = varpID;
@@ -561,8 +544,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param ambient
-     *            the ambient to set
+     * @param ambient the ambient to set
      */
     public void setAmbient(int ambient) {
         this.ambient = ambient;
@@ -576,8 +558,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param contrast
-     *            the contrast to set
+     * @param contrast the contrast to set
      */
     public void setContrast(int contrast) {
         this.contrast = contrast;
@@ -591,8 +572,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param actions
-     *            the actions to set
+     * @param actions the actions to set
      */
     public void setActions(String[] actions) {
         this.actions = actions;
@@ -606,8 +586,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param anInt2094
-     *            the anInt2094 to set
+     * @param anInt2094 the anInt2094 to set
      */
     public void setAnInt2094(int anInt2094) {
         this.anInt2094 = anInt2094;
@@ -621,8 +600,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param mapSceneID
-     *            the mapSceneID to set
+     * @param mapSceneID the mapSceneID to set
      */
     public void setMapSceneID(int mapSceneID) {
         this.mapSceneID = mapSceneID;
@@ -636,8 +614,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param recolorToReplace
-     *            the recolorToReplace to set
+     * @param recolorToReplace the recolorToReplace to set
      */
     public void setRecolorToReplace(short[] recolorToReplace) {
         this.recolorToReplace = recolorToReplace;
@@ -651,8 +628,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param aBool2097
-     *            the aBool2097 to set
+     * @param aBool2097 the aBool2097 to set
      */
     public void setaBool2097(boolean aBool2097) {
         this.aBool2097 = aBool2097;
@@ -666,8 +642,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param modelSizeX
-     *            the modelSizeX to set
+     * @param modelSizeX the modelSizeX to set
      */
     public void setModelSizeX(int modelSizeX) {
         this.modelSizeX = modelSizeX;
@@ -681,8 +656,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param modelSizeHeight
-     *            the modelSizeHeight to set
+     * @param modelSizeHeight the modelSizeHeight to set
      */
     public void setModelSizeHeight(int modelSizeHeight) {
         this.modelSizeHeight = modelSizeHeight;
@@ -696,8 +670,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param modelSizeY
-     *            the modelSizeY to set
+     * @param modelSizeY the modelSizeY to set
      */
     public void setModelSizeY(int modelSizeY) {
         this.modelSizeY = modelSizeY;
@@ -711,8 +684,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param objectID
-     *            the objectID to set
+     * @param objectID the objectID to set
      */
     public void setObjectID(int objectID) {
         this.objectID = objectID;
@@ -726,8 +698,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param offsetHeight
-     *            the offsetHeight to set
+     * @param offsetHeight the offsetHeight to set
      */
     public void setOffsetHeight(int offsetHeight) {
         this.offsetHeight = offsetHeight;
@@ -741,8 +712,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param offsetY
-     *            the offsetY to set
+     * @param offsetY the offsetY to set
      */
     public void setOffsetY(int offsetY) {
         this.offsetY = offsetY;
@@ -756,8 +726,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param aBool2104
-     *            the aBool2104 to set
+     * @param aBool2104 the aBool2104 to set
      */
     public void setaBool2104(boolean aBool2104) {
         this.aBool2104 = aBool2104;
@@ -771,8 +740,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param anInt2105
-     *            the anInt2105 to set
+     * @param anInt2105 the anInt2105 to set
      */
     public void setAnInt2105(int anInt2105) {
         this.anInt2105 = anInt2105;
@@ -786,8 +754,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param anInt2106
-     *            the anInt2106 to set
+     * @param anInt2106 the anInt2106 to set
      */
     public void setAnInt2106(int anInt2106) {
         this.anInt2106 = anInt2106;
@@ -801,8 +768,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param configChangeDest
-     *            the configChangeDest to set
+     * @param configChangeDest the configChangeDest to set
      */
     public void setConfigChangeDest(int[] configChangeDest) {
         this.configChangeDest = configChangeDest;
@@ -816,8 +782,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param aBool2108
-     *            the aBool2108 to set
+     * @param aBool2108 the aBool2108 to set
      */
     public void setaBool2108(boolean aBool2108) {
         this.aBool2108 = aBool2108;
@@ -831,8 +796,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param configId
-     *            the configId to set
+     * @param configId the configId to set
      */
     public void setConfigId(int configId) {
         this.configId = configId;
@@ -846,8 +810,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param anInt2110
-     *            the anInt2110 to set
+     * @param anInt2110 the anInt2110 to set
      */
     public void setAnInt2110(int anInt2110) {
         this.anInt2110 = anInt2110;
@@ -861,8 +824,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param aBool2111
-     *            the aBool2111 to set
+     * @param aBool2111 the aBool2111 to set
      */
     public void setaBool2111(boolean aBool2111) {
         this.aBool2111 = aBool2111;
@@ -876,8 +838,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param anInt2112
-     *            the anInt2112 to set
+     * @param anInt2112 the anInt2112 to set
      */
     public void setAnInt2112(int anInt2112) {
         this.anInt2112 = anInt2112;
@@ -891,8 +852,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param anInt2113
-     *            the anInt2113 to set
+     * @param anInt2113 the anInt2113 to set
      */
     public void setAnInt2113(int anInt2113) {
         this.anInt2113 = anInt2113;
@@ -906,8 +866,7 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @param aBool2114
-     *            the aBool2114 to set
+     * @param aBool2114 the aBool2114 to set
      */
     public void setaBool2114(boolean aBool2114) {
         this.aBool2114 = aBool2114;

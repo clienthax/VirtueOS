@@ -54,8 +54,7 @@ public final class ByteBufferUtils {
     /**
      * Calculates the CRC32 checksum of the specified buffer.
      *
-     * @param buffer
-     *            The buffer.
+     * @param buffer The buffer.
      * @return The CRC32 checksum.
      */
     public static int getCrcChecksum(ByteBuffer buffer) {
@@ -70,8 +69,7 @@ public final class ByteBufferUtils {
      * Gets a null-terminated string from the specified buffer, using a modified
      * ISO-8859-1 character set.
      *
-     * @param buf
-     *            The buffer.
+     * @param buf The buffer.
      * @return The decoded string.
      */
     public static String getString(ByteBuffer buf) {
@@ -96,8 +94,7 @@ public final class ByteBufferUtils {
      * Gets a null-terminated string from the specified buffer, using a modified
      * ISO-8859-1 character set.
      *
-     * @param buf
-     *            The buffer.
+     * @param buf The buffer.
      * @return The decoded string.
      */
     public static String getPrefixedString(ByteBuffer buf) {
@@ -111,8 +108,7 @@ public final class ByteBufferUtils {
      * Gets a char from the specified buffer, using a modified
      * ISO-8859-1 character set.
      *
-     * @param buf
-     *            The buffer.
+     * @param buf The buffer.
      * @return The decoded string.
      */
     @SuppressWarnings("unused")
@@ -133,8 +129,7 @@ public final class ByteBufferUtils {
     /**
      * Gets a unsigned smart from the buffer.
      *
-     * @param buffer
-     *            The buffer.
+     * @param buffer The buffer.
      * @return The value.
      */
     public static int getUnsignedSmart(ByteBuffer buf) {
@@ -148,8 +143,7 @@ public final class ByteBufferUtils {
     /**
      * Gets a signed smart from the buffer.
      *
-     * @param buf
-     *            The buffer.
+     * @param buf The buffer.
      * @return The value.
      */
     public static int getSignedSmart(ByteBuffer buf) {
@@ -163,8 +157,7 @@ public final class ByteBufferUtils {
     /**
      * Gets a smart integer from the buffer.
      *
-     * @param buffer
-     *            The buffer.
+     * @param buffer The buffer.
      * @return The value.
      */
     public static int getSmartInt(ByteBuffer buffer) {
@@ -176,8 +169,7 @@ public final class ByteBufferUtils {
     /**
      * Gets a small smart integer from the buffer.
      *
-     * @param buffer
-     *            The buffer.
+     * @param buffer The buffer.
      * @return The value.
      */
     public static int getSmallSmartInt(ByteBuffer buffer) {
@@ -191,8 +183,7 @@ public final class ByteBufferUtils {
     /**
      * Reads a 'tri-byte' from the specified buffer.
      *
-     * @param buf
-     *            The buffer.
+     * @param buf The buffer.
      * @return The value.
      */
     public static int getMedium(ByteBuffer buf) {
@@ -202,8 +193,7 @@ public final class ByteBufferUtils {
     /**
      * Calculates the whirlpool digest of the specified buffer.
      *
-     * @param buf
-     *            The buffer.
+     * @param buf The buffer.
      * @return The 64-byte whirlpool digest.
      */
     public static byte[] getWhirlpoolDigest(ByteBuffer buf) {
@@ -215,10 +205,8 @@ public final class ByteBufferUtils {
     /**
      * Writes a 'tri-byte' to the specified buffer.
      *
-     * @param buf
-     *            The buffer.
-     * @param value
-     *            The value.
+     * @param buf   The buffer.
+     * @param value The value.
      */
     public static void putMedium(ByteBuffer buf, int value) {
         buf.put((byte) (value >> 16));
@@ -231,8 +219,7 @@ public final class ByteBufferUtils {
      * formatted similarly to the output of the {@link Arrays#toString()}
      * method.
      *
-     * @param buffer
-     *            The buffer.
+     * @param buffer The buffer.
      * @return The string.
      */
     public static String toString(ByteBuffer buffer) {
@@ -253,6 +240,7 @@ public final class ByteBufferUtils {
 
     /**
      * Puts a 317 format String into the buffer
+     *
      * @param buffer
      * @param val
      */
@@ -263,6 +251,7 @@ public final class ByteBufferUtils {
 
     /**
      * Clones a bytebuffer
+     *
      * @param original
      * @return
      */

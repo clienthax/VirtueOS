@@ -18,7 +18,6 @@ public final class GameEventEncoder extends MessageToMessageEncoder<Event> {
 
     /**
      * Creates a new {@link GameEventEncoder}.
-     *
      * @param repository The {@link com.oldscape.shared.network.game.event.GameEventRepository}.
      */
     public GameEventEncoder(GameEventRepository repository) {

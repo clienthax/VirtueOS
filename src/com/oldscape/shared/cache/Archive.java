@@ -43,8 +43,7 @@ public class Archive {
     /**
      * Creates a new archive.
      *
-     * @param size
-     *            The number of entries in the archive.
+     * @param size The number of entries in the archive.
      */
     public Archive(int size) {
         this.entries = new ByteBuffer[size];
@@ -53,10 +52,8 @@ public class Archive {
     /**
      * Decodes the specified {@link ByteBuffer} into an {@link Archive}.
      *
-     * @param buffer
-     *            The buffer.
-     * @param size
-     *            The size of the archive.
+     * @param buffer The buffer.
+     * @param size   The size of the archive.
      * @return The decoded {@link Archive}.
      */
     public static Archive decode(ByteBuffer buffer, int size) {
@@ -118,13 +115,12 @@ public class Archive {
 
     /**
      * Encodes this {@link Archive} into a {@link ByteBuffer}.
-     * <p />
+     * <p/>
      * Please note that this is a fairly simple implementation that does not attempt
      * to use more than one chunk.
      *
      * @return An encoded {@link ByteBuffer}.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @throws IOException if an I/O error occurs.
      */
     public ByteBuffer encode() throws IOException { // TODO: an implementation
         // that can use more than
@@ -175,8 +171,7 @@ public class Archive {
     /**
      * Gets the entry with the specified id.
      *
-     * @param id
-     *            The id.
+     * @param id The id.
      * @return The entry.
      */
     public ByteBuffer getEntry(int id) {
@@ -186,10 +181,8 @@ public class Archive {
     /**
      * Inserts/replaces the entry with the specified id.
      *
-     * @param id
-     *            The id.
-     * @param buffer
-     *            The entry.
+     * @param id     The id.
+     * @param buffer The entry.
      */
     public void putEntry(int id, ByteBuffer buffer) {
         entries[id] = buffer;

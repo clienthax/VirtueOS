@@ -22,7 +22,6 @@
 package com.oldscape.shared.utility;
 
 /**
- *
  * Created by Kyle Fricilone on Jun 15, 2017.
  */
 public class Preconditions {

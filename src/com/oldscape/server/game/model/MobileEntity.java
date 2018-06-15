@@ -24,9 +24,7 @@ public abstract class MobileEntity extends Node {
     protected final WalkingQueue walkingQueue = new WalkingQueue(this);
 
     //3250 3423 --varock east
-    //3222 3222 --lumby
-    protected int X = 3250;
-    protected int Y = 3423;
+    protected int X = 3222, Y = 3222;
 
     protected Position position = new Position(X, Y, 0, Position.RegionSize.DEFAULT);
 

@@ -45,7 +45,6 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 26, 2015
  */
 public class AreaTypeList implements TypeList<AreaType> {
@@ -54,9 +53,10 @@ public class AreaTypeList implements TypeList<AreaType> {
 
     private AreaType[] areas;
 
+    public int count = 0;
+
     @Override
     public void initialize(Cache cache) {
-        int count = 0;
         try {
             ReferenceTable table = cache.getReferenceTable(CacheIndex.CONFIGS);
             Entry entry = table.getEntry(ConfigArchive.AREA);
@@ -78,7 +78,7 @@ public class AreaTypeList implements TypeList<AreaType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading AreaType(s)!", e);
         }
-        logger.info("Loaded " + count + " AreaType(s)!");
+//        logger.info("Loaded " + count + " AreaType(s)!");
     }
 
     @Override

@@ -14,8 +14,8 @@ public class SyncUtils {
     private static final Map<SegmentType, SynchronizationDescriptor> pDescriptors = new HashMap<>();
     private static final Map<SegmentType, SynchronizationDescriptor> nDescriptors = new HashMap<>();
 
-    private static final List<SynchronizationBlockEncoder> pBlocks = new ArrayList<>(12);
-    private static final List<SynchronizationBlockEncoder> nBlocks = new ArrayList<>(8);
+    private static final List<SynchronizationBlockEncoder> pBlocks = new ArrayList<>(12); // 13
+    private static final List<SynchronizationBlockEncoder> nBlocks = new ArrayList<>(7); // 8
 
     private static final byte[] DIRECTION_DELTA_X = new byte[]{-1, 0, 1, -1, 1, -1, 0, 1};
     private static final byte[] DIRECTION_DELTA_Y = new byte[]{-1, -1, -1, 0, 0, 1, 1, 1};
@@ -40,7 +40,7 @@ public class SyncUtils {
         pBlocks.add(new ForceChatBlockEncoder());
         pBlocks.add(new InteractingMobBlockEncoder());
         pBlocks.add(new OrientationBlockEncoder());
-//        pBlocks.add(new HitUpdateBlockEncoder());// TODO: add, updated HItUpdateBlock.
+        pBlocks.add(new HitUpdateBlockEncoder());// TODO: add, updated HItUpdateBlock.
         pBlocks.add(new ContextMenuBlockEncoder());// TODO: finish, needs implementing.
         pBlocks.add(new AnimationBlockEncoder());
         pBlocks.add(new GraphicBlockEncoder());

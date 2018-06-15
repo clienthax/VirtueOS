@@ -86,8 +86,7 @@ public class ReferenceTable {
      * Decodes the slave checksum table contained in the specified
      * {@link ByteBuffer}.
      *
-     * @param buffer
-     *            The buffer.
+     * @param buffer The buffer.
      * @return The slave checksum table.
      */
     public static ReferenceTable decode(ByteBuffer buffer) {
@@ -216,14 +215,11 @@ public class ReferenceTable {
     /**
      * Puts a smart integer into the stream.
      *
-     * @param os
-     *            The stream.
-     * @param value
-     *            The value.
-     * @throws IOException
-     *             The exception thrown if an i/o error occurs.
-     *
-     *             Credits to Graham for this method.
+     * @param os    The stream.
+     * @param value The value.
+     * @throws IOException The exception thrown if an i/o error occurs.
+     *                     <p>
+     *                     Credits to Graham for this method.
      */
     public static void putSmartInt(DataOutputStream os, int value) throws IOException {
         if ((value & 0xFFFF) < 32768)
@@ -235,12 +231,9 @@ public class ReferenceTable {
     /**
      * Puts the data into a certain type by the format id.
      *
-     * @param val
-     *            The value to put into the buffer.
-     * @param os
-     *            The stream.
-     * @throws IOException
-     *             The exception thrown if an i/o error occurs.
+     * @param val The value to put into the buffer.
+     * @param os  The stream.
+     * @throws IOException The exception thrown if an i/o error occurs.
      */
     public void putSmartFormat(int val, DataOutputStream os) throws IOException {
         if (format >= 7)
@@ -265,8 +258,7 @@ public class ReferenceTable {
      * Encodes this {@link ReferenceTable} into a {@link ByteBuffer}.
      *
      * @return The {@link ByteBuffer}.
-     * @throws IOException
-     *             if an I/O error occurs.
+     * @throws IOException if an I/O error occurs.
      */
     public ByteBuffer encode() throws IOException {
         /*
@@ -372,8 +364,7 @@ public class ReferenceTable {
     /**
      * Gets the entry with the specified id, or {@code null} if it does not exist.
      *
-     * @param id
-     *            The id.
+     * @param id The id.
      * @return The entry.
      */
     public Entry getEntry(int id) {
@@ -383,8 +374,7 @@ public class ReferenceTable {
     /**
      * Gets the entry with the specified id, or {@code null} if it does not exist.
      *
-     * @param id
-     *            The id.
+     * @param id The id.
      * @return The entry.
      */
     public Entry getEntry(ConfigArchive archive) {
@@ -395,10 +385,8 @@ public class ReferenceTable {
      * Gets the child entry with the specified id, or {@code null} if it does not
      * exist.
      *
-     * @param id
-     *            The parent id.
-     * @param child
-     *            The child id.
+     * @param id    The parent id.
+     * @param child The child id.
      * @return The entry.
      */
     public ChildEntry getEntry(int id, int child) {
@@ -421,8 +409,7 @@ public class ReferenceTable {
     /**
      * Sets the flags of this table.
      *
-     * @param flags
-     *            The flags.
+     * @param flags The flags.
      */
     public void setFlags(int flags) {
         this.flags = flags;
@@ -440,8 +427,7 @@ public class ReferenceTable {
     /**
      * Sets the format of this table.
      *
-     * @param format
-     *            The format.
+     * @param format The format.
      */
     public void setFormat(int format) {
         this.format = format;
@@ -459,8 +445,7 @@ public class ReferenceTable {
     /**
      * Sets the version of this table.
      *
-     * @param version
-     *            The version.
+     * @param version The version.
      */
     public void setVersion(int version) {
         this.version = version;
@@ -469,10 +454,8 @@ public class ReferenceTable {
     /**
      * Replaces or inserts the entry with the specified id.
      *
-     * @param id
-     *            The id.
-     * @param entry
-     *            The entry.
+     * @param id    The id.
+     * @param entry The entry.
      */
     public void putEntry(int id, Entry entry) {
         entries.put(id, entry);
@@ -481,8 +464,7 @@ public class ReferenceTable {
     /**
      * Removes the entry with the specified id.
      *
-     * @param id
-     *            The id.
+     * @param id The id.
      */
     public void removeEntry(int id) {
         entries.remove(id);
@@ -564,8 +546,7 @@ public class ReferenceTable {
         /**
          * Sets the identifier of this entry.
          *
-         * @param identifier
-         *            The identifier.
+         * @param identifier The identifier.
          */
         public void setIdentifier(int identifier) {
             this.identifier = identifier;
@@ -659,8 +640,7 @@ public class ReferenceTable {
         /**
          * Sets the CRC32 checksum of this entry.
          *
-         * @param crc
-         *            The CRC32 checksum.
+         * @param crc The CRC32 checksum.
          */
         public void setCrc(int crc) {
             this.crc = crc;
@@ -669,8 +649,7 @@ public class ReferenceTable {
         /**
          * Gets the child entry with the specified id.
          *
-         * @param id
-         *            The id.
+         * @param id The id.
          * @return The entry, or {@code null} if it does not exist.
          */
         public ChildEntry getEntry(int id) {
@@ -689,8 +668,7 @@ public class ReferenceTable {
         /**
          * Sets the identifier of this entry.
          *
-         * @param identifier
-         *            The identifier.
+         * @param identifier The identifier.
          */
         public void setIdentifier(int identifier) {
             this.identifier = identifier;
@@ -708,8 +686,7 @@ public class ReferenceTable {
         /**
          * Sets the version of this entry.
          *
-         * @param version
-         *            The version.
+         * @param version The version.
          */
         public void setVersion(int version) {
             this.version = version;
@@ -754,10 +731,8 @@ public class ReferenceTable {
         /**
          * Sets the whirlpool digest of this entry.
          *
-         * @param whirlpool
-         *            The whirlpool digest.
-         * @throws IllegalArgumentException
-         *             if the digest is not 64 bytes long.
+         * @param whirlpool The whirlpool digest.
+         * @throws IllegalArgumentException if the digest is not 64 bytes long.
          */
         public void setWhirlpool(byte[] whirlpool) {
             if (whirlpool.length != 64)
@@ -769,10 +744,8 @@ public class ReferenceTable {
         /**
          * Replaces or inserts the child entry with the specified id.
          *
-         * @param id
-         *            The id.
-         * @param entry
-         *            The entry.
+         * @param id    The id.
+         * @param entry The entry.
          */
         public void putEntry(int id, ChildEntry entry) {
             entries.put(id, entry);
@@ -781,8 +754,7 @@ public class ReferenceTable {
         /**
          * Removes the entry with the specified id.
          *
-         * @param id
-         *            The id.
+         * @param id The id.
          */
         public void removeEntry(int id) {
             entries.remove(id);

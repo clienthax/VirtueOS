@@ -25,7 +25,6 @@ import com.oldscape.server.game.model.player.Player;
 import com.oldscape.shared.model.player.Permission;
 
 /**
- *
  * @author Kyle Friz
  * @author Kayla Friz
  * @since May 29, 2015
@@ -35,12 +34,9 @@ public interface CommandListener {
     /**
      * Called when this command is executed.
      *
-     * @param syntax
-     *            The syntax of the command.
-     * @param player
-     *            The player.
-     * @param args
-     *            The arguments
+     * @param syntax The syntax of the command.
+     * @param player The player.
+     * @param args   The arguments
      * @return True if the command was handled, false otherwise
      */
     boolean handle(Player player, String syntax, String[] args);

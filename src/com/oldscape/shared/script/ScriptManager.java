@@ -22,8 +22,9 @@
 package com.oldscape.shared.script;
 
 import com.oldscape.shared.script.listeners.CommandListener;
-import com.oldscape.shared.script.listeners.WidgetListener;
 import com.oldscape.shared.script.listeners.LocationListener;
+import com.oldscape.shared.script.listeners.NpcListener;
+import com.oldscape.shared.script.listeners.WidgetListener;
 import com.oldscape.shared.utility.FileUtils;
 
 import javax.script.Invocable;
@@ -45,10 +46,14 @@ import java.util.logging.Logger;
 public class ScriptManager {
 
     private Logger logger = Logger.getLogger(ScriptManager.class.getName());
+
     private Map<String, CommandListener> commandListeners = new HashMap<>();
-    private Map<Integer, WidgetListener> interfaceListeners = new HashMap<>();
+
+    private Map<Integer, WidgetListener> widgetListeners = new HashMap<>();
 
     private Map<Integer, LocationListener> locationListeners = new HashMap<>();
+
+    private Map<Integer, NpcListener> npcListeners = new HashMap<>();
 
     public void initialize() {
         ScriptEngineManager engineManager = new ScriptEngineManager();
@@ -63,8 +68,13 @@ public class ScriptManager {
                 e.printStackTrace();
             }
         });
-        logger.info("Loaded " + commandListeners.size() + " CommandListener(s), " + interfaceListeners.size()
-                + " WidgetListener(s).");
+
+        logger.info("Loaded " +
+                (commandListeners.size() +
+                locationListeners.size() +
+                widgetListeners.size() +
+                npcListeners.size()) +
+                " Nashorn Script(s).");
     }
 
     public void setCommandListener(CommandListener listener, String... syntaxes) {
@@ -77,14 +87,14 @@ public class ScriptManager {
         return commandListeners.get(syntax);
     }
 
-    public void setInterfaceListener(WidgetListener listener, Integer... ids) {
+    public void setWidgetListener(WidgetListener listener, Integer... ids) {
         Arrays.stream(ids).forEach((Integer id) -> {
-            interfaceListeners.put(id, listener);
+            widgetListeners.put(id, listener);
         });
     }
 
     public WidgetListener forWidget(Integer id) {
-        return interfaceListeners.get(id);
+        return widgetListeners.get(id);
     }
 
     public void setLocationListener(LocationListener listener, Integer... ids) {
@@ -95,6 +105,16 @@ public class ScriptManager {
 
     public LocationListener forLocation(Integer id) {
         return locationListeners.get(id);
+    }
+
+    public void setNpcListener(NpcListener listener, Integer... ids) {
+        Arrays.stream(ids).forEach((Integer id) -> {
+            npcListeners.put(id, listener);
+        });
+    }
+
+    public NpcListener forNpc(Integer id) {
+        return npcListeners.get(id);
     }
 
 }

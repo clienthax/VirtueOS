@@ -45,7 +45,6 @@ import java.util.logging.Logger;
 
 /**
  * @author Kyle Friz
- *
  * @since May 27, 2015
  */
 public class ItemTypeList implements TypeList<ItemType> {
@@ -54,9 +53,10 @@ public class ItemTypeList implements TypeList<ItemType> {
 
     private Logger logger = Logger.getLogger(ItemTypeList.class.getName());
 
+    public int count = 0;
+
     @Override
     public void initialize(Cache cache) {
-        int count = 0;
         try {
             ReferenceTable table = cache.getReferenceTable(CacheIndex.CONFIGS);
             Entry entry = table.getEntry(ConfigArchive.ITEM);
@@ -78,7 +78,7 @@ public class ItemTypeList implements TypeList<ItemType> {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error Loading ItemType(s)!", e);
         }
-        logger.info("Loaded " + count + " ItemType(s)!");
+//        logger.info("Loaded " + count + " ItemType(s)!");
     }
 
     @Override

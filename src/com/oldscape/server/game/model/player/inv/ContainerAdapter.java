@@ -1,5 +1,7 @@
 package com.oldscape.server.game.model.player.inv;
 
+import com.oldscape.server.game.model.item.Item;
+
 /**
  * An adapter for the {@link ContainerListener}.
  *

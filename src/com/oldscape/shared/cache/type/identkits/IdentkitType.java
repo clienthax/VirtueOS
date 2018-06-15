@@ -27,7 +27,6 @@ import java.nio.ByteBuffer;
 
 /**
  * @author Kyle Friz
- *
  * @since Jun 11, 2015
  */
 public class IdentkitType implements Type {
