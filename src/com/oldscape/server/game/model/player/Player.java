@@ -9,6 +9,7 @@ import com.oldscape.server.game.model.player.inv.ItemContainer.StackMode;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.reference.Appearance;
 import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
+import com.oldscape.server.game.model.widget.WidgetId;
 import com.oldscape.server.game.network.game.GameSessionContext;
 import com.oldscape.shared.event.Event;
 import com.oldscape.shared.model.MessageType;
@@ -119,20 +120,19 @@ public class Player extends MobileEntity {
         this.bankTabItems = bankTabItems;
     }
 
-    // its possible the region packet is out of date, in osrs it also calls for
-    // player updating, if it is the same try just sending them both at once,
-    // but if its not
-
     /**
      * Initializes the {@link com.oldscape.shared.model.Node}.
      */
     @Override
     public void initialize() {
         setRegion(sessionContext.getServer().getRegionManager().lookup(position.getRegionID()));
+
         equipment.addListener(new SynchronizationContainerListener(this, ContainerConstants.EQUIPMENT_ID, ContainerConstants.EQUIPMENT_CHANNEL));
         equipment.addListener(new AppearanceContainerListener(this));
+
         inventory.addListener(new SynchronizationContainerListener(this, ContainerConstants.INVENTORY_ID, ContainerConstants.INVENTORY_CHANNEL));
         inventory.addListener(new FullContainerListener(this, ContainerConstants.FULL_INVENTORY_MESSAGE));
+
         bank.addListener(new SynchronizationContainerListener(this, ContainerConstants.BANK_ID, ContainerConstants.BANK_CHANNEL));// TODO
         bank.addListener(new FullContainerListener(this, ContainerConstants.FULL_BANK_MESSAGE));
     }
@@ -150,483 +150,149 @@ public class Player extends MobileEntity {
 
         sendExternalIP(credentials.getLastKnownIpAddress());
 
-        //TODO figure out the varps etc
-		/*
-		sendSetWidgetText(378, 14, "Never tell anyone your password, even if they claim to work for Jagex!");
-		sendSetWidgetText(378, 15, "You have 0 unread messages in your message centre.");
-		sendSetWidgetText(378, 18, "You are not a member. Subscribe to access extra skills, areas and quests, and much<br>more besides.");
-		sendSetWidgetText(378, 20, "A membership subscription grants access to the members-only features of both versions of RuneScape.");
-		sendSetWidgetText(378, 21, "Keep your account secure.");
-		sendSetWidgetText(378, 13, "You last logged in <col=ff0000>earlier today<col=000000>.");
-		sendSetWidgetText(378, 16, "You do not have a Bank PIN. Please visit a bank if you would like one.");
-		sendSetWidgetText(50, 3, "Organise your teleport scrolls in the new <col=6f007f>Master Scroll Book</col> available from treasure trails. Also you can now recolour <col=003fbf>rock golems</col> with lovekite, elemental or daeyalt ore!");
-		sendSetWidgetText(593, 1, "Unarmed");
-		sendSetWidgetText(593, 2, "Combat Lvl: 3");
-		sendSetWidgetText(239, 5, "AUTO");
-
-		sendSetRootWidget(165);
-		
-		sendOpenWidgetSub(165, 1, 162, true);
-		sendOpenWidgetSub(165, 8, 593, true);
-		sendOpenWidgetSub(165, 9, 320, true);
-		sendOpenWidgetSub(165, 10, 76, true);
-		sendOpenWidgetSub(165, 11, 149, true);
-		sendOpenWidgetSub(165, 12, 387, true);
-		sendOpenWidgetSub(165, 13, 541, true);
-		sendOpenWidgetSub(165, 14, 218, true);
-		sendOpenWidgetSub(165, 15, 7, true);
-		sendOpenWidgetSub(165, 16, 429, true);
-		sendOpenWidgetSub(165, 17, 432, true);
-		sendOpenWidgetSub(165, 18, 182, true);
-		sendOpenWidgetSub(165, 19, 261, true);
-		sendOpenWidgetSub(165, 20, 216, true);
-		sendOpenWidgetSub(165, 21, 239, true);
-		sendOpenWidgetSub(165, 23, 163, true);
-		sendOpenWidgetSub(165, 24, 160, true);
-		sendOpenWidgetSub(165, 28, 50, false);//50 = theme
-		sendOpenWidgetSub(165, 29, 378, false);
-		
-		sendCS2Script(233, new Object[] { 3276804, 33179, 0, 0, 468, 1897, 0, 392, -1});
-		sendCS2Script(233, new Object[] { 3276805, 33194, 0, 56, 54, 74, 0, 660, -1});
-		
-		sendWidgetSetClickMask(216, 1, 0, 46, 2);
-		sendWidgetSetClickMask(239, 1, 0, 535, 2);
-
-		sendVarp(18, 1);
-		sendVarp(20, 131072);
-		sendVarp(21, 67141632);
-		sendVarp(22, 33554432);
-		sendVarp(23, 2097216);
-		sendVarp(43, 1);
-		sendVarp(101, 0);
-		sendVarp(153, -1);
-		sendVarp(166, 2);
-		sendVarp(167, 0);
-		sendVarp(168, 4);
-		sendVarp(169, 4);
-		sendVarp(170, 0);
-		sendVarp(171, 0);
-		sendVarp(173, 1);
-		sendVarp(281, 1000);
-		sendVarp(284, 60001);
-		sendVarp(287, 0);
-		sendVarp(300, 1000);
-		sendVarp(406, 20);
-		sendVarp(447, -1);
-		sendVarp(449, 2097152);
-		sendVarp(486, 1073741824);
-		sendVarp(520, 1);
-		sendVarp(553, -2147483648);
-		sendVarp(788, 128);
-		sendVarp(810, 33554432);
-		sendVarp(849, -1);
-		sendVarp(850, -1);
-		sendVarp(851, -1);
-		sendVarp(852, -1);
-		sendVarp(853, -1);
-		sendVarp(854, -1);
-		sendVarp(855, -1);
-		sendVarp(856, -1);
-		sendVarp(872, 4);
-		sendVarp(904, 253);
-		sendVarp(913, 4194304);
-		sendVarp(1010, 2048);
-		sendVarp(1017, 8192);
-		sendVarp(1050, 4096);
-		sendVarp(1065, -1);
-		sendVarp(1067, -1302855680);
-		sendVarp(1074, 0);
-		sendVarp(1075, -1);
-		sendVarp(1107, 0);
-		sendVarp(1151, -1);
-		sendVarp(1224, 172395585);
-		sendVarp(1225, 379887846);
-		sendVarp(1226, 12);
-		sendVarp(1306, 0);
-		sendVarp(1427, -1);
-
-		sendMessage("Welcome to Unnamed #155.");
-
-		// sendSetWidgetText(12, 4, "Bank of Unnamed #149.");
-
-		// sendSkill(0, 99, 200000000);
-		// sendSkill(1, 99, 200000000);
-		// sendSkill(2, 99, 200000000);
-		// sendSkill(3, 99, 200000000);
-		// sendSkill(4, 99, 200000000);
-		// sendSkill(5, 99, 200000000);
-		// sendSkill(6, 99, 200000000);
-		// sendSkill(7, 99, 200000000);
-		// sendSkill(8, 99, 200000000);
-		// sendSkill(9, 99, 200000000);
-		// sendSkill(10, 99, 200000000);
-		// sendSkill(11, 99, 200000000);
-		// sendSkill(12, 99, 200000000);
-		// sendSkill(13, 99, 200000000);
-		// sendSkill(14, 99, 200000000);
-		// sendSkill(15, 99, 200000000);
-		// sendSkill(16, 99, 200000000);
-		// sendSkill(17, 99, 200000000);
-		// sendSkill(18, 99, 200000000);
-		// sendSkill(19, 99, 200000000);
-		// sendSkill(20, 99, 200000000);
-		// sendSkill(21, 99, 200000000);
-		// sendSkill(22, 99, 200000000);
-		// sendSkill(23, 99, 200000000);
-		// sendSkill(24, 99, 200000000);
-		//
-		// sendRunEnergy(100);
-		//
-		// sendMusic(177);
-		//todo
-		*/
-
-
-		/*
-		sendSetWidgetText(378, 14, "Never tell anyone your password, even if they claim to work for Jagex!");
-		sendSetWidgetText(378, 15, "You have 0 unread messages in your message centre");
-		sendSetWidgetText(378, 18, "You are not a member Subscribe to access extra skills, areas and quests, and much<br>more besides");
-		sendSetWidgetText(378, 20, "A membership subscription grants access to the members-only features of both versions of RuneScape");
-		sendSetWidgetText(378, 21, "Keep your account secure");
-		sendSetWidgetText(378, 13, "You last logged in <col=ff0000>earlier today<col=000000>");
-		sendSetWidgetText(378, 16, "You do not have a Bank PIN Please visit a bank if you would like one");
-		sendSetRootWidget(165);
-		sendOpenWidgetSub(165, 1, 162, true);
-		sendOpenWidgetSub(165, 23, 163, true);
-		sendOpenWidgetSub(165, 24, 160, true);
-		//sendOpenWidgetSub(165, 29, 378, false);//heh, seems to be missing on 168
-
-		int loginTheme = 50;
-
-		sendOpenWidgetSub(165, 28, loginTheme, false);
-		sendSetWidgetText(50, 3, "Once you've had a <col=cfcfcf>graceful set</col> repainted <col=2f2fff>blue</col> in <col=4f2f1f>Brimhaven</col>,<br>you can get <col=003600>individual pieces</col> repainted<br>Next week, <col=9f005f>Halloween</col>!");
-		sendCS2Script(233, new Object[] {3276804, 7085, 0, 0, 434, 1912, 0, 400, -1});
-		sendCS2Script(233, new Object[] {3276805, 32817, 0, 100, 93, 179, 0, 800, 820});
-		sendCS2Script(1080, new Object[] {});
-		sendOpenWidgetSub(165, 9, 320, true);
-		sendOpenWidgetSub(165, 10, 399, true);
-		sendOpenWidgetSub(165, 11, 149, true);
-		sendOpenWidgetSub(165, 12, 387, true);
-		sendOpenWidgetSub(165, 13, 541, true);
-		sendOpenWidgetSub(165, 14, 218, true);
-		sendOpenWidgetSub(165, 16, 429, true);
-		sendOpenWidgetSub(165, 17, 432, true);
-		sendOpenWidgetSub(165, 18, 182, true);
-		sendOpenWidgetSub(165, 19, 261, true);
-		sendOpenWidgetSub(165, 20, 216, true);
-		sendOpenWidgetSub(165, 21, 239, true);
-		sendOpenWidgetSub(165, 15, 7, true);
-		sendOpenWidgetSub(165, 8, 593, true);
-		sendSetWidgetText(593, 1, "Unarmed");
-		sendSetWidgetText(593, 2, "Combat Lvl: 126");
-		sendSetWidgetText(239, 5, "AUTO");
-		sendCS2Script(2014, new Object[] {0, 0, 0, 0, 0, 0});
-		sendCS2Script(2015, new Object[] {0});
-		sendVarp(18, 1);
-		sendVarp(20, 131072);
-		sendVarp(21, 67141632);
-		sendVarp(22, 33554432);
-		sendVarp(23, 2097216);
-		sendVarp(43, 1);
-		sendVarp(101, 0);
-		sendVarp(153, -1);
-		sendVarp(166, 2);
-		sendVarp(167, 0);
-		sendVarp(168, 4);
-		sendVarp(169, 4);
-		sendVarp(170, 0);
-		sendVarp(171, 0);
-		sendVarp(173, 1);
-		sendVarp(281, 1000);
-		sendVarp(284, 60001);
-		sendVarp(287, 0);
-		sendVarp(300, 1000);
-		sendVarp(406, 20);
-		sendVarp(447, -1);
-		sendVarp(449, 2097152);
-		sendVarp(486, 1073741824);
-		sendVarp(520, 1);
-		sendVarp(553, -2147483648);
-		sendVarp(788, 128);
-		sendVarp(810, 33554432);
-		sendVarp(849, -1);
-		sendVarp(850, -1);
-		sendVarp(851, -1);
-		sendVarp(852, -1);
-		sendVarp(853, -1);
-		sendVarp(854, -1);
-		sendVarp(855, -1);
-		sendVarp(856, -1);
-		sendVarp(872, 4);
-		sendVarp(904, 253);
-		sendVarp(913, 4194304);
-		sendVarp(1010, 2048);
-		sendVarp(1017, 8192);
-		sendVarp(1050, 4096);
-		sendVarp(1065, -1);
-		sendVarp(1067, -1302855680);
-		sendVarp(1074, 0);
-		sendVarp(1075, -1);
-		sendVarp(1107, 0);
-		sendVarp(1151, -1);
-		sendVarp(1224, 172395585);
-		sendVarp(1225, 379887846);
-		sendVarp(1226, 12);
-		sendVarp(1306, 0);
-		sendVarp(1427, -1);
-		*/
-
         sendVarpReset();
 
-        sendVarp(0, 11);
-        sendVarp(11, 5);
-        sendVarp(12, 16);
-        sendVarp(18, 1);
-        sendVarp(19, 1);
-        sendVarp(20, 1543450431);
-        sendVarp(21, -1632247826);
-        sendVarp(22, 2011150318);
-        sendVarp(23, -1895859086);
-        sendVarp(24, -2078508105);
-        sendVarp(25, -101577798);
-        sendVarp(26, 10);
-        sendVarp(29, 2);
-        sendVarp(31, 100);
-        sendVarp(32, 3);
-        sendVarp(43, 3);
-        sendVarp(60, 1);
-        sendVarp(62, 6);
-        sendVarp(63, 6);
-        sendVarp(65, 10);
-        sendVarp(67, 3);
-        sendVarp(68, 16);
-        sendVarp(71, 4);
-        sendVarp(80, 4);
-        sendVarp(84, 4608);
-        sendVarp(101, 87);
-        sendVarp(107, 5);
-        sendVarp(111, 9);
-        sendVarp(122, 7);
-        sendVarp(130, 4);
-        sendVarp(131, 9);
-        sendVarp(135, 994);
-        sendVarp(144, 100);
-        sendVarp(146, 4);
-        sendVarp(147, 6);
-        sendVarp(153, -1);
-        sendVarp(159, 12);
-        sendVarp(160, 2);
-        sendVarp(165, 30);
-        sendVarp(166, 4);
-        sendVarp(167, 0);
-        sendVarp(168, 3);
-        sendVarp(169, 3);
-        sendVarp(170, 0);
-        sendVarp(171, 0);
-        sendVarp(173, 1);
-        sendVarp(175, 12);
-        sendVarp(176, 10);
-        sendVarp(177, 8257604);
-        sendVarp(178, 3);
-        sendVarp(179, 21);
-        sendVarp(180, 6);
-        sendVarp(222, 22437955);
-        sendVarp(263, 17);
-        sendVarp(273, 110);
-        sendVarp(279, 97060);
-        sendVarp(281, 1000);
-        sendVarp(284, 60001);
-        sendVarp(287, 1);
-        sendVarp(298, 11207152);
-        sendVarp(300, 1000);
-        sendVarp(302, 61);
-        sendVarp(304, 20000);
-        sendVarp(307, 110);
-        sendVarp(311, 285215680);
-        sendVarp(313, 128);
-        sendVarp(314, 80);
-        sendVarp(317, 50);
-        sendVarp(318, 536870975);
-        sendVarp(320, 1);
-        sendVarp(335, 110);
-        sendVarp(346, 41602207);
-        sendVarp(399, 8);
-        sendVarp(406, 20);
-        sendVarp(408, -2017034368);
-        sendVarp(414, 1885798414);
-        sendVarp(425, 9);
-        sendVarp(433, 2019844462);
-        sendVarp(435, 693532);
-        sendVarp(436, 855699855);
-        sendVarp(447, -1);
-        sendVarp(449, 2097152);
-        sendVarp(464, 1078001915);
-        sendVarp(482, 388268466);
-        sendVarp(486, 1073741824);
-        sendVarp(491, 1073799168);
-        sendVarp(492, 4);
-        sendVarp(496, 15958018);
-        sendVarp(498, 67108864);
-        sendVarp(520, 1);
-        sendVarp(521, -208678004);
-        sendVarp(531, 1697);
-        sendVarp(534, 153391689);
-        sendVarp(553, -764476036);
-        sendVarp(554, 1609826303);
-        sendVarp(598, 98560);
-        sendVarp(623, 1073741824);
-        sendVarp(661, 12);
-        sendVarp(662, 410517755);
-        sendVarp(664, -1);
-        sendVarp(667, 42);
-        sendVarp(671, 20971610);
-        sendVarp(673, 2);
-        sendVarp(709, -2139095027);
-        sendVarp(710, 31783);
-        sendVarp(711, 3000);
-        sendVarp(712, 23);
-        sendVarp(721, 2048);
-        sendVarp(728, 6);
-        sendVarp(738, 201337889);
-        sendVarp(788, 128);
-        sendVarp(802, 527);
-        sendVarp(810, 33554432);
-        sendVarp(842, 1);
-        sendVarp(843, 9);
-        sendVarp(849, -1);
-        sendVarp(850, -1);
-        sendVarp(851, -1);
-        sendVarp(852, -1);
-        sendVarp(853, -1);
-        sendVarp(854, -1);
-        sendVarp(855, -1);
-        sendVarp(856, -1);
-        sendVarp(867, 44065803);
-        sendVarp(872, 3);
-        sendVarp(904, 263);
-        sendVarp(906, 135267484);
-        sendVarp(912, 35528);
-        sendVarp(913, 8213268);
-        sendVarp(977, 1362);
-        sendVarp(978, 130023424);
-        sendVarp(1000, 1342186021);
-        sendVarp(1001, 1073741826);
-        sendVarp(1009, 262660);
-        sendVarp(1010, 6242);
-        sendVarp(1011, 1086079);
-        sendVarp(1014, 1073741822);
-        sendVarp(1017, 8192);
-        sendVarp(1045, 809048064);
-        sendVarp(1046, 1073741824);
-        sendVarp(1047, 6144);
-        sendVarp(1048, 64);
-        sendVarp(1050, 4096);
-        sendVarp(1052, 28320781);
-        sendVarp(1053, 43002886);
-        sendVarp(1054, 2);
-        sendVarp(1055, 267264);
-        sendVarp(1065, -1);
-        sendVarp(1067, -1204289536);
-        sendVarp(1074, 1);
-        sendVarp(1075, -1);
-        sendVarp(1105, 10);
-        sendVarp(1107, 0);
-        sendVarp(1111, 1);
-        sendVarp(1112, 4);
-        sendVarp(1151, -1);
-        sendVarp(1176, 536739838);
-        sendVarp(1178, 33687616);
-        sendVarp(1180, 2621632);
-        sendVarp(1182, 8192);
-        sendVarp(1184, 1049088);
-        sendVarp(1186, 33817279);
-        sendVarp(1188, -1073740801);
-        sendVarp(1190, 3145728);
-        sendVarp(1192, 67108864);
-        sendVarp(1194, 139298);
-        sendVarp(1196, 65536);
-        sendVarp(1198, 2064);
-        sendVarp(1224, 172395585);
-        sendVarp(1225, 379887846);
-        sendVarp(1226, 12);
-        sendVarp(1227, -1665138688);
-        sendVarp(1238, 11000);
-        sendVarp(1247, 119737);
-        sendVarp(1262, 13363);
-        sendVarp(1271, 166636);
-        sendVarp(1306, 0);
-        sendVarp(1317, -2147483648);
-        sendVarp(1427, -1);
-        sendVarp(1429, 30720);
-        sendVarp(1535, 134221703);
-        sendVarp(1566, 1);
-        sendVarp(1677, 16384);
-        sendVarp(1683, -1);
-        sendVarp(1706, 2);
-        sendVarp(1719, 1048595);
-        sendVarp(1720, 2621442);
-        sendVarp(1721, 2228241);
-        sendVarp(1722, 2228258);
-        sendVarp(1723, 16777438);
-        sendVarp(1724, 16);
-        sendVarp(1725, 866423);
+        sendCameraReset();
 
-        sendCS2Script(828, new Object[]{1});
+        // Login Screen.
+        sendSetWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 56, "Welcome to Virtue");
+        sendSetWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 57, "You last logged in <col=ff0000>earlier today</col>.");
+        sendSetWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 61, "Never tell anyone your password,<br>even if they claim to work for Jagex!");
+        sendSetWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 70, "You do not have a Bank PIN.<br>Please visit a bank if you would like one.");
 
-        sendSetWidgetText(378, 70, "You do not have a Bank PIN.<br>Please visit a bank if you would like one.");
-        sendSetWidgetText(378, 3, "Delve into the history of <col=ff0000>Shayzien House</col> and uncover a conspiracy a thousand years in the making in our new quest, <col=ffff00>Tale of the Righteous</col>.");
-        sendCS2Script(233, new Object[]{24772660, 30685, 0, 120, 94, 110, 0, 1800, -1});
-        sendCS2Script(233, new Object[]{24772661, 16356, 0, 190, 0, 122, 0, 3000, -1});
+        // Login Screen: Message of the Week Panel.
+        sendSetWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 2, "Message of the week");
+        sendSetWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 3, "Join our Official <col=7289DA>Discord</col> server to chat live with like-minded Developers, <col=6a97a5>Rune-Status.net</col>.");
+        sendCS2Script(233, 24772660, 30685, 0, 120, 94, 110, 0, 1800, -1);
+        sendCS2Script(233, 24772661, 16356, 0, 190, 0, 122, 0, 3000, -1);
+        sendCS2Script(1080, "https://Rune-Status.net/discord/");
 
+        // Login Screen: Messages Panel.
+        // TODO: Implement this.
+        int unreadMessages = 100;
+        sendVarp(262, unreadMessages); //Messages;
 
-        sendSetRootWidget(165);
-        sendCS2Script(1105, new Object[]{1});
-        sendOpenWidgetSub(165, 1, 162, true);
-        sendOpenWidgetSub(165, 23, 163, true);
-        sendOpenWidgetSub(165, 24, 160, true);
-        sendOpenWidgetSub(165, 27, 378, false);
-        sendCS2Script(1080, new Object[]{});
-        //resetCamera();
-        sendOpenWidgetSub(165, 9, 320, true);
-        sendOpenWidgetSub(165, 10, 399, true);
-        sendWidgetSetClickMask(399, 7, 0, 19, 2);
-        sendWidgetSetClickMask(399, 8, 0, 116, 2);
-        sendWidgetSetClickMask(399, 9, 0, 11, 2);
-        sendOpenWidgetSub(165, 11, 149, true);
-        sendOpenWidgetSub(165, 12, 387, true);
-        sendOpenWidgetSub(165, 13, 541, true);
-        sendOpenWidgetSub(165, 14, 218, true);
-        sendOpenWidgetSub(165, 16, 429, true);
-        sendOpenWidgetSub(165, 17, 432, true);
-        sendOpenWidgetSub(165, 18, 182, true);
-        sendOpenWidgetSub(165, 19, 261, true);
-        sendWidgetSetClickMask(261, 85, 1, 4, 2);
-        sendWidgetSetClickMask(261, 86, 1, 4, 2);
-        sendOpenWidgetSub(165, 20, 216, true);
-        sendWidgetSetClickMask(216, 1, 0, 47, 2);
-        sendOpenWidgetSub(165, 21, 239, true);
-        sendWidgetSetClickMask(239, 1, 0, 556, 6);
-        sendOpenWidgetSub(165, 15, 7, true);
-        sendOpenWidgetSub(165, 8, 593, true);
-        sendSetWidgetText(593, 1, "Rune scimitar");
-        sendSetWidgetText(593, 2, "Combat Lvl: 57");
+        // Login Screen: Membership Panel.
+        // TODO: Implement this.
+        int membershipRemaining = 30;
+        sendVarp(263, membershipRemaining);
+        boolean wasMember = true;
+        if (wasMember) {
+            sendCS2Script(828, 1);
+        } else {
+            sendCS2Script(828, 0);
+        }
 
-        sendSetWidgetText(239, 5, "AUTO");
-        sendOpenWidgetSub(165, 24, 160, true);
+        // Game Frame.
+        sendSetRootWidget(WidgetId.GAMEFRAME_GROUP_ID);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 1, WidgetId.CHATBOX_GROUP_ID, true);
+        // 2 - 7 = Nothing.
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 8, WidgetId.COMBAT_GROUP_ID, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 9, WidgetId.STATS_GROUP_ID, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 10, WidgetId.QUEST_GROUP_ID, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 11, WidgetId.INVENTORY_GROUP_ID, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 12, WidgetId.EQUIPMENT_GROUP_ID, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 13, WidgetId.PRAYER_GROUP_ID, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 14, WidgetId.MAGIC_GROUP_ID, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 15, WidgetId.CLAN_CHAT_GROUP_ID, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 16, WidgetId.FRIENDS_LIST_GROUP_ID, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 17, WidgetId.IGNORE_LIST_GROUP_ID, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 18, WidgetId.LOGOUT_PANEL_ID, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 19, WidgetId.SETTINGS_PANEL_GROUP_ID, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 20, WidgetId.EMOTES_GROUP_ID, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 21, WidgetId.MUSIC_PANEL_ID, true);
+        // 22 = Nothing.
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 23, WidgetId.PRIVATE_CHAT, true);
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 24, WidgetId.MINIMAP_GROUP_ID, true);
+        // 25, 26 = Nothing.
+        sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 27, WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, false);
+        // 28 = Nothing.
 
-        for (int i = 0; i < 25; i++)
-            sendSkill(i, 99, 200000000);
+        // Emote Panel.
+        sendVarp(313, -1); // Unlock Emotes.
+        sendVarp(465, -1); // Unlock Emotes: Lost Tribe Quest. (also Status)
+        sendVarp(802, -1); // Unlock Emotes: Stronghold of Security.
+        sendWidgetSetClickMask(WidgetId.EMOTES_GROUP_ID, 1, 0, 47, 2); // Emote List.
 
-        sendVarp(375, 8);
-        sendCS2Script(2014, new Object[]{0, 0, 0, 0, 0, 0});
-        sendCS2Script(2015, new Object[]{0});
-        sendVarp(1055, 267264);
+        // Settings Panel.
+        // TODO: Implement these.
+        sendVarp(166, 4); // Display: Screen Brightness.
+        sendVarp(168, 0); // Audio: Music Volume.
+        sendVarp(169, 0); // Audio: Sound Effect Volume.
+        sendVarp(170, 0); // Controls: Mouse Buttons.
+        sendVarp(171, 0); // Chat: Chat Effects.
+        sendVarp(173, 1); // Run.
+        sendVarp(287, 1); // Chat: Split Private Chat.
+        sendVarp(872, 0); // Audio: Area Sound Effect Volume.
+        sendVarp(1074, 1); // Chat: Profanity Filter.
 
+        // TODO: Figure out what each of these do.
+        sendWidgetSetClickMask(WidgetId.SETTINGS_PANEL_GROUP_ID, 85, 1, 4, 2);
+        sendWidgetSetClickMask(WidgetId.SETTINGS_PANEL_GROUP_ID, 86, 1, 4, 2);
+
+        // Quest Panel.
+        sendVarp(101, 0); // Quest Points.
+        sendWidgetSetClickMask(WidgetId.QUEST_GROUP_ID, 7, 0, 19, 2); // Free List.
+        sendWidgetSetClickMask(WidgetId.QUEST_GROUP_ID, 8, 0, 116, 2); // Members List.
+        sendWidgetSetClickMask(WidgetId.QUEST_GROUP_ID, 9, 0, 11, 2); // Miniquest List.
+
+        // Music Panel.
+        // TODO: Implement this.
+        sendMusic(1);
+        sendVarp(19, 1); // Loop switch.
+        sendVarp(18, 1); // Auto/Manual Switch.
+        sendVarp(20, -1); // First 32 Tracks unlocked,
+        sendVarp(21, -1); // +32 Tracks,
+        sendVarp(22, -1); // +32 Tracks,
+        sendVarp(23, -1); // +32 Tracks,
+        sendVarp(24, -1); // +32 Tracks,
+        sendVarp(25, -1); // +32 Tracks,
+        sendVarp(298, -1); // +32 Tracks,
+        sendVarp(311, -1); // +32 Tracks,
+        sendVarp(346, -1); // +32 Tracks,
+        sendVarp(414, -1); // +32 Tracks,
+        sendVarp(464, -1); // +32 Tracks,
+        sendVarp(598, -1); // +32 Tracks,
+        sendVarp(662, -1); // +32 Tracks,
+        sendVarp(721, -1); // +32 Tracks,
+        sendVarp(906, -1); // +32 Tracks,
+        sendVarp(1009, -1); // +32 Tracks,
+        sendVarp(1338, -1); // +32 Tracks,
+        sendVarp(1681, -1); // +20 Tracks.
+        sendSetWidgetText(WidgetId.MUSIC_PANEL_ID, 5, "AUTO"); // FIXME: This is wrong?
+        sendWidgetSetClickMask(WidgetId.MUSIC_PANEL_ID, 1, 0, 556, 6); // Track List.
+
+        // Combat Panel.
+        // TODO: Implement this.
+        sendVarp(43, 0); // Attack Style Selection.
+        sendVarp(172, -1);// Auto Retaliate
+        sendVarp(843, 0); // Weapon Style Group.
+        sendSetWidgetText(WidgetId.COMBAT_GROUP_ID, 1, "Unarmed");
+        sendSetWidgetText(WidgetId.COMBAT_GROUP_ID, 2, "Combat Lvl: " + 3);
+
+        // Chatbox Panel: Check Display Name.
+        sendVarp(1054, 0); // Clan Tab Setting.
+        // TODO: Implement this.
+        boolean hasSetDisplayName = true;
+        if (hasSetDisplayName) {
+            sendCS2Script(1105, 1);
+        } else {
+            sendCS2Script(1105, 0);
+        }
+
+        // Minimap Panel.
+        sendRunEnergy(100);
+        sendVarp(300, 1000); // Special Attack Amount.
+
+        // Stats Panel.
+        sendSkill(3, 10, 1154);
+        for (int i = 0; i < 25; i++) {
+            if (i != 3) {
+                sendSkill(i, 1, 0);
+            }
+        }
 
         sendMessage("Welcome to VirtueOS #168!");
-        sendRunEnergy(100);
-        sendMusic(1);
-
 
         addBlock(SynchronizationBlock.createAppearanceBlock(this));
         addBlock(SynchronizationBlock.createMovementTypeBlock(walkingQueue.runningQueue(), isTeleporting()));
@@ -642,7 +308,6 @@ public class Player extends MobileEntity {
      */
     public void onDisconnection() {
         Server server = sessionContext.getServer();
-
         server.getSaveService().addPlayerSave(this);
     }
 
@@ -675,11 +340,10 @@ public class Player extends MobileEntity {
     }
 
     public void sendSetRootWidget(int interfaceId) {
-        write(new SetRootWigetEvent(interfaceId));
+        write(new WidgetSetRootEvent(interfaceId));
     }
 
     public void sendCS2Script(int id, Object... params) {
-        // TODO Temp Fix. params are encoded/decoded backwards.
         write(new CS2ScriptEvent(id, Lists.reverse(Arrays.asList(params)).toArray()));
     }
 
@@ -696,7 +360,7 @@ public class Player extends MobileEntity {
     }
 
     public void sendExternalIP(String ip) {
-        //Not in 168 O_o
+        // FIXME: Does this not exist in revision 168?
         //write(new ExternalIPEvent(ip));
     }
 
@@ -718,6 +382,10 @@ public class Player extends MobileEntity {
 
     public void sendRunEnergy(int amt) {
         write(new RunEnergyEvent(amt));
+    }
+
+    public void sendCameraReset() {
+        write(new CameraResetEvent());
     }
 
     public void sendVarpReset() {

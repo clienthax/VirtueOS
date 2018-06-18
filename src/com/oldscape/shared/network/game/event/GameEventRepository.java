@@ -47,7 +47,7 @@ public final class GameEventRepository {
      */
     public GameEventRepository(Server server) {
         addMessageEncoder(RegionUpdateEvent.class, new RegionUpdateEventEncoder(server));
-        addMessageEncoder(SetRootWigetEvent.class, new SetRootWidgetEncoder());
+        addMessageEncoder(WidgetSetRootEvent.class, new WidgetSetRootEventEncoder());
         addMessageEncoder(VarpEvent.class, new VarpEventEncoder());
         addMessageEncoder(WidgetOpenSubEvent.class, new WidgetOpenSubEventEncoder());
         addMessageEncoder(WidgetSetClickMaskEvent.class, new WidgetSetClickMaskEventEncoder());

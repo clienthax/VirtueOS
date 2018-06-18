@@ -9,6 +9,12 @@ package com.oldscape.server.game.model.widget;
  */
 public class WidgetId {
 
+    public static final int GAMEFRAME_GROUP_ID = 165;
+    public static final int SETTINGS_PANEL_GROUP_ID = 261;
+    public static final int IGNORE_LIST_GROUP_ID = 432;
+    public static final int MAGIC_GROUP_ID = 218;
+    public static final int QUEST_GROUP_ID = 399;
+    public static final int STATS_GROUP_ID = 320;
     public static final int FAIRY_RING_CODE_GROUP_ID = 381;
     public static final int FAIRY_RING_GROUP_ID = 398;
     public static final int LOGOUT_PANEL_ID = 182;

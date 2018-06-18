@@ -1160,9 +1160,13 @@ public final class Client extends GameEngine implements class302 {
                                         var80 = false;
                                         ++field920;
                                     }
+                                    System.out.println("var51 " + var51);
+                                    System.out.println("field1139[var51] " + field1139[var51]);
+                                    System.out.println("xteaKeys[var51]" + class152.xteaKeys[var51]);
                                 } catch (final Exception e) {
-                                    System.out.println("Wrong xtea for " + var51);
-                                    //Missing xtea 3:
+//                                    System.out.println("var51 " + var51);
+//                                    System.out.println("field1139[var51] " + field1139[var51]);
+//                                    System.out.println("xteaKeys[var51]" + class152.xteaKeys[var51]);
                                 }
                             }
                         }

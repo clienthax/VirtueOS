@@ -2,11 +2,6 @@ package com.oldscape.server.game.model.sync.segment;
 
 import com.oldscape.shared.model.Position;
 
-/**
- * A {@link SynchronizationSegment} which removes a npc.
- *
- * @author Graham
- */
 public final class RegionHashSegment extends SynchronizationSegment {
 
     /**
@@ -16,9 +11,6 @@ public final class RegionHashSegment extends SynchronizationSegment {
 
     private final int regionHash;
 
-    /**
-     * Creates the remove npc segment.
-     */
     public RegionHashSegment(Position position, int regionHash) {
         super(EMPTY_BLOCK_SET);
         this.position = position;

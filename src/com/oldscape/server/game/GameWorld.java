@@ -65,7 +65,7 @@ public final class GameWorld {
     public void registerPlayer(Player player) {
 
         //TODO move to config
-        npcs.add(npc = new Npc(394, player.getPosition().getX() + 1, player.getPosition().getY() + 1));
+//        npcs.add(npc = new Npc(394, player.getPosition().getX() + 1, player.getPosition().getY() + 1));
         synchronized (players) {
             players.add(player);
         }

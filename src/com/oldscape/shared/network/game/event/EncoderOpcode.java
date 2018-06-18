@@ -35,6 +35,8 @@ public enum EncoderOpcode {
     //Doesnt seem to be in 168? task is not present 3:
     EXTERN_IP(0),//193
 
+    CAMERA_RESET(64),
+
     //Interfaces
     IF_SET_SCROLL_POS(2),
     IF_MOVE_SUB(8),
@@ -52,7 +54,8 @@ public enum EncoderOpcode {
     IF_ROOT(66),
     IF_SET_POSITION(67),
     IF_SET_HIDDEN(68),
-    IF_UNKNOWN(83),//TODO -- it sets toplevel interfaces, adds sub interfaces and sets click masks - polar -- IF_PREBUILD_TOP_LEVEL
+    //TODO -- it sets toplevel interfaces, adds sub interfaces and sets click masks
+    IF_PREBUILD_TOP_LEVEL(83),
 
     CS2_SCRIPT(74),
 

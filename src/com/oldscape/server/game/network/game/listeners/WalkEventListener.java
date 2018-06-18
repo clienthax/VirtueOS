@@ -33,22 +33,14 @@ import com.oldscape.shared.network.game.event.impl.WalkEvent;
  */
 public class WalkEventListener implements EventListener<WalkEvent, GameSessionContext> {
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see
-     * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.Event,
-     * com.oldscape.shared.event.EventContext)
-     */
     @Override
     public void onEvent(WalkEvent event, GameSessionContext context) {
         Player player = context.getPlayer();
 
-        /* Close any open Interfaces */
-        // TODO: add a check for any widget not including Gameframe.
+        /* Close any open Interfaces */ // TODO: add a check for any widget not including Gameframe.
         player.sendCloseWidgetSub(548, 22);
 
-        if (event.getType() == 0) {
+        if (event.getType() != 3) {
             player.getWalkingQueue().clear();
             player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()), context.getServer().getRegionManager());
         } else {

@@ -35,7 +35,7 @@ public final class LoginSessionContext extends SessionEventContext {
         Response response = Response.LOGIN_CONTINUE;
 
         ByteBuf buffer = channel.alloc().buffer(9).writeByte(response.getResponse()).writeLong((long) (Math.random() * Long.MAX_VALUE));
-        ChannelFuture future = channel.writeAndFlush(buffer, channel.voidPromise()); // ok try now
+        ChannelFuture future = channel.writeAndFlush(buffer, channel.voidPromise());
         if (response != Response.LOGIN_CONTINUE) {
             future.addListener(ChannelFutureListener.CLOSE);
         }

@@ -5,7 +5,7 @@ import com.oldscape.shared.event.Event;
 /**
  * @author Sean
  */
-public final class SetRootWigetEvent implements Event {
+public final class WidgetSetRootEvent implements Event {
 
     /**
      * The id of the root interface.
@@ -24,12 +24,12 @@ public final class SetRootWigetEvent implements Event {
 
     /**
      * Creates a new
-     * {@link SetRootWigetEvent}.
+     * {@link WidgetSetRootEvent}.
      *
      * @param id  The id of the root interface.
      * @param key The xtea key.
      */
-    public SetRootWigetEvent(int id, int[] key, boolean clickThrough) {
+    public WidgetSetRootEvent(int id, int[] key, boolean clickThrough) {
         this.widgetId = id;
         this.key = key;
         this.clickThrough = clickThrough;
@@ -37,24 +37,24 @@ public final class SetRootWigetEvent implements Event {
 
     /**
      * Creates a new
-     * {@link SetRootWigetEvent} with
+     * {@link WidgetSetRootEvent} with
      * no xtea key.
      *
      * @param id           The root interface id.
      * @param clickThrough Can the interface be clicked through.
      */
-    public SetRootWigetEvent(int id, boolean clickThrough) {
+    public WidgetSetRootEvent(int id, boolean clickThrough) {
         this(id, new int[4], clickThrough);
     }
 
     /**
      * Creates a new
-     * {@link SetRootWigetEvent} with
+     * {@link WidgetSetRootEvent} with
      * no xtea key and without the ability to be clicked through.
      *
      * @param id The root interface id.
      */
-    public SetRootWigetEvent(int id) {
+    public WidgetSetRootEvent(int id) {
         this(id, false);
     }
 

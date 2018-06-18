@@ -26,14 +26,14 @@ import com.oldscape.shared.network.game.GameFrame;
 import com.oldscape.shared.network.game.GameFrameBuilder;
 import com.oldscape.shared.network.game.event.EncoderOpcode;
 import com.oldscape.shared.network.game.event.GameMessageEncoder;
-import com.oldscape.shared.network.game.event.impl.LogoutEvent;
+import com.oldscape.shared.network.game.event.impl.VarpResetEvent;
 import io.netty.buffer.ByteBufAllocator;
 
 public final class VarpResetEventEncoder implements
-        GameMessageEncoder<LogoutEvent> {
+        GameMessageEncoder<VarpResetEvent> {
 
     @Override
-    public GameFrame encode(ByteBufAllocator alloc, LogoutEvent event) {
+    public GameFrame encode(ByteBufAllocator alloc, VarpResetEvent event) {
         GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.VARP_RESET, FrameType.FIXED);
 
         return builder.toGameFrame();

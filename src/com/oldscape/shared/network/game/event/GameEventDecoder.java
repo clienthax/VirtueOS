@@ -33,12 +33,12 @@ public final class GameEventDecoder extends MessageToMessageDecoder<GameFrame> {
         GameMessageDecoder<Event> decoder = (GameMessageDecoder<Event>) repository.getMessageDecoder(msg.getOpcode());
 
         if (decoder == null) {
-            System.err.println("No Decoder for: " + msg.getOpcode() + ", " + msg.getPayload().readableBytes());
+            System.err.println("GameEventDecoder: No decoder for the opcode " + msg.getOpcode() + " with a size of " + msg.getPayload().readableBytes() + " bytes.");
 
             new GameFrameReader(msg).getBytes(new byte[msg.getPayload().readableBytes()]);
             return;
         } else {
-//            System.err.println("Decoder for: " + msg.getOpcode() + ", " + msg.getPayload().readableBytes()+" "+decoder.getClass().getCanonicalName());
+//            System.err.println("GameEventDecoder: Decoder for the opcode " + msg.getOpcode() + " with a size of " + msg.getPayload().readableBytes()+ " bytes, " + decoder.getClass().getCanonicalName());
         }
         out.add(decoder.decode(new GameFrameReader(msg)));
     }

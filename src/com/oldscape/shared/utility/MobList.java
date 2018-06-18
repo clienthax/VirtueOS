@@ -34,7 +34,6 @@ public final class MobList<T extends Node> extends AbstractList<T> implements It
         return false;
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public T get(int index) {
         if (index < 0 || index > mobs.length)
@@ -101,7 +100,6 @@ public final class MobList<T extends Node> extends AbstractList<T> implements It
             return false;
         }
 
-        @SuppressWarnings("unchecked")
         @Override
         public T next() {
             for (; index < mobs.length; index++) {

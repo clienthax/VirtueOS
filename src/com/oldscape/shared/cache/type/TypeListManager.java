@@ -88,6 +88,7 @@ public class TypeListManager {
     private static final StructTypeList struct = new StructTypeList();
     private static final HitMarkTypeList hitmark = new HitMarkTypeList();
     private static final HitBarTypeList hitbar = new HitBarTypeList();
+
     private static Logger logger = Logger.getLogger(TypeListManager.class.getName());
 
     public static void initialize(Cache cache) {

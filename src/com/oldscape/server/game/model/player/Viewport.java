@@ -48,28 +48,28 @@ public class Viewport {
     /**
      * The player's list of local players.
      */
-    private final Player[] localPlayers = new Player[2048];
+    private final Player[] localPlayers = new Player[GameWorld.MAXIMUM_PLAYERS];
 
     /**
      * Represents an array of players' indices within the current player's view
      */
-    private final int[] localPlayersIndexes = new int[2048];
+    private final int[] localPlayersIndexes = new int[GameWorld.MAXIMUM_PLAYERS];
     /**
      * Represents an array of players outside the current player's view
      */
-    private final int[] outPlayersIndexes = new int[2048];
+    private final int[] outPlayersIndexes = new int[GameWorld.MAXIMUM_PLAYERS];
     /**
      * Represents an array of region hashes
      */
-    private final int[] regionHashes = new int[2048];
+    private final int[] regionHashes = new int[GameWorld.MAXIMUM_PLAYERS];
     /**
      * Represents an array
      */
-    private final byte[] slotFlags = new byte[2048];
+    private final byte[] slotFlags = new byte[GameWorld.MAXIMUM_PLAYERS];
     /**
      * Represents the movement types of all active players
      */
-    private final byte[] movementTypes = new byte[2048];
+    private final byte[] movementTypes = new byte[GameWorld.MAXIMUM_PLAYERS];
     /**
      * Represents if the player has a large scene radius
      */
@@ -135,7 +135,7 @@ public class Viewport {
         localPlayersIndexesCount = 0;
         outPlayersIndexesCount = 0;
         localAddedPlayers = 0;
-        for (int playerIndex = 1; playerIndex < 2048; playerIndex++) {
+        for (int playerIndex = 1; playerIndex < GameWorld.MAXIMUM_PLAYERS; playerIndex++) {
             slotFlags[playerIndex] >>= 1;
             Player player = localPlayers[playerIndex];
             if (player == null) {
@@ -176,7 +176,7 @@ public class Viewport {
     }
 
     /**
-     * @param playerIndex
+     * @param index
      * @return
      */
     public Player getLocalPlayer(int index) {
@@ -185,7 +185,7 @@ public class Viewport {
 
     /**
      * @param index
-     * @param object
+     * @param player
      */
     public void setLocalPlayer(int index, Player player) {
         localPlayers[index] = player;
