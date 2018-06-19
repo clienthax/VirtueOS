@@ -804,6 +804,7 @@ public final class PacketBuffer extends Buffer {
                                                 if (var15 && DynamicObject.method2021(GroundObject.getWidgetClickMask(var21), var3 - 1)) {
                                                     PacketNode var12;
                                                     if (var3 == 1) {
+                                                        String str="";
                                                         var12 = WorldMapRectangle.method280(ClientPacket.BUTTON_ACTION_1, Client.field957.field1484);
                                                         var12.packetBuffer.putInt(var1);
                                                         var12.packetBuffer.putShort(var0);

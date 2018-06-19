@@ -51,7 +51,7 @@ public class GameApplet extends JFrame implements AppletStub {
 
     public GameApplet() throws Exception {
         super("VirtueOS - OSRS Private Server");
-        setPreferredSize(new Dimension(783, 545));
+        setPreferredSize(new Dimension(783, 543));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         URLClassLoader loader = (URLClassLoader) ClassLoader.getSystemClassLoader();
         Class<?> urlClass = URLClassLoader.class;

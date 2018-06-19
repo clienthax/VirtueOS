@@ -36,6 +36,10 @@ import com.oldscape.shared.script.listeners.WidgetListener;
 
 public class WidgetActionEventListener implements EventListener<WidgetActionEvent, GameSessionContext> {
 
+    /**
+     * TODO: THIS IS NOT IMPLEMENTED.
+     */
+
     @Override
     public void onEvent(WidgetActionEvent event, GameSessionContext context) {
         Player player = context.getPlayer();
@@ -45,12 +49,6 @@ public class WidgetActionEventListener implements EventListener<WidgetActionEven
         if (listener != null) {
             listener.handle(context.getPlayer(), event.getWidgetId(), event.getButtonId(), event.getItemId(), event.getSlotId(), event.getOpcode());
         }
-
-        // FIXME: Move to sperate scripts
-        // TODO: Seems this is all handled via the buttonclicks now
-
-        System.out.println("INTERFACE_CLICK_EVENT  opcode: " + event.getOpcode() + ", index: " + event.getWidgetId() + ", button: " + event.getButtonId() + ", item: " + event.getItemId() + ", slot: " + event.getSlotId());
-
 
         if (event.getWidgetId() == WidgetId.LOGOUT_PANEL_ID
                 && event.getButtonId() == WidgetId.LogoutPanel.WORLD_SWITCHER_BUTTON) {// TODO
@@ -158,7 +156,6 @@ public class WidgetActionEventListener implements EventListener<WidgetActionEven
             player.sendCS2Script(764, new Object[]{97, 0, ""});
             player.sendCS2Script(764, new Object[]{98, 0, ""});
             player.sendCS2Script(764, new Object[]{99, 0, ""});
-            player.sendVarp(477, 0);
             player.sendVarp(477, 0);
             player.sendCS2Script(748, new Object[]{});
         }
@@ -274,68 +271,6 @@ public class WidgetActionEventListener implements EventListener<WidgetActionEven
                 || event.getWidgetId() == 160 && event.getButtonId() == 21) {
             context.getPlayer().getWalkingQueue().flipRunningQueue();
         }
-        // TODO: Testing Interface Scripts.
-//        switch (event.getWidgetId()) {
-//            case 216:
-//                switch (event.getButtonId()) {
-//                    case 0:
-//                        context.getPlayer().playAnimation(new Animation(855));// yes
-//                        return;
-//                    case 1:
-//                        context.getPlayer().playAnimation(new Animation(856));// no
-//                        return;
-//                    case 2:
-//                        context.getPlayer().playAnimation(new Animation(858));// bow
-//                        return;
-//                    case 3:
-//                        context.getPlayer().playAnimation(new Animation(859));// angry
-//                        return;
-//                    case 4:
-//                        context.getPlayer().playAnimation(new Animation(857));// think
-//                        return;
-//                    case 5:
-//                        context.getPlayer().playAnimation(new Animation(863));// wave
-//                        return;
-//                    case 6:
-//                        context.getPlayer().playAnimation(new Animation(2113));// shrug
-//                        return;
-//                    case 7:
-//                        context.getPlayer().playAnimation(new Animation(862));// cheer
-//                        return;
-//                    case 8:
-//                        context.getPlayer().playAnimation(new Animation(864));// beckon
-//                        return;
-//                    case 9:
-//                        context.getPlayer().playAnimation(new Animation(864));// laugh
-//                        // <--
-//                        return;
-//                    case 10:
-//                        context.getPlayer().playAnimation(new Animation(2109));// jump
-//                        // for
-//                        // joy
-//                        return;
-//                    case 11:
-//                        context.getPlayer().playAnimation(new Animation(2111));// yawn
-//                        return;
-//                    case 12:
-//                        context.getPlayer().playAnimation(new Animation(866));// dance
-//                        return;
-//                    case 13:
-//                        context.getPlayer().playAnimation(new Animation(2106));// jig
-//                        return;
-//                    case 14:
-//                        context.getPlayer().playAnimation(new Animation(2107));// spin
-//                        return;
-//                    case 15:
-//                        context.getPlayer().playAnimation(new Animation(2108));// head
-//                        // butt
-//                        return;
-//                    default:
-//                        return;
-//                }
-//            default:
-//                return;
-//        }
     }
 
 }

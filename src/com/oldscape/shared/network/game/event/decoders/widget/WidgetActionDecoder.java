@@ -24,22 +24,22 @@ package com.oldscape.shared.network.game.event.decoders.widget;
 import com.oldscape.shared.network.game.DataType;
 import com.oldscape.shared.network.game.GameFrameReader;
 import com.oldscape.shared.network.game.event.GameMessageDecoder;
-import com.oldscape.shared.network.game.event.impl.WidgetButtonActionEvent;
+import com.oldscape.shared.network.game.event.impl.WidgetActionEvent;
 
 /**
  * @author Kyle Friz
  * @date May 4, 2015
  */
-public class WidgetButtonClickDecoder implements GameMessageDecoder<WidgetButtonActionEvent> {
+public class WidgetActionDecoder implements GameMessageDecoder<WidgetActionEvent> {
 
     @Override
-    public WidgetButtonActionEvent decode(GameFrameReader frame) {
+    public WidgetActionEvent decode(GameFrameReader frame) {
         int hash = (int) frame.getUnsigned(DataType.INT);
-        int widgetID = (int) frame.getUnsigned(DataType.SHORT);
-        int widgetChildID = (int) frame.getUnsigned(DataType.SHORT);
+        int item = (int) frame.getUnsigned(DataType.SHORT);
+        int slot = (int) frame.getUnsigned(DataType.SHORT);
 
-        System.out.println("widgetButtonClickEvent: " + (hash >> 16) + " " + (hash & 0xFFFF) + " " + widgetID + " " + widgetChildID);
-        return new WidgetButtonActionEvent(frame.getOpcode(), (hash >> 16), (hash & 0xFFFF));
+        System.out.println("widgetActionEvent(op:" + frame.getOpcode() + "): " + (hash >> 16) + " " + (hash & 0xFFFF) + " " + item + " " + slot);
+        return new WidgetActionEvent(frame.getOpcode(), (hash >> 16), (hash & 0xFFFF), item, slot);
     }
 
 }

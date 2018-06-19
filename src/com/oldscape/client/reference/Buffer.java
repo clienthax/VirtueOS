@@ -579,7 +579,7 @@ class Buffer extends Node {
         this.payload[this.offset++] = (byte) (var1 >> 8);
     }
 
-    public int method3553() {
+    public int getUnsignedShortLE() {
         this.offset += 2;
         return ((this.payload[this.offset - 1] & 255) << 8) + (this.payload[this.offset - 2] & 255);
     }
@@ -646,7 +646,7 @@ class Buffer extends Node {
         this.payload[this.offset++] = (byte) (var1 >> 8);
     }
 
-    public int method3562() {
+    public int getUnsignedIntLE() {
         this.offset += 4;
         return (this.payload[this.offset - 4] & 255) + ((this.payload[this.offset - 3] & 255) << 8) + ((this.payload[this.offset - 2] & 255) << 16) + ((this.payload[this.offset - 1] & 255) << 24);
     }
@@ -656,7 +656,7 @@ class Buffer extends Node {
         return ((this.payload[this.offset - 2] & 255) << 24) + ((this.payload[this.offset - 4] & 255) << 8) + (this.payload[this.offset - 3] & 255) + ((this.payload[this.offset - 1] & 255) << 16);
     }
 
-    public int method3564() {
+    public int getUnsignedIntV2() {
         this.offset += 4;
         return ((this.payload[this.offset - 1] & 255) << 8) + ((this.payload[this.offset - 4] & 255) << 16) + (this.payload[this.offset - 2] & 255) + ((this.payload[this.offset - 3] & 255) << 24);
     }

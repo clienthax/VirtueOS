@@ -30,13 +30,51 @@ import com.oldscape.shared.event.Event;
 public class WidgetButtonActionEvent implements Event {
 
     private int opcode;
-    private int widgetId;
-    private int buttonId;
+    private int widgetHash;
+    private int buttonHash;
+    private int widgetID;
+    private int widgetChildID;
 
-    public WidgetButtonActionEvent(int opcode, int widgetId, int buttonId) {
+    public WidgetButtonActionEvent(int opcode, int widgetHash, int buttonHash, int widgetID, int widgetChildID) {
         this.opcode = opcode;
-        this.widgetId = widgetId;
-        this.buttonId = buttonId;
+        this.widgetHash = widgetHash;
+        this.buttonHash = buttonHash;
+        this.widgetID = widgetID;
+        this.widgetChildID = widgetChildID;
+    }
+
+    public static int getActionForOpcode(int opcode) {
+        if(opcode == 17) {
+            return 1;
+        }
+        if(opcode == 38) {
+            return 2;
+        }
+        if(opcode == 46) {
+            return 3;
+        }
+        if(opcode == 41) {
+            return 4;
+        }
+        if(opcode == 18) {
+            return 5;
+        }
+        if(opcode == 14) {
+            return 6;
+        }
+        if(opcode == 33) {
+            return 7;
+        }
+        if(opcode == 96) {
+            return 8;
+        }
+        if(opcode == 20) {
+            return 9;
+        }
+        if(opcode == 95) {
+            return 10;
+        }
+        return -1;
     }
 
     /**
@@ -47,17 +85,25 @@ public class WidgetButtonActionEvent implements Event {
     }
 
     /**
-     * @return the widgetId
+     * @return the widgetHash
      */
-    public int getWidgetId() {
-        return widgetId;
+    public int getWidgetHash() {
+        return widgetHash;
     }
 
     /**
-     * @return the buttonId
+     * @return the buttonHash
      */
-    public int getButtonId() {
-        return buttonId;
+    public int getButtonHash() {
+        return buttonHash;
+    }
+
+    public int getWidgetID() {
+        return widgetID;
+    }
+
+    public int getWidgetChildID() {
+        return widgetChildID;
     }
 
 }

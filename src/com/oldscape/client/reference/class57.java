@@ -137,7 +137,7 @@ class class57 {
             var6 = var5 >> 2;
             var7 = var5 & 3;
             var8 = Client.field929[var6];
-            var39 = var1.method3553();
+            var39 = var1.getUnsignedShortLE();
             if (var3 >= 0 && var37 >= 0 && var3 < 103 && var37 < 103) {
                 if (var8 == 0) {
                     final WallObject var10 = class255.region.method2874(BoundingBox3DDrawMode.plane, var3, var37);
@@ -201,7 +201,7 @@ class class57 {
                 final byte var38 = var1.method3725();
                 var37 = var1.method3555();
                 var5 = var1.readUnsignedByte();
-                var6 = var1.method3553();
+                var6 = var1.getUnsignedShortLE();
                 var7 = var1.readUnsignedShort();
                 var8 = var1.method3556();
                 var39 = var1.readUnsignedByte();
@@ -224,8 +224,8 @@ class class57 {
 
             } else {
                 if (class183.field2501 == var0) {
-                    var2 = var1.method3553();
-                    var3 = var1.method3553();
+                    var2 = var1.getUnsignedShortLE();
+                    var3 = var1.getUnsignedShortLE();
                     byte var4 = var1.readByte();
                     var5 = var1.readUnsignedByte();
                     var6 = (var5 >> 4 & 7) + WidgetNode.field794;
@@ -234,7 +234,7 @@ class class57 {
                     byte var9 = var1.method3634();
                     byte var31 = var1.method3548();
                     var11 = var1.method3725();
-                    var12 = var1.method3553();
+                    var12 = var1.getUnsignedShortLE();
                     var13 = var1.readUnsignedShortOb1();
                     var14 = var13 >> 2;
                     final int var32 = var13 & 3;
@@ -333,7 +333,7 @@ class class57 {
                     var2 = var1.method3538();
                     var3 = (var2 >> 4 & 7) + WidgetNode.field794;
                     var37 = (var2 & 7) + ParamNode.field3551;
-                    var5 = var1.method3553();
+                    var5 = var1.getUnsignedShortLE();
                     var6 = var1.method3636();
                     var7 = var1.method3554();
                     if (var3 >= 0 && var37 >= 0 && var3 < 104 && var37 < 104) {
@@ -371,7 +371,7 @@ class class57 {
                         var2 = var1.method3636();
                         var3 = (var2 >> 4 & 7) + WidgetNode.field794;
                         var37 = (var2 & 7) + ParamNode.field3551;
-                        var5 = var1.method3553();
+                        var5 = var1.getUnsignedShortLE();
                         var6 = var1.method3555();
                         if (var3 >= 0 && var37 >= 0 && var3 < 104 && var37 < 104) {
                             var35 = new Item();
@@ -389,7 +389,7 @@ class class57 {
                         var2 = var1.readUnsignedByte();
                         var3 = (var2 >> 4 & 7) + WidgetNode.field794;
                         var37 = (var2 & 7) + ParamNode.field3551;
-                        var5 = var1.method3553();
+                        var5 = var1.getUnsignedShortLE();
                         var6 = var1.readUnsignedShortOb1();
                         var7 = var6 >> 2;
                         var8 = var6 & 3;

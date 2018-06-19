@@ -130,8 +130,8 @@ public final class AnimationId {
     // Arceuus spellbook
     public static final int MAGIC_ARCEUUS_RESURRECT_CROPS = 7118;
 
-    // Emotes
-    public static final int YES = 885;
+    // Emote Panel
+    public static final int YES = 855;
     public static final int NO = 856;
     public static final int BOW = 858;
     public static final int ANGRY = 859;
@@ -139,7 +139,7 @@ public final class AnimationId {
     public static final int WAVE = 863;
     public static final int SHRUG = 2113;
     public static final int CHEER = 862;
-    public static final int BECKON = 862;
+    public static final int BECKON = 864;
     public static final int LAUGH = 861;
     public static final int JUMP = 2109;
     public static final int YAWN = 2111;
@@ -153,6 +153,7 @@ public final class AnimationId {
     public static final int RASPBERRY = 2110;
     public static final int CLAP = 865;
     public static final int SALUTE = 2112;
+    //TODO: Emotes 22 > 47
 
 
 }

@@ -21,7 +21,7 @@ public class WidgetItemUpdateEventEncoder implements GameMessageEncoder<WidgetIt
 //	@Override
 //	public GameFrame encode(ByteBufAllocator alloc, WidgetItemUpdateEvent event) {
 //		GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.FULL_ITEMS, FrameType.VARIABLE_SHORT);
-//		builder.put(DataType.INT, event.getWidgetId());
+//		builder.put(DataType.INT, event.getWidgetHash());
 //		builder.put(DataType.SHORT, event.getChannelId());
 //		builder.put(DataType.SHORT, event.getItems().length);
 //		

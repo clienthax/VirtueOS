@@ -177,7 +177,7 @@ final class Player extends Actor {
 
         //GFX
         if ((flags & 256) != 0) {
-            player.graphic = buffer.method3553();
+            player.graphic = buffer.getUnsignedShortLE();
             var5 = buffer.method3563();
             player.field1198 = var5 >> 16;
             player.graphicsDelay = (var5 & 65535) + Client.gameCycle;
@@ -194,7 +194,7 @@ final class Player extends Actor {
 
         //Chat masks
         if ((flags & 8) != 0) {
-            var5 = buffer.method3553();
+            var5 = buffer.getUnsignedShortLE();
             final Permission[] var17 = {Permission.field3345, Permission.field3344, Permission.field3346, Permission.field3349, Permission.field3350, Permission.field3347};
             final Permission var18 = (Permission) Enumerated.forOrdinal(var17, buffer.readUnsignedShortOb1());
             final boolean var21 = buffer.readUnsignedByte() == 1;
@@ -249,7 +249,7 @@ final class Player extends Actor {
             player.field1199 = buffer.method3725();
             player.field1200 = buffer.method3548();
             player.field1202 = buffer.method3634();
-            player.field1166 = buffer.method3553() + Client.gameCycle;
+            player.field1166 = buffer.getUnsignedShortLE() + Client.gameCycle;
             player.field1204 = buffer.method3554() + Client.gameCycle;
             player.field1171 = buffer.method3555();
             if (player.field860) {

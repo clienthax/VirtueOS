@@ -29,6 +29,12 @@ final class WorldMapRectangle {
             var2.packetBuffer = new PacketBuffer(260);
         }
 
+        if(var2.clientPacket.packetId != 1
+                || var2.clientPacket.packetId != 64
+                || var2.clientPacket.packetId != 76
+                || var2.clientPacket.packetId != 93) {
+            System.out.println("method280#packetId: " + var2.clientPacket.packetId);
+        }
         var2.packetBuffer.setIsaacCipher(var1);
         var2.packetBuffer.putOpcode(var2.clientPacket.packetId);
         var2.field2505 = 0;

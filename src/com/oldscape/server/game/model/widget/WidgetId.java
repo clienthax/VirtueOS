@@ -446,4 +446,30 @@ public class WidgetId {
         public static final int BARROWS_POTENTIAL = 9;
         public static final int BARROWS_REWARD_INVENTORY = 3;
     }
+
+    public static class EmotePanel{
+        public static final int YES = 0;
+        public static final int NO = 1;
+        public static final int BOW = 2;
+        public static final int ANGRY = 3;
+        public static final int THINK = 4;
+        public static final int WAVE = 5;
+        public static final int SHRUG = 6;
+        public static final int CHEER = 7;
+        public static final int BECKON = 8;
+        public static final int LAUGH = 9;
+        public static final int JUMP = 10;
+        public static final int YAWN = 11;
+        public static final int DANCE = 12;
+        public static final int JIG = 13;
+        public static final int SPIN = 14;
+        public static final int HEAD_BANG = 15;
+        public static final int CRY = 16;
+        public static final int BLOW_KISS = 17;
+        public static final int PANIC = 18;
+        public static final int RASPBERRY = 19;
+        public static final int CLAP = 20;
+        public static final int SALUTE = 21;
+        //TODO: Emotes 22 > 47
+    }
 }

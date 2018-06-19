@@ -144,7 +144,7 @@ class UrlRequester implements Runnable {
             //gfx
             if ((flags & 1) != 0) {
                 npc.graphic = buffer.method3555();
-                var5 = buffer.method3562();
+                var5 = buffer.getUnsignedIntLE();
                 npc.field1198 = var5 >> 16;
                 npc.graphicsDelay = (var5 & 65535) + Client.gameCycle;
                 npc.spotAnimFrame = 0;

@@ -21,7 +21,7 @@ public class SlottedItemsUpdateEventEncoder implements GameMessageEncoder<Slotte
 //	@Override
 //	public GameFrame encode(ByteBufAllocator alloc, SlottedItemsUpdateEvent event) {
 //		GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.SLOT_ITEMS, FrameType.VARIABLE_SHORT);
-//		builder.put(DataType.INT, event.getWidgetId());
+//		builder.put(DataType.INT, event.getWidgetHash());
 //		builder.put(DataType.SHORT, event.getChannelId());
 //
 //		for (SlottedItem item : event.getItems()) {

@@ -33,10 +33,10 @@ public final class WidgetSetClickMaskEventEncoder implements GameMessageEncoder<
     public GameFrame encode(ByteBufAllocator alloc, WidgetSetClickMaskEvent event) {
         GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.IF_SET_CLICK_MASK, FrameType.FIXED);
 
-        builder.put(DataType.SHORT, DataTransformation.ADD, event.getFrom());
+        builder.put(DataType.INT, DataOrder.LITTLE, event.getRoot() << 16 | event.getComponent());
+        builder.put(DataType.SHORT, DataOrder.LITTLE, event.getFrom());
         builder.put(DataType.INT, DataOrder.INVERSED_MIDDLE, event.getSettings());
-        builder.put(DataType.INT, event.getRoot() << 16 | event.getComponent());
-        builder.put(DataType.SHORT, DataTransformation.ADD, event.getTo());
+        builder.put(DataType.SHORT, DataOrder.LITTLE, event.getTo());
 
         return builder.toGameFrame();
     }

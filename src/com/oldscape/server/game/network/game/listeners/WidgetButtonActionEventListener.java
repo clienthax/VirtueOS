@@ -27,6 +27,7 @@ import com.oldscape.server.game.network.game.GameSessionContext;
 import com.oldscape.shared.event.EventListener;
 import com.oldscape.shared.model.player.DisplayMode;
 import com.oldscape.shared.network.game.event.impl.WidgetButtonActionEvent;
+import com.oldscape.shared.script.listeners.WidgetListener;
 
 /**
  * @author Kyle Friz
@@ -41,11 +42,17 @@ public class WidgetButtonActionEventListener implements EventListener<WidgetButt
     public void onEvent(WidgetButtonActionEvent event, GameSessionContext context) {
         Player player = context.getPlayer();
 
+        /* Test: Check Scripts */
+        WidgetListener listener = context.getServer().getScriptManager().forWidget(event.getWidgetHash());
+        if (listener != null) {
+            listener.handle(context.getPlayer(), event.getWidgetHash(), event.getButtonHash(), event.getWidgetID(), event.getWidgetChildID(), event.getOpcode());
+        }
+
         /**
          * World Map Interface
          */
-        if (event.getWidgetId() == WidgetId.WORLD_MAP_GROUP_ID) {
-            switch (event.getButtonId()) {
+        if (event.getWidgetHash() == WidgetId.WORLD_MAP_GROUP_ID) {
+            switch (event.getButtonHash()) {
                 /* Close Map [x] */
                 case WidgetId.WorldMap.CLOSE:
                     player.sendCloseWidgetSub(WidgetId.FIXED_VIEWPORT_GROUP_ID, 22);
@@ -56,8 +63,8 @@ public class WidgetButtonActionEventListener implements EventListener<WidgetButt
         /**
          * Sidebar: Map Panel
          */
-        if (event.getWidgetId() == WidgetId.MINIMAP_GROUP_ID) {
-            switch (event.getButtonId()) {
+        if (event.getWidgetHash() == WidgetId.MINIMAP_GROUP_ID) {
+            switch (event.getButtonHash()) {
                 /* Map Button */
                 case WidgetId.WorldMap.OPTION: // TODO: is this correct?
                     player.sendCS2Script(1749, new Object[]{865789592});//c -- guessing this is coords?
@@ -70,8 +77,8 @@ public class WidgetButtonActionEventListener implements EventListener<WidgetButt
         /**
          * Sidebar: Logout Panel
          */
-        if (event.getWidgetId() == WidgetId.LOGOUT_PANEL_ID) {
-            switch (event.getButtonId()) {
+        if (event.getWidgetHash() == WidgetId.LOGOUT_PANEL_ID) {
+            switch (event.getButtonHash()) {
                 /* Logout Button */
                 case WidgetId.LogoutPanel.LOGOUT_BUTTON:
                     player.logout();
@@ -82,8 +89,8 @@ public class WidgetButtonActionEventListener implements EventListener<WidgetButt
         /**
          * Lobby Screen
          */
-        if (event.getWidgetId() == WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID) {
-            switch (event.getButtonId()) {
+        if (event.getWidgetHash() == WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID) {
+            switch (event.getButtonHash()) {
 //                case 6: // TODO: This isnt used?
                 case WidgetId.ClickToPlay.CLICK_TO_PLAY_BUTTON:
                     player.sendSetRootWidget(player.getDisplay().getId());

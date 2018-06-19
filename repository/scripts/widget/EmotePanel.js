@@ -1,6 +1,7 @@
 var Animation = Java.type('com.oldscape.server.game.model.sync.reference.Animation');
 var AnimationId = Java.type('com.oldscape.server.game.model.anim.AnimationId');
 var WidgetId = Java.type('com.oldscape.server.game.model.widget.WidgetId');
+var EmotePanel = Java.type('com.oldscape.server.game.model.widget.WidgetId.EmotePanel');
 
 var WidgetListener = Java.extend(Java.type('com.oldscape.shared.script.listeners.WidgetListener'), {
 
@@ -8,9 +9,9 @@ var WidgetListener = Java.extend(Java.type('com.oldscape.shared.script.listeners
         return [WidgetId.EMOTES_GROUP_ID];
     },
 
-    handle: function(player, widgetId, buttonId, itemId, slotId, option) {
-        if (forButton(buttonId) != -1) {
-            player.playAnimation(new Animation(forButton(buttonId)));
+    handle: function(player, widgetHash, childHash, widgetID, widgetChildID, opcode) {
+        if (forButton(widgetID) != -1) {
+            player.playAnimation(new Animation(forButton(widgetID)));
             return true;
         }
     }
@@ -19,70 +20,70 @@ var WidgetListener = Java.extend(Java.type('com.oldscape.shared.script.listeners
 function forButton(buttonId) {
     switch (buttonId) {
 
-        case WidgetId.EmotePanel.YES:
+        case EmotePanel.YES:
             return AnimationId.YES;
 
-        case WidgetId.EmotePanel.NO:
+        case EmotePanel.NO:
             return AnimationId.NO;
 
-        case WidgetId.EmotePanel.BOW:
+        case EmotePanel.BOW:
             return AnimationId.BOW;
 
-        case WidgetId.EmotePanel.ANGRY:
+        case EmotePanel.ANGRY:
             return AnimationId.ANGRY;
 
-        case WidgetId.EmotePanel.THINK:
+        case EmotePanel.THINK:
             return AnimationId.THINK;
 
-        case WidgetId.EmotePanel.WAVE:
+        case EmotePanel.WAVE:
             return AnimationId.WAVE;
 
-        case WidgetId.EmotePanel.SHRUG:
+        case EmotePanel.SHRUG:
             return AnimationId.SHRUG;
 
-        case WidgetId.EmotePanel.CHEER:
+        case EmotePanel.CHEER:
             return AnimationId.CHEER;
 
-        case WidgetId.EmotePanel.BECKON:
+        case EmotePanel.BECKON:
             return AnimationId.BECKON;
 
-        case WidgetId.EmotePanel.LAUGH:
+        case EmotePanel.LAUGH:
             return AnimationId.LAUGH;
 
-        case WidgetId.EmotePanel.JUMP:
+        case EmotePanel.JUMP:
             return AnimationId.JUMP;
 
-        case WidgetId.EmotePanel.YAWN:
+        case EmotePanel.YAWN:
             return AnimationId.YAWN;
 
-        case WidgetId.EmotePanel.DANCE:
+        case EmotePanel.DANCE:
             return AnimationId.DANCE;
 
-        case WidgetId.EmotePanel.JIG:
+        case EmotePanel.JIG:
             return AnimationId.JIG;
 
-        case WidgetId.EmotePanel.SPIN:
+        case EmotePanel.SPIN:
             return AnimationId.SPIN;
 
-        case WidgetId.EmotePanel.HEAD_BANG:
+        case EmotePanel.HEAD_BANG:
             return AnimationId.HEAD_BANG;
 
-        case WidgetId.EmotePanel.CRY:
+        case EmotePanel.CRY:
             return AnimationId.CRY;
 
-        case WidgetId.EmotePanel.BLOW_KISS:
+        case EmotePanel.BLOW_KISS:
             return AnimationId.BLOW_KISS;
 
-        case WidgetId.EmotePanel.PANIC:
+        case EmotePanel.PANIC:
             return AnimationId.PANIC;
 
-        case WidgetId.EmotePanel.RASPBERRY:
+        case EmotePanel.RASPBERRY:
             return AnimationId.RASPBERRY;
 
-        case WidgetId.EmotePanel.CLAP:
+        case EmotePanel.CLAP:
             return AnimationId.CLAP;
 
-        case WidgetId.EmotePanel.SALUTE:
+        case EmotePanel.SALUTE:
             return AnimationId.SALUTE;
 
         /* MISSING */

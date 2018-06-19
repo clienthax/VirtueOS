@@ -11,7 +11,8 @@ import com.oldscape.shared.network.game.event.decoders.npc.*;
 import com.oldscape.shared.network.game.event.decoders.object.*;
 import com.oldscape.shared.network.game.event.decoders.walking.MiniMapWalkDecoder;
 import com.oldscape.shared.network.game.event.decoders.walking.WalkDecoder;
-import com.oldscape.shared.network.game.event.decoders.widget.WidgetButtonClickDecoder;
+import com.oldscape.shared.network.game.event.decoders.widget.WidgetActionDecoder;
+import com.oldscape.shared.network.game.event.decoders.widget.WidgetButtonActionDecoder;
 import com.oldscape.shared.network.game.event.encoders.*;
 import com.oldscape.shared.network.game.event.impl.*;
 
@@ -68,52 +69,31 @@ public final class GameEventRepository {
         addMessageEncoder(MessageEvent.class, new MessageEventEncoder());
         addMessageEncoder(WidgetCloseSubEvent.class, new WidgetCloseSubEventEncoder());
 
-        //deob168
-        //not sure on 93
-        //64 fires for EVERY mouse click.. ugh
-        addMessageDecoder(new int[]{76, 64, 93}, new DummyDecoder());
+        /* Ignored for now */
+        // 93 = Mouse change listener.
+        // 76 = ?
+        // 64 = Mouse click listener.
+        // 1 = Key stoke listener.
+        addMessageDecoder(new int[]{1, 64, 76, 93}, new DummyDecoder());
 
-        addMessageDecoder(12, new WalkDecoder());//works
-        addMessageDecoder(13, new MiniMapWalkDecoder());//works
-        addMessageDecoder(17, new WidgetButtonClickDecoder());//17 int clicks?
-
+        addMessageDecoder(12, new WalkDecoder());
+        addMessageDecoder(13, new MiniMapWalkDecoder());
+        addMessageDecoder(new int[] {14, 17, 18, 20, 33, 38, 41, 46, 95, 96}, new WidgetButtonActionDecoder());
         addMessageDecoder(57, new ClientDimensionsDecoder());
-
-        //Object options
-        addMessageDecoder(58, new ObjectFirstActionClickDecoder());//First Option
-        addMessageDecoder(83, new ObjectSecondActionClickDecoder());//Second Option
-        addMessageDecoder(86, new ObjectThirdActionClickDecoder());//Third Option
-        addMessageDecoder(68, new ObjectForthActionClickDecoder());//Forth Option
-        addMessageDecoder(60, new ObjectFifthActionClickDecoder());//Fifth Option
-        //29 examine object
-
-        //Npc options
+        addMessageDecoder(58, new ObjectFirstActionClickDecoder());
+        addMessageDecoder(83, new ObjectSecondActionClickDecoder());
+        addMessageDecoder(86, new ObjectThirdActionClickDecoder());
+        addMessageDecoder(68, new ObjectForthActionClickDecoder());
+        addMessageDecoder(60, new ObjectFifthActionClickDecoder());
         addMessageDecoder(37, new NpcFirstActionDecoder());
         addMessageDecoder(91, new NpcSecondActionDecoder());
         addMessageDecoder(81, new NpcThirdActionDecoder());
         addMessageDecoder(62, new NpcForthActionDecoder());
         addMessageDecoder(71, new NpcFifthActionDecoder());
-        //53 examine npc
-
-
-        //Client info
         addMessageDecoder(25, new ClientFocusDecoder());
-
-        //Chat
         addMessageDecoder(26, new PublicChatDecoder());
-        addMessageDecoder(32, new CommandDecoder());//::commands
+        addMessageDecoder(32, new CommandDecoder());
 
-
-
-		/*
-		addMessageDecoder(new int[] {24, 40, 41, 70, 212, 254}, new DummyDecoder());
-		addMessageDecoder(new int[] {60, 77, 109, 135, 142, 152, 177, 195, 244, 246}, new WidgetClickDecoder());
-		*/
-
-
-//		addMessageDecoder(1, new AttackNpcDecoder());
-//		addMessageDecoder(new int[] { 13, 245, 76, 125, 240, 236, 108, 103, 104, 193, 112, 163 }, new WidgetClickDecoder());
-//		addMessageDecoder(232, new ItemActionDecoder()); //
     }
 
     /**
@@ -132,7 +112,7 @@ public final class GameEventRepository {
          * {@link java.lang.IllegalAccessException} will be thrown.
          */
         if (opcode < 0 || opcode > MAXIMUM_MESSAGES) {
-            throw new IllegalArgumentException("Error opcode invalid " + opcode);
+            throw new IllegalArgumentException("GameEventRepository: Opcode " + opcode + " is invalid!");
         }
 
         /**
@@ -146,7 +126,7 @@ public final class GameEventRepository {
          * will be thrown.
          */
         if (decoder == null) {
-            // System.err.println("No decoder for: " + opcode);
+            System.err.println("GameEventRepository: No decoder for the opcode " + opcode + ".");
         }
 
         /**
@@ -233,7 +213,7 @@ public final class GameEventRepository {
     /**
      * Adds a {@link com.oldscape.shared.network.game.event.GameMessageDecoder}.
      *
-     * @param opcode  The opcode of the {@link com.oldscape.shared.network.game.event.GameMessageDecoder} to be set.
+     * @param opcodes  The opcode of the {@link com.oldscape.shared.network.game.event.GameMessageDecoder} to be set.
      * @param decoder The {@link com.oldscape.shared.network.game.event.GameMessageDecoder} to add.
      */
     public void addMessageDecoder(int[] opcodes, GameMessageDecoder<? extends Event> decoder) {
