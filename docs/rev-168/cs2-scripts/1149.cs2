@@ -1,0 +1,17 @@
+[clientscript,deadman_delay](int $int0, int $int1, string $string0, string $string1)
+$int2 = multiply($int0, 30);
+$int3 = divide(add(49, $int2), 50);
+if($int3 == 1) {
+if_settext("There is 1 second remaining <$string0>", 228:2);
+} else {
+if_settext("There are <tostring($int3)> seconds remaining <$string0>", 228:2);
+}
+if_settext($string1, 228:0);
+if_sethide(0, 228:1);
+$int4 = enum(component, component, ~toplevel_getcomponents, 10551325);
+if($int4 == -1) {
+$int4 = 14942208;
+}
+if_setontimer("script1150($int4, $string0, clientclock, $int2, $int1)", $int4);
+if_setondialogabort("script1597($int4)", $int4);
+return();

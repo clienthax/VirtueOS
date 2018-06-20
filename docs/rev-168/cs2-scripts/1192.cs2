@@ -1,0 +1,14 @@
+[proc,script1192](int $int0, int $int1)(int)
+cc_create($int0, Rectangle, $int1);
+$int1 = add($int1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setfill(0);
+cc_setcolor(0x383023);
+cc_create($int0, Rectangle, $int1);
+$int1 = add($int1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(2, 2, 1, 1);
+cc_setfill(0);
+cc_setcolor(0x5A5245);
+return($int1);

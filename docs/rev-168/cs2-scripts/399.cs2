@@ -1,0 +1,13 @@
+[clientscript,script399](int $int0, int $int1)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+if_sethide(1, 398:19);
+if_sethide(1, 398:20);
+if_sethide(1, 398:21);
+if_sethide(1, 398:22);
+if_sethide(1, 398:23);
+if_sethide(1, 398:24);
+if_setontimer("script400(-2147483645, add(clientclock, 45))", $int1);
+return();

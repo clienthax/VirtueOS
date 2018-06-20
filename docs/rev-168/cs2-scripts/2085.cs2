@@ -1,0 +1,21 @@
+[clientscript,script2085]
+$int0 = ~toplevel_getcomponents;
+if($int0 == -1) {
+return();
+}
+$int1 = enum(component, component, $int0, 10551299);
+if($int1 == -1) {
+return();
+}
+cc_deleteall($int1);
+cc_create($int1, Rectangle, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+.cc_create($int1, Model, 1);
+.cc_setsize(0, 0, 1, 1);
+.cc_setposition(0, 0, 1, 1);
+cc_setontimer("script2086(-2147483645, cc_getid, .cc_getid, clientclock)");
+~script2093($int1, 0);
+return();

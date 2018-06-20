@@ -1,0 +1,6 @@
+[clientscript,script1507](int $int0)
+$int1 = ~toplevel_getcomponents;
+if($int1 != -1) {
+if_setsize(enum(enum, int, 1135, $int1), enum(enum, int, 1136, $int1), 1, 1, $int0);
+}
+return();

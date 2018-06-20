@@ -1,0 +1,17 @@
+[clientscript,script2106](int $int0)
+$int1 = 0;
+$int2 = 0;
+$int3 = 0;
+$int4 = 0;
+while($int4 < 31) {
+$int3 = enum(int, int, 1829, $int4);
+if(cc_find($int0, $int3) == 1) {
+$gosubResult2110_0, $gosubResult2110_1 = ~script2110($int3);
+$int2 = $gosubResult2110_1;
+$int1 = $gosubResult2110_0;
+cc_setmodel(enum(int, model, 1828, $int1));
+cc_setmodelangle(0, 0, 512, multiply(512, $int2), 0, 625);
+}
+$int4 = add($int4, 1);
+}
+return();

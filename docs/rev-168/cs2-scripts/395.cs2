@@ -1,0 +1,93 @@
+[clientscript,script395](int $int0, int $int1, int $int2, string $string0)
+cc_settext(tostring(stat($int0)));
+$int3 = stat_base($int0);
+.cc_settext(tostring($int3));
+$int4 = stat_xp($int0);
+$string1 = ",";
+$string2 = "<$string0> XP:";
+$string3 = ~script46($int4, $string1);
+$int5 = 0;
+if(%varbit4181 == 0) {
+if($int3 < 99) {
+$int5 = enum(int, int, 256, add($int3, 1));
+$string2 = append($string2, "|Next level at:|Remaining XP:");
+$string3 = append($string3, "|<~script46($int5, $string1)>|<~script46(sub($int5, $int4), $string1)>");
+}
+} else {
+$string2 = append($string2, "|Next level at:");
+$string3 = append($string3, "|<~script46(enum(int, int, 256, add($int3, 1)), $string1)>");
+}
+$int6 = 0;
+$int7 = 0;
+$int8 = 0;
+$int9 = 0;
+if(~deadman_world == 1) {
+$int6 = ~script1936($int0);
+if($int6 != -1) {
+$int6 = divide($int6, 10);
+if($int6 > $int4) {
+$string2 = append($string2, "|<col=7c0808>XP to regain:</col>");
+$string3 = append($string3, "|<col=7c0808><~script46(sub($int6, $int4), $string1)></col>");
+$int7 = 1;
+}
+}
+if($int7 == 0) {
+if(%varp1588 > 0) {
+switch($int0) {
+case 0:
+case 2:
+case 6:
+$int9 = ~script2031(20);
+if($int9 > 0) {
+$string2 = append($string2, "|<col=7c0808>XP permitted:</col>");
+$string3 = append($string3, "|<col=7c0808><~script46($int9, $string1)></col>");
+} else {
+$int8 = 1;
+$string2 = append($string2, "|<col=7c0808>XP permitted:</col>");
+$string3 = append($string3, "|<col=7c0808>NONE</col>");
+}
+case 1:
+case 4:
+$int9 = ~script2031(30);
+if($int9 > 0) {
+$string2 = append($string2, "|<col=7c0808>XP permitted:</col>");
+$string3 = append($string3, "|<col=7c0808><~script46($int9, $string1)></col>");
+} else {
+$int8 = 1;
+$string2 = append($string2, "|<col=7c0808>XP permitted:</col>");
+$string3 = append($string3, "|<col=7c0808>NONE</col>");
+}
+}
+}
+}
+}
+if(.cc_find($int1, 5) == 1) {
+if($int8 == 1) {
+.cc_sethide(0);
+} else {
+.cc_sethide(1);
+}
+} else {
+.cc_create($int1, Graphic, 5);
+.cc_setposition(6, 0, 0, 1);
+.cc_setsize(19, 19, 0, 0);
+.cc_setgraphic(940);
+.cc_setgraphicshadow(0x010101);
+if($int8 == 1) {
+.cc_sethide(0);
+} else {
+.cc_sethide(1);
+}
+}
+if(~script1972 == 1) {
+if(%varc217 == 1 && $int0 == %varc218) {
+~script742($int1, -1, $int2, $string2, $string3, 495, $int0);
+if_setonop("script40($int2)", $int1);
+} else {
+if_setonop("script732(-2147483645, -1, $int2, $string2, $string3, 495, $int0)", $int1);
+}
+} else {
+if_setonmouserepeat("script992(-2147483645, -1, $int2, $string2, $string3, 495, divide(25, 5))", $int1);
+%varc2 = 0;
+}
+return();

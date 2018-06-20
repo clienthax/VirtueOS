@@ -1,6 +1,6 @@
 var Integer = Java.type('java.lang.Integer');
 var Permission = Java.type('com.oldscape.shared.model.player.Permission');
-
+var Npc = Java.type('com.oldscape.server.game.model.npc.Npc');
 
 var CommandListener = Java.extend(Java.type('com.oldscape.shared.script.listeners.CommandListener'), {
 
@@ -12,8 +12,7 @@ var CommandListener = Java.extend(Java.type('com.oldscape.shared.script.listener
     /* The first option on an object */
     handle: function(player, syntax, args, clientCommand) {
         var npcId = Integer.parseInt(args[0]);
-        player.
-        GameWorld.registerNpc(Npc(394, player.getPosition().getX() + 1, player.getPosition().getY() + 1));
+        player.getServer().getGameWorld().registerNpc(new Npc(npcId, player.getPosition().getX(), player.getPosition().getY()));
         return true;
     },
 

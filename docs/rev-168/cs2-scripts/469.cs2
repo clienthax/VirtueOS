@@ -1,0 +1,16 @@
+[clientscript,script469](int $int0, int $int1, int $int2, int $int3)
+if($int0 == 1) {
+if(.cc_find($int2, $int3) == 1) {
+if(testbit(%varbit4102, $int1) == 1) {
+%varbit4102 = clearbit(%varbit4102, $int1);
+} else {
+if(~script464($int1) == 0) {
+return();
+}
+%varbit4102 = setbit(%varbit4102, $int1);
+}
+sound_synth(2266, 1, 0);
+~script471($int1);
+}
+}
+return();

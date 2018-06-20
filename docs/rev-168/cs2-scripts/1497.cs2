@@ -1,0 +1,8 @@
+[clientscript,script1497](int $int0, int $int1)
+if(%varbit5967 == 1) {
+~script1696($int0, "Graceful recolour", 45, $int1);
+} else {
+~script1696($int0, "Graceful recolour", 250, -1);
+if_sethide(1, $int1);
+}
+return();

@@ -1,0 +1,3 @@
+[clientscript,runweight_visible](int $int0)
+if_settext("<tostring(runweight)> kg", $int0);
+return();

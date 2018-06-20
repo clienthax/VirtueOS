@@ -1,0 +1,14 @@
+[clientscript,script512](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if($int2 != $int0) {
+return();
+}
+$int6 = sub($int1, add(9, 1));
+$int7 = sub($int3, add(9, 1));
+if($int6 == 0 || $int7 == 0 || testbit($int4, $int6) == 0 || testbit($int4, $int7) == 0) {
+return();
+}
+if(cc_find($int0, $int1) == 1) {
+cc_settrans(200);
+cc_setontimer("script488(-2147483645, -2147483643, $int5, add(clientclock, 10))");
+}
+return();

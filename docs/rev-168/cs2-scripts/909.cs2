@@ -1,0 +1,130 @@
+[clientscript,toplevel_resize](int $int0, int $int1)
+$int2 = enum(component, component, $int1, 10551298);
+$int3 = enum(component, component, $int1, 10551306);
+$int4 = enum(component, component, $int1, 10551301);
+$int5 = enum(component, component, $int1, 10551308);
+$int6 = enum(enum, int, 1135, $int1);
+$int7 = enum(enum, int, 1136, $int1);
+$int8 = 0;
+$int9 = 0;
+$int10 = 0;
+$int11 = 0;
+$int12 = 0;
+$int13 = 0;
+if(%varbit4606 != 0) {
+if(%varbit4606 == 2) {
+viewport_setfov(256, 180)
+viewport_setzoom(256, 180)
+viewport_clampfov(0, 0, 0, 0)
+setCameraOffsetY(50);
+} else {
+viewport_setfov(256, 256)
+viewport_setzoom(256, 256)
+viewport_clampfov(256, 256, 256, 256)
+setCameraOffsetY(50);
+}
+if($int2 != -1) {
+if($int3 != -1) {
+$int9 = viewport_geteffectiveheight();
+$int8 = viewport_geteffectivewidth();
+if_setsize($int8, $int9, 0, 0, $int2);
+if(~script1972 == 0) {
+if_setsize($int8, $int9, 0, 0, $int3);
+}
+if($int4 != -1 && $int5 != -1) {
+$int10 = if_getwidth($int0);
+$int11 = if_getheight($int0);
+$int12 = sub($int10, $int8);
+$int13 = sub($int11, $int9);
+if($int12 < 0) {
+$int12 = 0;
+}
+if($int13 < 0) {
+$int13 = 0;
+}
+$int7 = sub($int7, divide($int13, 2));
+$int6 = sub($int6, divide($int12, 2));
+if($int6 < 0) {
+$int6 = 0;
+}
+if($int7 < 0) {
+$int7 = 0;
+}
+if_setsize($int6, $int7, 1, 1, $int4);
+if_setsize($int6, $int7, 1, 1, $int5);
+~script910($int1, enum(component, component, $int1, 10551307), $int5, $int6, $int7);
+} else {
+~script910($int1, enum(component, component, $int1, 10551307), $int3, 0, 0);
+}
+}
+}
+} else {
+viewport_setfov(0, 0)
+viewport_clampfov(0, 0, 0, 0)
+if(%varc73 >= 195 && %varc73 <= 700 && %varc74 >= 175 && %varc74 <= 715) {
+~script42(%varc73, %varc74);
+} else {
+~script42(256, 320);
+}
+$int9 = viewport_geteffectiveheight();
+$int8 = viewport_geteffectivewidth();
+if($int2 != -1) {
+if($int3 != -1) {
+if_setsize($int8, $int9, 0, 0, $int2);
+if(~script1972 == 0) {
+if_setsize($int8, $int9, 0, 0, $int3);
+}
+if($int4 != -1 && $int5 != -1) {
+if_setsize($int6, $int7, 1, 1, $int4);
+if(~script1972 == 0) {
+if_setsize($int6, $int7, 1, 1, $int5);
+}
+~script910($int1, enum(component, component, $int1, 10551307), $int5, $int6, $int7);
+} else {
+~script910($int1, enum(component, component, $int1, 10551307), $int3, 0, 0);
+}
+}
+}
+}
+$int14 = enum(component, component, $int1, 10551309);
+if($int14 != -1) {
+if(~script1972 == 0 && if_hassub($int14) == 1) {
+if(%varc173 == -2) {
+if_setsize(512, 0, 0, 1, $int14);
+} else {
+if(%varc173 == -3) {
+if_setsize(0, 0, 1, 1, $int14);
+} else {
+if_setsize(512, 334, 0, 0, $int14);
+}
+}
+} else {
+if_setsize(512, 334, 0, 0, $int14);
+}
+}
+$int14 = enum(component, component, $int1, 10551311);
+if($int14 != -1) {
+if(if_hassub(enum(component, component, $int1, 10551303)) == 1) {
+if(%varbit4692 != 0) {
+if(~script1972 == 1) {
+if_setposition(215, 4, 2, 0, $int14);
+} else {
+if_setposition(0, 0, 2, 0, $int14);
+}
+} else {
+if(~script1972 == 1) {
+if_setposition(215, 28, 2, 0, $int14);
+} else {
+if_setposition(0, 36, 2, 0, $int14);
+}
+}
+} else {
+if(~script1972 == 1) {
+if_setposition(215, 4, 2, 0, $int14);
+} else {
+if_setposition(0, 0, 2, 0, $int14);
+}
+}
+}
+~script920($int0, $int1);
+return();

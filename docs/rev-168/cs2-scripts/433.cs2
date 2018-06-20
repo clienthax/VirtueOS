@@ -1,0 +1,9 @@
+[clientscript,script433](int $int0)
+sound_synth(2266, 1, 0);
+if($int0 == 1) {
+if_sethide(0, 76:17);
+} else {
+if_sethide(1, 76:17);
+}
+~script435;
+return();

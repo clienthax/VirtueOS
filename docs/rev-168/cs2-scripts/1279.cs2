@@ -1,0 +1,45 @@
+[proc,script1279](int $int0)(int,int,int)
+$int1 = enum(int, stat, 681, $int0);
+$int2 = stat_base($int1);
+$int3 = testbit(%varp1295, sub($int0, 1));
+$int4 = 50;
+if($int3 == 1) {
+if(%varc139 < 3) {
+return($int2, $int2, 0);
+}
+$int4 = 90;
+} else {
+if(%varbit5667 == 1) {
+if(%varc139 <= 1) {
+return($int2, $int2, 0);
+}
+} else {
+if(%varc139 <= 0) {
+return($int2, $int2, 0);
+}
+if(%varc139 <= 1) {
+$int4 = 75;
+}
+}
+}
+$int5 = stat_xp($int1);
+$int6 = scale($int4, 100, $int5);
+$int7 = $int2;
+while(enum(int, int, 256, $int7) > $int6) {
+$int7 = sub($int7, 1);
+}
+$int8 = enum(int, int, 1240, $int0);
+if($int2 < $int8) {
+$int8 = $int2;
+}
+if($int8 > $int7) {
+$int7 = $int8;
+}
+$int9 = enum(int, int, 256, $int8);
+if($int5 < $int9) {
+$int9 = $int5;
+}
+if($int9 > $int6) {
+$int6 = $int9;
+}
+return($int2, $int7, sub($int5, $int6));

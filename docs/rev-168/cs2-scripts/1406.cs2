@@ -1,0 +1,86 @@
+[clientscript,script1406](int $int0, int $int1)
+if($int0 > 31) {
+$int0 = 31;
+}
+cc_deleteall(458:2);
+cc_create(458:2, Rectangle, 0);
+cc_sethide(1);
+def_int $anArray0(add($int0, 1));
+$int2 = 1;
+while($int2 <= $int0) {
+$anArray0($int2) = $int2;
+cc_create(458:2, Rectangle, $int2);
+cc_sethide(1);
+$int2 = add($int2, 1);
+}
+~script1407(0, 1, $int0);
+$int3 = 2147483647;
+$int4 = 0;
+$int5 = 4;
+if($int0 <= 3) {
+$int5 = 18;
+$int4 = 36;
+cc_deleteall(458:3);
+cc_create(458:3, Text, 0);
+cc_setsize(0, $int4, 1, 0);
+cc_setposition(0, 0, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(0, 0, 0);
+cc_settext("Select a piece of furniture to build.");
+} else {
+if($int0 <= 8) {
+$int3 = 5;
+} else {
+$int3 = add(add(divide($int0, 2), modulo($int0, 2)), 1);
+}
+}
+$int6 = -1;
+$int7 = $int4;
+$int2 = 1;
+while($int2 <= $int0) {
+while($int2 < $int3) {
+$int6 = enum(int, component, 1461, $anArray0($int2));
+if_sethide(0, $int6);
+if_setposition(0, $int7, 0, 0, $int6);
+if($int1 == 0) {
+~script1631($int2, $anArray0($int2), $int6);
+}
+$int2 = add($int2, 1);
+$int7 = add(add($int7, if_getheight($int6)), $int5);
+}
+}
+if($int2 > 1) {
+$int7 = sub($int7, $int5);
+}
+if_setscrollpos(0, 0, 458:3);
+if($int7 > if_getheight(458:3)) {
+if_setscrollsize(0, $int7, 458:3);
+} else {
+if_setscrollsize(0, 0, 458:3);
+%varc58 = 0;
+}
+~scrollbar_vertical(30015523, 30015491, 792, 789, 790, 791, 773, 788);
+if(cc_find(30015523, 1) == 1) {
+~scrollbar_vertical_doscroll(30015523, 30015491, %varc58, 1);
+}
+$int7 = $int4;
+while($int2 <= $int0) {
+$int6 = enum(int, component, 1461, $anArray0($int2));
+if_sethide(0, $int6);
+if_setposition(0, $int7, 2, 0, $int6);
+if($int1 == 0) {
+~script1631($int2, $anArray0($int2), $int6);
+}
+$int2 = add($int2, 1);
+$int7 = add(add($int7, if_getheight($int6)), $int5);
+}
+while($int2 <= 31) {
+if_sethide(1, enum(int, component, 1461, $int2));
+$int2 = add($int2, 1);
+}
+if($int1 == 0) {
+~chatdefault_stopinput;
+}
+return();

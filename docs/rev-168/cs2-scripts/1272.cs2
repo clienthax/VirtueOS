@@ -1,0 +1,51 @@
+[clientscript,script1272](int $int0, int $int1)
+$int2 = -1;
+$int3 = 0;
+$int4 = 0;
+while($int1 == 0) {
+while($int4 < 816) {
+$int2 = inv_getobj(95, $int4);
+if(oc_unplaceholder($int2) != $int2) {
+$int3 = add($int3, 1);
+}
+$int4 = add($int4, 1);
+}
+}
+cc_deleteall($int0);
+$int5 = 0;
+if($int3 > 0) {
+$int5 = ~script836($int0, $int5);
+} else {
+$int5 = ~script835($int0, $int5);
+}
+cc_create($int0, Graphic, $int5);
+$int5 = add($int5, 1);
+cc_setsize(29, 22, 0, 0);
+cc_setposition(3, 0, 0, 1);
+cc_setgraphic(1342);
+$string0 = "Release all placeholders";
+if($int3 > 0) {
+$string0 = append($string0, " (<~script46($int3, ",")>)");
+}
+if_setop(6, $string0, $int0);
+$int6 = parawidth(sub(if_getwidth(if_getlayer($int0)), 40), 495, $string0);
+cc_create($int0, Text, $int5);
+cc_setsize($int6, 0, 0, 1);
+cc_setposition(8, 0, 2, 1);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settextfont(495);
+cc_settext($string0);
+if($int3 > 0) {
+cc_setcolor(0xFF981F);
+if_setonmouseover("script85(-2147483645, $int5, 16777215)", $int0);
+if_setonmouseleave("script85(-2147483645, $int5, 16750623)", $int0);
+if_setonop("script1273(-2147483644, $int0)", $int0);
+} else {
+cc_setcolor(0x8F8F8F);
+if_setonmouseover("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setonop("null()", $int0);
+}
+if_setsize(add($int6, 40), if_getheight($int0), 0, 0, $int0);
+return();

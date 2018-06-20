@@ -1,0 +1,12 @@
+[proc,script1377](int $int0, int $int1, int $int2, int $int3, string $string0)(string,int)
+$int4 = enum(int, coordgrid, $int1, $int0);
+$int5 = enum(coordgrid, obj, $int2, $int4);
+if($int5 != 8245) {
+if($int3 > 0) {
+$string0 = append($string0, ", <~script1299(oc_name($int5), " ", " ")>");
+} else {
+$string0 = append($string0, "<br><col=4f4f4f><~script1299(oc_name($int5), " ", " ")>");
+}
+$int3 = add($int3, 1);
+}
+return($string0, $int3);

@@ -1,0 +1,70 @@
+[clientscript,script1521](int $int0, int $int1, string $string0, string $string1)
+$int2 = 0;
+$int3 = 0;
+$int4 = 0;
+$int5 = 0;
+$int6 = 0;
+$int7 = 1;
+$int8 = -1;
+$string2 = "";
+$string3 = "";
+if(string_length($string0) > 0) {
+if($int0 == 6) {
+if(clan_getchatcount > 0 && clan_getchatrank >= clan_getchatminkick) {
+sound_synth(2266, 1, 0);
+~script215($string0);
+} else {
+mes("You don't have permission to do that.");
+}
+return();
+}
+if(.cc_find(33226764, 0) == 0) {
+return();
+}
+sound_synth(2266, 1, 0);
+if_sethide(1, 507:27);
+if_sethide(0, 507:28);
+cc_deleteall(507:28);
+$int2 = ~thinbox(33226780, 0);
+cc_create(507:28, Text, $int2);
+$int2 = add($int2, 1);
+cc_setsize(0, 15, 1, 0);
+cc_setposition(0, 0, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 2, 0);
+cc_settextshadow(1);
+cc_settext($string0);
+$int3 = divide(sub(if_getwidth(507:28), 216), 2);
+$int8 = enum(int, stat, 681, $int7);
+while($int8 != -1) {
+$int6 = add(15, multiply(modulo($int4, 5), 25));
+$int5 = add($int3, multiply(divide($int4, 5), 44));
+$gosubResult632_0, $gosubResult632_1 = ~script632($string1);
+$string1 = $gosubResult632_1;
+$string2 = $gosubResult632_0;
+cc_create(507:28, Graphic, $int2);
+$int2 = add($int2, 1);
+.cc_create(507:28, Text, $int2);
+$int2 = add($int2, 1);
+cc_setsize(25, 25, 0, 0);
+.cc_setsize(40, 25, 0, 0);
+cc_setposition($int5, $int6, 0, 0);
+.cc_setposition($int5, $int6, 0, 0);
+cc_setgraphic(enum(stat, graphic, 255, $int8));
+.cc_setcolor(0xFF981F);
+.cc_settextfont(494);
+.cc_settextalign(2, 1, 0);
+.cc_settextshadow(1);
+.cc_settext($string2);
+$string3 = "<$string0>:<br>Level <col=7f0000><$string2></col> <enum(stat, string, 680, $int8)>";
+.cc_setonmouserepeat("script526(-2147483645, -2147483643, 33226787, $string3, 25, 200)");
+.cc_setonmouseleave("script40(33226787)");
+$int4 = add($int4, 1);
+$int7 = add($int7, 1);
+$int8 = enum(int, stat, 681, $int7);
+}
+if_setonclick("script1522()", 507:28);
+~script1525($int1);
+}
+return();

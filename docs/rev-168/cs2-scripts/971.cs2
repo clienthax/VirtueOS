@@ -1,0 +1,7 @@
+[clientscript,script971](int $int0, int $int1, int $int2)
+~script220($int1);
+if_setonsubchange("script181($int1)", $int0);
+if_setonvartransmit("script181($int1){1055, 1227}", $int0);
+~script480($int1, $int2);
+if_setonvartransmit("script479($int1, $int2){821}", $int1);
+return();

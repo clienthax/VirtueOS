@@ -1,0 +1,47 @@
+[clientscript,script358](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if($int0 == 4) {
+if_setgraphic(687, $int1);
+if_setgraphic(693, $int2);
+if_setgraphic(694, $int3);
+if_setgraphic(695, $int4);
+if_setgraphic(696, $int5);
+} else {
+if($int0 == 3) {
+if_setgraphic(692, $int1);
+if_setgraphic(688, $int2);
+if_setgraphic(694, $int3);
+if_setgraphic(695, $int4);
+if_setgraphic(696, $int5);
+} else {
+if($int0 == 2) {
+if_setgraphic(692, $int1);
+if_setgraphic(693, $int2);
+if_setgraphic(689, $int3);
+if_setgraphic(695, $int4);
+if_setgraphic(696, $int5);
+} else {
+if($int0 == 1) {
+if_setgraphic(692, $int1);
+if_setgraphic(693, $int2);
+if_setgraphic(694, $int3);
+if_setgraphic(690, $int4);
+if_setgraphic(696, $int5);
+} else {
+if($int0 == 0) {
+if_setgraphic(692, $int1);
+if_setgraphic(693, $int2);
+if_setgraphic(694, $int3);
+if_setgraphic(695, $int4);
+if_setgraphic(691, $int5);
+} else {
+if_setgraphic(692, $int1);
+if_setgraphic(693, $int2);
+if_setgraphic(694, $int3);
+if_setgraphic(695, $int4);
+if_setgraphic(696, $int5);
+}
+}
+}
+}
+}
+return();

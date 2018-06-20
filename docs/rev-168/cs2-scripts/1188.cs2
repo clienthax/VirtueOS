@@ -1,0 +1,12 @@
+[clientscript,script1188](int $int0, int $int1, int $int2, int $int3, int $int4)
+if($int0 != 1) {
+return();
+}
+if(cc_find($int1, $int2) == 1) {
+if(.cc_find($int1, $int3) == 1) {
+sound_synth(2266, 1, 0);
+%varbit619 = sub(1, %varbit619);
+~script1189($int1, $int4);
+}
+}
+return();

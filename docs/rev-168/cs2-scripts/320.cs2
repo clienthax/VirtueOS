@@ -1,0 +1,10 @@
+[clientscript,script320](int $int0, int $int1, int $int2, int $int3, int $int4)
+if(clientclock < $int0) {
+return();
+}
+if_setontimer("null()", $int3);
+cc_deleteall($int3);
+if_setonop("null()", $int4);
+if_sethide(0, $int1);
+if_sethide(1, $int2);
+return();

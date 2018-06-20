@@ -1,0 +1,16 @@
+[clientscript,script984]
+if_settext(enum(int, string, 1159, %varbit4675), 121:21);
+if_settext(enum(int, string, 1159, %varbit4676), 121:27);
+if_settext(enum(int, string, 1159, %varbit4677), 121:33);
+if_settext(enum(int, string, 1159, %varbit4678), 121:39);
+if_settext(enum(int, string, 1159, %varbit4679), 121:45);
+if_settext(enum(int, string, 1159, %varbit4680), 121:51);
+if_settext(enum(int, string, 1159, %varbit4682), 121:57);
+if_settext(enum(int, string, 1159, %varbit4684), 121:63);
+if_settext(enum(int, string, 1159, %varbit4685), 121:69);
+if_settext(enum(int, string, 1159, %varbit4689), 121:75);
+if_settext(enum(int, string, 1159, %varbit4686), 121:81);
+if_settext(enum(int, string, 1159, %varbit4687), 121:87);
+if_settext(enum(int, string, 1159, %varbit4683), 121:93);
+if_settext(enum(int, string, 1159, %varbit4688), 121:99);
+return();

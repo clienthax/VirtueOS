@@ -1,0 +1,22 @@
+[clientscript,script2043](int $int0)
+$int1 = coord;
+if(~inzone(16786176, 864020607, $int1) == 1) {
+$int1 = playermember;
+}
+$int2 = sub(coordx($int1), coordx(47713344));
+$int3 = sub(coordz($int1), coordz(47713344));
+if($int2 < 0 || $int2 > 384 || $int3 < 0 || $int3 > 384) {
+cc_sethide(1);
+return();
+}
+cc_sethide(0);
+$int4 = 75;
+$int5 = 235;
+$int5 = sub($int5, scale($int3, 384, 188));
+$int4 = add($int4, scale($int3, 384, 85));
+$int6 = sub(295, scale($int3, 384, 53));
+$int4 = add($int4, scale($int2, 384, $int6));
+$int6 = sub(70, scale($int3, 384, 20));
+$int5 = add($int5, scale($int2, 384, $int6));
+cc_setposition(sub($int4, divide(cc_getwidth, 2)), sub($int5, divide(cc_getheight, 2)), 0, 0);
+return();

@@ -1,0 +1,148 @@
+[clientscript,script821](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12)
+$int13 = sub(%varbit4439, 1);
+$int14 = enum(int, inv, 150, $int13);
+if($int14 == -1 || stockmarket_isofferempty($int13) == 1) {
+if(cc_find($int0, $int1) == 1) {
+cc_settext("No offer");
+}
+if(cc_find($int0, $int2) == 1) {
+cc_sethide(1);
+}
+if(cc_find($int0, $int3) == 1) {
+cc_setobject_nonum(6512, 1);
+}
+if(cc_find($int0, $int4) == 1) {
+cc_settext("No offer");
+}
+if(cc_find($int0, $int5) == 1) {
+cc_settext("");
+}
+if(cc_find($int0, $int6) == 1) {
+cc_settext("");
+}
+if(cc_find($int0, $int7) == 1) {
+cc_settext("");
+}
+if(cc_find($int8, $int9) == 1) {
+cc_sethide(1);
+}
+if(cc_find($int8, $int10) == 1) {
+cc_settext("No offer found for this slot.");
+}
+if(cc_find($int8, $int11) == 1) {
+~script812(-1, -1, -1, 1, $int12);
+}
+return();
+}
+$int15 = stockmarket_getoffertype($int13);
+$int16 = stockmarket_getofferitem($int13);
+if($int16 == -1) {
+$int16 = 6512;
+}
+$int17 = stockmarket_getoffercount($int13);
+if($int17 <= 0) {
+$int17 = 1;
+}
+$int18 = stockmarket_getoffercompletedcount($int13);
+$int19 = stockmarket_getofferprice($int13);
+$int20 = stockmarket_getoffercompletedgold($int13);
+$int21 = stockmarket_isofferfinished($int13);
+$string0 = ",";
+if(cc_find($int0, $int1) == 1) {
+if(.cc_find($int0, $int2) == 1) {
+.cc_sethide(0);
+if($int15 == 1) {
+cc_settext("Sell offer");
+.cc_setgraphic(1119);
+} else {
+cc_settext("Buy offer");
+.cc_setgraphic(1118);
+}
+}
+}
+if(cc_find($int0, $int3) == 1) {
+cc_setobject_nonum($int16, $int17);
+}
+if(cc_find($int0, $int4) == 1) {
+cc_settext(oc_name($int16));
+}
+if(cc_find($int0, $int5) == 1) {
+cc_settext(~script46($int17, $string0));
+}
+if(cc_find($int0, $int6) == 1) {
+if($int19 == 1) {
+cc_settext("1 coin");
+} else {
+cc_settext("<~script46($int19, $string0)> coins");
+}
+}
+$int22 = 0;
+if(cc_find($int0, $int7) == 1) {
+if(divide(2147483647, $int17) < $int19) {
+cc_settext("Lots of money");
+} else {
+$int22 = multiply($int17, $int19);
+if($int22 == 1) {
+cc_settext("1 coin");
+} else {
+cc_settext("<~script46($int22, $string0)> coins");
+}
+}
+}
+$int23 = 1126;
+$int24 = 1127;
+if(cc_find($int8, $int10) == 1) {
+if($int21 == 1) {
+if($int15 == 1) {
+if($int20 == 1) {
+cc_settext("You sold a total of <col=ffb83f><~script46($int18, $string0)></col><br>for a total price of <col=ffb83f>one</col> coin.");
+} else {
+cc_settext("You sold a total of <col=ffb83f><~script46($int18, $string0)></col><br>for a total price of <col=ffb83f><~script46($int20, $string0)></col> coins.");
+}
+} else {
+if($int20 == 1) {
+cc_settext("You bought a total of <col=ffb83f><~script46($int18, $string0)></col><br>for a total price of <col=ffb83f>one</col> coin.");
+} else {
+cc_settext("You bought a total of <col=ffb83f><~script46($int18, $string0)></col><br>for a total price of <col=ffb83f><~script46($int20, $string0)></col> coins.");
+}
+}
+if(cc_find($int8, $int9) == 1) {
+cc_sethide(1);
+}
+} else {
+if($int15 == 1) {
+if($int20 == 1) {
+cc_settext("You have sold a total of <col=ffb83f><~script46($int18, $string0)></col> so far<br>for a total price of <col=ffb83f>one</col> coin.");
+} else {
+cc_settext("You have sold a total of <col=ffb83f><~script46($int18, $string0)></col> so far<br>for a total price of <col=ffb83f><~script46($int20, $string0)></col> coins.");
+}
+} else {
+if($int20 == 1) {
+cc_settext("You have bought a total of <col=ffb83f><~script46($int18, $string0)></col> so far<br>for a total price of <col=ffb83f>one</col> coin.");
+} else {
+cc_settext("You have bought a total of <col=ffb83f><~script46($int18, $string0)></col> so far<br>for a total price of <col=ffb83f><~script46($int20, $string0)></col> coins.");
+}
+}
+if(cc_find($int8, $int9) == 1) {
+cc_sethide(0);
+if(stockmarket_isofferstable($int13) == 1) {
+cc_settrans(0);
+cc_setgraphic($int23);
+cc_setonmouserepeat("script229(-2147483645, -2147483643, $int24, -1)");
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int23, -1)");
+cc_setonop("script489(-2147483644, 2)");
+} else {
+cc_settrans(120);
+cc_setgraphic($int24);
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+cc_setonop("null()");
+}
+}
+}
+}
+if(cc_find($int8, $int11) == 1) {
+cc_sethide(0);
+~script812($int13, $int17, $int18, 0, $int12);
+}
+return();

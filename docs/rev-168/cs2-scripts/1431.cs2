@@ -1,0 +1,9 @@
+[clientscript,script1431](int $int0)
+if(%varbit5364 == 1) {
+cc_setgraphic(698);
+if_setop(1, "Show", $int0);
+} else {
+cc_setgraphic(699);
+if_setop(1, "Hide", $int0);
+}
+return();

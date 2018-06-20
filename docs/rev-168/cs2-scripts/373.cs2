@@ -1,0 +1,12 @@
+[clientscript,script373](int $int0, int $int1, int $int2)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+if(%varp1074 <= 0) {
+%varp1074 = 1;
+} else {
+%varp1074 = 0;
+}
+~script374($int1, $int2);
+return();

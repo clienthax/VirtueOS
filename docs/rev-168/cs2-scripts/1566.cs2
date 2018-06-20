@@ -1,0 +1,255 @@
+[clientscript,script1566](int $int0, string $string0)
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551309)) == 0) {
+return();
+}
+$int1 = enum(int, component, 1537, $int0);
+if($int1 == -1) {
+return();
+}
+cc_deleteall($int1);
+$string1 = "";
+$string2 = "";
+$string3 = "";
+$string4 = "";
+$string5 = "";
+$string6 = "";
+$string7 = "";
+$string8 = "";
+$string9 = "";
+$int2 = 0;
+$int3 = 0;
+if(string_length($string0) > 0) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+cc_create($int1, Rectangle, 0);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setfill(1);
+~script1567(%varc178, $int1, $int0, $string1);
+if_setop(1, "View party:", $int1);
+if_setopbase("<col=ff9040><removetags($string1)></col>", $int1);
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string2 = $gosubResult632_0;
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string3 = $gosubResult632_0;
+$string5 = ~script1503($string3, 3);
+$string4 = ~script1503($string2, 3);
+$int3 = if_getwidth(499:7);
+cc_create($int1, Text, 1);
+cc_setposition($int2, 0, 0, 1);
+cc_setsize($int3, 0, 0, 1);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext($string2);
+$int2 = add($int2, $int3);
+$int3 = if_getwidth(499:8);
+.cc_create($int1, Text, 2);
+.cc_setposition($int2, 0, 0, 1);
+.cc_setsize($int3, 0, 0, 1);
+.cc_settextfont(495);
+.cc_settextalign(1, 1, 0);
+.cc_settextshadow(1);
+if(compare($string3, "0") != 0) {
+.cc_settext("/ <$string3>");
+if(compare($string4, $string5) >= 0) {
+cc_setcolor(0xFF0000);
+.cc_setcolor(0xFF0000);
+} else {
+cc_setcolor(0xFF981F);
+.cc_setcolor(0xFF981F);
+}
+} else {
+cc_setcolor(0xFF981F);
+.cc_setcolor(0xFF981F);
+.cc_settext("<col=9f9f9f>-</col>");
+}
+$int2 = add($int2, $int3);
+$int3 = if_getwidth(499:9);
+cc_create($int1, Text, 3);
+cc_setposition($int2, 0, 0, 1);
+cc_setsize($int3, 0, 0, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext($string1);
+$int2 = add($int2, $int3);
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string6 = $gosubResult632_0;
+$int3 = if_getwidth(499:10);
+cc_create($int1, Text, 4);
+cc_setposition($int2, 0, 0, 1);
+cc_setsize($int3, 0, 0, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+if(compare($string6, "0") != 0) {
+cc_settext($string6);
+} else {
+cc_settext("<col=9f9f9f>-</col>");
+}
+$int2 = add($int2, $int3);
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string7 = $gosubResult632_0;
+$int3 = if_getwidth(499:11);
+cc_create($int1, Text, 5);
+cc_setposition($int2, 0, 0, 1);
+cc_setsize($int3, 0, 0, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+if(compare($string7, "0") != 0) {
+cc_settext($string7);
+} else {
+cc_settext("<col=9f9f9f>-</col>");
+}
+$int2 = add($int2, $int3);
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string8 = $gosubResult632_0;
+$int3 = if_getwidth(499:12);
+cc_create($int1, Graphic, 6);
+cc_setposition(add($int2, 2), 2, 0, 1);
+cc_setsize(16, 16, 0, 0);
+if(compare($string8, "0") == 0) {
+cc_setgraphic(-1);
+} else {
+cc_setgraphic(1627);
+}
+$int2 = add($int2, $int3);
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string9 = $gosubResult632_0;
+cc_create($int1, Text, 7);
+cc_setposition(0, 0, 2, 1);
+cc_setsize($int2, 0, 1, 1);
+cc_setcolor(0x9F9F9F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+~script1574($string9, %varc59);
+cc_create($int1, Text, 8);
+cc_sethide(1);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext(append_num($int0, $string4));
+cc_create($int1, Text, 9);
+cc_sethide(1);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext(append_num($int0, $string5));
+cc_create($int1, Text, 10);
+cc_sethide(1);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext(append_num($int0, ~script1503($string6, 3)));
+cc_create($int1, Text, 11);
+cc_sethide(1);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext(append_num($int0, ~script1503($string7, 4)));
+cc_create($int1, Text, 12);
+cc_sethide(1);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext($string8);
+cc_create($int1, Text, 13);
+cc_sethide(1);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext(~script1503($string9, 10));
+if_setsize(0, 18, 1, 0, $int1);
+if_setposition(0, multiply(%varc178, 18), 1, 0, $int1);
+%varc178 = add(%varc178, 1);
+} else {
+if_setsize(0, 0, 1, 0, $int1);
+if_setposition(0, 0, 1, 0, $int1);
+if_setonop("null()", $int1);
+if_clearops($int1);
+}
+if_setontimer("null()", $int1);
+$int4 = -1;
+$int5 = 0;
+if($int0 >= sub(40, 1)) {
+if(%varc180 != 0) {
+if(%varc180 != 1) {
+if(%varc180 != 2) {
+if(%varc180 != 3) {
+if(%varc180 != 4) {
+if(%varc180 != 5) {
+if(%varc180 != 6) {
+if(%varc180 != 7) {
+if(%varc180 != 8) {
+if(%varc180 != 9) {
+if(%varc180 != 10) {
+if(%varc180 != 11) {
+if(%varc180 != 12) {
+if(%varc180 != 13) {
+%varc180 = 1;
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+~script1570;
+$int4 = if_getlayer($int1);
+$int5 = multiply(%varc178, 18);
+if($int5 > if_getheight($int4)) {
+if_setscrollsize(0, $int5, $int4);
+~script72(32702519, $int4, %varc179);
+} else {
+if_setscrollsize(0, 0, $int4);
+~script72(32702519, $int4, 0);
+%varc179 = 0;
+}
+cc_deleteall($int4);
+$int0 = 0;
+while($int0 < 40) {
+if_sethide(0, enum(int, component, 1537, $int0));
+cc_create($int4, Text, $int0);
+cc_sethide(1);
+$int0 = add($int0, 1);
+}
+if(%varc178 <= 0) {
+cc_create($int4, Text, 40);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext("No parties are currently listed.");
+}
+if_sethide(0, 499:56);
+if_sethide(0, 499:58);
+}
+return();

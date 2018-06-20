@@ -1,0 +1,15 @@
+[clientscript,script528](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, string $string0)
+cc_create($int4, Graphic, multiply($int0, 2));
+.cc_create($int4, Graphic, add(multiply($int0, 2), 1));
+cc_setposition(add($int3, multiply($int0, add(40, $int3))), 0, 0, 0);
+.cc_setposition(add(cc_getx, 4), 4, 0, 0);
+cc_setsize(40, 40, 0, 0);
+.cc_setsize(32, 32, 0, 0);
+cc_setgraphic(761);
+.cc_setgraphic($int2);
+.cc_settrans(0);
+cc_setonmouseover("cc_settrans(-2147483645, .cc_getid, 100, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, .cc_getid, 0, -1)");
+cc_setop(1, $string0);
+cc_setonop("script529($int0, $int1, $int4, $int5, $int6, $int7, $int8)");
+return();

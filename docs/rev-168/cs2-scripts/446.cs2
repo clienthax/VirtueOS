@@ -1,0 +1,47 @@
+[clientscript,script446](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+if($int0 != -1) {
+if_setnoclickthrough(1, $int6);
+if_setonstattransmit("script446(-1, $int1, $int2, $int3, $int4, $int5, $int6, $int7){3}", $int0);
+if_setonvartransmit("script446(-1, $int1, $int2, $int3, $int4, $int5, $int6, $int7){102, 456}", $int0);
+if_setonsubchange("script446(-1, $int1, $int2, $int3, $int4, $int5, $int6, $int7)", $int0);
+}
+~orbs_update($int1, $int2, stat(^hitpoints), stat_base(^hitpoints));
+if(%varp456 > 0) {
+if_setgraphic(1062, $int3);
+} else {
+if(%varp102 >= 1000000) {
+if_setgraphic(1102, $int3);
+} else {
+if(%varp102 > 0) {
+if_setgraphic(1061, $int3);
+} else {
+if_setgraphic(1060, $int3);
+}
+}
+}
+if(%varp102 > 0) {
+if(%varp102 >= 1000000) {
+if_setgraphic(1102, $int5);
+} else {
+if_setgraphic(1061, $int5);
+}
+if_sethide(0, $int4);
+} else {
+if_sethide(1, $int4);
+}
+$int8 = 1072;
+if(%varp102 > 0 || %varp456 > 0) {
+if(~script918(3) == 1) {
+if_setonmouserepeat("script44($int6, $int8)", $int7);
+$int8 = 1071;
+if_setonmouseleave("script44($int6, $int8)", $int7);
+if_sethide(0, $int7);
+} else {
+} else {
+if_setgraphic(1071, $int6);
+if_setonmouserepeat("null()", $int7);
+if_setonmouseleave("null()", $int7);
+if_sethide(1, $int7);
+}
+}
+return();

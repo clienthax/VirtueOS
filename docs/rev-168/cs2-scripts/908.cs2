@@ -1,0 +1,63 @@
+[clientscript,toplevel_subchange](int $int0, int $int1)
+if(if_hassub(162:550) == 1) {
+if_sethide(0, 162:550);
+if_sethide(1, 162:549);
+if_sethide(1, 162:45);
+} else {
+if(if_hassub(162:549) == 1) {
+if_sethide(1, 162:550);
+if_sethide(0, 162:549);
+if_sethide(1, 162:45);
+} else {
+if_sethide(1, 162:550);
+if_sethide(1, 162:549);
+if_sethide(0, 162:45);
+}
+}
+~script912($int1);
+$int2 = -1;
+if(%varc171 != -1) {
+$int2 = enum(int, component, 1137, %varc171);
+$int2 = enum(component, component, $int1, $int2);
+if($int2 != -1) {
+if(if_hassub($int2) == 1) {
+if(if_gethide($int2) == 1) {
+~script916(%varc171, $int1);
+}
+} else {
+if(if_gethide($int2) == 0) {
+~script916(%varc171, $int1);
+}
+}
+}
+}
+if(if_hassub(enum(component, component, $int1, 10551362)) == 1) {
+$int2 = enum(component, component, $int1, 10551363);
+if($int2 != -1) {
+if_sethide(1, $int2);
+}
+$int2 = enum(component, component, $int1, 10551346);
+if($int2 != -1) {
+if_sethide(1, $int2);
+}
+$int2 = enum(component, component, $int1, 10551330);
+if($int2 != -1) {
+if_sethide(1, $int2);
+}
+} else {
+$int2 = enum(component, component, $int1, 10551363);
+if($int2 != -1) {
+if_sethide(0, $int2);
+}
+$int2 = enum(component, component, $int1, 10551346);
+if($int2 != -1) {
+if_sethide(0, $int2);
+}
+$int2 = enum(component, component, $int1, 10551330);
+if($int2 != -1) {
+if_sethide(0, $int2);
+}
+}
+~toplevel_resize($int0, $int1);
+~script919($int1);
+return();

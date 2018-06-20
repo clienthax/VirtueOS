@@ -1,0 +1,111 @@
+[clientscript,script1448](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13)
+cc_deleteall(481:30);
+$int14 = 0;
+$int15 = -1;
+$int16 = -1;
+def_obj $anArray0(14);
+$anArray0(0) = $int0;
+$anArray0(1) = $int1;
+$anArray0(2) = $int2;
+$anArray0(3) = $int3;
+$anArray0(4) = $int4;
+$anArray0(5) = $int5;
+$anArray0(6) = $int6;
+$anArray0(7) = $int7;
+$anArray0(8) = $int8;
+$anArray0(9) = $int9;
+$anArray0(10) = $int10;
+$anArray0(11) = $int11;
+$anArray0(12) = $int12;
+$anArray0(13) = $int13;
+while($int14 < 14) {
+$int15 = enum(int, component, 1505, $int14);
+cc_create(481:30, Graphic, $int14);
+cc_setsize(36, 32, 0, 0);
+if($int15 != -1) {
+cc_setposition(if_getx($int15), if_gety($int15), 0, 0);
+} else {
+cc_setposition(0, 0, 0, 0);
+cc_setsize(0, 0, 0, 0);
+}
+if($anArray0($int14) != -1) {
+cc_setobject_nonum($anArray0($int14), 0);
+cc_setopbase("<col=ff981f><oc_name($anArray0($int14))>");
+cc_setop(10, "Examine<col=ff9040>");
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+if_setgraphic(-1, $int15);
+} else {
+if($int15 != -1) {
+if_setgraphic(enum(int, graphic, 1506, $int14), $int15);
+}
+}
+$int14 = add($int14, 1);
+}
+if(testbit(%varp286, 14) == 1) {
+if_sethide(0, 481:59);
+} else {
+if_sethide(1, 481:59);
+~script41(31522892);
+}
+if(testbit(%varp286, 15) == 1) {
+if_sethide(0, 481:60);
+} else {
+if_sethide(1, 481:60);
+~script41(31522892);
+}
+if(testbit(%varp286, 16) == 1) {
+if_sethide(0, 481:61);
+} else {
+if_sethide(1, 481:61);
+~script41(31522892);
+}
+if(testbit(%varp286, 17) == 1) {
+if_sethide(0, 481:62);
+} else {
+if_sethide(1, 481:62);
+~script41(31522892);
+}
+if(testbit(%varp286, 18) == 1) {
+if_sethide(0, 481:63);
+} else {
+if_sethide(1, 481:63);
+~script41(31522892);
+}
+if(testbit(%varp286, 19) == 1) {
+if_sethide(0, 481:64);
+} else {
+if_sethide(1, 481:64);
+~script41(31522892);
+}
+if(testbit(%varp286, 21) == 1) {
+if_sethide(0, 481:65);
+} else {
+if_sethide(1, 481:65);
+~script41(31522892);
+}
+if(testbit(%varp286, 23) == 1) {
+if_sethide(0, 481:66);
+} else {
+if_sethide(1, 481:66);
+~script41(31522892);
+}
+if(testbit(%varp286, 24) == 1) {
+if_sethide(0, 481:67);
+} else {
+if_sethide(1, 481:67);
+~script41(31522892);
+}
+if(testbit(%varp286, 26) == 1) {
+if_sethide(0, 481:68);
+} else {
+if_sethide(1, 481:68);
+~script41(31522892);
+}
+if(testbit(%varp286, 27) == 1) {
+if_sethide(0, 481:69);
+} else {
+if_sethide(1, 481:69);
+~script41(31522892);
+}
+return();

@@ -1,0 +1,29 @@
+[clientscript,script2184](int $int0, int $int1)
+$int2 = 140;
+if($int0 == 1) {
+$int2 = 142;
+}
+$int3 = -1;
+$int4 = 0;
+$int5 = 0;
+$int6 = 14;
+$int7 = 6;
+while($int5 < 28) {
+$int3 = inv_getobj(611, $int1);
+cc_create(enum(component, component, $int2, 10092602), Graphic, $int5);
+cc_setposition($int6, $int7, 0, 0);
+cc_setsize(36, 32, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+$int4 = inv_getnum(611, $int1);
+cc_setobject($int3, $int4);
+$int5 = add($int5, 1);
+$int1 = add($int1, 1);
+if(modulo($int5, 4) == 0) {
+$int7 = add($int7, 36);
+$int6 = 14;
+} else {
+$int6 = add($int6, 43);
+}
+}
+return();

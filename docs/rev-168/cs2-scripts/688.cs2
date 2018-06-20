@@ -1,0 +1,25 @@
+[clientscript,script688](int $int0, int $int1, int $int2)
+$int3 = add(37, divide(sub(if_getwidth($int0), multiply(5, 37)), sub(5, 1)));
+$int4 = add(37, divide(sub(if_getheight($int0), multiply(5, 37)), sub(5, 1)));
+$int5 = pow(5, 2);
+$int6 = sub($int5, 1);
+cc_deleteall($int0);
+$int7 = 0;
+while($int7 < $int5) {
+cc_create($int0, Text, $int7);
+cc_setsize(37, 37, 0, 0);
+cc_setposition(multiply(modulo($int7, 5), $int3), multiply(divide($int7, 5), $int4), 0, 0);
+cc_setopbase("<col=ff9040>Sliding piece</col>");
+$int7 = add($int7, 1);
+}
+$int7 = 0;
+while($int7 < $int6) {
+cc_create($int0, Model, add($int7, $int5));
+cc_setsize(37, 37, 0, 0);
+cc_setmodelangle(0, 0, 513, 0, 0, 1800);
+$int7 = add($int7, 1);
+}
+~script690($int0, $int5, $int6, $int3, $int4, $int1, $int2);
+if_setoninvtransmit("script689(0, $int0, $int5, $int6, $int3, $int4, $int1, $int2){140, 221, 222}", $int0);
+if_setonvartransmit("script689(1, $int0, $int5, $int6, $int3, $int4, $int1, $int2){261}", $int0);
+return();

@@ -1,0 +1,17 @@
+[clientscript,script1454](int $int0, string $string0, string $string1)
+$int1 = 6946817;
+$int2 = 6946818;
+$int3 = 6946833;
+~steelborder($int1, $string0, 0);
+if_setonvartransmit("script1455($int2, -1, $int0){1139, 1140}", $int2);
+if_setoninvtransmit("script1455($int2, -1, $int0){93}", $int2);
+~script1456($int2, -1, $int0);
+cc_create($int3, Text, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 4, 4);
+cc_settext($string1);
+cc_settextfont(496);
+cc_settextshadow(1);
+cc_setcolor(0xFF981F);
+cc_settextalign(1, 1, 0);
+return();

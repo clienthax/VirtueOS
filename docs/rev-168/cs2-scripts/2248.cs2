@@ -1,0 +1,5 @@
+[clientscript,script2248]
+$int0 = ~min(add(%varp261, 1), 6);
+if_sethide(0, 18:5);
+~script2246($int0);
+return();

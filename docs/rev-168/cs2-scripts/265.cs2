@@ -1,0 +1,7 @@
+[clientscript,script265](int $int0)
+if(~inzone(42601512, 42716207, coord) == 1) {
+if_sethide(0, $int0);
+} else {
+if_sethide(1, $int0);
+}
+return();

@@ -1,0 +1,17 @@
+[clientscript,script825](int $int0)
+cc_deleteall($int0);
+$int1 = sub(multiply(sub(42, 36), 3), 2);
+$int2 = multiply(sub(36, 32), 2);
+$int3 = 0;
+$int4 = inv_size(93);
+while($int3 < $int4) {
+cc_create($int0, Graphic, $int3);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add($int1, multiply(modulo($int3, 4), 42)), add($int2, multiply(divide($int3, 4), 36)), 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+$int3 = add($int3, 1);
+}
+~script827($int0);
+if_setoninvtransmit("script826($int0){93}", $int0);
+return();

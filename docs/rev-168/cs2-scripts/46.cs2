@@ -1,0 +1,15 @@
+[proc,script46](int $int0, string $string0)(string)
+$int1 = divide($int0, 1000000000);
+$int2 = divide(sub($int0, multiply($int1, 1000000000)), 1000000);
+$int3 = divide(sub($int0, add(multiply($int1, 1000000000), multiply($int2, 1000000))), 1000);
+$int4 = sub($int0, add(add(multiply($int1, 1000000000), multiply($int2, 1000000)), multiply($int3, 1000)));
+if($int1 > 0) {
+return("<tostring($int1)><$string0><~script47($int2)><$string0><~script47($int3)><$string0><~script47($int4)>");
+}
+if($int2 > 0) {
+return("<tostring($int2)><$string0><~script47($int3)><$string0><~script47($int4)>");
+}
+if($int3 > 0) {
+return("<tostring($int3)><$string0><~script47($int4)>");
+}
+return(tostring($int0));

@@ -1,0 +1,30 @@
+[clientscript,script910](int $int0, int $int1, int $int2, int $int3, int $int4)
+if($int1 == -1) {
+return();
+}
+if(%varc172 <= -1 || %varc173 <= -1 || if_hassub(enum(component, component, $int0, 10551309)) == 0) {
+cc_deleteall($int1);
+return();
+}
+$int5 = if_getwidth($int2);
+$int6 = if_getheight($int2);
+$int7 = 0;
+$int8 = 0;
+$int9 = 0;
+$int10 = 0;
+if($int0 == 1745) {
+$int7 = add(divide(sub($int5, 512), 2), 5);
+$int8 = add(divide(sub($int6, 334), 2), 81);
+$int9 = sub($int5, add($int7, 512));
+$int10 = sub($int6, add($int8, 334));
+} else {
+$int7 = divide(sub($int5, 512), 2);
+$int8 = divide(sub($int6, 334), 2);
+$int9 = sub($int5, add($int7, 512));
+$int10 = sub($int6, add($int8, 334));
+}
+~script911($int1, 0, %varc172, %varc173, 0, 0, 0, 0, 0, $int8, 1, 0);
+~script911($int1, 1, %varc172, %varc173, 0, 0, 0, 2, 0, add($int10, $int4), 1, 0);
+~script911($int1, 2, %varc172, %varc173, 0, $int8, 0, 0, $int7, 334, 0, 0);
+~script911($int1, 3, %varc172, %varc173, 0, $int8, 2, 0, add($int9, $int3), 334, 0, 0);
+return();

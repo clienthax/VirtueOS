@@ -1,0 +1,15 @@
+[proc,script1444](int $int0)(int)
+$int1 = 0;
+$int2 = 0;
+$int3 = 0;
+$gosubResult2_0, $gosubResult2_1, $gosubResult2_2 = ~script2($int0);
+$int3 = $gosubResult2_2;
+$int2 = $gosubResult2_1;
+$int1 = $gosubResult2_0;
+$int4 = sub(random() * 30, random() * 30);
+$int1 = ~minmax(0, 255, add($int1, $int4));
+$int4 = sub(random() * 30, random() * 30);
+$int2 = ~minmax(0, 255, add($int2, $int4));
+$int4 = sub(random() * 30, random() * 30);
+$int3 = ~minmax(0, 255, add($int3, $int4));
+return(~script246($int1, $int2, $int3));

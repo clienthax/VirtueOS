@@ -1,0 +1,51 @@
+[clientscript,script1540](int $int0, int $int1)
+cc_settext("Party size: <col=ffffff><tostring(%varbit5424)></col>");
+if(%varbit5425 == 0) {
+if(%varbit5423 == 1) {
+.cc_settext("");
+} else {
+.cc_settext("Waiting for your leader to begin the raid...");
+}
+} else {
+if(%varbit5425 == 1) {
+.cc_settext("Your party is exploring the upper level...");
+} else {
+if(%varbit5425 == 2) {
+if(%varbit6385 == 1) {
+.cc_settext("Your party has reached the middle level...");
+} else {
+.cc_settext("Your party has reached the lower level...");
+}
+} else {
+if(%varbit5425 == 3) {
+.cc_settext("Your party has reached the lower level...");
+} else {
+if(%varbit5425 == 4) {
+.cc_settext("Your party has reached the bottom...");
+} else {
+.cc_settext("Get out! Get out!<br>GET OUT!");
+}
+}
+}
+}
+}
+$string0 = "Start raid";
+if(%varbit5423 == 1 && %varbit5425 == 0) {
+if_setsize(add(parawidth(190, 495, $string0), 20), if_getheight($int1), 0, 0, $int1);
+if_sethide(0, $int1);
+~script1542(0, $string0, $int1);
+if_setonmouserepeat("script1541(1, $string0, $int1)", $int1);
+if_setonmouseleave("script1541(0, $string0, $int1)", $int1);
+if_setonop("script1543(-2147483644, $string0, $int1)", $int1);
+if_setontimer("null()", $int1);
+if_setop(1, $string0, $int1);
+} else {
+if_sethide(1, $int1);
+cc_deleteall($int1);
+if_clearops($int1);
+if_setonmouserepeat("null()", $int1);
+if_setonmouseleave("null()", $int1);
+if_setonop("null()", $int1);
+if_setontimer("null()", $int1);
+}
+return();

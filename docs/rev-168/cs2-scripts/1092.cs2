@@ -1,0 +1,56 @@
+[clientscript,script1092](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+$int6 = 0;
+$int7 = 0;
+$int8 = 0;
+$int9 = enum(int, int, 273, $int8);
+while($int9 != -1) {
+while($int9 <= 43) {
+if($int9 < 32) {
+if(testbit(%varp1076, $int9) == 0 || testbit(%varp1344, modulo($int9, 32)) == 0) {
+}
+if($int9 >= 32) {
+$int7 = add($int7, enum(int, int, 836, $int9));
+$int6 = add($int6, 1);
+}
+}
+$int8 = add($int8, 1);
+$int9 = enum(int, int, 273, $int8);
+}
+}
+cc_deleteall($int0);
+$int10 = ~script835($int0, 0);
+cc_create($int0, Text, $int10);
+$int10 = add($int10, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 0, 1, 1);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+$string0 = "Nothing more to extend";
+$string1 = "";
+if($int6 > 0 && $int7 > 0) {
+if($int6 > 1) {
+$int7 = interpolate(0, 95, 0, 100, $int7);
+if($int7 < 2) {
+$int7 = 2;
+}
+$string0 = "Extend remaining <tostring($int6)> tasks: <~script46($int7, ",")> points";
+} else {
+$string0 = "Extend remaining task: <~script46($int7, ",")> points";
+}
+cc_setcolor(0xFF981F);
+cc_settext($string0);
+if_setonmouserepeat("script1083(-2147483645, 0)", $int0);
+if_setonmouseleave("script1082(-2147483645, 0)", $int0);
+if_setop(1, "Extend", $int0);
+if_setonop("script414(-1, add(43, 9), $string1, $int1, $int2, $int3, $int4, $int5, $int7)", $int0);
+} else {
+cc_setcolor(0x7F4C0F);
+cc_settext($string0);
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_clearops($int0);
+if_setonop("null()", $int0);
+}
+if_setsize(add(parawidth(if_getwidth(if_getlayer($int0)), 494, $string0), 20), if_getheight($int0), 0, 0, $int0);
+return();

@@ -1,0 +1,25 @@
+[clientscript,script1530](int $int0, int $int1, string $string0)
+if_sethide(0, $int0);
+cc_deleteall($int0);
+cc_create($int0, Text, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+~script1533($int0, $string0);
+if_setonvartransmit("script1532($int0, cc_getid, $string0){1430, 1432, 1429}", $int0);
+if($int1 == 2) {
+~script1531($int0, cc_getid, $string0);
+} else {
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_clearops($int0);
+if_setonop("null()", $int0);
+}
+if($int0 == 33226774) {
+~script2294(33226791, $int1);
+if_setonvartransmit("script2293(33226774, 33226791, $int1){1429}", 507:22);
+}
+return();

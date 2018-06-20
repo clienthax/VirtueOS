@@ -1,0 +1,26 @@
+[proc,script1329](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, string $string0)(int,int,int)
+$int6 = 18;
+$int7 = 6;
+$int4 = $int4;
+cc_create($int2, Model, $int3);
+cc_setposition($int4, $int5, 0, 0);
+cc_setsize(32, 32, 0, 0);
+$int4 = add(add($int4, 6), cc_getwidth);
+cc_setmodel(enum(int, model, 1316, $int3));
+cc_setmodelangle(0, 20, 0, 1871, 0, 600);
+cc_setmodelanim(6613);
+.cc_create($int1, Text, $int3);
+.cc_setposition($int4, $int5, 0, 0);
+.cc_setsize(50, 32, 0, 0);
+.cc_settextfont(494);
+.cc_setcolor(0xFF9900);
+.cc_settextalign(0, 0, 0);
+.cc_settext($string0);
+$int4 = add($int4, .cc_getwidth);
+if(add(add(add($int4, cc_getwidth), $int7), .cc_getwidth) > if_getwidth($int0)) {
+$int4 = 15;
+$int5 = add($int5, 80);
+} else {
+$int4 = add($int4, $int6);
+}
+return(add($int3, 1), $int4, $int5);

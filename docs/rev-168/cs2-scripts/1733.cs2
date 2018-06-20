@@ -1,0 +1,40 @@
+[clientscript,script1733](int $int0, int $int1, int $int2, int $int3, int $int4)
+cc_deleteall($int4);
+$int5 = 0;
+if($int0 == 1) {
+if_sethide(0, $int3);
+if_setsize(add($int1, 12), 50, 1, 1, $int2);
+$int5 = ~script198($int4);
+if_setop(1, "Hide", $int4);
+if_setonop("script1732(0, $int1, $int2, $int3, $int4)", $int4);
+} else {
+if_sethide(1, $int3);
+if_setsize(12, 50, 1, 1, $int2);
+$int5 = ~script208($int4);
+if_setop(1, "Show", $int4);
+if_setonop("script1732(1, $int1, $int2, $int3, $int4)", $int4);
+}
+if_setopbase("<col=ff9040>Menu</col>", $int4);
+cc_create($int4, Model, $int5);
+$int5 = add($int5, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setmodel(2600);
+cc_setmodelangle(0, 2, 512, 0, 0, 1100);
+cc_create($int4, Rectangle, $int5);
+$int5 = add($int5, 1);
+.cc_create($int4, Rectangle, $int5);
+$int5 = add($int5, 1);
+cc_setsize(14, 7, 0, 0);
+.cc_setsize(12, 5, 0, 0);
+cc_setposition(0, 0, 1, 1);
+.cc_setposition(0, 0, 1, 1);
+cc_setfill(1);
+.cc_setfill(1);
+cc_setcolor(0xFFFF7F);
+.cc_setcolor(0xFFFF7F);
+cc_settrans(255);
+.cc_settrans(255);
+if_setonmouserepeat("script1744(-2147483645, cc_getid, .cc_getid, 240)", $int4);
+if_setonmouseleave("script1744(-2147483645, cc_getid, .cc_getid, 255)", $int4);
+return();

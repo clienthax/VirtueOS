@@ -1,0 +1,11 @@
+[clientscript,script788](int $int0, int $int1, int $int2, int $int3)
+$int4 = 0;
+$int5 = enum(int, component, 1011, $int4);
+while($int5 != -1) {
+~script789($int5, $int4, $int3);
+$int4 = add($int4, 1);
+$int5 = enum(int, component, 1011, $int4);
+}
+~script141($int1, "Inventory", "Collect to inventory");
+~script141($int2, "Bank", "Collect to bank");
+return();

@@ -1,0 +1,24 @@
+[clientscript,script2096](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+.cc_settrans(255);
+if(%varbit1777 == $int3) {
+cc_setgraphic(699);
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setonop("script489(-2147483644, 0)", $int0);
+} else {
+if(%varp281 < 1000 || $int3 == 0 || %varbit1777 == 3 || %varbit1777 == 2) {
+if(%varbit1776 == 1 && $int3 == 1 && %varbit1777 == 2) {
+cc_setgraphic(697);
+if_setonmouserepeat("cc_settrans(-2147483645, $int1, 225, -1)", $int0);
+if_setonmouseleave("cc_settrans(-2147483645, $int1, 255, -1)", $int0);
+if_setonop("script2115(-2147483644, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7)", $int0);
+} else {
+} else {
+cc_setgraphic(697);
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setonop("script489(-2147483644, 2)", $int0);
+}
+}
+}
+return();

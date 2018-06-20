@@ -1,0 +1,40 @@
+[clientscript,script995](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+~script2250($int6);
+~script997($int0, $int1, $int4, $int5);
+$int7 = 494;
+$int8 = 494;
+$int9 = 16;
+if(%varbit4693 == 1) {
+$int9 = 25;
+$int8 = 495;
+$int7 = 495;
+} else {
+if(%varbit4693 == 2) {
+$int9 = 25;
+$int8 = 496;
+$int7 = 496;
+}
+}
+$int10 = add(add(28, parawidth(512, $int7, "+8,888,888,888")), 2);
+if_setsize($int10, if_getheight($int1), 0, 0, $int1);
+if_settextfont($int8, $int2);
+$int11 = 0;
+$int12 = enum(int, component, 1163, $int11);
+while($int12 != -1) {
+if(cc_find($int12, 0) == 1) {
+cc_setcolor(enum(int, int, 1169, %varbit4695));
+~script996($int12, $int9, $int7, $int8, cc_gettext);
+}
+$int11 = add($int11, 1);
+$int12 = enum(int, component, 1163, $int11);
+}
+if(%varbit4692 == 2) {
+if_setposition(2, 20, 0, 0, $int1);
+} else {
+if(%varbit4692 == 1) {
+if_setposition(0, 2, 1, 0, $int1);
+} else {
+if_setposition(2, 2, 2, 0, $int1);
+}
+}
+return();

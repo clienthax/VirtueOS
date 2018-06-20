@@ -1,0 +1,20 @@
+[clientscript,script183](int $int0, int $int1)
+switch($int0) {
+case 1:
+%varc44 = $int1;
+case 2:
+%varc45 = $int1;
+case 3:
+%varc46 = $int1;
+case 4:
+%varc47 = $int1;
+case 5:
+%varc48 = $int1;
+case 0:
+%varc48 = $int1;
+%varc47 = $int1;
+%varc46 = $int1;
+%varc45 = $int1;
+%varc44 = $int1;
+}
+return();

@@ -1,0 +1,38 @@
+[clientscript,script1713](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8)
+$int9 = %varc189;
+%varc189 = -1;
+if(opcode6616() != $int0) {
+~script1710($int1, $int3);
+if(opcode6605() == 0) {
+return();
+}
+if(cc_find($int1, $int2) == 1) {
+~script1712(opcode6616(), -1, $int1, $int3, $int4, $int5, $int6, $int7, $int8);
+}
+return();
+}
+if($int9 == -1) {
+return();
+}
+~script1710($int1, $int3);
+if(opcode6605() == 0) {
+return();
+}
+$int10 = -1;
+$int11 = 0;
+$int12 = enum(int, maparea, 1697, $int11);
+while($int12 != -1) {
+$int10 = ~script1715($int12, $int9);
+if($int10 != -1) {
+if(opcode6616() != $int12) {
+if(cc_find($int1, $int2) == 1) {
+~script1712($int12, $int10, $int1, $int3, $int4, $int5, $int6, $int7, $int8);
+}
+} else {
+}
+return();
+}
+$int11 = add($int11, 1);
+$int12 = enum(int, maparea, 1697, $int11);
+}
+return();

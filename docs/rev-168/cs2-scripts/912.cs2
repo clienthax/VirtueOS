@@ -1,0 +1,33 @@
+[clientscript,script912](int $int0)
+$int1 = -1;
+$int2 = -1;
+$int3 = 0;
+$int4 = enum(int, component, 1138, $int3);
+$int5 = enum(int, component, 1139, $int3);
+while($int4 != -1) {
+while($int5 != -1) {
+$int5 = enum(component, component, $int0, $int5);
+$int4 = enum(component, component, $int0, $int4);
+if($int4 != -1) {
+if($int5 != -1) {
+if($int3 == sub(%varbit3756, 1)) {
+if_sethide(0, $int4);
+~script913($int5);
+} else {
+$int2 = enum(int, component, 1137, $int3);
+if(if_hassub(enum(component, component, $int0, $int2)) == 1) {
+if_sethide(0, $int4);
+if_sethide(0, $int5);
+} else {
+if_sethide(1, $int4);
+if_sethide(1, $int5);
+}
+}
+}
+}
+$int3 = add($int3, 1);
+$int5 = enum(int, component, 1139, $int3);
+$int4 = enum(int, component, 1138, $int3);
+}
+}
+return();

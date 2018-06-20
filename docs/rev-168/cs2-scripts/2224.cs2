@@ -1,0 +1,5 @@
+[clientscript,script2224]
+if(%varc204 < 3 || %varc204 > 12) {
+%varc204 = 12;
+}
+return();

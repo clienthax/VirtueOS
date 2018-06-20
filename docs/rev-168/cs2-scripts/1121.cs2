@@ -1,0 +1,41 @@
+[proc,script1121](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, string $string0)(int,int,int)
+$int7 = divide(if_getwidth($int3), 2);
+if($int2 == 1) {
+$int7 = add($int7, 15);
+} else {
+$int7 = sub($int7, 15);
+}
+cc_create($int3, Rectangle, $int4);
+$int4 = add($int4, 1);
+cc_setsize($int7, 15, 0, 0);
+if($int2 == 1) {
+cc_setposition(0, $int6, 2, 0);
+$int6 = add($int6, 15);
+} else {
+cc_setposition(0, $int5, 0, 0);
+$int5 = add($int5, 15);
+}
+cc_settrans(255);
+cc_setop(1, "Send report");
+cc_setonop("script1123($int1)");
+cc_setonmouseover("script1122(-2147483645, -2147483643, 16711680)");
+cc_setonmouseleave("script1122(-2147483645, -2147483643, 16777215)");
+.cc_create($int3, Text, $int4);
+$int4 = add($int4, 1);
+.cc_setsize(15, 15, 0, 0);
+.cc_setposition(cc_getx, cc_gety, 0, 0);
+.cc_setcolor(0xFFFFFF);
+.cc_settextfont(494);
+.cc_settextalign(2, 0, 0);
+.cc_settextshadow(1);
+.cc_settext("<tostring($int0)>:");
+.cc_create($int3, Text, $int4);
+$int4 = add($int4, 1);
+.cc_setsize(sub($int7, 20), 15, 0, 0);
+.cc_setposition(add(cc_getx, 20), cc_gety, 0, 0);
+.cc_setcolor(0xFFFFFF);
+.cc_settextfont(494);
+.cc_settextalign(0, 0, 0);
+.cc_settextshadow(1);
+.cc_settext($string0);
+return($int4, $int5, $int6);

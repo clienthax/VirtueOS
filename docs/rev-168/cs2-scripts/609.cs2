@@ -1,0 +1,59 @@
+[clientscript,script609](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, string $string0)
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551309)) == 0) {
+return();
+}
+$int7 = if_getwidth($int6);
+$int8 = 0;
+$int9 = 0;
+$int10 = 0;
+$int11 = 0;
+$int12 = 0;
+$gosubResult2_0, $gosubResult2_1, $gosubResult2_2 = ~script2($int0);
+$int12 = $gosubResult2_2;
+$int11 = $gosubResult2_1;
+$int10 = $gosubResult2_0;
+if($int10 > 64) {
+$int10 = sub($int10, 32);
+} else {
+$int10 = divide($int10, 2);
+}
+if($int11 > 64) {
+$int11 = sub($int11, 32);
+} else {
+$int11 = divide($int11, 2);
+}
+if($int12 > 64) {
+$int12 = sub($int12, 32);
+} else {
+$int12 = divide($int12, 2);
+}
+$int13 = ~script246($int10, $int11, $int12);
+$string1 = "";
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+while(string_length($string1) > 0) {
+$int8 = add(multiply(paraheight($int7, $int3, $string1), $int4), $int5);
+cc_create($int6, Text, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition(0, %varc49, 0, 0);
+cc_setsize($int7, $int8, 0, 0);
+if(modulo($int9, 2) == 0) {
+cc_setcolor($int0);
+} else {
+cc_setcolor($int13);
+}
+cc_settextfont($int2);
+cc_settextalign($int1, 0, 0);
+cc_settextshadow(1);
+cc_settext($string1);
+$int9 = add($int9, 1);
+%varc49 = add(add(%varc49, $int8), 3);
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+}
+if($int9 > 0) {
+%varc49 = add(%varc49, 3);
+}
+return();

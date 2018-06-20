@@ -1,0 +1,3 @@
+[clientscript,script2194]
+docheat("~dmm_disable");
+return();

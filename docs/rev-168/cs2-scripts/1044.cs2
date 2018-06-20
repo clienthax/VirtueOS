@@ -1,0 +1,10 @@
+[clientscript,script1044]
+$int0 = sub(715, 175);
+$int1 = sub(700, 195);
+$int2 = sub(if_getwidth(261:8), if_getwidth(261:13));
+$int3 = 0;
+$int4 = 0;
+$int4 = viewport_geteffectiveheight();
+$int3 = viewport_geteffectivewidth();
+~script1049;
+return();

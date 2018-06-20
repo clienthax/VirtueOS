@@ -1,0 +1,22 @@
+[clientscript,script1720](int $int0, int $int1, int $int2, int $int3, int $int4)
+if(testbit(%varbit5640, $int1) == 1) {
+.cc_setop(1, "Enable");
+cc_sethide(0);
+} else {
+.cc_setop(1, "Disable");
+cc_sethide(1);
+}
+$int5 = 1;
+switch($int1) {
+case 0:
+case 1:
+case 4:
+~script1751($int2, $int3);
+case 2:
+if(testbit(%varbit5640, 2) == 1) {
+$int5 = 0;
+}
+case 3:
+~script41($int4);
+}
+return();

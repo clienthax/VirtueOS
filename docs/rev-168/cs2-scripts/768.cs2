@@ -1,0 +1,199 @@
+[clientscript,script768](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+if(%varbit4375 == 1) {
+if_settext("Trade modified", $int6);
+} else {
+if_settext("", $int6);
+}
+cc_deleteall($int3);
+cc_deleteall($int4);
+cc_deleteall($int5);
+$int7 = divide(add($int0, 1), 2);
+$int8 = sub(clientclock, 750);
+$int9 = 0;
+$int10 = 0;
+$int11 = 0;
+while($int11 < $int0) {
+if(inv_getobj(90, $int11) != -1) {
+$int9 = add($int9, 1);
+}
+if(invother_getobj(90, $int11) != -1) {
+$int10 = add($int10, 1);
+} else {
+if(~script148($int11) > $int8) {
+$int10 = add($int10, 1);
+}
+}
+$int11 = add($int11, 1);
+}
+$int12 = -1;
+$string0 = "";
+$int13 = $int1;
+$int14 = $int1;
+if($int9 > $int7) {
+$int13 = $int2;
+}
+if($int10 > $int7) {
+$int14 = $int2;
+}
+$int15 = 0;
+$int16 = 0;
+$int17 = 0;
+$int18 = 0;
+$int19 = 0;
+$int20 = 0;
+$int21 = 0;
+$int22 = 0;
+$int11 = 0;
+while($int11 < $int0) {
+$int12 = inv_getobj(90, $int11);
+if($int12 != -1) {
+cc_create($int3, Text, $int17);
+cc_setsize($int13, 17, 0, 0);
+cc_setcolor(0xFF9040);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+$string0 = ~script769($int12, inv_getnum(90, $int11));
+if($int9 > $int7) {
+if(parawidth(512, 495, $string0) > $int2) {
+cc_settextfont(494);
+} else {
+cc_settextfont(495);
+}
+if(modulo($int17, 2) == 0) {
+cc_setposition($int2, multiply(divide($int17, 2), 12), 0, 0);
+} else {
+cc_setposition($int1, multiply(divide($int17, 2), 12), 0, 0);
+}
+} else {
+if(parawidth(512, 495, $string0) > $int1) {
+cc_settextfont(494);
+} else {
+if(parawidth(512, 496, $string0) > $int1) {
+cc_settextfont(495);
+} else {
+cc_settextfont(496);
+}
+}
+cc_setposition($int2, multiply($int17, 12), 0, 0);
+}
+cc_settext($string0);
+$int17 = add($int17, 1);
+}
+$int12 = invother_getobj(90, $int11);
+$int20 = ~script148($int11);
+if($int12 != -1) {
+cc_create($int4, Text, $int18);
+cc_setsize($int14, 17, 0, 0);
+cc_setcolor(0xFF9040);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+$string0 = ~script769($int12, invother_getnum(90, $int11));
+if($int10 > $int7) {
+if(parawidth(512, 495, $string0) > $int2) {
+cc_settextfont(494);
+} else {
+cc_settextfont(495);
+}
+$int16 = multiply(divide($int18, 2), 12);
+if(modulo($int18, 2) == 0) {
+cc_setposition($int2, $int16, 0, 0);
+$int15 = 0;
+} else {
+cc_setposition($int1, $int16, 0, 0);
+$int15 = $int2;
+}
+} else {
+if(parawidth(512, 495, $string0) > $int1) {
+cc_settextfont(494);
+} else {
+if(parawidth(512, 496, $string0) > $int1) {
+cc_settextfont(495);
+} else {
+cc_settextfont(496);
+}
+}
+$int16 = multiply($int18, 12);
+cc_setposition($int2, $int16, 0, 0);
+$int15 = 0;
+}
+cc_settext($string0);
+if($int20 > $int8) {
+.cc_create($int5, Rectangle, $int19);
+.cc_setsize($int14, 12, 0, 0);
+.cc_setposition($int15, $int16, 0, 0);
+.cc_setcolor(0xFF0000);
+.cc_setfill(1);
+.cc_settrans(255);
+.cc_setontimer("script766(-2147483645, -2147483643, $int20)");
+$int19 = add($int19, 1);
+.cc_create($int5, Rectangle, $int19);
+.cc_setsize($int14, 12, 0, 0);
+.cc_setposition($int15, $int16, 0, 0);
+.cc_setcolor(0x990000);
+.cc_setfill(0);
+.cc_settrans(255);
+.cc_setontimer("script766(-2147483645, -2147483643, $int20)");
+$int19 = add($int19, 1);
+}
+$int18 = add($int18, 1);
+} else {
+if($int20 > $int8) {
+$int21 = add($int21, 1);
+if($int20 > $int22) {
+$int22 = $int20;
+}
+}
+}
+$int11 = add($int11, 1);
+}
+if($int17 <= 0) {
+cc_create($int3, Text, 0);
+cc_setsize($int1, 17, 0, 0);
+cc_setposition($int2, 0, 0, 0);
+cc_setcolor(0xFFFFFF);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext("Absolutely nothing!");
+cc_settextfont(496);
+$int17 = add($int17, 1);
+}
+if($int18 <= 0) {
+cc_create($int4, Text, 0);
+cc_setsize($int1, 17, 0, 0);
+cc_setposition($int2, 0, 0, 0);
+cc_setcolor(0xFFFFFF);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext("Absolutely nothing!");
+cc_settextfont(496);
+$int18 = add($int18, 1);
+}
+while($int21 > 0) {
+$int21 = sub($int21, 1);
+cc_create($int5, Rectangle, $int19);
+$int19 = add($int19, 1);
+.cc_create($int5, Rectangle, $int19);
+$int19 = add($int19, 1);
+cc_setsize($int14, 12, 0, 0);
+.cc_setsize($int14, 12, 0, 0);
+if($int10 > $int7) {
+if(modulo($int18, 2) == 0) {
+cc_setposition($int2, multiply(divide($int18, 2), 12), 0, 0);
+} else {
+cc_setposition($int1, multiply(divide($int18, 2), 12), 0, 0);
+}
+} else {
+cc_setposition(0, multiply($int18, 12), 0, 0);
+}
+.cc_setposition(cc_getx, cc_gety, 0, 0);
+cc_setcolor(0xFF0000);
+.cc_setcolor(0x990000);
+cc_setfill(1);
+.cc_setfill(0);
+cc_settrans(255);
+.cc_settrans(255);
+cc_setontimer("script766(-2147483645, -2147483643, $int22)");
+.cc_setontimer("script766(-2147483645, -2147483643, $int22)");
+$int18 = add($int18, 1);
+}
+return();

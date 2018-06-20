@@ -1,0 +1,22 @@
+[proc,script408](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, string $string0)(int,int)
+cc_create($int0, Graphic, $int2);
+.cc_create($int0, Text, add($int2, 1));
+cc_setsize(85, 22, 0, 0);
+.cc_setsize(85, 22, 0, 0);
+cc_setposition($int3, 0, 0, 0);
+.cc_setposition($int3, 0, 0, 0);
+.cc_settextfont(494);
+.cc_settextalign(1, 1, 0);
+.cc_setcolor(0xFF981F);
+.cc_settextshadow(1);
+.cc_settext($string0);
+if($int1 != $int8) {
+cc_setgraphic(812);
+cc_setonmouseover("script85(-2147483645, .cc_getid, 16777215)");
+cc_setonmouseleave("script85(-2147483645, .cc_getid, 16750623)");
+cc_setop(1, $string0);
+cc_setonop("script406($int0, $int4, $int5, $int6, $int7, $int1)");
+} else {
+cc_setgraphic(813);
+}
+return(add($int2, 2), add($int3, 86));

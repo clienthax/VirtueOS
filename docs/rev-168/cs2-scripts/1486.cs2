@@ -1,0 +1,35 @@
+[clientscript,script1486](int $int0, int $int1, int $int2)
+cc_deleteall($int0);
+$int3 = 0;
+if($int1 == $int2) {
+$int3 = ~script836($int0, 0);
+cc_create($int0, Text, $int3);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setcolor(0xFFFFFF);
+cc_settextshadow(1);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settext(tostring($int1));
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setonclick("null()", $int0);
+cc_setnoclickthrough(1);
+if_setnoclickthrough(1, $int0);
+} else {
+$int3 = ~script835($int0, 0);
+cc_create($int0, Text, $int3);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settext(tostring($int1));
+if_setonmouserepeat("script85(-2147483645, cc_getid, 16777215)", $int0);
+if_setonmouseleave("script85(-2147483645, cc_getid, 16750623)", $int0);
+if_setonclick("script489(0, -1)", $int0);
+cc_setnoclickthrough(0);
+if_setnoclickthrough(0, $int0);
+}
+return();

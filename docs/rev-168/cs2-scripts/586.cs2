@@ -1,0 +1,6 @@
+[clientscript,script586](int $int0, int $int1, int $int2)
+if(cc_find($int0, $int1) == 1) {
+cc_settrans(255);
+}
+~script41($int2);
+return();

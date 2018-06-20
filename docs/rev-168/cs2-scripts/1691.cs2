@@ -1,0 +1,8 @@
+[clientscript,script1691](string $string0, string $string1, string $string2)
+sound_synth(2266, 1, 0);
+cc_settext("<col=ffffff>Please wait...</col>");
+cc_setonop("null()");
+.cc_setonkey("null()");
+.cc_setontimer("script1692(-2147483643, cc_getlayer, cc_getid, $string0, $string1, $string2, add(clientclock, 40))");
+.cc_resume_pausebutton;
+return();

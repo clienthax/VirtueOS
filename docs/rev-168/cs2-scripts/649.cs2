@@ -1,0 +1,53 @@
+[proc,script649](int $int0, int $int1, int $int2, string $string0)(int)
+$int3 = enum(int, component, 984, $int1);
+if($int3 == -1) {
+return($int0);
+}
+if_sethide(0, $int3);
+$int4 = if_getwidth($int3);
+$int5 = if_getheight($int3);
+cc_deleteall($int3);
+$int6 = 0;
+cc_create($int3, Rectangle, $int6);
+$int6 = add($int6, 1);
+cc_setsize(238, $int5, 0, 0);
+cc_setposition(0, 0, 0, 0);
+cc_setfill(0);
+cc_setcolor(0x333300);
+cc_create($int3, Text, $int6);
+$int6 = add($int6, 1);
+$string1 = "<$string0>: Lvl <tostring($int2)>";
+$int7 = add(parawidth(512, 495, $string1), 10);
+if($int7 < 162) {
+$int7 = 162;
+}
+cc_setsize($int7, $int5, 0, 0);
+cc_setposition(sub(238, $int7), 0, 0, 0);
+cc_settextfont(495);
+cc_settextalign(0, 1, 0);
+cc_settextshadow(1);
+cc_settext($string1);
+cc_setcolor(0xCCCCFF);
+if_setonmouseover("script85(-2147483645, cc_getid, 15658751)", $int3);
+if_setonmouseleave("script85(-2147483645, cc_getid, 13421823)", $int3);
+cc_create($int3, Text, $int6);
+$int6 = add($int6, 1);
+cc_setsize(sub($int4, 238), $int5, 0, 0);
+cc_setposition(238, 0, 0, 0);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+$int8 = enum(int, obj, 250, $int1);
+if($int8 != -1) {
+$int7 = oc_cost($int8);
+} else {
+$int7 = 0;
+}
+$string1 = ",";
+cc_settext("<~script46($int7, $string1)> coins");
+~script651($int7);
+cc_setoninvtransmit("script650(-2147483645, -2147483643, $int7){93}");
+if_setop(1, $string0, $int3);
+if_setonop("script652(-2147483645, $int1)", $int3);
+if_setposition(0, $int0, 0, 0, $int3);
+return(add(add($int0, $int5), 1));

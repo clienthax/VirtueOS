@@ -1,0 +1,82 @@
+[clientscript,script419](int $int0, int $int1, int $int2, int $int3)
+cc_deleteall(592:2);
+cc_deleteall(592:4);
+if($int0 == -1) {
+return();
+}
+$int4 = -1;
+$int5 = sub(if_getwidth(592:2), 4);
+$int6 = inv_size($int0);
+$int7 = 0;
+$int8 = 0;
+$int9 = 2;
+$int10 = 0;
+while($int7 < $int6) {
+$int4 = inv_getobj($int0, $int7);
+if($int4 != -1) {
+if($int7 < 31) {
+$int10 = testbit($int1, $int7);
+} else {
+$int10 = testbit($int2, sub($int7, 31));
+}
+cc_create(592:2, Rectangle, $int8);
+cc_setsize($int5, 61, 0, 0);
+cc_setposition(2, $int9, 0, 0);
+cc_setcolor(0x333333);
+cc_setfill(0);
+if($int4 == 10165) {
+cc_setop(1, "More");
+} else {
+if($int4 == 10166) {
+cc_setop(1, "Back");
+} else {
+if($int10 == 1) {
+cc_setop(1, "Take");
+}
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int4)>");
+}
+}
+$int8 = add($int8, 1);
+cc_create(592:2, Graphic, $int8);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(16, add($int9, 14), 0, 0);
+cc_setobject($int4, 1);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+$int8 = add($int8, 1);
+cc_create(592:2, Text, $int8);
+cc_setsize(sub($int5, 79), 61, 0, 0);
+cc_setposition(79, $int9, 0, 0);
+cc_settextfont(495);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextalign(0, 1, 0);
+cc_settext(enum(obj, string, 380, $int4));
+$int8 = add($int8, 1);
+cc_create(592:2, Rectangle, $int8);
+cc_setsize(sub($int5, 2), 59, 0, 0);
+cc_setposition(3, add($int9, 1), 0, 0);
+cc_setcolor(0x000000);
+cc_settrans(164);
+cc_setfill(1);
+if($int10 == 1) {
+cc_sethide(1);
+}
+$int8 = add($int8, 1);
+$int9 = add($int9, 62);
+}
+$int7 = add($int7, 1);
+}
+$int9 = add($int9, 1);
+if_setscrollsize(0, $int9, 592:2);
+~scrollbar_vertical(38797316, 38797314, 792, 789, 790, 791, 773, 788);
+$int11 = %varc58;
+if($int3 == 1) {
+%varc58 = 0;
+}
+~script72(38797316, 38797314, %varc58);
+if($int3 == 0) {
+%varc58 = $int11;
+}
+return();

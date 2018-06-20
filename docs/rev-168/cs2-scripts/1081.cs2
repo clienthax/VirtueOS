@@ -1,0 +1,4 @@
+[clientscript,script1081](string $string0, int $int0)
+sound_synth(2266, 1, 0);
+openurl($string0, $int0);
+return();

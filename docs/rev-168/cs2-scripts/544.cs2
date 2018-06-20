@@ -1,0 +1,18 @@
+[clientscript,script544](int $int0, int $int1)
+cc_deleteall($int0);
+cc_create($int0, Graphic, 0);
+cc_setposition(0, 0, 0, 0);
+cc_setsize(36, 36, 0, 0);
+cc_setgraphic(170);
+cc_create($int0, Graphic, 1);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(2, 2, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+.cc_create($int0, Graphic, 2);
+.cc_setsize(32, 32, 0, 0);
+.cc_setposition(2, 2, 0, 0);
+.cc_setgraphic(enum(int, graphic, 904, $int1));
+~script546($int0, $int1);
+if_setoninvtransmit("script545($int0, $int1, cc_getid, .cc_getid){94}", $int0);
+return();

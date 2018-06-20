@@ -1,0 +1,5 @@
+[clientscript,script914](int $int0, int $int1, int $int2)
+if($int0 == 1) {
+~script71($int1, $int2, 1);
+}
+return();

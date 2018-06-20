@@ -1,0 +1,40 @@
+[clientscript,script1229](int $int0)
+$int1 = 0;
+if($int0 == 3) {
+$int1 = %varbit4896;
+} else {
+if($int0 == 2) {
+$int1 = %varbit4895;
+} else {
+if($int0 == 4) {
+$int1 = %varbit4898;
+} else {
+if($int0 == 5) {
+$int1 = %varbit4899;
+} else {
+if($int0 == 1) {
+$int1 = %varbit4894;
+} else {
+return();
+}
+}
+}
+}
+}
+cc_setsize(interpolate(0, $int1, 0, 1000, 16384), 0, 2, 1);
+if($int1 > 0) {
+if(cc_getwidth < 1) {
+cc_setsize(1, 0, 0, 1);
+}
+}
+$int2 = interpolate(0, $int1, 0, 1000, 1000);
+.cc_settext("<tostring(divide($int2, 10))>.<tostring(modulo($int2, 10))>%");
+$int3 = 0;
+$int4 = 0;
+$int5 = 0;
+$gosubResult2_0, $gosubResult2_1, $gosubResult2_2 = ~script2(16750623);
+$int5 = $gosubResult2_2;
+$int4 = $gosubResult2_1;
+$int3 = $gosubResult2_0;
+.cc_setcolor(~script246(add($int3, interpolate(0, $int1, 0, 1000, sub(255, $int3))), add($int4, interpolate(0, $int1, 0, 1000, sub(255, $int4))), add($int5, interpolate(0, $int1, 0, 1000, sub(255, $int5)))));
+return();

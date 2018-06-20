@@ -1,0 +1,29 @@
+[clientscript,script132](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9)
+~script1578($int8);
+if_setonvartransmit("script1577($int8){453}", $int0);
+cc_deleteall($int9);
+$int10 = ~script1071("Ahrim", 0, $int9);
+$int11 = ~script1071("Dharok", 1, $int9);
+if($int11 > $int10) {
+$int10 = $int11;
+}
+$int11 = ~script1071("Guthan", 2, $int9);
+if($int11 > $int10) {
+$int10 = $int11;
+}
+$int11 = ~script1071("Karil", 3, $int9);
+if($int11 > $int10) {
+$int10 = $int11;
+}
+$int11 = ~script1071("Torag", 4, $int9);
+if($int11 > $int10) {
+$int10 = $int11;
+}
+$int11 = ~script1071("Verac", 5, $int9);
+if($int11 > $int10) {
+$int10 = $int11;
+}
+if_setsize(add($int10, 20), 102, 0, 0, $int9);
+~script168($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, -2147483648);
+if_setonsubchange("script140($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, -2147483648)", $int0);
+return();

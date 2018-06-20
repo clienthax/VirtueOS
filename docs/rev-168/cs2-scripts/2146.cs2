@@ -1,0 +1,8 @@
+[clientscript,script2146](int $int0, int $int1)
+$string0 = "Set your keybindings for side stone functionality here.";
+if(~script1972 == 1) {
+$string0 = "This option is not available on this device.";
+}
+if_setonmouserepeat("script526($int0, -1, $int1, $string0, 25, 190)", $int0);
+%varc2 = 0;
+return();

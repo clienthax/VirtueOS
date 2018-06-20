@@ -1,0 +1,18 @@
+[clientscript,script2140](int $int0, int $int1, int $int2)
+if_setnpchead(7510, $int1);
+if_setmodelanim(579, $int1);
+cc_deleteall($int2);
+cc_create($int2, Graphic, 0);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(36, 32, 0, 0);
+cc_setoutline(1);
+cc_setgraphicshadow(0x333333);
+cc_setop(1, "Withdraw-1");
+cc_setop(2, "Withdraw-5");
+cc_setop(3, "Withdraw-X");
+cc_setop(4, "Withdraw-All");
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name(21652)></col>");
+~script2142;
+if_setonvartransmit("script2141($int2, cc_getid){1632}", $int0);
+return();

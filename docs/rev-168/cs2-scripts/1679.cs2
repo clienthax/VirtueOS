@@ -1,0 +1,11 @@
+[clientscript,script1679](int $int0, int $int1)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+~script1682($int1, 1);
+if_setonmouserepeat("null()", $int1);
+if_setonmouseleave("null()", $int1);
+if_setonop("null()", $int1);
+if_setontimer("script1680(-2147483645, add(clientclock, 40))", $int1);
+return();

@@ -1,0 +1,58 @@
+[clientscript,script1745](int $int0, int $int1, int $int2, int $int3, int $int4)
+if_sethide(1, $int2);
+if_sethide(0, $int3);
+if(~toplevel_getcomponents == 1132) {
+if_setposition(0, 0, 1, 1, $int1);
+if_setsize(0, 0, 1, 1, $int1);
+return();
+}
+%varc191 = ~max(~min(%varc191, sub(if_getwidth($int0), $int4)), 0);
+%varc192 = ~max(~min(%varc192, sub(if_getheight($int0), 280)), 0);
+%varc194 = ~max(~min(%varc194, %varc192), 0);
+%varc193 = ~max(~min(%varc193, %varc191), 0);
+if_setposition(%varc193, %varc194, 0, 0, $int1);
+if_setsize(%varc191, %varc192, 1, 1, $int1);
+$int5 = add(%varc191, multiply(6, 2));
+$int6 = add(%varc192, multiply(6, 2));
+$int7 = sub(%varc191, %varc193);
+$int8 = sub(%varc192, %varc194);
+$int9 = 0;
+if(cc_find($int0, 0) == 1) {
+if(.cc_find($int0, 1) == 1) {
+cc_setsize($int5, 6, 1, 0);
+.cc_setsize($int5, 6, 1, 0);
+$int9 = add(%varc193, 6);
+cc_setposition($int9, %varc194, 0, 0);
+.cc_setposition($int9, $int8, 0, 2);
+~script1746($int0, $int1, $int2, $int3, $int4);
+}
+}
+if(cc_find($int0, 2) == 1) {
+if(.cc_find($int0, 3) == 1) {
+cc_setsize(6, $int6, 0, 1);
+.cc_setsize(6, $int6, 0, 1);
+$int9 = add(%varc194, 6);
+cc_setposition(%varc193, $int9, 0, 0);
+.cc_setposition($int7, $int9, 2, 0);
+~script1746($int0, $int1, $int2, $int3, $int4);
+}
+}
+if(cc_find($int0, 4) == 1) {
+if(.cc_find($int0, 5) == 1) {
+cc_setsize(6, 6, 0, 0);
+.cc_setsize(6, 6, 0, 0);
+cc_setposition(%varc193, %varc194, 0, 0);
+.cc_setposition($int7, %varc194, 2, 0);
+~script1746($int0, $int1, $int2, $int3, $int4);
+}
+}
+if(cc_find($int0, 6) == 1) {
+if(.cc_find($int0, 7) == 1) {
+cc_setsize(6, 6, 0, 0);
+.cc_setsize(6, 6, 0, 0);
+cc_setposition(%varc193, $int8, 0, 2);
+.cc_setposition($int7, $int8, 2, 2);
+~script1746($int0, $int1, $int2, $int3, $int4);
+}
+}
+return();

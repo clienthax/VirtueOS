@@ -1,0 +1,36 @@
+[clientscript,script1220](int $int0)
+$int1 = -1;
+$int2 = -1;
+if($int0 == 3) {
+$int2 = 16121875;
+$int1 = 16056330;
+} else {
+if($int0 == 2) {
+$int2 = 16121879;
+$int1 = 16056333;
+} else {
+if($int0 == 4) {
+$int2 = 16121883;
+$int1 = 16056336;
+} else {
+if($int0 == 5) {
+$int2 = 16121887;
+$int1 = 16056339;
+} else {
+if($int0 == 1) {
+$int2 = 16121891;
+$int1 = 16056342;
+} else {
+return();
+}
+}
+}
+}
+}
+if(cc_find($int1, 0) == 1) {
+cc_setcolor(0xFFFFFF);
+cc_setontimer("script1233(-2147483645, -2147483643, $int0, add(clientclock, 30))");
+}
+if_setcolor(0xFFFFFF, $int2);
+if_setontimer("script1221($int2, $int0)", $int2);
+return();

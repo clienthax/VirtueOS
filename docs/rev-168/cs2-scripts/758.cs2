@@ -1,0 +1,8 @@
+[clientscript,script758](int $int0)
+if(testbit(%varp286, $int0) == 0) {
+%varp286 = setbit(%varp286, $int0);
+} else {
+%varp286 = clearbit(%varp286, $int0);
+}
+~script759;
+return();

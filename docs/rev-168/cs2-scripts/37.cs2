@@ -1,0 +1,40 @@
+[clientscript,scrollbar_vertical_doscroll](int $int0, int $int1, int $int2, int $int3)
+$int4 = ~max(sub(if_getscrollheight($int1), if_getheight($int1)), 1);
+$int2 = ~max(~min($int2, $int4), 0);
+if_setscrollpos(0, $int2, $int1);
+switch($int1) {
+case 10616879:
+%varc7 = if_getscrolly($int1);
+case 26148870:
+%varc10 = if_getscrolly($int1);
+case 28114953:
+%varc9 = if_getscrolly($int1);
+case 786455:
+%varc51 = if_getscrolly($int1);
+case 24969223:
+%varc0 = if_getscrolly($int1);
+case 4521991:
+%varc69 = if_getscrolly($int1);
+case 30015491:
+case 38797314:
+%varc58 = if_getscrolly($int1);
+case 22609931:
+case 26214410:
+%varc63 = if_getscrolly($int1);
+case 11730949:
+%varc77 = if_getscrolly($int1);
+case 4915202:
+%varc80 = if_getscrolly($int1);
+case 8454157:
+%varc138 = if_getscrolly($int1);
+case 33226763:
+case 32702478:
+case 32768010:
+%varc179 = if_getscrolly($int1);
+case 38993935:
+%varc182 = if_getscrolly($int1);
+}
+if($int3 == 1) {
+~script740($int0, $int1);
+}
+return();

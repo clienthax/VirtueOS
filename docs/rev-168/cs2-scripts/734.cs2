@@ -1,0 +1,24 @@
+[clientscript,script734](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+cc_deleteall($int1);
+cc_deleteall($int2);
+%varc178 = 0;
+%varc179 = 0;
+~script2286($int3, $int4);
+if_setonvartransmit("script2285($int3, $int4){1204}", $int0);
+$int6 = 0;
+$int7 = 0;
+$gosubResult2274_0, $gosubResult2274_1 = ~script2274($int5, $int7);
+$int7 = $gosubResult2274_1;
+$int6 = $gosubResult2274_0;
+if_setonmouserepeat("script2287(1, $int5, $int6)", $int5);
+if_setonmouseleave("script2287(0, $int5, $int6)", $int5);
+cc_create($int5, Text, $int7);
+$int7 = add($int7, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont(497);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext("Cancel");
+return();

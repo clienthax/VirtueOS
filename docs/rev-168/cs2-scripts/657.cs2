@@ -1,0 +1,39 @@
+[proc,script657](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, string $string0)(int)
+cc_create($int2, Text, multiply($int6, 2));
+cc_setsize(26, 32, 0, 0);
+cc_setposition(0, $int7, 0, 0);
+cc_settextalign(2, 0, 0);
+cc_setcolor(0x46320A);
+cc_settextfont(497);
+cc_settextshadow(0);
+if($int0 > 0) {
+cc_settext(tostring($int0));
+} else {
+cc_settext("");
+}
+cc_create($int3, Graphic, $int6);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(28, $int7, 0, 0);
+cc_setoutline(1);
+cc_setgraphicshadow(0x604E32);
+cc_setobject($int1, -1);
+if(%varbit4371 == 22) {
+if($int5 >= 1) {
+if($int5 <= 11) {
+cc_setop(1, "Check materials");
+}
+}
+}
+cc_create($int2, Text, add(multiply($int6, 2), 1));
+$int8 = multiply(paraheight($int4, 495, $string0), 15);
+if($int8 < 32) {
+$int8 = 32;
+}
+cc_setsize($int4, $int8, 0, 0);
+cc_setposition(sub(if_getwidth($int2), $int4), $int7, 0, 0);
+cc_settextalign(0, 0, 0);
+cc_setcolor(0x46320A);
+cc_settextfont(495);
+cc_settextshadow(0);
+cc_settext($string0);
+return(add($int7, $int8));

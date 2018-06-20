@@ -1,0 +1,11 @@
+[clientscript,script366](int $int0, int $int1)
+$string0 = "Chat effects<br>(currently on)";
+if(%varp171 <= 0) {
+if_setgraphic(762, $int0);
+} else {
+$string0 = "Chat effects<br>(currently off)";
+if_setgraphic(761, $int0);
+}
+if_setonmouserepeat("script526($int0, -1, $int1, $string0, 25, 190)", $int0);
+%varc2 = 0;
+return();

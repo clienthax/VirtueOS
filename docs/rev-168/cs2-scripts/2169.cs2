@@ -1,0 +1,20 @@
+[clientscript,script2169]
+if(%varbit6274 == 2) {
+if_setgraphic(174, 182:21);
+if_setgraphic(176, 182:22);
+if_setgraphic(177, 182:17);
+if_setgraphic(178, 182:18);
+} else {
+if(%varbit6274 == 1) {
+if_setgraphic(177, 182:21);
+if_setgraphic(178, 182:22);
+if_setgraphic(174, 182:17);
+if_setgraphic(176, 182:18);
+} else {
+if_setgraphic(174, 182:21);
+if_setgraphic(176, 182:22);
+if_setgraphic(174, 182:17);
+if_setgraphic(176, 182:18);
+}
+}
+return();

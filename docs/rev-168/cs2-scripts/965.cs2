@@ -1,0 +1,24 @@
+[clientscript,script965](int $int0, int $int1, int $int2, int $int3, int $int4)
+cc_deleteall($int2);
+$int5 = ~script835($int2, 0);
+cc_create($int2, Graphic, $int5);
+$int5 = add($int5, 1);
+cc_setsize(29, 22, 0, 0);
+cc_setposition(0, 0, 0, 1);
+cc_setgraphic(1043);
+cc_create($int2, Text, $int5);
+$int5 = add($int5, 1);
+cc_setsize(33, 0, 1, 1);
+cc_setposition(4, 0, 2, 1);
+cc_settextshadow(1);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settext("Search");
+cc_setcolor(0xFF981F);
+if_setonmouseover("script85(-2147483645, cc_getid, 16777215)", $int2);
+if_setonmouseleave("script85(-2147483645, cc_getid, 16750623)", $int2);
+if_setop(1, "Search", $int2);
+if_setonop("script964(1, $int0, $int1, $int2, $int3, $int4)", $int2);
+if_setontimer("null()", $int2);
+~script967($int0, $int1, "", $int3, $int4);
+return();

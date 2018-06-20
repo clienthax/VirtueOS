@@ -1,0 +1,10 @@
+[clientscript,script2179](int $int0)
+reset_playername_mask;
+if($int0 == 1) {
+set_drawfriendname(1)
+} else {
+if($int0 == 2) {
+set_drawallothernames(1)
+}
+}
+return();

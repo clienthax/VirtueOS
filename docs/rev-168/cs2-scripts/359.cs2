@@ -1,0 +1,7 @@
+[clientscript,script359](int $int0, int $int1, int $int2)
+if_setonmouseleave("script40($int2)", $int0);
+~options_mouse($int0, $int1, $int2);
+if_setonvartransmit("script360($int0, $int1, $int2){170}", $int0);
+if_setop(1, ~script1971("Toggle number of Mouse Buttons", "Toggle single-tap mode"), $int0);
+if_setonop("script361(-2147483644, $int0, $int1, $int2)", $int0);
+return();

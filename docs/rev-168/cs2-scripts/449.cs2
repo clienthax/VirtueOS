@@ -1,0 +1,32 @@
+[clientscript,orbs_update](int $int0, int $int1, int $int2, int $int3)
+if($int0 == -1 || $int1 == -1) {
+return();
+}
+if($int3 <= 0) {
+$int3 = 1;
+}
+if($int2 <= 0) {
+$int2 = 0;
+}
+if_settext(tostring($int2), $int0);
+if($int2 > $int3) {
+$int2 = $int3;
+}
+if_setsize(26, divide(multiply(26, sub($int3, $int2)), $int3), 0, 0, $int1);
+$int4 = 0;
+$int5 = divide($int3, 2);
+if($int5 <= 0) {
+if($int2 >= $int3) {
+$int4 = 65280;
+} else {
+$int4 = 16711680;
+}
+} else {
+if($int2 > $int5) {
+$int4 = ~script246(sub(255, divide(multiply(255, sub($int2, $int5)), $int5)), 255, 0);
+} else {
+$int4 = ~script246(255, divide(multiply($int2, 255), $int5), 0);
+}
+}
+if_setcolor($int4, $int0);
+return();

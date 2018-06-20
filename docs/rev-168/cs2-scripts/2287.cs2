@@ -1,0 +1,14 @@
+[clientscript,script2287](int $int0, int $int1, int $int2)
+if(cc_find($int1, $int2) == 1) {
+if($int0 == 1) {
+cc_setgraphic(1040);
+cc_settrans(~max(0, sub(cc_gettrans, 40)));
+cc_setontimer("null()");
+} else {
+if(cc_gettrans < 255) {
+cc_setgraphic(1040);
+cc_setontimer("script2288(-2147483645, -2147483643)");
+}
+}
+}
+return();

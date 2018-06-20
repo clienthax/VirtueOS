@@ -1,0 +1,13 @@
+[clientscript,script1494]
+if(%varbit5662 > 0) {
+cc_setcolor(0x009F00);
+.cc_setcolor(0x009F00);
+.cc_setposition(0, 0, 0, 1);
+.cc_setsize(scale(%varbit5662, 50, 16384), 0, 2, 1);
+} else {
+cc_setcolor(0xFF0000);
+.cc_setcolor(0xFF0000);
+.cc_setposition(0, 0, 1, 1);
+.cc_setsize(10, 1, 0, 0);
+}
+return();

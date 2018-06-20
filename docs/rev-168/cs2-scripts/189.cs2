@@ -1,0 +1,32 @@
+[clientscript,script189](int $int0, int $int1, int $int2)
+$int3 = if_getwidth(593:32);
+$int4 = 12;
+if(~script1972 == 1) {
+$int4 = 22;
+}
+$int5 = sub(interpolate(0, $int1, 0, 1000, 146), $int3);
+if($int5 > 0) {
+if($int2 == 0) {
+$int5 = divide($int5, 2);
+if($int5 == 0) {
+$int5 = 1;
+}
+}
+$int3 = add($int3, $int5);
+if_setontimer("script188($int0, $int1)", $int0);
+} else {
+if($int5 < 0) {
+if($int2 == 0) {
+$int5 = divide($int5, 2);
+if($int5 == 0) {
+$int5 = -1;
+}
+}
+$int3 = add($int3, $int5);
+if_setontimer("script188($int0, $int1)", $int0);
+} else {
+if_setontimer("null()", $int0);
+}
+}
+if_setsize($int3, $int4, 0, 0, 593:32);
+return();

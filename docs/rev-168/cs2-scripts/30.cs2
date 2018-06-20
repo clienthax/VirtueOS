@@ -1,0 +1,3 @@
+[clientscript,script30](int $int0, int $int1)
+~scrollbar_vertical($int0, $int1, 792, 789, 790, 791, 773, 788);
+return();

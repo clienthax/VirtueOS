@@ -1,0 +1,15 @@
+[clientscript,script2077](int $int0)
+cc_deleteall($int0);
+cc_create($int0, Text, 0);
+.cc_create($int0, Text, 1);
+cc_settextfont(496);
+.cc_settextfont(495);
+cc_settextalign(0, 1, 0);
+.cc_settextalign(2, 1, 0);
+cc_settextshadow(1);
+.cc_settextshadow(1);
+cc_setcolor(0xFF981F);
+.cc_setcolor(0xFF981F);
+~script2079;
+if_setonvartransmit("script2078($int0, cc_getid, .cc_getid){1010, 1227}", $int0);
+return();

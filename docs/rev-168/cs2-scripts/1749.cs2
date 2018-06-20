@@ -1,0 +1,3 @@
+[clientscript,script1749](int $int0)
+%varc188 = $int0;
+return();

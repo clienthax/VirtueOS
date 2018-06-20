@@ -1,0 +1,46 @@
+[clientscript,script2104](int $int0, int $int1)
+cc_deleteall($int1);
+$int2 = 0;
+while($int2 < 36) {
+cc_create($int1, Model, $int2);
+cc_setposition(multiply(50, modulo($int2, 6)), multiply(50, divide($int2, 6)), 0, 0);
+cc_setsize(50, 50, 0, 0);
+switch($int2) {
+case 4:
+cc_setmodel(35079);
+cc_setmodelangle(0, 0, 512, 0, 0, 625);
+cc_setop(10, "Check");
+cc_setonop("script2109(-2147483644, 1024)");
+case 17:
+cc_setmodel(35075);
+cc_setmodelangle(0, 0, 512, 0, 0, 625);
+cc_setop(10, "Check");
+cc_setonop("script2109(-2147483644, 1024)");
+case 18:
+cc_setmodel(35067);
+cc_setmodelangle(0, 0, 512, 0, 0, 625);
+cc_setop(10, "Check");
+cc_setonop("script2109(-2147483644, 1024)");
+case 20:
+cc_setmodel(35082);
+cc_setmodelangle(0, 0, 512, 0, 0, 625);
+cc_setop(10, "Check");
+cc_setonop("script2109(-2147483644, 1024)");
+case 30:
+cc_setmodel(35079);
+cc_setmodelangle(0, 0, 512, 0, 0, 625);
+cc_setop(10, "Check");
+cc_setonop("script2109(-2147483644, 1024)");
+default:
+cc_setop(1, "Rotate-right");
+cc_setop(2, "Rotate-left");
+cc_setonop("script2107(-2147483644, -2147483645, -2147483643)");
+cc_setdragdeadzone(5);
+cc_setdragdeadtime(5);
+cc_setondragcomplete("script2108(-2147483645, -2147483643, -2147483642, -2147483641)");
+}
+$int2 = add($int2, 1);
+}
+~script2106($int1);
+if_setonvartransmit("script2105($int1){831, 832, 833, 858, 859, 860, 861}", $int0);
+return();

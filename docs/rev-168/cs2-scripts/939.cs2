@@ -1,0 +1,23 @@
+[clientscript,script939](int $int0, int $int1, int $int2, int $int3)
+$int4 = if_getwidth($int0);
+$int5 = if_getheight($int0);
+if($int4 == $int1) {
+if($int5 == $int2) {
+return();
+}
+}
+if($int4 > 700) {
+if($int5 > 500) {
+if_setsize(700, 500, 0, 0, $int3);
+} else {
+if_setsize(700, 0, 0, 1, $int3);
+}
+} else {
+if($int5 > 500) {
+if_setsize(0, 500, 1, 0, $int3);
+} else {
+if_setsize(0, 0, 1, 1, $int3);
+}
+}
+if_setontimer("script938($int0, $int4, $int5, $int3)", $int0);
+return();

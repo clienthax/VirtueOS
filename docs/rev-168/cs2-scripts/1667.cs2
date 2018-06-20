@@ -1,0 +1,7 @@
+[clientscript,script1667](int $int0, int $int1, string $string0, int $int2)
+$int3 = sub($int2, 1);
+friend_setrank($int3, removetags($string0));
+if(cc_find($int0, $int1) == 1) {
+cc_settext(enum(int, string, 170, $int3));
+}
+return();

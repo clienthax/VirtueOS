@@ -1,0 +1,13 @@
+[clientscript,script607](int $int0, int $int1, int $int2, int $int3)
+if(cc_find($int1, $int2) == 1) {
+if(.cc_find($int1, $int3) == 1) {
+if($int0 == 1) {
+cc_setgraphic(813);
+.cc_setcolor(0xFFFFFF);
+} else {
+cc_setgraphic(812);
+.cc_setcolor(0xFF981F);
+}
+}
+}
+return();

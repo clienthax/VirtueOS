@@ -1,0 +1,35 @@
+[clientscript,script2054](int $int0, int $int1, int $int2, int $int3, int $int4)
+if_setsize($int3, $int4, 0, 0, $int2);
+cc_deleteall($int2);
+$int5 = 0;
+while($int5 <= 28) {
+cc_create($int2, Rectangle, $int5);
+cc_sethide(1);
+$int5 = add($int5, 1);
+}
+if($int0 == 1) {
+$int5 = ~script2044($int2, $int5);
+} else {
+$int5 = ~script2045($int2, $int5);
+}
+$int6 = 0;
+if($int1 != -1) {
+cc_create($int2, Model, $int5);
+cc_setposition(0, 0, 1, 1);
+$int6 = sub(~min($int3, $int4), 10);
+cc_setsize($int6, $int6, 0, 0);
+if($int1 == 1716) {
+cc_setmodel(2462);
+cc_setmodelangle(0, -10, 440, 36, 0, 450);
+} else {
+cc_setobject_nonum($int1, 2147483647);
+}
+} else {
+cc_create($int2, Graphic, $int5);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(36, 32, 0, 0);
+cc_setobject_nonum(5610, 1);
+cc_setoutline(1);
+cc_setgraphicshadow(0x333333);
+}
+return();

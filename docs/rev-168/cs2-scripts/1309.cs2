@@ -1,0 +1,19 @@
+[clientscript,script1309](int $int0)
+cc_deleteall($int0);
+$int1 = ~script835($int0, 0);
+cc_create($int0, Graphic, $int1);
+$int1 = add($int1, 1);
+cc_setsize(64, 32, 0, 0);
+cc_setposition(-2, 0, 0, 1);
+cc_setgraphic(678);
+.cc_create($int0, Text, $int1);
+$int1 = add($int1, 1);
+.cc_setsize(56, 0, 1, 1);
+.cc_setposition(0, 0, 2, 1);
+.cc_settextfont(495);
+.cc_settextshadow(1);
+.cc_settextalign(1, 1, 0);
+.cc_settext(if_getop(1, $int0));
+~script1375($int0);
+if_setonvartransmit("script1310(-2147483645, cc_getid, .cc_getid){780}", $int0);
+return();

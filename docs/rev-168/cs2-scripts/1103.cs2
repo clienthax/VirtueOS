@@ -1,0 +1,16 @@
+[clientscript,script1103]
+if(string_length(%varcstr27) > 0) {
+sound_synth(2266, 1, 0);
+if(%varbit4931 < 10) {
+sendBugReport(0, ~script1099(%varcstr27), ~script1099(%varcstr130));
+}
+if(~script1972 == 1) {
+~script1984;
+}
+if_close();
+mes("Your bug report has been submitted. Thank you.");
+return();
+}
+sound_synth(2277, 1, 0);
+mes("Please describe the bug.");
+return();

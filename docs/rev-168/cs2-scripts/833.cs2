@@ -1,0 +1,6 @@
+[clientscript,script833](int $int0, int $int1, int $int2)
+if($int0 != 17104909) {
+return();
+}
+~script1048($int0, $int1, $int2);
+return();

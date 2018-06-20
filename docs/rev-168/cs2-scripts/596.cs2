@@ -1,0 +1,9 @@
+[clientscript,script596](int $int0, int $int1)
+if(%varbit4286 <= 0) {
+if_sethide(1, $int1);
+if_setontimer("null()", $int0);
+return();
+}
+if_sethide(0, $int1);
+~script598($int0, $int1, sub(multiply(%varbit4286, 30), 20));
+return();

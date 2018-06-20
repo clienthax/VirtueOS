@@ -1,0 +1,5 @@
+[clientscript,script1975](int $int0, int $int1)
+if(~script1979 == 1) {
+if_setontimer("script1976($int0, $int1)", $int0);
+}
+return();

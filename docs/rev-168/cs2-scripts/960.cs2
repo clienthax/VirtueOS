@@ -1,0 +1,181 @@
+[proc,script960](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, string $string0)(int)
+if($int4 != -1 && .cc_find($int3, $int4) == 1) {
+.cc_sethide(0);
+.cc_setposition(0, $int2, 1, 0);
+if(string_length($string0) > 0) {
+.cc_setonmouserepeat("script526(-2147483645, -2147483643, $int16, removetags($string0), 25, 190)");
+} else {
+.cc_setonmouserepeat("null()");
+}
+} else {
+if(string_length($string0) > 0) {
+if_setonmouserepeat("script526(-2147483645, -1, $int16, removetags($string0), 25, 190)", $int3);
+} else {
+if_setonmouserepeat("null()", $int3);
+}
+}
+$int17 = 0;
+$int18 = 0;
+if(map_world == $int5) {
+$int17 = 1;
+} else {
+if(testbit($int6, 7) == 1) {
+$int18 = enum(int, int, 1496, $int5);
+if(testbit($int6, 0) == 1) {
+if($int14 < $int18) {
+$int17 = 1;
+}
+} else {
+if($int15 < $int18) {
+$int17 = 1;
+}
+}
+}
+}
+cc_create($int0, Rectangle, $int1);
+$int1 = add($int1, 1);
+cc_setsize(0, 16, 1, 0);
+cc_setposition(0, $int2, 1, 0);
+cc_setfill(1);
+if($int17 == 0) {
+cc_setcolor(0xFFFFFF);
+cc_settrans(255);
+if($int4 != -1 && .cc_find($int3, $int4) == 1) {
+.cc_setonmouseover("cc_settrans($int0, cc_getid, 200, -1)");
+.cc_setonmouseleave("cc_settrans($int0, cc_getid, 255, $int16)");
+.cc_setonop("logout_op(-2147483644, 6, $int5)");
+} else {
+if_setonmouseover("cc_settrans(-2147483645, cc_getid, 200, -1)", $int3);
+if_setonmouseleave("cc_settrans(-2147483645, cc_getid, 255, $int16)", $int3);
+if_setonop("logout_op(-2147483644, 6, $int5)", $int3);
+}
+} else {
+cc_setcolor(0x000000);
+cc_settrans(175);
+if($int4 != -1 && .cc_find($int3, $int4) == 1) {
+.cc_setonmouseleave("script40($int16)");
+.cc_setonop("null()");
+} else {
+if_setonmouseleave("script40($int16)", $int3);
+if_setonop("null()", $int3);
+}
+}
+cc_create($int0, Graphic, $int1);
+$int1 = add($int1, 1);
+cc_setsize(16, 16, 0, 0);
+cc_setposition(0, $int2, 0, 0);
+.cc_create($int0, Text, $int1);
+$int1 = add($int1, 1);
+.cc_setsize($int10, 16, 0, 0);
+.cc_setposition($int9, $int2, 0, 0);
+.cc_settextfont(495);
+.cc_settextalign(1, 2, 0);
+.cc_settextshadow(1);
+if($int5 <= 0) {
+.cc_settext("-");
+} else {
+if($int5 > 300) {
+.cc_settext(tostring(sub($int5, 300)));
+} else {
+.cc_settext(tostring($int5));
+}
+}
+if(testbit($int6, 2) == 1) {
+cc_setgraphic(1237);
+if($int17 == 0) {
+.cc_setcolor(0xF0F000);
+} else {
+.cc_setcolor(0x7F7F7F);
+}
+} else {
+if(testbit($int6, 29) == 1) {
+cc_setgraphic(1238);
+if($int17 == 0) {
+.cc_setcolor(0xF0F000);
+} else {
+.cc_setcolor(0x7F7F7F);
+}
+} else {
+if(testbit($int6, 25) == 1) {
+cc_setgraphic(1338);
+if($int17 == 0) {
+.cc_setcolor(0xF0F000);
+} else {
+.cc_setcolor(0x7F7F7F);
+}
+} else {
+if(testbit($int6, 0) == 1) {
+cc_setgraphic(1131);
+if($int17 == 0) {
+.cc_setcolor(0xF0F000);
+} else {
+.cc_setcolor(0x7F7F7F);
+}
+} else {
+cc_setgraphic(1130);
+if($int17 == 0) {
+.cc_setcolor(0xE0E0E0);
+} else {
+.cc_setcolor(0x7F7F7F);
+}
+}
+}
+}
+}
+cc_create($int0, Graphic, $int1);
+$int1 = add($int1, 1);
+cc_setsize($int11, 15, 0, 0);
+cc_setposition(add($int9, $int10), $int2, 0, 0);
+cc_setgraphic(enum(int, graphic, 1125, $int7));
+cc_create($int0, Text, $int1);
+$int1 = add($int1, 1);
+cc_setsize($int12, 16, 0, 0);
+cc_setposition($int13, $int2, 2, 0);
+if($int17 == 0) {
+cc_setcolor(0xFFFFFF);
+} else {
+cc_setcolor(0x7F7F7F);
+}
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext(tostring($int8));
+$int19 = 0;
+$string1 = "";
+$int20 = string_length($string0);
+if($int20 <= 0) {
+$int20 = 1;
+$string0 = "-";
+}
+while($int20 > 0) {
+while(parawidth(512, 494, $string0) > $int13) {
+while($int20 > 1) {
+while($int19 == 0) {
+$int20 = sub($int20, 1);
+$string1 = append(substring($string0, 0, $int20), "...");
+if(parawidth(512, 494, $string1) <= $int13) {
+$int19 = 1;
+$string0 = $string1;
+}
+}
+}
+}
+}
+cc_create($int0, Text, $int1);
+$int1 = add($int1, 1);
+cc_setsize($int13, 16, 0, 0);
+cc_setposition(0, $int2, 2, 0);
+if($int17 == 1) {
+cc_setcolor(0x7F7F7F);
+} else {
+if(testbit($int6, 2) == 1 || testbit($int6, 29) == 1 || testbit($int6, 25) == 1) {
+cc_setcolor(0xFF0000);
+} else {
+cc_setcolor(0xFF981F);
+}
+}
+cc_settextfont(494);
+cc_settextalign(0, 1, 0);
+cc_settextshadow(1);
+cc_settext($string0);
+return($int1);

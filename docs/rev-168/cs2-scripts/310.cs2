@@ -1,0 +1,6 @@
+[clientscript,script310](int $int0, int $int1)
+if(cc_find($int0, $int1) == 1) {
+~script311;
+sound_synth(73, 1, 0);
+}
+return();

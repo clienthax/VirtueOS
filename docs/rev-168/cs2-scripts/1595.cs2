@@ -1,0 +1,54 @@
+[clientscript,script1595](int $int0, int $int1, int $int2, int $int3, string $string0)
+$string1 = "";
+if($int1 == 1) {
+$string1 = "<$string0><br>1 ticket";
+} else {
+$string1 = "<$string0><br><~script46($int1, ",")> tickets";
+}
+cc_deleteall($int0);
+$int4 = 0;
+if(inv_total(93, 2996) < $int1) {
+$int4 = ~script134($int0);
+cc_create($int0, Text, $int4);
+cc_setposition(0, 0, 1, 0);
+cc_setsize(0, 25, 1, 0);
+cc_settextfont(494);
+cc_settextalign(1, 2, 0);
+cc_setcolor(0xFF0000);
+cc_settextshadow(1);
+cc_settext($string1);
+if_setonop("null()", $int0);
+} else {
+if($int2 == 1) {
+$int4 = ~script198($int0);
+cc_create($int0, Text, $int4);
+cc_setposition(0, 0, 1, 0);
+cc_setsize(0, 25, 1, 0);
+cc_settextfont(494);
+cc_settextalign(1, 2, 0);
+cc_setcolor(0xFFFFFF);
+cc_settextshadow(1);
+cc_settext($string1);
+if($int3 != -1) {
+if_setonop("script2032(0, $int3)", $int0);
+} else {
+if_setonop("script489(-2147483644, 2)", $int0);
+}
+} else {
+$int4 = ~script208($int0);
+cc_create($int0, Text, $int4);
+cc_setposition(0, 0, 1, 0);
+cc_setsize(0, 25, 1, 0);
+cc_settextfont(494);
+cc_settextalign(1, 2, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settext($string1);
+if($int3 != -1) {
+if_setonop("script2032(0, $int3)", $int0);
+} else {
+if_setonop("script489(-2147483644, 2)", $int0);
+}
+}
+}
+return();

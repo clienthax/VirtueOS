@@ -1,0 +1,4 @@
+[clientscript,script969](int $int0, string $string0)
+if_setonmouserepeat("script38($int0, 31522892, $string0, 50, 300)", $int0);
+if_setonmouseleave("script40(31522892)", $int0);
+return();

@@ -1,0 +1,36 @@
+[clientscript,script57](int $int0, int $int1, int $int2, int $int3, int $int4, string $string0, string $string1, int $int5, int $int6)
+if(clientclock < $int6) {
+return();
+}
+if(~script1701(-1, 162) == 0) {
+return();
+}
+$int7 = 0;
+if($int0 != -1 && $int0 == $int4) {
+$int7 = 1;
+} else {
+if($int1 != -1 && string_indexof_char($string1, $int1) != -1) {
+if(string_indexof_char($string0, $int1) != -1 || string_indexof_char($string1, $int1) != -1) {
+$int7 = 1;
+} else {
+} else {
+return();
+}
+}
+}
+if($int3 != -1 && cc_find($int2, $int3) == 1) {
+if(string_length(cc_gettext) > 0) {
+cc_resume_pausebutton;
+cc_settext("Please wait...");
+cc_setcolor($int5);
+}
+cc_setonkey("script57(-2147483640, -2147483639, -2147483645, -2147483643, $int4, $string0, $string1, $int5, add(clientclock, 20))");
+} else {
+if(string_length(if_gettext($int2)) > 0) {
+if_resume_pausebutton($int2);
+if_settext("Please wait...", $int2);
+if_setcolor($int5, $int2);
+}
+if_setonkey("script57(-2147483640, -2147483639, -2147483645, -1, $int4, $string0, $string1, $int5, add(clientclock, 20))", $int2);
+}
+return();

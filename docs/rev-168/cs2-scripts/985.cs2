@@ -1,0 +1,13 @@
+[clientscript,script985](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+%varbit4690 = $int5;
+~script982($int1, $int2, $int3, $int4);
+$int8 = if_getlayer($int0);
+if_setposition(add(if_getx($int8), 40), add(if_gety($int8), 22), 0, 0, $int1);
+if(add(if_gety($int1), if_getheight($int1)) > if_getheight($int2)) {
+if_setposition(if_getx($int1), sub(add(if_gety($int8), 6), if_getheight($int1)), 0, 0, $int1);
+}
+if_setgraphic(1181, $int7);
+if_sethide(0, $int2);
+if_sethide(0, $int6);
+if_setonclick("script987($int6, $int2, $int7)", $int6);
+return();

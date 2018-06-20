@@ -1,0 +1,43 @@
+[clientscript,script413](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, string $string0)
+if($int0 < 32) {
+if(testbit(%varp1076, $int0) == 1 || testbit(%varp1344, modulo($int0, 32)) == 1) {
+}
+if($int0 >= 32 && testbit(%varp1344, modulo($int0, 32)) == 1) {
+if($int0 == 35) {
+if(%varbit5362 == 1) {
+cc_setgraphic(1212);
+.cc_setop(1, "Enable");
+} else {
+cc_setgraphic(1213);
+.cc_setop(1, "Disable");
+}
+.cc_setonop("script414(0, $int0, $string0, $int1, $int2, $int3, $int4, $int5, -1)");
+return();
+}
+if($int0 == 43) {
+if(%varbit6251 == 1) {
+cc_setgraphic(1212);
+.cc_setop(1, "Enable");
+} else {
+cc_setgraphic(1213);
+.cc_setop(1, "Disable");
+}
+.cc_setonop("script414(0, $int0, $string0, $int1, $int2, $int3, $int4, $int5, -1)");
+return();
+}
+cc_setgraphic(1213);
+if(enum(int, boolean, 854, $int0) == 1) {
+.cc_setop(1, "Disable");
+.cc_setonop("script414(0, $int0, $string0, $int1, $int2, $int3, $int4, $int5, -1)");
+} else {
+.cc_setop(1, "");
+.cc_setonop("null()");
+}
+} else {
+} else {
+cc_setgraphic(1211);
+.cc_setop(1, "Unlock");
+.cc_setonop("script414(1, $int0, $string0, $int1, $int2, $int3, $int4, $int5, -1)");
+}
+}
+return();

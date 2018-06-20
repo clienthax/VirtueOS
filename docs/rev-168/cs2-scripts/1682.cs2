@@ -1,0 +1,13 @@
+[clientscript,script1682](int $int0, int $int1)
+cc_deleteall($int0);
+$int2 = 0;
+if($int1 == 1) {
+$int2 = ~script198($int0);
+} else {
+$int2 = ~script208($int0);
+}
+cc_create($int0, Model, $int2);
+cc_setsize(42, 42, 0, 0);
+cc_setposition(0, 0, 1, 1);
+cc_setobject_nonum(13190, 1);
+return();

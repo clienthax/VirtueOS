@@ -1,0 +1,8 @@
+[clientscript,script865](int $int0)
+if_setontimer("script385(0)", $int0);
+if_setonresize("script385(1)", $int0);
+if_setonsubchange("script385(1)", $int0);
+if_setonvartransmit("script385(1){1293, 1434, 1542, 1676, 1327, 1377, 1378, 1601, 1602}", $int0);
+if_setonmouseleave("script40(5898291)", 90:42);
+~script386;
+return();

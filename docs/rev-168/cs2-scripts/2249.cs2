@@ -1,0 +1,7 @@
+[clientscript,script2249]
+$int0 = ~max(sub(%varp261, 1), 1);
+~script2246($int0);
+if($int0 == 1) {
+if_sethide(1, 18:5);
+}
+return();

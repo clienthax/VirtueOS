@@ -1,0 +1,5 @@
+[clientscript,script101](int $int0)
+if(%varc5 == $int0 || %varc5 <= 0 || $int0 <= 0) {
+~script299(1, 1);
+}
+return();

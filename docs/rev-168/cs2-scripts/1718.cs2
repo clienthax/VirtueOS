@@ -1,0 +1,16 @@
+[clientscript,script1718](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+if($int0 != 1 || $int2 < 0 || $int2 > 4) {
+return();
+}
+sound_synth(2266, 1, 0);
+if(cc_find($int1, $int3) == 1) {
+if(.cc_find($int1, $int2) == 1) {
+if(testbit(%varbit5640, $int2) == 1) {
+%varbit5640 = clearbit(%varbit5640, $int2);
+} else {
+%varbit5640 = setbit(%varbit5640, $int2);
+}
+~script1720($int1, $int2, $int4, $int5, $int6);
+}
+}
+return();

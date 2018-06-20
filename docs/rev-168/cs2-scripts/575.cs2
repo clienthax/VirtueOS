@@ -1,0 +1,16 @@
+[proc,script575](int $int0, int $int1)(int)
+$int2 = if_getwidth($int0);
+$int3 = if_getheight($int0);
+cc_create($int0, Rectangle, $int1);
+$int1 = add($int1, 1);
+cc_setposition(0, 0, 0, 0);
+cc_setsize($int2, $int3, 0, 0);
+cc_setcolor(0x777775);
+cc_setfill(0);
+cc_create($int0, Rectangle, $int1);
+$int1 = add($int1, 1);
+cc_setposition(1, 1, 0, 0);
+cc_setsize(sub($int2, 2), sub($int3, 2), 0, 0);
+cc_setcolor(0x474745);
+cc_setfill(0);
+return($int1);

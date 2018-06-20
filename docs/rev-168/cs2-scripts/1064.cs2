@@ -1,0 +1,57 @@
+[proc,script1064](int $int0)(int,int)
+$int1 = 0;
+$int2 = 0;
+$int3 = -1;
+$int4 = 0;
+$int5 = -1;
+switch($int0) {
+case 5341:
+return(~script716(5341), 5341);
+case 5343:
+return(~script716(5343), 5343);
+case 952:
+return(~script716(952), 952);
+case 5329:
+$int1 = ~script716(7409);
+if($int1 > 0) {
+$int4 = ~script716(5329);
+if(sub(2147483647, $int4) < $int1) {
+return(2147483647, 7409);
+}
+return(add($int1, $int4), 7409);
+}
+return(~script716(5329), 5329);
+case 6797:
+$int2 = enum_getoutputcount(136);
+while($int2 >= 0) {
+$int3 = enum(int, namedobj, 136, $int2);
+if($int3 != -1) {
+$int1 = ~script716($int3);
+if($int1 > 0) {
+if(sub(2147483647, $int4) < $int1) {
+$int4 = 2147483647;
+} else {
+$int4 = add($int4, $int1);
+}
+if($int5 == -1) {
+$int5 = $int3;
+}
+}
+}
+$int2 = sub($int2, 1);
+}
+return($int4, $int5);
+case 5325:
+return(~script716(5325), 5325);
+case 6036:
+return(~script716(6036), 6036);
+case 1925:
+return(~script716(1925), 1925);
+case 6032:
+return(~script716(6032), 6032);
+case 6034:
+return(~script716(6034), 6034);
+case 21483:
+return(~script716(21483), 21483);
+}
+return(0, -1);

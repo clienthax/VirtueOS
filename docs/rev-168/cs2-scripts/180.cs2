@@ -1,0 +1,17 @@
+[clientscript,script180](int $int0)
+if($int0 == %varc41) {
+return();
+}
+if($int0 == 3) {
+if(%varp287 == 1) {
+if(%varc41 != -1 || %varbit4089 == 0) {
+return();
+}
+}
+}
+if(~script179($int0) > 24) {
+return();
+}
+~script183($int0, 249);
+if_setontimer("script182($int0)", enum(int, component, 683, $int0));
+return();

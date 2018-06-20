@@ -1,0 +1,67 @@
+[clientscript,script755](int $int0, int $int1, int $int2, int $int3, int $int4)
+%varc12 = 0;
+%varc13 = 0;
+%varc14 = 0;
+%varc15 = 0;
+%varc16 = 0;
+%varc17 = 0;
+%varc18 = 0;
+%varc19 = 0;
+%varc20 = 0;
+%varc21 = 0;
+%varc22 = 0;
+%varc23 = 0;
+%varc24 = 0;
+%varc25 = 0;
+%varc26 = 0;
+%varc27 = 0;
+%varc28 = 0;
+%varc29 = 0;
+%varc30 = 0;
+%varc31 = 0;
+%varc32 = 0;
+%varc33 = 0;
+%varc34 = 0;
+%varc35 = 0;
+%varc36 = 0;
+%varc37 = 0;
+%varc38 = 0;
+%varc39 = 0;
+$int5 = inv_size(90);
+cc_deleteall($int1);
+cc_deleteall($int3);
+$int6 = 0;
+while($int6 < $int5) {
+cc_create($int1, Graphic, $int6);
+.cc_create($int3, Graphic, $int6);
+cc_setsize(36, 32, 0, 0);
+.cc_setsize(36, 32, 0, 0);
+cc_setgraphicshadow(0x333333);
+.cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+.cc_setoutline(1);
+cc_sethide(1);
+.cc_sethide(1);
+$int6 = add($int6, 1);
+}
+$int7 = 0;
+$int6 = 0;
+while($int6 < $int5) {
+$int7 = add($int5, $int6);
+cc_create($int1, Graphic, $int7);
+.cc_create($int3, Graphic, $int7);
+cc_setgraphic(937);
+.cc_setgraphic(937);
+cc_setsize(10, 32, 0, 0);
+.cc_setsize(10, 32, 0, 0);
+cc_sethide(0);
+.cc_sethide(0);
+cc_settrans(255);
+.cc_settrans(255);
+$int6 = add($int6, 1);
+}
+$int8 = divide(sub(36, 10), 2);
+~script763($int5, $int8, $int1, $int2, $int3, $int4);
+if_setoninvtransmit("script762($int5, $int8, $int1, $int2, $int3, $int4){90}", $int0);
+if_setonvartransmit("script762($int5, $int8, $int1, $int2, $int3, $int4){1042}", $int0);
+return();

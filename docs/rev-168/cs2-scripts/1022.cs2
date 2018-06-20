@@ -1,0 +1,50 @@
+[clientscript,script1022](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+if(cc_find($int0, 4) == 1) {
+cc_settext(enum(int, string, 1164, %varbit4692));
+}
+if(cc_find($int1, 4) == 1) {
+cc_settext(enum(int, string, 1165, %varbit4693));
+}
+if(cc_find($int2, 4) == 1) {
+cc_settext(enum(int, string, 1166, %varbit4694));
+}
+if(cc_find($int3, 4) == 1) {
+if(%varbit4697 == 31) {
+cc_settext("Most recent");
+} else {
+if(%varbit4697 == 30) {
+cc_settext("Off");
+} else {
+if(enum(int, stat, 681, %varbit4697) != -1) {
+cc_settext(enum(int, string, 108, %varbit4697));
+} else {
+cc_settext("Total XP");
+}
+}
+}
+}
+if(cc_find($int4, 4) == 1) {
+if(%varbit4698 == 31) {
+cc_settext("Most recent");
+} else {
+if(%varbit4698 == 30) {
+cc_settext("Total XP goal");
+} else {
+if(enum(int, stat, 681, %varbit4698) != -1) {
+cc_settext(enum(int, string, 108, %varbit4698));
+} else {
+cc_settext("Off");
+}
+}
+}
+}
+if(cc_find($int5, 4) == 1) {
+cc_settext(enum(int, string, 1168, %varbit4695));
+}
+if(cc_find($int6, 4) == 1) {
+cc_settext(enum(int, string, 1170, %varbit4696));
+}
+if(cc_find($int7, 4) == 1) {
+cc_settext(enum(int, string, 1140, %varbit4722));
+}
+return();

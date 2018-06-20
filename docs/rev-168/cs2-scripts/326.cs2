@@ -1,0 +1,9 @@
+[clientscript,script326](int $int0, int $int1, int $int2)
+if(clientclock < $int2) {
+return();
+}
+if(cc_find($int0, $int1) == 1) {
+cc_settrans(0);
+cc_setontimer("null()");
+}
+return();

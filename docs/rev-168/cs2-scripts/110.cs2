@@ -1,0 +1,16 @@
+[clientscript,script110](int $int0, string $string0)
+~script677;
+if_settext($string0, 162:36);
+if($int0 == 2) {
+%varc5 = 15;
+} else {
+%varc5 = 9;
+}
+~script222("");
+$string1 = "";
+if_setonkey("script112(-2147483640, -2147483639, $string1)", 162:37);
+if_setondialogabort("script138()", 162:37);
+if(~script1972 == 1) {
+~script1983(0, 80);
+}
+return();

@@ -1,0 +1,20 @@
+[clientscript,script1581](int $int0, int $int1)
+cc_deleteall($int0);
+$int2 = -1;
+$int3 = 0;
+while($int3 < $int1) {
+cc_create($int0, Graphic, $int3);
+$int2 = inv_getobj(581, $int3);
+if($int2 != -1) {
+~script1582($int2, inv_getnum(581, $int3), $int3);
+} else {
+cc_sethide(1);
+}
+$int3 = add($int3, 1);
+}
+if(%varbit5457 == 1) {
+cc_create($int0, Graphic, $int3);
+~script1582(20899, 1, $int3);
+cc_setposition(add(36, 10), 0, 0, 0);
+}
+return();

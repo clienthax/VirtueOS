@@ -1,0 +1,5 @@
+[clientscript,script1347](int $int0, int $int1, int $int2)
+~script1349($int0, $int1, $int2);
+if_setonresize("script1348($int0, $int1, $int2)", $int0);
+if_setonsubchange("script1348($int0, $int1, $int2)", $int0);
+return();

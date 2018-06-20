@@ -1,0 +1,63 @@
+[clientscript,script967](int $int0, int $int1, int $int2, int $int3, string $string0)
+$int4 = 1;
+if(string_length($string0) > 0) {
+$int4 = 0;
+}
+$int5 = 0;
+$int6 = 0;
+$int7 = 0;
+$int8 = 1124;
+if(~script1942 == 1) {
+$int8 = 1735;
+}
+$int9 = 1906;
+$int10 = ~script2174;
+$int11 = enum(int, namedobj, $int8, $int7);
+while($int11 != -1) {
+if(cc_find($int0, $int7) == 1) {
+if($int4 == 1 || string_indexof_string(lowercase(oc_name($int11)), $string0, 0) != -1) {
+cc_sethide(0);
+$int6 = multiply(divide($int5, 10), $int3);
+cc_setposition(multiply(modulo($int5, 10), add(36, $int2)), $int6, 0, 0);
+$int5 = add($int5, 1);
+} else {
+cc_sethide(1);
+}
+}
+$int7 = add($int7, 1);
+$int11 = enum(int, namedobj, $int8, $int7);
+}
+$int12 = 0;
+while($int10 == 1) {
+$int11 = enum(int, namedobj, $int9, $int12);
+while($int11 != -1) {
+if(cc_find($int0, $int7) == 1) {
+if($int4 == 1 || string_indexof_string(lowercase(oc_name($int11)), $string0, 0) != -1) {
+cc_sethide(0);
+$int6 = multiply(divide($int5, 10), $int3);
+cc_setposition(multiply(modulo($int5, 10), add(36, $int2)), $int6, 0, 0);
+$int5 = add($int5, 1);
+} else {
+cc_sethide(1);
+}
+}
+$int7 = add($int7, 1);
+$int12 = add($int12, 1);
+$int11 = enum(int, namedobj, $int9, $int12);
+}
+}
+if(cc_find($int0, $int7) == 1) {
+if($int5 > 0) {
+cc_sethide(1);
+} else {
+cc_sethide(0);
+}
+}
+$int6 = add($int6, 32);
+if($int6 > if_getheight($int0)) {
+if_setscrollsize(0, $int6, $int0);
+} else {
+if_setscrollsize(0, 0, $int0);
+}
+~script72($int1, $int0, if_getscrolly($int0));
+return();

@@ -1,0 +1,85 @@
+[clientscript,script1982](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = 0;
+cc_deleteall($int1);
+cc_deleteall($int3);
+$string0 = "<tostring(enum(int, int, 1740, $int5))> - <enum(int, string, 1741, $int5)>";
+$string1 = enum(int, string, 1742, $int5);
+$int6 = 0;
+$int7 = 20;
+$int8 = 0;
+$int9 = 0;
+$int10 = 1;
+while(enum(int, int, 1740, $int5) > 0) {
+if($int5 == 0 || $int5 == 5 || $int5 == 19 || $int5 == 33) {
+if($int5 > 0) {
+$int7 = add($int7, 15);
+}
+$int10 = 1;
+cc_create($int3, Text, $int6);
+cc_settext(enum(int, string, 1743, $int5));
+cc_setsize(40, 20, 1, 0);
+cc_setposition(15, $int7, 0, 0);
+cc_settextfont(496);
+cc_settextalign(0, 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+$int7 = add($int7, 20);
+$int6 = add($int6, 1);
+cc_create($int3, Text, $int6);
+cc_settext(enum(int, string, 1744, $int5));
+cc_setsize(40, multiply(15, paraheight(cc_getwidth, 495, cc_gettext)), 1, 0);
+cc_setposition(15, $int7, 0, 0);
+cc_settextfont(495);
+cc_settextalign(0, 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+$int7 = add($int7, multiply(15, paraheight(cc_getwidth, 495, cc_gettext)));
+$int6 = add($int6, 1);
+}
+cc_create($int1, Text, $int5);
+if(~script1968($int5) == 1) {
+if(compare($string1, "") != 0) {
+cc_settext("<str=ffffff><$string0><br><str=ffffff><$string1>");
+} else {
+cc_settext("<str=ffffff><$string0>");
+}
+cc_setcolor(0xCCCCCC);
+} else {
+if(compare($string1, "") != 0) {
+if(~script1969($int5) == 1) {
+cc_settext("<$string0><br><str=ffffff><$string1>");
+} else {
+cc_settext("<$string0><br><$string1>");
+}
+} else {
+cc_settext($string0);
+}
+cc_setcolor(0xFF981F);
+}
+cc_setsize(40, 20, 1, 0);
+cc_setposition(20, $int7, 0, 0);
+cc_settextfont(495);
+cc_settextalign(0, 1, 0);
+cc_settextshadow(1);
+$int8 = paraheight(cc_getwidth, 495, cc_gettext);
+cc_setsize(20, multiply(18, $int8), 1, 0);
+if($int10 == 1) {
+.cc_create($int4, Rectangle, $int9);
+.cc_setcolor(0xFFFFFF);
+.cc_setfill(1);
+.cc_settrans(245);
+.cc_setposition(0, cc_gety, 1, 0);
+.cc_setsize(0, cc_getheight, 1, 0);
+$int9 = add($int9, 1);
+$int10 = 0;
+} else {
+$int10 = 1;
+}
+$int7 = add(add($int7, multiply(15, $int8)), 5);
+$int5 = add($int5, 1);
+$string0 = "<tostring(enum(int, int, 1740, $int5))> - <enum(int, string, 1741, $int5)>";
+$string1 = enum(int, string, 1742, $int5);
+}
+if_setscrollsize(0, $int7, $int1);
+~scrollbar_vertical($int2, $int1, 792, 789, 790, 791, 773, 788);
+return();

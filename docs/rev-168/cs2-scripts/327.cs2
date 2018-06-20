@@ -1,0 +1,5 @@
+[clientscript,script327](int $int0)
+~script187($int0);
+if_setonvartransmit("script186($int0){301, 300, 284}", $int0);
+if_setoninvtransmit("script186($int0){94}", $int0);
+return();

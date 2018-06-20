@@ -1,0 +1,11 @@
+[clientscript,script859](int $int0, int $int1)
+$string0 = "Resizable mode side-panel:<br>Opaque";
+if(%varbit4609 == 1) {
+if_setgraphic(761, $int0);
+} else {
+$string0 = "Resizable mode side-panel:<br>Transparent";
+if_setgraphic(762, $int0);
+}
+if_setonmouserepeat("script526($int0, -1, $int1, $string0, 25, 512)", $int0);
+%varc2 = 0;
+return();

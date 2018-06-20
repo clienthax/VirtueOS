@@ -1,0 +1,72 @@
+[clientscript,script1292](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18, int $int19)
+if_settext("Lumbridge Graveyard", $int1);
+if_settext("Draynor Manor", $int3);
+if_settext("Mind Altar", $int5);
+if_settext("Salve Graveyard", $int7);
+if_settext("Fenkenstrain's Castle", $int9);
+if_settext("West Ardougne", $int11);
+if_settext("Harmony Island", $int13);
+if_settext("Wilderness Cemetery", $int15);
+if_settext("Barrows", $int17);
+if_settext("Ape Atoll", $int19);
+if_setobject_nonum(19613, 0, $int0);
+if_setobject_nonum(19615, 0, $int2);
+if_setobject_nonum(19617, 0, $int4);
+if_setobject_nonum(19619, 0, $int6);
+if_setobject_nonum(19621, 0, $int8);
+if_setobject_nonum(19623, 0, $int10);
+if_setobject_nonum(19625, 0, $int12);
+if_setobject_nonum(19627, 0, $int14);
+if_setobject_nonum(19629, 0, $int16);
+if_setobject_nonum(19631, 0, $int18);
+if(~script1293(0, 0, 2, 0, 563, 1, -1, 0, -1, 0, 6) == 1) {
+if_setcolor(0xFF981F, $int1);
+} else {
+if_setcolor(0xC80000, $int1);
+}
+if(~script1293(0, 1, 1, 0, 563, 1, -1, 0, -1, 0, 17) == 1) {
+if_setcolor(0xFF981F, $int3);
+} else {
+if_setcolor(0xC80000, $int3);
+}
+if(~script1293(0, 0, 0, 0, 563, 1, 558, 2, -1, 0, 28) == 1) {
+if_setcolor(0xFF981F, $int5);
+} else {
+if_setcolor(0xC80000, $int5);
+}
+if(~script1293(0, 0, 0, 0, 563, 1, 566, 2, -1, 0, 40) == 1) {
+if_setcolor(0xFF981F, $int7);
+} else {
+if_setcolor(0xC80000, $int7);
+}
+if(~script1293(0, 0, 1, 0, 563, 1, 566, 1, -1, 0, 48) == 1) {
+if_setcolor(0xFF981F, $int9);
+} else {
+if_setcolor(0xC80000, $int9);
+}
+if(~script1293(0, 0, 0, 0, 563, 2, 566, 2, -1, 0, 61) == 1) {
+if_setcolor(0xFF981F, $int11);
+} else {
+if_setcolor(0xC80000, $int11);
+}
+if(~script1293(0, 0, 0, 0, 563, 1, 566, 1, 561, 1, 65) == 1) {
+if_setcolor(0xFF981F, $int13);
+} else {
+if_setcolor(0xC80000, $int13);
+}
+if(~script1293(0, 0, 0, 0, 563, 1, 566, 1, 565, 1, 71) == 1) {
+if_setcolor(0xFF981F, $int15);
+} else {
+if_setcolor(0xC80000, $int15);
+}
+if(~script1293(0, 0, 0, 0, 563, 2, 566, 2, 565, 1, 83) == 1) {
+if_setcolor(0xFF981F, $int17);
+} else {
+if_setcolor(0xC80000, $int17);
+}
+if(~script1293(0, 0, 0, 0, 563, 2, 566, 2, 565, 2, 90) == 1) {
+if_setcolor(0xFF981F, $int19);
+} else {
+if_setcolor(0xC80000, $int19);
+}
+return();

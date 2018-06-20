@@ -1,0 +1,24 @@
+[clientscript,script1553](int $int0)
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551366)) == 0) {
+return();
+}
+if_sethide(0, 500:10);
+if_sethide(0, 500:11);
+if_sethide(0, 500:2);
+if_sethide(0, 500:6);
+if_sethide(1, 500:5);
+if(%varc181 != 0) {
+if(%varc181 != 1) {
+if(%varc181 != 2) {
+if(%varc181 != 3) {
+if(%varc181 != 4) {
+if(%varc181 != 5) {
+%varc181 = 0;
+}
+}
+}
+}
+}
+}
+~script1554($int0);
+return();

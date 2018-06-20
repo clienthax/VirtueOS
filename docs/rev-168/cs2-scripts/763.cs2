@@ -1,0 +1,152 @@
+[clientscript,script763](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if(%varbit4374 == 1) {
+if_settext("Trade modified", $int3);
+} else {
+if_settext("", $int3);
+}
+if(%varbit4375 == 1) {
+if_settext("Trade modified", $int5);
+} else {
+if_settext("", $int5);
+}
+def_int $anArray0(4);
+$int6 = divide($int0, 4);
+if($int6 < 2) {
+$int6 = 2;
+}
+$int7 = divide(sub(if_getheight($int2), multiply($int6, 32)), sub($int6, 1));
+$int8 = divide(sub(sub(if_getwidth($int2), 12), multiply(4, 36)), 3);
+$anArray0(0) = 6;
+$anArray0(1) = add(add($anArray0(0), $int8), 36);
+$anArray0(2) = add(add($anArray0(1), $int8), 36);
+$anArray0(3) = add(add($anArray0(2), $int8), 36);
+def_int $anArray1($int0);
+$anArray1(0) = %varc81;
+$anArray1(1) = %varc82;
+$anArray1(2) = %varc83;
+$anArray1(3) = %varc84;
+$anArray1(4) = %varc85;
+$anArray1(5) = %varc86;
+$anArray1(6) = %varc87;
+$anArray1(7) = %varc88;
+$anArray1(8) = %varc89;
+$anArray1(9) = %varc90;
+$anArray1(10) = %varc91;
+$anArray1(11) = %varc92;
+$anArray1(12) = %varc93;
+$anArray1(13) = %varc94;
+$anArray1(14) = %varc95;
+$anArray1(15) = %varc96;
+$anArray1(16) = %varc97;
+$anArray1(17) = %varc98;
+$anArray1(18) = %varc99;
+$anArray1(19) = %varc100;
+$anArray1(20) = %varc101;
+$anArray1(21) = %varc102;
+$anArray1(22) = %varc104;
+$anArray1(23) = %varc105;
+$anArray1(24) = %varc106;
+$anArray1(25) = %varc107;
+$anArray1(26) = %varc108;
+$anArray1(27) = %varc109;
+$int9 = -1;
+$int10 = 0;
+$int11 = 0;
+$int12 = 0;
+$int13 = 0;
+$int14 = 0;
+$int15 = 0;
+while($int15 < $int0) {
+if(cc_find($int2, $int15) == 1) {
+if(.cc_find($int2, add($int0, $int15)) == 1) {
+$int9 = inv_getobj(90, $int15);
+if($int9 != -1) {
+$int10 = inv_getnum(90, $int15);
+cc_sethide(0);
+cc_setobject($int9, $int10);
+cc_setop(1, "Remove");
+cc_setop(2, "Remove-5");
+cc_setop(3, "Remove-10");
+cc_setop(4, "Remove-All");
+cc_setop(5, "Remove-X");
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int9)></col>");
+~trade_tooltip($int10, $anArray1($int15), 21954592);
+} else {
+cc_sethide(1);
+cc_clearops;
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+}
+$int11 = divide($int15, 4);
+$int12 = modulo($int15, 4);
+$int13 = $anArray0($int12);
+$int14 = multiply($int11, add(32, $int7));
+cc_setposition($int13, $int14, 0, 0);
+.cc_setposition(add($int13, $int1), $int14, 0, 0);
+}
+}
+$int15 = add($int15, 1);
+}
+$int8 = divide(sub(sub(if_getwidth($int4), 12), multiply(4, 36)), 3);
+$anArray0(0) = 6;
+$anArray0(1) = add(add($anArray0(0), $int8), 36);
+$anArray0(2) = add(add($anArray0(1), $int8), 36);
+$anArray0(3) = add(add($anArray0(2), $int8), 36);
+$anArray1(0) = %varc110;
+$anArray1(1) = %varc111;
+$anArray1(2) = %varc112;
+$anArray1(3) = %varc113;
+$anArray1(4) = %varc114;
+$anArray1(5) = %varc115;
+$anArray1(6) = %varc116;
+$anArray1(7) = %varc117;
+$anArray1(8) = %varc118;
+$anArray1(9) = %varc119;
+$anArray1(10) = %varc120;
+$anArray1(11) = %varc121;
+$anArray1(12) = %varc122;
+$anArray1(13) = %varc123;
+$anArray1(14) = %varc124;
+$anArray1(15) = %varc125;
+$anArray1(16) = %varc126;
+$anArray1(17) = %varc127;
+$anArray1(18) = %varc128;
+$anArray1(19) = %varc129;
+$anArray1(20) = %varc130;
+$anArray1(21) = %varc131;
+$anArray1(22) = %varc132;
+$anArray1(23) = %varc133;
+$anArray1(24) = %varc134;
+$anArray1(25) = %varc135;
+$anArray1(26) = %varc136;
+$anArray1(27) = %varc137;
+$int15 = 0;
+while($int15 < $int0) {
+if(cc_find($int4, $int15) == 1) {
+if(.cc_find($int4, add($int0, $int15)) == 1) {
+$int9 = invother_getobj(90, $int15);
+if($int9 != -1) {
+$int10 = invother_getnum(90, $int15);
+cc_sethide(0);
+cc_setobject($int9, $int10);
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int9)></col>");
+~trade_tooltip($int10, $anArray1($int15), 21954592);
+} else {
+cc_sethide(1);
+cc_clearops;
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+}
+$int11 = divide($int15, 4);
+$int12 = modulo($int15, 4);
+$int13 = $anArray0($int12);
+$int14 = multiply($int11, add(32, $int7));
+cc_setposition($int13, $int14, 0, 0);
+.cc_setposition(add($int13, $int1), $int14, 0, 0);
+}
+}
+$int15 = add($int15, 1);
+}
+return();

@@ -1,0 +1,3 @@
+[proc,script918](int $int0)(int)
+$int1 = enum(int, component, 1137, $int0);
+return(if_hassub(enum(component, component, ~toplevel_getcomponents, $int1)));

@@ -1,0 +1,11 @@
+[proc,script1182](string)
+if(%varbit4854 <= 0) {
+return("");
+}
+if(%varbit4854 >= 255) {
+return("<enum(int, string, 1245, %varbit4855)> Ages!");
+}
+if(modulo(%varbit4854, 2) == 1) {
+return("<enum(int, string, 1245, %varbit4855)> <tostring(divide(%varbit4854, 2))>:30");
+}
+return("<enum(int, string, 1245, %varbit4855)> <tostring(divide(%varbit4854, 2))>:00");

@@ -1,0 +1,17 @@
+[clientscript,script1416](int $int0)
+cc_deleteall($int0);
+$int1 = ~script835($int0, 0);
+cc_create($int0, Text, $int1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext("Refresh");
+if_setonmouseover("script85(-2147483645, $int1, 16777215)", $int0);
+if_setonmouseleave("script85(-2147483645, $int1, 16750623)", $int0);
+if_setop(1, "Refresh", $int0);
+if_setonop("script1417(-2147483644, -2147483645)", $int0);
+if_setontimer("null()", $int0);
+return();

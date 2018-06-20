@@ -1,0 +1,11 @@
+[clientscript,script666](int $int0)
+if(cc_find($int0, 0) == 1) {
+~script667(enum(int, namedobj, 982, %varbit29), %varbit1624);
+}
+if(cc_find($int0, 1) == 1) {
+~script667(enum(int, namedobj, 982, %varbit1622), %varbit1625);
+}
+if(cc_find($int0, 2) == 1) {
+~script667(enum(int, namedobj, 982, %varbit1623), %varbit1626);
+}
+return();

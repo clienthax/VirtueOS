@@ -1,0 +1,11 @@
+[clientscript,script162](int $int0, int $int1, int $int2, int $int3)
+if(cc_find($int1, $int0) == 1) {
+$int3 = sub($int3, if_getscrolly($int1));
+if($int3 < 10) {
+~script157($int2, $int1, sub(if_getscrolly($int1), 4), 1);
+}
+if(add($int3, cc_getheight) > sub(if_getheight($int1), 10)) {
+~script157($int2, $int1, add(if_getscrolly($int1), 4), 1);
+}
+}
+return();

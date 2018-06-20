@@ -1,0 +1,9 @@
+[clientscript,script963](int $int0, int $int1, int $int2, string $string0, int $int3, int $int4)
+if(~script514 == 0) {
+~script965($int0, $int1, $int2, $int3, $int4);
+} else {
+if(compare(%varcstr22, $string0) != 0) {
+~script966($int0, $int1, $int2, $int3, $int4);
+}
+}
+return();

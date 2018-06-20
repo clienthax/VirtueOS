@@ -1,0 +1,18 @@
+[clientscript,script15](int $int0, int $int1, int $int2)
+if(if_gethide(90:46) == 0) {
+if_settext("", $int0);
+return();
+}
+$int3 = sub($int1, divide(sub(clientclock, $int2), 50));
+if($int3 <= 0) {
+if_settext("Hurry!", $int0);
+return();
+}
+$int4 = divide($int3, 60);
+$int3 = modulo($int3, 60);
+if($int3 >= 10) {
+if_settext("<tostring($int4)>:<tostring($int3)>", $int0);
+} else {
+if_settext("<tostring($int4)>:0<tostring($int3)>", $int0);
+}
+return();

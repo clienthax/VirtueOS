@@ -1,0 +1,6 @@
+[clientscript,script727]
+if(%varc67 > 0) {
+%varc67 = sub(%varc67, 1);
+~script729;
+}
+return();

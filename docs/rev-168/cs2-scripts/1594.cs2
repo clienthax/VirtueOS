@@ -1,0 +1,4 @@
+[clientscript,script1594](int $int0)
+if_setontimer("null()", $int0);
+if_setcolor(0xFFFFFF, $int0);
+return();

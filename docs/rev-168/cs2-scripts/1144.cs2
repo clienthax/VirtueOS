@@ -1,0 +1,11 @@
+[clientscript,script1144](int $int0, int $int1)
+%varp1295 = clearbit(%varp1295, sub($int1, 1));
+~script1146($int0, $int1);
+$int2 = 0;
+$int3 = 0;
+$gosubResult1147_0, $gosubResult1147_1 = ~script1147;
+$int3 = $gosubResult1147_1;
+$int2 = $gosubResult1147_0;
+if_settext("Combat <tostring($int2)>/2", 226:46);
+if_settext("Other <tostring($int3)>/3", 226:47);
+return();

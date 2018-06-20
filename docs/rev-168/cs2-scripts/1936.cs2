@@ -1,0 +1,50 @@
+[proc,script1936](int $int0)(int)
+switch($int0) {
+case 4:
+return(%varp1437);
+case 6:
+return(%varp1438);
+case 1:
+return(%varp1439);
+case 2:
+return(%varp1436);
+case 0:
+return(%varp1435);
+case 3:
+return(%varp1440);
+case 9:
+return(%varp1453);
+case 14:
+return(%varp1447);
+case 8:
+return(%varp1452);
+case 15:
+return(%varp1443);
+case 10:
+return(%varp1449);
+case 5:
+return(%varp1441);
+case 16:
+return(%varp1442);
+case 17:
+return(%varp1444);
+case 7:
+return(%varp1450);
+case 21:
+return(%varp1457);
+case 12:
+return(%varp1445);
+case 20:
+return(%varp1446);
+case 18:
+return(%varp1454);
+case 19:
+return(%varp1455);
+case 22:
+return(%varp1456);
+case 11:
+return(%varp1451);
+case 13:
+return(%varp1448);
+}
+return(-1);

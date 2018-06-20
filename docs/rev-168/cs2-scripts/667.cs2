@@ -1,0 +1,21 @@
+[clientscript,script667](int $int0, int $int1)
+cc_clearops;
+cc_setontimer("null()");
+if($int0 != -1 && $int1 > 0) {
+cc_settrans(0);
+cc_setobject($int0, $int1);
+cc_setopbase("<col=ff9040><oc_name($int0)></col>");
+cc_setop(1, "Withdraw-1");
+cc_setop(2, "Withdraw-5");
+cc_setop(3, "Withdraw-All");
+cc_setop(4, "Withdraw-X");
+cc_setop(10, "Examine");
+cc_setonop("script487(-2147483645, -2147483643, 100, 0)");
+cc_setondragcomplete("script668(-2147483645, -2147483642, -2147483643, -2147483641)");
+} else {
+cc_settrans(0);
+cc_setobject(6512, 1);
+cc_setonop("null()");
+cc_setondragcomplete("null()");
+}
+return();

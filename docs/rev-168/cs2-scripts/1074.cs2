@@ -1,0 +1,37 @@
+[clientscript,script1074](int $int0, int $int1, int $int2, string $string0)
+cc_deleteall(300:1);
+cc_deleteall(300:16);
+cc_deleteall(300:17);
+~steelborder(19660801, $string0, 0);
+$int3 = add(divide(sub(if_getwidth(300:16), multiply(8, 36)), 7), 36);
+$int4 = inv_size($int0);
+$int5 = 0;
+cc_create(300:16, Graphic, 0);
+while($int5 < $int4) {
+cc_create(300:16, Graphic, add($int5, 1));
+cc_setsize(36, 32, 0, 0);
+cc_setposition(multiply(modulo($int5, 8), $int3), multiply(divide($int5, 8), $int3), 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+if(~script1972 == 1) {
+cc_setop(1, ~script2228);
+} else {
+cc_setop(1, "Value");
+}
+cc_setop(2, "Buy 1");
+cc_setop(3, "Buy 5");
+cc_setop(4, "Buy 10");
+if(~script2082 == 0) {
+cc_setop(5, "Buy 50");
+}
+if(%varbit6348 > 0) {
+cc_setop(6, "Value");
+}
+cc_setop(10, "Examine");
+cc_setonop("script487(-2147483645, -2147483643, 125, 0)");
+$int5 = add($int5, 1);
+}
+~scrollbar_vertical(19660817, 19660816, 792, 789, 790, 791, 773, 788);
+~script1076(19660816, $int4, $int0, $int1, $int2);
+if_setoninvtransmit("script1075(-2147483645, $int4, $int0, $int1, $int2){$int0}", 300:16);
+return();

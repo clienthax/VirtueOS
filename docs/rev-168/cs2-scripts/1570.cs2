@@ -1,0 +1,81 @@
+[clientscript,script1570]
+~script1572(32702471, 0, 1, "Sort by members");
+~script1572(32702472, 2, 3, "Sort by target size");
+~script1572(32702473, 4, 5, "Sort by leader name");
+~script1572(32702474, 6, 7, "Sort by preferred combat level");
+~script1572(32702475, 8, 9, "Sort by preferred skill total");
+~script1572(32702476, 10, 11, "Sort by challenge mode");
+~script1572(32702477, 12, 13, "Sort by age");
+def_int $anArray0(40);
+$int0 = 0;
+$int1 = 0;
+while($int1 < 40) {
+if(cc_find(enum(int, component, 1537, $int0), 0) == 1) {
+$anArray0($int0) = $int0;
+$int0 = add($int0, 1);
+}
+$int1 = add($int1, 1);
+}
+$string0 = "";
+if($int0 >= 2) {
+if(%varc180 == 2 || %varc180 == 3) {
+~script1571(0, 0, sub($int0, 1), 9);
+} else {
+if(%varc180 == 4 || %varc180 == 5) {
+~script1571(0, 0, sub($int0, 1), 3);
+} else {
+if(%varc180 == 6 || %varc180 == 7) {
+~script1571(0, 0, sub($int0, 1), 10);
+} else {
+if(%varc180 == 8 || %varc180 == 9) {
+~script1571(0, 0, sub($int0, 1), 11);
+} else {
+if(%varc180 == 10 || %varc180 == 11) {
+~script1571(0, 0, sub($int0, 1), 12);
+} else {
+if(%varc180 == 12 || %varc180 == 13) {
+~script1571(0, 0, sub($int0, 1), 13);
+} else {
+~script1571(0, 0, sub($int0, 1), 8);
+}
+}
+}
+}
+}
+}
+}
+$int2 = 0;
+$int3 = 0;
+$int4 = -1;
+$string1 = "";
+if(%varc180 == 1 || %varc180 == 3 || %varc180 == 5 || %varc180 == 7 || %varc180 == 9 || %varc180 == 11 || %varc180 == 13) {
+$int2 = $int0;
+while($int2 > 0) {
+$int2 = sub($int2, 1);
+$int4 = enum(int, component, 1537, $anArray0($int2));
+if($int4 != -1) {
+if_setposition(0, $int3, 1, 0, $int4);
+if(cc_find($int4, 0) == 1) {
+if(.cc_find($int4, 3) == 1) {
+~script1567($int2, $int4, $anArray0($int2), .cc_gettext);
+}
+}
+}
+$int3 = add($int3, 18);
+}
+} else {
+while($int2 < $int0) {
+$int4 = enum(int, component, 1537, $anArray0($int2));
+if($int4 != -1) {
+if_setposition(0, $int3, 1, 0, $int4);
+if(cc_find($int4, 0) == 1) {
+if(.cc_find($int4, 3) == 1) {
+~script1567($int2, $int4, $anArray0($int2), .cc_gettext);
+}
+}
+}
+$int2 = add($int2, 1);
+$int3 = add($int3, 18);
+}
+}
+return();

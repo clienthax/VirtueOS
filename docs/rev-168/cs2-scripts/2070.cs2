@@ -1,0 +1,5 @@
+[clientscript,script2070](int $int0)
+set_renderplayer_enabled(0)
+~script2179($int0);
+~script2072($int0);
+return();

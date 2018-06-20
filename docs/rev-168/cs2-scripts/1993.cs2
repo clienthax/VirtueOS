@@ -1,0 +1,31 @@
+[clientscript,script1993](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+if_setontimer("script1995($int0, $int1, $int5)", $int0);
+if($int5 == 0) {
+if_sethide(0, $int2);
+if_sethide(1, $int3);
+if_sethide(1, $int4);
+} else {
+if($int5 == 1) {
+if_sethide(1, $int2);
+if_sethide(0, $int3);
+if_sethide(1, $int4);
+} else {
+if($int5 == 2) {
+if_sethide(1, $int2);
+if_sethide(1, $int3);
+if_sethide(0, $int4);
+}
+}
+}
+if($int7 == 1) {
+if_set2dangle(44721, $int6);
+} else {
+if($int7 == 2) {
+if_set2dangle(53722, $int6);
+} else {
+if($int7 == 0) {
+if_set2dangle(49152, $int6);
+}
+}
+}
+return();

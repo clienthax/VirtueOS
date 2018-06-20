@@ -1,0 +1,65 @@
+[clientscript,script306](int $int0)
+cc_deleteall($int0);
+$string0 = "Click on an item to imbue it.";
+$int1 = if_getwidth($int0);
+$int2 = add(multiply(paraheight($int1, 495, $string0), 12), 5);
+$int3 = divide($int1, 7);
+$int4 = divide(sub($int3, 36), 2);
+$int5 = add(32, 20);
+$int6 = 0;
+$int7 = inv_size(93);
+$int8 = 0;
+$int9 = -1;
+while($int6 < $int7) {
+$int9 = inv_getobj(93, $int6);
+cc_create($int0, Graphic, multiply($int6, 2));
+.cc_create($int0, Text, add(multiply($int6, 2), 1));
+if($int9 != -1) {
+if(enum(obj, namedobj, 815, $int9) != -1) {
+cc_setposition(add($int4, multiply(modulo($int8, 7), $int3)), add($int2, multiply(divide($int8, 7), $int5)), 0, 0);
+cc_setsize(36, 32, 0, 0);
+cc_setobject($int9, inv_getnum(93, $int6));
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setop(1, "Imbue");
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int9)>");
+cc_setonmouseover("cc_settrans(-2147483645, -2147483643, 50, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 0, -1)");
+.cc_setposition(cc_getx, add(cc_gety, 32), 0, 0);
+.cc_setsize(36, 15, 0, 0);
+.cc_settextfont(494);
+.cc_settextshadow(1);
+.cc_setcolor(0xFF981F);
+.cc_settextalign(1, 0, 0);
+.cc_settext(~script275($int9));
+$int8 = add($int8, 1);
+} else {
+cc_sethide(1);
+.cc_sethide(1);
+}
+} else {
+cc_sethide(1);
+.cc_sethide(1);
+}
+$int6 = add($int6, 1);
+}
+cc_create($int0, Text, multiply($int6, 2));
+cc_setsize($int1, $int2, 0, 0);
+cc_setposition(0, 0, 0, 0);
+cc_settextfont(495);
+cc_setcolor(0xFF981F);
+cc_settextalign(0, 0, 0);
+cc_settextshadow(1);
+cc_settext($string0);
+if($int8 <= 0) {
+cc_create($int0, Text, add(multiply($int6, 2), 1));
+cc_setsize($int1, sub(if_getheight($int0), $int2), 0, 0);
+cc_setposition(0, $int2, 0, 0);
+cc_settextfont(496);
+cc_setcolor(0xFF981F);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext("There are no items in your inventory that can be imbued.<br><br>Dominic can imbue crystal bows, crystal shields,<br>black masks, salve amulets & certain rings.");
+}
+return();

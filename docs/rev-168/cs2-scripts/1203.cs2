@@ -1,0 +1,101 @@
+[clientscript,script1203](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12)
+def_int $anArray0(47);
+$int13 = 0;
+$int14 = 0;
+while($int14 < 47) {
+$int13 = add($int14, 1);
+$anArray0($int14) = $int13;
+$int14 = add($int14, 1);
+}
+~script1214(0, 0, sub(47, 1));
+if(%varc79 != 3) {
+if(%varc79 != 2) {
+if(%varc79 != 4) {
+if(%varc79 != 5) {
+if(%varc79 != 1) {
+%varc79 = 3;
+}
+}
+}
+}
+}
+$int15 = add(parawidth(512, 496, "Favour"), 15);
+cc_deleteall($int8);
+cc_deleteall($int9);
+cc_deleteall($int10);
+cc_deleteall($int11);
+cc_deleteall($int12);
+$int16 = 0;
+$int17 = 0;
+$int18 = 0;
+$int19 = 0;
+$int20 = 0;
+$int21 = 0;
+$int22 = 0;
+$int23 = 0;
+$int24 = 0;
+$int25 = 0;
+$gosubResult1208_0, $gosubResult1208_1 = ~script1208($int15, $int16, $int21, 3, %varbit4896, $int8);
+$int21 = $gosubResult1208_1;
+$int16 = $gosubResult1208_0;
+$gosubResult1208_0, $gosubResult1208_1 = ~script1208($int15, $int17, $int22, 2, %varbit4895, $int9);
+$int22 = $gosubResult1208_1;
+$int17 = $gosubResult1208_0;
+$gosubResult1208_0, $gosubResult1208_1 = ~script1208($int15, $int18, $int23, 4, %varbit4898, $int10);
+$int23 = $gosubResult1208_1;
+$int18 = $gosubResult1208_0;
+$gosubResult1208_0, $gosubResult1208_1 = ~script1208($int15, $int19, $int24, 5, %varbit4899, $int11);
+$int24 = $gosubResult1208_1;
+$int19 = $gosubResult1208_0;
+$gosubResult1208_0, $gosubResult1208_1 = ~script1208($int15, $int20, $int25, 1, %varbit4894, $int12);
+$int25 = $gosubResult1208_1;
+$int20 = $gosubResult1208_0;
+$int26 = 0;
+$int14 = 0;
+while($int14 < 47) {
+$int13 = $anArray0($int14);
+$int26 = enum(int, int, 1269, $int13);
+if($int26 == 3) {
+$gosubResult1209_0, $gosubResult1209_1 = ~script1209($int15, $int16, $int21, %varbit4896, $int13, $int26, $int8);
+$int21 = $gosubResult1209_1;
+$int16 = $gosubResult1209_0;
+} else {
+if($int26 == 2) {
+$gosubResult1209_0, $gosubResult1209_1 = ~script1209($int15, $int17, $int22, %varbit4895, $int13, $int26, $int9);
+$int22 = $gosubResult1209_1;
+$int17 = $gosubResult1209_0;
+} else {
+if($int26 == 4) {
+$gosubResult1209_0, $gosubResult1209_1 = ~script1209($int15, $int18, $int23, %varbit4898, $int13, $int26, $int10);
+$int23 = $gosubResult1209_1;
+$int18 = $gosubResult1209_0;
+} else {
+if($int26 == 5) {
+$gosubResult1209_0, $gosubResult1209_1 = ~script1209($int15, $int19, $int24, %varbit4899, $int13, $int26, $int11);
+$int24 = $gosubResult1209_1;
+$int19 = $gosubResult1209_0;
+} else {
+if($int26 == 1) {
+$gosubResult1209_0, $gosubResult1209_1 = ~script1209($int15, $int20, $int25, %varbit4894, $int13, $int26, $int12);
+$int25 = $gosubResult1209_1;
+$int20 = $gosubResult1209_0;
+}
+}
+}
+}
+}
+$int14 = add($int14, 1);
+}
+if_setsize(0, $int21, 1, 0, $int8);
+if_setsize(0, $int22, 1, 0, $int9);
+if_setsize(0, $int23, 1, 0, $int10);
+if_setsize(0, $int24, 1, 0, $int11);
+if_setsize(0, $int25, 1, 0, $int12);
+~scrollbar_vertical($int1, $int0, 792, 789, 790, 791, 773, 788);
+~script1204(3, $int3, $int2);
+~script1204(2, $int4, $int2);
+~script1204(4, $int5, $int2);
+~script1204(5, $int6, $int2);
+~script1204(1, $int7, $int2);
+~script1206($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12);
+return();

@@ -1,0 +1,49 @@
+[clientscript,script330](int $int0, int $int1)
+if_setopbase("<col=ff9040><oc_name($int1)>", $int0);
+$int2 = if_getwidth($int0);
+$int3 = sub(if_getheight($int0), 30);
+cc_deleteall($int0);
+$int4 = 0;
+cc_create($int0, Model, $int4);
+$int4 = add($int4, 1);
+cc_setsize($int3, $int3, 0, 0);
+if($int1 == 11787) {
+cc_setposition(15, 0, 0, 0);
+.cc_create($int0, Model, $int4);
+$int4 = add($int4, 1);
+.cc_setsize($int3, $int3, 0, 0);
+.cc_setposition(sub($int2, add($int3, 15)), 0, 0, 0);
+.cc_setobject(12795, 1);
+} else {
+if($int1 == 3053) {
+cc_setposition(15, 0, 0, 0);
+.cc_create($int0, Model, $int4);
+$int4 = add($int4, 1);
+.cc_setsize($int3, $int3, 0, 0);
+.cc_setposition(sub($int2, add($int3, 15)), 0, 0, 0);
+.cc_setobject(21198, 1);
+} else {
+cc_setposition(divide(sub($int2, $int3), 2), 0, 0, 0);
+}
+}
+cc_setobject($int1, 1);
+cc_create($int0, Graphic, $int4);
+$int4 = add($int4, 1);
+cc_setposition(0, 0, 0, 0);
+cc_setsize($int2, $int3, 0, 0);
+cc_setgraphic(297);
+cc_settiling(1);
+cc_settrans(255);
+if_setonmouseover("cc_settrans(-2147483645, cc_getid, 190, -1)", $int0);
+if_setonmouseleave("cc_settrans(-2147483645, cc_getid, 255, -1)", $int0);
+cc_create($int0, Text, $int4);
+$int4 = add($int4, 1);
+cc_setsize($int2, 30, 0, 0);
+cc_setposition(0, $int3, 0, 0);
+cc_settextfont(495);
+cc_settextshadow(0);
+cc_settextalign(1, 1, 0);
+cc_settext(oc_name($int1));
+~script332($int0, $int1);
+if_setoninvtransmit("script331(-2147483645, cc_getid, $int1){93}", $int0);
+return();

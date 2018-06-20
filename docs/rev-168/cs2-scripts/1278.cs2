@@ -1,0 +1,32 @@
+[clientscript,script1278](int $int0)
+$int1 = enum(int, component, 1302, $int0);
+$int2 = 0;
+$int3 = 0;
+$int4 = 0;
+$gosubResult1279_0, $gosubResult1279_1, $gosubResult1279_2 = ~script1279($int0);
+$int4 = $gosubResult1279_2;
+$int3 = $gosubResult1279_1;
+$int2 = $gosubResult1279_0;
+if($int4 <= 0) {
+if(cc_find($int1, 3) == 1) {
+cc_sethide(1);
+}
+if(cc_find($int1, 6) == 1) {
+cc_settext(tostring($int2));
+}
+if(cc_find($int1, 7) == 1) {
+cc_sethide(1);
+}
+} else {
+if(cc_find($int1, 3) == 1) {
+cc_sethide(0);
+cc_settext(tostring($int2));
+}
+if(cc_find($int1, 6) == 1) {
+cc_settext(tostring($int3));
+}
+if(cc_find($int1, 7) == 1) {
+cc_sethide(0);
+}
+}
+return();

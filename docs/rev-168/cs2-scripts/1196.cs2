@@ -1,0 +1,14 @@
+[clientscript,script1196](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18, int $int19, int $int20, int $int21, int $int22, int $int23)
+if_setop(10, "Examine", $int2);
+if_setop(10, "Examine", $int6);
+if_setop(10, "Examine", $int20);
+if_setop(10, "Examine", $int8);
+if_setop(10, "Examine", $int11);
+if_setop(10, "Examine", $int14);
+if_setop(10, "Examine", $int17);
+if_setopbase("<col=ff9040><oc_name(13353)></col>", $int2);
+if_setopbase("<col=ff9040><oc_name(13639)></col>", $int6);
+if_setopbase("<col=ff9040>Auto-weed</col>", $int20);
+~script1198($int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18, $int19, $int20, $int21, $int22, $int23);
+if_setonvartransmit("script1197($int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18, $int19, $int20, $int21, $int22, $int23){261, 262, 263, 1329, 1105, 1329}", $int0);
+return();

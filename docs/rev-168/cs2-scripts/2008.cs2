@@ -1,0 +1,68 @@
+[clientscript,script2008](int $int0, int $int1, int $int2, int $int3)
+cc_deleteall($int1);
+$int4 = 0;
+$int5 = 0;
+$int6 = 10;
+$int7 = 0;
+$int8 = 10;
+$int9 = $int8;
+$int10 = 0;
+$int11 = 5;
+$int12 = enum(int, namedobj, 1782, $int4);
+while($int12 != -1) {
+if($int12 == 21610 || $int12 == 21612 || $int12 == 21614 || $int12 == 21616 || $int12 == 21618 || $int12 == 21620) {
+$int11 = 6;
+} else {
+$int11 = 5;
+}
+if(compare(enum(obj, string, 1783, $int12), "") != 0) {
+if($int4 != 0) {
+$int7 = add(add(3, $int7), divide(sub(if_getheight($int1), $int6), 6));
+$int9 = $int8;
+}
+cc_create($int0, Text, $int5);
+cc_setposition(0, $int7, 0, 0);
+cc_setsize(100, 32, 0, 0);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(0, 0, 0);
+cc_setcolor(0xFF981F);
+cc_settext(enum(obj, string, 1783, $int12));
+$int5 = add($int5, 1);
+}
+cc_create($int1, Graphic, $int4);
+$int10 = ~script2009($int12);
+cc_setsize(36, 32, 0, 0);
+cc_setposition($int9, $int7, 0, 0);
+cc_setobject($int12, $int10);
+cc_setgraphicshadow(0x333333);
+cc_setopbase("<col=ff9040><oc_name($int12)></col>");
+if($int10 > 0) {
+cc_setoutline(1);
+cc_settrans(0);
+cc_setop(1, "Withdraw");
+cc_setop(2, "Withdraw 5");
+cc_setop(3, "Withdraw 10");
+cc_setop(4, "Withdraw All");
+cc_setop(5, "Withdraw X");
+cc_setop(10, "Examine");
+} else {
+cc_setoutline(0);
+cc_settrans(50);
+cc_clearops;
+cc_setop(10, "Examine");
+}
+$int4 = add($int4, 1);
+$int9 = add(add(3, $int9), divide(if_getwidth($int1), $int11));
+$int12 = enum(int, namedobj, 1782, $int4);
+}
+$int13 = 0;
+$int7 = add($int7, 32);
+if($int7 > if_getheight($int1)) {
+$int13 = if_getscrolly($int1);
+if_setscrollsize(0, $int7, $int1);
+} else {
+if_setscrollsize(0, 0, $int1);
+}
+~script72($int3, $int1, $int13);
+return();

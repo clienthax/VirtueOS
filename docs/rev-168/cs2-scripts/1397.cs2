@@ -1,0 +1,206 @@
+[clientscript,script1397](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14)
+$int15 = multiply(pow(add(7, 2), 2), 3);
+$int16 = $int15;
+if(%varbit5330 > $int15) {
+while($int16 > 0) {
+$int16 = sub($int16, 1);
+if(cc_find(27656197, $int16) == 1) {
+cc_clearops;
+cc_setop(1, "Select");
+cc_setonop("script489(-2147483644, 2)");
+cc_setcolor(0x8F8F8F);
+cc_setonmouserepeat("script85(-2147483645, -2147483643, 16777215)");
+cc_setonmouseleave("script85(-2147483645, -2147483643, 9408399)");
+}
+}
+} else {
+if(%varbit5332 == 0 && %varbit5330 == 0) {
+while($int16 > 0) {
+$int16 = sub($int16, 1);
+if(cc_find(27656197, $int16) == 1) {
+cc_clearops;
+cc_setop(6, "Add room");
+cc_setonop("script489(-2147483644, 64)");
+cc_setcolor(0xAFAFAF);
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+}
+}
+} else {
+while($int16 > 0) {
+$int16 = sub($int16, 1);
+if(cc_find(27656197, $int16) == 1) {
+cc_clearops;
+cc_setonop("null()");
+cc_setcolor(0xAFAFAF);
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+}
+}
+}
+}
+$int17 = enum(int, component, 1424, -1);
+if(%varbit5333 <= 0) {
+if_settext("---", $int0);
+if_setgraphic(-1, $int1);
+if_set2dangle(0, $int1);
+if(cc_find($int17, 0) == 1) {
+cc_setgraphic(-1);
+cc_set2dangle(0);
+}
+if_settrans(255, $int2);
+if_settrans(255, $int3);
+if_settrans(255, $int4);
+if_settrans(255, $int5);
+if_settext("Select a room on the map.", $int6);
+~script1398($int7, "Move", 0);
+~script1398($int8, "Rotate", 0);
+~script1400($int9, 1366);
+~script1400($int10, 1367);
+~script1398($int11, "Delete", 0);
+~script1398($int12, "Cancel", 0);
+~script1398($int13, "Done", 0);
+return();
+}
+$int18 = enum(int, obj, 250, %varbit5333);
+if_settext(oc_name($int18), $int0);
+$int19 = enum(int, graphic, 1423, %varbit5333);
+if_setgraphic($int19, $int1);
+$int20 = modulo(multiply(16384, sub(4, %varbit5331)), 65536);
+if_set2dangle($int20, $int1);
+if(cc_find($int17, 0) == 1) {
+if(%varbit5330 != 0) {
+cc_setgraphic($int19);
+cc_set2dangle($int20);
+} else {
+cc_setgraphic(-1);
+cc_set2dangle(0);
+}
+}
+$int21 = 255;
+if(testbit(%varbit5335, 0) == 1) {
+$int21 = 150;
+if(%varbit5331 == 1) {
+if(testbit(%varbit5334, 3) == 1) {
+$int21 = 0;
+}
+} else {
+if(%varbit5331 == 2) {
+$int21 = 0;
+} else {
+if(%varbit5331 == 3) {
+if(testbit(%varbit5334, 1) == 1) {
+$int21 = 0;
+}
+} else {
+if(testbit(%varbit5334, 0) == 1) {
+$int21 = 0;
+}
+}
+}
+}
+}
+if_settrans($int21, $int2);
+$int21 = 255;
+if(testbit(%varbit5335, 2) == 1) {
+$int21 = 150;
+if(%varbit5331 == 1) {
+if(testbit(%varbit5334, 1) == 1) {
+$int21 = 0;
+}
+} else {
+if(%varbit5331 == 2) {
+if(testbit(%varbit5334, 0) == 1) {
+$int21 = 0;
+}
+} else {
+if(%varbit5331 == 3) {
+if(testbit(%varbit5334, 3) == 1) {
+$int21 = 0;
+}
+} else {
+$int21 = 0;
+}
+}
+}
+}
+if_settrans($int21, $int3);
+$int21 = 255;
+if(testbit(%varbit5335, 1) == 1) {
+$int21 = 150;
+if(%varbit5331 == 1) {
+if(testbit(%varbit5334, 0) == 1) {
+$int21 = 0;
+}
+} else {
+if(%varbit5331 == 2) {
+if(testbit(%varbit5334, 3) == 1) {
+$int21 = 0;
+}
+} else {
+if(%varbit5331 == 3) {
+$int21 = 0;
+} else {
+if(testbit(%varbit5334, 1) == 1) {
+$int21 = 0;
+}
+}
+}
+}
+}
+if_settrans($int21, $int4);
+$int21 = 255;
+if(testbit(%varbit5335, 3) == 1) {
+$int21 = 150;
+if(%varbit5331 == 1) {
+$int21 = 0;
+} else {
+if(%varbit5331 == 2) {
+if(testbit(%varbit5334, 1) == 1) {
+$int21 = 0;
+}
+} else {
+if(%varbit5331 == 3) {
+if(testbit(%varbit5334, 0) == 1) {
+$int21 = 0;
+}
+} else {
+if(testbit(%varbit5334, 3) == 1) {
+$int21 = 0;
+}
+}
+}
+}
+}
+if_settrans($int21, $int5);
+if(%varbit5330 > $int15) {
+if_settext("Use the map to select a position for the room.", $int6);
+~script1398($int7, "Move", 1);
+~script1398($int8, "Rotate", 0);
+~script1400($int9, 1366);
+~script1400($int10, 1367);
+~script1398($int11, "Delete", 0);
+~script1399($int12, "Cancel", $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14);
+~script1398($int13, "Done", 0);
+return();
+}
+if(%varbit5332 == 1) {
+if_settext("Choose an orientation for the room, then select 'Done'.", $int6);
+~script1398($int7, "Move", 0);
+~script1398($int8, "Rotate", 1);
+~script1401($int9, "Clockwise", 1366, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14);
+~script1401($int10, "Counter-clockwise", 1367, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14);
+~script1398($int11, "Delete", 0);
+~script1399($int12, "Cancel", $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14);
+~script1399($int13, "Done", $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14);
+return();
+}
+if_settext("Use the options to edit the room.", $int6);
+~script1399($int7, "Move", $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14);
+~script1399($int8, "Rotate", $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14);
+~script1400($int9, 1366);
+~script1400($int10, 1367);
+~script1399($int11, "Delete", $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14);
+~script1398($int12, "Cancel", 0);
+~script1398($int13, "Done", 0);
+return();

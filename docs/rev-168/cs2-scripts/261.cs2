@@ -1,0 +1,27 @@
+[clientscript,script261](int $int0, int $int1, int $int2, int $int3)
+$int4 = sub($int2, $int1);
+if($int4 == 0) {
+if_setontimer("null()", $int0);
+~script262($int0, $int2);
+return();
+}
+if(clientclock < $int3) {
+if($int4 <= -2) {
+$int4 = divide($int4, 2);
+} else {
+if($int4 >= 2) {
+$int4 = divide($int4, 2);
+}
+}
+}
+$int1 = add($int1, $int4);
+if_setontimer("script261($int0, $int1, $int2, $int3)", $int0);
+~script262($int0, $int1);
+if($int4 < 0) {
+if(modulo(clientclock, 2) == 0) {
+sound_synth(2157, 1, 0);
+} else {
+sound_synth(2156, 1, 0);
+}
+}
+return();

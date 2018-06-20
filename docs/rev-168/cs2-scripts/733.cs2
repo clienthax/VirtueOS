@@ -1,0 +1,67 @@
+[clientscript,script733](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+if($int0 > 0) {
+if_sethide(0, 65:13);
+if_settext(tostring($int0), 65:13);
+} else {
+if_sethide(1, 65:13);
+}
+if_settext(tostring($int1), 65:17);
+if_settext(tostring($int2), 65:21);
+if($int4 > 0) {
+if_sethide(0, 65:33);
+if_settext(tostring($int4), 65:33);
+} else {
+if_sethide(1, 65:33);
+}
+if_settext(tostring($int5), 65:37);
+if_settext(tostring($int6), 65:41);
+$int8 = add(add($int0, $int1), $int2);
+$int9 = add(add($int4, $int5), $int6);
+if_settext(tostring($int8), 65:10);
+if_settext(tostring($int9), 65:30);
+if($int0 > 0) {
+if_sethide(0, 65:11);
+} else {
+if_sethide(1, 65:11);
+}
+if($int4 > 0) {
+if_sethide(0, 65:31);
+} else {
+if_sethide(1, 65:31);
+}
+if($int9 > 0) {
+if_sethide(0, 65:49);
+} else {
+if_sethide(1, 65:49);
+}
+if($int3 > 0 || $int7 > 0) {
+if_sethide(1, 65:55);
+if_sethide(0, 65:58);
+if_settext("Redemption in progress", 65:59);
+if_setcolor(0xFF981F, 65:59);
+if_sethide(1, 65:82);
+if_sethide(0, 65:85);
+if_settext("Redemption in progress", 65:86);
+if_setcolor(0xFF981F, 65:86);
+} else {
+if(add($int8, $int9) > 0) {
+if_sethide(0, 65:55);
+if_sethide(1, 65:58);
+if_settext("Buy membership", 65:59);
+if_setcolor(0xFFFFFF, 65:59);
+if_sethide(0, 65:82);
+if_sethide(1, 65:85);
+if_settext("Buy name change", 65:86);
+if_setcolor(0xFFFFFF, 65:86);
+} else {
+if_sethide(1, 65:55);
+if_sethide(0, 65:58);
+if_settext("Nothing to redeem", 65:59);
+if_setcolor(0xFF981F, 65:59);
+if_sethide(1, 65:82);
+if_sethide(0, 65:85);
+if_settext("Nothing to redeem", 65:86);
+if_setcolor(0xFF981F, 65:86);
+}
+}
+return();

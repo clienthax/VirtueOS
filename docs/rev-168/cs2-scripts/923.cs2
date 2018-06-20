@@ -1,0 +1,102 @@
+[clientscript,script923]
+$int0 = 0;
+if(%varc41 == -1) {
+if(~script922 == 1) {
+$int0 = 1;
+} else {
+if(determinateDisplayMode() == 1) {
+%varc41 = 0;
+~script183(0, 0);
+}
+}
+}
+if_sethide($int0, 162:30);
+if(%varbit6374 == 1 && determinateDisplayMode() != 1) {
+if_setposition(1, 0, 2, 0, 162:47);
+if_setposition(-1, 0, 0, 0, 162:548);
+} else {
+if_setposition(0, 0, 0, 0, 162:47);
+if_setposition(0, 0, 2, 0, 162:548);
+}
+cc_deleteall(162:31);
+cc_deleteall(162:45);
+if(~script921 == 0) {
+if_setnoclickthrough(1, 162:31);
+cc_create(162:31, Graphic, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setgraphic(1017);
+cc_settiling(0);
+cc_settrans(0);
+cc_create(162:45, Rectangle, 0);
+cc_setsize(0, 1, 1, 0);
+cc_setposition(0, 15, 1, 2);
+cc_setcolor(0x807660);
+cc_setfill(1);
+~script838(10617380, 792, 789, 790, 791, 773, 788, 0);
+if($int0 == 1) {
+if_settrans(255, 162:3);
+} else {
+if_settrans(0, 162:3);
+}
+return();
+}
+$int1 = divide(16384, 25);
+$int2 = 16384;
+if(%varbit2570 == 1) {
+if_setnoclickthrough(1, 162:31);
+} else {
+if_setnoclickthrough(0, 162:31);
+if_setnoscrollthrough(1, 162:31);
+}
+$int3 = 0;
+if(~script1972 == 0) {
+while($int3 < 20) {
+cc_create(162:31, Rectangle, $int3);
+cc_setsize(0, $int2, 1, 2);
+cc_setposition(0, 0, 1, 2);
+cc_setcolor(0x000000);
+cc_setfill(1);
+cc_settrans(254);
+cc_create(162:45, Rectangle, multiply($int3, 2));
+.cc_create(162:45, Rectangle, add(multiply($int3, 2), 1));
+cc_setsize($int2, 1, 2, 0);
+.cc_setsize($int2, 1, 2, 0);
+cc_setposition(0, 0, 0, 0);
+.cc_setposition(0, 15, 0, 2);
+cc_setcolor(0xFFFFFF);
+.cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+.cc_setfill(1);
+cc_settrans(251);
+.cc_settrans(250);
+$int2 = sub($int2, $int1);
+$int3 = add($int3, 1);
+}
+} else {
+cc_create(162:31, Rectangle, $int3);
+cc_setsize(0, $int2, 1, 2);
+cc_setposition(0, 0, 1, 2);
+cc_setcolor(0x000000);
+cc_setfill(1);
+cc_settrans(225);
+cc_create(162:45, Rectangle, multiply($int3, 2));
+.cc_create(162:45, Rectangle, add(multiply($int3, 2), 1));
+cc_setsize($int2, 1, 2, 0);
+.cc_setsize($int2, 1, 2, 0);
+cc_setposition(0, 0, 0, 0);
+.cc_setposition(0, 15, 0, 2);
+cc_setcolor(0xFFFFFF);
+.cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+.cc_setfill(1);
+cc_settrans(200);
+.cc_settrans(130);
+}
+~script838(10617380, 1190, 1187, 1188, 1189, 1185, 1186, 1);
+if($int0 == 1) {
+if_settrans(255, 162:3);
+} else {
+if_settrans(155, 162:3);
+}
+return();

@@ -1,0 +1,174 @@
+[clientscript,script1596](int $int0, int $int1, int $int2, int $int3, int $int4)
+cc_deleteall($int0);
+cc_deleteall($int1);
+cc_deleteall($int2);
+if_setoninvtransmit("script1596($int0, $int1, $int2, $int3, $int4){93}", $int1);
+$int5 = 36;
+$int6 = 32;
+$int7 = 60;
+$int8 = 0;
+$int9 = -1;
+while($int8 < 4) {
+$int9 = enum(int, obj, 1521, $int8);
+cc_create($int0, Graphic, $int8);
+cc_setsize($int5, $int6, 0, 0);
+cc_setposition(10, add(20, multiply($int8, 60)), 0, 0);
+cc_setobject_nonum(enum(int, obj, 1521, $int8), 0);
+if(inv_total(93, $int9) == 0) {
+cc_sethide(0);
+} else {
+cc_sethide(1);
+}
+$int8 = add($int8, 1);
+}
+$int8 = 0;
+while($int8 < 4) {
+$int9 = enum(int, obj, 1521, $int8);
+cc_create($int0, Text, add($int8, 4));
+cc_setsize(210, 20, 0, 0);
+cc_setposition($int7, add(15, multiply($int8, 60)), 0, 0);
+cc_settext(enum(int, string, 1522, $int8));
+cc_settextfont(496);
+cc_setcolor(0xFF981F);
+cc_settextalign(0, 0, 0);
+$int8 = add($int8, 1);
+}
+$int8 = 0;
+while($int8 < 4) {
+$int9 = enum(int, obj, 1521, $int8);
+cc_create($int0, Text, add($int8, 8));
+cc_setsize(210, 20, 0, 0);
+cc_setposition($int7, add(35, multiply($int8, 60)), 0, 0);
+cc_settext(enum(int, string, 1523, $int8));
+cc_settextfont(495);
+cc_setcolor(0xFF981F);
+cc_settextalign(0, 0, 0);
+if(inv_total(93, $int9) == 0) {
+cc_sethide(0);
+} else {
+cc_sethide(1);
+}
+$int8 = add($int8, 1);
+}
+$int9 = -1;
+$int8 = 0;
+$int10 = enum(int, obj, 1515, $int8);
+$int11 = 30;
+$int12 = -1;
+$string0 = "";
+$int13 = -1;
+while($int10 != -1) {
+cc_create($int1, Graphic, $int8);
+cc_setsize($int5, $int6, 0, 0);
+cc_setposition(add($int7, multiply(modulo($int8, 3), 70)), $int11, 0, 0);
+$int12 = enum(obj, obj, 1519, $int10);
+$int13 = enum(obj, int, 1520, $int10);
+if($int12 != -1 && inv_total(93, 2355) == 0) {
+if(inv_total(93, $int12) == 0 || inv_total(93, 2355) == 0) {
+if(stat(^crafting) >= $int13) {
+$string0 = "<oc_name($int10)><br><col=008000>Requires <tostring($int13)> Crafting<br><col=800000>Requires <oc_name($int12)>";
+} else {
+$string0 = "<oc_name($int10)><br><col=800000>Requires <tostring($int13)> Crafting<br><col=800000>Requires <oc_name($int12)>";
+}
+cc_setobject_nonum(enum(obj, obj, 1518, $int10), 0);
+cc_clearops;
+} else {
+} else {
+if(stat(^crafting) >= $int13) {
+$string0 = "<oc_name($int10)><br><col=008000>Requires <tostring($int13)> Crafting";
+} else {
+$string0 = "<oc_name($int10)><br><col=800000>Requires <tostring($int13)> Crafting";
+}
+cc_setobject_nonum($int10, 0);
+cc_setop(1, "Craft 1");
+cc_setop(2, "Craft 5");
+cc_setop(3, "Craft 10");
+cc_setop(4, "Craft X");
+cc_setop(5, "Craft All");
+cc_setopbase(oc_name($int10));
+}
+}
+cc_setonmouserepeat("script526(-2147483645, -2147483643, $int4, $string0, 25, 512)");
+cc_setonmouseleave("script40($int4)");
+$int9 = enum(obj, obj, 1517, $int10);
+if($int9 != -1 && inv_total(93, $int9) == 0) {
+cc_sethide(1);
+} else {
+cc_sethide(0);
+}
+$int8 = add($int8, 1);
+$int10 = enum(int, obj, 1515, $int8);
+if(modulo($int8, 3) == 0) {
+$int11 = add($int11, 60);
+}
+}
+$int8 = 0;
+$int10 = enum(int, obj, 1516, $int8);
+if($int10 == -1) {
+return();
+}
+$int9 = enum(obj, obj, 1517, $int10);
+$int11 = 8;
+$int7 = 25;
+while($int10 != -1) {
+cc_create($int3, Text, $int8);
+cc_setsize(80, 30, 0, 0);
+cc_setposition(add($int7, multiply(modulo($int8, 2), 85)), $int11, 0, 0);
+cc_settext(enum(obj, string, 1682, $int10));
+cc_settextfont(495);
+cc_setcolor(0xFF981F);
+cc_settextalign(1, 2, 0);
+$int8 = add($int8, 1);
+$int10 = enum(int, obj, 1516, $int8);
+$int9 = enum(obj, obj, 1517, $int10);
+if(modulo($int8, 2) == 0) {
+$int11 = add($int11, 60);
+}
+}
+$int9 = -1;
+$int8 = 0;
+$int10 = enum(int, obj, 1516, $int8);
+if($int10 == -1) {
+return();
+}
+$int9 = enum(obj, obj, 1517, $int10);
+$int11 = 35;
+$int7 = 45;
+while($int10 != -1) {
+cc_create($int2, Graphic, $int8);
+cc_setsize($int5, $int6, 0, 0);
+cc_setposition(add($int7, multiply(modulo($int8, 2), 90)), $int11, 0, 0);
+$int9 = enum(obj, obj, 1517, $int10);
+$int13 = enum(obj, int, 1520, $int10);
+if($int9 != -1 && inv_total(93, $int9) == 0) {
+if(stat(^crafting) >= $int13) {
+$string0 = "<oc_name($int10)><br><col=008000>Requires <tostring($int13)> Crafting<br><col=800000>Requires mould";
+} else {
+$string0 = "<oc_name($int10)><br><col=800000>Requires <tostring($int13)> Crafting<br><col=800000>Requires mould";
+}
+cc_setobject_nonum($int9, 0);
+cc_clearops;
+} else {
+if(stat(^crafting) >= $int13) {
+$string0 = "<oc_name($int10)><br><col=008000>Requires <tostring($int13)> Crafting";
+} else {
+$string0 = "<oc_name($int10)><br><col=800000>Requires <tostring($int13)> Crafting";
+}
+cc_setobject_nonum($int10, 0);
+cc_setop(1, "Craft 1");
+cc_setop(2, "Craft 5");
+cc_setop(3, "Craft 10");
+cc_setop(4, "Craft X");
+cc_setop(5, "Craft All");
+cc_setopbase(oc_name($int10));
+}
+cc_setonmouserepeat("script526(-2147483645, -2147483643, $int4, $string0, 25, 512)");
+cc_setonmouseleave("script40($int4)");
+$int8 = add($int8, 1);
+$int10 = enum(int, obj, 1516, $int8);
+$int9 = enum(obj, obj, 1517, $int10);
+if(modulo($int8, 2) == 0) {
+$int11 = add($int11, 60);
+}
+}
+return();

@@ -1,0 +1,20 @@
+[clientscript,script1614](int $int0, int $int1, int $int2, int $int3, int $int4)
+~script1616($int1, $int2, $int3);
+if_setonvartransmit("script1615($int1, $int2, $int3){499, 1429, 115}", $int4);
+cc_deleteall($int4);
+$int5 = sub(multiply(sub(42, 36), 3), 2);
+$int6 = multiply(sub(36, 32), 2);
+$int7 = 0;
+$int8 = inv_size(93);
+while($int7 < $int8) {
+cc_create($int4, Graphic, $int7);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add($int5, multiply(modulo($int7, 4), 42)), add($int6, multiply(divide($int7, 4), 36)), 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+$int7 = add($int7, 1);
+}
+~script1621($int4, $int7);
+if_setoninvtransmit("script1620($int4, $int7){93}", $int0);
+if_setonvartransmit("script1620($int4, $int7){115}", $int0);
+return();

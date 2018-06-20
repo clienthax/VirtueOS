@@ -1,0 +1,32 @@
+[clientscript,script993](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9)
+%varc71 = 0;
+%varc70 = 0;
+%varc213 = -1;
+%varc212 = -1;
+%varc211 = -1;
+%varc210 = -1;
+%varc209 = -1;
+%varc208 = -1;
+%varc207 = -1;
+if(%varc76 <= 0) {
+%varc76 = clientclock;
+}
+~script2250($int9);
+$int10 = 0;
+$int11 = enum(int, component, 1163, $int10);
+while($int11 != -1) {
+cc_deleteall($int11);
+cc_create($int11, Text, 0);
+cc_settextshadow(1);
+cc_settextalign(2, 1, 0);
+cc_settext("");
+cc_sethide(1);
+if_sethide(1, $int11);
+$int10 = add($int10, 1);
+$int11 = enum(int, component, 1163, $int10);
+}
+~script995($int0, $int2, $int4, $int5, $int7, $int8, $int9);
+~script999($int2, $int3, $int4, $int5, $int6, $int7, $int8);
+if_setonvartransmit("script994($int0, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9){1227, 1228, 1229, 1230, 1231, 1232, 1233, 1234, 1235, 1236, 1237, 1238, 1239, 1240, 1241, 1242, 1243, 1244, 1245, 1246, 1247, 1248, 1249, 1250, 1251, 1252, 1253, 1254, 1255, 1256, 1257, 1258, 1259, 1260, 1261, 1262, 1263, 1264, 1265, 1266, 1267, 1268, 1269, 1270, 1271, 1272, 1273, 1274, 1275}", $int0);
+~script1003($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int10);
+return();

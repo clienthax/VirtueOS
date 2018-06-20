@@ -1,0 +1,28 @@
+[clientscript,script760](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14)
+if_sethide(0, $int0);
+cc_deleteall($int0);
+cc_create($int0, Graphic, 0);
+cc_setsize(7, 5, 0, 0);
+cc_setposition(divide(sub(if_getwidth($int0), 7), 2), divide(sub(if_getheight($int0), 5), 2), 0, 0);
+if(%varbit4596 == $int2) {
+cc_setgraphic(1051);
+cc_settrans(0);
+if_setonmouseover("cc_settrans(-2147483645, cc_getid, 120, -1)", $int0);
+if_setonmouseleave("cc_settrans(-2147483645, cc_getid, 0, -1)", $int0);
+if_setonop("script761(-2147483644, $int1, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14)", $int0);
+} else {
+if(%varbit4596 == $int1) {
+cc_setgraphic(1050);
+cc_settrans(0);
+if_setonmouseover("cc_settrans(-2147483645, cc_getid, 120, -1)", $int0);
+if_setonmouseleave("cc_settrans(-2147483645, cc_getid, 0, -1)", $int0);
+if_setonop("script761(-2147483644, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14)", $int0);
+} else {
+cc_setgraphic(1050);
+cc_settrans(100);
+if_setonmouseover("cc_settrans(-2147483645, cc_getid, 200, -1)", $int0);
+if_setonmouseleave("cc_settrans(-2147483645, cc_getid, 100, -1)", $int0);
+if_setonop("script761(-2147483644, $int1, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14)", $int0);
+}
+}
+return();

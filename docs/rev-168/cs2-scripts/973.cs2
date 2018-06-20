@@ -1,0 +1,17 @@
+[clientscript,script973](int $int0, int $int1, int $int2)
+if(%varp211 == $int2) {
+if(cc_find($int0, $int1) == 1) {
+cc_settrans(175);
+}
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setonop("null()", $int0);
+} else {
+if(cc_find($int0, $int1) == 1) {
+cc_settrans(255);
+}
+if_setonmouserepeat("cc_settrans(-2147483645, $int1, 200, -1)", $int0);
+if_setonmouseleave("cc_settrans(-2147483645, $int1, 255, -1)", $int0);
+if_setonop("script972(-2147483644, $int0, $int1, $int2)", $int0);
+}
+return();

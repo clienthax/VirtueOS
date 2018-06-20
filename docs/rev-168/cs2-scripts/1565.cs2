@@ -1,0 +1,7 @@
+[clientscript,script1565]
+$string0 = "Make party";
+if(%varp1427 != -1) {
+$string0 = "<col=ffff00>My party</col>";
+}
+~script1558(32702522, $string0, 32702467, 1538, -1);
+return();

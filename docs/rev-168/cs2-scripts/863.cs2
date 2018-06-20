@@ -1,0 +1,11 @@
+[clientscript,script863](int $int0, int $int1)
+if(clientclock < $int1) {
+return();
+}
+cc_deleteall($int0);
+~script835($int0, 0);
+if_setcolor(0xA6A692, 127:13);
+if_setonmouserepeat("script45(8323085, 16777215)", 127:12);
+if_setonmouseleave("script45(8323085, 10921618)", 127:12);
+if_setontimer("null()", $int0);
+return();

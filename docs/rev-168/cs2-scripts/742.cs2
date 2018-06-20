@@ -1,0 +1,131 @@
+[clientscript,script742](int $int0, int $int1, int $int2, int $int3, int $int4, string $string0, string $string1)
+if(if_gethide($int2) == 1) {
+return();
+}
+$int5 = 495;
+$int6 = 12;
+$int7 = 4;
+if($int3 == 494) {
+$int7 = 2;
+$int6 = 10;
+$int5 = 494;
+} else {
+if($int3 == 496) {
+$int5 = 496;
+}
+}
+$string2 = "";
+$string3 = "";
+$string4 = "";
+$string5 = "";
+$int8 = 0;
+$int9 = 0;
+$int10 = 0;
+$int11 = 0;
+$int12 = 0;
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string4 = $gosubResult632_0;
+$gosubResult632_0, $gosubResult632_1 = ~script632($string1);
+$string1 = $gosubResult632_1;
+$string5 = $gosubResult632_0;
+$int13 = string_length($string4);
+$int14 = string_length($string5);
+if($int13 > 0 || $int14 > 0) {
+if($int13 > 0) {
+$int8 = parawidth(2147483647, $int3, $string4);
+} else {
+$int8 = 0;
+}
+if($int14 > 0) {
+$int9 = parawidth(2147483647, $int3, $string5);
+} else {
+$int9 = 0;
+}
+$int10 = add(add($int8, $int7), $int9);
+if($int11 < $int10) {
+$int11 = $int10;
+}
+if($int12 > 0) {
+$string3 = append($string3, append("<br>", $string5));
+$string2 = append($string2, append("<br>", $string4));
+} else {
+$string3 = append($string3, $string5);
+$string2 = append($string2, $string4);
+}
+$int12 = add($int12, 1);
+if(string_length($string0) > 0 || string_length($string1) > 0) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string4 = $gosubResult632_0;
+$gosubResult632_0, $gosubResult632_1 = ~script632($string1);
+$string1 = $gosubResult632_1;
+$string5 = $gosubResult632_0;
+$int13 = string_length($string4);
+$int14 = string_length($string5);
+} else {
+$int14 = 0;
+$int13 = 0;
+}
+}
+$int6 = add(add(multiply($int12, $int6), sub($int7, 1)), 4);
+$int10 = add($int11, 4);
+if_setsize($int10, $int6, 0, 0, $int2);
+$int15 = if_getx($int0);
+$int16 = if_gety($int0);
+$int17 = 0;
+if($int1 != -1 && cc_find($int0, $int1) == 1) {
+$int17 = cc_getheight;
+$int16 = sub(add($int16, cc_gety), if_getscrolly($int0));
+$int15 = sub(add($int15, cc_getx), if_getscrollx($int0));
+} else {
+$int17 = if_getheight($int0);
+}
+$int18 = if_getlayer($int0);
+while($int18 != -1) {
+$int16 = sub(add($int16, if_gety($int18)), if_getscrolly($int18));
+$int15 = sub(add($int15, if_getx($int18)), if_getscrollx($int18));
+$int18 = if_getlayer($int18);
+}
+$int19 = add($int15, 5);
+$int20 = add(add($int16, $int17), 5);
+$int21 = 0;
+$int22 = if_getlayer($int2);
+if($int22 != -1) {
+$int21 = sub(if_getwidth($int22), $int10);
+if($int19 > $int21) {
+$int19 = $int21;
+}
+if($int20 > sub(if_getheight($int22), $int6)) {
+$int20 = sub(sub($int16, $int6), 5);
+}
+}
+if_setposition($int19, $int20, 0, 0, $int2);
+cc_deleteall($int2);
+cc_create($int2, Rectangle, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(1);
+cc_setcolor(0xFFFFA0);
+cc_create($int2, Rectangle, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(0);
+cc_setcolor(0x000000);
+cc_create($int2, Text, 2);
+cc_setsize(4, 1, 1, 1);
+cc_setposition(0, 0, 1, 2);
+cc_settext($string2);
+cc_settextalign(0, 0, 0);
+cc_settextfont($int5);
+cc_setcolor(0x000000);
+cc_create($int2, Text, 3);
+cc_setsize(4, 1, 1, 1);
+cc_setposition(0, 0, 1, 2);
+cc_settext($string3);
+cc_settextalign(2, 0, 0);
+cc_settextfont($int5);
+cc_setcolor(0x000000);
+%varc217 = 1;
+%varc218 = $int4;
+return();

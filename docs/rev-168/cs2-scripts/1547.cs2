@@ -1,0 +1,72 @@
+[clientscript,script1547](int $int0)
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551366)) == 0) {
+return();
+}
+cc_deleteall(500:10);
+$int1 = 0;
+$int2 = 0;
+$int3 = 0;
+$int4 = 0;
+while($int4 < $int0) {
+$int3 = multiply($int4, 13);
+$int2 = 0;
+cc_create(500:10, Rectangle, multiply($int4, 7));
+cc_setsize(0, 13, 1, 0);
+cc_setposition(0, $int3, 1, 0);
+cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+$int1 = if_getwidth(500:7);
+cc_create(500:10, Text, add(multiply($int4, 7), 1));
+cc_setsize($int1, 13, 0, 0);
+cc_setposition($int2, $int3, 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+$int2 = add($int2, $int1);
+$int1 = if_getwidth(500:8);
+cc_create(500:10, Text, add(multiply($int4, 7), 2));
+cc_setsize($int1, 13, 0, 0);
+cc_setposition($int2, $int3, 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+$int2 = add($int2, $int1);
+cc_create(500:10, Text, add(multiply($int4, 7), 3));
+cc_setsize($int2, 13, 1, 0);
+cc_setposition(0, $int3, 2, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_create(500:10, Text, add(multiply($int4, 7), 4));
+cc_sethide(1);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_create(500:10, Text, add(multiply($int4, 7), 5));
+cc_sethide(1);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_create(500:10, Text, add(multiply($int4, 7), 6));
+cc_sethide(1);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+$int4 = add($int4, 1);
+}
+$int5 = multiply($int4, 13);
+if($int5 > if_getheight(500:10)) {
+if_setscrollsize(0, $int5, 500:10);
+~script72(32768011, 32768010, %varc179);
+} else {
+if_setscrollsize(0, 0, 500:10);
+~script72(32768011, 32768010, 0);
+%varc179 = 0;
+}
+return();

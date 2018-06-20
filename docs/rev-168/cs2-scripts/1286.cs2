@@ -1,0 +1,8 @@
+[clientscript,script1286](int $int0, int $int1, int $int2, int $int3)
+~script1288($int1, $int2, $int3);
+if_setonvartransmit("script1287($int1, $int2, $int3){153, 416, 1339}", $int0);
+cc_deleteall($int0);
+cc_create($int0, Model, 0);
+~script1290;
+cc_setonvartransmit("script1289(-2147483645, -2147483643){153}");
+return();

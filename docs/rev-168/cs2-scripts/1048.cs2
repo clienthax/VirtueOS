@@ -1,0 +1,15 @@
+[clientscript,script1048](int $int0, int $int1, int $int2)
+if(%varbit4606 != 0) {
+return();
+}
+$int3 = 320;
+$int4 = 256;
+$int5 = sub(if_getwidth($int1), if_getwidth($int0));
+$int2 = ~max(0, $int2);
+$int2 = ~min(sub(if_getwidth($int1), if_getwidth($int0)), $int2);
+$int6 = sub(715, 175);
+$int7 = sub(700, 195);
+$int3 = add(divide(multiply($int2, $int6), $int5), 175);
+$int4 = add(divide(multiply($int2, $int7), $int5), 195);
+~script42($int4, $int3);
+return();

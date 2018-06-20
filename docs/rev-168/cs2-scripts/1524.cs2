@@ -1,0 +1,69 @@
+[clientscript,script1524](int $int0, int $int1, int $int2, string $string0)
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551309)) == 0) {
+return();
+}
+if_sethide(0, 507:11);
+$int3 = multiply(%varc178, 14);
+if($int3 > if_getheight(507:11)) {
+if_setscrollsize(0, $int3, 507:11);
+~script72(33226764, 33226763, %varc179);
+} else {
+if_setscrollsize(0, 0, 507:11);
+%varc179 = 0;
+~script72(33226764, 33226763, 0);
+}
+if(%varc181 != 0) {
+if(%varc181 != 1) {
+if(%varc181 != 2) {
+if(%varc181 != 3) {
+if(%varc181 != 4) {
+if(%varc181 != 5) {
+if(%varc181 != 6) {
+if(%varc181 != 7) {
+%varc181 = 0;
+}
+}
+}
+}
+}
+}
+}
+}
+~script1525(-1);
+~script1523;
+~script1537;
+if_setonvartransmit("script1536(){1430}", 507:11);
+~steelborder(33226754, $string0, 0);
+$string1 = "";
+if($int0 == 2) {
+if($int1 == 1) {
+$string1 = "De-list";
+} else {
+if($int2 > 0) {
+$string1 = "Advertise (<tostring($int2)>)";
+} else {
+$string1 = "<col=7f7f7f>Advertise (0)</col>";
+}
+}
+~script1558(33226782, $string1, 33226755, 1539, -1);
+if_sethide(0, 507:30);
+~script1558(33226783, "<col=ff0000>Disband</col>", 33226755, 1539, -1);
+if_sethide(0, 507:31);
+} else {
+if($int0 == 1) {
+~script1558(33226784, "<col=ff0000>Leave</col>", 33226755, 1539, -1);
+if_sethide(0, 507:32);
+} else {
+~script1558(33226784, "<col=00ff00>Join</col>", 33226755, 1539, -1);
+if_sethide(0, 507:32);
+}
+}
+~script1558(33226785, "Back", 33226755, 1539, -1);
+if_sethide(0, 507:33);
+~script1558(33226786, "Refresh", 33226755, 1539, -1);
+if_sethide(0, 507:34);
+~script1530(33226765, "Preferred party size", $int0);
+~script1530(33226769, "Preferred combat level", $int0);
+~script1530(33226773, "Preferred skill total", $int0);
+~script1530(33226774, "Challenge mode", $int0);
+return();

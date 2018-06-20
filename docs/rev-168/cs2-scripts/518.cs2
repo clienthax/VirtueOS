@@ -1,0 +1,9 @@
+[clientscript,script518](int $int0, int $int1, int $int2, string $string0)
+cc_create($int0, Text, $int1);
+cc_setposition(4, add(4, multiply(add($int1, 1), 17)), 0, 0);
+cc_setsize($int2, 17, 0, 0);
+cc_setop(1, $string0);
+cc_setonmouserepeat("script85(-2147483645, add($int1, 8), 16777215)");
+cc_setonmouseleave("script85(-2147483645, add($int1, 8), 16750623)");
+cc_setonop("script521(-2147483644, -2147483645, $int1)");
+return();

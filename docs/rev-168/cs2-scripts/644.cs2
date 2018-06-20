@@ -1,0 +1,8 @@
+[clientscript,script644](int $int0, int $int1, int $int2)
+if(clientclock < $int2) {
+return();
+}
+if(cc_find($int0, $int1) == 1) {
+~script645($int0);
+}
+return();

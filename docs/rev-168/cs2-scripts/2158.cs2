@@ -1,0 +1,9 @@
+[clientscript,script2158]
+~script927(1);
+%varc140 = 0;
+%varcstr24 = "";
+%varc11 = 0;
+if(~script1972 == 1) {
+~script1984;
+}
+return();

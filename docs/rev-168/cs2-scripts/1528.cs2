@@ -1,0 +1,6 @@
+[clientscript,script1528](int $int0, int $int1, int $int2, int $int3, string $string0)
+if(cc_find($int0, $int1) == 1) {
+cc_settrans($int2);
+}
+~script837($int0, -1, $int3, $string0, 25, 190);
+return();

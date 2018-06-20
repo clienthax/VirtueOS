@@ -1,0 +1,60 @@
+[clientscript,script2013](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13)
+if_setobject_nonum(21570, 0, $int0);
+if_setobject_nonum(21580, 0, $int2);
+if_setobject_nonum(21600, 0, $int4);
+if_setobject_nonum(21610, 0, $int8);
+if_setobject_nonum(21590, 0, $int6);
+if_setobject_nonum(21562, 0, $int10);
+$int14 = add(add(add(add(inv_total(93, 21570), inv_total(93, 21572)), inv_total(93, 21574)), inv_total(93, 21576)), inv_total(93, 21578));
+$int15 = add(add(add(add(inv_total(93, 21580), inv_total(93, 21582)), inv_total(93, 21584)), inv_total(93, 21586)), inv_total(93, 21588));
+$int16 = add(add(add(add(inv_total(93, 21600), inv_total(93, 21602)), inv_total(93, 21604)), inv_total(93, 21606)), inv_total(93, 21608));
+$int17 = add(add(add(add(inv_total(93, 21590), inv_total(93, 21592)), inv_total(93, 21594)), inv_total(93, 21596)), inv_total(93, 21598));
+$int18 = add(add(add(add(inv_total(93, 21610), inv_total(93, 21612)), inv_total(93, 21614)), inv_total(93, 21616)), inv_total(93, 21618));
+$int19 = inv_total(93, 21562);
+$int20 = inv_total(93, 21564);
+$int21 = inv_total(93, 21566);
+$int22 = inv_total(93, 21568);
+$int23 = add(add(add($int19, $int20), $int21), $int22);
+$int24 = inv_total(93, 21543);
+$int25 = inv_total(93, 21545);
+if($int14 > 0 || $int19 > 0) {
+if_setcolor(0x00FF00, $int1);
+} else {
+if_setcolor(0xFF981F, $int1);
+}
+if($int15 > 0 || $int20 > 0) {
+if_setcolor(0x00FF00, $int3);
+} else {
+if_setcolor(0xFF981F, $int3);
+}
+if($int16 > 0 || $int21 > 0) {
+if_setcolor(0x00FF00, $int5);
+} else {
+if_setcolor(0xFF981F, $int5);
+}
+if($int18 > 0 || $int22 > 0) {
+if_setcolor(0x00FF00, $int9);
+} else {
+if_setcolor(0xFF981F, $int9);
+}
+if($int17 > 0) {
+if_setcolor(0x00FF00, $int7);
+} else {
+if_setcolor(0xFF981F, $int7);
+}
+if($int19 > 0 || $int20 > 0 || $int21 > 0 || $int22 > 0) {
+if_setcolor(0x00FF00, $int11);
+} else {
+if_setcolor(0xFF981F, $int11);
+}
+if($int24 > 0) {
+if_setcolor(0x00FF00, $int12);
+} else {
+if_setcolor(0xFF981F, $int12);
+}
+if($int25 > 0) {
+if_setcolor(0x00FF00, $int13);
+} else {
+if_setcolor(0xFF981F, $int13);
+}
+return();

@@ -1,0 +1,10 @@
+[proc,script749](int,int)
+$int0 = cc_getx;
+$int1 = cc_gety;
+$int2 = cc_getlayer;
+while($int2 != -1) {
+$int0 = sub(add($int0, if_getx($int2)), if_getscrollx($int2));
+$int1 = sub(add($int1, if_gety($int2)), if_getscrolly($int2));
+$int2 = if_getlayer($int2);
+}
+return($int0, $int1);

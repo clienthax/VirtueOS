@@ -1,0 +1,14 @@
+[clientscript,script587](int $int0, int $int1)
+%varc59 = -2147483648;
+cc_deleteall($int0);
+$int2 = ~script575($int0, 0);
+cc_create($int0, Text, $int2);
+cc_setposition(5, 0, 0, 0);
+cc_setsize(sub(if_getwidth($int0), 10), if_getheight($int0), 0, 0);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_setcolor(0xFF981F);
+~script590($int0, cc_getid, $int1, -1);
+if_setonop("script588(-2147483644, $int0, cc_getid, $int1)", $int1);
+return();

@@ -1,0 +1,16 @@
+[clientscript,script2052](int $int0, int $int1, int $int2, int $int3, int $int4, string $string0)
+~script2054(1, -1, $int1, $int3, $int4);
+if_setonmouseover("null()", $int1);
+if_setonmouseleave("script40(17694744)", $int1);
+if_setonop("null()", $int1);
+if_setonkey("null()", $int1);
+if_setontimer("script2053(add(clientclock, 40), $int0, $int1, $string0, $int2, $int3, $int4)", $int1);
+if(%varc200 >= 1 && %varc200 <= 28) {
+sound_synth(2266, 1, 0);
+if(cc_find($int1, %varc200) == 1) {
+cc_resume_pausebutton;
+}
+} else {
+sound_synth(2277, 1, 0);
+}
+return();

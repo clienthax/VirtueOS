@@ -1,0 +1,39 @@
+[clientscript,script460](int $int0, int $int1, int $int2)
+cc_deleteall($int1);
+$string0 = enum(int, string, 860, $int0);
+if_setopbase("<col=ff9040><$string0>", $int1);
+cc_create($int1, Graphic, 0);
+cc_setsize(34, 34, 0, 0);
+cc_setposition(0, 0, 0, 0);
+cc_setgraphic(155);
+.cc_create($int1, Graphic, 1);
+.cc_setsize(30, 30, 0, 0);
+.cc_setposition(2, 2, 0, 0);
+~script463($int0, $int1, $int2);
+if($int0 == 25 || $int0 == 26) {
+if_setonstattransmit("script461($int0, $int1, cc_getid, .cc_getid, $int2){5, 1}", $int1);
+if_setonvartransmit("script461($int0, $int1, cc_getid, .cc_getid, $int2){83, 1377, 1050, 284}", $int1);
+} else {
+if($int0 == 24 || $int0 == 27 || $int0 == 28) {
+if_setonstattransmit("script461($int0, $int1, cc_getid, .cc_getid, $int2){5, 1}", $int1);
+if_setonvartransmit("script461($int0, $int1, cc_getid, .cc_getid, $int2){83, 1377, 1429, 284}", $int1);
+} else {
+if_setonstattransmit("script461($int0, $int1, cc_getid, .cc_getid, $int2){5}", $int1);
+if_setonvartransmit("script461($int0, $int1, cc_getid, .cc_getid, $int2){83, 1377, 284}", $int1);
+}
+}
+if_setonop("prayer_op(-2147483644, $int0, $int1, cc_getid, .cc_getid, $int2)", $int1);
+~script1966($int2, $int1, $int0);
+if($int0 == 8 && %varbit5314 == 1) {
+if(~script451 == 1 || ~deadman_world == 1 || %varbit5314 == 1) {
+.cc_settrans(100);
+.cc_create($int1, Graphic, 2);
+.cc_setsize(25, 25, 0, 0);
+.cc_setposition(5, 4, 0, 0);
+.cc_setgraphic(1047);
+} else {
+} else {
+.cc_settrans(0);
+}
+}
+return();

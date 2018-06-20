@@ -1,0 +1,7 @@
+[clientscript,script334](int $int0, int $int1, int $int2, int $int3)
+%varc50 = 256;
+~script336($int1, $int2);
+if_setontimer("script335($int1, $int2)", $int0);
+~script958($int3);
+if_setonsubchange("script957($int3)", $int0);
+return();

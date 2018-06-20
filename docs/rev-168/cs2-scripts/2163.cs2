@@ -1,0 +1,4 @@
+[clientscript,script2163](int $int0)
+if_setonvartransmit("script2164(){1706}", $int0);
+~script2165;
+return();

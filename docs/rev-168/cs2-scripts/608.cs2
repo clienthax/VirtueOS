@@ -1,0 +1,16 @@
+[clientscript,script608](int $int0, int $int1, string $string0, int $int2, int $int3)
+if_resume_pausebutton($int1);
+sound_synth(2266, 1, 0);
+if(cc_find($int0, $int2) == 1) {
+if(.cc_find($int0, $int3) == 1) {
+cc_setgraphic(813);
+.cc_setcolor(0xFFFFFF);
+.cc_settext("Loading...");
+cc_clearops;
+cc_setonmouseover("null()");
+cc_setonmouseleave("null()");
+cc_setonop("null()");
+}
+}
+if_setontimer("script605($int0, $int1, $string0, add(clientclock, 30))", $int0);
+return();

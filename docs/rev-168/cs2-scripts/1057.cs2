@@ -1,0 +1,23 @@
+[clientscript,script1057](int $int0, int $int1, int $int2, string $string0)
+cc_deleteall($int0);
+cc_create($int0, Text, 0);
+cc_setposition(0, 0, 1, 0);
+cc_setsize(0, 20, 1, 0);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(0, 1, 0);
+cc_create($int0, Text, 1);
+cc_setposition(0, 0, 1, 2);
+cc_setsize(0, 20, 1, 1);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(0, 0, 0);
+cc_create($int0, Graphic, 2);
+cc_setposition(55, 20, 0, 0);
+cc_setsize(36, 32, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+if_setonop("script487(-2147483645, cc_getid, 125, 0)", $int0);
+~script1060($int0, $int1, $string0, $int2);
+if_setonvartransmit("script1059($int0, $int1, $string0, $int2){615, 439, 967}", $int0);
+return();

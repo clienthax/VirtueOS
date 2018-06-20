@@ -1,0 +1,7 @@
+[clientscript,script1625](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+cc_setmodel(3063);
+cc_setsize(32, 32, 0, 0);
+cc_setposition($int0, $int1, 0, 0);
+cc_setmodelangle(0, 0, $int2, $int3, 0, $int4);
+cc_setmodelanim($int5);
+return();

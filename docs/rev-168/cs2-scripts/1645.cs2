@@ -1,0 +1,92 @@
+[clientscript,script1645](int $int0, int $int1, int $int2, int $int3, int $int4)
+if(%varc43 < $int0) {
+return();
+}
+$int5 = multiply($int0, 6);
+if($int3 <= 0) {
+$int3 = 1;
+}
+$int6 = 0;
+$int7 = multiply($int0, 38);
+cc_create(383:3, Graphic, $int5);
+cc_setposition(0, $int7, 1, 0);
+cc_setsize(0, 38, 1, 0);
+cc_setgraphic(1040);
+cc_settiling(1);
+if(modulo($int0, 2) == 0) {
+cc_settrans(0);
+cc_setonmouseover("script1308(25100291, $int5, 75, add($int5, 3), 1, $int1, $int3)");
+cc_setonmouseleave("script1308(25100291, $int5, 0, add($int5, 3), 0, $int1, $int3)");
+} else {
+cc_settrans(125);
+cc_setonmouseover("script1308(25100291, $int5, 200, add($int5, 3), 1, $int1, $int3)");
+cc_setonmouseleave("script1308(25100291, $int5, 125, add($int5, 3), 0, $int1, $int3)");
+}
+cc_setop(1, "Buy-offer");
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int1)></col>");
+$int5 = add($int5, 1);
+cc_create(383:3, Graphic, $int5);
+$int5 = add($int5, 1);
+cc_setposition($int6, add($int7, 1), 0, 0);
+cc_setsize(35, 35, 0, 0);
+$int6 = add($int6, 35);
+.cc_create(383:3, Text, $int5);
+$int5 = add($int5, 1);
+.cc_setposition($int6, $int7, 0, 0);
+.cc_setsize(45, 38, 0, 0);
+$int6 = add($int6, 45);
+.cc_setcolor(0xFF981F);
+.cc_settextfont(494);
+.cc_settextshadow(1);
+.cc_settextalign(0, 1, 0);
+if($int2 == 1) {
+cc_setgraphic(1106);
+.cc_settext("Sold:");
+} else {
+cc_setgraphic(1108);
+.cc_settext("Bought:");
+}
+cc_create(383:3, Text, $int5);
+$int5 = add($int5, 1);
+cc_setposition($int6, $int7, 0, 0);
+cc_setsize(170, 38, 0, 0);
+$int6 = add($int6, 170);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+if($int3 >= 2) {
+cc_settext("<col=ffb83f><oc_name($int1)></col><br>x <~script46($int3, ",")>");
+} else {
+cc_settext("<col=ffb83f><oc_name($int1)></col>");
+}
+cc_create(383:3, Graphic, $int5);
+$int5 = add($int5, 1);
+cc_setposition($int6, add($int7, 3), 0, 0);
+cc_setsize(36, 32, 0, 0);
+$int6 = add($int6, 36);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setobject($int1, $int3);
+cc_create(383:3, Text, $int5);
+$int5 = add($int5, 1);
+cc_setposition($int6, $int7, 0, 0);
+cc_setsize($int6, 38, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+$string0 = "";
+if($int4 == 1) {
+$string0 = "1 coin";
+} else {
+$string0 = "<~script46($int4, ",")> coins";
+}
+if($int3 >= 2) {
+cc_settext("<$string0><br><col=9f9f9f>= <~script46(divide($int4, $int3), ",")> each</col>");
+} else {
+cc_settext($string0);
+}
+%varc43 = add($int0, 1);
+return();

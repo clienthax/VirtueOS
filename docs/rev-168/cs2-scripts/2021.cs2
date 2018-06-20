@@ -1,0 +1,11 @@
+[clientscript,script2021]
+if(%varbit5941 < 2) {
+if_settext("A: -", 611:23);
+if_settext("B: -", 611:24);
+if_settext("C: -", 611:25);
+} else {
+if_settext("A: <~script2024(testbit(%varbit5936, 0))>", 611:23);
+if_settext("B: <~script2024(testbit(%varbit5936, 1))>", 611:24);
+if_settext("C: <~script2024(testbit(%varbit5936, 2))>", 611:25);
+}
+return();

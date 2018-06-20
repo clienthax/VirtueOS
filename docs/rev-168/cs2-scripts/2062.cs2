@@ -1,0 +1,11 @@
+[clientscript,script2062](int $int0, int $int1)
+if(%varc5 == 16) {
+return();
+}
+if(%varc200 >= 0 && %varc200 <= $int1) {
+%varc201 = ~max(%varc200, 1);
+} else {
+%varc200 = $int1;
+}
+~script2055($int0, $int1);
+return();

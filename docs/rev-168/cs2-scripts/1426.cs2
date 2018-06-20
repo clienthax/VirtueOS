@@ -1,0 +1,5 @@
+[clientscript,script1426](int $int0)
+$int0 = multiply($int0, 30);
+$int0 = add(clientclock, $int0);
+if_setontimer("script1427($int0)", 396:3);
+return();

@@ -79,6 +79,8 @@ public class Player extends MobileEntity {
      * The player's appearance.
      */
     private Appearance appearance = Appearance.DEFAULT_APPEARANCE;
+
+    private Varbit varbits = new Varbit(this);
     /**
      * This player's prayer icon.
      */
@@ -156,14 +158,14 @@ public class Player extends MobileEntity {
         sendCameraReset();
 
         // Login Screen.
-        sendSetWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 56, "Welcome to Virtue");
-        sendSetWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 57, "You last logged in <col=ff0000>earlier today</col>.");
-        sendSetWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 61, "Never tell anyone your password,<br>even if they claim to work for Jagex!");
-        sendSetWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 70, "You do not have a Bank PIN.<br>Please visit a bank if you would like one.");
+        sendWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 56, "Welcome to Virtue");
+        sendWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 57, "You last logged in <col=ff0000>earlier today</col>.");
+        sendWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 61, "Never tell anyone your password,<br>even if they claim to work for Jagex!");
+        sendWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 70, "You do not have a Bank PIN.<br>Please visit a bank if you would like one.");
 
         // Login Screen: Message of the Week Panel.
-        sendSetWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 2, "Message of the week");
-        sendSetWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 3, "Join our Official <col=7289DA>Discord</col> server to chat live with like-minded Developers, <col=6a97a5>Rune-Status.net</col>.");
+        sendWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 2, "Message of the week");
+        sendWidgetText(WidgetId.LOGIN_CLICK_TO_PLAY_GROUP_ID, 3, "Join our Official <col=7289DA>Discord</col> server to chat live with like-minded Developers, <col=6a97a5>Rune-Status.net</col>.");
         sendCS2Script(233, 24772660, 30685, 0, 120, 94, 110, 0, 1800, -1);
         sendCS2Script(233, 24772661, 16356, 0, 190, 0, 122, 0, 3000, -1);
         sendCS2Script(1080, "https://Rune-Status.net/discord/");
@@ -185,7 +187,7 @@ public class Player extends MobileEntity {
         }
 
         // Game Frame.
-        sendSetRootWidget(WidgetId.GAMEFRAME_GROUP_ID);
+        sendRootWidget(WidgetId.GAMEFRAME_GROUP_ID);
         sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 1, WidgetId.CHATBOX_GROUP_ID, true);
         // 2 - 7 = Nothing.
         sendOpenWidgetSub(WidgetId.GAMEFRAME_GROUP_ID, 8, WidgetId.COMBAT_GROUP_ID, true);
@@ -213,7 +215,7 @@ public class Player extends MobileEntity {
         sendVarp(313, -1); // Unlock Emotes.
         sendVarp(465, -1); // Unlock Emotes: Lost Tribe Quest. (also Status)
         sendVarp(802, -1); // Unlock Emotes: Stronghold of Security.
-        sendWidgetSetClickMask(WidgetId.EMOTES_GROUP_ID, 1, 0, 47, 2); // Emote List.
+        sendWidgetClickMask(WidgetId.EMOTES_GROUP_ID, 1, 0, 47, 2); // Emote List.
 
         // Settings Panel.
         // TODO: Implement these.
@@ -228,14 +230,14 @@ public class Player extends MobileEntity {
         sendVarp(1074, 1); // Chat: Profanity Filter.
 
         // TODO: Figure out what each of these do.
-        sendWidgetSetClickMask(WidgetId.SETTINGS_PANEL_GROUP_ID, 85, 1, 4, 2);
-        sendWidgetSetClickMask(WidgetId.SETTINGS_PANEL_GROUP_ID, 86, 1, 4, 2);
+        sendWidgetClickMask(WidgetId.SETTINGS_PANEL_GROUP_ID, 85, 1, 4, 2);
+        sendWidgetClickMask(WidgetId.SETTINGS_PANEL_GROUP_ID, 86, 1, 4, 2);
 
         // Quest Panel.
         sendVarp(101, 0); // Quest Points.
-        sendWidgetSetClickMask(WidgetId.QUEST_GROUP_ID, 7, 0, 19, 2); // Free List.
-        sendWidgetSetClickMask(WidgetId.QUEST_GROUP_ID, 8, 0, 116, 2); // Members List.
-        sendWidgetSetClickMask(WidgetId.QUEST_GROUP_ID, 9, 0, 11, 2); // Miniquest List.
+        sendWidgetClickMask(WidgetId.QUEST_GROUP_ID, 7, 0, 19, 2); // Free List.
+        sendWidgetClickMask(WidgetId.QUEST_GROUP_ID, 8, 0, 116, 2); // Members List.
+        sendWidgetClickMask(WidgetId.QUEST_GROUP_ID, 9, 0, 11, 2); // Miniquest List.
 
         // Music Panel.
         // TODO: Implement this.
@@ -260,16 +262,16 @@ public class Player extends MobileEntity {
         sendVarp(1009, -1); // +32 Tracks,
         sendVarp(1338, -1); // +32 Tracks,
         sendVarp(1681, -1); // +20 Tracks.
-        sendSetWidgetText(WidgetId.MUSIC_PANEL_ID, 5, "AUTO"); // FIXME: This is wrong?
-        sendWidgetSetClickMask(WidgetId.MUSIC_PANEL_ID, 1, 0, 556, 6); // Track List.
+        sendWidgetText(WidgetId.MUSIC_PANEL_ID, 5, "AUTO"); // FIXME: This is wrong?
+        sendWidgetClickMask(WidgetId.MUSIC_PANEL_ID, 1, 0, 556, 6); // Track List.
 
         // Combat Panel.
         // TODO: Implement this.
         sendVarp(43, 0); // Attack Style Selection.
         sendVarp(172, -1);// Auto Retaliate
         sendVarp(843, 0); // Weapon Style Group.
-        sendSetWidgetText(WidgetId.COMBAT_GROUP_ID, 1, "Unarmed");
-        sendSetWidgetText(WidgetId.COMBAT_GROUP_ID, 2, "Combat Lvl: " + 3);
+        sendWidgetText(WidgetId.COMBAT_GROUP_ID, 1, "Unarmed");
+        sendWidgetText(WidgetId.COMBAT_GROUP_ID, 2, "Combat Lvl: " + 3);
 
         // Chatbox Panel: Check Display Name.
         sendVarp(1054, 0); // Clan Tab Setting.
@@ -316,8 +318,16 @@ public class Player extends MobileEntity {
         write(new CameraRepositionEvent(x, y, z, pitch, yaw));
     }
 
-    public void sendWidgetSetClickMask(int root, int component, int from, int to, int settings) {
+    public void sendWidgetClickMask(int root, int component, int from, int to, int settings) {
         write(new WidgetSetClickMaskEvent(root, component, from, to, settings));
+    }
+
+    public void sendWidgetNpcHead(int widget, int child, int npc) {
+        write(new WidgetNpcHeadEvent(widget, child, npc));
+    }
+
+    public void sendWidgetAnim(int widget, int child, int anim) {
+        write(new WidgetAnimEvent(widget, child, anim));
     }
 
     public void sendRegionUpdate(Position position) {
@@ -332,7 +342,7 @@ public class Player extends MobileEntity {
         write(new WidgetOpenSubEvent(root, child, interfaceId, clickable));
     }
 
-    public void sendSetWidgetText(int root, int child, String message) {
+    public void sendWidgetText(int root, int child, String message) {
         write(new WidgetSetTextEvent(root, child, message));
     }
 
@@ -345,16 +355,14 @@ public class Player extends MobileEntity {
     }
 
     public void sendVarbit(int i, int val) {
-        Varbit varbit = new Varbit(this);
-        varbit.sendVarbit(i, val);
+        varbits.sendVarbit(i, val);
     }
 
     public void sendVarbit(int i, int val, boolean force) {
-        Varbit varbit = new Varbit(this);
-        varbit.forceVarbit(i, val);
+        varbits.forceVarbit(i, val);
     }
 
-    public void sendSetRootWidget(int interfaceId) {
+    public void sendRootWidget(int interfaceId) {
         write(new WidgetSetRootEvent(interfaceId));
     }
 
@@ -362,7 +370,7 @@ public class Player extends MobileEntity {
         write(new CS2ScriptEvent(id, Lists.reverse(Arrays.asList(params)).toArray()));
     }
 
-    public void sendSetWidgetMoveSubEvent(int root, int child, int root1, int child1) {
+    public void sendWidgetMoveSubEvent(int root, int child, int root1, int child1) {
         write(new WidgetMoveSubEvent(root, child, root1, child1));
     }
 
@@ -425,14 +433,21 @@ public class Player extends MobileEntity {
 
     public void initGameFrameCodec() {
 
-        ChannelPipeline pipeline = sessionContext.getChannel().pipeline();
-        Server server = sessionContext.getServer();
-
+        ChannelPipeline pipeline = getChannelPipeline();
+        Server server = getServer();
         pipeline.addLast(GameEventEncoder.class.getName(), new GameEventEncoder(server.getEventRepository()));
         pipeline.addBefore(GameEventEncoder.class.getName(), GameFrameEncoder.class.getName(), new GameFrameEncoder(encodingRandom));
 
         pipeline.addBefore("handler", GameFrameDecoder.class.getName(), new GameFrameDecoder(decodingRandom));
         pipeline.addAfter(GameFrameDecoder.class.getName(), GameEventDecoder.class.getName(), new GameEventDecoder(server.getEventRepository()));
+    }
+
+    public Server getServer() {
+        return sessionContext.getServer();
+    }
+
+    public ChannelPipeline getChannelPipeline() {
+        return sessionContext.getChannel().pipeline();
     }
 
     /**

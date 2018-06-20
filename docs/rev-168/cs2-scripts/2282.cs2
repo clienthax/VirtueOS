@@ -1,0 +1,17 @@
+[clientscript,script2282](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, string $string0, string $string1)
+$int6 = -1;
+$int7 = 0;
+if(%varp1204 != $int0) {
+$gosubResult2274_0, $gosubResult2274_1 = ~script2274($int1, $int7);
+$int7 = $gosubResult2274_1;
+$int6 = $gosubResult2274_0;
+$int7 = ~script2283($int1, $int7, $string0, $int2, $int3, $int4, $int5, $string1);
+if_setonmouserepeat("script2287(1, $int1, $int6)", $int1);
+if_setonmouseleave("script2287(0, $int1, $int6)", $int1);
+} else {
+$int7 = ~script198($int1);
+$int7 = ~script2283($int1, $int7, $string0, $int2, $int3, $int4, $int5, $string1);
+if_setonmouserepeat("null()", $int1);
+if_setonmouseleave("null()", $int1);
+}
+return();

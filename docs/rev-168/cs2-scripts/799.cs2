@@ -1,0 +1,28 @@
+[clientscript,script799](int $int0, string $string0)
+cc_deleteall(237:1);
+~steelborder(15532033, "Grand Exchange: <$string0>", 0);
+cc_deleteall(237:3);
+~scrollbar_vertical(15532035, 15532034, 792, 789, 790, 791, 773, 788);
+cc_deleteall(237:4);
+cc_create(237:4, Graphic, 0);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(0, 0, 0, 0);
+$string1 = "Column view";
+$int1 = add(parawidth(512, 495, $string1), 20);
+if_setsize($int1, 17, 0, 0, 237:4);
+.cc_create(237:4, Text, 1);
+.cc_setsize($int1, 17, 0, 0);
+.cc_setposition(0, 0, 0, 0);
+.cc_setcolor(0xFF981F);
+if_setonmouseover("script85(-2147483645, .cc_getid, 16777215)", 237:4);
+if_setonmouseleave("script85(-2147483645, .cc_getid, 16750623)", 237:4);
+.cc_settextfont(495);
+.cc_settextshadow(1);
+.cc_settextalign(2, 1, 0);
+.cc_settext($string1);
+$int2 = inv_size($int0);
+if_setoninvtransmit("script800($int0, $int2, cc_getid){$int0}", 237:0);
+if_setonvartransmit("script800($int0, $int2, cc_getid){499}", 237:0);
+if_setonop("script801(-2147483644, $int0, $int2, cc_getid)", 237:4);
+~script802($int0, $int2, cc_getid);
+return();

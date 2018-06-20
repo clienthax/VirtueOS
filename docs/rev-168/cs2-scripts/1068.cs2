@@ -1,0 +1,22 @@
+[clientscript,script1068]
+$int0 = ~toplevel_getcomponents;
+if($int0 == -1) {
+return();
+}
+$int1 = enum(component, component, $int0, 10551299);
+if($int1 == -1) {
+return();
+}
+cc_deleteall($int1);
+cc_create($int1, Model, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setmodel(29403);
+.cc_create($int1, Rectangle, 1);
+.cc_setsize(0, 0, 1, 1);
+.cc_setposition(0, 0, 1, 1);
+.cc_setcolor(0xFFFFFF);
+.cc_setfill(1);
+cc_setontimer("script1069(-2147483645, -2147483643, .cc_getid, clientclock)");
+~script1070($int1, 0);
+return();

@@ -1,0 +1,4 @@
+[clientscript,script714](int $int0)
+cc_deleteall($int0);
+~thinbox($int0, 0);
+return();

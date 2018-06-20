@@ -1,0 +1,103 @@
+[clientscript,script752](int $int0, int $int1)
+%varc66 = 0;
+cc_deleteall(162:42);
+$int2 = if_getwidth(162:42);
+$int3 = if_getheight(162:42);
+if(string_length(%varcstr22) <= 0) {
+~script753($int2, $int3, "Start typing the name of an item to search for it.");
+return();
+}
+$int4 = oc_find(%varcstr22, $int0);
+if($int4 < 0) {
+~script753($int2, $int3, "Too many matches found. Please refine your search.");
+return();
+}
+if($int4 == 0) {
+~script753($int2, $int3, "No matches found.");
+return();
+}
+$int5 = divide($int2, 3);
+$int6 = 0;
+$int7 = sub($int2, $int5);
+$int8 = sub($int7, $int5);
+$int9 = sub($int8, $int5);
+$int10 = sub($int5, 40);
+$int11 = add($int7, 40);
+$int12 = add($int8, 40);
+$int13 = add($int9, 40);
+$int14 = 0;
+$int15 = 0;
+$int16 = 0;
+$int17 = 0;
+$int18 = 0;
+$int19 = oc_findnext();
+while($int19 != -1) {
+if($int1 == -1 || enum(obj, boolean, $int1, $int19) == 1) {
+$int14 = modulo($int18, 3);
+if($int14 == 0) {
+$int16 = $int13;
+$int15 = $int9;
+} else {
+if($int14 == 1) {
+$int16 = $int12;
+$int15 = $int8;
+} else {
+$int16 = $int11;
+$int15 = $int7;
+}
+}
+cc_create(162:42, Rectangle, $int6);
+if($int6 == 0) {
+cc_setonkey("script754($int19, -2147483640)");
+}
+$int6 = add($int6, 1);
+cc_setsize($int5, 32, 0, 0);
+cc_setposition($int15, $int17, 0, 0);
+cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+cc_settrans(255);
+cc_setonmouseover("cc_settrans(-2147483645, -2147483643, 200, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 255, -1)");
+cc_setonclick("script754($int19, 84)");
+cc_create(162:42, Text, $int6);
+$int6 = add($int6, 1);
+cc_setsize($int10, 32, 0, 0);
+cc_setposition($int16, $int17, 0, 0);
+cc_settextfont(495);
+cc_settextshadow(0);
+cc_settextalign(0, 1, 0);
+cc_setcolor(0x000000);
+cc_settext(oc_name($int19));
+cc_create(162:42, Graphic, $int6);
+$int6 = add($int6, 1);
+cc_setsize(36, 32, 0, 0);
+cc_setposition($int15, $int17, 0, 0);
+cc_setoutline(1);
+cc_setgraphicshadow(0x555555);
+if(oc_stackable($int19) == 1) {
+cc_setobject_nonum($int19, 100);
+} else {
+cc_setobject_nonum($int19, 1);
+}
+$int18 = add($int18, 1);
+if($int14 >= 2) {
+$int17 = add($int17, 32);
+}
+}
+$int19 = oc_findnext();
+}
+if($int18 <= 0) {
+~script753($int2, $int3, "No matches found.");
+return();
+}
+if($int14 < 2) {
+$int17 = add($int17, 32);
+}
+if($int17 > $int3) {
+if_setscrollsize(0, $int17, 162:42);
+} else {
+if_setscrollpos(0, 0, 162:42);
+if_setscrollsize(0, 0, 162:42);
+}
+~script72(10616875, 10616874, if_getscrolly(162:42));
+return();

@@ -1,0 +1,8 @@
+[clientscript,script1593](int $int0)
+$int1 = modulo(clientclock, 80);
+if($int1 > 40) {
+$int1 = sub(80, $int1);
+}
+$int1 = add($int1, 100);
+if_setcolor(~script246($int1, $int1, $int1), $int0);
+return();

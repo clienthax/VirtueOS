@@ -1,0 +1,15 @@
+[proc,script1147](int,int)
+$int0 = 0;
+$int1 = 0;
+$int2 = 0;
+while($int0 < 23) {
+if(testbit(%varp1295, $int0) == 1) {
+if(enum(int, int, 1239, add($int0, 1)) == 1) {
+$int1 = add($int1, 1);
+} else {
+$int2 = add($int2, 1);
+}
+}
+$int0 = add($int0, 1);
+}
+return($int1, $int2);

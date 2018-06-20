@@ -1,0 +1,8 @@
+[clientscript,script1424](int $int0)
+.cc_setobject(995, %varbit5357);
+if(%varbit4692 == 2) {
+if_setposition(0, 10, 1, 0, $int0);
+} else {
+if_setposition(5, 20, 0, 0, $int0);
+}
+return();

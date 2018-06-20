@@ -1,0 +1,17 @@
+[clientscript,script847](int $int0, int $int1, int $int2, int $int3)
+if(determinateDisplayMode() == $int0) {
+return();
+}
+if(~toplevel_getcomponents == 1745) {
+mes("Fixed mode is unavailable on this device.");
+sound_synth(2277, 1, 0);
+return();
+}
+sound_synth(2266, 1, 0);
+changeDiplayMode($int0);
+if(lastUsedDisplayMode != $int0) {
+changeLastUsedDisplayMode($int0);
+}
+~script843($int1, $int2, $int3);
+~script2155;
+return();

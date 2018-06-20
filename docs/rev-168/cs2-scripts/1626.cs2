@@ -1,0 +1,6 @@
+[clientscript,script1626]
+cc_setmodel(16238);
+cc_setsize(1, 1, 0, 0);
+cc_setposition(0, 0, 1, 1);
+cc_setmodelanim(-1);
+return();

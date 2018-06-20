@@ -1,0 +1,21 @@
+[clientscript,script2107](int $int0, int $int1, int $int2)
+$int3 = 0;
+if($int0 == 1) {
+$int3 = 1;
+} else {
+if($int0 == 2) {
+$int3 = 3;
+} else {
+return();
+}
+}
+sound_synth(2266, 1, 0);
+$int4 = 0;
+$int5 = 0;
+$gosubResult2110_0, $gosubResult2110_1 = ~script2110($int2);
+$int5 = $gosubResult2110_1;
+$int4 = $gosubResult2110_0;
+$int5 = modulo(add($int5, $int3), 4);
+~script2111($int2, $int4, $int5);
+~script2106($int1);
+return();

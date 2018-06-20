@@ -1,0 +1,89 @@
+[clientscript,script505](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14)
+if($int13 > 0) {
+$int13 = add($int13, 8);
+}
+$int15 = 0;
+if($int13 > if_getheight($int3)) {
+if_setscrollsize(0, $int13, $int3);
+if(%varc51 > 0) {
+$int15 = %varc51;
+}
+~script72($int4, $int3, $int15);
+} else {
+if_setscrollsize(0, 0, $int3);
+~script72($int4, $int3, 0);
+}
+if_settext(tostring($int14), $int7);
+cc_deleteall($int9);
+$int16 = divide(sub(if_getwidth($int9), multiply(40, add(9, 1))), 2);
+$int17 = 0;
+while($int17 <= 9) {
+cc_create($int9, Graphic, $int17);
+cc_setsize(41, 40, 0, 0);
+cc_setposition(add(multiply($int17, 40), $int16), 0, 0, 0);
+cc_settiling(0);
+$int17 = add($int17, 1);
+}
+$int18 = 0;
+if(%varbit4171 > 0) {
+$int18 = setbit($int18, 1);
+}
+if(%varbit4172 > 0) {
+$int18 = setbit($int18, 2);
+}
+if(%varbit4173 > 0) {
+$int18 = setbit($int18, 3);
+}
+if(%varbit4174 > 0) {
+$int18 = setbit($int18, 4);
+}
+if(%varbit4175 > 0) {
+$int18 = setbit($int18, 5);
+}
+if(%varbit4176 > 0) {
+$int18 = setbit($int18, 6);
+}
+if(%varbit4177 > 0) {
+$int18 = setbit($int18, 7);
+}
+if(%varbit4178 > 0) {
+$int18 = setbit($int18, 8);
+}
+if(%varbit4179 > 0) {
+$int18 = setbit($int18, 9);
+}
+$int19 = divide(sub(40, 36), 2);
+$int20 = divide(sub(40, 32), 2);
+$gosubResult506_0, $gosubResult506_1 = ~script506($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, 0, -1, -1, 0, $int16, $int19, $int20, $int18);
+$gosubResult506_1;
+$gosubResult506_0;
+$int21 = 0;
+$int22 = 0;
+$gosubResult506_0, $gosubResult506_1 = ~script506($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, 1, %varbit4171, $int21, $int22, $int16, $int19, $int20, $int18);
+$int22 = $gosubResult506_1;
+$int21 = $gosubResult506_0;
+$gosubResult506_0, $gosubResult506_1 = ~script506($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, 2, %varbit4172, $int21, $int22, $int16, $int19, $int20, $int18);
+$int22 = $gosubResult506_1;
+$int21 = $gosubResult506_0;
+$gosubResult506_0, $gosubResult506_1 = ~script506($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, 3, %varbit4173, $int21, $int22, $int16, $int19, $int20, $int18);
+$int22 = $gosubResult506_1;
+$int21 = $gosubResult506_0;
+$gosubResult506_0, $gosubResult506_1 = ~script506($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, 4, %varbit4174, $int21, $int22, $int16, $int19, $int20, $int18);
+$int22 = $gosubResult506_1;
+$int21 = $gosubResult506_0;
+$gosubResult506_0, $gosubResult506_1 = ~script506($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, 5, %varbit4175, $int21, $int22, $int16, $int19, $int20, $int18);
+$int22 = $gosubResult506_1;
+$int21 = $gosubResult506_0;
+$gosubResult506_0, $gosubResult506_1 = ~script506($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, 6, %varbit4176, $int21, $int22, $int16, $int19, $int20, $int18);
+$int22 = $gosubResult506_1;
+$int21 = $gosubResult506_0;
+$gosubResult506_0, $gosubResult506_1 = ~script506($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, 7, %varbit4177, $int21, $int22, $int16, $int19, $int20, $int18);
+$int22 = $gosubResult506_1;
+$int21 = $gosubResult506_0;
+$gosubResult506_0, $gosubResult506_1 = ~script506($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, 8, %varbit4178, $int21, $int22, $int16, $int19, $int20, $int18);
+$int22 = $gosubResult506_1;
+$int21 = $gosubResult506_0;
+$gosubResult506_0, $gosubResult506_1 = ~script506($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, 9, %varbit4179, $int21, $int22, $int16, $int19, $int20, $int18);
+$int22 = $gosubResult506_1;
+$int21 = $gosubResult506_0;
+return();

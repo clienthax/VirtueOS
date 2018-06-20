@@ -1,0 +1,4 @@
+[clientscript,script401](int $int0, int $int1, int $int2)
+if_settrans($int2, $int0);
+if_settrans($int2, $int1);
+return();

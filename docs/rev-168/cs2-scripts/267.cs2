@@ -1,0 +1,142 @@
+[clientscript,script267](int $int0, int $int1)
+$int2 = 0;
+if($int0 == 0 && %varp1065 == -1) {
+$int2 = 1;
+if_setontimer("null()", $int1);
+} else {
+if_setontimer("script268(-2147483645)", $int1);
+}
+cc_create($int1, Rectangle, 0);
+cc_sethide($int2);
+cc_setposition(5, 30, 0, 0);
+cc_setsize(125, 96, 0, 0);
+cc_setcolor(0x7F460F);
+cc_setfill(1);
+cc_settrans(50);
+cc_create($int1, Rectangle, 1);
+cc_sethide($int2);
+cc_setposition(5, 30, 0, 0);
+cc_setsize(125, 96, 0, 0);
+cc_setcolor(0x7F460F);
+cc_setfill(0);
+~create_graphic($int1, 2, 1040, 7, 32, 0, 0, 121, 17, 0, 0);
+cc_sethide($int2);
+cc_settrans(100);
+cc_create($int1, Text, 3);
+cc_sethide($int2);
+cc_setposition(7, 32, 0, 0);
+cc_setsize(121, 17, 0, 0);
+cc_settextfont(495);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext("Rumble Party");
+~create_graphic($int1, 4, 897, 7, 50, 0, 0, 121, 14, 0, 0);
+cc_sethide($int2);
+cc_settrans(150);
+~create_graphic($int1, 5, 297, 7, 65, 0, 0, 121, 14, 0, 0);
+cc_sethide($int2);
+cc_settrans(150);
+if($int0 == 1) {
+cc_setop(1, "Kick player");
+cc_setonmouseover("cc_settrans(-2147483645, -2147483643, 75, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 150, -1)");
+}
+~create_graphic($int1, 6, 297, 7, 80, 0, 0, 121, 14, 0, 0);
+cc_sethide($int2);
+cc_settrans(150);
+if($int0 == 1) {
+cc_setop(1, "Kick player");
+cc_setonmouseover("cc_settrans(-2147483645, -2147483643, 75, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 150, -1)");
+}
+~create_graphic($int1, 7, 297, 7, 95, 0, 0, 121, 14, 0, 0);
+cc_sethide($int2);
+cc_settrans(150);
+if($int0 == 1) {
+cc_setop(1, "Kick player");
+cc_setonmouseover("cc_settrans(-2147483645, -2147483643, 75, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 150, -1)");
+}
+~create_graphic($int1, 8, 297, 7, 110, 0, 0, 121, 14, 0, 0);
+cc_sethide($int2);
+cc_settrans(150);
+if($int0 == 1) {
+cc_setop(1, "Kick player");
+cc_setonmouseover("cc_settrans(-2147483645, -2147483643, 75, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 150, -1)");
+}
+cc_create($int1, Text, 9);
+cc_sethide($int2);
+cc_setposition(7, 50, 0, 0);
+cc_setsize(121, 14, 0, 0);
+cc_settextfont(494);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_create($int1, Text, 10);
+cc_sethide($int2);
+cc_setposition(7, 65, 0, 0);
+cc_setsize(121, 14, 0, 0);
+cc_settextfont(494);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_create($int1, Text, 11);
+cc_sethide($int2);
+cc_setposition(7, 80, 0, 0);
+cc_setsize(121, 14, 0, 0);
+cc_settextfont(494);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_create($int1, Text, 12);
+cc_sethide($int2);
+cc_setposition(7, 95, 0, 0);
+cc_setsize(121, 14, 0, 0);
+cc_settextfont(494);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_create($int1, Text, 13);
+cc_sethide($int2);
+cc_setposition(7, 110, 0, 0);
+cc_setsize(121, 14, 0, 0);
+cc_settextfont(494);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+if($int2 == 0) {
+~script269($int1);
+}
+$string0 = "You may invite people to share your Rumble dream. All of you must have funds in the coffer to pay for it.<br>Drink from the vial when you're all ready.";
+if($int0 == 0) {
+if(%varp1065 != -1) {
+$string0 = "When your party leader drinks from the vial,<br>you will be invited into their Rumble dream.";
+} else {
+if(%varbit3946 != 0) {
+$string0 = "Drink from the vial when you're ready to start your dream.";
+} else {
+$string0 = "You may be invited to join someone's Rumble dream.<br>Alternatively, choose a dream of your own from Dominic.";
+}
+}
+}
+$int3 = sub(512, 280);
+$int4 = add(parawidth($int3, 494, $string0), 8);
+$int5 = add(add(multiply(paraheight($int3, 494, $string0), 10), 3), 8);
+~create_graphic($int1, 14, 297, 0, 20, 1, 0, $int4, $int5, 0, 0);
+cc_settrans(50);
+cc_create($int1, Rectangle, 15);
+cc_setposition(0, 20, 1, 0);
+cc_setsize($int4, $int5, 0, 0);
+cc_setcolor(0x000000);
+cc_setfill(0);
+cc_create($int1, Text, 16);
+cc_setposition(0, 20, 1, 0);
+cc_setsize($int4, $int5, 0, 0);
+cc_settextfont(494);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 10);
+cc_settext($string0);
+return();

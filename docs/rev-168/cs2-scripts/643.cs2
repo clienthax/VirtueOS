@@ -1,0 +1,20 @@
+[clientscript,script643](int $int0)
+$int1 = if_getwidth($int0);
+$int2 = sub(if_getheight($int0), 17);
+cc_deleteall($int0);
+cc_create($int0, Graphic, 0);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(0, $int2, 0, 0);
+.cc_create($int0, Text, 1);
+.cc_setsize(sub($int1, 22), 17, 0, 0);
+.cc_setposition(22, $int2, 0, 0);
+.cc_setcolor(0xFF981F);
+.cc_settextfont(495);
+.cc_settextalign(0, 1, 0);
+.cc_settext("Allow pets to roam");
+if_setonmouseover("script85(-2147483645, .cc_getid, 16777215)", $int0);
+if_setonmouseleave("script85(-2147483645, .cc_getid, 16750623)", $int0);
+~script645($int0);
+if_setonvartransmit("script644(-2147483645, cc_getid, 0){661}", $int0);
+if_setonop("script646(-2147483644, -2147483645, cc_getid)", $int0);
+return();

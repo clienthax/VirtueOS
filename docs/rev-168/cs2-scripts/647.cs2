@@ -1,0 +1,58 @@
+[clientscript,script647](string $string0)
+cc_deleteall(210:3);
+cc_deleteall(210:4);
+$int0 = 0;
+$int1 = divide(sub(40, 32), 2);
+$int2 = 0;
+$int3 = -1;
+while($int2 <= 39) {
+cc_create(210:3, Graphic, $int0);
+$int0 = add($int0, 1);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(5, add(multiply($int2, 40), $int1), 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+$int3 = enum(int, namedobj, 985, $int2);
+if($int3 != -1) {
+cc_setobject($int3, 1);
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int3)></col>");
+}
+$int2 = add($int2, 1);
+}
+$string1 = "";
+$int4 = if_getwidth(210:3);
+$int5 = sub($int4, add(36, 10));
+$int2 = 0;
+while($int2 <= 39) {
+cc_create(210:3, Text, $int0);
+$int0 = add($int0, 1);
+cc_setsize($int5, 40, 0, 0);
+cc_setposition(add(36, 5), multiply($int2, 40), 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settextfont(495);
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+cc_settext($string1);
+if($int2 < 39) {
+cc_create(210:3, Graphic, $int0);
+$int0 = add($int0, 1);
+cc_setgraphic(297);
+cc_settiling(1);
+cc_setsize($int4, 1, 0, 0);
+cc_setposition(0, add(multiply($int2, 40), 39), 0, 0);
+}
+$int2 = add($int2, 1);
+}
+$int6 = multiply(40, add(39, 1));
+if($int6 > if_getheight(210:3)) {
+if_setscrollsize(0, $int6, 210:3);
+} else {
+if_setscrollsize(0, 0, 210:3);
+}
+if_setscrollpos(0, 0, 210:3);
+~scrollbar_vertical(13762564, 13762563, 792, 789, 790, 791, 773, 788);
+return();

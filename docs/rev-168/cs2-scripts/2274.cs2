@@ -1,0 +1,26 @@
+[proc,script2274](int $int0, int $int1)(int,int)
+if($int1 <= 0) {
+cc_deleteall($int0);
+$int1 = 0;
+}
+~create_graphic($int0, $int1, 297, 0, 0, 1, 1, 2, 2, 1, 1);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 297, 0, 0, 1, 1, 2, 2, 1, 1);
+$int2 = $int1;
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 913, 0, 0, 0, 0, 9, 9, 0, 0);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 914, 0, 0, 2, 0, 9, 9, 0, 0);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 915, 0, 0, 0, 2, 9, 9, 0, 0);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 916, 0, 0, 2, 2, 9, 9, 0, 0);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 917, 0, 0, 0, 1, 9, 18, 0, 1);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 918, 0, 0, 1, 0, 18, 9, 1, 0);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 919, 0, 0, 2, 1, 9, 18, 0, 1);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 920, 0, 0, 1, 2, 18, 9, 1, 0);
+return($int2, add($int1, 1));

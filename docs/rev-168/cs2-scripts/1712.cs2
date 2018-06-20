@@ -1,0 +1,26 @@
+[clientscript,script1712](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8)
+cc_settext(worldmap_getmapname($int0));
+if(opcode6616() != $int0) {
+}
+$int1 = ~script1715($int0, $int1);
+if($int1 != -1) {
+}
+if_setontimer("script1713($int0, $int2, cc_getid, $int3, $int4, $int5, $int6, $int7, $int8)", $int2);
+~script1751($int4, $int6);
+$int9 = 0;
+$int10 = 0;
+$int10 = opcode6612($int0);
+$int9 = opcode6612($int0);
+$int10 = ~max($int10, 1);
+$int9 = ~max($int9, 1);
+$int11 = 200;
+$int12 = 200;
+if($int9 > $int10) {
+$int12 = ~max(scale($int10, $int9, $int11), 50);
+} else {
+$int11 = ~max(scale($int9, $int10, $int12), 50);
+}
+if_setsize($int11, $int12, 0, 0, $int5);
+if_setonclickrepeat("script1714(-2147483647, -2147483646, -1, -2147483645, $int11, $int12, $int9, $int10, opcode6613($int0), opcode6613($int0), opcode6613($int0), opcode6613($int0))", $int6);
+~script1721(opcode6614($int0), $int7, $int8);
+return();

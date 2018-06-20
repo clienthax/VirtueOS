@@ -1,0 +1,16 @@
+[clientscript,script2284]
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551309)) == 0) {
+return();
+}
+if_setscrollpos(0, 0, 66:7);
+if(%varc179 > 0) {
+%varc179 = add(%varc179, 1);
+}
+if(%varc179 > if_getheight(66:7)) {
+if_setscrollsize(0, %varc179, 66:7);
+} else {
+if_setscrollsize(0, 0, 66:7);
+}
+cc_deleteall(66:6);
+~scrollbar_vertical(4325382, 4325383, 792, 789, 790, 791, 773, 788);
+return();

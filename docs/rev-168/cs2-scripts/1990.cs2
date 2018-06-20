@@ -1,0 +1,16 @@
+[clientscript,script1990](int $int0, int $int1, int $int2, int $int3, int $int4)
+if(clientclock < $int0) {
+return();
+}
+if($int3 != -1) {
+if_sethide(0, $int3);
+}
+if($int4 != -1) {
+if_sethide(1, $int4);
+}
+if_setgraphic(170, $int1);
+if_setontimer("null()", $int1);
+if_setonmouserepeat("script1988(1, $int2, $int3, $int4)", $int1);
+if_setonmouseleave("script1988(0, $int2, $int3, $int4)", $int1);
+if_setonop("script1989(-2147483644, $int1, $int2, $int3, $int4)", $int1);
+return();

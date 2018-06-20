@@ -1,0 +1,28 @@
+[clientscript,script618](int $int0, int $int1, int $int2, int $int3)
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551309)) == 0) {
+return();
+}
+if($int0 == 26214410) {
+if_setposition(divide(sub(if_getwidth(400:10), if_getwidth(400:11)), 2), %varc49, 0, 0, 400:11);
+%varc49 = add(%varc49, if_getheight(400:11));
+}
+if(%varc49 > if_getheight($int0)) {
+if_setscrollsize(0, %varc49, $int0);
+} else {
+if_setscrollsize(0, 0, $int0);
+}
+cc_deleteall($int1);
+if($int3 == 1) {
+if_setscrollpos(0, 0, $int0);
+%varc63 = 0;
+~scrollbar_vertical($int1, $int0, 792, 789, 790, 791, 773, 788);
+} else {
+if(%varc63 < 0) {
+%varc63 = 0;
+}
+~scrollbar_vertical($int1, $int0, 792, 789, 790, 791, 773, 788);
+~script72($int1, $int0, %varc63);
+}
+if_sethide(0, $int0);
+if_sethide(1, $int2);
+return();

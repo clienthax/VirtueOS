@@ -1,0 +1,11 @@
+[clientscript,script2033](int $int0, int $int1, int $int2, int $int3, string $string0)
+if($int3 == 1) {
+if_setop(1, "Buy for 1 ticket", $int0);
+} else {
+if_setop(1, "Buy for <~script46($int3, ",")> tickets", $int0);
+}
+~script2035($int0, $int1, $int2, $string0, $int3, 0);
+if_setoninvtransmit("script2034($int0, $int1, $int2, $string0, $int3, 0){93}", $int0);
+if_setonmouserepeat("script2034($int0, $int1, $int2, $string0, $int3, 1)", $int0);
+if_setonmouseleave("script2034($int0, $int1, $int2, $string0, $int3, 0)", $int0);
+return();

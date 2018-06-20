@@ -1,0 +1,6 @@
+[proc,script2175](int)
+$int0 = worldMask;
+if(testbit($int0, 25) == 1) {
+return(1);
+}
+return(0);

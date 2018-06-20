@@ -1,0 +1,7 @@
+[clientscript,script990](int $int0)
+if(%varbit4681 == 0) {
+if_setgraphic(697, $int0);
+} else {
+if_setgraphic(699, $int0);
+}
+return();

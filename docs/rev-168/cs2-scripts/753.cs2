@@ -1,0 +1,13 @@
+[clientscript,script753](int $int0, int $int1, string $string0)
+cc_create(162:42, Text, 0);
+cc_setposition(0, 0, 0, 0);
+cc_setsize($int0, $int1, 0, 0);
+cc_settextfont(495);
+cc_settextshadow(0);
+cc_settextalign(1, 1, 0);
+cc_setcolor(0x000000);
+cc_settext($string0);
+if_setscrollpos(0, 0, 162:42);
+if_setscrollsize(0, 0, 162:42);
+~script72(10616875, 10616874, 0);
+return();

@@ -1,0 +1,12 @@
+[clientscript,script1364](int $int0, int $int1, int $int2, int $int3, int $int4)
+~steelborder($int0, "Barbarian Assault Reward Shop", 0);
+~script1367($int1, $int2);
+~script1366;
+if_setonvartransmit("script1365($int1, $int2){946, 947, 948, 949, 466, 261, 262, 263}", $int1);
+if_setoninvtransmit("script1365($int1, $int2){93}", $int1);
+if_setonmouseover("script45(-2147483645, 16777215)", $int4);
+if_setonmouseleave("script45(-2147483645, 3355392)", $int4);
+if_setop(1, "Accept", $int4);
+if_setonop("script45(-2147483645, 3355392)", $int4);
+~scrollbar_vertical($int3, $int1, 792, 789, 790, 791, 773, 788);
+return();

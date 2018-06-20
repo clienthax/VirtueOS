@@ -1,0 +1,12 @@
+[clientscript,script561](int $int0)
+cc_create($int0, Text, ~script208($int0));
+cc_setposition(0, 0, 0, 0);
+cc_setsize(if_getwidth($int0), if_getheight($int0), 0, 0);
+cc_settextfont(495);
+cc_setcolor(0xFF981F);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext("Okay");
+if_setonmouserepeat("script85($int0, cc_getid, 16777215)", $int0);
+if_setonmouseleave("script85($int0, cc_getid, 16750623)", $int0);
+return();

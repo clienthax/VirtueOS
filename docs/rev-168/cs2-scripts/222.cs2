@@ -1,0 +1,26 @@
+[clientscript,script222](string $string0)
+$string1 = escape(%varcstr22);
+$int0 = 12;
+if(%varc5 == 6 || %varc5 == 9 || %varc5 == 11 || %varc5 == 13) {
+$int0 = 80;
+} else {
+if(%varc5 == 7 || %varc5 == 12) {
+$int0 = 10;
+} else {
+if(%varc5 == 14) {
+$int0 = 25;
+%varc66 = 20;
+$string1 = append("<col=000000><$string0></col> ", $string1);
+}
+}
+}
+if(string_length(%varcstr22) < $int0) {
+$string1 = append($string1, "*");
+}
+if(parawidth(2147483647, 496, $string1) > if_getwidth(162:37)) {
+if_settextalign(2, 1, 0, 162:37);
+} else {
+if_settextalign(1, 1, 0, 162:37);
+}
+if_settext($string1, 162:37);
+return();

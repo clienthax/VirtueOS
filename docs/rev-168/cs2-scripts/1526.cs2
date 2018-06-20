@@ -1,0 +1,38 @@
+[clientscript,script1526](int $int0, int $int1, int $int2, int $int3)
+$int4 = divide(add($int1, $int2), 2);
+$int5 = $anArray0($int4);
+$anArray0($int4) = $anArray0($int2);
+$anArray0($int2) = $int5;
+$int6 = $int1;
+$int7 = $int1;
+$int8 = -1;
+$string0 = "";
+$string1 = "";
+while($int7 < $int2) {
+if(cc_find(33226763, add(multiply($anArray0($int7), 8), $int3)) == 1) {
+$string0 = removetags(cc_gettext);
+} else {
+$string0 = "";
+}
+if(cc_find(33226763, add(multiply($int5, 8), $int3)) == 1) {
+$string1 = removetags(cc_gettext);
+} else {
+$string1 = "";
+}
+if(compare($string0, $string1) <= 0) {
+$int8 = $anArray0($int7);
+$anArray0($int7) = $anArray0($int6);
+$anArray0($int6) = $int8;
+$int6 = add($int6, 1);
+}
+$int7 = add($int7, 1);
+}
+$anArray0($int2) = $anArray0($int6);
+$anArray0($int6) = $int5;
+if($int1 < sub($int6, 1)) {
+~script1526(0, $int1, sub($int6, 1), $int3);
+}
+if(add($int6, 1) < $int2) {
+~script1526(0, add($int6, 1), $int2, $int3);
+}
+return();

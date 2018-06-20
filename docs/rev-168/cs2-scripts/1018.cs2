@@ -1,0 +1,17 @@
+[proc,script1018](int $int0, int $int1, int $int2, string $string0)(int)
+$int3 = 0;
+if($int0 == 1) {
+$int3 = ~script198($int2);
+} else {
+$int3 = ~script208($int2);
+}
+if_setop(1, $string0, $int2);
+cc_create($int2, Text, $int3);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor($int1);
+cc_settextshadow(1);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settext($string0);
+return($int3);

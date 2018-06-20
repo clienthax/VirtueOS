@@ -1,0 +1,12 @@
+[clientscript,script1989](int $int0, int $int1, int $int2, int $int3, int $int4)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+if_setgraphic(179, $int1);
+if_settrans(0, $int2);
+if_setonmouserepeat("null()", $int1);
+if_setonmouseleave("null()", $int1);
+if_setonop("null()", $int1);
+if_setontimer("script1990(add(clientclock, 20), $int1, $int2, $int3, $int4)", $int1);
+return();

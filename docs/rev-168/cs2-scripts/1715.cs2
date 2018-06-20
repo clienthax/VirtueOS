@@ -1,0 +1,14 @@
+[proc,script1715](int $int0, int $int1)(int)
+if($int0 == -1 || $int1 == -1) {
+return(-1);
+}
+if(opcode6621($int1, $int0) == 1) {
+return($int1);
+}
+while(coordy($int1) > 0) {
+$int1 = playermember;
+if(opcode6621($int1, $int0) == 1) {
+return($int1);
+}
+}
+return(-1);

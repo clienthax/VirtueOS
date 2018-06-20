@@ -1,0 +1,7 @@
+[clientscript,script953](int $int0)
+if_settext("Score: <tostring(%varbit2121)>", $int0);
+if_setonvartransmit("script87(-2147483645){727}", $int0);
+$int1 = if_getlayer($int0);
+~script955($int1, $int0);
+if_setonsubchange("script954($int1, $int0)", $int0);
+return();

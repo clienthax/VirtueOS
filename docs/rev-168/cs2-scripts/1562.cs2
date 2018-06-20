@@ -1,0 +1,6 @@
+[clientscript,script1562](int $int0, string $string0, int $int1, int $int2, int $int3)
+if(clientclock < $int3) {
+return();
+}
+~script1558($int0, $string0, $int1, -1, $int2);
+return();

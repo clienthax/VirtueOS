@@ -1,0 +1,10 @@
+[clientscript,script1379](int $int0, int $int1, int $int2)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+%varbit5329 = $int2;
+if(cc_find($int1, 2) == 1) {
+~script1380($int2);
+}
+return();

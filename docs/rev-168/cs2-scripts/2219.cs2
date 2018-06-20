@@ -1,0 +1,11 @@
+[clientscript,script2219](int $int0, int $int1, int $int2)
+$int3 = modulo(clientclock, 90);
+if($int3 > 45) {
+$int3 = sub(90, $int3);
+}
+$int4 = scale(nth_root(multiply($int3, 255), 2), nth_root(11475, 2), 255);
+$int3 = ~script246(255, $int4, $int4);
+if_setcolor($int3, $int0);
+if_setcolor($int3, $int1);
+if_setcolor($int3, $int2);
+return();

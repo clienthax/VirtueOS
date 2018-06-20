@@ -1,0 +1,75 @@
+[clientscript,ignore_update](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+~script1653($int1, 2, 3, "Sort by name", $int0, $int1, $int2, $int3, $int4, $int5, $int6);
+~script1653($int2, 0, 1, "Legacy sort", $int0, $int1, $int2, $int3, $int4, $int5, $int6);
+cc_deleteall($int3);
+$int7 = 0;
+$int8 = 0;
+$string0 = "";
+$string1 = "";
+$int9 = 0;
+$int10 = ignore_count;
+if($int10 < 0) {
+if(%varc203 == 1) {
+if_settext("Loading ignore list<br>Please wait...", $int5);
+} else {
+if_settext("You must set a name<br>before using this.", $int5);
+}
+if_sethide(1, $int0);
+} else {
+if_settext("", $int5);
+if_sethide(0, $int0);
+ignore_sort_reset;
+switch(%varc184) {
+case 1:
+ignore_sortby_legacy(0);
+case 2:
+ignore_sortby_name(1);
+case 3:
+ignore_sortby_name(0);
+}
+ignore_sort;
+while($int7 < $int10) {
+$string1 = ignore_previousname($int7);
+$string0 = ignore_name($int7);
+cc_create($int3, Text, $int8);
+$int8 = add($int8, 1);
+cc_settext($string0);
+cc_setsize(0, 15, 1, 0);
+cc_setposition(0, $int9, 1, 0);
+cc_setcolor(0xFFFFFF);
+cc_settextfont(495);
+cc_settextalign(0, 0, 0);
+cc_settextshadow(1);
+cc_setopbase("<col=ff9040><$string0></col>");
+cc_setop(1, "Delete");
+cc_setonop("ignore_op("event_opbase")");
+.cc_create($int3, Graphic, $int8);
+$int8 = add($int8, 1);
+.cc_setsize(14, 14, 0, 0);
+.cc_setposition(add(parawidth(190, 495, $string0), 3), $int9, 0, 0);
+.cc_setgraphic(1093);
+.cc_setgraphicshadow(0x333333);
+if(string_length($string1) > 0) {
+$string1 = "Previous name:<br><$string1>";
+cc_setonmouserepeat("script526(-2147483645, -2147483643, $int6, $string1, 25, 190)");
+cc_setonmouseleave("script40($int6)");
+.cc_sethide(0);
+} else {
+cc_setonmouseover("script40($int6)");
+.cc_sethide(1);
+}
+$int9 = add($int9, 15);
+$int7 = add($int7, 1);
+}
+if($int10 >= 1) {
+$int9 = add($int9, 5);
+}
+}
+if($int9 > if_getheight($int3)) {
+if_setscrollsize(0, $int9, $int3);
+~script72($int4, $int3, if_getscrolly($int3));
+} else {
+if_setscrollsize(0, 0, $int3);
+~script72($int4, $int3, 0);
+}
+return();

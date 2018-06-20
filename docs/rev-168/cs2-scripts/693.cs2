@@ -1,0 +1,7 @@
+[clientscript,script693](int $int0)
+if(%varbit999 >= 4000) {
+if_settext("Damage: Lots!", $int0);
+} else {
+if_settext("Damage: <~script46(%varbit999, ",")>", $int0);
+}
+return();

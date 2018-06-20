@@ -1,0 +1,8 @@
+[clientscript,script2069](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if($int0 != -1) {
+if_setnoclickthrough(1, $int5);
+if_setonvartransmit("script2069(-1, $int1, $int2, $int3, $int4, $int5){300}", $int0);
+if_setonsubchange("script2069(-1, $int1, $int2, $int3, $int4, $int5)", $int0);
+}
+~orbs_update($int1, $int2, divide(%varp300, 10), 100);
+return();

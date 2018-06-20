@@ -1,0 +1,10 @@
+[clientscript,script1413](int $int0, int $int1, int $int2, int $int3)
+if(clientclock < $int3) {
+return();
+}
+if_setmodel($int1, $int0);
+if_sethide(1, $int2);
+if_setonmouserepeat("script69(0, $int2)", $int0);
+if_setonmouseleave("script69(1, $int2)", $int0);
+if_setontimer("null()", $int0);
+return();

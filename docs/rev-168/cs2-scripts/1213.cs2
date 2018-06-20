@@ -1,0 +1,9 @@
+[clientscript,script1213](int $int0, int $int1)
+if($int1 < $int0) {
+cc_setcolor(0xFF0000);
+.cc_setcolor(0xFF0000);
+} else {
+cc_setcolor(0xFF981F);
+.cc_setcolor(0xFF981F);
+}
+return();

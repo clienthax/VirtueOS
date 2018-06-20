@@ -1,0 +1,15 @@
+[clientscript,script1523]
+if_sethide(1, 507:28);
+cc_deleteall(507:28);
+if_setonclick("null()", 507:28);
+~script41(33226787);
+if_sethide(0, 507:27);
+cc_deleteall(507:27);
+cc_create(507:27, Model, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setmodel(4612);
+cc_setmodelangle(0, 190, 0, 0, 0, 2500);
+cc_setmodelanim(7385);
+cc_setontimer("script139(-2147483645, -2147483643, add(clientclock, 520))");
+return();

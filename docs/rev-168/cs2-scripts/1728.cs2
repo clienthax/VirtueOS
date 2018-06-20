@@ -1,0 +1,14 @@
+[clientscript,script1728](int $int0, int $int1, int $int2, int $int3)
+if($int0 != 1) {
+return();
+}
+if(cc_find($int2, $int3) == 1) {
+sound_synth(2266, 1, 0);
+cc_settrans(200);
+cc_setonop("null()");
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+cc_setontimer("script1729($int1, $int2, $int3, add(clientclock, 50))");
+opcode6630($int1);
+}
+return();

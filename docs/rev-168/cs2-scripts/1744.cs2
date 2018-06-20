@@ -1,0 +1,8 @@
+[clientscript,script1744](int $int0, int $int1, int $int2, int $int3)
+if(cc_find($int0, $int1) == 1) {
+if(.cc_find($int0, $int1) == 1) {
+cc_settrans($int3);
+.cc_settrans($int3);
+}
+}
+return();

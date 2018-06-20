@@ -1,0 +1,156 @@
+[clientscript,script802](int $int0, int $int1, int $int2)
+cc_deleteall(237:2);
+$int3 = 0;
+while($int3 < $int1) {
+cc_create(237:2, Graphic, $int3);
+$int3 = add($int3, 1);
+}
+$int4 = if_getwidth(237:2);
+$int5 = 0;
+$int6 = $int1;
+$int7 = -1;
+$int8 = 0;
+$int9 = 0;
+$int10 = 0;
+$int11 = 0;
+$int12 = 0;
+$int13 = 0;
+$int14 = 0;
+$int15 = -1;
+$int16 = -1;
+$int3 = 0;
+if(%varbit4440 == 1) {
+if(cc_find(15532036, $int2) == 1) {
+cc_setgraphic(697);
+}
+$int10 = add(32, 10);
+$int9 = add(36, 10);
+$int12 = add($int10, 35);
+$int11 = divide(sub($int4, multiply(5, $int9)), 6);
+$int13 = add($int11, $int9);
+while($int3 < $int1) {
+$int7 = inv_getobj($int0, $int3);
+if($int7 != -1) {
+$int15 = add(multiply(divide($int3, 5), $int12), 20);
+$int14 = add($int11, multiply(modulo($int3, 5), $int13));
+if(cc_find(15532034, $int3) == 1) {
+cc_sethide(0);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add($int14, 5), add($int15, 5), 0, 0);
+cc_setobject_nonum($int7, 1);
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int7)></col>");
+}
+$int6 = ~script771(15532034, $int6, $int14, $int15, $int9, $int10);
+cc_create(237:2, Graphic, $int6);
+$int6 = add($int6, 1);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add($int14, 5), add($int15, 5), 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setobject_nonum($int7, 1);
+$int8 = inv_getnum($int0, $int3);
+cc_create(237:2, Text, $int6);
+$int6 = add($int6, 1);
+cc_setsize($int13, 22, 0, 0);
+cc_setposition(sub($int14, divide($int11, 2)), add(add($int15, $int10), 2), 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+if($int8 == 1) {
+cc_settext("1 coin");
+} else {
+cc_settext("<~script46($int8, ",")> coins");
+}
+} else {
+if(cc_find(15532034, $int3) == 1) {
+cc_sethide(1);
+}
+}
+$int3 = add($int3, 1);
+}
+} else {
+if(cc_find(15532036, $int2) == 1) {
+cc_setgraphic(699);
+}
+$int5 = divide($int4, 2);
+$int13 = sub($int5, 36);
+$int12 = add(32, 4);
+while($int3 < $int1) {
+$int7 = inv_getobj($int0, $int3);
+if($int7 != -1) {
+$int15 = multiply(divide($int3, 2), $int12);
+if(modulo($int3, 2) == 0) {
+$int14 = 0;
+cc_create(237:2, Graphic, $int6);
+$int6 = add($int6, 1);
+cc_setsize($int4, $int12, 0, 0);
+cc_setgraphic(1040);
+cc_settiling(1);
+if(modulo($int3, 4) < 2) {
+cc_settrans(0);
+} else {
+cc_settrans(125);
+}
+cc_setposition($int14, $int15, 0, 0);
+} else {
+$int14 = $int5;
+}
+$int16 = add($int15, 2);
+if(cc_find(15532034, $int3) == 1) {
+cc_sethide(0);
+cc_setsize(36, 32, 0, 0);
+cc_setposition($int14, $int16, 0, 0);
+cc_setobject_nonum($int7, 1);
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int7)></col>");
+}
+cc_create(237:2, Graphic, $int6);
+$int6 = add($int6, 1);
+cc_setsize(36, 32, 0, 0);
+cc_setposition($int14, $int16, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setobject_nonum($int7, 1);
+cc_create(237:2, Text, $int6);
+$int6 = add($int6, 1);
+cc_setsize($int13, sub(32, 2), 0, 0);
+cc_setposition(add($int14, 36), add($int16, 1), 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(0, 0, 0);
+cc_settext(oc_name($int7));
+$int8 = inv_getnum($int0, $int3);
+cc_create(237:2, Text, $int6);
+$int6 = add($int6, 1);
+cc_setsize($int13, sub(32, 2), 0, 0);
+cc_setposition(add($int14, 36), add($int16, 1), 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(0, 2, 0);
+if($int8 == 1) {
+cc_settext("<col=ffffff>1 coin</col>");
+} else {
+cc_settext("<col=ffffff><~script46($int8, ",")> coins</col>");
+}
+} else {
+if(cc_find(15532034, $int3) == 1) {
+cc_sethide(1);
+}
+}
+$int3 = add($int3, 1);
+}
+}
+if($int15 >= 0) {
+$int15 = add($int15, $int12);
+}
+if($int15 > if_getheight(237:2)) {
+if_setscrollsize(0, $int15, 237:2);
+} else {
+if_setscrollsize(0, 0, 237:2);
+}
+~script72(15532035, 15532034, if_getscrolly(237:2));
+return();

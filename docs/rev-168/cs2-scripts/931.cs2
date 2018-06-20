@@ -1,0 +1,16 @@
+[clientscript,script931](int $int0, int $int1)
+if_setsize(512, 0, 0, 1, $int0);
+if_setposition(multiply(512, $int1), 0, 0, 1, $int0);
+cc_deleteall($int0);
+cc_create($int0, Model, 0);
+.cc_create($int0, Model, 1);
+cc_setsize(0, 1, 1, 0);
+.cc_setsize(0, 1, 1, 0);
+cc_setposition(0, 0, 1, 2);
+.cc_setposition(0, 0, 1, 2);
+cc_setmodel(4961);
+.cc_setmodel(4962);
+~script933($int0, if_getheight($int0));
+cc_setmodelanim(1489);
+.cc_setmodelanim(1490);
+return();

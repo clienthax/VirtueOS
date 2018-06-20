@@ -1,0 +1,4 @@
+[clientscript,script392](int $int0)
+cc_deleteall($int0);
+~steelbox($int0, 0);
+return();

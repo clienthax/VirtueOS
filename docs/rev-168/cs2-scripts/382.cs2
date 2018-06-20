@@ -1,0 +1,13 @@
+[clientscript,script382](int $int0, int $int1, int $int2)
+$string0 = "";
+if(%varp173 <= 0) {
+$string0 = "Run (currently off) Energy <tostring(runenergy)>%";
+if_setgraphic(761, $int0);
+} else {
+$string0 = "Run (currently on) Energy <tostring(runenergy)>%";
+if_setgraphic(762, $int0);
+}
+if_setonmouserepeat("script526($int0, -1, $int2, $string0, 25, 190)", $int0);
+if_settext("<tostring(runenergy)>%", $int1);
+%varc2 = 0;
+return();

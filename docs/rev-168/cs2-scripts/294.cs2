@@ -1,0 +1,23 @@
+[clientscript,script294](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+cc_deleteall($int3);
+$int7 = 0;
+$int8 = inv_size(93);
+while($int7 < $int8) {
+cc_create($int3, Graphic, $int7);
+cc_setsize(36, 32, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setdragdeadzone(5);
+cc_setdragdeadtime(5);
+cc_sethide(0);
+$int7 = add($int7, 1);
+}
+~bankside_build($int1, $int3, $int2, $int4);
+if_setoninvtransmit("bankside_build($int1, $int3, $int2, $int4){93, 516}", $int1);
+if_setonvartransmit("bankside_build($int1, $int3, $int2, $int4){304}", $int1);
+~script493($int5);
+if_setoninvtransmit("script492($int5){516}", $int4);
+~script491($int1, $int4);
+if_setonvartransmit("script490(-1, $int1, $int4, -1){115}", $int0);
+if_setonop("script490(-2147483644, $int1, $int4, 0)", $int6);
+return();

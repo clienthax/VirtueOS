@@ -1,0 +1,65 @@
+[clientscript,smithing_item](int $int0, int $int1, int $int2, int $int3, string $string0)
+cc_deleteall($int0);
+if($int1 == -1) {
+if_sethide(1, $int0);
+return();
+}
+if_sethide(0, $int0);
+if(~inzone(50341120, 51373375, coord) == 1) {
+if($int1 != 1205) {
+$int2 = 1;
+}
+}
+$int4 = if_getwidth($int0);
+cc_create($int0, Text, 0);
+cc_setsize($int4, 13, 0, 0);
+cc_setposition(0, sub(32, 1), 0, 0);
+cc_settextfont(494);
+cc_settextalign(0, 0, 0);
+if($int2 == 1 || stat(^smithing) < enum(obj, int, 846, $int1)) {
+cc_setcolor(0x000000);
+cc_settextshadow(0);
+} else {
+cc_setcolor(0xFFFFFF);
+cc_settextshadow(1);
+}
+cc_settext($string0);
+$int5 = enum(obj, int, 845, $int1);
+cc_create($int0, Text, 1);
+cc_setsize($int4, 13, 0, 0);
+cc_setposition(0, add(32, 11), 0, 0);
+cc_settextfont(494);
+cc_settextalign(0, 0, 0);
+cc_settextshadow(1);
+if(inv_total(93, $int3) < $int5) {
+cc_setcolor(0xFF981F);
+} else {
+cc_setcolor(0x00FF00);
+}
+if($int5 == 1) {
+cc_settext("1 bar");
+} else {
+cc_settext("<tostring($int5)> bars");
+}
+cc_create($int0, Graphic, 2);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(6, 0, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+$int6 = enum(obj, int, 844, $int1);
+cc_setobject($int1, $int6);
+if($int6 > 1) {
+if_setop(1, "Smith 1 set", $int0);
+if_setop(2, "Smith 5 sets", $int0);
+if_setop(3, "Smith 10 sets", $int0);
+if_setop(4, "Smith X sets", $int0);
+if_setop(5, "Smith All sets", $int0);
+} else {
+if_setop(1, "Smith 1", $int0);
+if_setop(2, "Smith 5", $int0);
+if_setop(3, "Smith 10", $int0);
+if_setop(4, "Smith X", $int0);
+if_setop(5, "Smith All", $int0);
+}
+if_setopbase("<col=ff9040><oc_name($int1)></col>", $int0);
+return();

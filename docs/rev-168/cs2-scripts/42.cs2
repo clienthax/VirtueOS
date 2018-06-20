@@ -1,0 +1,27 @@
+[clientscript,script42](int $int0, int $int1)
+if(%varbit4606 != 0) {
+return();
+}
+$int0 = ~min(700, $int0);
+$int0 = ~max(195, $int0);
+$int1 = ~min(715, $int1);
+$int1 = ~max(175, $int1);
+viewport_setzoom($int0, $int1)
+$int2 = 0;
+$int3 = 0;
+$int3 = viewport_geteffectiveheight();
+$int2 = viewport_geteffectivewidth();
+$int4 = sub($int3, 334);
+if($int4 < 0) {
+$int4 = 0;
+} else {
+if($int4 > 100) {
+$int4 = 100;
+}
+}
+$int5 = add($int0, divide(multiply(sub($int1, $int0), $int4), 100));
+setCameraOffsetY(add(25, divide(multiply(25, $int5), 256)));
+%varc74 = $int1;
+%varc73 = $int0;
+~script1049;
+return();

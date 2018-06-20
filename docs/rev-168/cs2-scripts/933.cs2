@@ -1,0 +1,16 @@
+[clientscript,script933](int $int0, int $int1)
+$int2 = $int1;
+if($int2 < 334) {
+$int2 = 334;
+} else {
+if($int2 > 1500) {
+$int2 = 1500;
+}
+}
+$int3 = nth_root(sub($int2, 334), 2);
+$int4 = nth_root(sub(1500, 334), 2);
+$int5 = sub(180, interpolate(0, $int3, 0, $int4, 125));
+cc_setmodelangle(0, 20, 0, 0, 0, $int5);
+.cc_setmodelangle(0, 20, 0, 0, 0, $int5);
+if_setontimer("script932(-2147483645, cc_getid, .cc_getid, $int1)", $int0);
+return();

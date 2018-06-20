@@ -1,0 +1,10 @@
+[clientscript,script2270](int $int0, int $int1, int $int2, int $int3)
+if(~script1972 == 0) {
+return();
+}
+~script2273($int1, $int2, $int3);
+if_setonvartransmit("script2272($int1, $int2, $int3){1734}", $int0);
+if_setonop("script2271(-2147483644, 1, $int1, $int2, $int3)", $int1);
+if_setonop("script2271(-2147483644, 2, $int1, $int2, $int3)", $int2);
+if_setonop("script2271(-2147483644, 3, $int1, $int2, $int3)", $int3);
+return();

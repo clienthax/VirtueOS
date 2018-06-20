@@ -1,0 +1,4 @@
+[clientscript,script893](int $int0)
+if_setonop("null()", $int0);
+if_setonmouserepeat("null()", $int0);
+return();

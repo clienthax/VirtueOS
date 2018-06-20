@@ -1,0 +1,4 @@
+[clientscript,script2027](int $int0, int $int1, int $int2)
+$int3 = sub(multiply($int1, 30), sub(clientclock, $int2));
+~script2029($int0, $int3);
+return();

@@ -1,0 +1,32 @@
+[clientscript,script1106](int $int0, int $int1)
+$int2 = 0;
+if($int1 <= 60) {
+if(cc_find($int0, 0) == 1) {
+cc_settrans(sub(255, multiply($int1, 4)));
+}
+if(cc_find($int0, 1) == 1) {
+if(.cc_find($int0, 2) == 1) {
+$int2 = sub(2000, multiply($int1, 32));
+cc_setmodelangle(0, 120, 0, 0, 0, $int2);
+.cc_setmodelangle(0, 120, 0, 0, 0, $int2);
+cc_setmodel(7427);
+.cc_setmodel(7428);
+}
+}
+return();
+}
+if($int1 <= 90) {
+$int1 = sub($int1, 60);
+if(cc_find($int0, 0) == 1) {
+cc_settrans(add(15, multiply($int1, 8)));
+}
+if(cc_find($int0, 1) == 1) {
+if(.cc_find($int0, 2) == 1) {
+cc_setmodel(16238);
+.cc_setmodel(16238);
+}
+}
+return();
+}
+cc_deleteall($int0);
+return();

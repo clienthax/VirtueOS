@@ -1,0 +1,11 @@
+[clientscript,script1204](int $int0, int $int1, int $int2)
+cc_deleteall($int1);
+cc_create($int1, Graphic, 0);
+.cc_create($int1, Graphic, 1);
+cc_setsize(0, 0, 1, 1);
+.cc_setsize(32, 32, 0, 0);
+cc_setposition(0, 0, 1, 1);
+.cc_setposition(0, 0, 1, 1);
+.cc_setgraphic(enum(int, graphic, 1265, $int0));
+if_setop(1, enum(int, string, 1264, $int0), $int1);
+return();

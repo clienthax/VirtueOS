@@ -1,0 +1,10 @@
+[proc,script1759](int)
+if(testbit(%varbit5640, 4) == 1) {
+return(0);
+}
+$int0 = modulo(clientclock, 40);
+if($int0 < 20) {
+return(scale(pow($int0, 2), 400, 8192));
+}
+$int0 = sub(40, $int0);
+return(sub(16384, scale(pow($int0, 2), 400, 8192)));

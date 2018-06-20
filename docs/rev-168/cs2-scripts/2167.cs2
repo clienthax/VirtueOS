@@ -1,0 +1,12 @@
+[clientscript,script2167](int $int0, int $int1)
+if($int1 != 1) {
+return();
+}
+$int2 = enum(component, int, 1895, $int0);
+if(%varbit6274 == $int2) {
+%varbit6274 = 0;
+} else {
+%varbit6274 = $int2;
+}
+~script2169;
+return();

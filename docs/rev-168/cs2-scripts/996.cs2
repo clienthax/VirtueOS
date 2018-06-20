@@ -1,0 +1,37 @@
+[clientscript,script996](int $int0, int $int1, int $int2, int $int3, string $string0)
+$int4 = 0;
+if(string_length($string0) > 0) {
+$int4 = parawidth(512, $int2, $string0);
+}
+$int5 = sub($int1, 1);
+$int6 = 0;
+$int7 = 1;
+while($int7 <= 5) {
+if(.cc_find($int0, $int7) == 1) {
+$int6 = $int7;
+}
+$int7 = add($int7, 1);
+}
+$int8 = add(add(multiply($int5, $int6), 3), $int4);
+if(%varbit4692 == 2) {
+if_setposition(0, 0, 0, 1, $int0);
+} else {
+if(%varbit4692 == 1) {
+if_setposition(0, 0, 1, 1, $int0);
+} else {
+if_setposition(0, 0, 2, 1, $int0);
+}
+}
+if_setsize($int8, 0, 0, 1, $int0);
+cc_settextfont($int3);
+cc_setsize(0, $int1, 1, 0);
+cc_setposition(0, cc_gety, 1, 0);
+$int7 = 1;
+while($int7 <= $int6) {
+if(.cc_find($int0, $int7) == 1) {
+.cc_setsize($int1, $int1, 0, 0);
+.cc_setposition(multiply(sub($int7, 1), $int5), .cc_gety, 0, 0);
+}
+$int7 = add($int7, 1);
+}
+return();

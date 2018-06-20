@@ -1,0 +1,74 @@
+[proc,script1479](int $int0, int $int1, int $int2, int $int3)(int,int)
+$int4 = enum(location, coordgrid, 1368, $int0);
+if($int4 == -1) {
+return(0, 0);
+}
+$int5 = coordx($int4);
+$int6 = coordz($int4);
+$int7 = 0;
+if($int5 == 1) {
+$int7 = %varp1365;
+} else {
+if($int5 == 2) {
+$int7 = %varp1366;
+} else {
+if($int5 == 3) {
+$int7 = %varp1367;
+} else {
+if($int5 == 4) {
+$int7 = %varp1368;
+} else {
+if($int5 == 5) {
+$int7 = %varp1369;
+} else {
+return(0, 0);
+}
+}
+}
+}
+}
+if(testbit($int7, $int6) == 0) {
+return(0, 0);
+}
+$int8 = enum(location, coordgrid, 1525, $int0);
+if($int8 != -1) {
+if(inv_getobj(576, coordx($int8)) != -1) {
+return(1, 1);
+}
+if($int0 == 29032) {
+if(testbit($int2, 31) == 1) {
+return(1, 1);
+}
+}
+return(1, 0);
+}
+$int8 = enum(location, coordgrid, 1440, $int0);
+if($int8 != -1) {
+$int6 = coordz($int8);
+$int5 = coordx($int8);
+if($int5 == 1) {
+$int7 = $int1;
+} else {
+if($int5 == 2) {
+$int7 = $int2;
+} else {
+if($int5 == 3) {
+$int7 = $int3;
+} else {
+return(0, 0);
+}
+}
+}
+if(testbit($int7, $int6) == 1) {
+return(1, 1);
+}
+return(1, 0);
+}
+if($int0 == 29057) {
+if(testbit($int3, 10) == 1 || testbit($int3, 12) == 1) {
+return(1, 1);
+} else {
+return(1, 0);
+}
+}
+return(0, 0);

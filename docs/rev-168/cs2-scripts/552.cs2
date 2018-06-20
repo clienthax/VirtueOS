@@ -1,0 +1,22 @@
+[clientscript,script552](int $int0, int $int1)
+if(string_length(%varcstr28) <= 0) {
+if_setontimer("null()", $int0);
+%varc62 = 0;
+~script95;
+return();
+}
+if($int1 == 1) {
+if_setontimer("script552(-2147483645, 0)", $int0);
+}
+if(%varc62 == 1) {
+return();
+}
+if(chat_getfilter_public != 4) {
+sendChatSettings(4, chat_getfilter_private, chat_getfilter_trade);
+~script178;
+~script84(~script553);
+}
+if(sub(clientclock, %varc61) >= 150 || $int1 == 1) {
+~chat_sendpublic(%varcstr28, 1);
+}
+return();

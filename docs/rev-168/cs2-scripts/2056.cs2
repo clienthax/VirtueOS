@@ -1,0 +1,19 @@
+[proc,script2056](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)(int)
+if_setposition($int5, 0, 0, 1, $int2);
+$string0 = "All";
+if($int2 != 17694732) {
+$string0 = tostring($int1);
+}
+if($int0 == 1) {
+~script2047($int2);
+$string0 = "<col=ffffff><$string0></col>";
+~script2058(1, $string0, $int2);
+} else {
+~script2058(0, $string0, $int2);
+if_setonmouseover("script2057(1, $string0, $int2)", $int2);
+if_setonmouseleave("script2057(0, $string0, $int2)", $int2);
+if_setop(1, $string0, $int2);
+if_setonop("script2059(-2147483644, $int1, $int3, $int4)", $int2);
+if_setontimer("null()", $int2);
+}
+return(add(add($int5, if_getwidth($int2)), 5));

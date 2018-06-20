@@ -1,0 +1,48 @@
+[clientscript,script581](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = 0;
+if($int1 == $int2) {
+$int5 = 3;
+}
+$int6 = ~script572($int0);
+$int7 = 0;
+$int8 = $int4;
+while($int8 > 0) {
+$int8 = sub($int8, 1);
+if($int8 == $int6) {
+if(cc_find($int2, add(multiply($int8, 3), $int5)) == 1) {
+cc_setonop("null()");
+}
+if(cc_find($int2, add(add(multiply($int8, 3), $int5), 1)) == 1) {
+cc_setgraphic(699);
+}
+if(cc_find($int2, add(add(multiply($int8, 3), $int5), 2)) == 1) {
+cc_setcolor(0xFFFFFF);
+}
+$int7 = multiply($int8, 17);
+} else {
+if(cc_find($int2, add(multiply($int8, 3), $int5)) == 1) {
+cc_setonop("script579(-2147483644, $int8, $int0, $int1, $int2, $int3, $int4)");
+}
+if(cc_find($int2, add(add(multiply($int8, 3), $int5), 1)) == 1) {
+cc_setgraphic(697);
+}
+if(cc_find($int2, add(add(multiply($int8, 3), $int5), 2)) == 1) {
+cc_setcolor(0xFF981F);
+}
+}
+}
+if($int3 == -1) {
+return();
+}
+$int9 = 0;
+$int10 = if_getscrolly($int2);
+if($int7 < $int10) {
+~script72($int3, $int2, $int7);
+} else {
+$int9 = if_getheight($int2);
+$int7 = add($int7, 17);
+if($int7 > add($int10, $int9)) {
+~script72($int3, $int2, sub($int7, $int9));
+}
+}
+return();

@@ -1,0 +1,6 @@
+[clientscript,script1976](int $int0, int $int1)
+if(if_hassub(enum(component, component, $int1, 10551309)) == 0) {
+~script1978;
+if_setontimer("null()", $int0);
+}
+return();

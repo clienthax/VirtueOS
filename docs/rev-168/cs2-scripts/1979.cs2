@@ -1,0 +1,9 @@
+[proc,script1979](int)
+if(%varc41 != -1) {
+%varc196 = %varc41;
+%varc41 = -1;
+~script923;
+~script178;
+return(1);
+}
+return(0);

@@ -1,0 +1,36 @@
+[clientscript,script299](int $int0, int $int1)
+if_sethide(1, 162:33);
+if_sethide(0, 162:44);
+~script923;
+$int2 = 0;
+if($int1 == 1) {
+$int2 = ~script553;
+~script84($int2);
+~script89($int2);
+~script223;
+~script927(1);
+if(~script1972 == 1) {
+~script1984;
+}
+}
+%varc5 = 0;
+if($int0 == 1) {
+%varcstr22 = "";
+}
+$int3 = if_getwidth(162:33);
+if_setposition(0, 36, 0, 0, 162:36);
+if_setsize($int3, 40, 0, 0, 162:36);
+if_setposition(0, 76, 0, 0, 162:37);
+if_setsize($int3, 20, 0, 0, 162:37);
+if_sethide(0, 162:36);
+if_sethide(0, 162:37);
+if_sethide(1, 162:38);
+cc_deleteall(162:42);
+cc_deleteall(162:43);
+if_setonclick("null()", 162:33);
+if_setontimer("null()", 162:33);
+cc_deleteall(162:33);
+if(%varc41 == -1) {
+~script2263;
+}
+return();

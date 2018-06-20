@@ -1,0 +1,8 @@
+[clientscript,script345](int $int0, int $int1, int $int2, int $int3, int $int4)
+~options_brightness($int1, $int2, $int3, $int4);
+if_setonvartransmit("script347($int1, $int2, $int3, $int4){166}", $int0);
+if_setonop("script346(-2147483644, 1, $int1, $int2, $int3, $int4)", $int1);
+if_setonop("script346(-2147483644, 2, $int1, $int2, $int3, $int4)", $int2);
+if_setonop("script346(-2147483644, 3, $int1, $int2, $int3, $int4)", $int3);
+if_setonop("script346(-2147483644, 4, $int1, $int2, $int3, $int4)", $int4);
+return();

@@ -1,0 +1,21 @@
+[clientscript,script1632](int $int0, int $int1, int $int2, string $string0, string $string1, int $int3)
+if(clientclock < $int3) {
+return();
+}
+if(~script1701(458, -1) == 0) {
+return();
+}
+if($int0 != -1) {
+if(string_indexof_char($string0, $int0) != -1 || string_indexof_char($string1, $int0) != -1) {
+if_setonkey("script1632(-2147483639, $int1, -2147483645, $string0, $string1, add(clientclock, 20))", $int2);
+if(cc_find($int2, 4) == 1) {
+cc_settrans(120);
+cc_setontimer("script488(-2147483645, -2147483643, 0, add(clientclock, 10))");
+}
+sound_synth(2266, 1, 0);
+if(cc_find(30015490, $int1) == 1) {
+cc_resume_pausebutton;
+}
+}
+}
+return();

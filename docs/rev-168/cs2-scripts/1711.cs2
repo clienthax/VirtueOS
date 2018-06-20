@@ -1,0 +1,12 @@
+[clientscript,script1711](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+~script1710($int2, $int3);
+if(opcode6616() != $int1) {
+if(cc_find($int2, 4) == 1) {
+~script1712($int1, %varc188, $int2, $int3, $int4, $int5, $int6, $int7, $int8);
+}
+}
+return();

@@ -1,0 +1,10 @@
+[clientscript,script1683](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+$int6 = sub(clientclock, $int0);
+if($int6 >= 20) {
+~script1655(1, $int1, $int2, $int3, $int4, $int5);
+return();
+}
+$int7 = divide(add(if_getheight($int1), if_getheight($int2)), 2);
+if_setposition(0, sub(0, scale(pow(add($int6, 1), 2), pow(21, 2), $int7)), 1, 1, $int2);
+~script2219($int3, $int4, $int5);
+return();

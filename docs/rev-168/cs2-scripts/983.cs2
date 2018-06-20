@@ -1,0 +1,3 @@
+[clientscript,script983](int $int0, int $int1, int $int2)
+if_sethide(1, $int2);
+return();

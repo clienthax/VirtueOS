@@ -1,0 +1,22 @@
+[proc,script810](int $int0, int $int1, int $int2, int $int3, int $int4)(int)
+if($int4 > 8) {
+cc_create($int0, Graphic, $int1);
+$int1 = add($int1, 1);
+cc_setposition(add($int2, 4), $int3, 0, 0);
+cc_setsize(sub($int4, 8), 20, 0, 0);
+cc_setgraphic(1124);
+cc_settiling(1);
+}
+cc_create($int0, Graphic, $int1);
+$int1 = add($int1, 1);
+cc_setposition($int2, $int3, 0, 0);
+cc_setsize(4, 20, 0, 0);
+cc_setgraphic(1123);
+cc_settiling(0);
+cc_create($int0, Graphic, $int1);
+$int1 = add($int1, 1);
+cc_setposition(sub(add($int2, $int4), 4), $int3, 0, 0);
+cc_setsize(4, 20, 0, 0);
+cc_setgraphic(1125);
+cc_settiling(0);
+return($int1);

@@ -102,98 +102,98 @@ public class WidgetButtonActionEventListener implements EventListener<WidgetButt
             switch (event.getButtonHash()) {
 //                case 6: // TODO: This isnt used?
                 case WidgetId.ClickToPlay.CLICK_TO_PLAY_BUTTON:
-                    player.sendSetRootWidget(player.getDisplay().getId());
+                    player.sendRootWidget(player.getDisplay().getId());
 
                     /* TODO: This should be handled better. */
                     /* TODO: Where does 165/161 come from? */
 
                     // Set Gameframe RESIZE with PANELS
                     if (player.getDisplay().equals(DisplayMode.RESIZE_PANELS)) { // TODO: Correct this.
-                        player.sendSetWidgetMoveSubEvent(165, 1, DisplayMode.RESIZE_PANELS.getId(), 21);
-                        player.sendSetWidgetMoveSubEvent(165, 5, DisplayMode.RESIZE_PANELS.getId(), 9);
-                        player.sendSetWidgetMoveSubEvent(165, 2, DisplayMode.RESIZE_PANELS.getId(), 3);
-                        player.sendSetWidgetMoveSubEvent(165, 3, DisplayMode.RESIZE_PANELS.getId(), 6);
-                        player.sendSetWidgetMoveSubEvent(165, 6, DisplayMode.RESIZE_PANELS.getId(), 54);
-                        player.sendSetWidgetMoveSubEvent(165, 7, DisplayMode.RESIZE_PANELS.getId(), 56);
-                        player.sendSetWidgetMoveSubEvent(165, 8, DisplayMode.RESIZE_PANELS.getId(), 57);
-                        player.sendSetWidgetMoveSubEvent(165, 9, DisplayMode.RESIZE_PANELS.getId(), 58);
-                        player.sendSetWidgetMoveSubEvent(165, 10, DisplayMode.RESIZE_PANELS.getId(), 59);
-                        player.sendSetWidgetMoveSubEvent(165, 11, DisplayMode.RESIZE_PANELS.getId(), 60);
-                        player.sendSetWidgetMoveSubEvent(165, 12, DisplayMode.RESIZE_PANELS.getId(), 61);
-                        player.sendSetWidgetMoveSubEvent(165, 13, DisplayMode.RESIZE_PANELS.getId(), 62);
-                        player.sendSetWidgetMoveSubEvent(165, 14, DisplayMode.RESIZE_PANELS.getId(), 63);
-                        player.sendSetWidgetMoveSubEvent(165, 15, DisplayMode.RESIZE_PANELS.getId(), 64);
-                        player.sendSetWidgetMoveSubEvent(165, 16, DisplayMode.RESIZE_PANELS.getId(), 65);
-                        player.sendSetWidgetMoveSubEvent(165, 17, DisplayMode.RESIZE_PANELS.getId(), 66);
-                        player.sendSetWidgetMoveSubEvent(165, 18, DisplayMode.RESIZE_PANELS.getId(), 67);
-                        player.sendSetWidgetMoveSubEvent(165, 19, DisplayMode.RESIZE_PANELS.getId(), 68);
-                        player.sendSetWidgetMoveSubEvent(165, 20, DisplayMode.RESIZE_PANELS.getId(), 69);
-                        player.sendSetWidgetMoveSubEvent(165, 21, DisplayMode.RESIZE_PANELS.getId(), 4);
-                        player.sendSetWidgetMoveSubEvent(165, 22, DisplayMode.RESIZE_PANELS.getId(), 8);
-                        player.sendSetWidgetMoveSubEvent(165, 23, DisplayMode.RESIZE_PANELS.getId(), 18);
-                        player.sendSetWidgetMoveSubEvent(165, 4, DisplayMode.RESIZE_PANELS.getId(), 7);
+                        player.sendWidgetMoveSubEvent(165, 1, DisplayMode.RESIZE_PANELS.getId(), 21);
+                        player.sendWidgetMoveSubEvent(165, 5, DisplayMode.RESIZE_PANELS.getId(), 9);
+                        player.sendWidgetMoveSubEvent(165, 2, DisplayMode.RESIZE_PANELS.getId(), 3);
+                        player.sendWidgetMoveSubEvent(165, 3, DisplayMode.RESIZE_PANELS.getId(), 6);
+                        player.sendWidgetMoveSubEvent(165, 6, DisplayMode.RESIZE_PANELS.getId(), 54);
+                        player.sendWidgetMoveSubEvent(165, 7, DisplayMode.RESIZE_PANELS.getId(), 56);
+                        player.sendWidgetMoveSubEvent(165, 8, DisplayMode.RESIZE_PANELS.getId(), 57);
+                        player.sendWidgetMoveSubEvent(165, 9, DisplayMode.RESIZE_PANELS.getId(), 58);
+                        player.sendWidgetMoveSubEvent(165, 10, DisplayMode.RESIZE_PANELS.getId(), 59);
+                        player.sendWidgetMoveSubEvent(165, 11, DisplayMode.RESIZE_PANELS.getId(), 60);
+                        player.sendWidgetMoveSubEvent(165, 12, DisplayMode.RESIZE_PANELS.getId(), 61);
+                        player.sendWidgetMoveSubEvent(165, 13, DisplayMode.RESIZE_PANELS.getId(), 62);
+                        player.sendWidgetMoveSubEvent(165, 14, DisplayMode.RESIZE_PANELS.getId(), 63);
+                        player.sendWidgetMoveSubEvent(165, 15, DisplayMode.RESIZE_PANELS.getId(), 64);
+                        player.sendWidgetMoveSubEvent(165, 16, DisplayMode.RESIZE_PANELS.getId(), 65);
+                        player.sendWidgetMoveSubEvent(165, 17, DisplayMode.RESIZE_PANELS.getId(), 66);
+                        player.sendWidgetMoveSubEvent(165, 18, DisplayMode.RESIZE_PANELS.getId(), 67);
+                        player.sendWidgetMoveSubEvent(165, 19, DisplayMode.RESIZE_PANELS.getId(), 68);
+                        player.sendWidgetMoveSubEvent(165, 20, DisplayMode.RESIZE_PANELS.getId(), 69);
+                        player.sendWidgetMoveSubEvent(165, 21, DisplayMode.RESIZE_PANELS.getId(), 4);
+                        player.sendWidgetMoveSubEvent(165, 22, DisplayMode.RESIZE_PANELS.getId(), 8);
+                        player.sendWidgetMoveSubEvent(165, 23, DisplayMode.RESIZE_PANELS.getId(), 18);
+                        player.sendWidgetMoveSubEvent(165, 4, DisplayMode.RESIZE_PANELS.getId(), 7);
                         player.sendVarp(1055, 256); // TODO: What is this doing?
                         player.sendCS2Script(917, new Object[]{-1, -1}); // TODO: What is this doing?
 
                         // Set Gameframe RESIZE
                     } else if (player.getDisplay().equals(DisplayMode.RESIZE)) {
-                        player.sendSetWidgetMoveSubEvent(165, 1, DisplayMode.RESIZE.getId(), 19);
-                        player.sendSetWidgetMoveSubEvent(165, 5, DisplayMode.RESIZE.getId(), 9);
-                        player.sendSetWidgetMoveSubEvent(165, 2, DisplayMode.RESIZE.getId(), 3);
-                        player.sendSetWidgetMoveSubEvent(165, 3, DisplayMode.RESIZE.getId(), 6);
-                        player.sendSetWidgetMoveSubEvent(165, 6, DisplayMode.RESIZE.getId(), 56);
-                        player.sendSetWidgetMoveSubEvent(165, 7, DisplayMode.RESIZE.getId(), 58);
-                        player.sendSetWidgetMoveSubEvent(165, 8, DisplayMode.RESIZE.getId(), 59);
-                        player.sendSetWidgetMoveSubEvent(165, 9, DisplayMode.RESIZE.getId(), 60);
-                        player.sendSetWidgetMoveSubEvent(165, 10, DisplayMode.RESIZE.getId(), 61);
-                        player.sendSetWidgetMoveSubEvent(165, 11, DisplayMode.RESIZE.getId(), 62);
-                        player.sendSetWidgetMoveSubEvent(165, 12, DisplayMode.RESIZE.getId(), 63);
-                        player.sendSetWidgetMoveSubEvent(165, 13, DisplayMode.RESIZE.getId(), 64);
-                        player.sendSetWidgetMoveSubEvent(165, 14, DisplayMode.RESIZE.getId(), 65);
-                        player.sendSetWidgetMoveSubEvent(165, 15, DisplayMode.RESIZE.getId(), 66);
-                        player.sendSetWidgetMoveSubEvent(165, 16, DisplayMode.RESIZE.getId(), 67);
-                        player.sendSetWidgetMoveSubEvent(165, 17, DisplayMode.RESIZE.getId(), 68);
-                        player.sendSetWidgetMoveSubEvent(165, 18, DisplayMode.RESIZE.getId(), 69);
-                        player.sendSetWidgetMoveSubEvent(165, 19, DisplayMode.RESIZE.getId(), 70);
-                        player.sendSetWidgetMoveSubEvent(165, 20, DisplayMode.RESIZE.getId(), 71);
-                        player.sendSetWidgetMoveSubEvent(165, 21, DisplayMode.RESIZE.getId(), 4);
-                        player.sendSetWidgetMoveSubEvent(165, 22, DisplayMode.RESIZE.getId(), 8);
-                        player.sendSetWidgetMoveSubEvent(165, 23, DisplayMode.RESIZE.getId(), 18);
-                        player.sendSetWidgetMoveSubEvent(165, 4, DisplayMode.RESIZE.getId(), 7);
+                        player.sendWidgetMoveSubEvent(165, 1, DisplayMode.RESIZE.getId(), 19);
+                        player.sendWidgetMoveSubEvent(165, 5, DisplayMode.RESIZE.getId(), 9);
+                        player.sendWidgetMoveSubEvent(165, 2, DisplayMode.RESIZE.getId(), 3);
+                        player.sendWidgetMoveSubEvent(165, 3, DisplayMode.RESIZE.getId(), 6);
+                        player.sendWidgetMoveSubEvent(165, 6, DisplayMode.RESIZE.getId(), 56);
+                        player.sendWidgetMoveSubEvent(165, 7, DisplayMode.RESIZE.getId(), 58);
+                        player.sendWidgetMoveSubEvent(165, 8, DisplayMode.RESIZE.getId(), 59);
+                        player.sendWidgetMoveSubEvent(165, 9, DisplayMode.RESIZE.getId(), 60);
+                        player.sendWidgetMoveSubEvent(165, 10, DisplayMode.RESIZE.getId(), 61);
+                        player.sendWidgetMoveSubEvent(165, 11, DisplayMode.RESIZE.getId(), 62);
+                        player.sendWidgetMoveSubEvent(165, 12, DisplayMode.RESIZE.getId(), 63);
+                        player.sendWidgetMoveSubEvent(165, 13, DisplayMode.RESIZE.getId(), 64);
+                        player.sendWidgetMoveSubEvent(165, 14, DisplayMode.RESIZE.getId(), 65);
+                        player.sendWidgetMoveSubEvent(165, 15, DisplayMode.RESIZE.getId(), 66);
+                        player.sendWidgetMoveSubEvent(165, 16, DisplayMode.RESIZE.getId(), 67);
+                        player.sendWidgetMoveSubEvent(165, 17, DisplayMode.RESIZE.getId(), 68);
+                        player.sendWidgetMoveSubEvent(165, 18, DisplayMode.RESIZE.getId(), 69);
+                        player.sendWidgetMoveSubEvent(165, 19, DisplayMode.RESIZE.getId(), 70);
+                        player.sendWidgetMoveSubEvent(165, 20, DisplayMode.RESIZE.getId(), 71);
+                        player.sendWidgetMoveSubEvent(165, 21, DisplayMode.RESIZE.getId(), 4);
+                        player.sendWidgetMoveSubEvent(165, 22, DisplayMode.RESIZE.getId(), 8);
+                        player.sendWidgetMoveSubEvent(165, 23, DisplayMode.RESIZE.getId(), 18);
+                        player.sendWidgetMoveSubEvent(165, 4, DisplayMode.RESIZE.getId(), 7);
                         player.sendVarp(1055, 0); // TODO: What is this doing?
 
                         // Set Gameframe FIXED
                     } else {
                         player.sendVarp(1055, 267264); // TODO: What is this doing?
                         player.sendCloseWidgetSub(165, 27);
-                        player.sendSetWidgetMoveSubEvent(165, 1, DisplayMode.FIXED.getId(), 24);
-                        player.sendSetWidgetMoveSubEvent(165, 6, DisplayMode.FIXED.getId(), 21);
-                        player.sendSetWidgetMoveSubEvent(165, 2, DisplayMode.FIXED.getId(), 14);
-                        player.sendSetWidgetMoveSubEvent(165, 3, DisplayMode.FIXED.getId(), 16);
-                        player.sendSetWidgetMoveSubEvent(165, 4, DisplayMode.FIXED.getId(), 17);
-                        player.sendSetWidgetMoveSubEvent(165, 5, DisplayMode.FIXED.getId(), 18);
-                        player.sendSetWidgetMoveSubEvent(165, 7, DisplayMode.FIXED.getId(), 64);
-                        player.sendSetWidgetMoveSubEvent(165, 8, DisplayMode.FIXED.getId(), 66);
-                        player.sendSetWidgetMoveSubEvent(165, 9, DisplayMode.FIXED.getId(), 67);
-                        player.sendSetWidgetMoveSubEvent(165, 10, DisplayMode.FIXED.getId(), 68);
-                        player.sendSetWidgetMoveSubEvent(165, 11, DisplayMode.FIXED.getId(), 69);
-                        player.sendSetWidgetMoveSubEvent(165, 12, DisplayMode.FIXED.getId(), 70);
-                        player.sendSetWidgetMoveSubEvent(165, 13, DisplayMode.FIXED.getId(), 71);
-                        player.sendSetWidgetMoveSubEvent(165, 14, DisplayMode.FIXED.getId(), 72);
-                        player.sendSetWidgetMoveSubEvent(165, 15, DisplayMode.FIXED.getId(), 73);
-                        player.sendSetWidgetMoveSubEvent(165, 16, DisplayMode.FIXED.getId(), 74);
-                        player.sendSetWidgetMoveSubEvent(165, 17, DisplayMode.FIXED.getId(), 75);
-                        player.sendSetWidgetMoveSubEvent(165, 18, DisplayMode.FIXED.getId(), 76);
-                        player.sendSetWidgetMoveSubEvent(165, 19, DisplayMode.FIXED.getId(), 77);
-                        player.sendSetWidgetMoveSubEvent(165, 20, DisplayMode.FIXED.getId(), 78);
-                        player.sendSetWidgetMoveSubEvent(165, 21, DisplayMode.FIXED.getId(), 79);
-                        player.sendSetWidgetMoveSubEvent(165, 22, DisplayMode.FIXED.getId(), 15);
-                        player.sendSetWidgetMoveSubEvent(165, 23, DisplayMode.FIXED.getId(), 19);
-                        player.sendSetWidgetMoveSubEvent(165, 24, DisplayMode.FIXED.getId(), 11);
-                        player.sendSetWidgetMoveSubEvent(165, 28, DisplayMode.FIXED.getId(), 22);
+                        player.sendWidgetMoveSubEvent(165, 1, DisplayMode.FIXED.getId(), 24);
+                        player.sendWidgetMoveSubEvent(165, 6, DisplayMode.FIXED.getId(), 21);
+                        player.sendWidgetMoveSubEvent(165, 2, DisplayMode.FIXED.getId(), 14);
+                        player.sendWidgetMoveSubEvent(165, 3, DisplayMode.FIXED.getId(), 16);
+                        player.sendWidgetMoveSubEvent(165, 4, DisplayMode.FIXED.getId(), 17);
+                        player.sendWidgetMoveSubEvent(165, 5, DisplayMode.FIXED.getId(), 18);
+                        player.sendWidgetMoveSubEvent(165, 7, DisplayMode.FIXED.getId(), 64);
+                        player.sendWidgetMoveSubEvent(165, 8, DisplayMode.FIXED.getId(), 66);
+                        player.sendWidgetMoveSubEvent(165, 9, DisplayMode.FIXED.getId(), 67);
+                        player.sendWidgetMoveSubEvent(165, 10, DisplayMode.FIXED.getId(), 68);
+                        player.sendWidgetMoveSubEvent(165, 11, DisplayMode.FIXED.getId(), 69);
+                        player.sendWidgetMoveSubEvent(165, 12, DisplayMode.FIXED.getId(), 70);
+                        player.sendWidgetMoveSubEvent(165, 13, DisplayMode.FIXED.getId(), 71);
+                        player.sendWidgetMoveSubEvent(165, 14, DisplayMode.FIXED.getId(), 72);
+                        player.sendWidgetMoveSubEvent(165, 15, DisplayMode.FIXED.getId(), 73);
+                        player.sendWidgetMoveSubEvent(165, 16, DisplayMode.FIXED.getId(), 74);
+                        player.sendWidgetMoveSubEvent(165, 17, DisplayMode.FIXED.getId(), 75);
+                        player.sendWidgetMoveSubEvent(165, 18, DisplayMode.FIXED.getId(), 76);
+                        player.sendWidgetMoveSubEvent(165, 19, DisplayMode.FIXED.getId(), 77);
+                        player.sendWidgetMoveSubEvent(165, 20, DisplayMode.FIXED.getId(), 78);
+                        player.sendWidgetMoveSubEvent(165, 21, DisplayMode.FIXED.getId(), 79);
+                        player.sendWidgetMoveSubEvent(165, 22, DisplayMode.FIXED.getId(), 15);
+                        player.sendWidgetMoveSubEvent(165, 23, DisplayMode.FIXED.getId(), 19);
+                        player.sendWidgetMoveSubEvent(165, 24, DisplayMode.FIXED.getId(), 11);
+                        player.sendWidgetMoveSubEvent(165, 28, DisplayMode.FIXED.getId(), 22);
                     }
                     //TODO: Set Now Playing Track - This should be loaded by region player is in.
-                    player.sendSetWidgetText(WidgetId.MUSIC_PANEL_ID, 5, "Harmony"); // TODO: is child 5?
+                    player.sendWidgetText(WidgetId.MUSIC_PANEL_ID, 5, "Harmony"); // TODO: is child 5?
 
                     player.setInGame(true);
                     break;

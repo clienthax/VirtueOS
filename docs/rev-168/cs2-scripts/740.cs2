@@ -1,0 +1,11 @@
+[clientscript,script740](int $int0, int $int1)
+$int2 = ~max(sub(if_getscrollheight($int1), if_getheight($int1)), 1);
+$int3 = sub(sub(if_getheight($int0), 32), cc_getheight);
+cc_setposition(0, add(16, divide(multiply($int3, if_getscrolly($int1)), $int2)), 1, 0);
+if(.cc_find($int0, 2) == 1) {
+.cc_setposition(0, cc_gety, 1, 0);
+}
+if(.cc_find($int0, 3) == 1) {
+.cc_setposition(0, sub(add(cc_gety, cc_getheight), 5), 1, 0);
+}
+return();

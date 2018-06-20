@@ -1,0 +1,27 @@
+[clientscript,script1737](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if(~script1701(-1, 595) == 0) {
+return();
+}
+if(%varc190 == 1) {
+if(cc_find($int2, $int3) == 1) {
+if(.cc_find($int2, $int4) == 1) {
+if($int0 == 84) {
+if($int5 != -1) {
+sound_synth(2266, 1, 0);
+~script1735($int2);
+}
+~script1984;
+return();
+}
+if($int0 == 13) {
+sound_synth(2266, 1, 0);
+~script1735($int2);
+~script1984;
+return();
+}
+%varcstr138 = ~script74(%varcstr138, 4, $int0, $int1);
+~script1738("", $int2);
+}
+}
+}
+return();

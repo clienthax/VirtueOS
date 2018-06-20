@@ -1,0 +1,23 @@
+[proc,script1209](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)(int,int)
+cc_create($int6, Text, $int1);
+$int1 = add($int1, 1);
+.cc_create($int6, Text, $int1);
+$int1 = add($int1, 1);
+cc_setposition(0, $int2, 0, 0);
+.cc_setposition(0, $int2, 2, 0);
+cc_setsize($int0, 20, 0, 0);
+.cc_setsize(add($int0, 10), 20, 1, 0);
+$int2 = add($int2, 20);
+cc_settextfont(495);
+.cc_settextfont(495);
+cc_settextalign(2, 0, 0);
+.cc_settextalign(0, 0, 0);
+cc_settextshadow(1);
+.cc_settextshadow(1);
+$int7 = enum(int, int, 1267, $int4);
+$int8 = interpolate(0, $int7, 0, 1000, 1000);
+cc_settext("<tostring(divide($int8, 10))>.<tostring(modulo($int8, 10))>%");
+.cc_settext(enum(int, string, 1266, $int4));
+~script1213($int7, $int3);
+cc_setonvartransmit("script1212(-2147483645, -2147483643, .cc_getid, $int5, $int7){1317, 1318}");
+return($int1, $int2);

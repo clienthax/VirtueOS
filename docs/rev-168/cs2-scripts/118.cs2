@@ -1,0 +1,4 @@
+[clientscript,script118](int $int0, int $int1, int $int2, int $int3, string $string0, string $string1)
+if_setoninvtransmit("script1600($int0, $string0, $int1, $int2, $int3, $string1){584, 468, 93, 94}", 4:21);
+~script1601($int0, $string0, $int1, $int2, $int3, $string1);
+return();

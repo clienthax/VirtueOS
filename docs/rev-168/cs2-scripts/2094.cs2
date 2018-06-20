@@ -1,0 +1,33 @@
+[clientscript,script2094](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, string $string0, string $string1)
+cc_deleteall($int0);
+$int6 = 0;
+.cc_create($int0, Rectangle, $int6);
+$int7 = $int6;
+$int6 = add($int6, 1);
+.cc_setsize(0, 0, 1, 1);
+.cc_setposition(0, 0, 1, 1);
+.cc_setfill(1);
+.cc_setcolor(0xFFFFFF);
+$int6 = ~thinbox($int0, $int6);
+cc_create($int0, Text, $int6);
+$int6 = add($int6, 1);
+cc_setsize(30, 0, 1, 1);
+cc_setposition(5, 0, 2, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(0, 1, 0);
+if(if_getheight($int0) < 30) {
+cc_settext("<col=ffffff><$string0></col> - <$string1>");
+} else {
+cc_settext("<col=ffffff><$string0></col><br><$string1>");
+}
+cc_create($int0, Graphic, $int6);
+$int8 = $int6;
+$int6 = add($int6, 1);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(5, 0, 0, 1);
+~script2096($int0, $int7, $int8, $int1, $int2, $int3, $int4, $int5);
+if_setonvartransmit("script2095($int0, $int7, $int8, $int1, $int2, $int3, $int4, $int5){499, 281}", $int0);
+if_setop(1, $string0, $int0);
+return();

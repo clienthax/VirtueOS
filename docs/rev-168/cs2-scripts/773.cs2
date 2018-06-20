@@ -1,0 +1,214 @@
+[clientscript,script773](int $int0, int $int1, int $int2)
+$int3 = if_getwidth($int0);
+$int4 = sub($int3, 30);
+$int5 = divide($int4, 2);
+$int6 = 119;
+$int7 = 136;
+$int8 = 1110;
+$int9 = 1111;
+cc_deleteall($int0);
+$int10 = 0;
+cc_create($int0, Graphic, $int10);
+$int11 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(40, 36, 0, 0);
+cc_setposition(70, 31, 0, 0);
+cc_setgraphic(1121);
+cc_setop(1, "Choose item");
+cc_setonop("script489(-2147483644, 2)");
+cc_create($int0, Graphic, $int10);
+$int12 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(20, 18, 0, 0);
+cc_setposition(20, $int6, 0, 0);
+cc_setgraphic(1116);
+cc_setonmouserepeat("cc_settrans(-2147483645, -2147483643, 100, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 0, -1)");
+cc_setop(1, "-1");
+cc_create($int0, Graphic, $int10);
+$int13 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(20, 18, 0, 0);
+cc_setposition(sub(add(15, $int5), 25), $int6, 0, 0);
+cc_setgraphic(1117);
+cc_setonmouserepeat("cc_settrans(-2147483645, -2147483643, 100, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 0, -1)");
+cc_setop(1, "+1");
+cc_create($int0, Graphic, $int10);
+$int14 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(35, 35, 0, 0);
+cc_setposition(25, $int7, 0, 0);
+cc_setgraphic($int8);
+cc_setonmouserepeat("script229(-2147483645, -2147483643, $int9, -1)");
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int8, -1)");
+cc_setop(1, "+1");
+cc_create($int0, Graphic, $int10);
+$int15 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(35, 35, 0, 0);
+cc_setposition(67, $int7, 0, 0);
+cc_setgraphic($int8);
+cc_setonmouserepeat("script229(-2147483645, -2147483643, $int9, -1)");
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int8, -1)");
+cc_setop(1, "+10");
+cc_create($int0, Graphic, $int10);
+$int16 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(35, 35, 0, 0);
+cc_setposition(109, $int7, 0, 0);
+cc_setgraphic($int8);
+cc_setonmouserepeat("script229(-2147483645, -2147483643, $int9, -1)");
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int8, -1)");
+cc_setop(1, "+100");
+cc_create($int0, Graphic, $int10);
+$int17 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(35, 35, 0, 0);
+cc_setposition(151, $int7, 0, 0);
+cc_setgraphic($int8);
+cc_setonmouserepeat("script229(-2147483645, -2147483643, $int9, -1)");
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int8, -1)");
+cc_create($int0, Graphic, $int10);
+$int18 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(35, 35, 0, 0);
+cc_setposition(193, $int7, 0, 0);
+cc_setgraphic($int8);
+cc_setonmouserepeat("script229(-2147483645, -2147483643, $int9, -1)");
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int8, -1)");
+cc_setop(1, "Enter quantity");
+cc_setonop("script489(-2147483644, 2)");
+cc_create($int0, Graphic, $int10);
+$int19 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(20, 18, 0, 0);
+cc_setposition(add(add(15, $int5), 5), $int6, 0, 0);
+cc_setgraphic(1116);
+cc_setonmouserepeat("cc_settrans(-2147483645, -2147483643, 100, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 0, -1)");
+cc_setop(1, "-1");
+cc_create($int0, Graphic, $int10);
+$int20 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(20, 18, 0, 0);
+cc_setposition(sub(add(15, $int4), 25), $int6, 0, 0);
+cc_setgraphic(1117);
+cc_setonmouserepeat("cc_settrans(-2147483645, -2147483643, 100, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 0, -1)");
+cc_setop(1, "+1");
+cc_create($int0, Graphic, $int10);
+$int21 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(35, 35, 0, 0);
+cc_setposition(add(add(15, $int5), 15), $int7, 0, 0);
+cc_setgraphic($int8);
+cc_setonmouserepeat("script229(-2147483645, -2147483643, $int9, -1)");
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int8, -1)");
+cc_setop(1, "-5%");
+cc_create($int0, Graphic, $int10);
+$int22 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(35, 35, 0, 0);
+cc_setposition(add(add(15, $int5), 72), $int7, 0, 0);
+cc_setgraphic($int8);
+cc_setonmouserepeat("script229(-2147483645, -2147483643, $int9, -1)");
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int8, -1)");
+cc_setop(1, "Guide price");
+cc_setonop("script489(-2147483644, 2)");
+cc_create($int0, Graphic, $int10);
+$int23 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(35, 35, 0, 0);
+cc_setposition(sub(add(add(15, $int5), $int5), 107), $int7, 0, 0);
+cc_setgraphic($int8);
+cc_setonmouserepeat("script229(-2147483645, -2147483643, $int9, -1)");
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int8, -1)");
+cc_setop(1, "Enter price");
+cc_setonop("script489(-2147483644, 2)");
+cc_create($int0, Graphic, $int10);
+$int24 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(35, 35, 0, 0);
+cc_setposition(sub(add(add(15, $int5), $int5), 50), $int7, 0, 0);
+cc_setgraphic($int8);
+cc_setonmouserepeat("script229(-2147483645, -2147483643, $int9, -1)");
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int8, -1)");
+cc_setop(1, "+5%");
+$int25 = 0;
+$int26 = 0;
+$int27 = 0;
+$int28 = 0;
+$int29 = 0;
+$int30 = 0;
+$int31 = 0;
+$int32 = 0;
+$gosubResult807_0, $gosubResult807_1, $gosubResult807_2, $gosubResult807_3, $gosubResult807_4, $gosubResult807_5, $gosubResult807_6, $gosubResult807_7, $gosubResult807_8 = ~script807($int10, $int0, $int1, 494);
+$int32 = $gosubResult807_8;
+$int31 = $gosubResult807_7;
+$int30 = $gosubResult807_6;
+$int29 = $gosubResult807_5;
+$int28 = $gosubResult807_4;
+$int27 = $gosubResult807_3;
+$int26 = $gosubResult807_2;
+$int25 = $gosubResult807_1;
+$int10 = $gosubResult807_0;
+cc_create($int0, Graphic, $int10);
+$int33 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(20, 18, 0, 0);
+cc_setposition(70, 31, 0, 0);
+cc_setgraphic(1113);
+$int10 = ~script774($int0, $int14, "+1", $int10);
+$int10 = ~script774($int0, $int15, "+10", $int10);
+$int10 = ~script774($int0, $int16, "+100", $int10);
+$int34 = $int10;
+$int10 = ~script774($int0, $int17, "", $int10);
+$int10 = ~script774($int0, $int18, "...", $int10);
+$int10 = ~script775($int0, $int21, 1114, $int10);
+$int10 = ~script775($int0, $int22, 1112, $int10);
+$int10 = ~script774($int0, $int23, "...", $int10);
+$int10 = ~script775($int0, $int24, 1115, $int10);
+cc_create($int0, Text, $int10);
+$int35 = $int10;
+$int10 = add($int10, 1);
+cc_setsize(if_getwidth($int2), if_getheight($int2), 0, 0);
+cc_setposition(if_getx($int2), if_gety($int2), 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextfont(496);
+cc_settextalign(1, 1, 0);
+~script779($int0, $int11, $int17, $int34, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int2, $int35);
+if_setonvartransmit("script776($int0, $int11, $int17, $int34, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int2, $int35){1151, 563, 1043}", $int0);
+if_setoninvtransmit("script776($int0, $int11, $int17, $int34, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int2, $int35){93}", $int0);
+if(cc_find($int0, $int12) == 1) {
+cc_setonop("script777(-1, -2147483644, $int0, $int11, $int17, $int34, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int2, $int35)");
+}
+if(cc_find($int0, $int13) == 1) {
+cc_setonop("script777(1, -2147483644, $int0, $int11, $int17, $int34, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int2, $int35)");
+}
+if(cc_find($int0, $int14) == 1) {
+cc_setonop("script777(1, -2147483644, $int0, $int11, $int17, $int34, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int2, $int35)");
+}
+if(cc_find($int0, $int15) == 1) {
+cc_setonop("script777(10, -2147483644, $int0, $int11, $int17, $int34, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int2, $int35)");
+}
+if(cc_find($int0, $int16) == 1) {
+cc_setonop("script777(100, -2147483644, $int0, $int11, $int17, $int34, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int2, $int35)");
+}
+if(cc_find($int0, $int17) == 1) {
+cc_setonop("script777(2147483647, -2147483644, $int0, $int11, $int17, $int34, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int2, $int35)");
+}
+if(cc_find($int0, $int19) == 1) {
+cc_setonop("script778(-1, -2147483644, $int0, $int11, $int17, $int34, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int2, $int35)");
+}
+if(cc_find($int0, $int20) == 1) {
+cc_setonop("script778(1, -2147483644, $int0, $int11, $int17, $int34, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int2, $int35)");
+}
+if(cc_find($int0, $int21) == 1) {
+cc_setonop("script778(-5, -2147483644, $int0, $int11, $int17, $int34, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int2, $int35)");
+}
+if(cc_find($int0, $int24) == 1) {
+cc_setonop("script778(5, -2147483644, $int0, $int11, $int17, $int34, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int2, $int35)");
+}
+return();

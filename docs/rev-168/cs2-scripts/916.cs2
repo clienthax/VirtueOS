@@ -1,0 +1,32 @@
+[clientscript,script916](int $int0, int $int1)
+$int2 = -1;
+$int3 = -1;
+$int4 = -1;
+$int5 = 0;
+$int6 = enum(int, component, 1138, $int5);
+while($int6 != -1) {
+$int6 = enum(component, component, $int1, $int6);
+if($int6 != -1) {
+if_setgraphic(-1, $int6);
+$int2 = enum(int, component, 1137, $int5);
+$int2 = enum(component, component, $int1, $int2);
+if_sethide(1, $int2);
+if($int5 == $int0) {
+$int4 = $int6;
+$int3 = $int2;
+}
+}
+$int5 = add($int5, 1);
+$int6 = enum(int, component, 1138, $int5);
+}
+if($int3 != -1 && $int4 != -1) {
+%varc171 = $int0;
+if(if_hassub($int3) == 1) {
+if_sethide(0, $int3);
+if_setgraphic(enum(component, graphic, 1133, $int4), $int4);
+}
+} else {
+%varc171 = -1;
+}
+~script919($int1);
+return();

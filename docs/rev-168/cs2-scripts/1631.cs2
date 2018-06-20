@@ -1,0 +1,17 @@
+[clientscript,script1631](int $int0, int $int1, int $int2)
+if($int0 < 1 || $int2 == -1 || $int0 > 31) {
+return();
+}
+$string0 = "";
+$string1 = "";
+if(cc_find($int2, 6) == 1) {
+if($int0 <= 9) {
+$string0 = tostring($int0);
+} else {
+$string1 = enum(int, string, 1402, sub($int0, 9));
+$string0 = enum(int, string, 1401, sub($int0, 9));
+}
+cc_settext("<$string0>:");
+if_setonkey("script1632(-2147483639, $int1, -2147483645, $string0, $string1, 0)", $int2);
+}
+return();

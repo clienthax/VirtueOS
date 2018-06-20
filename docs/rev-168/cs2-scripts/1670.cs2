@@ -1,0 +1,8 @@
+[clientscript,script1670](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9)
+sound_synth(2266, 1, 0);
+if($int0 != enum(int, int, 1912, %varc183)) {
+%varc205 = %varc183;
+}
+%varc183 = $int0;
+~friend_update($int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9);
+return();

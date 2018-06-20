@@ -1,0 +1,34 @@
+[clientscript,script966](int $int0, int $int1, int $int2, int $int3, int $int4)
+cc_deleteall($int2);
+$int5 = ~script836($int2, 0);
+cc_create($int2, Graphic, $int5);
+$int5 = add($int5, 1);
+cc_setsize(29, 22, 0, 0);
+cc_setposition(0, 0, 0, 1);
+cc_setgraphic(1043);
+cc_create($int2, Text, $int5);
+$int5 = add($int5, 1);
+cc_setsize(33, 0, 1, 1);
+cc_setposition(4, 0, 2, 1);
+cc_settextshadow(1);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+$string0 = removetags(lowercase(%varcstr22));
+$int6 = string_length($string0);
+if($int6 > 9) {
+cc_settext(substring($string0, 0, 9));
+} else {
+if($int6 > 0) {
+cc_settext($string0);
+} else {
+cc_settext("<lt>Search term<gt>");
+}
+}
+cc_setcolor(0xFFFFFF);
+if_setonmouseover("null()", $int2);
+if_setonmouseleave("null()", $int2);
+if_setop(1, "Clear", $int2);
+if_setonop("script964(0, $int0, $int1, $int2, $int3, $int4)", $int2);
+if_setontimer("script963($int0, $int1, $int2, %varcstr22, $int3, $int4)", $int2);
+~script967($int0, $int1, $string0, $int3, $int4);
+return();

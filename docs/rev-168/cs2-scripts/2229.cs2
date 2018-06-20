@@ -1,0 +1,6 @@
+[clientscript,script2229](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if(~script1972 == 0) {
+if_sethide(1, $int5);
+}
+~script2230($int0, $int1, $int2, $int3, $int4, $int5);
+return();

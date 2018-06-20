@@ -1,0 +1,16 @@
+[clientscript,script52](int $int0, int $int1, int $int2)
+if($int0 != 1) {
+return();
+}
+if(~toplevel_getcomponents == 1745) {
+sound_synth(2277, 1, 0);
+return();
+}
+sound_synth(2266, 1, 0);
+if(%varbit4134 == 1) {
+%varbit4134 = 0;
+} else {
+%varbit4134 = 1;
+}
+~script448($int1, $int2);
+return();

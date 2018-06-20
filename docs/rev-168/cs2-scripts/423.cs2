@@ -1,0 +1,33 @@
+[clientscript,script423](string $string0, int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+sound_synth(2266, 1, 0);
+if_sethide(1, $int1);
+if_sethide(0, $int2);
+cc_deleteall($int4);
+if_setposition(33, 165, 0, 0, $int5);
+if_sethide(0, $int4);
+$string1 = "";
+$int6 = 0;
+if($int0 == 1) {
+$int6 = add(43, 2);
+$string1 = "<u=ff981f><$string0></u><br><br>Your current task will be cancelled, and the Slayer Masters will be blocked from assigning this category to you again.<br><br><col=ff0000>Cost: <tostring(100)> points</col><br><br>If you unblock this creature in future, you will not get your points back.";
+} else {
+$int6 = add(43, 1);
+$string1 = "<u=ff981f><$string0></u><br><br>Your current task will be cancelled. The Slayer Masters may assign this category to you again in future.<br><br><col=ff0000>Cost: <tostring(30)> points</col>";
+}
+if_settext($string1, $int3);
+$int7 = 0;
+while($int7 < $int6) {
+cc_create($int4, Rectangle, $int7);
+cc_sethide(1);
+$int7 = add($int7, 1);
+}
+cc_create($int4, Rectangle, $int6);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(1);
+cc_settrans(255);
+cc_setop(1, "Confirm");
+cc_setonop("script319(1, -2147483644, $int1, $int2, $int3, $int4, $int5)");
+if_setop(1, "Back", $int5);
+if_setonop("script319(0, -2147483644, $int1, $int2, $int3, $int4, $int5)", $int5);
+return();

@@ -1,0 +1,13 @@
+[proc,script774](int $int0, int $int1, int $int2, string $string0)(int)
+if(cc_find($int0, $int1) == 1) {
+.cc_create($int0, Text, $int2);
+$int2 = add($int2, 1);
+.cc_setsize(cc_getwidth, cc_getheight, 0, 0);
+.cc_setposition(cc_getx, cc_gety, 0, 0);
+.cc_setcolor(0xFF981F);
+.cc_settextfont(494);
+.cc_settextshadow(1);
+.cc_settextalign(1, 1, 0);
+.cc_settext($string0);
+}
+return($int2);

@@ -1,0 +1,2 @@
+[proc,script1372](int)
+return(add(multiply(%varbit4766, 512), %varbit4762));

@@ -1,0 +1,11 @@
+[clientscript,script456](int $int0, int $int1, int $int2)
+if(%varbit4103 == 1) {
+if_setgraphic(1066, $int0);
+if_setgraphic(1058, $int1);
+if_setop(1, "Deactivate", $int2);
+} else {
+if_setgraphic(1063, $int0);
+if_setgraphic(1068, $int1);
+if_setop(1, "Activate", $int2);
+}
+return();

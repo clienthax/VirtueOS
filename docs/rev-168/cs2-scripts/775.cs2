@@ -1,0 +1,9 @@
+[proc,script775](int $int0, int $int1, int $int2, int $int3)(int)
+if(cc_find($int0, $int1) == 1) {
+.cc_create($int0, Graphic, $int3);
+$int3 = add($int3, 1);
+.cc_setsize(20, 18, 0, 0);
+.cc_setposition(add(cc_getx, 8), add(cc_gety, 8), 0, 0);
+.cc_setgraphic($int2);
+}
+return($int3);

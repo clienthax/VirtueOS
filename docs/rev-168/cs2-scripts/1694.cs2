@@ -1,0 +1,11 @@
+[clientscript,script1694](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+$int6 = sub($int0, clientclock);
+if($int6 <= 0) {
+~script1655(0, $int1, $int2, $int3, $int4, $int5);
+return();
+}
+if_sethide(0, $int2);
+$int7 = divide(add(if_getheight($int1), if_getheight($int2)), 2);
+if_setposition(0, sub(0, scale(pow($int6, 2), pow(21, 2), $int7)), 1, 1, $int2);
+~script2219($int3, $int4, $int5);
+return();

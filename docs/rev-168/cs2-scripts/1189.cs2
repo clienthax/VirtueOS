@@ -1,0 +1,13 @@
+[clientscript,script1189](int $int0, int $int1)
+$string0 = "Enable a head-up display that shows your house favour while you're in Kourend. It is automatically hidden while other head-up displays are active.";
+if(%varbit619 == 1) {
+cc_setgraphic(699);
+if_setop(1, "Disable", $int0);
+$string0 = "Disable the head-up display that shows your house favour while you're in Kourend. It is automatically hidden while other head-up displays are active.";
+} else {
+cc_setgraphic(698);
+if_setop(1, "Enable", $int0);
+}
+.cc_setonmouserepeat("script526(-2147483645, -2147483643, $int1, $string0, 25, 190)");
+%varc2 = 0;
+return();

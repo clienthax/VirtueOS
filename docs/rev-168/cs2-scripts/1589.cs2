@@ -1,0 +1,8 @@
+[clientscript,script1589](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+~script1611("Private", $int5, 494);
+~script1602($int1);
+if_setonvartransmit("script1590($int1){499}", $int1);
+~scrollbar_vertical($int3, $int2, 792, 789, 790, 791, 773, 788);
+~script1592($int2, $int3, $int4);
+if_setoninvtransmit("script1591($int2, $int3, $int4){582}", $int0);
+return();

@@ -1,0 +1,15 @@
+[clientscript,script1316](int $int0, int $int1)
+if($int1 <= 17) {
+cc_settrans(sub(255, multiply($int1, 15)));
+return();
+}
+if($int1 <= 50) {
+return();
+}
+if($int1 <= 67) {
+$int1 = sub($int1, 50);
+cc_settrans(multiply($int1, 15));
+return();
+}
+cc_deleteall($int0);
+return();

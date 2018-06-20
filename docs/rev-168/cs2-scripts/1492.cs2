@@ -1,0 +1,4 @@
+[clientscript,script1492](int $int0)
+~script1700($int0);
+if_setonsubchange("script1699(-2147483645)", $int0);
+return();

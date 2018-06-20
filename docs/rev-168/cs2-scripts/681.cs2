@@ -1,0 +1,113 @@
+[clientscript,script681]
+if(%varc5 == 14) {
+%varc66 = 1;
+return();
+}
+$int0 = -1;
+$string0 = "";
+$int1 = string_length(%varcstr22);
+if($int1 > 0) {
+switch(%varc5) {
+case 1:
+return();
+case 4:
+case 5:
+if(ignore_count < 0) {
+mes("Unable to update ignore list - system busy.");
+} else {
+if(%varc5 == 4) {
+ignore_add(%varcstr22);
+} else {
+if(%varc5 == 5) {
+ignore_del(%varcstr22);
+}
+}
+}
+case 2:
+case 3:
+case 6:
+if(friend_count < 0) {
+mes("Unable to complete action - system busy.");
+} else {
+if(%varc5 == 2) {
+friend_add(%varcstr22);
+} else {
+if(%varc5 == 3) {
+friend_del(%varcstr22);
+} else {
+if(%varc5 == 6) {
+if(%varc203 == 0 || %varc203 == -1) {
+~script299(1, 1);
+mes("You must set a name before you can chat.");
+return();
+}
+if(chat_getfilter_private == 2) {
+sendChatSettings(chat_getfilter_public, 1, chat_getfilter_trade);
+~script178;
+$int0 = ~script553;
+~script84($int0);
+~script89($int0);
+}
+if(%varbit4394 == 1) {
+friend_del(%varcstr23);
+} else {
+chat_sendprivate(%varcstr23, %varcstr22);
+}
+%varc61 = clientclock;
+}
+}
+}
+}
+case 7:
+resume_countdialog(~script212(%varcstr22));
+case 8:
+%varcstr128 = removetags(%varcstr22);
+resume_namedialog(%varcstr22);
+case 9:
+case 15:
+resume_stringdialog(%varcstr22);
+case 10:
+if(%varc203 == 0 || %varc203 == -1) {
+~script299(1, 1);
+mes("You must set a name before you can chat.");
+return();
+}
+%varcstr129 = removetags(%varcstr22);
+clan_joinchat(%varcstr22);
+case 12:
+if($int1 > 10) {
+$string0 = substring(%varcstr22, 0, 9);
+} else {
+$string0 = %varcstr22;
+}
+setMessageFilter(lowercase($string0));
+~script84(~script553);
+case 13:
+if(%varc203 == 0 || %varc203 == -1) {
+~script299(1, 1);
+mes("You must set a name before you can chat.");
+return();
+}
+%varc62 = 0;
+%varcstr28 = %varcstr22;
+~script95;
+if_setontimer("script552(-2147483645, 1)", 162:11);
+case 11:
+~script299(0, 1);
+return();
+case 16:
+~script2061(%varcstr22);
+}
+} else {
+switch(%varc5) {
+case 7:
+case 8:
+case 9:
+case 15:
+return();
+case 16:
+return();
+}
+}
+~script299(1, 1);
+return();

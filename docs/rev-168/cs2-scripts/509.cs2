@@ -1,0 +1,50 @@
+[proc,script509](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11)(int)
+$int12 = 0;
+if($int11 == 0 && $int2 > 0 && ~script514 == 1) {
+$int12 = add($int8, 15);
+} else {
+$int12 = $int8;
+}
+$int13 = -1;
+$int14 = 0;
+$int15 = 0;
+$int16 = 0;
+while($int0 < $int1) {
+if(cc_find($int3, $int0) == 1) {
+$int13 = inv_getobj(95, $int0);
+if(~script279($int13) == 1) {
+cc_sethide(0);
+~script278($int13, inv_getnum(95, $int0), $int3, $int4, $int5, $int6, $int7);
+$int14 = add($int12, multiply($int16, 36));
+cc_setposition(multiply($int15, add(36, $int9)), $int14, 0, 0);
+$int14 = add($int14, 32);
+if($int15 < $int10) {
+$int15 = add($int15, 1);
+} else {
+$int16 = add($int16, 1);
+$int15 = 0;
+}
+}
+}
+$int0 = add($int0, 1);
+}
+if($int14 <= 0) {
+return($int8);
+}
+if($int11 == 0) {
+if($int15 > 0) {
+if(cc_find($int3, add(add(816, multiply(9, 2)), $int2)) == 1) {
+cc_sethide(0);
+cc_setposition(multiply($int15, add(36, $int9)), sub($int14, 32), 0, 0);
+$int15 = sub(8, $int15);
+cc_setsize(add(multiply($int15, 36), multiply(sub($int15, 1), $int9)), 32, 0, 0);
+}
+}
+if($int12 > $int8) {
+if(cc_find($int3, sub(add(add(816, 9), $int2), 1)) == 1) {
+cc_setposition(0, $int8, 0, 0);
+cc_sethide(0);
+}
+}
+}
+return($int14);

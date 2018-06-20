@@ -1,0 +1,14 @@
+[clientscript,script1334](int $int0, int $int1, string $string0)
+if_setop(1, "Press", $int0);
+if_setonop("script1336(-2147483645)", $int0);
+if_setopbase("<col=ff981f>Button", $int0);
+cc_create($int1, Text, 0);
+cc_settext($string0);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_setposition(0, 0, 4, 4);
+cc_setsize(0, 0, 1, 1);
+cc_setonmouseover("script1335(-2147483645, -2147483643, 16777215)");
+cc_setonmouseleave("script1335(-2147483645, -2147483643, 16750623)");
+return();

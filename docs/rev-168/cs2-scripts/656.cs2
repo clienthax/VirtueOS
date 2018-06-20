@@ -1,0 +1,86 @@
+[clientscript,script656](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+if_settext(enum(int, string, 108, %varbit4371), $int0);
+$int8 = 0;
+$int9 = 0;
+$int10 = 0;
+$string0 = "";
+$int11 = enum(int, component, 990, $int9);
+$gosubResult660_0, $gosubResult660_1 = ~script660(%varbit4371, $int9);
+$int10 = $gosubResult660_0;
+$string0 = $gosubResult660_1;
+while($int11 != -1) {
+while(string_length($string0) > 0) {
+if_settext($string0, $int11);
+if(%varbit4372 == $int9) {
+if($int10 == 1) {
+if_settext(append($string0, " - Members Only"), $int1);
+} else {
+if_settext($string0, $int1);
+}
+$int8 = $int9;
+}
+$int9 = add($int9, 1);
+$int11 = enum(int, component, 990, $int9);
+$gosubResult660_0, $gosubResult660_1 = ~script660(%varbit4371, $int9);
+$int10 = $gosubResult660_0;
+$string0 = $gosubResult660_1;
+}
+}
+$int12 = $int9;
+$int9 = 0;
+if($int12 >= 2) {
+if_sethide(0, $int5);
+if_sethide(0, $int6);
+if_sethide(0, $int7);
+if_setmodel(enum(int, model, 991, $int12), $int6);
+if_setposition(if_getx($int7), enum(int, int, 992, $int12), 0, 0, $int7);
+$int11 = enum(int, component, 990, $int9);
+while($int11 != -1) {
+if($int9 < $int12) {
+if_sethide(0, $int11);
+} else {
+if_sethide(1, $int11);
+}
+$int9 = add($int9, 1);
+$int11 = enum(int, component, 990, $int9);
+}
+} else {
+if_sethide(1, $int5);
+if_sethide(1, $int6);
+if_sethide(1, $int7);
+$int11 = enum(int, component, 990, $int9);
+while($int11 != -1) {
+if_sethide(1, $int11);
+$int9 = add($int9, 1);
+$int11 = enum(int, component, 990, $int9);
+}
+}
+cc_deleteall($int2);
+cc_deleteall($int3);
+cc_deleteall($int4);
+$int13 = sub(if_getwidth($int2), add(add(28, 36), 3));
+$int14 = 3;
+$int9 = 0;
+$int15 = 0;
+$int16 = -1;
+$gosubResult661_0, $gosubResult661_1, $gosubResult661_2 = ~script661(%varbit4371, $int8, $int9);
+$string0 = $gosubResult661_2;
+$int16 = $gosubResult661_1;
+$int15 = $gosubResult661_0;
+while($int16 != -1) {
+$int14 = ~script657($int15, $int16, $string0, $int2, $int3, $int13, $int8, $int9, $int14);
+$int9 = add($int9, 1);
+$gosubResult661_0, $gosubResult661_1, $gosubResult661_2 = ~script661(%varbit4371, $int8, $int9);
+$string0 = $gosubResult661_2;
+$int16 = $gosubResult661_1;
+$int15 = $gosubResult661_0;
+}
+if_setsize(if_getwidth($int2), $int14, 0, 0, $int3);
+if_setscrollpos(0, 0, $int2);
+if($int14 > if_getheight($int2)) {
+if_setscrollsize(0, $int14, $int2);
+~scrollbar_vertical($int4, $int2, 798, 795, 796, 797, 793, 794);
+} else {
+if_setscrollsize(0, 0, $int2);
+}
+return();

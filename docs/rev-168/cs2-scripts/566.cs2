@@ -1,0 +1,15 @@
+[clientscript,script566](int $int0, int $int1, int $int2, int $int3)
+.cc_setmodel($int3);
+if($int1 == 1) {
+.cc_setontimer("script567(-2147483645, -2147483643)");
+cc_settrans(255);
+cc_setonmouseover("null()");
+cc_setonmouseleave("null()");
+if_setonop("null()", $int0);
+return();
+}
+.cc_setontimer("null()");
+cc_setonmouseover("cc_settrans(-2147483645, -2147483643, 225, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 255, -1)");
+if_setonop("script563(-2147483644, $int2, $int3)", $int0);
+return();

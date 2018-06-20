@@ -1,0 +1,11 @@
+[clientscript,script2053](int $int0, int $int1, int $int2, string $string0, int $int3, int $int4, int $int5)
+if(clientclock < $int0) {
+return();
+}
+~script2054(0, $int1, $int2, $int4, $int5);
+if_setonmouseover("script2049(1, $int1, $int2, $int4, $int5)", $int2);
+if_setonmouseleave("script2049(0, $int1, $int2, $int4, $int5)", $int2);
+if_setonop("script2050(-2147483644, $int1, $int2, $string0, $int3, $int4, $int5)", $int2);
+if_setonkey("script2051(-2147483639, -2147483640, $int1, $int2, $string0, $int3, $int4, $int5)", $int2);
+if_setontimer("null()", $int2);
+return();

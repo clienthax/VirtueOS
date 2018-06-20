@@ -1,0 +1,7 @@
+[clientscript,script563](int $int0, int $int1, int $int2)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+~script564($int1, $int2);
+return();

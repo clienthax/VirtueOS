@@ -1,0 +1,11 @@
+[clientscript,script457](int $int0, int $int1, int $int2)
+if($int0 != 1) {
+return();
+}
+if(%varp173 <= 0) {
+%varp173 = 1;
+} else {
+%varp173 = 0;
+}
+~script454($int1, $int2);
+return();

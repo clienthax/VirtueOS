@@ -1,0 +1,13 @@
+[clientscript,script765](int $int0, int $int1)
+$int2 = -1;
+if($int0 == 1) {
+~script147($int1);
+if(cc_find(21954588, add(inv_size(90), $int1)) == 1) {
+cc_setontimer("script766(-2147483645, -2147483643, clientclock)");
+}
+} else {
+if(cc_find(21954585, add(inv_size(90), $int1)) == 1) {
+cc_setontimer("script766(-2147483645, -2147483643, clientclock)");
+}
+}
+return();

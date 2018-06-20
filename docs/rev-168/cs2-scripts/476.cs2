@@ -1,0 +1,12 @@
+[clientscript,script476](int $int0, int $int1, int $int2, int $int3, int $int4)
+if(%varp261 >= $int3 && %varp262 >= $int4) {
+if_setmodel($int2, $int0);
+if_setop(1, "Make-1", $int0);
+if_setop(2, "Make-5", $int0);
+if_setop(3, "Make-All", $int0);
+if_setop(4, "Make-X", $int0);
+} else {
+if_setmodel($int1, $int0);
+if_clearops($int0);
+}
+return();

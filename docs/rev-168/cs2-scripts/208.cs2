@@ -1,0 +1,18 @@
+[proc,script208](int $int0)(int)
+cc_deleteall($int0);
+$int1 = if_getwidth($int0);
+$int2 = if_getheight($int0);
+$int3 = sub($int1, 9);
+$int4 = sub($int2, 9);
+$int5 = sub($int1, 18);
+$int6 = sub($int2, 18);
+~create_graphic($int0, 0, 1040, 0, 0, 1, 1, 2, 2, 1, 1);
+~create_graphic($int0, 1, 929, 0, 0, 0, 0, 9, 9, 0, 0);
+~create_graphic($int0, 2, 930, $int3, 0, 0, 0, 9, 9, 0, 0);
+~create_graphic($int0, 3, 931, 0, $int4, 0, 0, 9, 9, 0, 0);
+~create_graphic($int0, 4, 932, $int3, $int4, 0, 0, 9, 9, 0, 0);
+~create_graphic($int0, 5, 933, 0, 9, 0, 0, 9, $int6, 0, 0);
+~create_graphic($int0, 6, 934, 9, 0, 0, 0, $int5, 9, 0, 0);
+~create_graphic($int0, 7, 935, $int3, 9, 0, 0, 9, $int6, 0, 0);
+~create_graphic($int0, 8, 936, 9, $int4, 0, 0, $int5, 9, 0, 0);
+return(9);

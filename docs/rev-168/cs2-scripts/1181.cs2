@@ -1,0 +1,34 @@
+[clientscript,script1181](int $int0)
+def_component $anArray0(4);
+$anArray0(0) = 34209797;
+$anArray0(1) = 34209800;
+$anArray0(2) = 34209803;
+$anArray0(3) = 34209806;
+def_component $anArray1(4);
+$anArray1(0) = 34209811;
+$anArray1(1) = 34209813;
+$anArray1(2) = 34209815;
+$anArray1(3) = 34209817;
+def_component $anArray2(4);
+$anArray2(0) = 34209798;
+$anArray2(1) = 34209801;
+$anArray2(2) = 34209804;
+$anArray2(3) = 34209807;
+$int1 = 0;
+while($int1 < 4) {
+if($anArray0($int1) == $int0) {
+if_sethide(0, $anArray1($int1));
+if_setgraphic(1079, $anArray2($int1));
+if(if_getheight($anArray1($int1)) > if_getheight(522:18)) {
+if_sethide(0, 522:27);
+~scrollbar_vertical(34209819, $anArray1($int1), 792, 789, 790, 791, 773, 788);
+} else {
+if_sethide(1, 522:27);
+}
+} else {
+if_sethide(1, $anArray1($int1));
+if_setgraphic(1077, $anArray2($int1));
+}
+$int1 = add($int1, 1);
+}
+return();

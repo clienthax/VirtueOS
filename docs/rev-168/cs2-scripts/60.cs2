@@ -1,0 +1,23 @@
+[clientscript,script60]
+$int0 = 3;
+$int1 = 5;
+$int2 = 0;
+while($int0 < 255) {
+while($int1 < 235) {
+cc_create(260:42, Graphic, $int2);
+cc_setsize(36, 32, 0, 0);
+cc_setposition($int1, $int0, 0, 0);
+if(inv_getobj(514, $int2) != -1) {
+cc_setobject(inv_getobj(514, $int2), inv_getnum(514, $int2));
+cc_setopbase(oc_name(inv_getobj(514, $int2)));
+cc_setop(1, "Withdraw");
+cc_setgraphicshadow(0x111111);
+cc_setoutline(1);
+}
+$int1 = add($int1, 40);
+$int2 = add($int2, 1);
+}
+$int0 = add($int0, 44);
+$int1 = 5;
+}
+return();

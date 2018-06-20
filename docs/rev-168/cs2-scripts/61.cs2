@@ -1,0 +1,61 @@
+[clientscript,script61]
+$int0 = 0;
+while($int0 < 5) {
+cc_create(260:45, Graphic, $int0);
+cc_setsize(36, 32, 0, 0);
+if($int0 == 0) {
+cc_setposition(0, 43, 0, 0);
+}
+if($int0 == 1) {
+cc_setposition(50, 2, 0, 0);
+}
+if($int0 == 2) {
+cc_setposition(50, 43, 0, 0);
+}
+if($int0 == 3) {
+cc_setposition(50, 85, 0, 0);
+}
+if($int0 == 4) {
+cc_setposition(50, 125, 0, 0);
+}
+if(inv_getobj(515, $int0) != -1) {
+cc_setobject(inv_getobj(515, $int0), inv_getnum(515, $int0));
+cc_setopbase(oc_name(inv_getobj(515, $int0)));
+cc_setop(1, "Deposit");
+cc_setgraphicshadow(0x111111);
+cc_setoutline(1);
+if($int0 == 0) {
+if_setgraphic(-1, 260:40);
+}
+if($int0 == 1) {
+if_setgraphic(-1, 260:36);
+}
+if($int0 == 2) {
+if_setgraphic(-1, 260:37);
+}
+if($int0 == 3) {
+if_setgraphic(-1, 260:38);
+}
+if($int0 == 4) {
+if_setgraphic(-1, 260:39);
+}
+} else {
+if($int0 == 0) {
+if_setgraphic(159, 260:40);
+}
+if($int0 == 1) {
+if_setgraphic(156, 260:36);
+}
+if($int0 == 2) {
+if_setgraphic(161, 260:37);
+}
+if($int0 == 3) {
+if_setgraphic(163, 260:38);
+}
+if($int0 == 4) {
+if_setgraphic(165, 260:39);
+}
+}
+$int0 = add($int0, 1);
+}
+return();

@@ -1,0 +1,53 @@
+[clientscript,script284](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if(sub($int2, if_getx($int0)) < -5) {
+return();
+}
+$int3 = sub($int3, if_gety($int0));
+$int6 = 5;
+$int7 = 0;
+$int8 = if_getscrolly($int0);
+if($int3 < 15) {
+if($int3 < -8) {
+return();
+}
+if($int5 <= clientclock) {
+if(cc_find($int0, $int1) == 1) {
+cc_setondrag("script284(-2147483645, -2147483643, -2147483647, -2147483646, $int4, add(clientclock, 2))");
+return();
+}
+} else {
+if(sub($int5, clientclock) < 5) {
+if(cc_find($int0, $int1) == 1) {
+cc_setondrag("script284(-2147483645, -2147483643, -2147483647, -2147483646, $int4, add($int5, 2))");
+return();
+}
+} else {
+if(cc_find($int0, $int1) == 1) {
+cc_setondrag("script284(-2147483645, -2147483643, -2147483647, -2147483646, $int4, add($int5, 1))");
+}
+}
+}
+if($int3 < 5) {
+$int6 = 8;
+}
+if($int8 > $int6) {
+$int8 = sub($int8, $int6);
+} else {
+$int8 = 0;
+}
+~script72($int4, $int0, $int8);
+} else {
+$int7 = sub(sub(if_getheight($int0), 32), $int3);
+if($int7 < 20) {
+if($int7 < -5) {
+$int6 = 10;
+} else {
+if($int7 < 5) {
+$int6 = 8;
+}
+}
+$int8 = add($int8, $int6);
+~script72($int4, $int0, $int8);
+}
+}
+return();

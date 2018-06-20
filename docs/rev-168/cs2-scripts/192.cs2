@@ -1,0 +1,55 @@
+[clientscript,script192](int $int0)
+$int1 = %varc57;
+%varc57 = clientclock;
+if(%varc41 == 0) {
+return();
+}
+$int2 = 0;
+if(%varc41 == -1) {
+$int2 = 1;
+}
+$int3 = 0;
+$int4 = -1;
+$string0 = "";
+$string1 = "";
+$string2 = "";
+$int5 = 0;
+while($int0 != -1) {
+$int5 = getChatMessagesParam6($int0);
+$string2 = getChatMessagesParam5($int0);
+$string1 = getChatMessagesParam4($int0);
+$string0 = getChatMessagesOwner($int0);
+$int4 = getChatMessagesCycle($int0);
+$int3 = getChatMessagesType($int0);
+if($int4 <= $int1) {
+return();
+}
+if(~script90($int3, $string0, $string2, $int4, $int2, removetags(chat_playername()), $int5) == 1) {
+if(~script210($int3, $string0, $int5) == 0) {
+switch($int3) {
+case 1:
+case 2:
+~script180(2);
+case 3:
+case 5:
+case 6:
+case 7:
+~script180(3);
+case 101:
+case 102:
+case 103:
+~script180(5);
+case 104:
+case 9:
+case 11:
+~script180(4);
+default:
+if(enum(int, boolean, 892, $int3) == 1) {
+~script180(1);
+}
+}
+}
+}
+$int0 = chat_getprevuid($int0);
+}
+return();

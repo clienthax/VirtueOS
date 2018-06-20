@@ -1,0 +1,62 @@
+[clientscript,script691](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+if($int0 != 1) {
+return();
+}
+$int7 = ~script1484($int2);
+if($int7 == -1) {
+return();
+}
+$int8 = modulo($int2, 5);
+$int9 = divide($int2, 5);
+$int10 = -1;
+$int11 = -1;
+if($int8 > 0) {
+$int10 = add(sub($int8, 1), multiply($int9, 5));
+$int11 = ~script1484($int10);
+if($int11 == -1) {
+sound_synth(1859, 1, 0);
+~script1485($int10, $int7);
+~script1485($int2, -1);
+~script692($int1, $int3, $int4, $int5, $int6);
+%varc110 = clientclock;
+return();
+}
+}
+if($int8 < sub(5, 1)) {
+$int10 = add(add($int8, 1), multiply($int9, 5));
+$int11 = ~script1484($int10);
+if($int11 == -1) {
+sound_synth(1859, 1, 0);
+~script1485($int10, $int7);
+~script1485($int2, -1);
+~script692($int1, $int3, $int4, $int5, $int6);
+%varc110 = clientclock;
+return();
+}
+}
+if($int9 > 0) {
+$int10 = add($int8, multiply(sub($int9, 1), 5));
+$int11 = ~script1484($int10);
+if($int11 == -1) {
+sound_synth(1859, 1, 0);
+~script1485($int10, $int7);
+~script1485($int2, -1);
+~script692($int1, $int3, $int4, $int5, $int6);
+%varc110 = clientclock;
+return();
+}
+}
+if($int9 < sub(5, 1)) {
+$int10 = add($int8, multiply(add($int9, 1), 5));
+$int11 = ~script1484($int10);
+if($int11 == -1) {
+sound_synth(1859, 1, 0);
+~script1485($int10, $int7);
+~script1485($int2, -1);
+~script692($int1, $int3, $int4, $int5, $int6);
+%varc110 = clientclock;
+return();
+}
+}
+sound_synth(2304, 1, 0);
+return();

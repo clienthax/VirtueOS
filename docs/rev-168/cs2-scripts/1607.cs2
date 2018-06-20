@@ -1,0 +1,31 @@
+[clientscript,script1607](int $int0, int $int1, int $int2)
+cc_deleteall($int0);
+$int3 = 0;
+$int4 = inv_size(583);
+$int5 = 0;
+$int6 = -1;
+$int7 = 0;
+while($int3 < $int4) {
+$int6 = inv_getobj(583, $int3);
+cc_create($int0, Graphic, $int3);
+cc_setsize(36, 32, 0, 0);
+$int5 = multiply(divide($int3, 8), add(32, 8));
+cc_setposition(multiply(modulo($int3, 8), add(36, 8)), $int5, 0, 0);
+cc_setoutline(1);
+cc_setgraphicshadow(0x333333);
+$int7 = ~script1608($int6, inv_getnum(583, $int3), $int7, $int1);
+cc_setdragdeadzone(5);
+cc_setdragdeadtime(5);
+$int3 = add($int3, 1);
+}
+$int8 = 0;
+$int5 = add($int5, 32);
+if($int5 > if_getheight($int0)) {
+$int8 = if_getscrolly($int0);
+if_setscrollsize(0, $int5, $int0);
+} else {
+if_setscrollsize(0, 0, $int0);
+}
+~script72($int1, $int0, $int8);
+if_settext(tostring($int7), $int2);
+return();

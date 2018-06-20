@@ -1,0 +1,18 @@
+[clientscript,script729]
+if_settext(~script46(inv_total(93, 13192), ","), 64:6);
+if_settext(~script46(inv_total(93, 995), ","), 64:13);
+if_settext(tostring(%varc67), 64:26);
+if_settext(~script46(%varc68, ","), 64:32);
+if_settext(~script46(multiply(%varc67, %varc68), ","), 64:37);
+if(multiply(%varc67, %varc68) > inv_total(93, 995)) {
+if_settext("You do not have enough coins for this transaction.", 64:27);
+~script730;
+} else {
+if_settext("", 64:27);
+if(%varc67 <= 0) {
+~script730;
+} else {
+~script731;
+}
+}
+return();

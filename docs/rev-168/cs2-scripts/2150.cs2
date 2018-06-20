@@ -1,0 +1,25 @@
+[clientscript,script2150](int $int0, int $int1)
+$string0 = "Function-mode toggle";
+$string1 = " (hidden)";
+if(%varbit6257 > 0) {
+switch(%varbit6255) {
+case 2:
+$string1 = " (single-tap,";
+if(%varbit6256 == 0) {
+$string1 = append($string1, " off)");
+} else {
+$string1 = append($string1, " on)");
+}
+case 3:
+$string1 = " (show keyboard)";
+default:
+$string1 = " (displayed)";
+}
+if_setgraphic(762, $int0);
+} else {
+if_setgraphic(761, $int0);
+}
+$string0 = append($string0, $string1);
+if_setonmouserepeat("script526($int0, -1, $int1, $string0, 25, 190)", $int0);
+%varc2 = 0;
+return();

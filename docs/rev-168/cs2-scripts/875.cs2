@@ -1,0 +1,47 @@
+[clientscript,script875](int $int0, int $int1, int $int2, int $int3)
+$int4 = $int2;
+if($int4 < 334) {
+$int4 = 334;
+} else {
+if($int4 > 1000) {
+$int4 = 1000;
+}
+}
+$int5 = nth_root(sub($int4, 334), 2);
+$int6 = nth_root(sub(1000, 334), 2);
+if_setmodelangle(0, 0, 0, 0, 0, sub(150, interpolate(0, $int5, 0, $int6, 100)), $int3);
+$int7 = 0;
+$int8 = 334;
+if($int4 > $int8) {
+$int8 = $int4;
+}
+if(cc_find($int0, 0) == 1) {
+if(.cc_find($int0, 1) == 1) {
+if($int2 < $int8) {
+cc_sethide(1);
+.cc_sethide(1);
+} else {
+cc_sethide(0);
+.cc_sethide(0);
+$int7 = divide(sub($int2, $int8), 2);
+cc_setsize(0, $int7, 1, 0);
+.cc_setsize(0, $int7, 1, 0);
+}
+}
+}
+if(cc_find($int0, 2) == 1) {
+if(.cc_find($int0, 3) == 1) {
+if($int1 < $int8) {
+cc_sethide(1);
+.cc_sethide(1);
+} else {
+cc_sethide(0);
+.cc_sethide(0);
+$int7 = divide(sub($int1, $int8), 2);
+cc_setsize($int7, 0, 0, 1);
+.cc_setsize($int7, 0, 0, 1);
+}
+}
+}
+if_setontimer("script874($int0, $int1, $int2, $int3)", $int0);
+return();

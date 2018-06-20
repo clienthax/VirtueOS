@@ -1,0 +1,89 @@
+[clientscript,script641](int $int0, int $int1, int $int2)
+cc_deleteall($int0);
+$int3 = if_getwidth($int0);
+$int4 = if_getheight($int0);
+$int5 = add(divide(sub($int3, multiply(36, 6)), 5), 36);
+$int6 = 0;
+$int7 = 0;
+$int8 = -1;
+$int9 = 0;
+while($int9 <= 39) {
+cc_create($int0, Graphic, $int9);
+if($int9 < 32) {
+if(testbit(%varp864, $int9) == 1 || testbit(%varp1416, sub($int9, 32)) == 1) {
+}
+if($int9 >= 32 && testbit(%varp1416, sub($int9, 32)) == 1) {
+if($int9 == 11) {
+$int8 = 1686;
+} else {
+if($int9 == 15) {
+$int8 = 1687;
+} else {
+if($int9 == 19) {
+$int8 = 1688;
+} else {
+if($int9 == 25) {
+$int8 = 1691;
+} else {
+if($int9 == 27) {
+$int8 = 1689;
+} else {
+if($int9 == 31) {
+$int8 = 1690;
+} else {
+if($int9 == 14) {
+$int8 = 285;
+} else {
+if($int9 == 36) {
+$int8 = 1893;
+} else {
+if($int9 == 34) {
+$int8 = 1711;
+} else {
+$int8 = -1;
+}
+}
+}
+}
+}
+}
+}
+}
+}
+$int7 = ~script642(enum(int, namedobj, 985, $int9), $int8, $int5, $int6);
+$int6 = add($int6, 1);
+} else {
+} else {
+cc_sethide(1);
+}
+}
+$int9 = add($int9, 1);
+}
+$int10 = -1;
+$int11 = 0;
+$int12 = inv_size(517);
+while($int11 < $int12) {
+cc_create($int0, Graphic, $int9);
+$int10 = inv_getobj(517, $int11);
+if($int10 != -1) {
+$int7 = ~script642($int10, -1, $int5, $int6);
+$int6 = add($int6, 1);
+} else {
+cc_sethide(1);
+}
+$int11 = add($int11, 1);
+$int9 = add($int9, 1);
+}
+if($int6 > 0) {
+$int7 = add($int7, 32);
+}
+if($int7 > $int4) {
+if_setscrollsize(0, $int7, $int0);
+if_setscrollpos(0, $int2, $int0);
+} else {
+$int7 = 0;
+if_setscrollsize(0, 0, $int0);
+if_setscrollpos(0, 0, $int0);
+}
+~script72($int1, $int0, $int7);
+return();

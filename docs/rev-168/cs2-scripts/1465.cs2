@@ -1,0 +1,25 @@
+[clientscript,script1465](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9)
+$int10 = 10;
+if_setposition(0, $int10, 1, 0, $int4);
+if_setposition(0, add($int10, 20), 1, 0, $int5);
+$string0 = "Monster loot notifications may be displayed when you receive items exceeding the specified value.";
+if_setonmouserepeat("script526(-2147483645, -1, $int3, $string0, 25, 165)", $int4);
+if_setonmouseleave("script40($int3)", $int4);
+$int10 = add($int10, 40);
+$int10 = ~script1466($int10, $int6, "Untradeable loot notifications:", "Off", "On", $int3, "If loot notifications are enabled above, you can choose whether they include untradeable loot.", $int6, $int7);
+$int10 = ~script1466($int10, $int7, "Boss kill-count updates:", "Unfiltered", "Filtered", $int3, "Boss kill-count updates can be blocked by the game message spam-filter.", $int6, $int7);
+$int10 = add($int10, 10);
+if_setposition(0, $int10, 1, 0, $int8);
+if_setposition(0, add($int10, 20), 1, 0, $int9);
+$string0 = "A warning may be displayed if you attempt to drop items exceeding the specified value.";
+if_setonmouserepeat("script526(-2147483645, -1, $int3, $string0, 25, 165)", $int8);
+if_setonmouseleave("script40($int3)", $int8);
+$int10 = add($int10, 40);
+if($int10 > if_getheight($int1)) {
+if_setscrollsize(0, $int10, $int1);
+} else {
+if_setscrollsize(0, 0, $int1);
+}
+if_setscrollpos(0, 0, $int1);
+~scrollbar_vertical($int2, $int1, 792, 789, 790, 791, 773, 788);
+return();

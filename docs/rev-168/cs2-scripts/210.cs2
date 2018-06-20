@@ -1,0 +1,28 @@
+[proc,script210](int $int0, int $int1, string $string0)(int)
+if(%varc41 != 5) {
+return(0);
+}
+if(string_length(%varcstr25) <= 0) {
+return(0);
+}
+$string1 = "";
+if($int0 == 2 || $int0 == 1 || $int0 == 3 || $int0 == 6 || $int0 == 7 || $int0 == 9) {
+$string1 = removetags($string0);
+if(compare($string1, removetags(chat_playername())) == 0) {
+return(1);
+}
+if(compare($string1, removetags(%varcstr25)) == 0) {
+if($int0 == 1 || $int0 == 7) {
+return(1);
+}
+if(chat_getfilter_trade == 0) {
+return(1);
+}
+if(chat_getfilter_trade == 1) {
+if($int1 == 1) {
+return(1);
+}
+}
+}
+}
+return(0);

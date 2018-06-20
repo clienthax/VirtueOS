@@ -1,0 +1,133 @@
+[clientscript,script1317](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = inv_getobj(95, $int0);
+if($int5 == -1) {
+return();
+}
+if(oc_unplaceholder($int5) != $int5) {
+sound_synth(2277, 1, 0);
+mes("You can release placeholders by clicking on them.");
+return();
+}
+~script41($int4);
+if(.cc_find($int2, 1) == 1) {
+.cc_sethide(1);
+}
+if_sethide(0, $int3);
+cc_deleteall($int3);
+$int6 = 0;
+$int7 = inv_getnum(95, $int0);
+$string0 = "<~script46($int7, ",")> <col=ffffff>x</col> <oc_name($int5)>";
+$string1 = "Are you <col=ffffff>sure</col> you<br>want to destroy it?";
+if($int7 > 1) {
+$string1 = "Are you <col=ffffff>sure</col> you want<br>to destroy <col=ffffff>all of them</col>?";
+}
+$int8 = add(parawidth(512, 495, $string0), 67);
+$int9 = add(parawidth(512, 495, $string1), 170);
+if($int8 < $int9) {
+$int8 = $int9;
+}
+$int9 = if_getwidth(if_getlayer($int1));
+if($int8 > $int9) {
+$int8 = $int9;
+}
+cc_create($int3, Graphic, $int6);
+$int6 = add($int6, 1);
+cc_setsize($int8, 120, 0, 0);
+cc_setposition(0, 0, 1, 1);
+cc_setgraphic(1040);
+cc_settiling(1);
+while($int6 <= $int0) {
+cc_create($int3, Rectangle, $int6);
+$int6 = add($int6, 1);
+cc_sethide(1);
+}
+cc_create($int3, Text, $int6);
+$int6 = add($int6, 1);
+cc_setsize(85, 22, 0, 0);
+cc_setposition(0, 40, 1, 1);
+cc_setobject($int5, $int7);
+cc_setopbase("<col=ff9040><oc_name($int5)></col>");
+.cc_create($int3, Graphic, $int6);
+$int6 = add($int6, 1);
+.cc_setsize(85, 22, 0, 0);
+.cc_setposition(0, 40, 1, 1);
+.cc_setgraphic(812);
+.cc_create($int3, Text, $int6);
+$int6 = add($int6, 1);
+.cc_setsize(85, 22, 0, 0);
+.cc_setposition(0, 40, 1, 1);
+.cc_settextalign(1, 1, 0);
+.cc_settextfont(494);
+.cc_settextshadow(1);
+.cc_settext("Wait");
+.cc_setcolor(0x8F8F8F);
+cc_setontimer("script1318($int7, $int3, cc_getid, .cc_getid, add(clientclock, 100))");
+cc_create($int3, Text, $int6);
+$int6 = add($int6, 1);
+cc_setsize($int8, 20, 0, 0);
+cc_setposition(0, -45, 1, 1);
+cc_setcolor(0xFF981F);
+cc_settextalign(1, 2, 0);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settext($string0);
+cc_create($int3, Graphic, $int6);
+$int6 = add($int6, 1);
+cc_setsize(16, 16, 0, 0);
+cc_setposition(sub(divide($int8, 2), 18), -44, 1, 1);
+$int10 = 831;
+cc_setgraphic($int10);
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int10, -1)");
+$int10 = 832;
+cc_setonmouseover("script229(-2147483645, -2147483643, $int10, -1)");
+cc_setop(1, "Close");
+cc_setonop("script1319(1, $int3)");
+$int11 = sub(divide($int8, 2), 42);
+cc_create($int3, Model, $int6);
+$int6 = add($int6, 1);
+.cc_create($int3, Model, $int6);
+$int6 = add($int6, 1);
+cc_setsize(80, 120, 0, 0);
+.cc_setsize(80, 120, 0, 0);
+cc_setposition($int11, 0, 1, 1);
+.cc_setposition($int11, 0, 1, 1);
+cc_setmodel(9037);
+.cc_setmodel(9056);
+cc_setmodelangle(15, 400, 141, 220, 0, 2500);
+.cc_setmodelangle(15, 400, 141, 220, 0, 2500);
+.cc_setmodelanim(2439);
+cc_create($int3, Model, $int6);
+$int6 = add($int6, 1);
+cc_setsize(40, 40, 0, 0);
+cc_setposition(sub(0, sub(divide($int8, 2), 42)), 0, 1, 1);
+if($int5 == 995 || $int5 == 10476) {
+if($int7 > 10) {
+cc_setobject($int5, 10);
+} else {
+} else {
+cc_setobject(oc_uncert($int5), $int7);
+}
+}
+cc_create($int3, Text, $int6);
+$int6 = add($int6, 1);
+cc_setsize($int8, 120, 0, 0);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0xFF981F);
+cc_settextalign(1, 1, 0);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settext($string1);
+cc_create($int3, Rectangle, $int6);
+$int6 = add($int6, 1);
+cc_setsize($int8, 120, 0, 0);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0x0E0E0C);
+cc_setfill(0);
+cc_create($int3, Rectangle, $int6);
+$int6 = add($int6, 1);
+cc_setsize(sub($int8, 2), 118, 0, 0);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0x474745);
+cc_setfill(0);
+sound_synth(2266, 1, 0);
+return();

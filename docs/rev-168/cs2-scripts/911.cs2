@@ -1,0 +1,15 @@
+[clientscript,script911](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11)
+if(cc_find($int0, $int1) == 1) {
+cc_setcolor($int2);
+cc_settrans($int3);
+cc_setposition($int4, $int5, $int6, $int7);
+cc_setsize($int8, $int9, $int10, $int11);
+} else {
+cc_create($int0, Rectangle, $int1);
+cc_setfill(1);
+cc_setcolor($int2);
+cc_settrans($int3);
+cc_setposition($int4, $int5, $int6, $int7);
+cc_setsize($int8, $int9, $int10, $int11);
+}
+return();

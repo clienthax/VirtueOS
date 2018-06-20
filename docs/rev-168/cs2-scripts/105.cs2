@@ -1,0 +1,14 @@
+[clientscript,script105]
+if(%varc11 == 1) {
+if_close();
+}
+~script677;
+if_settext("Enter name of player to add to list", 162:36);
+%varc5 = 4;
+~script222("");
+$string0 = "";
+if_setonkey("script112(-2147483640, -2147483639, $string0)", 162:37);
+if(~script1972 == 1) {
+~script1983(0, 12);
+}
+return();

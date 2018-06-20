@@ -1,0 +1,401 @@
+[clientscript,poll_storequestion](int $int0, string $string0)
+if($int0 < 50) {
+if($int0 < 25) {
+if($int0 < 13) {
+if($int0 < 6) {
+if($int0 <= 0) {
+%varcstr26 = $string0;
+} else {
+if($int0 == 1) {
+%varcstr29 = $string0;
+} else {
+if($int0 == 2) {
+%varcstr30 = $string0;
+} else {
+if($int0 == 3) {
+%varcstr31 = $string0;
+} else {
+if($int0 == 4) {
+%varcstr32 = $string0;
+} else {
+%varcstr33 = $string0;
+}
+}
+}
+}
+}
+} else {
+if($int0 == 6) {
+%varcstr34 = $string0;
+} else {
+if($int0 == 7) {
+%varcstr35 = $string0;
+} else {
+if($int0 == 8) {
+%varcstr36 = $string0;
+} else {
+if($int0 == 9) {
+%varcstr37 = $string0;
+} else {
+if($int0 == 10) {
+%varcstr38 = $string0;
+} else {
+if($int0 == 11) {
+%varcstr39 = $string0;
+} else {
+%varcstr40 = $string0;
+}
+}
+}
+}
+}
+}
+}
+} else {
+if($int0 < 19) {
+if($int0 == 13) {
+%varcstr41 = $string0;
+} else {
+if($int0 == 14) {
+%varcstr42 = $string0;
+} else {
+if($int0 == 15) {
+%varcstr43 = $string0;
+} else {
+if($int0 == 16) {
+%varcstr44 = $string0;
+} else {
+if($int0 == 17) {
+%varcstr45 = $string0;
+} else {
+%varcstr46 = $string0;
+}
+}
+}
+}
+}
+} else {
+if($int0 == 19) {
+%varcstr47 = $string0;
+} else {
+if($int0 == 20) {
+%varcstr48 = $string0;
+} else {
+if($int0 == 21) {
+%varcstr49 = $string0;
+} else {
+if($int0 == 22) {
+%varcstr50 = $string0;
+} else {
+if($int0 == 23) {
+%varcstr51 = $string0;
+} else {
+%varcstr52 = $string0;
+}
+}
+}
+}
+}
+}
+}
+} else {
+if($int0 < 38) {
+if($int0 < 32) {
+if($int0 == 25) {
+%varcstr53 = $string0;
+} else {
+if($int0 == 26) {
+%varcstr54 = $string0;
+} else {
+if($int0 == 27) {
+%varcstr55 = $string0;
+} else {
+if($int0 == 28) {
+%varcstr56 = $string0;
+} else {
+if($int0 == 29) {
+%varcstr57 = $string0;
+} else {
+if($int0 == 30) {
+%varcstr58 = $string0;
+} else {
+%varcstr59 = $string0;
+}
+}
+}
+}
+}
+}
+} else {
+if($int0 == 32) {
+%varcstr60 = $string0;
+} else {
+if($int0 == 33) {
+%varcstr61 = $string0;
+} else {
+if($int0 == 34) {
+%varcstr62 = $string0;
+} else {
+if($int0 == 35) {
+%varcstr63 = $string0;
+} else {
+if($int0 == 36) {
+%varcstr64 = $string0;
+} else {
+%varcstr65 = $string0;
+}
+}
+}
+}
+}
+}
+} else {
+if($int0 < 44) {
+if($int0 == 38) {
+%varcstr66 = $string0;
+} else {
+if($int0 == 39) {
+%varcstr67 = $string0;
+} else {
+if($int0 == 40) {
+%varcstr68 = $string0;
+} else {
+if($int0 == 41) {
+%varcstr69 = $string0;
+} else {
+if($int0 == 42) {
+%varcstr70 = $string0;
+} else {
+%varcstr71 = $string0;
+}
+}
+}
+}
+}
+} else {
+if($int0 == 44) {
+%varcstr72 = $string0;
+} else {
+if($int0 == 45) {
+%varcstr73 = $string0;
+} else {
+if($int0 == 46) {
+%varcstr74 = $string0;
+} else {
+if($int0 == 47) {
+%varcstr75 = $string0;
+} else {
+if($int0 == 48) {
+%varcstr76 = $string0;
+} else {
+%varcstr77 = $string0;
+}
+}
+}
+}
+}
+}
+}
+}
+} else {
+if($int0 < 75) {
+if($int0 < 63) {
+if($int0 < 56) {
+if($int0 == 50) {
+%varcstr78 = $string0;
+} else {
+if($int0 == 51) {
+%varcstr79 = $string0;
+} else {
+if($int0 == 52) {
+%varcstr80 = $string0;
+} else {
+if($int0 == 53) {
+%varcstr81 = $string0;
+} else {
+if($int0 == 54) {
+%varcstr82 = $string0;
+} else {
+%varcstr83 = $string0;
+}
+}
+}
+}
+}
+} else {
+if($int0 == 56) {
+%varcstr84 = $string0;
+} else {
+if($int0 == 57) {
+%varcstr85 = $string0;
+} else {
+if($int0 == 58) {
+%varcstr86 = $string0;
+} else {
+if($int0 == 59) {
+%varcstr87 = $string0;
+} else {
+if($int0 == 60) {
+%varcstr88 = $string0;
+} else {
+if($int0 == 61) {
+%varcstr89 = $string0;
+} else {
+%varcstr90 = $string0;
+}
+}
+}
+}
+}
+}
+}
+} else {
+if($int0 < 69) {
+if($int0 == 63) {
+%varcstr91 = $string0;
+} else {
+if($int0 == 64) {
+%varcstr92 = $string0;
+} else {
+if($int0 == 65) {
+%varcstr93 = $string0;
+} else {
+if($int0 == 66) {
+%varcstr94 = $string0;
+} else {
+if($int0 == 67) {
+%varcstr95 = $string0;
+} else {
+%varcstr96 = $string0;
+}
+}
+}
+}
+}
+} else {
+if($int0 == 69) {
+%varcstr97 = $string0;
+} else {
+if($int0 == 70) {
+%varcstr98 = $string0;
+} else {
+if($int0 == 71) {
+%varcstr99 = $string0;
+} else {
+if($int0 == 72) {
+%varcstr100 = $string0;
+} else {
+if($int0 == 73) {
+%varcstr101 = $string0;
+} else {
+%varcstr102 = $string0;
+}
+}
+}
+}
+}
+}
+}
+} else {
+if($int0 < 88) {
+if($int0 < 82) {
+if($int0 == 75) {
+%varcstr103 = $string0;
+} else {
+if($int0 == 76) {
+%varcstr104 = $string0;
+} else {
+if($int0 == 77) {
+%varcstr105 = $string0;
+} else {
+if($int0 == 78) {
+%varcstr106 = $string0;
+} else {
+if($int0 == 79) {
+%varcstr107 = $string0;
+} else {
+if($int0 == 80) {
+%varcstr108 = $string0;
+} else {
+%varcstr109 = $string0;
+}
+}
+}
+}
+}
+}
+} else {
+if($int0 == 82) {
+%varcstr110 = $string0;
+} else {
+if($int0 == 83) {
+%varcstr111 = $string0;
+} else {
+if($int0 == 84) {
+%varcstr112 = $string0;
+} else {
+if($int0 == 85) {
+%varcstr113 = $string0;
+} else {
+if($int0 == 86) {
+%varcstr114 = $string0;
+} else {
+%varcstr115 = $string0;
+}
+}
+}
+}
+}
+}
+} else {
+if($int0 < 94) {
+if($int0 == 88) {
+%varcstr116 = $string0;
+} else {
+if($int0 == 89) {
+%varcstr117 = $string0;
+} else {
+if($int0 == 90) {
+%varcstr118 = $string0;
+} else {
+if($int0 == 91) {
+%varcstr119 = $string0;
+} else {
+if($int0 == 92) {
+%varcstr120 = $string0;
+} else {
+%varcstr121 = $string0;
+}
+}
+}
+}
+}
+} else {
+if($int0 == 94) {
+%varcstr122 = $string0;
+} else {
+if($int0 == 95) {
+%varcstr123 = $string0;
+} else {
+if($int0 == 96) {
+%varcstr124 = $string0;
+} else {
+if($int0 == 97) {
+%varcstr125 = $string0;
+} else {
+if($int0 == 98) {
+%varcstr126 = $string0;
+} else {
+if($int0 == 99) {
+%varcstr127 = $string0;
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+return();

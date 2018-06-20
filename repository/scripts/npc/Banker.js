@@ -26,7 +26,7 @@ var NpcListener = Java.extend(Java.type('com.oldscape.shared.script.listeners.Np
             player.sendOpenWidgetSub(161, 66, 15, false);
             player.sendCS2Script(1495, 786487, 786450, "Non-members' capacity: 400<br>+8 for your PIN<br>+8 for your Authenticator");
 
-            player.sendSetWidgetText(12, 18, ContainerConstants.BANK_CAPACITY + "");
+            player.sendWidgetText(12, 18, ContainerConstants.BANK_CAPACITY + "");
 
             var tabItems = new Array();
             tabItems = player.getBankTabItems();

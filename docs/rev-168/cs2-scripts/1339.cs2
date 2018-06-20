@@ -1,0 +1,24 @@
+[clientscript,script1339](int $int0)
+$int1 = 0;
+$int2 = if_getwidth($int0);
+$int3 = 0;
+$int4 = -1;
+$int5 = 8;
+$int6 = 5;
+$int7 = divide(sub($int2, multiply(36, $int6)), add($int6, 1));
+$int8 = divide(sub(sub(if_getheight($int0), multiply(32, $int6)), $int5), add($int6, 1));
+cc_deleteall($int0);
+while($int1 < 25) {
+if(testbit(%varp1356, $int1) == 1) {
+$int4 = 20356;
+} else {
+$int4 = 20357;
+}
+cc_create($int0, Graphic, $int1);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add(add($int7, multiply(modulo($int1, $int6), add(36, $int7))), 1), add($int5, multiply(divide($int1, $int6), add(32, $int8))), 0, 0);
+cc_setobject_nonum($int4, 0);
+cc_setoutline(1);
+$int1 = add($int1, 1);
+}
+return();

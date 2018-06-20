@@ -1,0 +1,4 @@
+[clientscript,script1224](int $int0, int $int1)
+if_sethide(1, $int1);
+if_setontimer("script1225($int0)", $int0);
+return();

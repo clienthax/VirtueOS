@@ -1,0 +1,19 @@
+[clientscript,script498](string $string0, string $string1)
+$int0 = if_getwidth(380:4);
+$int1 = paraheight($int0, 495, $string0);
+$int2 = paraheight($int0, 495, $string1);
+if($int2 > $int1) {
+$int1 = $int2;
+}
+$int1 = add(multiply($int1, 12), 3);
+if($int1 > if_getheight(380:4)) {
+if_setscrollsize(0, $int1, 380:4);
+} else {
+if_setscrollsize(0, 0, 380:4);
+}
+if_setsize($int0, $int1, 0, 0, 380:3);
+if_setsize($int0, $int1, 0, 0, 380:6);
+if_settext($string0, 380:3);
+if_settext($string1, 380:6);
+~scrollbar_vertical(24903685, 24903684, 792, 789, 790, 791, 773, 788);
+return();

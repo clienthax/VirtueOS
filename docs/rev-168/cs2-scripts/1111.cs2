@@ -1,0 +1,23 @@
+[clientscript,script1111](int $int0, int $int1, int $int2, int $int3)
+$string0 = "Hide private chat when the chatbox is hidden<br>(not applicable)";
+if(%varp287 == 0 || determinateDisplayMode() == 1) {
+if_setgraphic(761, $int0);
+if_settrans(100, $int1);
+if_setonop("null()", $int0);
+} else {
+if(%varbit4089 <= 0) {
+$string0 = "Hide private chat when the chatbox is hidden<br>(currently off)";
+if_setgraphic(761, $int0);
+if_settrans(0, $int1);
+if_setonop("script1109(-2147483644, $int0, $int1, $int2, 1)", $int0);
+} else {
+$string0 = "Hide private chat when the chatbox is hidden<br>(currently on)";
+if_setgraphic(762, $int0);
+if_settrans(0, $int1);
+if_setonop("script1109(-2147483644, $int0, $int1, $int2, 0)", $int0);
+}
+}
+if_setonmouserepeat("script526($int0, -1, $int2, $string0, 25, 190)", $int0);
+%varc2 = 0;
+if_setontimer("script1110($int3, $int0, $int1, $int2)", $int0);
+return();

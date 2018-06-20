@@ -1,0 +1,5 @@
+[clientscript,script2222]
+~script2224;
+%varc204 = ~min(add(%varc204, 1), 12);
+opcode3129(6, %varc204);
+return();

@@ -1,0 +1,76 @@
+[clientscript,script1468](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = 0;
+if($int0 == $int3) {
+if(%varbit5399 == 0) {
+if(cc_find($int0, 0) == 1) {
+if(.cc_find($int0, $int1) == 1) {
+.cc_setgraphic(697);
+.cc_settrans(120);
+cc_setcolor(0x7F7F7F);
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+cc_setonop("null()");
+}
+}
+if(cc_find($int0, 1) == 1) {
+if(.cc_find($int0, $int2) == 1) {
+.cc_setgraphic(697);
+.cc_settrans(120);
+cc_setcolor(0x7F7F7F);
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+cc_setonop("null()");
+}
+}
+return();
+}
+$int5 = %varbit5402;
+} else {
+if($int0 == $int4) {
+$int5 = %varbit4930;
+}
+}
+if($int5 == 1) {
+if(cc_find($int0, 1) == 1) {
+if(.cc_find($int0, $int2) == 1) {
+.cc_setgraphic(699);
+.cc_settrans(0);
+cc_setcolor(0xFFA82F);
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+cc_setonop("null()");
+}
+}
+if(cc_find($int0, 0) == 1) {
+if(.cc_find($int0, $int1) == 1) {
+.cc_setgraphic(697);
+.cc_settrans(0);
+cc_setcolor(0xFF981F);
+cc_setonmouserepeat("script85(-2147483645, -2147483643, 16777215)");
+cc_setonmouseleave("script85(-2147483645, -2147483643, 16750623)");
+cc_setonop("script1469(-2147483644, 0, $int0, $int1, $int2, $int3, $int4)");
+}
+}
+} else {
+if(cc_find($int0, 0) == 1) {
+if(.cc_find($int0, $int1) == 1) {
+.cc_setgraphic(699);
+.cc_settrans(0);
+cc_setcolor(0xFFA82F);
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+cc_setonop("null()");
+}
+}
+if(cc_find($int0, 1) == 1) {
+if(.cc_find($int0, $int2) == 1) {
+.cc_setgraphic(697);
+.cc_settrans(0);
+cc_setcolor(0xFF981F);
+cc_setonmouserepeat("script85(-2147483645, -2147483643, 16777215)");
+cc_setonmouseleave("script85(-2147483645, -2147483643, 16750623)");
+cc_setonop("script1469(-2147483644, 1, $int0, $int1, $int2, $int3, $int4)");
+}
+}
+}
+return();

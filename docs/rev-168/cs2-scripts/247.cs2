@@ -1,0 +1,14 @@
+[proc,inzone](int $int0, int $int1, int $int2)(int)
+$int3 = coordx($int2);
+if($int3 < coordx($int0) || $int3 > coordx($int1)) {
+return(0);
+}
+$int3 = coordy($int2);
+if($int3 < coordy($int0) || $int3 > coordy($int1)) {
+return(0);
+}
+$int3 = coordz($int2);
+if($int3 < coordz($int0) || $int3 > coordz($int1)) {
+return(0);
+}
+return(1);

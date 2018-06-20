@@ -1,0 +1,81 @@
+[clientscript,script1206](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12)
+if_sethide(1, $int8);
+if_sethide(1, $int9);
+if_sethide(1, $int10);
+if_sethide(1, $int11);
+if_sethide(1, $int12);
+$int13 = 1077;
+if(cc_find($int3, 0) == 1) {
+cc_setgraphic($int13);
+}
+if(cc_find($int4, 0) == 1) {
+cc_setgraphic($int13);
+}
+if(cc_find($int5, 0) == 1) {
+cc_setgraphic($int13);
+}
+if(cc_find($int6, 0) == 1) {
+cc_setgraphic($int13);
+}
+if(cc_find($int7, 0) == 1) {
+cc_setgraphic($int13);
+}
+if_setonmouserepeat("script1207(-2147483645, $int2, 3)", $int3);
+if_setonmouserepeat("script1207(-2147483645, $int2, 2)", $int4);
+if_setonmouserepeat("script1207(-2147483645, $int2, 4)", $int5);
+if_setonmouserepeat("script1207(-2147483645, $int2, 5)", $int6);
+if_setonmouserepeat("script1207(-2147483645, $int2, 1)", $int7);
+if_setonmouseleave("script229(-2147483645, 0, $int13, $int2)", $int3);
+if_setonmouseleave("script229(-2147483645, 0, $int13, $int2)", $int4);
+if_setonmouseleave("script229(-2147483645, 0, $int13, $int2)", $int5);
+if_setonmouseleave("script229(-2147483645, 0, $int13, $int2)", $int6);
+if_setonmouseleave("script229(-2147483645, 0, $int13, $int2)", $int7);
+if_setonop("script1205(3, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12)", $int3);
+if_setonop("script1205(2, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12)", $int4);
+if_setonop("script1205(4, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12)", $int5);
+if_setonop("script1205(5, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12)", $int6);
+if_setonop("script1205(1, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12)", $int7);
+$int14 = -1;
+$int15 = -1;
+if(%varc79 == 3) {
+$int15 = $int8;
+$int14 = $int3;
+} else {
+if(%varc79 == 2) {
+$int15 = $int9;
+$int14 = $int4;
+} else {
+if(%varc79 == 4) {
+$int15 = $int10;
+$int14 = $int5;
+} else {
+if(%varc79 == 5) {
+$int15 = $int11;
+$int14 = $int6;
+} else {
+if(%varc79 == 1) {
+$int15 = $int12;
+$int14 = $int7;
+} else {
+return();
+}
+}
+}
+}
+}
+if_sethide(0, $int15);
+if(cc_find($int14, 0) == 1) {
+cc_setgraphic(1079);
+}
+if_setonmouserepeat("script526(-2147483645, -1, $int2, enum(int, string, 1264, %varc79), 25, 512)", $int14);
+if_setonmouseleave("script40($int2)", $int14);
+if_setonop("script489(0, 0)", $int14);
+$int16 = if_getheight($int15);
+if($int16 > if_getheight($int0)) {
+if_setscrollsize(0, $int16, $int0);
+~script72($int1, $int0, if_getscrolly($int0));
+} else {
+if_setscrollsize(0, 0, $int0);
+~script72($int1, $int0, 0);
+}
+return();

@@ -1,0 +1,161 @@
+[clientscript,script2010](int $int0, int $int1, int $int2, int $int3)
+$int4 = divide(if_getwidth($int1), 2);
+cc_deleteall($int1);
+$int5 = 0;
+$int6 = 0;
+$int7 = 0;
+$int8 = 0;
+$int9 = 0;
+$int10 = enum(int, namedobj, 1779, $int9);
+while($int10 != -1) {
+cc_create($int1, Rectangle, $int5);
+$int5 = add($int5, 1);
+cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+if(modulo($int9, 2) == 0) {
+cc_setsize($int4, 40, 0, 0);
+$int7 = multiply($int6, 40);
+cc_setposition(0, $int7, 0, 0);
+if(modulo($int6, 2) == 0) {
+$int8 = 245;
+} else {
+$int8 = 235;
+}
+} else {
+cc_setsize($int4, 40, 1, 0);
+$int7 = multiply($int6, 40);
+cc_setposition(0, $int7, 2, 0);
+if(modulo($int6, 2) == 0) {
+$int8 = 235;
+} else {
+$int8 = 245;
+}
+$int6 = add($int6, 1);
+}
+cc_settrans($int8);
+cc_setonmouseover("cc_settrans(-2147483645, -2147483643, 225, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, $int8, -1)");
+cc_setop(1, "Value");
+cc_setop(10, "Examine");
+if($int10 == 21539) {
+cc_setop(2, "Unlock");
+} else {
+if($int10 == 21697) {
+cc_setop(2, "Buy");
+} else {
+cc_setop(2, "Buy-1");
+cc_setop(3, "Buy-5");
+cc_setop(4, "Buy-10");
+if(~script2082 == 0) {
+cc_setop(5, "Buy-50");
+}
+cc_setop(6, "Buy-X");
+}
+}
+if($int10 == 21539) {
+cc_setopbase("<col=ff9040>Large water container</col>");
+}
+cc_setopbase("<col=ff9040><oc_name($int10)></col>");
+cc_setonop("script489(-2147483644, 1086)");
+$int9 = add($int9, 1);
+$int10 = enum(int, namedobj, 1779, $int9);
+}
+if($int9 > 0) {
+if(modulo($int9, 2) == 1) {
+cc_create($int1, Rectangle, $int5);
+$int5 = add($int5, 1);
+cc_setsize($int4, 40, 1, 0);
+cc_setposition(0, $int7, 2, 0);
+cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+if(modulo($int6, 2) == 0) {
+cc_settrans(235);
+} else {
+cc_settrans(245);
+}
+}
+$int7 = add($int7, 40);
+}
+if_setscrollpos(0, 0, $int1);
+if($int7 > if_getheight($int1)) {
+if_setscrollsize(0, $int7, $int1);
+} else {
+if_setscrollsize(0, 0, $int1);
+cc_create($int1, Rectangle, $int5);
+$int5 = add($int5, 1);
+cc_setsize(0, $int7, 1, 1);
+cc_setposition(0, 0, 1, 2);
+cc_setcolor(0x000000);
+cc_setfill(1);
+cc_settrans(245);
+}
+~scrollbar_vertical($int2, $int1, 792, 789, 790, 791, 773, 788);
+$int11 = divide(sub(40, 32), 2);
+$int12 = add(add(3, 36), 3);
+$int13 = sub($int4, $int12);
+$int14 = 0;
+while($int9 > 0) {
+$int9 = sub($int9, 1);
+if(cc_find($int1, $int9) == 1) {
+$int10 = enum(int, namedobj, 1779, $int9);
+.cc_create($int1, Graphic, $int5);
+$int5 = add($int5, 1);
+.cc_setsize(36, 32, 0, 0);
+.cc_setposition(add(cc_getx, 3), add(cc_gety, $int11), 0, 0);
+.cc_setobject_nonum(oc_uncert($int10), 1);
+.cc_setoutline(1);
+.cc_setgraphicshadow(0x333333);
+.cc_create($int1, Text, $int5);
+$int5 = add($int5, 1);
+.cc_setsize($int13, 27, 0, 0);
+.cc_setposition(add(cc_getx, $int12), cc_gety, 0, 0);
+.cc_setcolor(0xFF981F);
+.cc_settextalign(0, 1, 0);
+.cc_settextshadow(1);
+.cc_settextfont(495);
+if($int10 == 21539) {
+.cc_settext("Large water container");
+} else {
+if($int10 == 21697) {
+.cc_settext("Ultra-fertile soil spell");
+} else {
+.cc_settext(oc_name($int10));
+}
+}
+.cc_create($int1, Text, $int5);
+$int5 = add($int5, 1);
+.cc_setsize($int13, sub(40, 27), 0, 0);
+.cc_setposition(add(cc_getx, $int12), add(cc_gety, 27), 0, 0);
+.cc_setcolor(0xAFAFAF);
+.cc_settextalign(0, 1, 0);
+.cc_settextshadow(1);
+.cc_settextfont(494);
+$int14 = enum(obj, int, 1780, $int10);
+if($int10 == 21539 && %varbit5959 == 1) {
+.cc_settext("<col=ff0000>Already unlocked</col>");
+.cc_settextshadow(0);
+} else {
+if($int10 == 21697 && %varbit5960 == 1) {
+.cc_settext("<col=ff0000>Already unlocked</col>");
+.cc_settextshadow(0);
+} else {
+if($int14 > 1) {
+.cc_settext("<~script46($int14, ",")> points");
+} else {
+if($int14 == 1) {
+.cc_settext("1 point");
+} else {
+if($int14 == 0) {
+.cc_settext("Free");
+} else {
+.cc_settext("Unavailable");
+}
+}
+}
+}
+}
+}
+}
+~script2012($int3, 0);
+if_setonvartransmit("script2011($int3){261}", $int3);
+return();

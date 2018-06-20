@@ -1,0 +1,8 @@
+[clientscript,script717](int $int0, int $int1)
+~script208($int1);
+if_setonmouseover("script772($int1)", $int0);
+if_setonmouseleave("script97($int1)", $int0);
+if_setonhold("script772($int1)", $int0);
+if_setonrelease("script97($int1)", $int0);
+if_setonop("script489(-2147483644, 14)", $int0);
+return();

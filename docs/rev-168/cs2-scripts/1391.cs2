@@ -1,0 +1,40 @@
+[proc,script1391](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, string $string0)(int)
+$int6 = add(parawidth(512, 494, $string0), 10);
+if_setsize($int6, if_getheight($int0), 0, 0, $int0);
+cc_deleteall($int0);
+$int7 = 0;
+if($int1 == $int2) {
+$int7 = ~script836($int0, 0);
+} else {
+$int7 = ~script835($int0, 0);
+}
+cc_create($int0, Text, $int7);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext($string0);
+if($int1 == $int2) {
+if($int1 == $int5) {
+cc_setcolor(0xFFFF00);
+} else {
+cc_setcolor(0xFFFFFF);
+}
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setonop("null()", $int0);
+if_clearops($int0);
+} else {
+if($int1 == $int5) {
+cc_setcolor(0xFFFF00);
+if_setonmouseleave("script85(-2147483645, $int7, 16776960)", $int0);
+} else {
+cc_setcolor(0xFF981F);
+if_setonmouseleave("script85(-2147483645, $int7, 16750623)", $int0);
+}
+if_setonmouserepeat("script85(-2147483645, $int7, 16777215)", $int0);
+if_setonop("script1388(1, $int1, $int3, $int4)", $int0);
+if_setop(1, $string0, $int0);
+}
+return($int6);

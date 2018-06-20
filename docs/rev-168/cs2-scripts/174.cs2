@@ -1,0 +1,6 @@
+[clientscript,script174](int $int0)
+if(%varc42 == $int0) {
+%varc42 = -1;
+~script178;
+}
+return();

@@ -1,0 +1,57 @@
+[clientscript,script690](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+$int7 = 140;
+if(%varp261 == 8) {
+$int7 = 222;
+} else {
+if(%varp261 == 7) {
+$int7 = 221;
+}
+}
+$int8 = -1;
+$int9 = -1;
+$int9 = enum(int, enum, 1865, %varp261);
+$int8 = enum(int, enum, 1864, %varp261);
+if(%varp261 == 7 || %varp261 == 8) {
+if_sethide(1, $int5);
+if_sethide(0, $int6);
+} else {
+if_sethide(0, $int5);
+if_sethide(1, $int6);
+}
+$int10 = -1;
+$int11 = 0;
+while($int11 < $int1) {
+if($int8 != -1 && $int9 != -1) {
+$int10 = inv_getobj($int7, $int11);
+~script1485($int11, enum(obj, int, $int9, $int10));
+if(cc_find($int0, $int11) == 1) {
+if(%varp261 == 8) {
+cc_clearops;
+cc_setonop("null()");
+} else {
+cc_setop(1, "Move");
+cc_setonop("script691(-2147483644, -2147483645, -2147483643, $int1, $int2, $int3, $int4)");
+}
+}
+if($int11 < $int2) {
+if(cc_find($int0, add($int1, $int11)) == 1) {
+$int10 = enum(int, namedobj, $int8, $int11);
+if($int10 != -1) {
+cc_setmodel(oc_param($int10, 186));
+} else {
+cc_setmodel(-1);
+}
+}
+}
+} else {
+~script1485($int11, -1);
+if($int11 < $int2) {
+if(cc_find($int0, add($int1, $int11)) == 1) {
+cc_setmodel(-1);
+}
+}
+}
+$int11 = add($int11, 1);
+}
+~script692($int0, $int1, $int2, $int3, $int4);
+return();

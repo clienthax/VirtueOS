@@ -1,0 +1,38 @@
+[clientscript,script1280]
+cc_deleteall(226:16);
+$int0 = 0;
+$int1 = 0;
+$int2 = 0;
+$int3 = -1;
+while(%varc139 != 0) {
+$int0 = inv_size(554);
+while($int1 < $int0) {
+cc_create(226:16, Graphic, $int1);
+$int3 = inv_getobj(554, $int1);
+if($int3 != -1) {
+cc_setsize(36, 32, 0, 0);
+cc_setposition(multiply(modulo($int2, 7), 39), multiply(divide($int2, 7), 38), 0, 0);
+cc_setobject($int3, inv_getnum(554, $int1));
+cc_setopbase("<col=ff9040><oc_name($int3)>");
+cc_setop(1, "Examine");
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+$int2 = add($int2, 1);
+} else {
+cc_sethide(1);
+}
+$int1 = add($int1, 1);
+}
+}
+if($int2 == 0) {
+cc_create(226:16, Text, $int2);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextalign(0, 0, 0);
+cc_settextshadow(1);
+cc_settext("None.");
+}
+if_setsize(0, multiply(add(divide(sub($int2, 1), 7), 1), 38), 1, 0, 226:16);
+return();

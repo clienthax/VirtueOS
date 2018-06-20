@@ -1,0 +1,15 @@
+[clientscript,script1375](int $int0)
+if(%varbit2176 == 1) {
+cc_settrans(0);
+.cc_setcolor(0xFF981F);
+if_setonmouserepeat("script85(-2147483645, .cc_getid, 16777215)", $int0);
+if_setonmouseleave("script85(-2147483645, .cc_getid, 16750623)", $int0);
+if_setonop("script489(-2147483644, 2)", $int0);
+} else {
+cc_settrans(120);
+.cc_setcolor(0x9F9F9F);
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setonop("null()", $int0);
+}
+return();

@@ -1,0 +1,31 @@
+[proc,script218](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, string $string0)(int,int)
+$int6 = add(multiply(paraheight($int2, 495, $string0), 14), 2);
+cc_create($int0, Text, $int3);
+.cc_create($int1, Rectangle, $int3);
+cc_setposition(0, $int4, 1, 0);
+.cc_setposition(0, 0, 1, 1);
+cc_setsize(0, $int6, 1, 0);
+.cc_setsize(0, 0, 1, 1);
+cc_settextfont(495);
+cc_setcolor(0x46320A);
+cc_setonmouseover("script85(-2147483645, -2147483643, 7758394)");
+cc_setonmouseleave("script85(-2147483645, -2147483643, 4600330)");
+cc_settextalign(1, 0, 14);
+cc_settext($string0);
+$string1 = "";
+$string2 = "";
+$int3 = add($int3, 1);
+if($int5 == 1) {
+if($int3 < 36) {
+if($int3 < 10) {
+$string1 = tostring($int3);
+} else {
+$string1 = enum(int, string, 1401, sub($int3, 9));
+$string2 = enum(int, string, 1402, sub($int3, 9));
+}
+$string0 = append("<col=735a28><$string1></col>: ", $string0);
+.cc_setonkey("script57(-2147483640, -2147483639, $int0, cc_getid, -1, $string1, $string2, 4600330, 0)");
+}
+}
+cc_settext($string0);
+return($int3, add($int4, $int6));

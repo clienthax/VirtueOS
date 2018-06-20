@@ -1,0 +1,6 @@
+[clientscript,script48](int $int0, int $int1, int $int2, int $int3)
+if(cc_find($int0, $int1) == 1) {
+cc_setcolor($int2);
+cc_setontimer("script221(-2147483645, -2147483643, $int3, add(clientclock, 10))");
+}
+return();

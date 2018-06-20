@@ -1,0 +1,45 @@
+[proc,questlist_sectioninit](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, string $string0)(int)
+cc_deleteall($int0);
+if($int3 <= 0) {
+return(0);
+}
+$string1 = "";
+$int7 = 0;
+$int8 = pow(2, 16);
+def_int $anArray0($int3);
+$int9 = 0;
+while($int9 < $int3) {
+cc_create($int0, Text, $int9);
+cc_setsize(0, 15, 1, 0);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(0, 0, 0);
+$string1 = enum(int, string, $int1, $int9);
+cc_settext($string1);
+cc_setopbase("<col=ff9040><$string1></col>");
+$anArray0($int9) = add(multiply($int7, $int8), $int9);
+cc_setop(1, "Read Journal:");
+$int9 = add($int9, 1);
+}
+if($int3 > 1) {
+~script1352(0, 0, sub($int3, 1), $int2, $int8);
+}
+$int10 = 20;
+$int9 = 0;
+while($int9 < $int3) {
+if(cc_find($int0, modulo($anArray0($int9), $int8)) == 1) {
+cc_setposition(0, $int10, 1, 0);
+}
+$int10 = add($int10, 15);
+$int9 = add($int9, 1);
+}
+cc_create($int0, Text, $int9);
+cc_setsize(0, 20, 1, 0);
+cc_setposition(0, 0, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(496);
+cc_settextshadow(1);
+cc_settextalign(0, 0, 0);
+cc_settext($string0);
+if_setsize(0, $int10, 1, 0, $int0);
+return($int10);

@@ -1,0 +1,29 @@
+[proc,script1409](int $int0, int $int1, int $int2, int $int3)(int,int)
+cc_create(468:2, Model, $int2);
+$int2 = add($int2, 1);
+.cc_create(468:2, Text, $int2);
+$int2 = add($int2, 1);
+cc_setposition(0, $int3, 0, 0);
+.cc_setposition(0, $int3, 2, 0);
+cc_setsize(80, 80, 0, 0);
+.cc_setsize(80, 80, 1, 0);
+$int3 = add($int3, 80);
+$int4 = enum(int, model, 1469, $int0);
+if($int4 != -1) {
+cc_setmodel($int4);
+cc_setmodelangle(0, 165, 0, 0, 0, 400);
+} else {
+cc_setnpchead(3360);
+cc_setmodelangle(10, 30, 92, 1955, 0, 1100);
+cc_setmodelanim(579);
+}
+.cc_setcolor(0xFFE6A0);
+.cc_settextfont(497);
+.cc_settextshadow(1);
+.cc_settextalign(1, 1, 0);
+if(testbit($int1, $int0) == 1) {
+.cc_settext("<str><enum(int, string, 1470, $int0)></str>");
+} else {
+.cc_settext(enum(int, string, 1470, $int0));
+}
+return($int2, $int3);

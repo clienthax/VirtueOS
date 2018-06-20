@@ -1,0 +1,48 @@
+[clientscript,script112](int $int0, int $int1, string $string0)
+if(~script1701(-1, 162) == 0) {
+return();
+}
+if($int0 == 84) {
+if(%varc56 == 1) {
+if(string_length(%varcstr22) <= 0) {
+if(%varc5 == 8) {
+%varcstr22 = %varcstr128;
+~script222($string0);
+} else {
+if(%varc5 == 10) {
+%varcstr22 = %varcstr129;
+~script222($string0);
+}
+}
+}
+}
+~script681;
+return();
+}
+switch(%varc5) {
+case 6:
+case 9:
+case 11:
+%varcstr22 = ~script74(%varcstr22, 0, $int0, $int1);
+case 16:
+case 7:
+%varcstr22 = ~script74(%varcstr22, 1, $int0, $int1);
+case 12:
+%varcstr22 = ~script74(%varcstr22, 3, $int0, $int1);
+~script549;
+case 13:
+%varcstr22 = ~script74(%varcstr22, 0, $int0, $int1);
+~script551;
+case 14:
+if($int0 == 13) {
+sendObjectSearchResult(-1);
+sound_synth(2266, 1, 0);
+~script299(1, 1);
+return();
+}
+%varcstr22 = ~script74(%varcstr22, 4, $int0, $int1);
+default:
+%varcstr22 = ~script74(%varcstr22, 2, $int0, $int1);
+}
+~script222($string0);
+return();

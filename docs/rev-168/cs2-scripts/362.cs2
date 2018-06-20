@@ -1,0 +1,12 @@
+[clientscript,options_mouse](int $int0, int $int1, int $int2)
+if_setgraphic(~script2151(663, 1562), $int1);
+$string0 = ~script1971("Mouse buttons<br>(currently 2)", "Single-tap mode<br>(currently off)");
+if(%varp170 <= 0) {
+if_setgraphic(762, $int0);
+} else {
+$string0 = ~script1971("Mouse buttons<br>(currently 1)", "Single-tap mode<br>(currently on)");
+if_setgraphic(761, $int0);
+}
+if_setonmouserepeat("script526($int0, -1, $int2, $string0, 25, 190)", $int0);
+%varc2 = 0;
+return();

@@ -1,0 +1,27 @@
+[clientscript,script2220](int $int0, int $int1, int $int2)
+if(~script1701(16, -1) == 0) {
+return();
+}
+switch($int0) {
+case 13:
+sound_synth(2266, 1, 0);
+if_close();
+case 83:
+if(cc_find($int1, $int2) == 1) {
+sound_synth(2266, 1, 0);
+cc_resume_pausebutton;
+}
+case 104:
+if(%varc204 < 15) {
+sound_synth(2266, 1, 0);
+%varc204 = ~max(3, add(%varc204, 1));
+opcode3129(2, %varc204);
+}
+case 105:
+if(%varc204 > 3) {
+sound_synth(2266, 1, 0);
+%varc204 = ~min(15, sub(%varc204, 1));
+opcode3129(2, %varc204);
+}
+}
+return();

@@ -1,0 +1,13 @@
+[clientscript,script1155](int $int0)
+$int1 = inv_size(563);
+$int2 = 0;
+while($int1 > 0) {
+$int1 = sub($int1, 1);
+if(cc_find($int0, $int1) == 1) {
+~script1156(inv_getobj(563, $int1), inv_getnum(563, $int1), $int0);
+}
+$int2 = add($int2, inv_getnum(563, $int1));
+}
+if_settext(tostring($int2), 230:13);
+if_settext(tostring(inv_size(563)), 230:16);
+return();

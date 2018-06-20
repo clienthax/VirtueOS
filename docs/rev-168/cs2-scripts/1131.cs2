@@ -1,0 +1,16 @@
+[clientscript,script1131](int $int0, int $int1)
+if(cc_find($int0, 4) == 1) {
+if(~script1972 == 1) {
+cc_settext(enum(int, string, 1879, %varp1107));
+} else {
+cc_settext(enum(int, string, 1246, %varp1107));
+}
+}
+if(cc_find($int1, 4) == 1) {
+if(~script1972 == 1) {
+cc_settext(enum(int, string, 1879, %varp1306));
+} else {
+cc_settext(enum(int, string, 1246, %varp1306));
+}
+}
+return();

@@ -1,0 +1,29 @@
+[clientscript,script1095](string $string0)
+$int0 = add(multiply(paraheight(if_getwidth(156:8), 495, $string0), 12), 5);
+cc_deleteall(156:8);
+cc_create(156:8, Text, 0);
+cc_setsize(0, 40, 1, 0);
+cc_setposition(0, 0, 1, 0);
+cc_setcolor(0xFFA82F);
+cc_settextfont(496);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext("Bug News");
+cc_create(156:8, Text, 1);
+cc_setsize(0, $int0, 1, 0);
+cc_setposition(0, 40, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(0, 0, 0);
+cc_settext($string0);
+if_setscrollpos(0, 0, 156:8);
+cc_deleteall(156:9);
+$int0 = add($int0, 40);
+if($int0 > if_getheight(156:8)) {
+if_setscrollsize(0, $int0, 156:8);
+} else {
+if_setscrollsize(0, 0, 156:8);
+}
+~scrollbar_vertical(10223625, 10223624, 792, 789, 790, 791, 773, 788);
+return();

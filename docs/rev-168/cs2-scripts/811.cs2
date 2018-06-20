@@ -1,0 +1,14 @@
+[clientscript,script811](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = modulo(sub(clientclock, $int2), 100);
+if($int5 >= 50) {
+$int5 = sub(100, $int5);
+}
+$int6 = add($int3, interpolate(0, $int5, 0, 50, sub($int4, $int3)));
+if($int1 == -1) {
+if_settrans($int6, $int0);
+} else {
+if(cc_find($int0, $int1) == 1) {
+cc_settrans($int6);
+}
+}
+return();

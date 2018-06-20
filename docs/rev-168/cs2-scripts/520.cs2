@@ -1,0 +1,10 @@
+[clientscript,script520](int $int0, int $int1, int $int2, string $string0)
+cc_create($int0, Text, add($int1, 8));
+cc_setposition(25, add(4, multiply(add($int1, 1), 17)), 0, 0);
+cc_setsize(sub($int2, 25), 17, 0, 0);
+cc_settextfont(495);
+cc_settextalign(0, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settext($string0);
+return();

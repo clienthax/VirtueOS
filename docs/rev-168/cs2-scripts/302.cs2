@@ -1,0 +1,53 @@
+[clientscript,script302](int $int0, int $int1)
+cc_deleteall($int0);
+cc_deleteall($int1);
+$int2 = if_getwidth($int0);
+$int3 = divide($int2, 7);
+$int4 = divide(sub($int3, 36), 2);
+$int5 = add(32, 20);
+$int6 = 0;
+$int7 = enum(int, namedobj, 709, $int6);
+while($int7 != -1) {
+cc_create($int0, Graphic, multiply($int6, 2));
+.cc_create($int0, Text, add(multiply($int6, 2), 1));
+cc_setposition(add($int4, multiply(modulo($int6, 7), $int3)), multiply(divide($int6, 7), $int5), 0, 0);
+.cc_setposition(cc_getx, add(cc_gety, 32), 0, 0);
+~script303($int7);
+$int6 = add($int6, 1);
+$int7 = enum(int, namedobj, 709, $int6);
+}
+$string0 = "These items will give you a benefit in future Nightmare Zone dreams, and cannot be used elsewhere.<br><br>Dominic's potions are sold by the dose. When you purchase a dose, it is automatically stored in Dominic's barrels until you collect it.<br><br>The figures in <col=ffffff>white</col> show the number of doses you've got stored already.";
+$int2 = if_getwidth($int1);
+$int8 = add(multiply(paraheight($int2, 495, $string0), 12), 5);
+$int3 = divide($int2, 7);
+$int4 = divide(sub($int3, 36), 2);
+$int5 = add(32, 40);
+$int6 = 0;
+$int7 = enum(int, namedobj, 814, $int6);
+while($int7 != -1) {
+cc_create($int1, Graphic, multiply($int6, 3));
+.cc_create($int1, Text, add(multiply($int6, 3), 1));
+cc_setposition(add($int4, multiply(modulo($int6, 7), $int3)), add($int8, multiply(divide($int6, 7), $int5)), 0, 0);
+.cc_setposition(cc_getx, add(cc_gety, 32), 0, 0);
+~script303($int7);
+cc_create($int1, Text, add(multiply($int6, 3), 2));
+cc_setsize(36, 20, 0, 0);
+cc_setposition(.cc_getx, add(.cc_gety, .cc_getheight), 0, 0);
+cc_settextfont(495);
+cc_setcolor(0xFFFFFF);
+cc_settextshadow(1);
+cc_settextalign(1, 0, 0);
+~script304($int7);
+cc_setonvartransmit("script251(-2147483645, -2147483643, $int7){1066}");
+$int6 = add($int6, 1);
+$int7 = enum(int, namedobj, 814, $int6);
+}
+cc_create($int1, Text, multiply($int6, 3));
+cc_setsize($int2, $int8, 0, 0);
+cc_setposition(0, 0, 0, 0);
+cc_settextfont(495);
+cc_setcolor(0xFF981F);
+cc_settextalign(0, 0, 0);
+cc_settextshadow(1);
+cc_settext($string0);
+return();

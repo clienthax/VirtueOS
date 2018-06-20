@@ -1,0 +1,25 @@
+[clientscript,script458](int $int0, int $int1, int $int2)
+def_int $anArray0(add(28, 1));
+$int3 = 0;
+$int4 = 0;
+$int5 = -1;
+while($int4 <= 28) {
+$int5 = enum(int, component, 859, $int4);
+if($int5 != -1) {
+$anArray0($int3) = $int4;
+$int3 = add($int3, 1);
+~script460($int4, $int5, $int2);
+}
+$int4 = add($int4, 1);
+}
+if($int3 > 0) {
+~prayer_quicksort(0, 0, sub($int3, 1));
+}
+$int6 = 0;
+while($int6 < $int3) {
+if_setposition(multiply(modulo($int6, 5), 37), multiply(divide($int6, 5), 37), 0, 0, enum(int, component, 859, $anArray0($int6)));
+$int6 = add($int6, 1);
+}
+~prayer_level($int1);
+if_setonstattransmit("prayer_level($int1){5}", $int1);
+return();

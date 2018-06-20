@@ -1,0 +1,6 @@
+[clientscript,script1087](int $int0, string $string0, string $string1)
+~script1086(-1, 0, $int0, $string0, $string1);
+if_setontimer("script1088(add(clientclock, 20), $int0, $string0, $string1)", $int0);
+sound_synth(2266, 1, 0);
+openurl($string1, 1);
+return();

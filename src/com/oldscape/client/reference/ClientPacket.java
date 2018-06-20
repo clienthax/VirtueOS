@@ -123,9 +123,9 @@ public class ClientPacket implements class179 {
         CAMERA_POSITION = new ClientPacket(19, 4);
         BUTTON_ACTION_9 = new ClientPacket(20, 8);
         field2472 = new ClientPacket(21, 3);
-        field2405 = new ClientPacket(22, 6);
+        field2405 = new ClientPacket(22, 6); // Click To Continue
         field2441 = new ClientPacket(23, 11);
-        field2482 = new ClientPacket(24, 0);
+        field2482 = new ClientPacket(24, 0); // AFK
         FOCUS_CHANGED = new ClientPacket(25, 1);
         PUBLIC_CHAT_MESSAGE = new ClientPacket(26, -1);
         field2464 = new ClientPacket(27, 0);

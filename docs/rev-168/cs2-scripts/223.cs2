@@ -1,0 +1,44 @@
+[clientscript,script223]
+$string0 = "<col=0000ff>";
+$int0 = 0;
+$int1 = 6250335;
+if(~script921 == 1) {
+$int1 = 12566463;
+$int0 = 16777215;
+$string0 = "<col=9090ff>";
+if_settextshadow(1, 162:46);
+} else {
+if_settextshadow(0, 162:46);
+}
+if_setcolor($int0, 162:46);
+$int2 = string_length(%varcstr1);
+$string1 = escape(%varcstr1);
+$string2 = "";
+$int3 = 0;
+if(%varc203 == 1) {
+$string2 = "<enum(int, string, 1894, %varbit1777)><chat_playername()>: <$string0><$string1></col>";
+if($int2 < 80) {
+$string2 = append($string2, "<$string0>*</col>");
+}
+$int3 = parawidth(2147483647, 495, $string2);
+if($int3 > if_getwidth(162:46)) {
+if_settextalign(2, 2, 0, 162:46);
+} else {
+if_settextalign(0, 2, 0, 162:46);
+}
+if_clearops(162:46);
+if_setonmouserepeat("null()", 162:46);
+if_setonmouseleave("null()", 162:46);
+if_setonop("null()", 162:46);
+} else {
+$string2 = "<enum(int, string, 1894, %varbit1777)> You must set a name before you can chat.";
+if_settextalign(1, 2, 0, 162:46);
+if_setop(10, "Configure", 162:46);
+if_setopbase("<col=ff9040>Display name</col>", 162:46);
+if_setonmouserepeat("script45(-2147483645, $int1)", 162:46);
+if_setonmouseleave("script45(-2147483645, $int0)", 162:46);
+if_setonop("script489(-2147483644, 1024)", 162:46);
+}
+if_settext($string2, 162:46);
+if_setsize(3, 16, 1, 0, 162:46);
+return();

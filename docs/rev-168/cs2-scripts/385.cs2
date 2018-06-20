@@ -1,0 +1,5 @@
+[clientscript,script385](int $int0)
+if($int0 == 1 || ~script568(coord) == 1 || modulo(clientclock, 100) == 0) {
+~script386;
+}
+return();

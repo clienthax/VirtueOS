@@ -1,0 +1,54 @@
+[clientscript,script1485](int $int0, int $int1)
+switch($int0) {
+case 0:
+%varc81 = $int1;
+case 1:
+%varc82 = $int1;
+case 2:
+%varc83 = $int1;
+case 3:
+%varc84 = $int1;
+case 4:
+%varc85 = $int1;
+case 5:
+%varc86 = $int1;
+case 6:
+%varc87 = $int1;
+case 7:
+%varc88 = $int1;
+case 8:
+%varc89 = $int1;
+case 9:
+%varc90 = $int1;
+case 10:
+%varc91 = $int1;
+case 11:
+%varc92 = $int1;
+case 12:
+%varc93 = $int1;
+case 13:
+%varc94 = $int1;
+case 14:
+%varc95 = $int1;
+case 15:
+%varc96 = $int1;
+case 16:
+%varc97 = $int1;
+case 17:
+%varc98 = $int1;
+case 18:
+%varc99 = $int1;
+case 19:
+%varc100 = $int1;
+case 20:
+%varc101 = $int1;
+case 21:
+%varc102 = $int1;
+case 22:
+%varc104 = $int1;
+case 23:
+%varc105 = $int1;
+case 24:
+%varc106 = $int1;
+}
+return();

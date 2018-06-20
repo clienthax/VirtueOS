@@ -1,0 +1,44 @@
+[clientscript,script263](int $int0, int $int1, int $int2, int $int3)
+$int4 = pow(50, 2);
+$int5 = multiply(50, 2);
+$int6 = sub(clientclock, $int3);
+if($int6 < 50) {
+if($int6 < 0) {
+$int6 = 0;
+} else {
+if($int6 == 1) {
+sound_synth(2201, 1, 0);
+}
+}
+$int6 = sub(50, $int6);
+if(cc_find($int0, $int1) == 1) {
+cc_settrans(interpolate(0, $int6, 0, 50, 255));
+}
+if(cc_find($int0, $int2) == 1) {
+cc_setposition(interpolate(0, pow($int6, 2), 0, $int4, 16384), cc_gety, 3, 0);
+}
+return();
+}
+if($int6 < $int5) {
+return();
+}
+if($int6 < multiply(50, 3)) {
+if($int6 == $int5) {
+sound_synth(2201, 1, 0);
+}
+$int6 = sub($int6, $int5);
+if(cc_find($int0, $int1) == 1) {
+cc_settrans(interpolate(0, $int6, 0, 50, 255));
+}
+if(cc_find($int0, $int2) == 1) {
+cc_setposition(interpolate(0, pow($int6, 2), 0, $int4, 16384), cc_gety, 5, 0);
+}
+return();
+}
+if(cc_find($int0, $int1) == 1) {
+cc_delete();
+}
+if(cc_find($int0, $int2) == 1) {
+cc_delete();
+}
+return();

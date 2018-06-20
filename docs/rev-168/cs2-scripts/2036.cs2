@@ -1,0 +1,23 @@
+[clientscript,script2036](int $int0, int $int1, int $int2, int $int3, string $string0)
+cc_create($int0, Model, $int1);
+$int1 = add($int1, 1);
+cc_setposition(0, 5, 1, 2);
+if($int2 == -1) {
+cc_setsize(10, 30, 1, 1);
+cc_setmodel(32817);
+cc_setmodelangle(0, 90, 0, 117, 0, 720);
+cc_setmodelanim(808);
+} else {
+cc_setsize(50, 50, 0, 0);
+cc_setobject_nonum($int2, 1);
+}
+cc_create($int0, Text, $int1);
+$int1 = add($int1, 1);
+cc_setposition(0, 0, 1, 0);
+cc_setsize(0, 25, 1, 0);
+cc_settextfont(494);
+cc_settextalign(1, 2, 0);
+cc_setcolor($int3);
+cc_settextshadow(1);
+cc_settext($string0);
+return();

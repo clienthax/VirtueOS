@@ -1,0 +1,80 @@
+[proc,script74](int $int0, int $int1, int $int2, string $string0)(string)
+$int3 = string_length($string0);
+if($int1 == 85) {
+if($int3 > 0) {
+return(substring($string0, 0, sub($int3, 1)));
+}
+return($string0);
+}
+$int4 = 80;
+if($int0 == 3) {
+$int4 = 10;
+} else {
+if($int0 == 4) {
+$int4 = 25;
+} else {
+if($int0 == 5) {
+$int4 = 500;
+}
+}
+}
+if(char_isprintable($int2) == 0) {
+if($int0 == 5) {
+if($int1 == 84) {
+if($int3 >= $int4) {
+return($string0);
+}
+if($int3 < 15) {
+return($string0);
+}
+if(string_indexof_string(substring($string0, sub($int3, 15), $int3), "|", 0) != -1) {
+return($string0);
+}
+return(append($string0, "|"));
+}
+}
+return($string0);
+}
+if($int0 == 2) {
+if(char_isalphanumeric($int2) == 1 || string_indexof_char(" _-", $int2) != -1) {
+if($int3 < 12) {
+return(append_char($string0, $int2));
+}
+}
+return($string0);
+}
+$int5 = 0;
+$string1 = "";
+if($int0 == 1) {
+if(string_indexof_char("kKmM", $int2) != -1) {
+$int5 = 1;
+}
+if($int5 == 1 || char_isnumeric($int2) == 1) {
+if($int3 < 10) {
+if($int5 == 1) {
+if($int3 <= 0) {
+return($string0);
+}
+}
+if($int3 > 0) {
+if($int5 == 0) {
+$string1 = lowercase(substring($string0, sub($int3, 1), $int3));
+if(compare($string1, "k") == 0 || compare($string1, "m") == 0) {
+return($string0);
+}
+}
+}
+return(append_char($string0, $int2));
+}
+}
+return($string0);
+}
+if($int0 == 5) {
+if(string_indexof_char("|", $int2) != -1) {
+return($string0);
+}
+}
+if($int3 < $int4) {
+return(append_char($string0, $int2));
+}
+return($string0);

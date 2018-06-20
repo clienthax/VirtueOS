@@ -1,0 +1,17 @@
+[proc,colour_interpolate](int $int0, int $int1, int $int2, int $int3, int $int4)(int)
+if($int4 <= $int2) {
+return($int0);
+}
+if($int4 >= $int3) {
+return($int1);
+}
+$int5 = divide(divide($int0, 256), 256);
+$int6 = divide(divide($int1, 256), 256);
+$int7 = and(divide($int0, 256), 255);
+$int8 = and(divide($int1, 256), 255);
+$int9 = and($int0, 255);
+$int10 = and($int1, 255);
+$int11 = interpolate($int5, $int6, $int2, $int3, $int4);
+$int12 = interpolate($int7, $int8, $int2, $int3, $int4);
+$int13 = interpolate($int9, $int10, $int2, $int3, $int4);
+return(add(add(multiply(multiply($int11, 256), 256), multiply($int12, 256)), $int13));

@@ -1,0 +1,52 @@
+[proc,script1032](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18)(int)
+def_int $anArray0(add(23, 1));
+$int19 = add(23, 3);
+$int20 = add(31, 1);
+$int21 = 0;
+while($int21 <= 23) {
+$anArray0($int21) = $int21;
+cc_create($int0, Text, add($int21, 1));
+~script1033($int0, $int20, 16750623, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18);
+$int21 = add($int21, 1);
+}
+while($int21 < 30) {
+cc_create($int0, Text, add($int21, 1));
+cc_sethide(1);
+$int21 = add($int21, 1);
+}
+cc_create($int0, Text, add($int21, 1));
+~script1033($int0, $int20, 16750623, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18);
+$int21 = add($int21, 1);
+cc_create($int0, Text, add($int21, 1));
+~script1033($int0, $int20, 16750623, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18);
+~script1360(0, 1, 23, 108);
+$int21 = 0;
+if(cc_find($int0, add($anArray0($int21), 1)) == 1) {
+cc_setposition(0, multiply($int21, 15), 1, 0);
+if($int0 == $int10) {
+cc_settext("Total XP");
+} else {
+cc_settext("Off");
+}
+}
+$int21 = add($int21, 1);
+if(cc_find($int0, add(31, 1)) == 1) {
+cc_setposition(0, 15, 1, 0);
+cc_settext("Most recent");
+}
+while($int21 <= 23) {
+if(cc_find($int0, add($anArray0($int21), 1)) == 1) {
+cc_setposition(0, multiply(add($int21, 1), 15), 1, 0);
+cc_settext(enum(int, string, 108, $anArray0($int21)));
+}
+$int21 = add($int21, 1);
+}
+if(cc_find($int0, add(30, 1)) == 1) {
+cc_setposition(0, multiply(sub($int19, 1), 15), 1, 0);
+if($int0 == $int12) {
+cc_settext("Total XP goal");
+} else {
+cc_settext("Off");
+}
+}
+return($int19);

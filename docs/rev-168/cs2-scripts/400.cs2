@@ -1,0 +1,12 @@
+[clientscript,script400](int $int0, int $int1)
+if(clientclock < $int1) {
+return();
+}
+if_sethide(0, 398:19);
+if_sethide(0, 398:20);
+if_sethide(0, 398:21);
+if_sethide(0, 398:22);
+if_sethide(0, 398:23);
+if_sethide(0, 398:24);
+if_setontimer("null()", $int0);
+return();

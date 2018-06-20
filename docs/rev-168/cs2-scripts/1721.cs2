@@ -1,0 +1,13 @@
+[clientscript,script1721](int $int0, int $int1, int $int2)
+opcode6604($int0);
+if($int0 >= 200) {
+~script1722($int2, "", 1, $int1, $int2);
+} else {
+~script1722($int2, "Zoom in", 1, $int1, $int2);
+}
+if($int0 <= 25) {
+~script1722($int1, "", 0, $int1, $int2);
+} else {
+~script1722($int1, "Zoom out", 0, $int1, $int2);
+}
+return();

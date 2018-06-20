@@ -1,0 +1,11 @@
+[clientscript,script81](int $int0)
+if(%varbit1621 == 1) {
+if_sethide(1, $int0);
+} else {
+if_sethide(0, $int0);
+if_settext(tostring(%varp1136), 90:27);
+if_settext(tostring(%varp1135), 90:28);
+if_settext(tostring(%varp1134), 90:26);
+if_settext(tostring(%varp1133), 90:29);
+}
+return();

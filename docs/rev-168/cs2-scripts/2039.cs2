@@ -1,0 +1,21 @@
+[clientscript,script2039](int $int0, int $int1, int $int2)
+cc_deleteall($int2);
+cc_create($int2, Text, 0);
+cc_setposition(0, 0, 1, 0);
+cc_setsize(0, 32, 1, 1);
+cc_settextfont(495);
+cc_settextalign(1, 0, 0);
+cc_settextshadow(0);
+cc_settext("Show Tutors");
+~script2041(1, $int1);
+if_setonmouserepeat("script2040(0, $int2, cc_getid, $int1)", $int2);
+if_setonmouseleave("script2040(1, $int2, cc_getid, $int1)", $int2);
+cc_deleteall($int0);
+cc_create($int0, Model, 0);
+cc_setsize(32, 32, 0, 0);
+cc_setmodel(3062);
+cc_setmodelangle(0, 0, 512, 68, 0, 1526);
+cc_setmodelanim(646);
+~script2043($int0);
+if_setontimer("script2042($int0, cc_getid)", $int0);
+return();

@@ -1,0 +1,93 @@
+[clientscript,script497](int $int0)
+cc_deleteall(81:5);
+$int1 = inv_size($int0);
+def_int $anArray0($int1);
+$anArray0(0) = %varc81;
+$anArray0(1) = %varc82;
+$anArray0(2) = %varc83;
+$anArray0(3) = %varc84;
+$anArray0(4) = %varc85;
+$anArray0(5) = %varc86;
+$anArray0(6) = %varc87;
+$anArray0(7) = %varc88;
+$anArray0(8) = %varc89;
+$anArray0(9) = %varc90;
+$anArray0(10) = %varc91;
+$anArray0(11) = %varc92;
+$anArray0(12) = %varc93;
+$anArray0(13) = %varc94;
+$anArray0(14) = %varc95;
+$anArray0(15) = %varc96;
+$anArray0(16) = %varc97;
+$anArray0(17) = %varc98;
+$anArray0(18) = %varc99;
+$anArray0(19) = %varc100;
+$anArray0(20) = %varc101;
+$anArray0(21) = %varc102;
+$anArray0(22) = %varc104;
+$anArray0(23) = %varc105;
+$anArray0(24) = %varc106;
+$anArray0(25) = %varc107;
+$anArray0(26) = %varc108;
+$anArray0(27) = %varc109;
+$int2 = -1;
+$int3 = 0;
+$int4 = 0;
+$string0 = "Invalid item.";
+$int5 = 0;
+while($int5 < $int1) {
+cc_create(81:5, Graphic, $int5);
+$int2 = inv_getobj($int0, $int5);
+if($int2 != -1) {
+$int4 = add($int4, 1);
+$int3 = inv_getnum($int0, $int5);
+cc_sethide(0);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(multiply(modulo($int5, 4), add(36, 8)), multiply(divide($int5, 4), 32), 0, 0);
+cc_setoutline(1);
+cc_setgraphicshadow(0x333333);
+cc_setobject($int2, $int3);
+if($int0 == 93) {
+if($int2 == 11941) {
+cc_settrans(150);
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+} else {
+cc_settrans(0);
+cc_setonop("script487(-2147483645, -2147483643, 150, 0)");
+if($anArray0($int5) <= -1) {
+cc_setonmouserepeat("script526(-2147483645, -2147483643, 5308423, $string0, 25, 512)");
+cc_setonmouseleave("script40(5308423)");
+} else {
+~trade_tooltip($int3, $anArray0($int5), 5308423);
+}
+}
+cc_setop(1, "Store-1");
+cc_setop(2, "Store-5");
+cc_setop(3, "Store-All");
+cc_setop(4, "Store-X");
+cc_setop(9, "Examine");
+} else {
+cc_settrans(0);
+cc_setop(10, "Examine");
+~trade_tooltip($int3, $anArray0($int5), 5308423);
+}
+cc_setopbase("<col=ff9040><oc_name($int2)>");
+} else {
+cc_sethide(1);
+}
+$int5 = add($int5, 1);
+}
+if($int0 == 516) {
+if($int4 <= 0) {
+cc_create(81:5, Text, $int5);
+cc_setposition(0, 0, 0, 0);
+cc_setsize(if_getwidth(81:5), if_getheight(81:5), 0, 0);
+cc_settextalign(1, 1, 0);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_setcolor(0xFF981F);
+cc_settext("The bag is empty.");
+}
+}
+return();

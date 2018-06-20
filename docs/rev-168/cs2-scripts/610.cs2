@@ -1,0 +1,6 @@
+[clientscript,script610](int $int0, string $string0, string $string1)
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551309)) == 0) {
+return();
+}
+~script611($string0, $string1, $int0, if_getwidth($int0), 0, 495, 495, 12, 5);
+return();

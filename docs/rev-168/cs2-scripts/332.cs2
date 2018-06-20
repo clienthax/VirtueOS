@@ -1,0 +1,13 @@
+[clientscript,script332](int $int0, int $int1)
+$int2 = inv_total(93, $int1);
+if($int1 == 11787) {
+$int2 = add($int2, inv_total(93, 12795));
+}
+if($int2 > 0) {
+cc_setcolor(0xFFFFFF);
+if_setonop("script489(-2147483644, 2)", $int0);
+} else {
+cc_setcolor(0xAAAAAA);
+if_setonop("null()", $int0);
+}
+return();

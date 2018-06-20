@@ -1,0 +1,11 @@
+[clientscript,script694](int $int0, int $int1, int $int2, int $int3)
+if($int3 == 1) {
+if_setonop("script489(-2147483644, 2)", $int0);
+if_setonvartransmit("script694($int0, $int1, $int2, 0){261}", $int0);
+}
+if(%varp261 == $int2) {
+if_setcolor(0x00FF00, $int1);
+} else {
+if_setcolor(0x000000, $int1);
+}
+return();

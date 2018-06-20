@@ -1,0 +1,11 @@
+[proc,script716](int $int0)(int)
+$int1 = inv_total(93, $int0);
+$int2 = oc_cert($int0);
+if($int2 == $int0) {
+return($int1);
+}
+$int3 = inv_total(93, $int2);
+if(sub(2147483647, $int1) < $int3) {
+return(2147483647);
+}
+return(add($int1, $int3));

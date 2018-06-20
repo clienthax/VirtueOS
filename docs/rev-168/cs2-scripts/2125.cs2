@@ -1,0 +1,9 @@
+[clientscript,script2125](int $int0, int $int1, int $int2, int $int3, string $string0)
+if_setopbase("<col=ff9040><$string0></col>", $int0);
+if_setonvartransmit("script2129(0, $int0, $string0, $int1, $int2, $int3){261, 262, 263, 264}", $int0);
+~script2127(0, $int0, $string0, $int1, $int2, $int3);
+if_setonmouserepeat("script2126(1, $int0, $string0, $int1, $int2, $int3)", $int0);
+if_setonmouseleave("script2126(0, $int0, $string0, $int1, $int2, $int3)", $int0);
+if_setonop("script2128(-2147483644, $int0, $string0, $int1, $int2, $int3)", $int0);
+if_setontimer("null()", $int0);
+return();

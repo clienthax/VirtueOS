@@ -1,0 +1,53 @@
+[clientscript,script1305](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10)
+if_settext(tostring(%varbit455), $int0);
+if(%varbit455 >= 1) {
+if_sethide(0, $int1);
+} else {
+if_sethide(1, $int1);
+}
+if(%varbit455 >= 2) {
+if_sethide(0, $int2);
+} else {
+if_sethide(1, $int2);
+}
+if(%varbit455 >= 4) {
+if_sethide(0, $int3);
+} else {
+if_sethide(1, $int3);
+}
+if(%varbit455 >= 7) {
+if_sethide(0, $int4);
+} else {
+if_sethide(1, $int4);
+}
+if(%varbit455 >= 11) {
+if_sethide(0, $int5);
+} else {
+if_sethide(1, $int5);
+}
+if(%varbit455 >= 16) {
+if_sethide(0, $int6);
+} else {
+if_sethide(1, $int6);
+}
+if(%varbit455 >= 22) {
+if_sethide(0, $int7);
+} else {
+if_sethide(1, $int7);
+}
+if(%varbit455 >= 29) {
+if_sethide(0, $int8);
+} else {
+if_sethide(1, $int8);
+}
+if(%varbit455 >= 37) {
+if_sethide(0, $int9);
+} else {
+if_sethide(1, $int9);
+}
+if(%varbit455 >= 46) {
+if_sethide(0, $int10);
+} else {
+if_sethide(1, $int10);
+}
+return();

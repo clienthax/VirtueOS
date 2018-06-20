@@ -1,0 +1,23 @@
+[proc,script1717](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)(int,int)
+cc_create($int1, Text, $int2);
+$int2 = add($int2, 1);
+cc_setsize(25, 21, 1, 0);
+cc_setposition(0, multiply($int0, 21), 2, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(0, 1, 0);
+$string0 = enum(int, string, 1704, $int0);
+cc_settext($string0);
+cc_create($int1, Graphic, $int2);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(1, add(multiply($int0, 21), 2), 0, 0);
+cc_setgraphic(1435);
+if(.cc_find($int1, $int0) == 1) {
+.cc_setopbase("<col=ff9040><$string0></col>");
+.cc_setonop("script1718(-2147483644, $int1, $int0, $int2, $int4, $int5, $int6)");
+.cc_setonvartransmit("script1719($int1, $int0, $int2, $int4, $int5, $int6){1568}");
+~script1720($int1, $int0, $int4, $int5, $int6);
+}
+$int2 = add($int2, 1);
+return($int2, ~max($int3, add(25, parawidth(512, 495, $string0))));

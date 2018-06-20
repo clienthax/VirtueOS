@@ -1,0 +1,17 @@
+[clientscript,script1042](int $int0)
+$int1 = 1196;
+$int2 = 1198;
+$string0 = "Show";
+if(%varbit4702 == 1) {
+$string0 = "Hide";
+$int2 = 1199;
+$int1 = 1197;
+if_setonop("script1040(-2147483644, -2147483645, 0)", $int0);
+} else {
+if_setonop("script1040(-2147483644, -2147483645, 1)", $int0);
+}
+if_setop(1, $string0, $int0);
+if_setgraphic($int1, $int0);
+if_setonmouserepeat("script44(-2147483645, $int2)", $int0);
+if_setonmouseleave("script44(-2147483645, $int1)", $int0);
+return();

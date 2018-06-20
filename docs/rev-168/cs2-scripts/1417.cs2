@@ -1,0 +1,21 @@
+[clientscript,script1417](int $int0, int $int1)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+cc_deleteall($int1);
+$int2 = ~script836($int1, 0);
+cc_create($int1, Text, $int2);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0x8F8F8F);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext("Refresh");
+if_setonmouseover("null()", $int1);
+if_setonmouseleave("null()", $int1);
+if_setop(1, "", $int1);
+if_setonop("null()", $int1);
+if_setontimer("script1415(add(clientclock, 10), -2147483645)", $int1);
+return();

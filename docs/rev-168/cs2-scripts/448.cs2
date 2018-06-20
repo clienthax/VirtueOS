@@ -1,0 +1,13 @@
+[clientscript,script448](int $int0, int $int1)
+$string0 = "<~script1971("Middle mouse button", "Dragging with a finger")> controls the camera <~script1971("(currently off)", "")>";
+if(%varbit4134 == 1) {
+mmbControlsCamera(0);
+if_setgraphic(761, $int0);
+} else {
+mmbControlsCamera(1);
+$string0 = "<~script1971("Middle mouse button", "Dragging with a finger")> controls the camera (currently on)";
+if_setgraphic(762, $int0);
+}
+if_setonmouserepeat("script526($int0, -1, $int1, $string0, 25, 190)", $int0);
+%varc2 = 0;
+return();

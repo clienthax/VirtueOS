@@ -1,0 +1,30 @@
+[clientscript,script1992](int $int0, int $int1)
+$int2 = -1;
+$int3 = 0;
+$int4 = 0;
+while($int4 < 90) {
+if(cc_find($int0, $int4) == 1) {
+$int2 = inv_getobj(525, $int4);
+if($int2 != -1) {
+cc_sethide(0);
+cc_setobject($int2, inv_getnum(525, $int4));
+cc_setopbase("<col=ff9040><oc_name($int2)></col>");
+cc_settrans(0);
+cc_setonop("script487(-2147483645, -2147483643, 100, 0)");
+cc_setontimer("null()");
+$int3 = add(cc_gety, cc_getheight);
+} else {
+cc_sethide(1);
+}
+}
+$int4 = add($int4, 1);
+}
+if($int3 > if_getheight($int0)) {
+if_setscrollpos(0, ~min(if_getscrolly($int0), sub($int3, if_getheight($int0))), $int0);
+if_setscrollsize(0, $int3, $int0);
+} else {
+if_setscrollpos(0, 0, $int0);
+if_setscrollsize(0, 0, $int0);
+}
+~script231($int1, $int0);
+return();

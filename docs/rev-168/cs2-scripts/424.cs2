@@ -1,0 +1,4 @@
+[clientscript,script424](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+~script426($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7);
+if_setonvartransmit("script425($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7){101, 1191, 661, 1096, 439}", $int0);
+return();

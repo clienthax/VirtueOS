@@ -1,0 +1,11 @@
+[proc,script748](int $int0, int $int1)(int,int)
+$int2 = if_getx($int0);
+$int3 = if_gety($int0);
+if(cc_find($int0, $int1) == 1 || if_find($int0) == 1) {
+if($int1 == -1) {
+$gosubResult749_0, $gosubResult749_1 = ~script749;
+$int3 = $gosubResult749_1;
+$int2 = $gosubResult749_0;
+}
+}
+return($int2, $int3);

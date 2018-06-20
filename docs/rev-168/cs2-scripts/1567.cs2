@@ -1,0 +1,14 @@
+[clientscript,script1567](int $int0, int $int1, int $int2, string $string0)
+$int3 = 16777215;
+$int4 = 235;
+if(modulo($int0, 2) == 0) {
+$int4 = 255;
+$int3 = 0;
+}
+cc_setcolor($int3);
+cc_settrans($int4);
+if_setonmouserepeat("script1015(-2147483645, cc_getid, 16777215, 220)", $int1);
+if_setonmouseleave("script1015(-2147483645, cc_getid, $int3, $int4)", $int1);
+if_setonop("script1568(-2147483644, -2147483645, cc_getid, $int3, $int4, 16777215, 220, $int2, $string0)", $int1);
+if_setontimer("null()", $int1);
+return();

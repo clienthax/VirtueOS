@@ -1,0 +1,107 @@
+[clientscript,script2199](int $int0, int $int1, int $int2)
+$int3 = -1;
+$int4 = 16711680;
+$int3 = ~script56($int2);
+if($int3 == 2) {
+$int4 = 901389;
+} else {
+if($int3 == 1) {
+$int4 = 16776960;
+} else {
+$int4 = 16711680;
+}
+}
+$int5 = 0;
+$int6 = 0;
+$int7 = 0;
+$int8 = 0;
+$int9 = 0;
+$int10 = 0;
+$int11 = 0;
+$int12 = 0;
+$int13 = 0;
+$int14 = 0;
+$int15 = 0;
+$int16 = 0;
+$int17 = 0;
+$int18 = 0;
+$gosubResult2200_0, $gosubResult2200_1, $gosubResult2200_2, $gosubResult2200_3, $gosubResult2200_4, $gosubResult2200_5, $gosubResult2200_6, $gosubResult2200_7, $gosubResult2200_8, $gosubResult2200_9, $gosubResult2200_10, $gosubResult2200_11 = ~script2200($int2);
+$int18 = $gosubResult2200_11;
+$int13 = $gosubResult2200_10;
+$int8 = $gosubResult2200_9;
+$int17 = $gosubResult2200_8;
+$int12 = $gosubResult2200_7;
+$int7 = $gosubResult2200_6;
+$int16 = $gosubResult2200_5;
+$int11 = $gosubResult2200_4;
+$int6 = $gosubResult2200_3;
+$int15 = $gosubResult2200_2;
+$int10 = $gosubResult2200_1;
+$int5 = $gosubResult2200_0;
+$int19 = 0;
+if(cc_find($int0, add($int1, 1)) == 1) {
+cc_setcolor($int4);
+}
+if(cc_find($int0, add($int1, 2)) == 1) {
+$int9 = add(add(add($int5, $int6), $int7), $int8);
+$int14 = add(add(add($int10, $int11), $int12), $int13);
+cc_settext("<tostring($int9)>/<tostring($int14)>");
+cc_setcolor($int4);
+}
+if(cc_find($int0, add($int1, 8)) == 1) {
+if($int5 == 0) {
+$int19 = 0;
+} else {
+$int19 = add(1, scale($int5, $int10, sub(35, 1)));
+}
+$int19 = ~min(35, $int19);
+cc_setsize($int19, 5, 0, 0);
+if($int15 == 1) {
+cc_setcolor(0x37B514);
+} else {
+cc_setcolor(~script2195(13905408, 13676544, $int19, 35));
+}
+}
+if(cc_find($int0, add($int1, 9)) == 1) {
+if($int6 == 0) {
+$int19 = 0;
+} else {
+$int19 = add(1, scale($int6, $int11, sub(35, 1)));
+}
+$int19 = ~min(35, $int19);
+cc_setsize($int19, 5, 0, 0);
+if($int16 == 1) {
+cc_setcolor(0x37B514);
+} else {
+cc_setcolor(~script2195(13905408, 13676544, $int19, 35));
+}
+}
+if(cc_find($int0, add($int1, 10)) == 1) {
+if($int7 == 0) {
+$int19 = 0;
+} else {
+$int19 = add(1, scale($int7, $int12, sub(35, 1)));
+}
+$int19 = ~min(35, $int19);
+cc_setsize($int19, 5, 0, 0);
+if($int17 == 1) {
+cc_setcolor(0x37B514);
+} else {
+cc_setcolor(~script2195(13905408, 13676544, $int19, 35));
+}
+}
+if(cc_find($int0, add($int1, 11)) == 1) {
+if($int8 == 0) {
+$int19 = 0;
+} else {
+$int19 = add(1, scale($int8, $int13, sub(35, 1)));
+}
+$int19 = ~min(35, $int19);
+cc_setsize($int19, 5, 0, 0);
+if($int18 == 1) {
+cc_setcolor(0x37B514);
+} else {
+cc_setcolor(~script2195(13905408, 13676544, $int19, 35));
+}
+}
+return();

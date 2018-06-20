@@ -1,0 +1,7 @@
+[clientscript,script1337](int $int0, int $int1)
+if(clientclock < $int1) {
+return();
+}
+if_setontimer("null()", $int0);
+~script134($int0);
+return();

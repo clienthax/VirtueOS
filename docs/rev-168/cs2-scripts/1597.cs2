@@ -1,0 +1,4 @@
+[clientscript,script1597](int $int0)
+if_setontimer("null()", $int0);
+if_setondialogabort("null()", $int0);
+return();

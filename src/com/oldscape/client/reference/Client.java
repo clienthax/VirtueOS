@@ -3720,7 +3720,7 @@ public final class Client extends GameEngine implements class302 {
                 final Widget var70;
                 if (ServerPacket.IF_SET_POSITION == var1.serverPacket) {
                     var23 = var3.method3556();
-                    var24 = var3.getUnsignedIntLE();
+                    var24 = var3.getIntLE();
                     var6 = var3.method3595();
                     var70 = class44.getWidget(var24);
 
@@ -3861,13 +3861,13 @@ public final class Client extends GameEngine implements class302 {
                 long var9;
                 int var26;
                 if (ServerPacket.IF_SET_CLICK_MASK == var1.serverPacket) {
-                    var23 = var3.getUnsignedIntLE();
+                    var23 = var3.getIntLE();
                     var24 = var3.getUnsignedShortLE();
                     if (var24 == 65535) {
                         var24 = -1;
                     }
 
-                    var6 = var3.getUnsignedIntV2();
+                    var6 = var3.getIntV2();
                     var26 = var3.getUnsignedShortLE();
                     if (var26 == 65535) {
                         var26 = -1;
@@ -3933,7 +3933,7 @@ public final class Client extends GameEngine implements class302 {
                 final boolean var81;
                 if (ServerPacket.IF_SET_HIDDEN == var1.serverPacket) {
                     var81 = var3.method3538() == 1;
-                    var24 = var3.getUnsignedIntV2();
+                    var24 = var3.getIntV2();
                     var25 = class44.getWidget(var24);
                     System.out.println(String.format("sendSetInterfaceHidden(%d, %d, %b)", var24 >> 16, var24 & 0xFF, var81));
 
@@ -3961,7 +3961,7 @@ public final class Client extends GameEngine implements class302 {
 
                 WidgetNode var7;
                 if (ServerPacket.IF_OPEN_SUB == var1.serverPacket) {
-                    var23 = var3.method3563();
+                    var23 = var3.getIntV1();
                     var24 = var3.readUnsignedShortOb1();
                     var6 = var3.getUnsignedShortLE();
 
@@ -4262,7 +4262,7 @@ public final class Client extends GameEngine implements class302 {
 
                 if (ServerPacket.IF_SET_ANIM == var1.serverPacket) {
                     var23 = var3.method3556();
-                    var24 = var3.getUnsignedIntV2();
+                    var24 = var3.getIntV2();
                     var25 = class44.getWidget(var24);
 
                     System.out.println(String.format("setInterfaceAnim(%d, %d, %d)", var24 >> 16, var24 & 0xFF, var23));
@@ -4280,7 +4280,7 @@ public final class Client extends GameEngine implements class302 {
 
                 if (ServerPacket.IF_SET_SCROLL_POS == var1.serverPacket) {
                     var23 = var3.readUnsignedShort();
-                    var24 = var3.getUnsignedIntLE();
+                    var24 = var3.getIntLE();
                     var25 = class44.getWidget(var24);
 
                     System.out.println(String.format("setInterfaceScrollPos(%d, %d, %d)", var24 >> 16, var24 & 0xFF, var23));
@@ -4306,7 +4306,7 @@ public final class Client extends GameEngine implements class302 {
                 }
 
                 if (ServerPacket.IF_SET_NPC_HEAD == var1.serverPacket) {
-                    var23 = var3.method3563();
+                    var23 = var3.getIntV1();
                     var24 = var3.readUnsignedShort();
                     var25 = class44.getWidget(var23);
                     System.out.println(String.format("setInterfaceNpcHead(%d, %d, %d)", var23 >> 16, var23 & 0xFF, var24));
@@ -4362,8 +4362,8 @@ public final class Client extends GameEngine implements class302 {
 
                 Widget var86;
                 if (ServerPacket.IF_MOVE_SUB == var1.serverPacket) {
-                    var23 = var3.method3563();
-                    var24 = var3.getUnsignedIntV2();
+                    var23 = var3.getIntV1();
+                    var24 = var3.getIntV2();
 
 //               System.out.println(String.format("setInterfaceSets(%d, %d, %d, %d)", var24 >> 16, var24 & 0xFF, var23 >> 16, var23 & 0xFF));
                     System.out.println(String.format("sendInterfaceMoveSub(%d, %d, %d, %d)", var24 >> 16, var24 & 0xFF, var23 >> 16, var23 & 0xFF));
@@ -4435,7 +4435,7 @@ public final class Client extends GameEngine implements class302 {
                     for (var8 = 0; var8 < var26; ++var8) {
                         var27 = var3.method3538();
                         if (var27 == 255) {
-                            var27 = var3.getUnsignedIntLE();
+                            var27 = var3.getIntLE();
                         }
 
                         var30 = var3.method3555();
@@ -4459,7 +4459,7 @@ public final class Client extends GameEngine implements class302 {
                 }
 
                 if (ServerPacket.field2338 == var1.serverPacket) {
-                    var23 = var3.getUnsignedIntV2();
+                    var23 = var3.getIntV2();
                     var24 = var3.method3555();
                     var6 = var3.method3554();
                     var70 = class44.getWidget(var23);
@@ -4528,8 +4528,8 @@ public final class Client extends GameEngine implements class302 {
                         var23 = -1;
                     }
 
-                    var24 = var3.method3563();
-                    var6 = var3.method3563();
+                    var24 = var3.getIntV1();
+                    var6 = var3.getIntV1();
                     var70 = class44.getWidget(var6);
 
                     System.out.println(String.format("setInterfaceObject(%d, %d, %d, %d)", var6 >> 16, var6 & 0xFF, var23, var24));
@@ -4815,7 +4815,7 @@ public final class Client extends GameEngine implements class302 {
                 if (ServerPacket.IF_SET_ANGLE == var1.serverPacket) {
                     var23 = var3.method3554();
                     var24 = var3.method3554();
-                    var6 = var3.method3563();
+                    var6 = var3.getIntV1();
                     var26 = var3.method3554();
                     var86 = class44.getWidget(var6);
 
@@ -4855,7 +4855,7 @@ public final class Client extends GameEngine implements class302 {
 
                 if (ServerPacket.IF_SET_COLOUR == var1.serverPacket) {
                     var23 = var3.readUnsignedShort();
-                    var24 = var3.method3563();
+                    var24 = var3.getIntV1();
                     var6 = var23 >> 10 & 31;
                     var26 = var23 >> 5 & 31;
                     var8 = var23 & 31;
@@ -4941,7 +4941,7 @@ public final class Client extends GameEngine implements class302 {
 
                 if (ServerPacket.IF_SET_MODEL == var1.serverPacket) {
                     var23 = var3.method3554();
-                    var24 = var3.method3563();
+                    var24 = var3.getIntV1();
                     var25 = class44.getWidget(var24);
 
                     System.out.println(String.format("setInterfaceModel(%d, %d, id %d)", var24 >> 16, var24 & 0xFF, var23));
@@ -5396,7 +5396,7 @@ public final class Client extends GameEngine implements class302 {
 
                 if (ServerPacket.UPDATE_STAT == var1.serverPacket) {//skill llevels?
                     class250.method4503();
-                    var23 = var3.getUnsignedIntLE();
+                    var23 = var3.getIntLE();
                     var24 = var3.method3538();
                     var6 = var3.method3636();
                     skillExperiences[var24] = var23;

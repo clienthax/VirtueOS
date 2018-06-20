@@ -1,0 +1,21 @@
+[clientscript,script1219](int $int0)
+if(%varbit4692 == 2 || %varbit4692 == 0) {
+if_setposition(0, 2, 1, 0, $int0);
+} else {
+if_setposition(2, 2, 2, 0, $int0);
+}
+$int1 = -1;
+if(%varbit619 == 1) {
+$int1 = ~toplevel_getcomponents;
+if($int1 == -1) {
+return();
+}
+if(if_hassub(enum(component, component, $int1, 10551299)) == 1 || if_hassub(enum(component, component, $int1, 10551302)) == 1) {
+if_sethide(1, $int0);
+} else {
+if_sethide(0, $int0);
+}
+} else {
+if_sethide(1, $int0);
+}
+return();

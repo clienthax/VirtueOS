@@ -1,0 +1,87 @@
+[clientscript,script1584](int $int0, string $string0, string $string1, string $string2, string $string3)
+$int1 = 35979276;
+$int2 = 35979277;
+$int3 = 35979278;
+$int4 = 35979279;
+$int5 = 35979280;
+$int6 = 35979269;
+$int7 = 35979268;
+$int8 = 0;
+$int9 = string_indexof_string($string0, "|", 0);
+$int10 = string_indexof_string($string1, "|", 0);
+$int11 = string_indexof_string($string2, "|", 0);
+$string4 = "";
+$string5 = "";
+$string6 = "";
+$int12 = 1428;
+$int13 = 1429;
+$int14 = 18;
+cc_deleteall($int1);
+cc_deleteall($int2);
+cc_deleteall($int3);
+cc_deleteall($int4);
+cc_deleteall($int5);
+~script1586;
+while($int8 <= $int0) {
+while($int9 != -1) {
+while($int10 != -1) {
+while($int11 != -1) {
+$string4 = substring($string0, 0, $int9);
+$string5 = substring($string1, 0, $int10);
+$string6 = substring($string2, 0, $int11);
+if(modulo($int8, 2) == 0) {
+cc_create($int1, Rectangle, divide($int8, 2));
+cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+cc_settrans(245);
+cc_setposition(0, multiply($int8, $int14), 1, 0);
+cc_setsize(0, $int14, 1, 0);
+}
+cc_create($int2, Text, $int8);
+cc_setsize(0, 15, 1, 0);
+cc_setposition(0, multiply($int8, $int14), 0, 0);
+cc_settextfont(495);
+cc_setcolor(0xFF981F);
+cc_settextalign(0, 2, 15);
+cc_settext($string4);
+cc_settextshadow(1);
+cc_create($int3, Text, $int8);
+cc_setsize(0, 15, 1, 0);
+cc_setposition(0, multiply($int8, $int14), 0, 0);
+cc_settextfont(495);
+cc_setcolor(0xFF981F);
+cc_settextalign(2, 2, 15);
+cc_settext($string5);
+cc_settextshadow(1);
+cc_create($int4, Text, $int8);
+cc_setsize(0, 15, 1, 0);
+cc_setposition(0, multiply($int8, $int14), 0, 0);
+cc_settextfont(495);
+cc_setcolor(0xFF981F);
+cc_settextalign(2, 2, 15);
+cc_settext($string6);
+cc_settextshadow(1);
+cc_create($int5, Graphic, $int8);
+cc_setsize(15, 14, 0, 0);
+cc_setposition(0, multiply($int8, $int14), 0, 0);
+cc_setgraphic(1428);
+cc_setonmouseover("script229($int5, $int8, $int13, -1)");
+cc_setonmouseleave("script229($int5, $int8, $int12, -1)");
+cc_setonop("script1587($int5, $int8)");
+cc_setop(1, "Reset Streak");
+$string0 = substring($string0, add($int9, 1), string_length($string0));
+$string1 = substring($string1, add($int10, 1), string_length($string1));
+$string2 = substring($string2, add($int11, 1), string_length($string2));
+$int8 = add($int8, 1);
+$int9 = string_indexof_string($string0, "|", 0);
+$int10 = string_indexof_string($string1, "|", 0);
+$int11 = string_indexof_string($string2, "|", 0);
+}
+}
+}
+}
+if_setscrollsize(0, add(multiply($int8, $int14), $int14), $int6);
+if_setscrollpos(0, 0, $int6);
+~scrollbar_vertical($int7, $int6, 792, 789, 790, 791, 773, 788);
+if_settext($string3, 549:3);
+return();

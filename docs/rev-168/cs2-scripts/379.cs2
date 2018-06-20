@@ -1,0 +1,7 @@
+[clientscript,script379](int $int0, int $int1, int $int2)
+if_setonmouseleave("script40($int2)", $int0);
+~script382($int0, $int1, $int2);
+if_setonvartransmit("script380($int0, $int1, $int2){173}", $int0);
+if_setonmisctransmit("script380($int0, $int1, $int2)", $int0);
+if_setonop("script381(-2147483644, $int0, $int1, $int2)", $int0);
+return();

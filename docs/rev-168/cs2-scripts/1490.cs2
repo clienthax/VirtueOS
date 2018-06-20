@@ -1,0 +1,12 @@
+[clientscript,script1490]
+if(%varc217 == 1) {
+mes("OSM tooltip active.");
+} else {
+mes("OSM tooltip hidden.");
+}
+if(%varc218 == -1) {
+mes("No stat selected.");
+} else {
+mes("Stat selected.");
+}
+return();

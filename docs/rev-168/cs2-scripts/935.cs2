@@ -1,0 +1,7 @@
+[clientscript,script935](int $int0, int $int1, int $int2, int $int3)
+$int4 = if_getwidth($int0);
+$int5 = if_getheight($int0);
+if($int1 != $int4 || $int2 != $int5) {
+~script936($int0, $int4, $int5, $int3);
+}
+return();

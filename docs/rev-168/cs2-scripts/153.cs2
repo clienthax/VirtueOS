@@ -1,0 +1,23 @@
+[clientscript,script153](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, string $string0, string $string1, string $string2, string $string3, string $string4, string $string5, string $string6, string $string7, string $string8)
+cc_deleteall($int0);
+$int6 = 0;
+$int7 = 0;
+if(if_getscrollwidth($int0) > 0) {
+$int6 = divide(sub(if_getscrollwidth($int0), multiply(36, $int2)), sub($int2, 1));
+} else {
+$int6 = divide(sub(if_getwidth($int0), multiply(36, $int2)), sub($int2, 1));
+}
+if(if_getscrollheight($int0) > 0) {
+$int7 = divide(sub(if_getscrollheight($int0), multiply(32, $int3)), sub($int3, 1));
+} else {
+$int7 = divide(sub(if_getheight($int0), multiply(32, $int3)), sub($int3, 1));
+}
+$int8 = 0;
+while($int8 <= multiply($int2, $int3)) {
+cc_create($int0, Graphic, $int8);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(multiply(add(36, $int6), modulo($int8, $int2)), multiply(divide($int8, $int2), add(32, $int7)), 0, 0);
+~script154($int1, $int8, $int0, $int8, $int4, $int5, $string0, $string1, $string2, $string3, $string4, $string5, $string6, $string7, $string8);
+$int8 = add($int8, 1);
+}
+return();

@@ -1,0 +1,24 @@
+[clientscript,script427](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+sound_synth(2266, 1, 0);
+if_sethide(1, $int2);
+if_sethide(0, $int3);
+cc_deleteall($int5);
+if_setposition(33, 165, 0, 0, $int6);
+if_sethide(0, $int5);
+if_settext("<u=ff981f><enum(int, string, 693, $int0)></u><br><br>Slayer Masters will once again be able to assign you this creature.<br><br>You will not get your points back.", $int4);
+$int7 = 0;
+while($int7 < $int1) {
+cc_create($int5, Rectangle, $int7);
+cc_sethide(1);
+$int7 = add($int7, 1);
+}
+cc_create($int5, Rectangle, $int1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(1);
+cc_settrans(255);
+cc_setop(1, "Unblock");
+cc_setonop("script319(1, -2147483644, $int2, $int3, $int4, $int5, $int6)");
+if_setop(1, "Back", $int6);
+if_setonop("script319(0, -2147483644, $int2, $int3, $int4, $int5, $int6)", $int6);
+return();

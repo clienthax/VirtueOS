@@ -1,0 +1,5 @@
+[clientscript,script1518](int $int0, int $int1, int $int2, int $int3)
+~script1520($int0, $int1, $int2, $int3);
+cc_setonclantransmit("script1519(-2147483645, -2147483643, $int0, $int1, $int2, $int3)");
+cc_setonvartransmit("script1519(-2147483645, -2147483643, $int0, $int1, $int2, $int3){1430}");
+return();

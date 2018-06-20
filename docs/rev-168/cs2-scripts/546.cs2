@@ -1,0 +1,64 @@
+[clientscript,script546](int $int0, int $int1)
+if_clearops($int0);
+$int2 = inv_getobj(94, $int1);
+if($int2 == -1) {
+cc_sethide(1);
+.cc_sethide(0);
+if_setonop("null()", $int0);
+if_setonvartransmit("null()", $int0);
+return();
+}
+cc_sethide(0);
+.cc_sethide(1);
+cc_setobject($int2, inv_getnum(94, $int1));
+if_setopbase("<col=ff9040><oc_name($int2)></col>", $int0);
+if_setop(1, "Remove", $int0);
+$string0 = "";
+if(map_members == 1 || oc_members($int2) == 0) {
+$string0 = oc_param($int2, 451);
+if(string_length($string0) > 0) {
+if_setop(2, $string0, $int0);
+}
+$string0 = oc_param($int2, 452);
+if(string_length($string0) > 0) {
+if_setop(3, $string0, $int0);
+}
+$string0 = oc_param($int2, 453);
+if(string_length($string0) > 0) {
+if_setop(4, $string0, $int0);
+}
+$string0 = oc_param($int2, 454);
+if(string_length($string0) > 0) {
+if_setop(5, $string0, $int0);
+}
+$string0 = oc_param($int2, 455);
+if(string_length($string0) > 0) {
+if_setop(6, $string0, $int0);
+}
+$string0 = oc_param($int2, 456);
+if(string_length($string0) > 0) {
+if_setop(7, $string0, $int0);
+}
+$string0 = oc_param($int2, 457);
+if(string_length($string0) > 0) {
+if_setop(8, $string0, $int0);
+}
+$string0 = oc_param($int2, 458);
+if(string_length($string0) > 0) {
+if_setop(9, $string0, $int0);
+}
+if($int2 == 6707) {
+if(%varbit4525 == 1 || %varbit4526 == 1) {
+if_setop(3, "Temple", $int0);
+if_setop(4, "Surface", $int0);
+}
+if_setonvartransmit("script545($int0, $int1, cc_getid, .cc_getid){1190}", $int0);
+} else {
+if_setonvartransmit("null()", $int0);
+}
+} else {
+if_setonvartransmit("null()", $int0);
+}
+if_setop(10, "Examine", $int0);
+if_setonop("script487($int0, cc_getid, 100, 0)", $int0);
+return();

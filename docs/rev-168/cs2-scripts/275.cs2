@@ -1,0 +1,16 @@
+[proc,script275](int $int0)(string)
+$int1 = oc_uncert($int0);
+$int2 = inv_total(464, $int1);
+if($int2 <= 0) {
+if($int1 == 20655) {
+$int2 = 725;
+} else {
+if(oc_param($int1, 385) == 1) {
+$int2 = inv_total(108, 11864);
+} else {
+$int2 = inv_total(108, $int1);
+}
+}
+$int2 = multiply($int2, 1000);
+}
+return(~script46($int2, ","));

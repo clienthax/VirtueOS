@@ -1,0 +1,7 @@
+[clientscript,script617](int $int0, int $int1)
+$int2 = modulo(sub(clientclock, $int1), 50);
+if($int2 >= 25) {
+$int2 = sub(49, $int2);
+}
+if_setcolor(~script246(255, add(152, interpolate(0, $int2, 0, 24, 103)), add(31, interpolate(0, $int2, 0, 24, 224))), $int0);
+return();

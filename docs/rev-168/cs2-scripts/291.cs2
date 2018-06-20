@@ -1,0 +1,10 @@
+[clientscript,script291](int $int0, int $int1, int $int2, int $int3)
+if($int0 != 1) {
+return();
+}
+if(%varbit3958 != $int3) {
+%varbit3958 = $int3;
+sound_synth(2266, 1, 0);
+}
+~script290($int1, $int2);
+return();

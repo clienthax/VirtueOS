@@ -1,0 +1,35 @@
+[clientscript,script1185](int $int0, int $int1)
+$string0 = "";
+if(%varbit4820 > %varbit4821) {
+$string0 = "<col=ffffff><~script46(%varbit4820, ",")></col><br><~script46(%varbit4821, ",")>";
+} else {
+if(%varbit4820 < %varbit4821) {
+$string0 = "<~script46(%varbit4820, ",")><br><col=ffffff><~script46(%varbit4821, ",")></col>";
+} else {
+$string0 = "<~script46(%varbit4820, ",")><br><~script46(%varbit4821, ",")>";
+}
+}
+if(%varbit4822 >= 2147483647) {
+if_settext("Your clan:<br>Opponents:<br>Starting soon...", $int0);
+$string0 = append($string0, "<br>");
+} else {
+if(%varbit4822 > 1) {
+if_settext("Your clan:<br>Opponents:<br>Time:", $int0);
+$string0 = append($string0, "<br><tostring(%varbit4822)> mins");
+} else {
+if(%varbit4822 == 1) {
+if_settext("Your clan:<br>Opponents:<br>Time:", $int0);
+$string0 = append($string0, "<br>1 min");
+} else {
+if(%varbit4820 == %varbit4821) {
+if_settext("Your clan:<br>Opponents:<br>", $int0);
+$string0 = append($string0, "<br>Next kill wins!");
+} else {
+if_settext("Your clan:<br>Opponents:<br>Ending...", $int0);
+$string0 = append($string0, "<br>");
+}
+}
+}
+}
+if_settext($string0, $int1);
+return();

@@ -1,0 +1,113 @@
+[clientscript,script147](int $int0)
+if($int0 == 0) {
+%varc12 = clientclock;
+} else {
+if($int0 == 1) {
+%varc13 = clientclock;
+} else {
+if($int0 == 2) {
+%varc14 = clientclock;
+} else {
+if($int0 == 3) {
+%varc15 = clientclock;
+} else {
+if($int0 == 4) {
+%varc16 = clientclock;
+} else {
+if($int0 == 5) {
+%varc17 = clientclock;
+} else {
+if($int0 == 6) {
+%varc18 = clientclock;
+} else {
+if($int0 == 7) {
+%varc19 = clientclock;
+} else {
+if($int0 == 8) {
+%varc20 = clientclock;
+} else {
+if($int0 == 9) {
+%varc21 = clientclock;
+} else {
+if($int0 == 10) {
+%varc22 = clientclock;
+} else {
+if($int0 == 11) {
+%varc23 = clientclock;
+} else {
+if($int0 == 12) {
+%varc24 = clientclock;
+} else {
+if($int0 == 13) {
+%varc25 = clientclock;
+} else {
+if($int0 == 14) {
+%varc26 = clientclock;
+} else {
+if($int0 == 15) {
+%varc27 = clientclock;
+} else {
+if($int0 == 16) {
+%varc28 = clientclock;
+} else {
+if($int0 == 17) {
+%varc29 = clientclock;
+} else {
+if($int0 == 18) {
+%varc30 = clientclock;
+} else {
+if($int0 == 19) {
+%varc31 = clientclock;
+} else {
+if($int0 == 20) {
+%varc32 = clientclock;
+} else {
+if($int0 == 21) {
+%varc33 = clientclock;
+} else {
+if($int0 == 22) {
+%varc34 = clientclock;
+} else {
+if($int0 == 23) {
+%varc35 = clientclock;
+} else {
+if($int0 == 24) {
+%varc36 = clientclock;
+} else {
+if($int0 == 25) {
+%varc37 = clientclock;
+} else {
+if($int0 == 26) {
+%varc38 = clientclock;
+} else {
+if($int0 == 27) {
+%varc39 = clientclock;
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+return();

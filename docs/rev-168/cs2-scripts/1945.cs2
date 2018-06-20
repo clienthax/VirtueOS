@@ -1,0 +1,7 @@
+[clientscript,script1945](int $int0, int $int1, int $int2, int $int3, int $int4)
+if_settext("Torvesta", $int0);
+if_settext("B0aty", $int1);
+if_settext("Sick Nerd", $int2);
+if_settext("Knightenator", $int3);
+if_settext("Mmorpgrs", $int4);
+return();

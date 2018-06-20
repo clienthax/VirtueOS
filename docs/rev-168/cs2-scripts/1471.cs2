@@ -1,0 +1,5 @@
+[clientscript,script1471](int $int0, int $int1)
+if(cc_find($int0, $int1) == 1) {
+~script1472($int0);
+}
+return();

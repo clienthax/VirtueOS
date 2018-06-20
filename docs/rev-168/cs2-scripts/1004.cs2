@@ -1,0 +1,262 @@
+[clientscript,script1004](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18, int $int19, int $int20, int $int21, int $int22, int $int23, int $int24, int $int25, int $int26, int $int27, int $int28, int $int29, int $int30, int $int31, int $int32, int $int33)
+if($int0 == 1) {
+if(%varc207 == -1) {
+return();
+}
+}
+$int34 = add(23, 1);
+def_stat $anArray0($int34);
+def_int $anArray1($int34);
+$int35 = 0;
+$int36 = 0;
+if($int0 == 1) {
+while(%varc207 != -1) {
+$anArray0($int35) = enum(int, stat, 681, coordx(%varc207));
+$anArray1($int35) = coordz(%varc207);
+if($anArray0($int35) != -1) {
+if($anArray1($int35) > 0) {
+$int35 = add($int35, 1);
+}
+}
+%varc213 = -1;
+%varc212 = %varc213;
+%varc211 = %varc212;
+%varc210 = %varc211;
+%varc209 = %varc210;
+%varc208 = %varc209;
+%varc207 = %varc208;
+}
+} else {
+$int36 = sub(stat_xp(^fishing), $int25);
+if($int36 > 0) {
+$anArray0($int35) = 10;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^attack), $int11);
+if($int36 > 0) {
+$anArray0($int35) = 0;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^strength), $int12);
+if($int36 > 0) {
+$anArray0($int35) = 2;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^ranged), $int13);
+if($int36 > 0) {
+$anArray0($int35) = 4;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^magic), $int14);
+if($int36 > 0) {
+$anArray0($int35) = 6;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^defence), $int15);
+if($int36 > 0) {
+$anArray0($int35) = 1;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^hitpoints), $int16);
+if($int36 > 0) {
+$anArray0($int35) = 3;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^prayer), $int17);
+if($int36 > 0) {
+$anArray0($int35) = 5;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^agility), $int18);
+if($int36 > 0) {
+$anArray0($int35) = 16;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^herblore), $int19);
+if($int36 > 0) {
+$anArray0($int35) = 15;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^thieving), $int20);
+if($int36 > 0) {
+$anArray0($int35) = 17;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^crafting), $int21);
+if($int36 > 0) {
+$anArray0($int35) = 12;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^runecraft), $int22);
+if($int36 > 0) {
+$anArray0($int35) = 20;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^mining), $int23);
+if($int36 > 0) {
+$anArray0($int35) = 14;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^smithing), $int24);
+if($int36 > 0) {
+$anArray0($int35) = 13;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^cooking), $int26);
+if($int36 > 0) {
+$anArray0($int35) = 7;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^firemaking), $int27);
+if($int36 > 0) {
+$anArray0($int35) = 11;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^woodcutting), $int28);
+if($int36 > 0) {
+$anArray0($int35) = 8;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^fletching), $int29);
+if($int36 > 0) {
+$anArray0($int35) = 9;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^slayer), $int30);
+if($int36 > 0) {
+$anArray0($int35) = 18;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^farming), $int31);
+if($int36 > 0) {
+$anArray0($int35) = 19;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^construction), $int32);
+if($int36 > 0) {
+$anArray0($int35) = 22;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+$int36 = sub(stat_xp(^hunter), $int33);
+if($int36 > 0) {
+$anArray0($int35) = 21;
+$anArray1($int35) = $int36;
+$int35 = add($int35, 1);
+}
+}
+$int37 = 0;
+$int38 = 0;
+$int39 = 494;
+$int40 = 494;
+$int41 = 16;
+$int42 = 0;
+$int43 = 0;
+$int44 = 0;
+$int45 = 0;
+$int46 = 0;
+$int47 = -1;
+$string0 = "";
+if($int35 > 0) {
+if($int16 > 0) {
+if(sub(clientclock, %varc76) > 10) {
+if(%varbit4693 == 1) {
+$int41 = 25;
+$int40 = 495;
+$int39 = 495;
+} else {
+if(%varbit4693 == 2) {
+$int41 = 25;
+$int40 = 496;
+$int39 = 496;
+}
+}
+$int42 = if_getheight($int8);
+if($int42 < 100) {
+$int42 = 100;
+}
+$int43 = add(divide(multiply($int41, enum(int, int, 1171, %varbit4722)), $int42), 1);
+while($int37 < $int35) {
+if($int38 == 0) {
+if($int0 == 0) {
+%varc72 = $anArray0($int37);
+$int38 = 1;
+}
+}
+if(%varc71 > 0 && %varc71 > sub(clientclock, $int43)) {
+$int44 = add(%varc71, $int43);
+} else {
+$int44 = clientclock;
+}
+if($int44 < add(clientclock, multiply($int43, $int10))) {
+$int47 = enum(int, component, 1163, %varc70);
+if_sethide(0, $int47);
+$int46 = $anArray1($int37);
+cc_create($int47, Graphic, 1);
+cc_setgraphic(enum(stat, graphic, 255, $anArray0($int37)));
+cc_setposition(0, 0, 0, 5);
+cc_sethide(1);
+$int45 = 1;
+$int37 = add($int37, 1);
+while(%varbit4696 == 1) {
+while($int37 < $int35) {
+while($int45 < 5) {
+while($int46 < 1000000) {
+$int46 = add($int46, $anArray1($int37));
+$int45 = add($int45, 1);
+cc_create($int47, Graphic, $int45);
+cc_setgraphic(enum(stat, graphic, 255, $anArray0($int37)));
+cc_setposition(0, 0, 0, 5);
+cc_sethide(1);
+$int37 = add($int37, 1);
+}
+}
+}
+}
+$string0 = ~script46($int46, ",");
+if($int0 == 1) {
+$string0 = "<img=11> <$string0>";
+}
+if(cc_find($int47, 0) == 1) {
+cc_settext($string0);
+cc_setposition(0, 0, 0, 5);
+cc_sethide(1);
+~script996($int47, $int41, $int39, $int40, $string0);
+}
+if_setontimer("script1005($int47, $int44)", $int47);
+%varc71 = $int44;
+%varc70 = modulo(add(%varc70, 1), $int10);
+} else {
+$int37 = $int35;
+}
+}
+~script997($int1, $int3, $int8, $int9);
+}
+}
+}
+if($int0 == 0) {
+~script999($int3, $int4, $int5, $int6, $int7, $int8, $int9);
+~script1003($int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10);
+}
+return();

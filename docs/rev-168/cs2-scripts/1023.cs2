@@ -1,0 +1,28 @@
+[clientscript,script1023](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18, int $int19, int $int20, int $int21, int $int22, int $int23, int $int24)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+$int25 = 0;
+$int26 = 0;
+if($int1 == -1) {
+%varbit4703 = 0;
+} else {
+%varbit4703 = add($int1, 1);
+$gosubResult1002_0, $gosubResult1002_1 = ~script1002($int2);
+$int26 = $gosubResult1002_1;
+$int25 = $gosubResult1002_0;
+if($int26 == -1) {
+%varbit4704 = 1;
+} else {
+if($int26 > $int25) {
+%varbit4704 = 2;
+} else {
+%varbit4704 = 0;
+}
+}
+%varp262 = $int26;
+%varp261 = $int25;
+}
+~script1026($int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18, $int19, $int20, $int21, $int22, $int23, $int24);
+return();

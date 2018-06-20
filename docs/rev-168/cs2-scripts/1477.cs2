@@ -1,0 +1,7 @@
+[clientscript,script1477](int $int0, int $int1, int $int2)
+~script1478(32309252, 32309253, 1526, $int0, $int1, $int2);
+~script1478(32309254, 32309255, 1527, $int0, $int1, $int2);
+~script1478(32309256, 32309257, 1528, $int0, $int1, $int2);
+~script1478(32309258, 32309259, 1529, $int0, $int1, $int2);
+~script1478(32309260, 32309261, 1530, $int0, $int1, $int2);
+return();

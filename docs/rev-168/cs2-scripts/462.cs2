@@ -1,0 +1,25 @@
+[clientscript,prayer_op](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if($int0 != 1) {
+return();
+}
+if(cc_find($int2, $int3) == 1) {
+if(.cc_find($int2, $int4) == 1) {
+if(testbit(%varbit4101, $int1) == 1) {
+%varbit4101 = clearbit(%varbit4101, $int1);
+~script463($int1, $int2, $int5);
+return();
+}
+if(~script464($int1) == 0) {
+sound_synth(2673, 1, 0);
+return();
+}
+if(stat(^prayer) <= 0) {
+sound_synth(2673, 1, 0);
+mes("You need to recharge your Prayer at an altar.");
+return();
+}
+%varbit4101 = setbit(%varbit4101, $int1);
+~script463($int1, $int2, $int5);
+}
+}
+return();

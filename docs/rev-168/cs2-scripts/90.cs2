@@ -1,0 +1,161 @@
+[proc,script90](int $int0, int $int1, int $int2, int $int3, string $string0, string $string1, string $string2)(int)
+if($int0 == -1) {
+return(0);
+}
+if(enum(int, boolean, 892, $int0) == 1) {
+if($int0 != 106) {
+if($int0 == 105) {
+if(%varbit26 == 1) {
+return(0);
+}
+}
+return(1);
+}
+}
+$int4 = -1;
+$string3 = "";
+switch($int0) {
+case 1:
+case 2:
+if($int1 < %varc199) {
+return(0);
+}
+$string3 = removetags($string0);
+if(compare($string2, $string3) == 0) {
+return(1);
+}
+if($int3 == 2) {
+return(0);
+}
+$int4 = chat_getfilter_public;
+if($int4 == 2 || $int4 == 3) {
+return(0);
+}
+if(string_length(messageFilter) > 0) {
+if(string_indexof_string(lowercase($string1), messageFilter, 0) == -1) {
+return(0);
+}
+}
+if($int4 == 1) {
+if($int3 == 1) {
+return(1);
+}
+return(0);
+}
+return(1);
+case 90:
+case 91:
+if($int1 < %varc199) {
+return(0);
+}
+if(compare($string2, removetags($string0)) == 0) {
+return(1);
+}
+if($int3 == 2) {
+return(0);
+}
+if(chat_getfilter_public != 4) {
+return(0);
+}
+if(string_length(messageFilter) > 0) {
+if(string_indexof_string(lowercase($string1), messageFilter, 0) == -1) {
+return(0);
+}
+}
+return(1);
+case 3:
+case 7:
+if($int1 < %varc175) {
+return(0);
+}
+if($int3 == 2) {
+return(0);
+}
+if(%varp287 == 1) {
+if($int2 == 0) {
+if(~script210($int0, $string0, $int3) == 0) {
+return(0);
+}
+}
+}
+if(chat_getfilter_private == 0) {
+return(1);
+}
+if(chat_getfilter_private == 1) {
+if($int3 == 1) {
+return(1);
+}
+}
+return(0);
+case 101:
+case 103:
+if($int3 == 2) {
+return(0);
+}
+if(chat_getfilter_trade == 0) {
+return(1);
+}
+if(chat_getfilter_trade == 1) {
+if($int3 == 1) {
+return(1);
+}
+}
+return(0);
+case 5:
+case 6:
+if($int1 < %varc175) {
+return(0);
+}
+if($int0 == 5) {
+if(%varbit1627 == 0) {
+if(sub(clientclock, $int1) >= 500) {
+return(0);
+}
+}
+}
+if(%varp287 == 1) {
+if($int2 == 0) {
+if(~script210($int0, $string0, $int3) == 0) {
+return(0);
+}
+}
+}
+if(chat_getfilter_private != 2) {
+return(1);
+}
+return(0);
+case 104:
+case 9:
+if($int3 == 2) {
+return(0);
+}
+if(%varp1054 == 0) {
+return(1);
+}
+if(%varp1054 == 1) {
+if($int3 == 1) {
+return(1);
+}
+}
+return(0);
+case 11:
+if(%varp1054 != 2) {
+return(1);
+}
+return(0);
+case 102:
+if(chat_getfilter_trade != 2) {
+return(1);
+}
+return(0);
+case 106:
+if($int3 != 2) {
+return(1);
+}
+return(0);
+case 14:
+if($int1 < %varc202) {
+return(0);
+}
+}
+return(1);

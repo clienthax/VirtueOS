@@ -1,0 +1,20 @@
+[clientscript,script721](int $int0, int $int1, int $int2, int $int3)
+$int4 = 0;
+if(cc_find($int0, $int1) == 1) {
+$int4 = add(cc_gettrans, $int3);
+if($int3 < 0) {
+if($int4 < $int2) {
+cc_settrans($int2);
+cc_setontimer("null()");
+return();
+}
+} else {
+if($int4 > $int2) {
+cc_settrans($int2);
+cc_setontimer("null()");
+return();
+}
+}
+cc_settrans($int4);
+}
+return();

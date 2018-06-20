@@ -11,7 +11,7 @@ import com.oldscape.shared.network.game.event.decoders.npc.*;
 import com.oldscape.shared.network.game.event.decoders.object.*;
 import com.oldscape.shared.network.game.event.decoders.walking.MiniMapWalkDecoder;
 import com.oldscape.shared.network.game.event.decoders.walking.WalkDecoder;
-import com.oldscape.shared.network.game.event.decoders.widget.WidgetActionDecoder;
+import com.oldscape.shared.network.game.event.decoders.widget.ContinueButtonDecoder;
 import com.oldscape.shared.network.game.event.decoders.widget.WidgetButtonActionDecoder;
 import com.oldscape.shared.network.game.event.encoders.*;
 import com.oldscape.shared.network.game.event.impl.*;
@@ -70,6 +70,8 @@ public final class GameEventRepository {
         addMessageEncoder(WidgetCloseSubEvent.class, new WidgetCloseSubEventEncoder());
         addMessageEncoder(CameraResetEvent.class, new CameraResetEventEncoder());
         addMessageEncoder(CameraRepositionEvent.class, new CameraRepositionEventEncoder());
+        addMessageEncoder(WidgetNpcHeadEvent.class, new WidgetNpcHeadEventEncoder());
+        addMessageEncoder(WidgetAnimEvent.class, new WidgetAnimEventEncoder());
 
         /* Ignored for now */
         // 93 = Mouse change listener.
@@ -81,6 +83,7 @@ public final class GameEventRepository {
         addMessageDecoder(12, new WalkDecoder());
         addMessageDecoder(13, new MiniMapWalkDecoder());
         addMessageDecoder(new int[] {14, 17, 18, 20, 33, 38, 41, 46, 95, 96}, new WidgetButtonActionDecoder());
+        addMessageDecoder(22, new ContinueButtonDecoder());
         addMessageDecoder(57, new ClientDimensionsDecoder());
         addMessageDecoder(58, new ObjectFirstActionClickDecoder());
         addMessageDecoder(83, new ObjectSecondActionClickDecoder());

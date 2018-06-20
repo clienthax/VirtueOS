@@ -1,0 +1,4 @@
+[clientscript,script1996](int $int0)
+%varc197 = -1;
+if_setontimer("null()", $int0);
+return();

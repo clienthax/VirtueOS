@@ -1,0 +1,25 @@
+[clientscript,script982](int $int0, int $int1, int $int2, int $int3)
+cc_deleteall($int2);
+$int4 = 0;
+$int5 = 5;
+if($int4 == 0 || enum(int, int, 1160, $int4) != 0) {
+cc_create($int2, Text, $int4);
+cc_settext(enum(int, string, 1159, $int4));
+cc_setsize(40, 15, 0, 0);
+cc_setposition(add(5, multiply(modulo($int4, 2), 40)), $int5, 0, 0);
+cc_settextfont(495);
+cc_settextshadow(0);
+cc_setcolor(0xFF981F);
+cc_setop(1, "Select");
+cc_setonmouseover("script85(-2147483645, -2147483643, 16777215)");
+cc_setonmouseleave("script85(-2147483645, -2147483643, 16747039)");
+cc_setonop("script983(-2147483645, -2147483643, $int1)");
+$int4 = add($int4, 1);
+if($int4 != 0) {
+if(modulo($int4, 2) == 0) {
+$int5 = add($int5, 15);
+}
+}
+}
+if_setsize(100, add($int5, 5), 0, 0, $int0);
+return();

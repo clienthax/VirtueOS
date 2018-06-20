@@ -1,0 +1,33 @@
+[clientscript,script2118](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+.cc_settrans(255);
+$int7 = ~stat_totallevel;
+if(%varbit1776 == $int4) {
+cc_setgraphic(699);
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setonop("script489(-2147483644, 0)", $int0);
+} else {
+if($int4 == 0 && %varbit1776 == 1 && $int7 >= 1000) {
+cc_setgraphic(697);
+if_setonmouserepeat("cc_settrans(-2147483645, $int1, 225, -1)", $int0);
+if_setonmouseleave("cc_settrans(-2147483645, $int1, 255, -1)", $int0);
+if_setonop("script2119(-2147483644, $int0, $int1, $int2, $int3, $int4, $int5, $int6)", $int0);
+} else {
+cc_setgraphic(697);
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setonop("script489(-2147483644, 2)", $int0);
+}
+}
+if(cc_find($int0, $int2) == 1) {
+if($int0 == $int6) {
+if($int7 < 1000) {
+cc_settext("<col=ffffff>Permanent</col><br>Your <text_gender("Iron Man", "Iron Woman")> restrictions can <col=ff0000>never</col> be removed. This option is available only with a skill total of <col=ff0000><~script46(1000, ",")></col>.");
+} else {
+cc_settext("<col=ffffff>Permanent</col><br>Your <text_gender("Iron Man", "Iron Woman")> restrictions can <col=ff0000>never</col> be removed. Do not choose this option unless you are <col=ff0000>really sure</col> you want to be an <text_gender("Iron Man", "Iron Woman")> <col=ff0000>forever</col>.");
+}
+} else {
+cc_settext("<col=ffffff>PIN</col><br>Your <text_gender("Iron Man", "Iron Woman")> restrictions can be removed in future, if you first unlock your Bank PIN. The change would take effect after a <tostring(7)>-day delay, in case you change your mind.");
+}
+}
+return();

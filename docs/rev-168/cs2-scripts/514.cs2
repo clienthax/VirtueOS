@@ -1,0 +1,7 @@
+[proc,script514](int)
+if(%varc5 == 11 || string_length(%varcstr22) > 0) {
+if(%varc5 <= 0) {
+return(1);
+}
+}
+return(0);

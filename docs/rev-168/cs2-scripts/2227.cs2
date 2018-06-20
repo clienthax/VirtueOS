@@ -1,0 +1,17 @@
+[proc,script2227](string)
+switch(%varbit6347) {
+case 0:
+return("1");
+case 1:
+return("5");
+case 2:
+return("10");
+case 3:
+if(%varbit3960 > 0) {
+return(tostring(%varbit3960));
+} else {
+return("1");
+}
+case 4:
+return("All");
+}

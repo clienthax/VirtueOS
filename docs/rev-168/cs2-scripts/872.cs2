@@ -1,0 +1,16 @@
+[clientscript,script872](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9)
+$int10 = if_getheight($int0);
+if($int10 < 334) {
+$int10 = 334;
+} else {
+if($int10 > 1500) {
+$int10 = 1500;
+}
+}
+if($int10 == $int1) {
+return();
+}
+$int11 = sub($int3, interpolate(0, nth_root(sub($int10, 334), 2), 0, nth_root(sub(1500, 334), 2), sub($int3, $int4)));
+if_setmodelangle($int5, $int6, $int7, $int8, $int9, $int11, $int2);
+if_setontimer("script871($int0, $int10, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9)", $int0);
+return();

@@ -1,0 +1,57 @@
+[clientscript,script2091](int $int0, int $int1)
+if(enum(int, stat, 681, coordx(%varc207)) == $int0) {
+%varc207 = playermember;
+} else {
+if(enum(int, stat, 681, coordx(%varc208)) == $int0) {
+%varc208 = playermember;
+} else {
+if(enum(int, stat, 681, coordx(%varc209)) == $int0) {
+%varc209 = playermember;
+} else {
+if(enum(int, stat, 681, coordx(%varc210)) == $int0) {
+%varc210 = playermember;
+} else {
+if(enum(int, stat, 681, coordx(%varc211)) == $int0) {
+%varc211 = playermember;
+} else {
+if(enum(int, stat, 681, coordx(%varc212)) == $int0) {
+%varc212 = playermember;
+} else {
+if(enum(int, stat, 681, coordx(%varc213)) == $int0) {
+%varc213 = playermember;
+} else {
+if(%varc207 == -1) {
+%varc207 = playermember;
+} else {
+if(%varc208 == -1) {
+%varc208 = playermember;
+} else {
+if(%varc209 == -1) {
+%varc209 = playermember;
+} else {
+if(%varc210 == -1) {
+%varc210 = playermember;
+} else {
+if(%varc211 == -1) {
+%varc211 = playermember;
+} else {
+if(%varc212 == -1) {
+%varc212 = playermember;
+} else {
+if(%varc213 == -1) {
+%varc213 = playermember;
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+return();

@@ -1,0 +1,26 @@
+[clientscript,script2165]
+if(%varbit6273 == 1 && %varbit6272 == 0) {
+if_sethide(0, 182:13);
+if_sethide(0, 182:15);
+if_sethide(1, 182:24);
+if_settext("Did you enjoy playing<br>Old School RuneScape today?", 182:14);
+if_setposition(0, 102, 1, 2, 182:2);
+if_setposition(0, 58, 1, 2, 182:3);
+if_setposition(0, 14, 1, 2, 182:8);
+} else {
+if(%varbit6273 == 2 && %varbit6272 == 0) {
+if_sethide(0, 182:13);
+if_sethide(1, 182:15);
+if_sethide(0, 182:24);
+if_settext("How much did you enjoy playing<br>Old School RuneScape today?", 182:14);
+if_setposition(0, 102, 1, 2, 182:2);
+if_setposition(0, 58, 1, 2, 182:3);
+if_setposition(0, 14, 1, 2, 182:8);
+} else {
+if_sethide(1, 182:13);
+if_setposition(0, 152, 1, 2, 182:2);
+if_setposition(0, 86, 1, 2, 182:3);
+if_setposition(0, 28, 1, 2, 182:8);
+}
+}
+return();

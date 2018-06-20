@@ -1,0 +1,13 @@
+[clientscript,script1312](int $int0, int $int1, int $int2)
+if($int0 == 1) {
+~script837($int1, -1, $int2, "Drag stacks of items to this<br>incinerator to destroy them.", 25, 512);
+if(.cc_find($int1, 1) == 1) {
+.cc_sethide(0);
+}
+} else {
+~script41($int2);
+if(.cc_find($int1, 1) == 1) {
+.cc_sethide(1);
+}
+}
+return();

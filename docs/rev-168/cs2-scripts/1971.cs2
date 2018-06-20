@@ -1,0 +1,5 @@
+[proc,script1971](string $string0, string $string1)(string)
+if(~script1972 == 1) {
+return($string1);
+}
+return($string0);

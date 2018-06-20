@@ -1,0 +1,7 @@
+[clientscript,script1277]
+$int0 = 1;
+while($int0 <= 23) {
+~script1278($int0);
+$int0 = add($int0, 1);
+}
+return();

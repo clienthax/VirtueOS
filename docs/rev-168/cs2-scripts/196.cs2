@@ -1,0 +1,7 @@
+[clientscript,script196](int $int0)
+if(if_find($int0) == 1) {
+if(%varbit3468 >= 80) {
+if_setmodel(25889, $int0);
+}
+}
+return();

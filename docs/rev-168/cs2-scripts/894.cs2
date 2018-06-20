@@ -1,0 +1,6 @@
+[clientscript,script894](int $int0, int $int1)
+if_sethide(0, $int0);
+if_setmodel($int1, $int0);
+if_setmodelanim(2085, $int0);
+if_setontimer("script895($int0, add(clientclock, 120))", $int0);
+return();

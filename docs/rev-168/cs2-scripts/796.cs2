@@ -1,0 +1,28 @@
+[clientscript,script796](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+$int6 = 812;
+$int7 = 813;
+if(~script708 == 1) {
+if(cc_find($int2, $int3) == 1) {
+cc_sethide(0);
+cc_setgraphic($int6);
+cc_setonmouserepeat("script229(-2147483645, -2147483643, $int7, -1)");
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int6, -1)");
+}
+if(cc_find($int2, $int4) == 1) {
+cc_sethide(0);
+}
+if(cc_find($int2, $int5) == 1) {
+cc_setsize(sub($int0, 85), $int1, 0, 0);
+}
+} else {
+if(cc_find($int2, $int3) == 1) {
+cc_sethide(1);
+}
+if(cc_find($int2, $int4) == 1) {
+cc_sethide(1);
+}
+if(cc_find($int2, $int5) == 1) {
+cc_setsize($int0, $int1, 0, 0);
+}
+}
+return();

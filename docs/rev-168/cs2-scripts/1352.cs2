@@ -1,0 +1,26 @@
+[clientscript,script1352](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = divide(add($int1, $int2), 2);
+$int6 = $anArray0($int5);
+$anArray0($int5) = $anArray0($int2);
+$anArray0($int2) = $int6;
+$int7 = $int1;
+$int8 = $int1;
+$int9 = -1;
+while($int8 < $int2) {
+if(compare("<tostring(divide($anArray0($int8), $int4))><enum(int, string, $int3, modulo($anArray0($int8), $int4))>", "<tostring(divide($int6, $int4))><enum(int, string, $int3, modulo($int6, $int4))>") <= 0) {
+$int9 = $anArray0($int8);
+$anArray0($int8) = $anArray0($int7);
+$anArray0($int7) = $int9;
+$int7 = add($int7, 1);
+}
+$int8 = add($int8, 1);
+}
+$anArray0($int2) = $anArray0($int7);
+$anArray0($int7) = $int6;
+if($int1 < sub($int7, 1)) {
+~script1352(0, $int1, sub($int7, 1), $int3, $int4);
+}
+if(add($int7, 1) < $int2) {
+~script1352(0, add($int7, 1), $int2, $int3, $int4);
+}
+return();

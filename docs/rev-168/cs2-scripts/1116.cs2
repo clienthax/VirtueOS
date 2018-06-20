@@ -1,0 +1,110 @@
+[clientscript,script1116](int $int0, int $int1, int $int2)
+$int3 = 0;
+while($int3 <= 5) {
+if(cc_find($int0, multiply($int3, 2)) == 1) {
+if(.cc_find($int0, add(multiply($int3, 2), 1)) == 1) {
+.cc_setcolor(0xFF981F);
+if(%varbit4776 == $int3) {
+cc_setgraphic(296);
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+cc_setonop("script489(0, 0)");
+} else {
+cc_setgraphic(295);
+cc_setonmouserepeat("script85(-2147483645, .cc_getid, 16777215)");
+cc_setonmouseleave("script85(-2147483645, .cc_getid, 16750623)");
+cc_setonop("script1114(-2147483644, $int3, $int0, $int1, $int2)");
+}
+}
+}
+$int3 = add($int3, 1);
+}
+$int4 = enum(int, component, 1235, 8);
+$int5 = if_getwidth($int4);
+$int6 = if_getheight($int4);
+$int4 = enum(int, component, 1236, 8);
+$int7 = if_getwidth($int4);
+$int8 = if_getheight($int4);
+$int9 = 0;
+$int9 = ~script1117(8, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(9, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(27, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(10, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(11, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(28, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(12, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(13, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(29, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(14, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(15, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(30, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(51, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(52, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(53, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(142, 0, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(43, 1, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(44, 1, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(45, 1, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(46, 1, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(143, 1, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(47, 1, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(54, 1, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(16, 2, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(17, 2, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(18, 2, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(19, 2, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(20, 3, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(21, 3, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(22, 3, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(23, 3, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(4, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(5, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(6, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(7, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(49, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(0, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(1, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(2, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(3, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(48, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(24, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(25, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(26, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(50, 4, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(37, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(56, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(57, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(36, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(58, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(59, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(38, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(60, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(61, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(31, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(62, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(63, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(39, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(64, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(65, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(40, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(66, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(67, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(42, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(41, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(55, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(147, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(148, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(149, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(150, 5, $int5, $int6, $int7, $int8, $int9);
+$int9 = ~script1117(151, 5, $int5, $int6, $int7, $int8, $int9);
+$int10 = divide(add($int9, 2), 3);
+if($int10 > 0) {
+$int10 = add(multiply($int10, $int6), multiply(sub($int10, 1), 2));
+}
+if($int10 > if_getheight($int1)) {
+if_setscrollsize(0, $int10, $int1);
+} else {
+if_setscrollsize(0, 0, $int1);
+}
+~script72($int2, $int1, %varc77);
+return();

@@ -1,0 +1,23 @@
+[clientscript,script303](int $int0)
+cc_setsize(36, 32, 0, 0);
+.cc_setsize(36, 15, 0, 0);
+cc_setobject(oc_uncert($int0), 1);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setop(1, "Buy-1");
+cc_setop(2, "Buy-5");
+cc_setop(3, "Buy-10");
+if(~script2082 == 0) {
+cc_setop(4, "Buy-50");
+}
+cc_setop(5, "Buy-X");
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int0)>");
+cc_setonmouseover("cc_settrans(-2147483645, -2147483643, 50, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 0, -1)");
+.cc_settextfont(494);
+.cc_setcolor(0xFF981F);
+.cc_settextshadow(1);
+.cc_settextalign(1, 0, 0);
+.cc_settext(~script275($int0));
+return();

@@ -1,0 +1,16 @@
+[clientscript,script1677](int $int0, string $string0)
+$int1 = ~script198($int0);
+cc_create($int0, Text, $int1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0x7F7F7F);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext($string0);
+if_clearops($int0);
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setonop("null()", $int0);
+if_setontimer("null()", $int0);
+return();

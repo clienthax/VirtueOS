@@ -1,0 +1,66 @@
+[clientscript,script254](int $int0, int $int1, int $int2, int $int3)
+if_setsize(300, if_getheight(129:1), 0, 0, 129:1);
+if_sethide(1, 129:6);
+if_sethide(1, 129:7);
+if_sethide(1, 129:8);
+if_sethide(1, 129:9);
+cc_deleteall(129:13);
+$int4 = 0;
+$int5 = 0;
+$int6 = 0;
+$int7 = 0;
+while($int7 <= 34) {
+if(~script1260($int0, $int1, $int7) == 1) {
+cc_create(129:13, Graphic, $int4);
+$int4 = add($int4, 1);
+.cc_create(129:13, Text, $int4);
+$int4 = add($int4, 1);
+cc_setsize(0, 17, 1, 0);
+.cc_setsize(0, 17, 1, 0);
+cc_setposition(0, $int6, 1, 0);
+.cc_setposition(0, $int6, 1, 0);
+if(modulo($int5, 2) == 0) {
+cc_setgraphic(297);
+} else {
+cc_setgraphic(1040);
+}
+cc_settiling(1);
+.cc_setcolor(0xFF981F);
+.cc_settextfont(495);
+.cc_settextshadow(1);
+.cc_settextalign(1, 1, 0);
+if(~script1260($int2, $int3, $int7) == 1) {
+.cc_settext(enum(int, string, 804, $int7));
+} else {
+.cc_settext("<str><col=8f8f8f><enum(int, string, 804, $int7)></col></str>");
+}
+$int6 = add($int6, 17);
+$int5 = add($int5, 17);
+}
+$int7 = add($int7, 1);
+}
+if($int6 > if_getheight(129:13)) {
+if_setscrollpos(0, 0, 129:13);
+if_setscrollsize(0, $int6, 129:13);
+} else {
+if_setscrollpos(0, 0, 129:13);
+if_setscrollsize(0, 0, 129:13);
+cc_create(129:13, Graphic, $int4);
+$int4 = add($int4, 1);
+cc_setsize(0, $int6, 1, 1);
+cc_setposition(0, 0, 1, 2);
+cc_setgraphic(897);
+cc_settiling(1);
+}
+~scrollbar_vertical(8454158, 8454157, 792, 789, 790, 791, 773, 788);
+if($int5 <= 0) {
+cc_create(129:13, Text, $int4);
+$int4 = add($int4, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext("There are no quests left to show.");
+}
+return();

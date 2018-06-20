@@ -1,0 +1,21 @@
+[clientscript,script980](int $int0)
+cc_deleteall($int0);
+if(%varp211 == 0) {
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setonop("null()", $int0);
+return();
+}
+$int1 = ~script835($int0, 0);
+cc_create($int0, Text, $int1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext("Stop");
+cc_setcolor(0xFF981F);
+if_setonmouserepeat("script85(-2147483645, $int1, 16777215)", $int0);
+if_setonmouseleave("script85(-2147483645, $int1, 16750623)", $int0);
+if_setonop("script978(-2147483644, $int0)", $int0);
+return();

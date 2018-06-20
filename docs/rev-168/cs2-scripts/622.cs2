@@ -1,0 +1,16 @@
+[clientscript,script622](int $int0)
+cc_deleteall($int0);
+$int1 = 0;
+$int2 = 0;
+$int3 = 0;
+while($int2 < 100) {
+while($int3 < 32) {
+cc_create($int0, Rectangle, $int1);
+cc_sethide(1);
+$int1 = add($int1, 1);
+$int3 = add($int3, 1);
+}
+$int3 = 0;
+$int2 = add($int2, 1);
+}
+return();

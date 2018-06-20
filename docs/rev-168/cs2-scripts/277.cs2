@@ -1,0 +1,171 @@
+[clientscript,script277](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12)
+if(%varbit5102 == 1) {
+if_sethide(0, $int10);
+} else {
+if_sethide(1, $int10);
+~script41($int12);
+}
+if(%varbit5364 == 1) {
+if_setsize(37, 37, 1, 0, $int5);
+} else {
+if_setsize(0, 37, 1, 0, $int5);
+}
+if_sethide(1, $int11);
+cc_deleteall($int11);
+$int13 = 0;
+if(%varbit4170 == 3) {
+if(%varbit4171 > 0 || %varbit4172 > 0 || %varbit4173 > 0 || %varbit4174 > 0 || %varbit4175 > 0 || %varbit4176 > 0 || %varbit4177 > 0 || %varbit4178 > 0 || %varbit4179 > 0) {
+$int13 = 0;
+} else {
+$int13 = 1;
+}
+}
+$int14 = 0;
+if($int13 == 1) {
+if_sethide(1, $int9);
+$int14 = 11;
+if_setsize(0, 26, 1, 1, $int1);
+if_setsize(374, 39, 0, 1, $int3);
+if_setsize(16, 39, 0, 1, $int4);
+if_setposition(30, 48, 2, 0, $int2);
+} else {
+if_sethide(0, $int9);
+if_setsize(0, 0, 1, 1, $int1);
+if_setsize(374, 81, 0, 1, $int3);
+if_setsize(16, 81, 0, 1, $int4);
+if_setposition(12, 42, 2, 0, $int2);
+}
+~script231($int4, $int3);
+$int15 = 816;
+$int16 = add(816, multiply(9, 3));
+while($int15 <= $int16) {
+if(cc_find($int3, $int15) == 1) {
+cc_sethide(1);
+}
+$int15 = add($int15, 1);
+}
+$int15 = 0;
+$int17 = sub(8, 1);
+$int18 = divide(sub(if_getwidth($int3), multiply(8, 36)), $int17);
+$int19 = -1;
+$int20 = 0;
+$int21 = 0;
+$int22 = -1;
+$int23 = 0;
+$string0 = "";
+if(%varbit4150 <= 0 || %varbit4150 > 9) {
+while($int15 < 816) {
+if(cc_find($int3, $int15) == 1) {
+cc_sethide(1);
+}
+if(inv_getobj(95, $int15) != -1) {
+$int22 = $int15;
+$int21 = add($int21, 1);
+}
+$int15 = add($int15, 1);
+}
+$int23 = add(add(add(add(add(add(add(add(%varbit4171, %varbit4172), %varbit4173), %varbit4174), %varbit4175), %varbit4176), %varbit4177), %varbit4178), %varbit4179);
+if($int23 <= 0) {
+$int22 = sub(816, 1);
+}
+$int20 = ~script509($int23, add($int22, 1), 0, $int3, $int4, $int10, $int11, $int12, $int14, $int18, $int17, $int13);
+$int15 = 0;
+if(%varbit4171 > 0) {
+$int14 = ~script510(1, $int3, $int20);
+$int20 = ~script509($int15, add($int15, %varbit4171), 1, $int3, $int4, $int10, $int11, $int12, $int14, $int18, $int17, $int13);
+$int15 = add($int15, %varbit4171);
+}
+if(%varbit4172 > 0) {
+$int14 = ~script510(2, $int3, $int20);
+$int20 = ~script509($int15, add($int15, %varbit4172), 2, $int3, $int4, $int10, $int11, $int12, $int14, $int18, $int17, $int13);
+$int15 = add($int15, %varbit4172);
+}
+if(%varbit4173 > 0) {
+$int14 = ~script510(3, $int3, $int20);
+$int20 = ~script509($int15, add($int15, %varbit4173), 3, $int3, $int4, $int10, $int11, $int12, $int14, $int18, $int17, $int13);
+$int15 = add($int15, %varbit4173);
+}
+if(%varbit4174 > 0) {
+$int14 = ~script510(4, $int3, $int20);
+$int20 = ~script509($int15, add($int15, %varbit4174), 4, $int3, $int4, $int10, $int11, $int12, $int14, $int18, $int17, $int13);
+$int15 = add($int15, %varbit4174);
+}
+if(%varbit4175 > 0) {
+$int14 = ~script510(5, $int3, $int20);
+$int20 = ~script509($int15, add($int15, %varbit4175), 5, $int3, $int4, $int10, $int11, $int12, $int14, $int18, $int17, $int13);
+$int15 = add($int15, %varbit4175);
+}
+if(%varbit4176 > 0) {
+$int14 = ~script510(6, $int3, $int20);
+$int20 = ~script509($int15, add($int15, %varbit4176), 6, $int3, $int4, $int10, $int11, $int12, $int14, $int18, $int17, $int13);
+$int15 = add($int15, %varbit4176);
+}
+if(%varbit4177 > 0) {
+$int14 = ~script510(7, $int3, $int20);
+$int20 = ~script509($int15, add($int15, %varbit4177), 7, $int3, $int4, $int10, $int11, $int12, $int14, $int18, $int17, $int13);
+$int15 = add($int15, %varbit4177);
+}
+if(%varbit4178 > 0) {
+$int14 = ~script510(8, $int3, $int20);
+$int20 = ~script509($int15, add($int15, %varbit4178), 8, $int3, $int4, $int10, $int11, $int12, $int14, $int18, $int17, $int13);
+$int15 = add($int15, %varbit4178);
+}
+if(%varbit4179 > 0) {
+$int14 = ~script510(9, $int3, $int20);
+$int20 = ~script509($int15, add($int15, %varbit4179), 9, $int3, $int4, $int10, $int11, $int12, $int14, $int18, $int17, $int13);
+$int15 = add($int15, %varbit4179);
+}
+if(~script514 == 1) {
+$string0 = ~script280;
+if(string_length($string0) > 0) {
+if_settext("Showing items: <col=ff0000><$string0></col>", $int6);
+} else {
+if_settext("Showing items: <col=ff0000>*</col>", $int6);
+}
+} else {
+if_settext("The Bank of RuneScape", $int6);
+}
+~script505($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int20, $int21);
+return();
+}
+if(~script514 == 1) {
+~script299(1, 1);
+}
+$int24 = -1;
+$int25 = -1;
+$gosubResult513_0, $gosubResult513_1 = ~script513(%varbit4150);
+$int25 = $gosubResult513_1;
+$int24 = $gosubResult513_0;
+$int26 = 0;
+$int27 = 0;
+while($int15 < 816) {
+if(cc_find($int3, $int15) == 1) {
+$int19 = inv_getobj(95, $int15);
+if($int19 != -1) {
+$int21 = add($int21, 1);
+}
+if($int15 >= $int24 && $int15 < $int25) {
+cc_sethide(0);
+~script278($int19, inv_getnum(95, $int15), $int3, $int4, $int10, $int11, $int12);
+$int20 = multiply($int27, 36);
+cc_setposition(multiply($int26, add(36, $int18)), $int20, 0, 0);
+$int20 = add($int20, 32);
+if($int26 < $int17) {
+$int26 = add($int26, 1);
+} else {
+$int27 = add($int27, 1);
+$int26 = 0;
+}
+} else {
+cc_sethide(1);
+}
+}
+$int15 = add($int15, 1);
+}
+if(%varbit4170 == 2) {
+if_settext("Tab <enum(int, string, 207, %varbit4150)>", $int6);
+} else {
+if_settext("Tab <tostring(%varbit4150)>", $int6);
+}
+~script505($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int20, $int21);
+return();

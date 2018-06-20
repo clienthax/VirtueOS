@@ -1,0 +1,86 @@
+[clientscript,script1456](int $int0, int $int1, int $int2)
+$int3 = if_getheight($int0);
+$int4 = if_getwidth($int0);
+$int5 = 44;
+$int6 = divide(sub($int3, multiply(5, $int5)), 2);
+$int7 = divide(sub($int4, multiply(7, $int5)), 2);
+if($int6 < 0 || $int7 < 0) {
+return();
+}
+$int8 = 1;
+$int9 = -1;
+$int10 = -1;
+$int11 = 0;
+$int12 = 0;
+$int13 = 0;
+$int14 = 0;
+$int15 = 0;
+$int16 = 0;
+$int17 = -1;
+cc_deleteall($int0);
+.cc_create($int0, Rectangle, 0);
+.cc_sethide(1);
+$int18 = 0;
+while($int8 <= 14) {
+$int16 = 0;
+$int9 = enum(int, component, 1511, $int8);
+if($int9 == -1) {
+return();
+}
+$int10 = enum(int, coordgrid, 1512, $int8);
+if($int10 == -1) {
+return();
+}
+$int11 = coordz($int10);
+$int12 = coordx($int10);
+$int13 = add($int7, multiply(sub($int12, 1), $int5));
+$int14 = add($int6, multiply(sub($int11, 1), $int5));
+if_setposition($int13, $int14, 0, 0, $int9);
+if_setsize($int5, $int5, 0, 0, $int9);
+$int17 = enum(int, namedobj, 982, $int8);
+$int18 = inv_total(93, $int17);
+if(inv_total(93, 12791) > 0) {
+if(%varbit29 == $int8) {
+$int18 = add($int18, %varbit1624);
+} else {
+if(%varbit1622 == $int8) {
+$int18 = add($int18, %varbit1625);
+} else {
+if(%varbit1623 == $int8) {
+$int18 = add($int18, %varbit1626);
+}
+}
+}
+}
+if($int18 >= 20 || $int2 == 0) {
+$int16 = 1;
+}
+cc_deleteall($int9);
+if($int16 == 1) {
+if($int8 == $int1) {
+$int15 = ~script198($int9);
+} else {
+$int15 = ~script208($int9);
+}
+if_setonmouseover("script1455($int0, $int8, $int2)", $int9);
+if_setonmouseleave("script1455($int0, -1, $int2)", $int9);
+} else {
+$int15 = ~script134($int9);
+}
+if_setopbase("<col=ff9040><oc_name($int17)></col>", $int9);
+if_setop(1, "Choose", $int9);
+if_setonop("script1457($int8, $int0, $int9, $int15, $int2)", $int9);
+cc_create($int9, Graphic, $int15);
+cc_setobject($int17, $int18);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(2, 0, 1, 1);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+if($int16 == 0) {
+cc_settrans(125);
+}
+.cc_create($int0, Rectangle, $int8);
+.cc_sethide(1);
+$int8 = add($int8, 1);
+}
+return();

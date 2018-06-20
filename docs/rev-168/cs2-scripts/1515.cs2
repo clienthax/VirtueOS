@@ -1,0 +1,15 @@
+[clientscript,script1515](int $int0, int $int1, int $int2, int $int3)
+if($int2 >= 25) {
+if_settrans($int1, $int3);
+if_setontimer("null()", $int3);
+if($int1 >= 255) {
+if_sethide(1, $int3);
+} else {
+if_sethide(0, $int3);
+}
+return();
+}
+if_sethide(0, $int3);
+if_settrans(add($int0, interpolate(0, $int2, 0, 25, sub($int1, $int0))), $int3);
+if_setontimer("script1514($int0, $int1, add($int2, 1), $int3)", $int3);
+return();

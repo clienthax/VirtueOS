@@ -1,0 +1,11 @@
+[clientscript,script2176]
+if(if_gettop() == 80) {
+set_mouseovertext_enabled(0)
+set_mouseclicks_enabled(0)
+set_loadingtext_enabled(0)
+} else {
+set_mouseovertext_enabled(1)
+set_mouseclicks_enabled(1)
+set_loadingtext_enabled(1)
+}
+return();

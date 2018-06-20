@@ -1,0 +1,38 @@
+[clientscript,script1743](int $int0, int $int1, int $int2)
+cc_deleteall($int2);
+$int3 = 0;
+if($int0 == 1) {
+$int3 = ~script198($int2);
+if_sethide(0, $int1);
+if_setop(1, "Hide", $int2);
+if_setonop("script1742(0, $int1, $int2)", $int2);
+} else {
+$int3 = ~script208($int2);
+if_sethide(1, $int1);
+if_setop(1, "Show", $int2);
+if_setonop("script1742(1, $int1, $int2)", $int2);
+}
+if_setopbase("<col=ff9040>Overview</col>", $int2);
+cc_create($int2, Model, $int3);
+$int3 = add($int3, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setmodel(3374);
+cc_setmodelangle(0, 0, 512, 1536, 0, 950);
+cc_create($int2, Rectangle, $int3);
+$int3 = add($int3, 1);
+.cc_create($int2, Rectangle, $int3);
+$int3 = add($int3, 1);
+cc_setsize(8, 15, 0, 0);
+.cc_setsize(6, 13, 0, 0);
+cc_setposition(0, 1, 1, 1);
+.cc_setposition(0, 1, 1, 1);
+cc_setfill(1);
+.cc_setfill(1);
+cc_setcolor(0xFFFFFF);
+.cc_setcolor(0xFFFFFF);
+cc_settrans(255);
+.cc_settrans(255);
+if_setonmouserepeat("script1744(-2147483645, cc_getid, .cc_getid, 245)", $int2);
+if_setonmouseleave("script1744(-2147483645, cc_getid, .cc_getid, 255)", $int2);
+return();

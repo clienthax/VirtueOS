@@ -1,0 +1,21 @@
+[clientscript,script920](int $int0, int $int1)
+$int2 = 0;
+$int3 = 0;
+if($int1 == 1131) {
+$int2 = if_getwidth(164:33);
+$int3 = if_getheight(164:33);
+if(sub(if_getwidth($int0), if_getwidth(enum(component, component, $int1, 10551325))) < 429) {
+if_setposition(0, add($int3, if_getheight(164:47)), 2, 2, 164:62);
+if_setposition(0, $int3, 2, 2, 164:47);
+if_setposition(0, $int3, 2, 2, 164:46);
+} else {
+if_setposition(0, $int3, 2, 2, 164:62);
+if_setposition($int2, 0, 2, 2, 164:47);
+if_setposition($int2, 0, 2, 2, 164:46);
+}
+} else {
+if($int1 == 1129) {
+if_setEnabledSpriteId(1200, 548:8);
+}
+}
+return();

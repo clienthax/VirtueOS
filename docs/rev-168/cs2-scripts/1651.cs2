@@ -1,0 +1,25 @@
+[clientscript,script1651](int $int0, int $int1, int $int2, string $string0, int $int3, string $string1, int $int4)
+if($int0 == 1 || string_indexof_char($string1, $int1) != -1) {
+if($int1 != -1) {
+if($int0 != 1) {
+if(~script1701(584, -1) == 0) {
+return();
+}
+}
+sound_synth(2266, 1, 0);
+if(cc_find($int2, $int4) == 1) {
+cc_setcolor(0xFFFFFF);
+cc_settext("...");
+}
+if_setonmouserepeat("null()", $int2);
+if_setonmouseleave("null()", $int2);
+if_clearops($int2);
+if_setonop("null()", $int2);
+if_setonkey("null()", $int2);
+if_setontimer("script1652($int2, $string0, $int3, $string1, add(clientclock, 40))", $int2);
+if(cc_find(38273024, $int3) == 1) {
+cc_resume_pausebutton;
+}
+}
+}
+return();

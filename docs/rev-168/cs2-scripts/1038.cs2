@@ -1,0 +1,16 @@
+[clientscript,script1038](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9)
+if(if_gethide($int0) == 0) {
+sound_synth(2266, 1, 0);
+}
+if_sethide(1, $int0);
+if_sethide(0, $int1);
+~script41($int1);
+~script1013($int2);
+~script1013($int3);
+~script1013($int4);
+~script1013($int5);
+~script1013($int6);
+~script1013($int7);
+~script1013($int8);
+~script1013($int9);
+return();

@@ -1,0 +1,44 @@
+[clientscript,script78](int $int0, string $string0)
+switch($int0) {
+case 0:
+%varcstr2 = $string0;
+case 1:
+%varcstr3 = $string0;
+case 2:
+%varcstr4 = $string0;
+case 3:
+%varcstr5 = $string0;
+case 4:
+%varcstr6 = $string0;
+case 5:
+%varcstr7 = $string0;
+case 6:
+%varcstr8 = $string0;
+case 7:
+%varcstr9 = $string0;
+case 8:
+%varcstr10 = $string0;
+case 9:
+%varcstr11 = $string0;
+case 10:
+%varcstr12 = $string0;
+case 11:
+%varcstr13 = $string0;
+case 12:
+%varcstr14 = $string0;
+case 13:
+%varcstr15 = $string0;
+case 14:
+%varcstr16 = $string0;
+case 15:
+%varcstr17 = $string0;
+case 16:
+%varcstr18 = $string0;
+case 17:
+%varcstr19 = $string0;
+case 18:
+%varcstr20 = $string0;
+case 19:
+%varcstr21 = $string0;
+}
+return();

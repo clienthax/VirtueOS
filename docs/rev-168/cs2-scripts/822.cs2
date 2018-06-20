@@ -1,0 +1,39 @@
+[clientscript,script822](int $int0, int $int1)
+cc_deleteall($int0);
+cc_deleteall($int1);
+$int2 = add(divide(sub(if_getwidth($int0), multiply(36, 8)), 7), 36);
+$int3 = 0;
+$int4 = -1;
+$int5 = 0;
+$int6 = enum(int, enum, 1033, $int5);
+while($int6 != -1) {
+$int4 = enum(int, namedobj, $int6, -1);
+cc_create($int0, Graphic, $int5);
+if($int4 != -1) {
+cc_sethide(0);
+cc_setsize(36, 32, 0, 0);
+$int3 = multiply(divide($int5, 8), 48);
+cc_setposition(multiply(modulo($int5, 8), $int2), $int3, 0, 0);
+cc_setobject_nonum($int4, 1);
+cc_setopbase("<col=ff9040><oc_name($int4)></col>");
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+~script824($int6);
+cc_setoninvtransmit("script823(-2147483645, -2147483643, $int6){93}");
+} else {
+cc_sethide(1);
+}
+$int5 = add($int5, 1);
+$int6 = enum(int, enum, 1033, $int5);
+}
+if($int3 > 0) {
+$int3 = add($int3, 32);
+}
+if_setscrollpos(0, 0, $int0);
+if($int3 > if_getheight($int0)) {
+if_setscrollsize(0, $int3, $int0);
+} else {
+if_setscrollsize(0, 0, $int0);
+}
+~scrollbar_vertical($int1, $int0, 792, 789, 790, 791, 773, 788);
+return();

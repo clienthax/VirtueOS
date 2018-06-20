@@ -1,0 +1,189 @@
+[clientscript,script1119](int $int0, int $int1, int $int2, int $int3)
+$int4 = enum(int, component, 1235, $int0);
+$int5 = enum(int, component, 1236, $int0);
+$int6 = enum(int, component, 1237, $int0);
+if($int4 == -1 || $int5 == -1 || $int6 == -1) {
+return();
+}
+$int7 = modulo(coordx($int2), 64);
+$int8 = modulo(coordz($int2), 64);
+if($int8 <= 0) {
+$int8 = 1;
+}
+if($int7 > $int8) {
+$int7 = $int8;
+}
+$int9 = divide(coordx($int2), 64);
+cc_deleteall($int4);
+%varc2 = 0;
+$int10 = 0;
+if(testbit($int3, 1) == 1 || testbit($int3, 0) == 1) {
+cc_create($int4, Rectangle, $int10);
+$int10 = add($int10, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(1);
+cc_settrans(240);
+if(testbit($int3, 1) == 1) {
+cc_setcolor(0xFF3F3F);
+} else {
+cc_setcolor(0x7FFF7F);
+}
+} else {
+cc_create($int4, Graphic, $int10);
+$int10 = add($int10, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_settiling(1);
+cc_setgraphic(1040);
+}
+$int10 = ~thinbox($int4, $int10);
+cc_deleteall($int6);
+$int10 = 0;
+cc_create($int6, Text, $int10);
+$int10 = add($int10, 1);
+cc_setsize(0, 20, 1, 0);
+cc_setposition(0, 0, 1, 0);
+cc_settextfont(496);
+cc_settextalign(1, 2, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settext(enum(int, string, 1233, $int0));
+cc_create($int6, Text, $int10);
+$int10 = add($int10, 1);
+cc_setsize(0, 20, 1, 0);
+cc_setposition(0, 0, 1, 2);
+cc_settextfont(495);
+cc_settextalign(1, 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+$string0 = "";
+if($int1 == 1925 || $int1 == 6055) {
+$string0 = enum(int, string, 1234, $int0);
+} else {
+$string0 = enum(obj, string, 1238, $int1);
+}
+cc_settext($string0);
+$int11 = if_getheight($int6);
+$int12 = sub($int11, 50);
+$int13 = sub($int12, 4);
+if($int7 > 0) {
+cc_create($int6, Rectangle, $int10);
+$int10 = add($int10, 1);
+cc_setsize(10, $int12, 0, 0);
+cc_setposition(10, 25, 0, 2);
+cc_setfill(1);
+cc_setcolor(0x000000);
+cc_create($int6, Rectangle, $int10);
+$int10 = add($int10, 1);
+cc_setsize(10, $int12, 0, 0);
+cc_setposition(10, 25, 0, 2);
+cc_setfill(0);
+.cc_create($int6, Rectangle, $int10);
+$int10 = add($int10, 1);
+.cc_setsize(6, interpolate(0, $int7, 0, $int8, $int13), 0, 0);
+.cc_setposition(12, 27, 0, 2);
+.cc_setfill(1);
+$string0 = append($string0, " (State: <tostring($int7)> / <tostring($int8)>)");
+if(testbit($int3, 1) == 1) {
+cc_setcolor(0xFF0000);
+.cc_setcolor(0xFF0000);
+$string0 = append($string0, "<br>The patch is <col=7f0000>dead</col>.");
+} else {
+if(testbit($int3, 0) == 1) {
+cc_setcolor(0xFF981F);
+.cc_setcolor(0xFF981F);
+$string0 = append($string0, "<br>The patch is <col=003f00>diseased</col>.");
+} else {
+cc_setcolor(0x00CF00);
+.cc_setcolor(0x00CF00);
+}
+}
+} else {
+if($int1 == 1925) {
+$string0 = append($string0, " (empty)");
+} else {
+if($int1 == 6055) {
+$string0 = append($string0, " (weeds)");
+}
+}
+}
+if(testbit($int3, 2) == 1) {
+cc_create($int6, Graphic, $int10);
+$int10 = add($int10, 1);
+cc_setsize(36, 36, 0, 0);
+cc_setposition(0, 20, 1, 2);
+cc_setgraphic(760);
+$string0 = append($string0, "<br>A gardener is protecting this patch.");
+} else {
+if(testbit($int3, 8) == 1) {
+cc_create($int6, Graphic, $int10);
+$int10 = add($int10, 1);
+cc_setsize(32, 36, 0, 0);
+cc_setposition(0, 20, 1, 2);
+cc_setgraphic(904);
+$string0 = append($string0, "<br>A House in Kourend is protecting the patch as a favour.");
+} else {
+if(testbit($int3, 3) == 1) {
+cc_create($int6, Graphic, $int10);
+$int10 = add($int10, 1);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(0, 20, 1, 2);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setobject_nonum(2472, 1);
+$string0 = append($string0, "<br>A nearby flower patch is providing protection.");
+}
+}
+}
+if(testbit($int3, 4) == 1 || coordy($int2) == 1) {
+cc_create($int6, Graphic, $int10);
+$int10 = add($int10, 1);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(5, 20, 2, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+if(coordy($int2) == 1) {
+cc_setobject_nonum(5340, 1);
+$string0 = append($string0, "<br>The patch has been watered.");
+} else {
+cc_setobject_nonum(5331, 1);
+cc_settrans(125);
+$string0 = append($string0, "<br>The patch is dry.");
+}
+}
+if(testbit($int3, 6) == 1 || testbit($int3, 5) == 1 || testbit($int3, 7) == 1) {
+cc_create($int6, Graphic, $int10);
+$int10 = add($int10, 1);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(5, 20, 2, 2);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+if(testbit($int3, 7) == 1) {
+cc_setobject_nonum(21483, 1);
+$string0 = append($string0, "<br>The patch has been treated with ultracompost.");
+} else {
+if(testbit($int3, 6) == 1) {
+cc_setobject_nonum(6034, 1);
+$string0 = append($string0, "<br>The patch has been treated with supercompost.");
+} else {
+cc_setobject_nonum(6032, 1);
+$string0 = append($string0, "<br>The patch has been treated with compost.");
+}
+}
+}
+if($int9 > 0) {
+cc_create($int6, Text, $int10);
+$int10 = add($int10, 1);
+cc_setsize(50, 50, 0, 0);
+cc_setposition(-35, -30, 1, 1);
+cc_settextfont(645);
+cc_settextalign(1, 1, 0);
+cc_setcolor(0xFFB82F);
+cc_settextshadow(1);
+cc_settext(tostring($int9));
+$string0 = append($string0, "<br>Available yield: <tostring($int9)>");
+}
+if_setonmouserepeat("script526(-2147483645, -1, 11731164, $string0, 25, 512)", $int6);
+if_setonmouseleave("script40(11731164)", $int6);
+return();

@@ -1,0 +1,9 @@
+[clientscript,script1327](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, string $string0, string $string1)
+cc_deleteall($int0);
+cc_deleteall($int3);
+cc_deleteall($int4);
+cc_deleteall($int7);
+~script1328($string0, $int0, $int1, $int2, $int3);
+~script1328($string1, $int4, $int5, $int6, $int7);
+~script1331(11796493, 11796493, 11796494, 11796495, 11796496, 11796498, 11796499, 11796500, 11796501, 11796484, 11796483, 11796488, 11796487);
+return();

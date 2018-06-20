@@ -1,0 +1,28 @@
+[clientscript,script606](int $int0, int $int1, string $string0)
+if_setontimer("null()", $int0);
+cc_deleteall($int0);
+if(string_length($string0) <= 0) {
+if_sethide(1, $int0);
+return();
+}
+if_sethide(0, $int0);
+$int2 = if_getwidth($int0);
+$int3 = if_getheight($int0);
+cc_create($int0, Graphic, 0);
+.cc_create($int0, Text, 1);
+cc_setposition(0, 0, 0, 0);
+.cc_setposition(0, 0, 0, 0);
+cc_setsize($int2, $int3, 0, 0);
+.cc_setsize($int2, $int3, 0, 0);
+cc_settiling(1);
+cc_setgraphic(812);
+.cc_settextfont(494);
+.cc_settextalign(1, 1, 0);
+.cc_setcolor(0xFF981F);
+.cc_settextshadow(1);
+.cc_settext($string0);
+cc_setop(1, $string0);
+cc_setonop("script608($int0, $int1, $string0, cc_getid, .cc_getid)");
+cc_setonmouseover("script607(1, $int0, cc_getid, .cc_getid)");
+cc_setonmouseleave("script607(0, $int0, cc_getid, .cc_getid)");
+return();

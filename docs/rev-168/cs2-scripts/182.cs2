@@ -1,0 +1,15 @@
+[clientscript,script182](int $int0)
+$int1 = ~script179($int0);
+$int2 = 0;
+if(modulo($int1, 25) == 0) {
+~script178;
+$int2 = divide($int1, 25);
+if($int2 <= 1) {
+if_setontimer("null()", enum(int, component, 683, $int0));
+} else {
+~script183($int0, sub($int1, 1));
+}
+} else {
+~script183($int0, sub($int1, 1));
+}
+return();

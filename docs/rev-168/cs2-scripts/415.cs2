@@ -1,0 +1,6 @@
+[clientscript,script415](int $int0)
+~smithing_setup;
+if_setonvartransmit("smithing_setup(){210, 281, 197, 314, 1317, 1318}", $int0);
+if_setonstattransmit("smithing_setup(){13}", $int0);
+if_setoninvtransmit("smithing_setup(){93}", $int0);
+return();

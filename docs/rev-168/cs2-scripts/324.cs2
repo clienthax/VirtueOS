@@ -1,0 +1,74 @@
+[clientscript,script324](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if(%varp43 == 0) {
+if($int0 != -1) {
+if_setgraphic($int5, 593:4);
+}
+if($int1 != -1) {
+if_setgraphic($int4, 593:8);
+}
+if($int2 != -1) {
+if_setgraphic($int4, 593:12);
+}
+if($int3 != -1) {
+if_setgraphic($int4, 593:16);
+}
+} else {
+if(%varp43 == 1) {
+if($int0 != -1) {
+if_setgraphic($int4, 593:4);
+}
+if($int1 != -1) {
+if_setgraphic($int5, 593:8);
+}
+if($int2 != -1) {
+if_setgraphic($int4, 593:12);
+}
+if($int3 != -1) {
+if_setgraphic($int4, 593:16);
+}
+} else {
+if(%varp43 == 2) {
+if($int0 != -1) {
+if_setgraphic($int4, 593:4);
+}
+if($int1 != -1) {
+if_setgraphic($int4, 593:8);
+}
+if($int2 != -1) {
+if_setgraphic($int5, 593:12);
+}
+if($int3 != -1) {
+if_setgraphic($int4, 593:16);
+}
+} else {
+if(%varp43 == 3) {
+if($int0 != -1) {
+if_setgraphic($int4, 593:4);
+}
+if($int1 != -1) {
+if_setgraphic($int4, 593:8);
+}
+if($int2 != -1) {
+if_setgraphic($int4, 593:12);
+}
+if($int3 != -1) {
+if_setgraphic($int5, 593:16);
+}
+} else {
+if($int0 != -1) {
+if_setgraphic($int4, 593:4);
+}
+if($int1 != -1) {
+if_setgraphic($int4, 593:8);
+}
+if($int2 != -1) {
+if_setgraphic($int4, 593:12);
+}
+if($int3 != -1) {
+if_setgraphic($int4, 593:16);
+}
+}
+}
+}
+}
+return();

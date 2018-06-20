@@ -1,0 +1,34 @@
+[clientscript,script1195](int $int0, int $int1, int $int2)
+if(%varbit4901 == 1) {
+if_setobject_nonum(13426, 1, $int0);
+} else {
+if(%varbit4901 == 2) {
+if_setobject_nonum(13427, 1, $int0);
+} else {
+if(%varbit4901 == 3) {
+if_setobject_nonum(13428, 1, $int0);
+} else {
+if_setobject_nonum(1965, 1, $int0);
+}
+}
+}
+$int3 = 100;
+if(%varbit4900 <= 100) {
+$int3 = %varbit4900;
+}
+if_settext(tostring($int3), $int1);
+$int4 = interpolate(0, 75, 0, 100, 100);
+$int5 = 210;
+$int6 = 0;
+if($int3 < $int4) {
+$int5 = interpolate(0, $int3, 0, $int4, 152);
+$int6 = interpolate(0, $int3, 0, $int4, 31);
+}
+if_setcolor(~script246(255, $int5, $int6), $int1);
+if_settext("Points: <~script46(%varbit4893, ",")>", $int2);
+if(%varbit4893 >= 1000) {
+if_setcolor(0xFF0000, $int2);
+} else {
+if_setcolor(0xFF981F, $int2);
+}
+return();

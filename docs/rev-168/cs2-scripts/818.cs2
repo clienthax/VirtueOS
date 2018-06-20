@@ -1,0 +1,55 @@
+[clientscript,script818](int $int0)
+cc_clearops;
+.cc_clearops;
+$int1 = enum(int, inv, 150, sub(%varbit4439, 1));
+if($int1 == -1) {
+cc_sethide(1);
+.cc_sethide(1);
+return();
+}
+$int2 = inv_getobj($int1, 0);
+$int3 = 0;
+if($int2 != -1) {
+$int3 = inv_getnum($int1, 0);
+cc_sethide(0);
+if(oc_cert($int2) != $int2) {
+if($int3 == 1) {
+cc_setop(1, "Collect-item");
+cc_setop(2, "Collect-note");
+} else {
+cc_setop(1, "Collect-notes");
+cc_setop(2, "Collect-items");
+}
+} else {
+cc_setop(2, "Collect");
+}
+cc_setop(3, "Bank");
+cc_setop(10, "Examine");
+cc_setobject($int2, $int3);
+cc_setopbase("<col=ff9040><oc_name($int2)></col>");
+} else {
+cc_sethide(1);
+}
+$int2 = inv_getobj($int1, 1);
+if($int2 != -1) {
+$int3 = inv_getnum($int1, 1);
+.cc_sethide(0);
+if(oc_cert($int2) != $int2) {
+if($int3 == 1) {
+.cc_setop(1, "Collect-item");
+.cc_setop(2, "Collect-note");
+} else {
+.cc_setop(1, "Collect-notes");
+.cc_setop(2, "Collect-items");
+}
+} else {
+.cc_setop(2, "Collect");
+}
+.cc_setop(3, "Bank");
+.cc_setop(10, "Examine");
+.cc_setobject($int2, $int3);
+.cc_setopbase("<col=ff9040><oc_name($int2)></col>");
+} else {
+.cc_sethide(1);
+}
+return();

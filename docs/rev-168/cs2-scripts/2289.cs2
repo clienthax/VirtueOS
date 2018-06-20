@@ -1,0 +1,13 @@
+[clientscript,script2289](int $int0, int $int1, int $int2)
+if(%varbit5425 >= 5) {
+return();
+}
+if(modulo(clientclock, 30) == 0) {
+%varbit6386 = add(%varbit6386, 1);
+if(cc_find($int0, $int1) == 1) {
+if(.cc_find($int0, $int2) == 1) {
+~script1511($int0);
+}
+}
+}
+return();

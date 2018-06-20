@@ -1,0 +1,15 @@
+[clientscript,script1070](int $int0, int $int1)
+if($int1 <= 50) {
+.cc_settrans(sub(255, multiply($int1, 4)));
+cc_setmodelangle(0, 0, 512, modulo(add(48, multiply($int1, 40)), 2048), 0, sub(1050, multiply($int1, 20)));
+cc_setmodel(29403);
+return();
+}
+if($int1 <= 70) {
+$int1 = sub($int1, 50);
+.cc_settrans(add(55, multiply($int1, 10)));
+cc_setmodel(16238);
+return();
+}
+cc_deleteall($int0);
+return();

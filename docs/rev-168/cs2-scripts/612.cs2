@@ -1,0 +1,8 @@
+[clientscript,script612](int $int0, int $int1, int $int2, string $string0, string $string1)
+.cc_setcolor(0xFFA82F);
+.cc_settext($string0);
+cc_setonclick("script613($int0, $int1, $int2, $string0, $string1)");
+cc_setonmouseleave("script599($int0, $int2, $string0)");
+$string0 = "<u=ffa82f><$string0></u>";
+cc_setonmouseover("script599($int0, $int2, $string0)");
+return();

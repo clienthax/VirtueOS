@@ -1,0 +1,57 @@
+[clientscript,scrollbar_vertical](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+cc_create($int0, Graphic, 0);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 32, 1, 1);
+cc_setgraphic($int2);
+cc_settiling(0);
+cc_setonclick("script34($int0, $int1, -2147483646)");
+cc_setnoclickthrough(1);
+.cc_create($int0, Graphic, 1);
+.cc_setposition(0, 16, 1, 0);
+$int8 = if_getscrollheight($int1);
+if($int8 <= 0) {
+$int8 = if_getheight($int1);
+}
+$int9 = 0;
+if($int8 > 0) {
+$int9 = divide(multiply(sub(if_getheight($int0), 32), if_getheight($int1)), $int8);
+} else {
+$int9 = sub(if_getheight($int0), 32);
+}
+if($int9 < 10) {
+$int9 = 10;
+}
+.cc_setsize(0, $int9, 1, 0);
+.cc_setgraphic($int4);
+.cc_settiling(0);
+.cc_setdraggable($int0, 0);
+.cc_setondrag("script35($int0, $int1, -2147483646, 0)");
+.cc_setondragcomplete("script35($int0, $int1, -2147483646, 1)");
+.cc_setdragrenderbehaviour(1);
+cc_create($int0, Graphic, 2);
+cc_setposition(0, .cc_gety, 1, 0);
+cc_setsize(0, 5, 1, 0);
+cc_setgraphic($int3);
+cc_settiling(0);
+cc_create($int0, Graphic, 3);
+cc_setposition(0, sub(add(.cc_gety, .cc_getheight), 5), 1, 0);
+cc_setsize(0, 5, 1, 0);
+cc_setgraphic($int5);
+cc_settiling(0);
+cc_create($int0, Graphic, 4);
+cc_setposition(0, 0, 1, 0);
+cc_setsize(0, 16, 1, 0);
+cc_setgraphic($int6);
+cc_settiling(0);
+cc_setonhold("script32($int0, $int1)");
+cc_setnoclickthrough(1);
+cc_create($int0, Graphic, 5);
+cc_setposition(0, 0, 1, 2);
+cc_setsize(0, 16, 1, 0);
+cc_setgraphic($int7);
+cc_settiling(0);
+cc_setonhold("script33($int0, $int1)");
+cc_setnoclickthrough(1);
+if_setonscrollwheel("script36($int0, $int1, -2147483646)", $int0);
+if_setonscrollwheel("script36($int0, $int1, -2147483646)", $int1);
+return();

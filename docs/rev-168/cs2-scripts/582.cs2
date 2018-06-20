@@ -1,0 +1,40 @@
+[clientscript,script582](int $int0, int $int1, int $int2, int $int3, int $int4, string $string0)
+$int5 = enum(enum, enum, 373, $int0);
+cc_deleteall($int1);
+cc_deleteall($int3);
+~script577($int2, $int3, $string0);
+$int6 = if_getwidth($int3);
+$int7 = 0;
+$string1 = "";
+$int8 = 0;
+$int9 = enum(int, int, $int0, $int8);
+while($int9 != -1) {
+$string1 = enum(int, string, 934, $int9);
+cc_create($int3, Rectangle, multiply($int8, 3));
+cc_setposition(0, $int7, 0, 0);
+cc_setsize($int6, 17, 0, 0);
+cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+cc_settrans(255);
+cc_setonmouseover("cc_settrans(-2147483645, -2147483643, 220, -1)");
+cc_setonmouserepeat("script526(-2147483645, -2147483643, $int4, enum(int, string, $int5, $int8), 25, 512)");
+cc_setonmouseleave("script586(-2147483645, -2147483643, $int4)");
+cc_setop(1, $string1);
+cc_setonop("script583(-2147483644, $int3, -2147483643, $int9)");
+cc_setonvartransmit("script584($int3, -2147483643, $int9){92}");
+cc_create($int3, Graphic, add(multiply($int8, 3), 1));
+cc_setposition(0, $int7, 0, 0);
+cc_setsize(17, 17, 0, 0);
+.cc_create($int3, Text, add(multiply($int8, 3), 2));
+.cc_setposition(17, add($int7, 1), 0, 0);
+.cc_setsize(sub($int6, 17), 16, 0, 0);
+.cc_settextshadow(1);
+.cc_settextfont(495);
+.cc_settextalign(0, 1, 0);
+.cc_settext($string1);
+~script585($int3, $int9);
+$int7 = add($int7, 17);
+$int8 = add($int8, 1);
+$int9 = enum(int, int, $int0, $int8);
+}
+return();

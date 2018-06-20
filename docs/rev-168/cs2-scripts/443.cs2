@@ -1,0 +1,24 @@
+[clientscript,script443](int $int0)
+$int1 = 0;
+$int2 = 0;
+$int3 = enum(int, namedobj, 852, $int2);
+while($int3 != -1) {
+cc_create($int0, Graphic, $int2);
+if(map_members == 0 && oc_members($int3) == 1) {
+cc_sethide(1);
+} else {
+cc_setsize(36, 32, 0, 0);
+cc_setposition(multiply(modulo($int1, 8), 46), multiply(divide($int1, 8), 50), 0, 0);
+$int1 = add($int1, 1);
+cc_setobject($int3, 1);
+cc_setopbase("<col=ff9040><oc_name($int3)>");
+cc_setop(1, "Value");
+cc_setop(2, "Buy");
+cc_setop(10, "Examine");
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+}
+$int2 = add($int2, 1);
+$int3 = enum(int, namedobj, 852, $int2);
+}
+return();

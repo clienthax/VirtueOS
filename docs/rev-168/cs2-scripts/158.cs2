@@ -1,0 +1,4 @@
+[clientscript,script158](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, string $string0, string $string1, string $string2, string $string3, string $string4)
+~script160($int0, $int1, $int2, $int3, $int4, $int5, $string0, $string1, $string2, $string3, $string4, "null", "null", "null", "null", $int6);
+if_setoninvtransmit("script159($int0, $int1, $int2, $int3, $int4, $int5, $string0, $string1, $string2, $string3, $string4, "null", "null", "null", "null", $int6){$int1}", $int0);
+return();

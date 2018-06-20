@@ -1,0 +1,86 @@
+[proc,script148](int $int0)(int)
+if($int0 == 0) {
+return(%varc12);
+}
+if($int0 == 1) {
+return(%varc13);
+}
+if($int0 == 2) {
+return(%varc14);
+}
+if($int0 == 3) {
+return(%varc15);
+}
+if($int0 == 4) {
+return(%varc16);
+}
+if($int0 == 5) {
+return(%varc17);
+}
+if($int0 == 6) {
+return(%varc18);
+}
+if($int0 == 7) {
+return(%varc19);
+}
+if($int0 == 8) {
+return(%varc20);
+}
+if($int0 == 9) {
+return(%varc21);
+}
+if($int0 == 10) {
+return(%varc22);
+}
+if($int0 == 11) {
+return(%varc23);
+}
+if($int0 == 12) {
+return(%varc24);
+}
+if($int0 == 13) {
+return(%varc25);
+}
+if($int0 == 14) {
+return(%varc26);
+}
+if($int0 == 15) {
+return(%varc27);
+}
+if($int0 == 16) {
+return(%varc28);
+}
+if($int0 == 17) {
+return(%varc29);
+}
+if($int0 == 18) {
+return(%varc30);
+}
+if($int0 == 19) {
+return(%varc31);
+}
+if($int0 == 20) {
+return(%varc32);
+}
+if($int0 == 21) {
+return(%varc33);
+}
+if($int0 == 22) {
+return(%varc34);
+}
+if($int0 == 23) {
+return(%varc35);
+}
+if($int0 == 24) {
+return(%varc36);
+}
+if($int0 == 25) {
+return(%varc37);
+}
+if($int0 == 26) {
+return(%varc38);
+}
+if($int0 == 27) {
+return(%varc39);
+}
+return(0);

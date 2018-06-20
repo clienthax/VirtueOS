@@ -1,0 +1,81 @@
+[clientscript,script252](int $int0, int $int1, int $int2)
+$int3 = 0;
+$int4 = -1;
+$int5 = -1;
+$int6 = -1;
+$int7 = 0;
+$string0 = "";
+if(cc_find($int0, $int1) == 1) {
+cc_setontimer("null()");
+$int3 = enum(int, int, 818, $int1);
+if($int3 != 0) {
+cc_setsize(0, 15, 1, 0);
+cc_setposition(0, add(32, multiply($int2, 15)), 1, 0);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(0, 0, 0);
+$string0 = enum(int, string, 812, $int3);
+cc_settext($string0);
+cc_setop(1, "Play");
+cc_setop(2, "Unlock hint");
+cc_setopbase("<col=ff9040><$string0></col>");
+$int4 = enum(int, coordgrid, 819, $int3);
+if($int4 != -1) {
+$int6 = coordz($int4);
+$int5 = coordx($int4);
+switch($int5) {
+case 1:
+$int7 = %varp20;
+case 2:
+$int7 = %varp21;
+case 3:
+$int7 = %varp22;
+case 4:
+$int7 = %varp23;
+case 5:
+$int7 = %varp24;
+case 6:
+$int7 = %varp25;
+case 7:
+$int7 = %varp298;
+case 8:
+$int7 = %varp311;
+case 9:
+$int7 = %varp346;
+case 10:
+$int7 = %varp414;
+case 11:
+$int7 = %varp464;
+case 12:
+$int7 = %varp598;
+case 13:
+$int7 = %varp662;
+case 14:
+$int7 = %varp721;
+case 15:
+$int7 = %varp906;
+case 16:
+$int7 = %varp1009;
+case 17:
+$int7 = %varp1338;
+case 18:
+$int7 = %varp1681;
+}
+if(testbit($int7, $int6) == 1) {
+~music_setcolour(65280);
+} else {
+if($int3 == 331 && %varbit1028 > 35) {
+~music_setcolour(65280);
+} else {
+~music_setcolour(16711680);
+}
+}
+} else {
+~music_setcolour(65280);
+}
+cc_setonmouseover("script85(-2147483645, -2147483643, 16777215)");
+} else {
+cc_sethide(1);
+}
+}
+return();

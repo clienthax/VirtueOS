@@ -1,0 +1,37 @@
+[clientscript,script2201](int $int0, int $int1, int $int2, int $int3)
+$int4 = -1;
+$int5 = 16711680;
+if($int3 == 0) {
+$int4 = ~script56($int2);
+if($int4 == 2) {
+$int5 = 901389;
+} else {
+if($int4 == 1) {
+$int5 = 16776960;
+} else {
+$int5 = 16711680;
+}
+}
+}
+if(cc_find($int0, $int1) == 1) {
+if($int3 == 1) {
+cc_settrans(200);
+} else {
+cc_settrans(255);
+}
+}
+if(cc_find($int0, add($int1, 1)) == 1) {
+if($int3 == 1) {
+cc_setcolor(0xFFFFFF);
+} else {
+cc_setcolor($int5);
+}
+}
+if(cc_find($int0, add($int1, 2)) == 1) {
+if($int3 == 1) {
+cc_setcolor(0xFFFFFF);
+} else {
+cc_setcolor($int5);
+}
+}
+return();

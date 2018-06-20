@@ -1,0 +1,12 @@
+[clientscript,script1633](int $int0, int $int1)
+cc_deleteall($int1);
+$int2 = ~script1192($int1, 0);
+cc_create($int1, Text, $int2);
+cc_setposition(0, 0, 1, 0);
+cc_setsize(0, 40, 1, 0);
+cc_settextfont(645);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+~script1635($int1);
+if_setonvartransmit("script1634($int1, $int2){1429, 375, 1227}", $int0);
+return();

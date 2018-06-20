@@ -1,0 +1,23 @@
+[clientscript,script565](int $int0, int $int1, int $int2, int $int3)
+if(cc_find($int0, 0) == 1) {
+if(.cc_find($int0, 1) == 1) {
+~script566($int0, $int1, $int2, $int3);
+return();
+}
+}
+$int4 = if_getwidth($int0);
+$int5 = if_getheight($int0);
+cc_deleteall($int0);
+cc_create($int0, Rectangle, 0);
+cc_setsize($int4, $int5, 0, 0);
+cc_setposition(0, 0, 0, 0);
+cc_setfill(1);
+cc_setcolor(0xFFFFFF);
+cc_settrans(255);
+.cc_create($int0, Model, 1);
+.cc_setsize($int4, $int5, 0, 0);
+.cc_setposition(0, 0, 0, 0);
+.cc_setmodelangle(0, 150, 80, 0, 0, 1500);
+.cc_setmodelanim(2657);
+~script566($int0, $int1, $int2, $int3);
+return();

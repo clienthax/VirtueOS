@@ -1,0 +1,10 @@
+[clientscript,script1756](int $int0, int $int1, int $int2)
+if($int0 == 1) {
+if($int1 != -1) {
+sound_synth(2266, 1, 0);
+if($int2 == 0) {
+} else {
+}
+}
+}
+return();

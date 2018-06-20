@@ -1,0 +1,18 @@
+[clientscript,script1534](int $int0, int $int1, int $int2, string $string0)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+if(cc_find($int1, $int2) == 1) {
+cc_setcolor(0x7F7F7F);
+cc_settext("...");
+}
+if_setonmouserepeat("null()", $int1);
+if_setonmouseleave("null()", $int1);
+if_setonop("null()", $int1);
+if_clearops($int1);
+if_setontimer("script1535($int1, $int2, $string0, add(clientclock, 80))", $int1);
+if(cc_find(33226755, enum(component, int, 1539, $int1)) == 1) {
+cc_resume_pausebutton;
+}
+return();

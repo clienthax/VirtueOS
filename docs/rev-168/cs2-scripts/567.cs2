@@ -1,0 +1,5 @@
+[clientscript,script567](int $int0, int $int1)
+if(cc_find($int0, $int1) == 1) {
+cc_setmodelangle(0, 150, cc_getmodelangle_x, modulo(add(cc_getmodelangle_y, 10), 2048), cc_getmodelangle_z, cc_getmodelzoom);
+}
+return();

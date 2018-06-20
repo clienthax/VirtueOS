@@ -1,0 +1,5 @@
+[clientscript,script947](int $int0, int $int1, int $int2)
+if_settext("<tostring(%varp343)>%", $int0);
+if_settext("<tostring(%varp344)>%", $int1);
+if_settext("<tostring(%varp345)>%", $int2);
+return();

@@ -1,0 +1,15 @@
+[clientscript,script1569](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, string $string0, int $int7)
+if(clientclock < $int7) {
+return();
+}
+if_setontimer("null()", $int0);
+if(cc_find($int0, $int1) == 1) {
+cc_setcolor($int2);
+cc_settrans($int3);
+}
+if_setonmouserepeat("script1015(-2147483645, $int1, $int4, $int5)", $int0);
+if_setonmouseleave("script1015(-2147483645, $int1, $int2, $int3)", $int0);
+if_setonop("script1568(-2147483644, -2147483645, $int1, $int2, $int3, $int4, $int5, $int6, $string0)", $int0);
+if_setop(1, "View party:", $int0);
+if_setopbase("<col=ff9040><removetags($string0)></col>", $int0);
+return();

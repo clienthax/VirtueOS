@@ -1,0 +1,88 @@
+[proc,script242](int $int0)(string,int,int,int,int,int,int,int,int,int)
+switch($int0) {
+case 1:
+return("A basic Air missile", 1, 556, 1, 558, 1, -1, 0, -1, 0);
+case 2:
+return("A basic Water missile", 5, 555, 1, 556, 1, 558, 1, -1, 0);
+case 3:
+return("A basic Earth missile", 9, 557, 2, 556, 1, 558, 1, -1, 0);
+case 4:
+return("A basic Fire missile", 13, 554, 3, 556, 2, 558, 1, -1, 0);
+case 5:
+return("A low level Air missile", 17, 556, 2, 562, 1, -1, 0, -1, 0);
+case 6:
+return("A low level Water missile", 23, 555, 2, 556, 2, 562, 1, -1, 0);
+case 7:
+return("A low level Earth missile", 29, 557, 3, 556, 2, 562, 1, -1, 0);
+case 8:
+return("A low level Fire missile", 35, 554, 4, 556, 3, 562, 1, -1, 0);
+case 9:
+return("A medium level Air missile", 41, 556, 3, 560, 1, -1, 0, -1, 0);
+case 10:
+return("A medium level Water missile", 47, 555, 3, 556, 3, 560, 1, -1, 0);
+case 11:
+return("A medium level Earth missile", 53, 557, 4, 556, 3, 560, 1, -1, 0);
+case 12:
+return("A medium level Fire missile", 59, 554, 5, 556, 4, 560, 1, -1, 0);
+case 13:
+return("A high level Air missile", 62, 556, 5, 565, 1, -1, 0, -1, 0);
+case 14:
+return("A high level Water missile", 65, 555, 7, 556, 5, 565, 1, -1, 0);
+case 15:
+return("A high level Earth missile", 70, 557, 7, 556, 5, 565, 1, -1, 0);
+case 16:
+return("A high level Fire missile", 75, 554, 7, 556, 5, 565, 1, -1, 0);
+case 17:
+return("Hits skeletons, ghosts, shades & zombies hard", 39, 557, 2, 556, 2, 562, 1, -1, 0);
+case 18:
+return("A magic dart of slaying", 50, 4170, 1, 560, 1, 558, 4, -1, 0);
+case 19:
+return("Summons the power of Guthix", 60, 554, 1, 565, 2, 556, 4, 8843, 1);
+case 20:
+return("Summons the power of Zamorak", 60, 554, 4, 565, 2, 556, 1, 2417, 1);
+case 52:
+return("Summons the power of Saradomin", 60, 554, 2, 565, 2, 556, 4, 2415, 1);
+case 31:
+return("A single target smoke attack", 50, 562, 2, 560, 2, 554, 1, 556, 1);
+case 32:
+return("A single target shadow attack", 52, 562, 2, 560, 2, 556, 1, 566, 1);
+case 33:
+return("A single target blood attack", 56, 562, 2, 560, 2, 565, 1, -1, 0);
+case 34:
+return("A single target ice attack", 58, 562, 2, 560, 2, 555, 2, -1, 0);
+case 35:
+return("A multi-target smoke attack", 62, 562, 4, 560, 2, 554, 2, 556, 2);
+case 36:
+return("A multi-target shadow attack", 64, 562, 4, 560, 2, 556, 1, 566, 2);
+case 37:
+return("A multi-target blood attack", 68, 562, 4, 560, 2, 565, 2, -1, 0);
+case 38:
+return("A multi-target ice attack", 70, 562, 4, 560, 2, 555, 4, -1, 0);
+case 39:
+return("A single target strong smoke attack", 74, 560, 2, 565, 2, 554, 2, 556, 2);
+case 40:
+return("A single target strong shadow attack", 76, 560, 2, 565, 2, 556, 2, 566, 2);
+case 41:
+return("A single target strong blood attack", 80, 560, 2, 565, 4, -1, 0, -1, 0);
+case 42:
+return("A single target strong ice attack", 82, 560, 2, 565, 2, 555, 3, -1, 0);
+case 43:
+return("A multi-target strong smoke attack", 86, 560, 4, 565, 2, 554, 4, 556, 4);
+case 44:
+return("A multi-target strong shadow attack", 88, 560, 4, 565, 2, 556, 3, 566, 3);
+case 45:
+return("A multi-target strong blood attack", 92, 560, 4, 565, 4, 566, 1, -1, 0);
+case 46:
+return("A multi-target strong ice attack", 94, 560, 4, 565, 2, 555, 6, -1, 0);
+case 47:
+return("Summons the wrath of Iban", 50, 554, 5, 560, 1, 1409, 1, -1, 0);
+case 48:
+return("A very high level Air missile", 81, 556, 7, 21880, 1, -1, 0, -1, 0);
+case 49:
+return("A very high level Water missile", 85, 555, 10, 556, 7, 21880, 1, -1, 0);
+case 50:
+return("A very high level Earth missile", 90, 557, 10, 556, 7, 21880, 1, -1, 0);
+case 51:
+return("A very high level Fire missile", 95, 554, 10, 556, 7, 21880, 1, -1, 0);
+}
+return("", 0, -1, 0, -1, 0, -1, 0, -1, 0);

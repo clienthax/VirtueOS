@@ -1,0 +1,112 @@
+[clientscript,script21](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, string $string0, string $string1)
+if_setonmouserepeat("script10($int0, $int1, $int4, $string0, $string1, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12)", $int0);
+if_setonmouseleave("script11($int1)", $int0);
+if(stat(^magic) < $int4) {
+if_setgraphic($int3, $int0);
+if_settrans(0, $int0);
+return();
+}
+switch($int0) {
+case 14286986:
+case 14286985:
+if(%varbit2451 == 1) {
+if_settrans(150, $int0);
+} else {
+if_settrans(0, $int0);
+}
+case 14286971:
+if(%varbit5438 > 0) {
+if_settrans(150, $int0);
+} else {
+if_settrans(0, $int0);
+}
+case 14286862:
+if(inv_total(93, 13125) > 0 || inv_total(93, 13126) > 0 || inv_total(93, 13127) > 0 || inv_total(94, 13125) > 0 || inv_total(94, 13126) > 0 || inv_total(94, 13127) > 0 || inv_total(93, 13128) > 0 || inv_total(94, 13128) > 0) {
+if(map_members == 1) {
+if(%varbit4554 < 30) {
+if_setgraphic($int2, $int0);
+return();
+}
+}
+}
+case 14286883:
+if(inv_total(93, 13128) > 0 || inv_total(94, 13128) > 0) {
+if(map_members == 1) {
+if(%varbit4554 < 30) {
+if_setgraphic($int2, $int0);
+return();
+}
+}
+}
+case 14286975:
+case 14286944:
+case 14286913:
+if(%varbit236 == 1) {
+if_setop(10, "Disable warning", $int0);
+} else {
+if_setop(10, "Enable warning", $int0);
+}
+if(%varbit2010 == 0 || %varbit5604 >= 5) {
+if_setgraphic($int3, $int0);
+return();
+}
+case 14286940:
+if(%varbit6284 == 1) {
+if_setop(10, "Disable warning", $int0);
+} else {
+if_setop(10, "Enable warning", $int0);
+}
+case 14286941:
+if(%varbit6285 == 1) {
+if_setop(10, "Disable warning", $int0);
+} else {
+if_setop(10, "Enable warning", $int0);
+}
+case 14286942:
+if(%varbit6286 == 1) {
+if_setop(10, "Disable warning", $int0);
+} else {
+if_setop(10, "Enable warning", $int0);
+}
+case 14286943:
+if(%varbit6287 == 1) {
+if_setop(10, "Disable warning", $int0);
+} else {
+if_setop(10, "Enable warning", $int0);
+}
+case 14286852:
+if(map_members == 0) {
+if_setgraphic($int3, $int0);
+return();
+}
+}
+if($int5 != -1) {
+if(~script19($int5) < $int6) {
+if_setgraphic($int3, $int0);
+if_settrans(0, $int0);
+return();
+}
+}
+if($int7 != -1) {
+if(~script19($int7) < $int8) {
+if_setgraphic($int3, $int0);
+if_settrans(0, $int0);
+return();
+}
+}
+if($int9 != -1) {
+if(~script19($int9) < $int10) {
+if_setgraphic($int3, $int0);
+if_settrans(0, $int0);
+return();
+}
+}
+if($int11 != -1) {
+if(~script19($int11) < $int12) {
+if_setgraphic($int3, $int0);
+if_settrans(0, $int0);
+return();
+}
+}
+if_setgraphic($int2, $int0);
+return();

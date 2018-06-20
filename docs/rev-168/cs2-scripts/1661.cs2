@@ -1,0 +1,34 @@
+[clientscript,script1661](int $int0, string $string0)
+cc_deleteall($int0);
+$int1 = 0;
+cc_create($int0, Graphic, $int1);
+$int1 = add($int1, 1);
+if(if_getwidth($int0) <= 32) {
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setgraphic(1569);
+} else {
+cc_setsize(16, 0, 0, 1);
+cc_setposition(0, 0, 0, 1);
+cc_setgraphic(1612);
+cc_create($int0, Graphic, $int1);
+$int1 = add($int1, 1);
+cc_setsize(32, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setgraphic(1613);
+cc_create($int0, Graphic, $int1);
+$int1 = add($int1, 1);
+cc_setsize(16, 0, 0, 1);
+cc_setposition(0, 0, 2, 1);
+cc_setgraphic(1614);
+}
+cc_create($int0, Text, $int1);
+$int1 = add($int1, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0x202020);
+cc_settextalign(1, 1, 0);
+cc_settextfont(496);
+cc_settextshadow(0);
+cc_settext($string0);
+return();

@@ -1,0 +1,10 @@
+[clientscript,script1748](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9)
+if(clientclock < $int0) {
+return();
+}
+%varc194 = $int4;
+%varc193 = $int3;
+%varc192 = $int2;
+%varc191 = $int1;
+~script1745($int5, $int6, $int7, $int8, $int9);
+return();

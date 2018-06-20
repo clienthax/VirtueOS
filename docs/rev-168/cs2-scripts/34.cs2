@@ -1,0 +1,5 @@
+[clientscript,script34](int $int0, int $int1, int $int2)
+if(cc_find($int0, 1) == 1) {
+cc_dragpickup(0, divide(cc_getheight, 2));
+}
+return();

@@ -1,0 +1,17 @@
+[clientscript,script1462](int $int0, int $int1)
+$int2 = -1;
+$int3 = $int1;
+while($int3 > 0) {
+$int3 = sub($int3, 1);
+if(cc_find($int0, $int3) == 1) {
+$int2 = inv_getobj(93, $int3);
+if($int2 != -1) {
+cc_sethide(0);
+cc_setobject($int2, inv_getnum(93, $int3));
+cc_setopbase("<col=ff9040><oc_name($int2)></col>");
+} else {
+cc_sethide(1);
+}
+}
+}
+return();

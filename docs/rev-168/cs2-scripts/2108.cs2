@@ -1,0 +1,22 @@
+[clientscript,script2108](int $int0, int $int1, int $int2, int $int3)
+if($int2 != $int0) {
+return();
+}
+$int4 = 0;
+$int5 = 0;
+$gosubResult2110_0, $gosubResult2110_1 = ~script2110($int1);
+$int5 = $gosubResult2110_1;
+$int4 = $gosubResult2110_0;
+$int6 = 0;
+$int7 = 0;
+$gosubResult2110_0, $gosubResult2110_1 = ~script2110($int3);
+$int7 = $gosubResult2110_1;
+$int6 = $gosubResult2110_0;
+if($int4 == 0 || $int6 == 0) {
+return();
+}
+~script2111($int3, $int4, $int5);
+~script2111($int1, $int6, $int7);
+sound_synth(2266, 1, 0);
+~script2106($int0);
+return();

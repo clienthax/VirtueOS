@@ -1,0 +1,149 @@
+[clientscript,script10](int $int0, int $int1, int $int2, string $string0, string $string1, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10)
+cc_deleteall($int1);
+if($int0 == 14286972) {
+if(%varbit5960 == 1) {
+$string1 = "Fertilise a farming patch with super or ultra compost, consuming 2 volcanic ash to do so.";
+}
+}
+$int11 = add(2, multiply(13, paraheight(177, 495, "Level <tostring($int2)>: <$string0>")));
+$int12 = add(2, multiply(13, paraheight(177, 494, $string1)));
+$int13 = add(add(add(add(add(2, $int11), $int12), 32), 14), 2);
+if($int3 == -1) {
+$int13 = sub(sub($int13, 32), 14);
+}
+$int14 = 5;
+if(if_gety($int0) < 130) {
+$int14 = sub(261, add($int13, 5));
+}
+cc_create($int1, Rectangle, 0);
+cc_setposition(5, $int14, 0, 0);
+cc_setsize(180, $int13, 0, 0);
+cc_setfill(1);
+cc_setcolor(0x000000);
+cc_settrans(42);
+cc_create($int1, Rectangle, 1);
+cc_setposition(6, add($int14, 1), 0, 0);
+cc_setsize(179, sub($int13, 1), 0, 0);
+cc_setfill(0);
+cc_setcolor(0x2E2B23);
+cc_create($int1, Rectangle, 2);
+cc_setposition(5, $int14, 0, 0);
+cc_setsize(179, sub($int13, 1), 0, 0);
+cc_setfill(0);
+cc_setcolor(0x726451);
+cc_create($int1, Text, 3);
+cc_setposition(7, add($int14, 2), 0, 0);
+cc_setsize(177, $int11, 0, 0);
+cc_settextalign(1, 1, 0);
+cc_settextfont(495);
+cc_setcolor(0xFF981F);
+cc_settextshadow(0);
+cc_settext("Level <tostring($int2)>: <$string0>");
+cc_create($int1, Text, 4);
+cc_setposition(7, add(add($int14, 2), $int11), 0, 0);
+cc_setsize(177, $int12, 0, 0);
+cc_settextalign(1, 1, 0);
+cc_settextfont(494);
+cc_setcolor(0xAF6A1A);
+cc_settextshadow(0);
+cc_settext($string1);
+switch($int0) {
+case 14286986:
+case 14286985:
+if(%varbit2451 == 1) {
+cc_settext("<$string1><br><col=ff0000>On cooldown</col>");
+}
+case 14286971:
+if(%varbit5438 > 0) {
+cc_settext("<$string1><br><col=ff0000>On cooldown</col>");
+}
+}
+$int15 = 1;
+if($int5 != -1) {
+$int15 = 2;
+}
+if($int7 != -1) {
+$int15 = 3;
+}
+if($int9 != -1) {
+$int15 = 4;
+}
+$int16 = divide(sub(190, multiply($int15, 35)), add($int15, 1));
+$int17 = 0;
+if($int3 != -1) {
+cc_create($int1, Graphic, 5);
+cc_setposition($int16, add(add(add($int14, 2), $int11), $int12), 0, 0);
+cc_setsize(35, 32, 0, 0);
+cc_setobject($int3, -1);
+cc_create($int1, Text, 6);
+cc_setposition($int16, add(add(add(add($int14, 2), $int11), $int12), 32), 0, 0);
+cc_setsize(35, 14, 0, 0);
+cc_settextalign(1, 1, 0);
+cc_settextfont(494);
+$int17 = ~script19($int3);
+if($int17 >= $int4) {
+cc_setcolor(0x00FF00);
+} else {
+cc_setcolor(0xFF0000);
+}
+cc_settextshadow(0);
+cc_settext("<~magic_tostring($int17)>/<tostring($int4)>");
+}
+if($int5 != -1) {
+cc_create($int1, Graphic, 7);
+cc_setposition(add(multiply($int16, 2), 35), add(add(add($int14, 2), $int11), $int12), 0, 0);
+cc_setsize(35, 32, 0, 0);
+cc_setobject($int5, -1);
+cc_create($int1, Text, 8);
+cc_setposition(add(multiply($int16, 2), 35), add(add(add(add($int14, 2), $int11), $int12), 32), 0, 0);
+cc_setsize(35, 14, 0, 0);
+cc_settextalign(1, 1, 0);
+cc_settextfont(494);
+$int17 = ~script19($int5);
+if($int17 >= $int6) {
+cc_setcolor(0x00FF00);
+} else {
+cc_setcolor(0xFF0000);
+}
+cc_settextshadow(0);
+cc_settext("<~magic_tostring($int17)>/<tostring($int6)>");
+}
+if($int7 != -1) {
+cc_create($int1, Graphic, 9);
+cc_setposition(add(multiply($int16, 3), 70), add(add(add($int14, 2), $int11), $int12), 0, 0);
+cc_setsize(35, 32, 0, 0);
+cc_setobject($int7, -1);
+cc_create($int1, Text, 10);
+cc_setposition(add(multiply($int16, 3), 70), add(add(add(add($int14, 2), $int11), $int12), 32), 0, 0);
+cc_setsize(35, 14, 0, 0);
+cc_settextalign(1, 1, 0);
+cc_settextfont(494);
+$int17 = ~script19($int7);
+if($int17 >= $int8) {
+cc_setcolor(0x00FF00);
+} else {
+cc_setcolor(0xFF0000);
+}
+cc_settextshadow(0);
+cc_settext("<~magic_tostring($int17)>/<tostring($int8)>");
+}
+if($int9 != -1) {
+cc_create($int1, Graphic, 11);
+cc_setposition(add(multiply($int16, 4), 105), add(add(add($int14, 2), $int11), $int12), 0, 0);
+cc_setsize(35, 32, 0, 0);
+cc_setobject($int9, -1);
+cc_create($int1, Text, 12);
+cc_setposition(add(multiply($int16, 4), 105), add(add(add(add($int14, 2), $int11), $int12), 32), 0, 0);
+cc_setsize(35, 14, 0, 0);
+cc_settextalign(1, 1, 0);
+cc_settextfont(494);
+$int17 = ~script19($int9);
+if($int17 >= $int10) {
+cc_setcolor(0x00FF00);
+} else {
+cc_setcolor(0xFF0000);
+}
+cc_settextshadow(0);
+cc_settext("<~magic_tostring($int17)>/<tostring($int10)>");
+}
+return();

@@ -1,0 +1,5 @@
+[clientscript,script1970]
+if(cc_find(16842752, 0) == 1) {
+cc_setontimer("script2081(clientclock, add(clientclock, 60))");
+}
+return();

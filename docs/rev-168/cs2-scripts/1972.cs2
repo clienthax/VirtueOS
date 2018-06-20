@@ -1,0 +1,5 @@
+[proc,script1972](int)
+if(%varbit6352 == 1) {
+return(1);
+}
+return(is_mobile());

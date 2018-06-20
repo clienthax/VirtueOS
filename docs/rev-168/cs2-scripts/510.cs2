@@ -1,0 +1,6 @@
+[proc,script510](int $int0, int $int1, int $int2)(int)
+if(cc_find($int1, sub(add(816, $int0), 1)) == 1) {
+cc_setposition(0, add($int2, 5), 0, 0);
+cc_sethide(0);
+}
+return(add($int2, 12));

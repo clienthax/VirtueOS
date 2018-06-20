@@ -1,0 +1,8 @@
+[clientscript,script1109](int $int0, int $int1, int $int2, int $int3, int $int4)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+%varbit4089 = $int4;
+~script1111($int1, $int2, $int3, determinateDisplayMode());
+return();

@@ -1,0 +1,33 @@
+[clientscript,script1086](int $int0, int $int1, int $int2, string $string0, string $string1)
+$int3 = 0;
+if($int0 == 1 || $int1 == 0) {
+$int3 = ~script198($int2);
+} else {
+$int3 = ~script208($int2);
+}
+cc_create($int2, Text, $int3);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+if($int1 == 0) {
+cc_setcolor(0xFFFFFF);
+} else {
+if($int0 == 1) {
+cc_setcolor(0xFFA82F);
+} else {
+cc_setcolor(0xFF981F);
+}
+}
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext($string0);
+if($int1 == 1) {
+if_setonmouseover("script1085(1, 1, $int2, $string0, $string1)", $int2);
+if_setonmouseleave("script1085(0, 1, $int2, $string0, $string1)", $int2);
+if_setonclick("script1087($int2, $string0, $string1)", $int2);
+} else {
+if_setonmouserepeat("null()", $int2);
+if_setonmouseleave("null()", $int2);
+if_setonclick("null()", $int2);
+}
+return();

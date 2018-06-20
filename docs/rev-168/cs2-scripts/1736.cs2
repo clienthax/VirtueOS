@@ -1,0 +1,15 @@
+[clientscript,script1736](int $int0, int $int1, int $int2)
+if(cc_find($int0, $int1) == 1) {
+if(.cc_find($int0, $int2) == 1) {
+sound_synth(2266, 1, 0);
+cc_setgraphic(297);
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+cc_setop(1, "Quit");
+cc_setonop("script1734($int0, cc_getid, .cc_getid)");
+%varcstr138 = "";
+~script1738("", $int0);
+~script1983(0, 25);
+}
+}
+return();

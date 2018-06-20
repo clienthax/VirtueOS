@@ -1,0 +1,7 @@
+[clientscript,script1531](int $int0, int $int1, string $string0)
+if_setonmouserepeat("script85(-2147483645, $int1, 16754735)", $int0);
+if_setonmouseleave("script85(-2147483645, $int1, 16750623)", $int0);
+if_setop(1, "Set", $int0);
+if_setopbase("<col=ff9040><$string0></col>", $int0);
+if_setonop("script1534(-2147483644, $int0, $int1, $string0)", $int0);
+return();

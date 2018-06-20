@@ -1,0 +1,57 @@
+[clientscript,script1738](int $int0, string $string0)
+$int1 = -1;
+$int2 = -1;
+$int3 = 0;
+$int4 = 0;
+$string1 = "";
+$int5 = 0;
+$string2 = "";
+$int6 = -1;
+if(string_length($string0) > 0) {
+.cc_settext($string0);
+cc_setonkey("null()");
+%varc187 = add(clientclock, 2);
+%varc190 = 0;
+} else {
+$int3 = string_length(%varcstr138);
+if($int3 > 0) {
+while($int3 > 1) {
+$int2 = opcode6639();
+$int1 = opcode6639();
+while($int6 == -1) {
+while($int1 != -1) {
+$string1 = opcode6693($int1);
+$int4 = string_length($string1);
+if($int4 > 0) {
+$string1 = ~script1299($string1, "<br>", " ");
+$int4 = string_length($string1);
+$int5 = string_indexof_string(lowercase($string1), lowercase(%varcstr138), 0);
+if($int5 != -1) {
+if($int5 > 0) {
+$string2 = "<col=ff0000><substring($string1, 0, $int5)>";
+}
+$string2 = append($string2, "<col=ffffff><substring($string1, $int5, add($int5, $int3))>");
+if(add($int5, $int3) < $int4) {
+$string2 = append($string2, "<col=ff0000><substring($string1, add($int5, $int3), $int4)>");
+}
+$int6 = $int2;
+}
+}
+$int2 = opcode6640();
+$int1 = opcode6640();
+}
+}
+}
+if($int6 != -1) {
+.cc_settext($string2);
+} else {
+.cc_settext("<col=ffffff><%varcstr138><col=ff0000>*</col>");
+}
+} else {
+.cc_settext("<col=ff0000>*</col>");
+}
+cc_setonkey("script1737(-2147483640, -2147483639, $int0, cc_getid, .cc_getid, $int6)");
+%varc190 = 1;
+}
+~script1739(if_getwidth($int0));
+return();

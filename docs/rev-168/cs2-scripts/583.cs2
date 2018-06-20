@@ -1,0 +1,16 @@
+[clientscript,script583](int $int0, int $int1, int $int2, int $int3)
+if($int0 != 1 || $int3 < 0 || $int3 >= 32) {
+return();
+}
+sound_synth(2266, 1, 0);
+if(testbit(%varp92, $int3) == 1) {
+%varp92 = clearbit(%varp92, $int3);
+} else {
+%varp92 = setbit(%varp92, $int3);
+}
+if(cc_find($int1, add($int2, 1)) == 1) {
+if(.cc_find($int1, add($int2, 2)) == 1) {
+~script585($int1, $int3);
+}
+}
+return();

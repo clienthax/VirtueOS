@@ -1,0 +1,40 @@
+[clientscript,script1481](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if_sethide(1, 493:4);
+if_sethide(1, 493:5);
+if_sethide(1, 493:6);
+if_sethide(1, 493:7);
+if_sethide(1, 493:8);
+if_sethide(1, 493:9);
+if_sethide(1, 493:10);
+if_sethide(1, 493:11);
+if_sethide(1, 493:12);
+if_sethide(1, 493:13);
+if($int0 == $int2) {
+if_sethide(0, 493:6);
+if_sethide(0, 493:7);
+} else {
+if($int0 == $int3) {
+if_sethide(0, 493:8);
+if_sethide(0, 493:9);
+} else {
+if($int0 == $int4) {
+if_sethide(0, 493:10);
+if_sethide(0, 493:11);
+} else {
+if($int0 == $int5) {
+if_sethide(0, 493:12);
+if_sethide(0, 493:13);
+} else {
+$int0 = $int1;
+if_sethide(0, 493:4);
+if_sethide(0, 493:5);
+}
+}
+}
+}
+~script1482($int1, "Easy", $int0, $int1, $int2, $int3, $int4, $int5);
+~script1482($int2, "Medium", $int0, $int1, $int2, $int3, $int4, $int5);
+~script1482($int3, "Hard", $int0, $int1, $int2, $int3, $int4, $int5);
+~script1482($int4, "Elite", $int0, $int1, $int2, $int3, $int4, $int5);
+~script1482($int5, "Master", $int0, $int1, $int2, $int3, $int4, $int5);
+return();

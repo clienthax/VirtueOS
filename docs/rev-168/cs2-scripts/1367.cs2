@@ -1,0 +1,181 @@
+[clientscript,script1367](int $int0, int $int1)
+cc_deleteall($int0);
+cc_deleteall($int1);
+$int2 = 0;
+$int3 = 0;
+$int4 = 1;
+$string0 = "";
+$string1 = "";
+$string2 = "";
+$string3 = "";
+$int5 = ~script1370;
+$int6 = 0;
+$int7 = 0;
+if($int5 > 0) {
+$string3 = "<col=00ff00>Kill Queen (<tostring($int5)>)</col>";
+} else {
+$string3 = "<col=cc0000>Kill Queen (<tostring($int5)>)</col>";
+}
+$int8 = ~script1369;
+$int9 = 0;
+$int10 = enum(int, model, 1403, $int4);
+$int11 = 6;
+while($int10 != -1) {
+if($int4 == 1) {
+if(%varbit3251 < 5) {
+$int9 = enum(int, int, 1408, %varbit3251);
+$string2 = "<tostring($int9)> Attacker points";
+} else {
+$string2 = " - Mastered - ";
+}
+$string1 = enum(int, string, 1413, %varbit3251);
+if(%varbit3251 < 5) {
+$string0 = "Attacker level up to <tostring(add(%varbit3251, 1))>";
+} else {
+$string0 = "Attacker level up complete";
+}
+$int10 = enum(int, model, 1409, %varbit3251);
+} else {
+if($int4 == 2) {
+if(%varbit3254 < 5) {
+$int9 = enum(int, int, 1408, %varbit3254);
+$string2 = "<tostring($int9)> Collector points";
+} else {
+$string2 = " - Mastered - ";
+}
+$string1 = enum(int, string, 1414, %varbit3254);
+if(%varbit3254 < 5) {
+$string0 = "Collector level up to <tostring(add(%varbit3254, 1))>";
+} else {
+$string0 = "Collector level up complete";
+}
+$int10 = enum(int, model, 1410, %varbit3254);
+} else {
+if($int4 == 3) {
+if(%varbit3253 < 5) {
+$int9 = enum(int, int, 1408, %varbit3253);
+$string2 = "<tostring($int9)> Defender points";
+} else {
+$string2 = " - Mastered - ";
+}
+$string1 = enum(int, string, 1415, %varbit3253);
+if(%varbit3253 < 5) {
+$string0 = "Defender level up to <tostring(add(%varbit3253, 1))>";
+} else {
+$string0 = "Defender level up complete";
+}
+$int10 = enum(int, model, 1411, %varbit3253);
+} else {
+if($int4 == 4) {
+if(%varbit3255 < 5) {
+$int9 = enum(int, int, 1408, %varbit3255);
+$string2 = "<tostring($int9)> Healer points";
+} else {
+$string2 = " - Mastered - ";
+}
+$string1 = enum(int, string, 1416, %varbit3255);
+if(%varbit3255 < 5) {
+$string0 = "Healer level up to <tostring(add(%varbit3255, 1))>";
+} else {
+$string0 = "Healer level up complete";
+}
+$int10 = enum(int, model, 1412, %varbit3255);
+} else {
+$string0 = enum(int, string, 1405, $int4);
+$string1 = enum(int, string, 1406, $int4);
+$string2 = enum(int, string, 1407, $int4);
+}
+}
+}
+}
+cc_create($int0, Text, $int2);
+cc_setcolor(0xCCCCFF);
+cc_setposition(248, add(6, multiply(50, sub($int4, 1))), 0, 0);
+cc_setsize(83, 40, 0, 0);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext($string1);
+$int2 = add($int2, 1);
+cc_create($int0, Rectangle, $int2);
+cc_setposition(244, add(3, multiply(50, sub($int4, 1))), 0, 0);
+cc_setsize(90, 46, 0, 0);
+cc_setcolor(0x333300);
+$int2 = add($int2, 1);
+$int7 = enum(int, boolean, 1404, $int4);
+if($int7 == 1) {
+$int6 = add(add(6, multiply(50, sub($int4, 2))), 49);
+} else {
+$int6 = add(6, multiply(50, sub($int4, 1)));
+}
+cc_create($int0, Text, $int2);
+cc_setcolor(0xCC0000);
+if(testbit($int8, sub($int4, 1)) == 1) {
+$string2 = "<col=00ff00><$string2></col>";
+}
+cc_setposition(341, $int6, 0, 0);
+if($int7 == 1) {
+cc_setsize(84, 42, 0, 0);
+} else {
+cc_setsize(84, 40, 0, 0);
+}
+cc_settextfont(495);
+if($int7 == 1) {
+cc_settextalign(1, 0, 0);
+} else {
+cc_settextalign(1, 1, 0);
+}
+cc_settextshadow(1);
+cc_settext($string2);
+$int2 = add($int2, 1);
+if($int7 == 1) {
+$int6 = add($int6, 28);
+cc_create($int0, Text, $int2);
+cc_setposition(341, $int6, 0, 0);
+cc_setsize(84, 15, 0, 0);
+cc_settextfont(495);
+cc_settextalign(1, 0, 0);
+cc_settextshadow(1);
+cc_settext($string3);
+$int2 = add($int2, 1);
+}
+cc_create($int0, Rectangle, $int2);
+cc_setposition(338, add(3, multiply(50, sub($int4, 1))), 0, 0);
+cc_setsize(90, 46, 0, 0);
+cc_setcolor(0x333300);
+$int2 = add($int2, 1);
+cc_create($int0, Model, $int2);
+cc_setmodel($int10);
+cc_setposition(11, add(9, multiply(50, sub($int4, 1))), 0, 0);
+cc_setsize(49, 34, 0, 0);
+cc_setmodelangle(0, 0, 0, 0, 0, 2372);
+$int2 = add($int2, 1);
+cc_create($int0, Text, $int2);
+cc_setcolor(0xCCCCFF);
+cc_setposition(70, add(18, multiply(50, sub($int4, 1))), 0, 0);
+cc_setsize(162, 15, 0, 0);
+cc_settextfont(495);
+cc_settextalign(0, 0, 0);
+cc_settextshadow(1);
+cc_settext($string0);
+$int2 = add($int2, 1);
+.cc_create($int1, Rectangle, $int3);
+.cc_setposition(2, add(3, multiply(50, sub($int4, 1))), 0, 0);
+.cc_setsize(238, 46, 0, 0);
+if(%varp261 == $int4) {
+.cc_setcolor(0x0000FF);
+} else {
+.cc_setcolor(0x333300);
+.cc_setonmouseover("script85($int1, $int3, 16777215)");
+.cc_setonmouseleave("script85($int1, $int3, 3355392)");
+}
+.cc_setop(1, "Select");
+.cc_setopbase("<col=ff9040><$string0></col>");
+.cc_setonop("script1368(-2147483645, -2147483643, $int4, testbit($int8, sub($int4, 1)), $int7, $int5)");
+$int3 = add($int3, 1);
+$int4 = add($int4, 1);
+$int10 = enum(int, model, 1403, $int4);
+$int11 = add($int11, 50);
+}
+if_setscrollsize(0, $int11, $int0);
+return();

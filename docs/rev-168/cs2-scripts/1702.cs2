@@ -1,0 +1,189 @@
+[clientscript,script1702](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = 0;
+switch(opcode6616()) {
+case 1:
+$int5 = ~script1753(297424118, 29054198, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(29136098, 297571551, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(28579021, 297014473, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 18:
+$int5 = ~script1754(30528630, 31364198, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(30823536, 30463099, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(31167590, 33461373, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(33412216, 33117287, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(33051738, 33461373, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(33428568, 33461373, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(32953416, 33461373, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(33281093, 33461373, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(33199202, 34788484, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(34739338, 35165351, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(35230878, 34788484, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(35198115, 38638687, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(38753372, 38360163, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 3:
+$int5 = ~script1753(50079065, 50079060, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(50144595, 318580053, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 5:
+$int5 = ~script1753(44831902, 313267358, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(44438701, 312841389, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(44618925, 313070765, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(44324084, 312759540, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(44225744, 312661200, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(44569840, 313005296, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(44750053, 313185509, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(44881101, 313316557, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(44733625, 313169081, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(44618896, 313070736, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(44274873, 312710329, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(313283821, 581719277, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(312694002, 581129458, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(312612023, 581047479, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(312628396, 581063852, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(313037957, 581473413, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(313349258, 581784714, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(313332908, 581768364, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 6:
+$int5 = ~script1753(61085245, 50144805, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(61527593, 329963050, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(50079248, 60921390, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 7:
+$int5 = ~script1753(584602804, 316167348, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(316282011, 47846554, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 8:
+$int5 = ~script1753(594388249, 57517334, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 9:
+$int5 = ~script1753(43410808, 580199803, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(43197740, 580068647, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(44000476, 44180700, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(46540069, 314991909, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(580642159, 43804015, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 10:
+$int5 = ~script1754(46524306, 46491549, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(46786463, 46835605, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(46589842, 47310831, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(46507915, 45574065, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 11:
+$int5 = ~script1753(41101361, 41199667, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 12:
+$int5 = ~script1753(50718312, 50669143, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 14:
+$int5 = ~script1754(57976497, 57976501, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(58025649, 58025653, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(58074801, 58074805, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(57812663, 57812622, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 17:
+$int5 = ~script1753(44230405, 312731397, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 19:
+$int5 = ~script1753(37365536, 37365542, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(39806543, 39904846, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 20:
+$int5 = ~script1753(47212129, 315631201, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(47310431, 315762271, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(47097463, 21464276, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 24:
+$int5 = ~script1753(51827152, 51827157, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(51696079, 51794383, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(319902165, 588337616, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(588386779, 319951318, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(319951334, 588386785, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(51630567, 319984103, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(51876321, 51794401, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(52171227, 320606678, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(320606697, 52171235, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(51941857, 320459233, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(320442833, 52089297, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(320786911, 52351450, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(589124065, 320770529, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(320639465, 589074914, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(51909098, 51909091, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(320229869, 51876333, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(51532274, 319967725, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(51778038, 51597814, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(51909104, 51909109, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(320066037, 320131573, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(320524790, 320459254, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(51564996, 319951300, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(51745225, 320180684, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(51909081, 320393689, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(52171209, 320606668, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(52269558, 320754166, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(319902151, 588337610, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(320180692, 588616151, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(320492001, 588976609, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(52187642, 51597859, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(51597875, 51597879, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 22:
+$int5 = ~script1753(583460733, 315025277, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(583460675, 315025219, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(315189070, 46753614, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(315172731, 46737275, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 23:
+$int5 = ~script1753(39949359, 39539710, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(40899588, 37229792, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 25:
+$int5 = ~script1753(41740191, 834769206, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(834949429, 566513973, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(835178804, 566743348, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(835359013, 566923557, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(835195165, 566759709, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(835424536, 566989080, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(837439784, 569004328, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(566530346, 298094890, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(566350115, 297914659, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(566333726, 297898270, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(566399249, 297963793, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(566792458, 298357002, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(567185697, 298750241, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(567415076, 298979620, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(567398676, 298963220, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(568529179, 300093723, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(299405624, 30970168, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(300503316, 32067860, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(31297807, 47501665, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(31346959, 47501601, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 26:
+$int5 = ~script1753(50259980, 37212744, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(41669235, 41112143, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(49948768, 49915990, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(49735598, 855271349, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(50177939, 855549854, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 27:
+$int5 = ~script1754(42575123, 42591571, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(42247537, 42067252, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1754(42263852, 42247532, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(42951961, 42935643, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(42870115, 42870048, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(42247458, 42149154, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 28:
+$int5 = ~script1753(39325979, 39260443, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 29:
+$int5 = ~script1753(828860270, 560424814, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(829106004, 560670548, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(560768879, 292333423, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(560768859, 292333403, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(829613773, 561178317, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(829957830, 561522374, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(830285551, 561850095, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(561915614, 293480158, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(561112798, 292677342, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(561391354, 292955898, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(561637114, 293201658, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+case 30:
+$int5 = ~script1753(329328643, enum(coordgrid, coordgrid, 1771, 329328643), 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(329951233, enum(coordgrid, coordgrid, 1771, 329951233), 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(330246171, enum(coordgrid, coordgrid, 1771, 330246171), 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(330246184, enum(coordgrid, coordgrid, 1771, 330246184), 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(330524730, enum(coordgrid, coordgrid, 1771, 330524730), 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(330360869, enum(coordgrid, coordgrid, 1771, 330360869), 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(330360833, enum(coordgrid, coordgrid, 1771, 330360833), 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(331081735, enum(coordgrid, coordgrid, 1771, 331081735), 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(330967071, enum(coordgrid, coordgrid, 1771, 330967071), 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(331245617, enum(coordgrid, coordgrid, 1771, 331245617), 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(867608495, 330753966, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(330753966, 867608495, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(867788719, 330917806, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+$int5 = ~script1753(330917806, 867788719, 0, 6, $int0, $int1, $int2, $int3, $int4, $int5);
+}
+if(testbit(%varbit5640, 0) == 0) {
+$int5 = ~script1757(%varc188, 1, $int0, $int1, $int2, $int3, $int4, $int5);
+}
+return();

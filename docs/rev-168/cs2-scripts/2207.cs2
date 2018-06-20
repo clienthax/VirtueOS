@@ -1,0 +1,24 @@
+[clientscript,script2207](int $int0)
+cc_deleteall($int0);
+$int1 = if_getwidth($int0);
+$int2 = sub($int1, 8);
+cc_create($int0, Text, 0);
+cc_setposition(4, 5, 0, 0);
+cc_setsize($int2, 17, 0, 0);
+cc_settextfont(496);
+cc_settextalign(1, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settext("Bank Fillers");
+$int3 = if_getheight($int0);
+cc_create($int0, Rectangle, 1);
+cc_setposition(0, 0, 0, 0);
+cc_setsize($int1, $int3, 0, 0);
+cc_setfill(0);
+cc_setcolor(0x2E2B23);
+cc_create($int0, Rectangle, 2);
+cc_setposition(1, 1, 0, 0);
+cc_setsize(sub($int1, 2), sub($int3, 2), 0, 0);
+cc_setfill(0);
+cc_setcolor(0x726451);
+return();

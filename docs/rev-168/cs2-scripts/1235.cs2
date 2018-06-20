@@ -1,0 +1,73 @@
+[clientscript,script1235](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18, int $int19, int $int20, int $int21, int $int22, int $int23, int $int24, int $int25, int $int26, int $int27, int $int28)
+%varc81 = $int1;
+%varc82 = $int2;
+%varc83 = $int3;
+%varc84 = $int4;
+%varc85 = $int5;
+%varc86 = $int6;
+%varc87 = $int7;
+%varc88 = $int8;
+%varc89 = $int9;
+%varc90 = $int10;
+%varc91 = $int11;
+%varc92 = $int12;
+%varc93 = $int13;
+%varc94 = $int14;
+%varc95 = $int15;
+%varc96 = $int16;
+%varc97 = $int17;
+%varc98 = $int18;
+%varc99 = $int19;
+%varc100 = $int20;
+%varc101 = $int21;
+%varc102 = $int22;
+%varc104 = $int23;
+%varc105 = $int24;
+%varc106 = $int25;
+%varc107 = $int26;
+%varc108 = $int27;
+%varc109 = $int28;
+$int29 = inv_size($int0);
+def_int $anArray0($int29);
+$anArray0(0) = $int1;
+$anArray0(1) = $int2;
+$anArray0(2) = $int3;
+$anArray0(3) = $int4;
+$anArray0(4) = $int5;
+$anArray0(5) = $int6;
+$anArray0(6) = $int7;
+$anArray0(7) = $int8;
+$anArray0(8) = $int9;
+$anArray0(9) = $int10;
+$anArray0(10) = $int11;
+$anArray0(11) = $int12;
+$anArray0(12) = $int13;
+$anArray0(13) = $int14;
+$anArray0(14) = $int15;
+$anArray0(15) = $int16;
+$anArray0(16) = $int17;
+$anArray0(17) = $int18;
+$anArray0(18) = $int19;
+$anArray0(19) = $int20;
+$anArray0(20) = $int21;
+$anArray0(21) = $int22;
+$anArray0(22) = $int23;
+$anArray0(23) = $int24;
+$anArray0(24) = $int25;
+$anArray0(25) = $int26;
+$anArray0(26) = $int27;
+$anArray0(27) = $int28;
+$string0 = "Invalid item.";
+while($int29 > 0) {
+$int29 = sub($int29, 1);
+if(cc_find(5308421, $int29) == 1) {
+if($int0 == 93 && $anArray0($int29) <= -1 && inv_getobj(93, $int29) != -1) {
+cc_setonmouserepeat("script526(-2147483645, -2147483643, 5308423, $string0, 25, 512)");
+cc_setonmouseleave("script40(5308423)");
+} else {
+~trade_tooltip(inv_getnum($int0, $int29), $anArray0($int29), 5308423);
+}
+}
+}
+~script41(5308423);
+return();

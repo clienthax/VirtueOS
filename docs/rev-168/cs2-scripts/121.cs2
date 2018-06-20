@@ -1,0 +1,13 @@
+[clientscript,script121](int $int0, int $int1)
+if(cc_find($int1, 0) == 1) {
+if(.cc_find($int1, 1) == 1) {
+if($int0 == 1) {
+cc_setcolor(0xFFB82F);
+.cc_setcolor(0xFFB82F);
+} else {
+cc_setcolor(0xFF981F);
+.cc_setcolor(0xFF981F);
+}
+}
+}
+return();

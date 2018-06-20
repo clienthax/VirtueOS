@@ -1,0 +1,398 @@
+[clientscript,script1707](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18, int $int19, int $int20, int $int21, int $int22, int $int23)
+if_setonscrollwheel("script1725(-2147483646, $int17, $int18)", $int3);
+~script1743(0, $int5, $int7);
+cc_deleteall($int0);
+$int24 = 0;
+while(~toplevel_getcomponents != 1132) {
+while($int24 < 8) {
+cc_create($int0, Graphic, $int24);
+cc_sethide(0);
+cc_settiling(1);
+cc_settrans(255);
+cc_setonmouserepeat("cc_settrans(-2147483645, -2147483643, 200, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 255, -1)");
+cc_setdraggable($int0, -1);
+cc_setdragdeadzone(1);
+cc_setdragdeadtime(5);
+$int24 = add($int24, 1);
+}
+cc_deleteall($int23);
+$int24 = 0;
+while($int24 < 4) {
+cc_create($int23, Rectangle, $int24);
+cc_sethide(0);
+cc_setsize(multiply($int24, 2), multiply($int24, 2), 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0x9F9F9F);
+cc_setfill(0);
+cc_settrans(add(100, multiply($int24, 10)));
+$int24 = add($int24, 1);
+}
+}
+$int25 = multiply(add(4, 1), 21);
+if_setsize(0, $int25, 1, 1, $int19);
+if_setsize(6, $int25, 1, 0, $int9);
+def_int $anArray0(add(~max(78, 31), 1));
+cc_deleteall($int20);
+$int24 = 0;
+$int26 = 0;
+$string0 = "";
+$int27 = 0;
+$int28 = enum(int, maplabel, 1705, $int26);
+while($int28 != -1) {
+$anArray0($int26) = $int26;
+$int26 = add($int26, 1);
+$string0 = enum(maplabel, string, 1713, $int28);
+cc_create($int20, Rectangle, $int24);
+$int24 = add($int24, 1);
+cc_setsize(0, 16, 1, 0);
+cc_setfill(1);
+cc_setcolor(0xFFFFFF);
+cc_setop(1, "Flash icons");
+cc_setopbase("<col=ff9040><$string0></col>");
+~script1730($int28, $int20, cc_getid);
+cc_create($int20, Graphic, $int24);
+$int24 = add($int24, 1);
+cc_setsize(15, 15, 0, 0);
+cc_setgraphic(enum(maplabel, graphic, 1712, $int28));
+cc_create($int20, Text, $int24);
+$int24 = add($int24, 1);
+cc_setsize(18, 16, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(0, 1, 0);
+cc_settext($string0);
+$int27 = ~max($int27, parawidth(512, 495, $string0));
+cc_create($int20, Text, $int24);
+$int24 = add($int24, 1);
+cc_setsize(1, 1, 0, 0);
+cc_setcolor(0x000000);
+cc_settextfont(494);
+cc_settextshadow(0);
+cc_settextalign(0, 0, 0);
+cc_settext("<tostring(enum(maplabel, int, 1714, $int28))>|<$string0>");
+cc_sethide(1);
+$int28 = enum(int, maplabel, 1705, $int26);
+}
+if($int26 >= 2) {
+~script1731(0, $int20, 0, 78);
+}
+$int27 = add($int27, 18);
+$int29 = -1;
+$string1 = "";
+$int30 = 0;
+$int31 = 0;
+$int32 = 0;
+$int33 = 0;
+$int34 = 0;
+$int25 = 0;
+while($int34 < $int26) {
+if(cc_find($int20, add(multiply($anArray0($int34), 4), 3)) == 1) {
+$gosubResult632_0, $gosubResult632_1 = ~script632(cc_gettext);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+$int30 = string_length($string1);
+if($int30 > 0) {
+if(compare($string1, tostring($int29)) != 0) {
+$int33 = 0;
+$int31 = 0;
+while($int31 < $int30) {
+while($int31 < 10) {
+$int32 = string_indexof_string("0123456789", substring($string1, sub($int30, add($int31, 1)), sub($int30, $int31)), 0);
+if($int32 != -1) {
+$int32 = multiply($int32, pow(10, $int31));
+if(sub(2147483647, $int32) < $int33) {
+$int33 = 2147483647;
+} else {
+$int33 = add($int33, $int32);
+}
+}
+$int31 = add($int31, 1);
+}
+}
+if($int25 > 0) {
+$int25 = add($int25, 5);
+}
+cc_create($int20, Text, $int24);
+$int24 = add($int24, 1);
+cc_setsize(0, 25, 1, 0);
+cc_setposition(0, $int25, 1, 0);
+cc_setcolor(0xFFFFFF);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+$string0 = enum(int, string, 1715, $int33);
+cc_settext($string0);
+$int27 = ~max($int27, parawidth(512, 495, $string0));
+$int25 = add($int25, 20);
+$int29 = $int33;
+}
+}
+}
+if(cc_find($int20, multiply($anArray0($int34), 4)) == 1) {
+cc_setposition(0, $int25, 1, 0);
+}
+if(cc_find($int20, add(multiply($anArray0($int34), 4), 1)) == 1) {
+cc_setposition(1, $int25, 0, 0);
+}
+if(cc_find($int20, add(multiply($anArray0($int34), 4), 2)) == 1) {
+cc_setposition(0, $int25, 2, 0);
+}
+$int34 = add($int34, 1);
+$int25 = add($int25, 16);
+}
+if($int26 > 0) {
+$int25 = add($int25, 1);
+}
+if_setscrollpos(0, 0, $int20);
+if($int25 > if_getheight($int20)) {
+if_setscrollsize(0, $int25, $int20);
+%varc182 = ~max(~min(%varc182, sub($int25, if_getheight($int20))), 0);
+} else {
+if_setscrollsize(0, 0, $int20);
+%varc182 = 0;
+}
+~scrollbar_vertical($int21, $int20, 792, 789, 790, 791, 773, 788);
+~script72($int21, $int20, %varc182);
+$int27 = add($int27, 22);
+cc_deleteall($int9);
+~script1716(0, $int9);
+~script1716(1, $int9);
+~script1716(2, $int9);
+~script1716(3, $int9);
+~script1716(4, $int9);
+$int24 = add(4, 1);
+$int25 = multiply(21, 0);
+cc_create($int9, Graphic, $int24);
+$int24 = add($int24, 1);
+cc_setsize(23, 23, 0, 0);
+cc_setposition(-2, sub($int25, 2), 0, 0);
+cc_setgraphic(struct_param(1, 459));
+$int25 = multiply(21, 1);
+cc_create($int9, Rectangle, $int24);
+$int24 = add($int24, 1);
+cc_setsize(6, 6, 0, 0);
+cc_setposition(1, add($int25, 8), 0, 0);
+cc_setfill(1);
+cc_setcolor(0x000000);
+cc_create($int9, Rectangle, $int24);
+$int24 = add($int24, 1);
+cc_setsize(6, 6, 0, 0);
+cc_setposition(0, add($int25, 7), 0, 0);
+cc_setfill(1);
+cc_setcolor(0xFFFF00);
+cc_create($int9, Rectangle, $int24);
+$int24 = add($int24, 1);
+cc_setsize(6, 6, 0, 0);
+cc_setposition(12, add($int25, 8), 0, 0);
+cc_setfill(1);
+cc_setcolor(0x000000);
+cc_create($int9, Rectangle, $int24);
+$int24 = add($int24, 1);
+cc_setsize(6, 6, 0, 0);
+cc_setposition(11, add($int25, 7), 0, 0);
+cc_setfill(1);
+cc_setcolor(0xFFFF00);
+cc_create($int9, Line, $int24);
+$int24 = add($int24, 1);
+cc_setsize(9, 0, 0, 0);
+cc_setposition(6, add($int25, 10), 0, 0);
+cc_setlinewid(2);
+cc_setcolor(0xFFFF00);
+$int25 = multiply(21, 2);
+cc_create($int9, Text, $int24);
+$int24 = add($int24, 1);
+cc_setsize(21, 21, 0, 0);
+cc_setposition(0, $int25, 0, 0);
+cc_setcolor(0xFFFFFF);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext("AB<br>YZ");
+$int25 = multiply(21, 3);
+cc_create($int9, Rectangle, $int24);
+$int24 = add($int24, 1);
+cc_setsize(20, 15, 0, 0);
+cc_setposition(0, add($int25, 3), 0, 0);
+cc_setfill(1);
+cc_setcolor(0xFFFFA0);
+cc_create($int9, Rectangle, $int24);
+$int24 = add($int24, 1);
+cc_setsize(20, 15, 0, 0);
+cc_setposition(0, add($int25, 3), 0, 0);
+cc_setfill(0);
+cc_setcolor(0x000000);
+$int25 = multiply(21, 4);
+cc_create($int9, Graphic, $int24);
+$int24 = add($int24, 1);
+cc_setsize(17, 18, 0, 0);
+cc_setposition(2, add($int25, 1), 0, 0);
+cc_setgraphic(650);
+$int35 = 0;
+$gosubResult1717_0, $gosubResult1717_1 = ~script1717(0, $int9, $int24, $int35, $int3, $int6, $int22);
+$int35 = $gosubResult1717_1;
+$int24 = $gosubResult1717_0;
+$gosubResult1717_0, $gosubResult1717_1 = ~script1717(1, $int9, $int24, $int35, $int3, $int6, $int22);
+$int35 = $gosubResult1717_1;
+$int24 = $gosubResult1717_0;
+$gosubResult1717_0, $gosubResult1717_1 = ~script1717(2, $int9, $int24, $int35, $int3, $int6, $int22);
+$int35 = $gosubResult1717_1;
+$int24 = $gosubResult1717_0;
+$gosubResult1717_0, $gosubResult1717_1 = ~script1717(3, $int9, $int24, $int35, $int3, $int6, $int22);
+$int35 = $gosubResult1717_1;
+$int24 = $gosubResult1717_0;
+$gosubResult1717_0, $gosubResult1717_1 = ~script1717(4, $int9, $int24, $int35, $int3, $int6, $int22);
+$int35 = $gosubResult1717_1;
+$int24 = $gosubResult1717_0;
+$int27 = ~max($int27, add($int35, 6));
+if_setsize($int27, 50, 0, 1, $int4);
+~script1733(0, $int27, $int2, $int4, $int8);
+cc_deleteall($int10);
+$int24 = 0;
+cc_create($int10, Graphic, $int24);
+$int24 = add($int24, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_settiling(1);
+cc_setgraphic(897);
+.cc_create($int10, Text, $int24);
+$int36 = $int24;
+$int24 = add($int24, 1);
+.cc_setsize(4, 12, 1, 0);
+.cc_setposition(0, 0, 1, 1);
+.cc_setcolor(0x9F9F9F);
+.cc_settextfont(494);
+.cc_settextshadow(1);
+~script1735($int10);
+$int24 = ~thinbox($int10, $int24);
+cc_deleteall($int15);
+$int24 = 0;
+.cc_create($int15, Rectangle, $int24);
+$int24 = add($int24, 1);
+.cc_setsize(0, 17, 1, 0);
+.cc_setfill(1);
+.cc_setcolor(0xFFFFFF);
+.cc_settrans(200);
+.cc_sethide(1);
+$int37 = enum(int, maparea, 1697, 0);
+$int38 = -1;
+$int39 = -1;
+$int40 = -1;
+$int41 = -1;
+$int26 = 0;
+$int27 = 0;
+$string0 = "";
+$int42 = enum(int, maparea, 1697, $int26);
+while($int42 != -1) {
+$anArray0($int26) = $int24;
+$int26 = add($int26, 1);
+cc_create($int15, Text, $int24);
+$int24 = add($int24, 1);
+cc_setsize(0, 15, 1, 0);
+cc_setcolor(0xFF981F);
+if($int42 == 0) {
+$int41 = 495;
+$int40 = 495;
+} else {
+$int41 = 494;
+$int40 = 494;
+}
+cc_settextfont($int41);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+$string0 = worldmap_getmapname($int42);
+cc_settext($string0);
+cc_setop(1, "Select");
+cc_setopbase("<col=ff9040><$string0></col>");
+cc_setonmouseover("script1035(1, -2147483645, -2147483643, .cc_getid, 16750623)");
+cc_setonmouseleave("script1035(0, -2147483645, -2147483643, .cc_getid, 16750623)");
+cc_setonop("script1711(-2147483644, $int42, $int11, $int12, $int3, $int5, $int6, $int17, $int18)");
+$int27 = ~max($int27, parawidth(512, $int40, $string0));
+$int38 = ~script1715($int42, %varc188);
+if($int38 != -1) {
+$int39 = $int38;
+$int37 = $int42;
+}
+$int42 = enum(int, maparea, 1697, $int26);
+}
+$int43 = $int24;
+cc_create($int15, Graphic, $int24);
+$int24 = add($int24, 1);
+cc_setsize(17, 17, 0, 0);
+cc_sethide(1);
+cc_setgraphic(struct_param(1, 459));
+if($int26 >= 3) {
+~script1491(0, $int15, 1, 31);
+}
+$int27 = add(add(add(add(add(add(3, $int27), 2), 26), 2), 16), 3);
+if_setsize($int27, 20, 0, 0, $int11);
+$int44 = add(262, $int27);
+~script1745($int0, $int1, $int23, $int2, $int44);
+~script1741($int0, $int1, $int23, $int2, -2147483648, -2147483648, $int20, $int21, $int27, $int44, $int10, $int36);
+if_setscrollpos(0, 0, $int15);
+$int25 = add(multiply($int26, 15), 2);
+$int45 = 124;
+if($int25 >= 120) {
+if_setscrollsize(0, $int25, $int15);
+} else {
+if_setscrollsize(0, 0, $int15);
+$int45 = add($int25, 4);
+}
+if_setsize($int27, $int45, 0, 0, $int14);
+cc_deleteall($int16);
+~scrollbar_vertical($int16, $int15, 792, 789, 790, 791, 773, 788);
+$int46 = if_gety($int11);
+$int47 = if_getlayer($int11);
+while($int47 != $int1) {
+$int46 = sub(add($int46, if_gety($int47)), if_getscrolly($int47));
+$int47 = if_getlayer($int47);
+}
+if(~script1972 == 0) {
+if_setposition(0, sub(sub(if_getheight($int1), 1), $int46), 1, 2, $int14);
+} else {
+if_setposition(0, sub(sub(if_getheight($int1), 1), $int46), 1, 0, $int14);
+}
+while($int26 > 0) {
+$int26 = sub($int26, 1);
+if(cc_find($int15, $anArray0($int26)) == 1) {
+cc_setposition(0, multiply($int26, 15), 1, 0);
+}
+}
+cc_deleteall($int11);
+$int24 = 0;
+cc_create($int11, Graphic, $int24);
+$int24 = add($int24, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setgraphic(297);
+cc_settiling(1);
+cc_setonclick("script1708($int11, $int12, $int15, $int43)");
+if_setonclick("script1709($int11, $int12)", $int13);
+cc_create($int11, Rectangle, $int24);
+$int24 = add($int24, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(0);
+cc_setcolor(0x0E0E0C);
+cc_create($int11, Rectangle, $int24);
+$int24 = add($int24, 1);
+cc_setsize(2, 2, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(0);
+cc_setcolor(0x474745);
+cc_create($int11, Graphic, $int24);
+$int24 = add($int24, 1);
+cc_setsize(16, 16, 0, 0);
+cc_setposition(2, 0, 2, 1);
+cc_create($int11, Text, $int24);
+$int24 = add($int24, 1);
+cc_setsize(20, 0, 1, 1);
+cc_setposition(2, 0, 0, 1);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+~script1013($int11);
+~script1712($int37, $int39, $int11, $int12, $int3, $int5, $int6, $int17, $int18);
+~script2264;
+return();

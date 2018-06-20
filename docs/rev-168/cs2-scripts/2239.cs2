@@ -1,0 +1,6 @@
+[clientscript,script2239]
+if(~script1972 == 0) {
+return();
+}
+~script1984;
+return();

@@ -1,0 +1,30 @@
+[clientscript,script1434](int $int0, int $int1, int $int2)
+if_sethide($int0, 90:2);
+if_setposition(6, 6, 2, 0, 90:2);
+if_sethide($int2, 90:7);
+if($int2 == 0) {
+if_setonvartransmit("script1637(-2147483645){1434, 1542, 1676, 1601, 1602}", 90:7);
+if_setonvartransmit("script1636(-2147483645){1293, 1542, 1601, 1602}", 90:11);
+} else {
+if_setontimer("null()", 90:7);
+if_setonvartransmit("null()", 90:7);
+if_setonvartransmit("null()", 90:11);
+}
+if($int0 == 1) {
+return();
+}
+if(~script1942 == 1) {
+if_setonvartransmit("script1943(){1601, 1602}", 90:3);
+~script1944;
+} else {
+if_setonvartransmit("script1641(){1542, 1293}", 90:3);
+~script1642;
+}
+if($int1 == -1) {
+return();
+}
+$int3 = enum(enum, int, 1135, $int1);
+if($int3 > 0) {
+if_setposition(210, 6, 2, 0, 90:2);
+}
+return();

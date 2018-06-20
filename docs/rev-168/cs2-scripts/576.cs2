@@ -1,0 +1,66 @@
+[clientscript,script576](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+$int6 = enum(enum, enum, 373, $int0);
+cc_deleteall($int1);
+cc_deleteall($int3);
+if($int4 != -1) {
+cc_deleteall($int4);
+}
+~script577($int2, $int3, enum(int, string, $int0, -1));
+$int7 = if_getwidth($int3);
+$int8 = if_getheight($int3);
+$int9 = ~tournament_world;
+$int10 = 0;
+$int11 = 0;
+$string0 = enum(int, string, $int0, $int11);
+while(string_length($string0) > 0) {
+cc_create($int3, Rectangle, multiply($int11, 3));
+cc_setposition(0, $int10, 0, 0);
+cc_setsize($int7, 17, 0, 0);
+cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+cc_settrans(255);
+cc_setonmouseover("cc_settrans(-2147483645, -2147483643, 220, -1)");
+cc_setonmouserepeat("script526(-2147483645, -2147483643, $int5, enum(int, string, $int6, $int11), 25, 512)");
+cc_setonmouseleave("script586(-2147483645, -2147483643, $int5)");
+cc_setop(1, $string0);
+cc_create($int3, Graphic, add(multiply($int11, 3), 1));
+cc_setposition(0, $int10, 0, 0);
+cc_setsize(17, 17, 0, 0);
+cc_create($int3, Text, add(multiply($int11, 3), 2));
+cc_setposition(17, add($int10, 1), 0, 0);
+cc_setsize(sub($int7, 17), 16, 0, 0);
+cc_settextshadow(1);
+cc_settextfont(495);
+cc_settextalign(0, 1, 0);
+if($int0 == 929 && map_members == 0) {
+if(enum(int, boolean, 935, $int11) == 1) {
+cc_settext("<str><$string0></str>");
+} else {
+cc_settext($string0);
+}
+} else {
+cc_settext($string0);
+}
+$int10 = add($int10, 17);
+$int11 = add($int11, 1);
+$string0 = enum(int, string, $int0, $int11);
+if($int9 == 0) {
+if($int0 == 929) {
+if($int10 >= multiply(12, 17)) {
+$string0 = "";
+}
+}
+}
+}
+if_setscrollpos(0, 0, $int3);
+if($int4 != -1) {
+if($int10 > $int8) {
+if_setscrollsize(0, $int10, $int3);
+} else {
+if_setscrollsize(0, 0, $int3);
+}
+~scrollbar_vertical($int4, $int3, 792, 789, 790, 791, 773, 788);
+}
+~script581($int0, $int1, $int3, $int4, $int11);
+if_setonvartransmit("script580($int0, $int1, $int3, $int4, $int11){92}", $int1);
+return();

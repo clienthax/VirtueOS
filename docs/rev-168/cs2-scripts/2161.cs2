@@ -1,0 +1,11 @@
+[clientscript,script2161](int $int0, int $int1, string $string0)
+if($int0 == -1 || ~script1701(608, -1) == 0) {
+return();
+}
+if(string_indexof_char($string0, $int0) != -1) {
+~script2067($int1);
+if_setonkey("null()", $int1);
+if_setontimer("script2162($int1, $string0, add(clientclock, 40))", $int1);
+if_resume_pausebutton($int1);
+}
+return();

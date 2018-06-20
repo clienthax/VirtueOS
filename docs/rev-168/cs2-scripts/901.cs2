@@ -1,0 +1,45 @@
+[clientscript,script901](int $int0, int $int1)
+if_setonsubchange("toplevel_subchange(-2147483645, $int1)", $int0);
+if_setonresize("toplevel_resize(-2147483645, $int1)", $int0);
+if_setonvartransmit("script902(-2147483645, $int1){1021, 1055, 1431, 1227, 439}", $int0);
+$int2 = 0;
+$int3 = enum(int, component, 1138, $int2);
+while($int3 != -1) {
+$int3 = enum(component, component, $int1, $int3);
+if($int3 != -1) {
+if_setop(1, enum(int, string, 1141, $int2), $int3);
+if_setonop("script914(-2147483644, $int1, $int2)", $int3);
+}
+$int2 = add($int2, 1);
+$int3 = enum(int, component, 1138, $int2);
+}
+if(%varc171 <= 0) {
+if(enum(enum, boolean, 1134, $int1) == 0) {
+%varc171 = 3;
+}
+}
+%varc173 = -1;
+%varc172 = -1;
+$int3 = enum(component, component, $int1, 10551322);
+if($int3 != -1) {
+cc_deleteall($int3);
+cc_create($int3, Text, 0);
+.cc_create($int3, Text, 1);
+cc_setsize(0, 0, 1, 1);
+.cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+.cc_setposition(0, 0, 1, 1);
+cc_setnoclickthrough(1);
+cc_setonclick("script489(0, 0)");
+.cc_setop(1, "Look North");
+.cc_setonop("script1050(-2147483644)");
+}
+~script1044;
+if(~toplevel_getcomponents == 1745) {
+~script1974;
+}
+~script2176;
+~script907($int0, $int1);
+~toplevel_subchange($int0, $int1);
+~script916(%varc171, $int1);
+return();

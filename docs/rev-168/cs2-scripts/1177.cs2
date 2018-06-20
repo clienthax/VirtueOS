@@ -1,0 +1,5 @@
+[clientscript,script1177](int $int0, int $int1)
+if_sethide(0, $int0);
+if_sethide(0, $int1);
+if_sethide(1, 234:15);
+return();

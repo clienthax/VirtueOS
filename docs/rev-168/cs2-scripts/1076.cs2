@@ -1,0 +1,61 @@
+[clientscript,script1076](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = -1;
+$int6 = -1;
+$int7 = 0;
+while($int7 < $int1) {
+if(cc_find($int0, add($int7, 1)) == 1) {
+$int5 = inv_getobj($int2, $int7);
+if($int5 != -1) {
+cc_sethide(0);
+cc_setobject($int5, inv_getnum($int2, $int7));
+if(~script1972 == 1) {
+cc_setop(1, ~script2228);
+} else {
+cc_setop(1, "Value");
+}
+if(%varbit6348 > 0) {
+cc_setop(6, "Value");
+}
+if($int5 == $int3) {
+if($int4 > 1 && $int4 != 5 && $int4 != 10) {
+cc_setop(9, "Buy <tostring($int4)>");
+} else {
+cc_setop(9, "");
+}
+if(.cc_find(19660816, 0) == 1) {
+.cc_setsize(34, 34, 0, 0);
+.cc_setposition(cc_getx, cc_gety, 0, 0);
+.cc_setgraphic(155);
+.cc_settrans(180);
+}
+} else {
+cc_setop(9, "");
+}
+cc_setopbase("<col=ff9040><oc_name($int5)></col>");
+$int6 = cc_gety;
+} else {
+cc_sethide(1);
+cc_setobject_nonum(6512, 1);
+cc_setopbase("");
+cc_settrans(0);
+cc_setontimer("null()");
+}
+}
+$int7 = add($int7, 1);
+}
+if($int6 != -1) {
+$int6 = add($int6, 32);
+} else {
+$int6 = 0;
+}
+if($int6 > if_getheight($int0)) {
+if_setscrollsize(0, $int6, $int0);
+~script72(19660817, $int0, if_getscrolly($int0));
+if_sethide(0, 300:17);
+} else {
+if_setscrollpos(0, 0, 300:16);
+if_setscrollsize(0, 0, 300:16);
+~script72(19660817, $int0, 0);
+if_sethide(1, 300:17);
+}
+return();

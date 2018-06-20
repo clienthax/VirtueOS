@@ -1,0 +1,19 @@
+[clientscript,script1054](int $int0)
+if(%varbit804 == 1) {
+if_setmodel(29323, $int0);
+} else {
+if(%varbit804 == 2) {
+if_setmodel(3447, $int0);
+} else {
+if(%varbit804 == 3) {
+if_setmodel(29322, $int0);
+} else {
+if(%varbit804 == 4) {
+if_setmodel(29324, $int0);
+} else {
+if_setmodel(16238, $int0);
+}
+}
+}
+}
+return();

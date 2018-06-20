@@ -1,0 +1,13 @@
+[clientscript,script113]
+~script923;
+if(%varbit5983 == 1 && if_hassub(162:550) == 1) {
+if_setsize(0, 0, 1, 1, 162:550);
+} else {
+if_setsize(479, 96, 0, 0, 162:550);
+}
+~script178;
+$int0 = ~script553;
+~script84($int0);
+~script89($int0);
+~script223;
+return();

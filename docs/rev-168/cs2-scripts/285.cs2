@@ -1,0 +1,64 @@
+[clientscript,script285](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8)
+if($int1 < 0 || $int1 >= 816) {
+return();
+}
+if($int2 == $int6) {
+~script1317($int1, $int0, $int6, $int7, $int8);
+return();
+}
+$int9 = ~script516($int3);
+if($int2 != $int0 || $int3 < 0 || $int3 >= 816 || ~script516($int1) != $int9) {
+if(cc_find($int0, $int1) == 1) {
+cc_settrans(200);
+cc_setontimer("script488(-2147483645, -2147483643, $int4, add(clientclock, 10))");
+}
+return();
+}
+$int10 = inv_getobj(95, $int1);
+if($int10 == -1) {
+return();
+}
+$int11 = inv_getobj(95, $int3);
+if(%varbit3959 == 0 || $int3 == add($int1, 1) || $int3 == sub($int1, 1) || $int9 == 0) {
+if($int11 == -1) {
+if(cc_find($int0, $int3) == 1) {
+~script278($int10, inv_getnum(95, $int1), $int0, $int5, $int6, $int7, $int8);
+}
+if(cc_find($int0, $int1) == 1) {
+~script278($int11, inv_getnum(95, $int3), $int0, $int5, $int6, $int7, $int8);
+}
+return();
+}
+}
+if($int11 == -1 || ~script514 == 1) {
+if(cc_find($int0, $int1) == 1) {
+cc_settrans(200);
+cc_setontimer("script488(-2147483645, -2147483643, $int4, add(clientclock, 10))");
+}
+return();
+}
+$int12 = -1;
+$int13 = -1;
+if($int3 < $int1) {
+$int12 = $int1;
+while($int12 > $int3) {
+if(cc_find($int0, $int12) == 1) {
+$int13 = sub($int12, 1);
+~script278(inv_getobj(95, $int13), inv_getnum(95, $int13), $int0, $int5, $int6, $int7, $int8);
+}
+$int12 = sub($int12, 1);
+}
+} else {
+$int12 = $int1;
+while($int12 < $int3) {
+if(cc_find($int0, $int12) == 1) {
+$int13 = add($int12, 1);
+~script278(inv_getobj(95, $int13), inv_getnum(95, $int13), $int0, $int5, $int6, $int7, $int8);
+}
+$int12 = add($int12, 1);
+}
+}
+if(cc_find($int0, $int3) == 1) {
+~script278($int10, inv_getnum(95, $int1), $int0, $int5, $int6, $int7, $int8);
+}
+return();

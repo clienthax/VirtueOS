@@ -1,0 +1,27 @@
+[clientscript,script1331](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12)
+if($int0 == $int1) {
+if_setgraphic(1001, $int6);
+if_setgraphic(1002, $int7);
+if_setgraphic(1003, $int8);
+if_sethide(1, $int11);
+if_sethide(1, $int12);
+if_setgraphic(998, $int2);
+if_setgraphic(999, $int3);
+if_setgraphic(1000, $int4);
+if_sethide(0, $int9);
+if_sethide(0, $int10);
+} else {
+if($int0 == $int5) {
+if_setgraphic(1001, $int2);
+if_setgraphic(1002, $int3);
+if_setgraphic(1003, $int4);
+if_sethide(1, $int9);
+if_sethide(1, $int10);
+if_setgraphic(998, $int6);
+if_setgraphic(999, $int7);
+if_setgraphic(1000, $int8);
+if_sethide(0, $int11);
+if_sethide(0, $int12);
+}
+}
+return();

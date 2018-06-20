@@ -1,0 +1,67 @@
+[clientscript,script837](int $int0, int $int1, int $int2, int $int3, int $int4, string $string0)
+if(%varc1 < add(clientclock, $int3)) {
+if(%varc1 < clientclock) {
+%varc1 = clientclock;
+}
+%varc1 = add(%varc1, 2);
+return();
+}
+%varc1 = add(add(clientclock, $int3), 10);
+if(%varc2 == 1 || if_gethide($int2) == 1) {
+return();
+}
+$int5 = if_getlayer($int2);
+if($int5 != -1) {
+if($int4 > if_getwidth($int5)) {
+$int4 = if_getwidth($int5);
+}
+}
+$int4 = sub($int4, 4);
+if_setsize(add(4, parawidth($int4, 495, $string0)), add(7, multiply(12, paraheight($int4, 495, $string0))), 0, 0, $int2);
+$int6 = if_getx($int0);
+$int7 = if_gety($int0);
+$int8 = 0;
+if($int1 != -1 && cc_find($int0, $int1) == 1) {
+$int8 = cc_getheight;
+$int7 = sub(add($int7, cc_gety), if_getscrolly($int0));
+$int6 = sub(add($int6, cc_getx), if_getscrollx($int0));
+} else {
+$int8 = if_getheight($int0);
+}
+$int9 = if_getlayer($int0);
+while($int9 != -1) {
+$int7 = sub(add($int7, if_gety($int9)), if_getscrolly($int9));
+$int6 = sub(add($int6, if_getx($int9)), if_getscrollx($int9));
+$int9 = if_getlayer($int9);
+}
+$int10 = add($int6, 5);
+$int11 = add(add($int7, $int8), 5);
+if($int5 != -1) {
+if($int10 > sub(if_getwidth($int5), if_getwidth($int2))) {
+$int10 = sub(if_getwidth($int5), if_getwidth($int2));
+}
+if($int11 > sub(if_getheight($int5), if_getheight($int2))) {
+$int11 = sub(sub($int7, if_getheight($int2)), 5);
+}
+}
+if_setposition($int10, $int11, 0, 0, $int2);
+cc_deleteall($int2);
+cc_create($int2, Rectangle, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(1);
+cc_setcolor(0xFFFFA0);
+cc_create($int2, Rectangle, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(0);
+cc_setcolor(0x000000);
+cc_create($int2, Text, 2);
+cc_setsize(4, 1, 1, 1);
+cc_setposition(0, 0, 1, 2);
+cc_settext($string0);
+cc_settextalign(0, 0, 0);
+cc_settextfont(495);
+cc_setcolor(0x000000);
+%varc2 = 1;
+return();

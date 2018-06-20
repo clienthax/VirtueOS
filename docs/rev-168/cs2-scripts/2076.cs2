@@ -1,0 +1,32 @@
+[proc,script2076](int $int0)(int)
+if(~inzone(45091968, 46124223, $int0) == 1) {
+return(1);
+}
+if(~inzone(45092160, 46124415, $int0) == 1) {
+return(2);
+}
+if(~inzone(59771712, 60803967, $int0) == 1) {
+return(3);
+}
+if(~inzone(48237632, 49269887, $int0) == 1) {
+return(4);
+}
+if(~inzone(42994752, 44027007, $int0) == 1) {
+return(5);
+}
+if(~inzone(59772288, 60804543, $int0) == 1) {
+return(6);
+}
+if(~inzone(49286208, 50318463, $int0) == 1) {
+return(7);
+}
+if(~inzone(48237504, 49269759, $int0) == 1) {
+return(8);
+}
+if(~inzone(34606080, 35638335, $int0) == 1) {
+return(9);
+}
+if(~inzone(41945856, 42978111, $int0) == 1) {
+return(10);
+}
+return(0);

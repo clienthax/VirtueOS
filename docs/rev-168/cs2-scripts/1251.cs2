@@ -1,0 +1,20 @@
+[clientscript,script1251](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+$string0 = "Saradomin";
+~script1253($int1, %varp261, $string0, 3839, 3840);
+if_setonvartransmit("script1252($int1, $string0, 3839, 3840){261}", $int1);
+$string0 = "Guthix";
+~script1253($int2, %varp262, $string0, 3843, 3844);
+if_setonvartransmit("script1252($int2, $string0, 3843, 3844){262}", $int2);
+$string0 = "Zamorak";
+~script1253($int3, %varp263, $string0, 3841, 3842);
+if_setonvartransmit("script1252($int3, $string0, 3841, 3842){263}", $int3);
+$string0 = "Bandos";
+~script1253($int4, %varp264, $string0, 12607, 12608);
+if_setonvartransmit("script1252($int4, $string0, 12607, 12608){264}", $int4);
+$string0 = "Armadyl";
+~script1253($int5, %varp265, $string0, 12609, 12610);
+if_setonvartransmit("script1252($int5, $string0, 12609, 12610){265}", $int5);
+$string0 = "Ancient";
+~script1253($int6, %varp266, $string0, 12611, 12612);
+if_setonvartransmit("script1252($int6, $string0, 12611, 12612){266}", $int6);
+return();

@@ -1,0 +1,8 @@
+[clientscript,script761](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+%varbit4596 = $int1;
+~script892($int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13);
+return();

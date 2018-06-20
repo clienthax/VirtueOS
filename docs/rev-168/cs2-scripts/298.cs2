@@ -1,0 +1,23 @@
+[clientscript,script298](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+$int6 = inv_size(93);
+if($int1 < 0 || $int1 >= $int6) {
+return();
+}
+if($int2 < 0 || $int2 >= $int6) {
+return();
+}
+$int7 = inv_getobj(93, $int1);
+if($int7 == -1) {
+return();
+}
+$int8 = inv_getobj(93, $int2);
+if(cc_find($int0, $int2) == 1) {
+~script297($int7, inv_getnum(93, $int1), $int0, $int3, 0, $int4, $int5);
+}
+if(cc_find($int0, $int1) == 1) {
+~script297($int8, inv_getnum(93, $int2), $int0, $int3, 0, $int4, $int5);
+}
+if($int7 == 11941 || $int8 == 11941) {
+cc_deleteall($int3);
+}
+return();

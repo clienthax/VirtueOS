@@ -1,0 +1,58 @@
+[proc,script464](int $int0)(int)
+if(stat_base(^prayer) < enum(int, int, 861, $int0)) {
+if(%varbit5314 == 0) {
+return(0);
+}
+}
+if($int0 == 25) {
+if(map_members == 0 || stat_base(^defence) < 65 || %varbit3909 < 8) {
+if(%varbit5314 == 0) {
+return(0);
+}
+}
+} else {
+if($int0 == 26) {
+if(map_members == 0 || stat_base(^defence) < 70 || %varbit3909 < 8) {
+if(%varbit5314 == 0) {
+return(0);
+}
+}
+} else {
+if($int0 == 15 || $int0 == 16 || $int0 == 17) {
+if(map_members == 0) {
+if(%varbit5314 == 0) {
+return(0);
+}
+}
+} else {
+if($int0 == 24) {
+if(map_members == 0 || stat_base(^defence) < 70 || %varbit5451 == 0) {
+if(%varbit5314 == 0) {
+return(0);
+}
+}
+} else {
+if($int0 == 27) {
+if(map_members == 0 || stat_base(^defence) < 70 || %varbit5452 == 0) {
+if(%varbit5314 == 0) {
+return(0);
+}
+}
+} else {
+if($int0 == 28) {
+if(map_members == 0 || %varbit5453 == 0 || %varbit5314 == 1) {
+return(0);
+}
+} else {
+if($int0 == 8) {
+if(~script451 == 1 || ~deadman_world == 1 || %varbit5314 == 1) {
+return(0);
+}
+}
+}
+}
+}
+}
+}
+}
+return(1);

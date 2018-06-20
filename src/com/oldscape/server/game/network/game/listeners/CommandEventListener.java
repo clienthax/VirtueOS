@@ -39,73 +39,53 @@ public class CommandEventListener implements EventListener<CommandEvent, GameSes
 
     @Override
     public void onEvent(CommandEvent event, GameSessionContext context) {
-        System.out.println(event.getSyntax() + ", " + Arrays.toString(event.getArgs()));
+        System.out.println("commandEvent: " + event.getSyntax() + " " + Arrays.toString(event.getArgs()));
 
         CommandListener listener = context.getServer().getScriptManager().forSyntax(event.getSyntax());
         if (listener != null) {
             if (context.getPlayer().getCredentials().getPermission().compareTo(listener.getPermission()) > -1) {
                 boolean success = listener.handle(context.getPlayer(), event.getSyntax(), event.getArgs());
                 if (!success)
-                    System.out.println("Unsuccessful command. [ " + event.getSyntax() + " ]");
+                    System.out.println("commandEvent: Unsuccessful command " + event.getSyntax());
             } else {
-                System.out.println("ChatCrownType requirement not met. [ " + event.getSyntax() + " ]");
+                System.out.println("commandEvent: No permission " + event.getSyntax());
             }
         } else {
-            System.out.println("Unknown command. [ " + event.getSyntax() + " ]");
+            System.out.println("commandEvent: Unknown command " + event.getSyntax());
         }
 
-
-        if (event.getSyntax().equals("logout")) {
-            context.getPlayer().logout();
-        }
+        /**
+         * TODO: move the useful ones to scripts, remove the rest.
+         */
 
         if (event.getSyntax().equals("resize_p")) {
             Player player = context.getPlayer();
             context.getPlayer().setDisplay(DisplayMode.RESIZE_PANELS);
-            player.sendSetRootWidget(player.getDisplay().getId());
+            player.sendRootWidget(player.getDisplay().getId());
             if (player.getDisplay().equals(DisplayMode.RESIZE_PANELS)) {
-                player.sendSetWidgetMoveSubEvent(165, 1, 164, 19);
-                player.sendSetWidgetMoveSubEvent(165, 4, 164, 8);
-                player.sendSetWidgetMoveSubEvent(165, 2, 164, 3);
-                player.sendSetWidgetMoveSubEvent(165, 3, 164, 6);
-                player.sendSetWidgetMoveSubEvent(165, 5, 164, 52);
-                player.sendSetWidgetMoveSubEvent(165, 6, 164, 54);
-                player.sendSetWidgetMoveSubEvent(165, 7, 164, 55);
-                player.sendSetWidgetMoveSubEvent(165, 8, 164, 56);
-                player.sendSetWidgetMoveSubEvent(165, 9, 164, 57);
-                player.sendSetWidgetMoveSubEvent(165, 10, 164, 58);
-                player.sendSetWidgetMoveSubEvent(165, 11, 164, 59);
-                player.sendSetWidgetMoveSubEvent(165, 12, 164, 60);
-                player.sendSetWidgetMoveSubEvent(165, 13, 164, 61);
-                player.sendSetWidgetMoveSubEvent(165, 14, 164, 62);
-                player.sendSetWidgetMoveSubEvent(165, 15, 164, 63);
-                player.sendSetWidgetMoveSubEvent(165, 16, 164, 64);
-                player.sendSetWidgetMoveSubEvent(165, 17, 164, 65);
-                player.sendSetWidgetMoveSubEvent(165, 18, 164, 66);
-                player.sendSetWidgetMoveSubEvent(165, 19, 164, 67);
-                player.sendSetWidgetMoveSubEvent(165, 20, 164, 4);
-                player.sendSetWidgetMoveSubEvent(165, 21, 164, 7);
-                player.sendSetWidgetMoveSubEvent(165, 22, 164, 16);
+                player.sendWidgetMoveSubEvent(165, 1, 164, 19);
+                player.sendWidgetMoveSubEvent(165, 4, 164, 8);
+                player.sendWidgetMoveSubEvent(165, 2, 164, 3);
+                player.sendWidgetMoveSubEvent(165, 3, 164, 6);
+                player.sendWidgetMoveSubEvent(165, 5, 164, 52);
+                player.sendWidgetMoveSubEvent(165, 6, 164, 54);
+                player.sendWidgetMoveSubEvent(165, 7, 164, 55);
+                player.sendWidgetMoveSubEvent(165, 8, 164, 56);
+                player.sendWidgetMoveSubEvent(165, 9, 164, 57);
+                player.sendWidgetMoveSubEvent(165, 10, 164, 58);
+                player.sendWidgetMoveSubEvent(165, 11, 164, 59);
+                player.sendWidgetMoveSubEvent(165, 12, 164, 60);
+                player.sendWidgetMoveSubEvent(165, 13, 164, 61);
+                player.sendWidgetMoveSubEvent(165, 14, 164, 62);
+                player.sendWidgetMoveSubEvent(165, 15, 164, 63);
+                player.sendWidgetMoveSubEvent(165, 16, 164, 64);
+                player.sendWidgetMoveSubEvent(165, 17, 164, 65);
+                player.sendWidgetMoveSubEvent(165, 18, 164, 66);
+                player.sendWidgetMoveSubEvent(165, 19, 164, 67);
+                player.sendWidgetMoveSubEvent(165, 20, 164, 4);
+                player.sendWidgetMoveSubEvent(165, 21, 164, 7);
+                player.sendWidgetMoveSubEvent(165, 22, 164, 16);
             }
-        }
-
-        if (event.getSyntax().equals("resize")) {
-            context.getPlayer().setDisplay(DisplayMode.RESIZE);
-        }
-
-        if (event.getSyntax().equals("fixed")) {
-            context.getPlayer().setDisplay(DisplayMode.FIXED);
-        }
-
-        if (event.getSyntax().equals("inter")) {
-            if (event.getArgs().length > 1) {
-                return;
-            }
-            context.getPlayer().sendOpenWidgetSub(548, 22, Integer.parseInt(event.getArgs()[0]), false);
-        }
-
-        if (event.getSyntax().equals("closeinter")) {
-            context.getPlayer().sendCloseWidgetSub(548, 22);
         }
 
         /*

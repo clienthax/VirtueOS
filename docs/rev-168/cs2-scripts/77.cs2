@@ -1,0 +1,8 @@
+[clientscript,script77](string $string0)
+~script78(%varc4, $string0);
+%varc4 = add(%varc4, 1);
+if(%varc4 >= 20) {
+%varc4 = 0;
+}
+%varc3 = -1;
+return();

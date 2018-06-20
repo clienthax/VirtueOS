@@ -1,0 +1,43 @@
+[clientscript,script523](int $int0)
+if(%varbit4170 == 1) {
+~script524($int0, 0);
+~script525($int0, 1);
+~script524($int0, 2);
+} else {
+if(%varbit4170 == 2) {
+~script524($int0, 0);
+~script524($int0, 1);
+~script525($int0, 2);
+} else {
+if(%varbit4170 == 3) {
+~script524($int0, 0);
+~script524($int0, 1);
+~script524($int0, 2);
+} else {
+~script525($int0, 0);
+~script524($int0, 1);
+~script524($int0, 2);
+}
+}
+}
+if(%varbit4171 > 0 || %varbit4172 > 0 || %varbit4173 > 0 || %varbit4174 > 0 || %varbit4175 > 0 || %varbit4176 > 0 || %varbit4177 > 0 || %varbit4178 > 0 || %varbit4179 > 0) {
+if(cc_find($int0, 3) == 1) {
+cc_sethide(1);
+}
+if(cc_find($int0, 7) == 1) {
+cc_setgraphic(698);
+}
+if(cc_find($int0, 11) == 1) {
+cc_settext("<str>Hide tab bar</str>");
+}
+} else {
+if(cc_find($int0, 11) == 1) {
+cc_settext("Hide tab bar");
+}
+if(%varbit4170 == 3) {
+~script525($int0, 3);
+} else {
+~script524($int0, 3);
+}
+}
+return();

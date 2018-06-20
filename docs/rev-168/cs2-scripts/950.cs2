@@ -1,0 +1,27 @@
+[clientscript,script950](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if($int5 <= 0) {
+if_setcolor($int2, 174:1);
+if_settrans($int3, 174:1);
+if_setontimer("null()", 174:0);
+return();
+}
+$int6 = 0;
+$int7 = 0;
+$int8 = 0;
+$gosubResult2_0, $gosubResult2_1, $gosubResult2_2 = ~script2($int0);
+$int8 = $gosubResult2_2;
+$int7 = $gosubResult2_1;
+$int6 = $gosubResult2_0;
+$int9 = 0;
+$int10 = 0;
+$int11 = 0;
+$gosubResult2_0, $gosubResult2_1, $gosubResult2_2 = ~script2($int2);
+$int11 = $gosubResult2_2;
+$int10 = $gosubResult2_1;
+$int9 = $gosubResult2_0;
+$int12 = sub($int9, interpolate(0, $int5, 0, $int4, sub($int9, $int6)));
+$int13 = sub($int10, interpolate(0, $int5, 0, $int4, sub($int10, $int7)));
+$int14 = sub($int11, interpolate(0, $int5, 0, $int4, sub($int11, $int8)));
+if_setcolor(~script246($int12, $int13, $int14), 174:1);
+if_settrans(sub($int3, interpolate(0, $int5, 0, $int4, sub($int3, $int1))), 174:1);
+return();

@@ -1,0 +1,5 @@
+[clientscript,script531](int $int0, int $int1)
+if_setonmouseleave("script40($int1)", $int0);
+~script534($int0, $int1);
+if_setop(1, "Roof-removal", $int0);
+return();

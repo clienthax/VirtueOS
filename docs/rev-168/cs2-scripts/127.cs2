@@ -1,0 +1,14 @@
+[clientscript,script127](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+cc_deleteall($int5);
+~scrollbar_vertical($int5, $int4, 792, 789, 790, 791, 773, 788);
+switch(%varc184) {
+case 0:
+case 1:
+case 2:
+case 3:
+default:
+%varc184 = 0;
+}
+~ignore_update($int1, $int2, $int3, $int4, $int5, $int6, $int7);
+if_setonfriendtransmit("ignore_update($int1, $int2, $int3, $int4, $int5, $int6, $int7)", $int0);
+return();

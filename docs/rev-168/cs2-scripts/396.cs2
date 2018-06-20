@@ -1,0 +1,23 @@
+[clientscript,script396](int $int0, int $int1)
+if_settext("Total level:<br><tostring(~stat_totallevel)>", $int0);
+if_clearops($int0);
+if(~script1972 == 1) {
+if_setop(1, "Toggle Total XP", $int0);
+}
+$string0 = "Total XP:";
+$gosubResult1008_0, $gosubResult1008_1 = ~script1008;
+$string1 = ~script1009($gosubResult1008_0, $gosubResult1008_1);
+if(~script1972 == 1) {
+if_setonclick("script396($int0, $int1)", $int0);
+if(%varc217 == 1 && %varc218 == -1) {
+~script742($int0, -1, $int1, $string0, $string1, 495, -1);
+if_setonop("script40($int1)", $int0);
+} else {
+if_setonop("script732(-2147483645, -1, $int1, $string0, $string1, 495, -1)", $int0);
+}
+} else {
+if_setonmouserepeat("script992(-2147483645, -1, $int1, $string0, $string1, 495, divide(25, 5))", $int0);
+if_setonmouseleave("script40($int1)", $int0);
+%varc2 = 0;
+}
+return();

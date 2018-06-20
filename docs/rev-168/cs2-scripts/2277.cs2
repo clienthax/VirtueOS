@@ -1,0 +1,19 @@
+[clientscript,script2277](string $string0)
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551309)) == 0) {
+return();
+}
+if(%varc179 > 0) {
+%varc179 = add(%varc179, 10);
+}
+$int0 = add(multiply(paraheight(if_getwidth(66:7), 496, $string0), 12), 5);
+cc_create(66:7, Text, %varc178);
+%varc178 = add(%varc178, 1);
+cc_setsize(0, $int0, 1, 0);
+cc_setposition(0, %varc179, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(496);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext($string0);
+%varc179 = add(%varc179, $int0);
+return();

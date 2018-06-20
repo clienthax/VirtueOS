@@ -1,0 +1,8 @@
+[clientscript,script1122](int $int0, int $int1, int $int2)
+if(cc_find($int0, add($int1, 1)) == 1) {
+if(.cc_find($int0, add($int1, 2)) == 1) {
+cc_setcolor($int2);
+.cc_setcolor($int2);
+}
+}
+return();

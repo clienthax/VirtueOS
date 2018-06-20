@@ -1,0 +1,15 @@
+[clientscript,script1446](int $int0, int $int1, int $int2, int $int3)
+if(testbit(%varp286, 3) == 1) {
+if(if_gethide($int0) == 0) {
+if_sethide(1, $int0);
+if_sethide(0, $int1);
+if_sethide(0, $int3);
+if_setgraphic(900, $int2);
+} else {
+if_sethide(0, $int0);
+if_sethide(1, $int1);
+if_sethide(1, $int3);
+if_setgraphic(901, $int2);
+}
+}
+return();

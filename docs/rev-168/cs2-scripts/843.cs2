@@ -1,0 +1,52 @@
+[clientscript,script843](int $int0, int $int1, int $int2)
+cc_deleteall($int0);
+cc_deleteall($int1);
+$string0 = "";
+$int3 = -1;
+$int4 = 0;
+$int5 = determinateDisplayMode();
+if($int5 == 2) {
+$int4 = ~script836($int1, 0);
+cc_create($int1, Graphic, $int4);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(54, 46, 0, 0);
+cc_setgraphic(~script2151(1573, 1575));
+$string0 = "The game client expands to fill the <~script1971("window", "screen")>.";
+if_setonmouserepeat("script526(-2147483645, -1, $int2, $string0, 25, 190)", $int1);
+if_setonmouseleave("script40($int2)", $int1);
+if_setonop("null()", $int1);
+$int4 = ~script835($int0, 0);
+cc_create($int0, Graphic, $int4);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(54, 46, 0, 0);
+cc_setgraphic(~script2151(1169, 1171));
+$int3 = ~script2151(1572, 1574);
+$string0 = "The game client is fixed to a static size.";
+if_setonmouserepeat("script844(-2147483645, $int2, $string0, $int3, $int4)", $int0);
+$int3 = ~script2151(1169, 1171);
+if_setonmouseleave("script845(-2147483645, $int2, $int3, $int4)", $int0);
+if_setonop("script847(1, $int0, $int1, $int2)", $int0);
+} else {
+$int4 = ~script836($int0, 0);
+cc_create($int0, Graphic, $int4);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(54, 46, 0, 0);
+cc_setgraphic(~script2151(1572, 1574));
+$string0 = "The game client is fixed to a static size.";
+if_setonmouserepeat("script526(-2147483645, -1, $int2, $string0, 25, 190)", $int0);
+if_setonmouseleave("script40($int2)", $int0);
+if_setonop("null()", $int0);
+$int4 = ~script835($int1, 0);
+cc_create($int1, Graphic, $int4);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(54, 46, 0, 0);
+cc_setgraphic(~script2151(1170, 1172));
+$int3 = ~script2151(1573, 1575);
+$string0 = "The game client expands to fill the <~script1971("window", "screen")>.";
+if_setonmouserepeat("script844(-2147483645, $int2, $string0, $int3, $int4)", $int1);
+$int3 = ~script2151(1170, 1172);
+if_setonmouseleave("script845(-2147483645, $int2, $int3, $int4)", $int1);
+if_setonop("script847(2, $int0, $int1, $int2)", $int1);
+}
+if_setontimer("script846($int5, $int0, $int1, $int2)", $int0);
+return();

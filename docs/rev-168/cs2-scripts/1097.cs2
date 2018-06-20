@@ -1,0 +1,63 @@
+[clientscript,script1097](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+$string0 = "";
+$string1 = "";
+if($int0 == $int5) {
+$string1 = %varcstr130;
+$string0 = %varcstr27;
+} else {
+if($int0 == $int6) {
+$string1 = %varcstr27;
+$string0 = %varcstr130;
+} else {
+return();
+}
+}
+$string0 = ~script1099($string0);
+$string1 = ~script1099($string1);
+$int8 = add(multiply(paraheight(if_getwidth($int2), 495, $string1), 12), 5);
+$int9 = if_getheight($int2);
+if($int8 < $int9) {
+$int8 = $int9;
+}
+if(cc_find($int2, 0) == 1) {
+if(.cc_find($int2, 1) == 1) {
+cc_setsize(0, $int8, 1, 0);
+.cc_setsize(0, $int8, 1, 0);
+cc_settrans(255);
+if_setonmouseover("cc_settrans($int2, cc_getid, 100, -1)", $int2);
+if_setonmouseleave("cc_settrans($int2, cc_getid, 255, -1)", $int2);
+.cc_settext($string1);
+}
+}
+if($int8 > $int9) {
+if_setscrollsize(0, $int8, $int2);
+} else {
+if_setscrollsize(0, 0, $int2);
+}
+~script72($int3, $int2, if_getscrolly($int2));
+if_setonclick("script1096($int2, $int3, $int0, $int1, $int4, $int5, $int6, $int7)", $int2);
+$string0 = append($string0, "<col=ffffff>*</col>");
+$int8 = add(multiply(paraheight(if_getwidth($int0), 495, $string0), 12), 5);
+$int9 = if_getheight($int0);
+if($int8 < $int9) {
+$int8 = $int9;
+}
+if(cc_find($int0, 0) == 1) {
+if(.cc_find($int0, 1) == 1) {
+cc_setsize(0, $int8, 1, 0);
+.cc_setsize(0, $int8, 1, 0);
+cc_settrans(0);
+if_setonmouseover("null()", $int0);
+if_setonmouseleave("null()", $int0);
+.cc_settext($string0);
+}
+}
+if($int8 > $int9) {
+if_setscrollsize(0, $int8, $int0);
+} else {
+if_setscrollsize(0, 0, $int0);
+}
+~script72($int1, $int0, $int8);
+if_setonclick("null()", $int0);
+if_setonkey("script1098(-2147483640, -2147483639, $int0, $int1, $int4, $int5, $int6, $int7)", $int4);
+return();

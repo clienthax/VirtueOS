@@ -1,0 +1,54 @@
+[clientscript,script1390](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = enum(int, component, 1424, $int0);
+if($int5 == -1) {
+return();
+}
+$int6 = 0;
+$int7 = 0;
+$int8 = 0;
+$gosubResult1387_0, $gosubResult1387_1, $gosubResult1387_2 = ~script1387($int1);
+$int8 = $gosubResult1387_2;
+$int7 = $gosubResult1387_1;
+$int6 = $gosubResult1387_0;
+if($int7 == 3) {
+if_sethide(1, $int5);
+if_clearops($int5);
+if_setonop("null()", $int5);
+return();
+}
+$int9 = -1;
+if($int7 == $int2) {
+if_sethide(0, $int5);
+if_setop(1, "View", $int5);
+if_setonop("script1379(-2147483644, -2147483645, $int0)", $int5);
+if(cc_find(27656197, add(add(multiply($int2, $int4), multiply($int8, $int3)), $int6)) == 1) {
+cc_sethide(1);
+}
+if(cc_find($int5, 1) == 1) {
+cc_sethide(1);
+}
+} else {
+if($int7 == 1 && $int2 == 2) {
+$int9 = ~script1386($int6, 2, $int8);
+if(%varc141 != $int9 && %varc142 != $int9 && %varc143 != $int9 && %varc144 != $int9 && %varc145 != $int9 && %varc146 != $int9 && %varc147 != $int9 && %varc148 != $int9 && %varc149 != $int9 && %varc150 != $int9 && %varc151 != $int9 && %varc152 != $int9 && %varc153 != $int9 && %varc154 != $int9 && %varc155 != $int9 && %varc156 != $int9 && %varc157 != $int9 && %varc158 != $int9 && %varc159 != $int9 && %varc160 != $int9 && %varc161 != $int9 && %varc162 != $int9 && %varc163 != $int9 && %varc164 != $int9 && %varc165 != $int9 && %varc166 != $int9 && %varc167 != $int9 && %varc168 != $int9 && %varc169 != $int9 && %varc170 != $int9 && %varc174 != $int9 && %varc176 != $int9 && %varc177 != $int9) {
+if_sethide(0, $int5);
+if_clearops($int5);
+if_setonop("null()", $int5);
+if(cc_find(27656197, add(add(multiply($int2, $int4), multiply($int8, $int3)), $int6)) == 1) {
+cc_sethide(0);
+}
+if(cc_find($int5, 1) == 1) {
+cc_sethide(0);
+}
+} else {
+if_sethide(1, $int5);
+if_clearops($int5);
+if_setonop("null()", $int5);
+}
+} else {
+if_sethide(1, $int5);
+if_clearops($int5);
+if_setonop("null()", $int5);
+}
+}
+return();

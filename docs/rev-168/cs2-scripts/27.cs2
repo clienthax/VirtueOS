@@ -1,0 +1,5 @@
+[clientscript,script27](int $int0)
+if(cc_find($int0, 1) == 1) {
+cc_sethide(1);
+}
+return();

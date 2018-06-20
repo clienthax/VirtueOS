@@ -1,0 +1,153 @@
+[clientscript,friend_update](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8)
+~script1669($int1, 2, 3, 2, "Sort by name", $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8);
+~script1669($int2, 8, 9, 9, "Sort by last world change", $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8);
+~script1669($int3, 4, 5, 4, "Sort by world", $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8);
+~script1669($int4, 0, 1, 0, "Legacy sort", $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8);
+cc_deleteall($int5);
+$int9 = 0;
+$int10 = 0;
+$string0 = "";
+$string1 = "";
+$int11 = 0;
+$int12 = 0;
+$int13 = friend_count;
+if($int13 <= -2) {
+if(%varc203 == 1) {
+if_settext("Loading friend list<br>Please wait...", $int7);
+} else {
+if_settext("You must set a name<br>before using this.", $int7);
+}
+if_sethide(1, $int0);
+} else {
+if($int13 == -1) {
+if(%varc203 == 1) {
+if_settext("Connecting to server<br>Please wait...", $int7);
+} else {
+if_settext("You must set a name<br>before using this.", $int7);
+}
+if_sethide(1, $int0);
+} else {
+if_settext("", $int7);
+if_sethide(0, $int0);
+friend_sort_reset;
+switch(%varc183) {
+case 1:
+case 2:
+friend_sortby_3633(1);
+friend_sortby_name(1);
+case 3:
+friend_sortby_3633(1);
+friend_sortby_name(0);
+case 8:
+friend_sortby_3633(1);
+friend_sortby_lastworldchange(1);
+case 9:
+friend_sortby_3633(1);
+friend_sortby_lastworldchange(0);
+case 4:
+friend_sortby_3633(1);
+friend_sortby_3636(1);
+friend_sortby_world(1);
+switch(%varc205) {
+default:
+friend_sortby_name(1);
+case 3:
+friend_sortby_name(0);
+case 8:
+friend_sortby_lastworldchange(1);
+case 9:
+friend_sortby_lastworldchange(0);
+}
+case 5:
+friend_sortby_3633(1);
+friend_sortby_3636(1);
+friend_sortby_world(0);
+switch(%varc205) {
+default:
+friend_sortby_name(1);
+case 3:
+friend_sortby_name(0);
+case 8:
+friend_sortby_lastworldchange(1);
+case 9:
+friend_sortby_lastworldchange(0);
+}
+friend_sort;
+}
+while($int9 < $int13) {
+$string1 = friend_getpreviousname($int9);
+$string0 = friend_getname($int9);
+cc_create($int5, Text, $int10);
+$int10 = add($int10, 1);
+cc_settext($string0);
+cc_setsize(0, 15, 1, 0);
+cc_setposition(0, $int12, 1, 0);
+cc_setcolor(0xFFFFFF);
+cc_settextfont(495);
+cc_settextalign(0, 0, 0);
+cc_settextshadow(1);
+cc_setopbase("<col=ff9040><$string0></col>");
+$int11 = friend_getworld($int9);
+if($int11 != 0) {
+cc_setop(1, "Message");
+cc_setop(2, "");
+} else {
+cc_setop(1, "");
+cc_setop(2, "Message");
+}
+cc_setop(3, "Delete");
+cc_setonop("friend_op(-2147483644, "event_opbase")");
+.cc_create($int5, Graphic, $int10);
+$int10 = add($int10, 1);
+.cc_setsize(14, 14, 0, 0);
+.cc_setposition(add(parawidth(190, 495, $string0), 3), $int12, 0, 0);
+.cc_setgraphic(1093);
+.cc_setgraphicshadow(0x333333);
+if(string_length($string1) > 0) {
+$string1 = "Previous name:<br><$string1>";
+cc_setonmouserepeat("script526(-2147483645, -2147483643, $int8, $string1, 25, 190)");
+cc_setonmouseleave("script40($int8)");
+.cc_sethide(0);
+} else {
+cc_setonmouseover("script40($int8)");
+.cc_sethide(1);
+}
+cc_create($int5, Text, $int10);
+$int10 = add($int10, 1);
+cc_setsize(0, 15, 1, 0);
+cc_setposition(0, $int12, 1, 0);
+cc_settextfont(495);
+cc_settextalign(2, 0, 0);
+cc_settextshadow(1);
+if($int11 == 0) {
+cc_settext("Offline");
+cc_setcolor(0xFF0000);
+} else {
+if($int11 == map_world) {
+cc_settext("World <tostring($int11)>");
+cc_setcolor(0x0DC10D);
+} else {
+if($int11 > 5000) {
+cc_settext("<col=ffff00>Classic <tostring(sub($int11, 5000))>");
+} else {
+cc_settext("<col=ffff00>World <tostring($int11)>");
+}
+cc_setcolor(0xFFFF00);
+}
+}
+$int12 = add($int12, 15);
+$int9 = add($int9, 1);
+}
+if($int13 >= 1) {
+$int12 = add($int12, 5);
+}
+}
+}
+if($int12 > if_getheight($int5)) {
+if_setscrollsize(0, $int12, $int5);
+~script72($int6, $int5, %varc9);
+} else {
+if_setscrollsize(0, 0, $int5);
+~script72($int6, $int5, 0);
+}
+return();

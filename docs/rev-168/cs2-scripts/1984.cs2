@@ -1,0 +1,6 @@
+[clientscript,script1984]
+if(~script1972 == 0) {
+return();
+}
+opcode6521();
+return();

@@ -1,0 +1,9 @@
+[clientscript,script689](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+$int8 = add(%varc110, 50);
+if($int0 == 1 || clientclock <= $int8) {
+if_setontimer("null()", $int1);
+~script690($int1, $int2, $int3, $int4, $int5, $int6, $int7);
+} else {
+if_setontimer("script2123($int8, $int1, $int2, $int3, $int4, $int5, $int6, $int7)", $int1);
+}
+return();

@@ -1,0 +1,5 @@
+[clientscript,script1315](int $int0, int $int1, int $int2)
+if(cc_find($int0, $int1) == 1) {
+~script1316($int0, sub(clientclock, $int2));
+}
+return();

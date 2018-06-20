@@ -1,0 +1,25 @@
+[clientscript,script2119](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+if($int0 == 1) {
+if(cc_find($int1, $int4) == 1) {
+if(.cc_find($int1, $int2) == 1) {
+sound_synth(2266, 1, 0);
+%varbit1776 = $int5;
+~script2118($int1, $int2, $int3, $int4, $int5, $int6, $int7);
+if($int1 != $int6) {
+if(cc_find($int6, $int4) == 1) {
+if(.cc_find($int6, $int2) == 1) {
+~script2118($int6, $int2, $int3, $int4, 1, $int6, $int7);
+}
+}
+}
+if($int1 != $int7) {
+if(cc_find($int7, $int4) == 1) {
+if(.cc_find($int7, $int2) == 1) {
+~script2118($int7, $int2, $int3, $int4, 0, $int6, $int7);
+}
+}
+}
+}
+}
+}
+return();

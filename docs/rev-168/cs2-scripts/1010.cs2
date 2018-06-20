@@ -1,0 +1,116 @@
+[clientscript,script1010](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18, int $int19, int $int20, int $int21, int $int22, int $int23, int $int24, int $int25, int $int26, int $int27, int $int28, int $int29, int $int30, int $int31, int $int32, int $int33, int $int34, int $int35, int $int36, int $int37, int $int38, int $int39, int $int40, int $int41, int $int42, int $int43, int $int44, int $int45)
+if_sethide(1, $int4);
+~script1011($int8, $int9, enum(int, string, 1164, -1), "Controls the position of the XP display and droplets.", 170, $int1, $int4, $int6, $int7, $int45, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18, $int19, $int20, $int21, $int22, $int23);
+~script1011($int10, $int11, enum(int, string, 1165, -1), "Controls the text size used by the XP display and droplets.", 180, $int1, $int4, $int6, $int7, $int45, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18, $int19, $int20, $int21, $int22, $int23);
+~script1011($int12, $int13, enum(int, string, 1166, -1), "Controls how long the XP display remains visible after each event.", 200, $int1, $int4, $int6, $int7, $int45, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18, $int19, $int20, $int21, $int22, $int23);
+~script1011($int14, $int15, "Counter", "Choose which skill will have its details displayed in the number panel.<br><br>'<col=7f0000>Most recent</col>' will show whichever skill gained XP most recently.<br><br>If a <col=7f0000>tracker</col> has been set for the skill, the panel will show XP gained since the tracker's start point.", 300, $int1, $int4, $int6, $int7, $int45, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18, $int19, $int20, $int21, $int22, $int23);
+~script1011($int16, $int17, "Progress bar", "Choose which skill will have its details displayed in the progress bar.<br><br>'<col=7f0000>Most recent</col>' will show whichever skill gained XP most recently.<br><br>If a <col=7f0000>goal</col> has been set for the skill, the bar will show progress towards that goal.<br><br>Otherwise it will show progress towards the next level.", 300, $int1, $int4, $int6, $int7, $int45, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18, $int19, $int20, $int21, $int22, $int23);
+~script1011($int18, $int19, enum(int, string, 1168, -1), "Controls the text colour of the droplets.", 150, $int1, $int4, $int6, $int7, $int45, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18, $int19, $int20, $int21, $int22, $int23);
+~script1011($int20, $int21, enum(int, string, 1170, -1), "When multiple skills increase together, their droplets may be grouped, within limits.", 300, $int1, $int4, $int6, $int7, $int45, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18, $int19, $int20, $int21, $int22, $int23);
+~script1011($int22, $int23, enum(int, string, 1140, -1), "Droplet speed.", 200, $int1, $int4, $int6, $int7, $int45, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18, $int19, $int20, $int21, $int22, $int23);
+if_setnoclickthrough(1, $int5);
+if_setonclick("script1037($int4, $int45, $int8, $int10, $int12, $int14, $int16, $int18, $int20, $int22)", $int5);
+~script1022($int8, $int10, $int12, $int14, $int16, $int18, $int20, $int22);
+if_setonvartransmit("script1021($int8, $int10, $int12, $int14, $int16, $int18, $int20, $int22){1227}", $int0);
+cc_deleteall($int25);
+def_stat $anArray0(23);
+$int46 = 0;
+while($int46 <= 23) {
+cc_create($int25, Rectangle, $int46);
+cc_setsize(0, 25, 1, 0);
+cc_setposition(0, multiply($int46, 25), 1, 0);
+cc_setfill(1);
+cc_setonmouseover("script1015(-2147483645, -2147483643, 16777215, 225)");
+if(modulo($int46, 2) == 0) {
+cc_setcolor(0xFFFFFF);
+cc_settrans(255);
+cc_setonmouseleave("script1015(-2147483645, -2147483643, 16777215, 255)");
+} else {
+cc_setcolor(0x000000);
+cc_settrans(225);
+cc_setonmouseleave("script1015(-2147483645, -2147483643, 0, 225)");
+}
+cc_setop(1, "Configure");
+if($int46 < 23) {
+$anArray0($int46) = enum(int, stat, 681, add($int46, 1));
+cc_setopbase("<col=ff9040><enum(stat, string, 680, $anArray0($int46))></col>");
+cc_setonop("script1023(-2147483644, -2147483643, $anArray0($int46), $int3, $int24, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int34, $int35, $int36, $int37, $int38, $int39, $int40, $int41, $int42, $int43, $int44)");
+} else {
+cc_setopbase("<col=ff9040>Total XP</col>");
+cc_setonop("script1023(-2147483644, -2147483643, -1, $int3, $int24, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int34, $int35, $int36, $int37, $int38, $int39, $int40, $int41, $int42, $int43, $int44)");
+}
+$int46 = add($int46, 1);
+}
+$int47 = 0;
+$int48 = 0;
+while($int48 <= 23) {
+$int47 = multiply($int48, 25);
+cc_create($int25, Graphic, $int46);
+$int46 = add($int46, 1);
+cc_setsize(25, 25, 0, 0);
+cc_setposition(0, $int47, 0, 0);
+if($int48 < 23) {
+cc_setgraphic(enum(stat, graphic, 255, $anArray0($int48)));
+} else {
+cc_setgraphic(222);
+}
+cc_create($int25, Text, $int46);
+$int46 = add($int46, 1);
+cc_setsize(80, 25, 0, 0);
+cc_setposition(28, $int47, 0, 0);
+cc_setcolor(0xFFB83F);
+cc_settextfont(495);
+cc_settextalign(0, 1, 0);
+cc_settextshadow(1);
+if($int48 < 23) {
+cc_settext(enum(stat, string, 680, $anArray0($int48)));
+} else {
+cc_settext("Total XP");
+}
+cc_create($int25, Text, $int46);
+$int46 = add($int46, 1);
+cc_setsize(110, 26, 1, 0);
+cc_setposition(0, $int47, 2, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(0, 1, 0);
+cc_settextshadow(1);
+$int48 = add($int48, 1);
+}
+cc_deleteall($int26);
+if_setscrollpos(0, 0, $int25);
+$int47 = multiply(25, add(23, 1));
+if($int47 > if_getheight($int25)) {
+if_setscrollsize(0, $int47, $int25);
+} else {
+if_setscrollsize(0, 0, $int25);
+}
+~scrollbar_vertical($int26, $int25, 792, 789, 790, 791, 773, 788);
+if_sethide(0, $int3);
+if_sethide(0, $int24);
+if_sethide(1, $int27);
+cc_deleteall($int27);
+cc_create($int27, Text, 0);
+cc_setsize(10, 20, 1, 0);
+cc_setposition(0, 5, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(496);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+~script770(-1, $int27, 1);
+~script1016($int28);
+~script1016($int29);
+~script1016($int30);
+$string0 = "Discard";
+~script1018(0, 16719904, $string0, $int43);
+if_setonmouseover("script1017(1, 16719904, $string0, -2147483645)", $int43);
+if_setonmouseleave("script1017(0, 16719904, $string0, -2147483645)", $int43);
+if_setonop("script1023(-2147483644, -1, -1, $int3, $int24, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int34, $int35, $int36, $int37, $int38, $int39, $int40, $int41, $int42, $int43, $int44)", $int43);
+$string0 = "Save";
+$int46 = ~script1018(0, 65280, $string0, $int44);
+if_setonmouseover("script1017(1, 65280, $string0, -2147483645)", $int44);
+if_setonmouseleave("script1017(0, 65280, $string0, -2147483645)", $int44);
+if_setonop("script1019(-2147483644, -2147483645, $int46, 65280)", $int44);
+~script1026($int3, $int24, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int34, $int35, $int36, $int37, $int38, $int39, $int40, $int41, $int42, $int43, $int44);
+if_setonvartransmit("script1025($int3, $int24, $int25, $int26, $int27, $int28, $int29, $int30, $int31, $int32, $int33, $int34, $int35, $int36, $int37, $int38, $int39, $int40, $int41, $int42, $int43, $int44){638, 261, 262, 1228, 1229, 1230, 1231, 1232, 1233, 1234, 1235, 1236, 1237, 1238, 1239, 1240, 1241, 1242, 1243, 1244, 1245, 1246, 1247, 1248, 1249, 1250, 1251, 1252, 1253, 1254, 1255, 1256, 1257, 1258, 1259, 1260, 1261, 1262, 1263, 1264, 1265, 1266, 1267, 1268, 1269, 1270, 1271, 1272, 1273, 1274, 1275}", $int2);
+return();

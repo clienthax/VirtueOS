@@ -1,0 +1,36 @@
+[clientscript,script792](int $int0, int $int1, int $int2, int $int3)
+$int4 = 1120;
+$int5 = 1121;
+if(.cc_find($int2, $int3) == 1) {
+.cc_setgraphic($int4);
+}
+$int6 = inv_getobj($int1, $int0);
+$int7 = 0;
+if($int6 != -1) {
+$int7 = inv_getnum($int1, $int0);
+cc_sethide(0);
+cc_clearops;
+cc_setonmouserepeat("script229(-2147483645, $int3, $int5, -1)");
+cc_setonmouseleave("script229(-2147483645, $int3, $int4, -1)");
+if(oc_cert($int6) != $int6) {
+if($int7 == 1) {
+cc_setop(1, "Collect-item");
+cc_setop(2, "Collect-note");
+} else {
+cc_setop(1, "Collect-notes");
+cc_setop(2, "Collect-items");
+}
+} else {
+cc_setop(2, "Collect");
+}
+cc_setop(3, "Bank");
+cc_setop(10, "Examine");
+cc_setobject($int6, $int7);
+cc_setopbase("<col=ff9040><oc_name($int6)></col>");
+} else {
+cc_sethide(1);
+cc_clearops;
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+}
+return();

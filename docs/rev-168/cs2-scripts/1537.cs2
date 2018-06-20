@@ -1,0 +1,26 @@
+[clientscript,script1537]
+$string0 = ~script1503(tostring(%varbit5426), 3);
+$string1 = ~script1503(tostring(%varbit5427), 4);
+$int0 = 0;
+while($int0 < %varc178) {
+if(cc_find(33226763, add(multiply($int0, 8), 5)) == 1) {
+if(.cc_find(33226763, add(multiply($int0, 8), 2)) == 1) {
+if(compare(cc_gettext, $string0) < 0) {
+.cc_setcolor(0xFF0000);
+} else {
+.cc_setcolor(0xFF981F);
+}
+}
+}
+if(cc_find(33226763, add(multiply($int0, 8), 6)) == 1) {
+if(.cc_find(33226763, add(multiply($int0, 8), 3)) == 1) {
+if(compare(cc_gettext, $string1) < 0) {
+.cc_setcolor(0xFF0000);
+} else {
+.cc_setcolor(0xFF981F);
+}
+}
+}
+$int0 = add($int0, 1);
+}
+return();

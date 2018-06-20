@@ -1,0 +1,67 @@
+[clientscript,script1125](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12)
+sound_synth(2266, 1, 0);
+if_sethide(1, $int12);
+~script41($int12);
+~script1014($int0);
+if_sethide(0, $int6);
+$int13 = if_getx($int0);
+$int14 = if_gety($int0);
+$int15 = if_getlayer($int0);
+while($int15 != $int3) {
+$int14 = sub(add($int14, if_gety($int15)), if_getscrolly($int15));
+$int13 = sub(add($int13, if_getx($int15)), if_getscrollx($int15));
+$int15 = if_getlayer($int15);
+}
+$int14 = sub(add($int14, if_getheight($int0)), 1);
+if_setposition($int13, $int14, 0, 0, $int7);
+cc_deleteall($int1);
+.cc_create($int1, Rectangle, 0);
+.cc_setsize(0, 15, 1, 0);
+.cc_setfill(1);
+.cc_setcolor(0xFFFFFF);
+.cc_settrans(200);
+.cc_sethide(1);
+$int16 = 0;
+$string0 = enum(int, string, 1246, $int16);
+while(string_length($string0) > 0) {
+cc_create($int1, Text, add($int16, 1));
+cc_setsize(0, 13, 1, 0);
+cc_setposition(0, multiply($int16, 13), 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settext($string0);
+cc_setop(1, "Select");
+cc_setonmouseover("script1126(1, -2147483645, -2147483643, .cc_getid)");
+cc_setonmouseleave("script1126(0, -2147483645, -2147483643, .cc_getid)");
+cc_setonop("script1127(-2147483644, -2147483645, -2147483643, $int6, $int12, $int4, $int8, $int5, $int9)");
+$int16 = add($int16, 1);
+if(~script1972 == 1) {
+$string0 = enum(int, string, 1879, $int16);
+} else {
+$string0 = enum(int, string, 1246, $int16);
+}
+}
+if_sethide(0, $int1);
+if($int1 != $int8) {
+if_sethide(1, $int8);
+}
+if($int1 != $int9) {
+if_sethide(1, $int9);
+}
+$int17 = add(multiply($int16, 13), 2);
+$int18 = add($int17, 4);
+$int19 = sub(if_getheight($int3), $int14);
+if($int18 > $int19) {
+if_setsize(if_getwidth($int0), $int19, 0, 0, $int7);
+if_setscrollpos(0, 0, $int1);
+if_setscrollsize(0, $int17, $int1);
+} else {
+if_setsize(if_getwidth($int0), $int18, 0, 0, $int7);
+if_setscrollpos(0, 0, $int1);
+if_setscrollsize(0, 0, $int1);
+}
+cc_deleteall($int10);
+~scrollbar_vertical($int10, $int1, 792, 789, 790, 791, 773, 788);
+return();

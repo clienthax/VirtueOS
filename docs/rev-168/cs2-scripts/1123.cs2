@@ -1,0 +1,22 @@
+[clientscript,script1123](int $int0)
+if(string_length(%varcstr24) > 0) {
+sound_synth(2266, 1, 0);
+if($int0 == 7 && compare(%varcstr24, %varcstr136) == 0) {
+mes("Thank-you, your abuse report has been received.");
+} else {
+sendReportPlayer(%varcstr24, $int0, %varc6);
+}
+if(%varc140 == 1) {
+ignore_add(%varcstr24);
+}
+if($int0 == 7) {
+%varcstr136 = %varcstr24;
+}
+if_close();
+%varcstr24 = "";
+%varc11 = 0;
+return();
+}
+sound_synth(2277, 1, 0);
+mes("Please enter the name of the player you wish to report.");
+return();

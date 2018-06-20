@@ -1,0 +1,6 @@
+[clientscript,script1207](int $int0, int $int1, int $int2)
+if(cc_find($int0, 0) == 1) {
+cc_setgraphic(1078);
+}
+~script837($int0, -1, $int1, enum(int, string, 1264, $int2), 25, 512);
+return();

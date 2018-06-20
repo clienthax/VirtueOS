@@ -1,0 +1,35 @@
+[clientscript,script171]
+if(%varc40 == 0) {
+if_settext("Show riddle", 390:8);
+if_setop(1, "Show", 390:8);
+if_sethide(0, 390:9);
+if_sethide(0, 390:10);
+if_sethide(0, 390:11);
+if_sethide(0, 390:12);
+if_sethide(0, 390:13);
+if_sethide(0, 390:14);
+if_sethide(0, 390:15);
+if_sethide(0, 390:16);
+if_sethide(1, 390:2);
+if_sethide(1, 390:5);
+%varc40 = 1;
+} else {
+if_settext("Hide riddle", 390:8);
+if_setop(1, "Hide", 390:8);
+if_settext("You seek the grail of old,<br>but no longer is it a goblet of gold.<br>Among these nine will you find what you seek,<br>but be careful and don't peek!<br>A wrong choice will expel you,<br>so consider carefully each clue.<br><br>Three boxes contain only air,<br>beware of three boxes, for danger lurks there.<br>Two hold only rubbish but would fool you with disguise,<br>only one box holds your prize.<br><br>Clues will give the information you need,<br><br>rubbish always sits to the right of danger, pay heed.<br>There is nothing helpful in boxes great in height,<br>and boxes on either end will not end your plight.<br>A tall or small box will only bring you anger,<br>but a square box will not put you in danger.", 390:6);
+if_setcolor(0x000000, 390:6);
+if_sethide(1, 390:9);
+if_sethide(1, 390:10);
+if_sethide(1, 390:11);
+if_sethide(1, 390:12);
+if_sethide(1, 390:13);
+if_sethide(1, 390:14);
+if_sethide(1, 390:15);
+if_sethide(1, 390:16);
+if_sethide(0, 390:2);
+if_sethide(0, 390:5);
+if_setscrollsize(190, 520, 390:7);
+~scrollbar_vertical(25559045, 25559047, 792, 789, 790, 791, 773, 788);
+%varc40 = 0;
+}
+return();

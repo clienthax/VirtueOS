@@ -1,0 +1,68 @@
+[clientscript,script466](int $int0, int $int1, int $int2)
+if_setgraphic(812, $int2);
+if_setontimer("null()", $int2);
+cc_deleteall($int1);
+def_int $anArray0(add(28, 1));
+$int3 = 0;
+$int4 = 0;
+$int5 = -1;
+while($int4 <= 28) {
+$int5 = enum(int, component, 859, $int4);
+if($int5 != -1) {
+cc_create($int1, Graphic, $int4);
+cc_sethide(0);
+cc_settrans(255);
+cc_setsize(34, 34, 0, 0);
+$anArray0($int3) = $int4;
+$int3 = add($int3, 1);
+} else {
+cc_create($int1, Graphic, $int4);
+cc_sethide(1);
+cc_setsize(0, 0, 0, 0);
+}
+$int4 = add($int4, 1);
+}
+if($int3 > 0) {
+~prayer_quicksort(0, 0, sub($int3, 1));
+}
+$int6 = add(28, 1);
+$int7 = 0;
+$int8 = 0;
+$int9 = 0;
+while($int9 < $int3) {
+$int8 = multiply(divide($int9, 5), 37);
+$int7 = multiply(modulo($int9, 5), 37);
+if(cc_find($int1, $anArray0($int9)) == 1) {
+cc_setposition($int7, $int8, 0, 0);
+cc_setop(1, "Toggle");
+cc_setopbase("<col=ff9040><enum(int, string, 860, $anArray0($int9))>");
+.cc_create($int1, Graphic, $int6);
+$int6 = add($int6, 1);
+.cc_setsize(30, 30, 0, 0);
+.cc_setposition(add($int7, 2), add($int8, 2), 0, 0);
+~script468($anArray0($int9));
+if($anArray0($int9) == 25 || $anArray0($int9) == 26) {
+.cc_setonstattransmit("script467($anArray0($int9), -2147483645, -2147483643){5, 1}");
+.cc_setonvartransmit("script467($anArray0($int9), -2147483645, -2147483643){1050}");
+} else {
+if($anArray0($int9) == 24 || $anArray0($int9) == 27 || $anArray0($int9) == 28) {
+.cc_setonstattransmit("script467($anArray0($int9), -2147483645, -2147483643){5, 1}");
+.cc_setonvartransmit("script467($anArray0($int9), -2147483645, -2147483643){1429}");
+} else {
+.cc_setonstattransmit("script467($anArray0($int9), -2147483645, -2147483643){5}");
+}
+}
+.cc_settrans(50);
+cc_setonmouseover("cc_settrans(-2147483645, .cc_getid, 0, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, .cc_getid, 50, -1)");
+.cc_create($int1, Graphic, $int6);
+$int6 = add($int6, 1);
+.cc_setsize(36, 36, 0, 0);
+.cc_setposition($int7, $int8, 0, 0);
+~script471($anArray0($int9));
+cc_setonvartransmit("script470($anArray0($int9), -2147483645, .cc_getid){84}");
+cc_setonop("script469(-2147483644, $anArray0($int9), -2147483645, .cc_getid)");
+}
+$int9 = add($int9, 1);
+}
+return();

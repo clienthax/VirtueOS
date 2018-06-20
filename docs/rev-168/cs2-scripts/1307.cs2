@@ -1,0 +1,9 @@
+[clientscript,script1307](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int2 = sub($int2, multiply($int3, sub(clientclock, $int4)));
+if($int2 > 0) {
+if_setsize($int2, 0, 2, 1, $int1);
+} else {
+if_setsize(0, 0, 0, 1, $int1);
+if_setontimer("null()", $int0);
+}
+return();

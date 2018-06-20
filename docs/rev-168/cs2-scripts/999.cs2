@@ -1,0 +1,249 @@
+[clientscript,script999](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+%varc2 = 0;
+$int7 = -1;
+if(%varbit4697 == 31) {
+$int7 = %varc72;
+} else {
+if(%varbit4697 == 30) {
+$int7 = -1;
+} else {
+$int7 = enum(int, stat, 681, %varbit4697);
+}
+}
+$int8 = -1;
+if(%varbit4698 == 31) {
+$int8 = %varc72;
+} else {
+if(%varbit4698 == 30) {
+$int8 = -1;
+} else {
+$int8 = enum(int, stat, 681, %varbit4698);
+}
+}
+$int9 = 0;
+$string0 = ",";
+$string1 = "";
+$string2 = "";
+$string3 = "";
+$int10 = 0;
+$int11 = 0;
+$int12 = 0;
+$int13 = 0;
+$int14 = 0;
+$int15 = 0;
+$int16 = 0;
+$int17 = 0;
+$int18 = 0;
+if($int7 != -1) {
+$int9 = 1;
+if_setgraphic(enum(stat, graphic, 255, $int7), $int1);
+$gosubResult1002_0, $gosubResult1002_1 = ~script1002($int7);
+$int11 = $gosubResult1002_1;
+$int10 = $gosubResult1002_0;
+$int12 = stat_xp($int7);
+if($int11 == -1) {
+$int15 = sub($int12, $int10);
+if($int15 >= 0) {
+$string3 = ~script46($int15, $string0);
+if_settext("+<$string3>", $int2);
+$string1 = "<enum(stat, string, 680, $int7)> tracker:|Tracking from:|Total XP:";
+$string2 = "<$string3>|<~script46($int10, $string0)>|<~script46($int12, $string0)>";
+} else {
+if_settext("N/A", $int2);
+$string1 = "Your <enum(stat, string, 680, $int7)> tracker is invalid.<br>Set a lower starting point.";
+}
+} else {
+$string3 = ~script46($int12, $string0);
+if_settext($string3, $int2);
+$int13 = stat_base($int7);
+if($int13 < 99) {
+$int14 = enum(int, int, 256, add($int13, 1));
+$string1 = "<enum(stat, string, 680, $int7)> XP:|<col=7f7f7f>Next level:</col>|Remaining:";
+$string2 = "<$string3>|<col=7f7f7f><~script46($int14, $string0)></col>|<~script46(sub($int14, $int12), $string0)>";
+} else {
+$string1 = "<enum(stat, string, 680, $int7)> XP:";
+$string2 = $string3;
+}
+}
+} else {
+if(%varbit4697 == 30) {
+if_setgraphic(-1, $int1);
+if_settext("", $int2);
+$string2 = "";
+$string1 = "";
+~script41($int6);
+} else {
+$int9 = 1;
+if_setgraphic(222, $int1);
+$gosubResult1008_0, $gosubResult1008_1 = ~script1008;
+$int16 = $gosubResult1008_1;
+$int17 = $gosubResult1008_0;
+if(%varp1252 == -1) {
+$int15 = modulo($int16, 1000);
+$int18 = add(multiply($int17, pow(10, 6)), divide($int16, 1000));
+if($int18 > %varp1228) {
+$string3 = "<~script46(sub($int18, %varp1228), $string0)><$string0><~script47($int15)>";
+if_settext("+<$string3>", $int2);
+$string1 = "Total XP tracker:|Tracking from:|Total XP:";
+if(%varp1228 > 0) {
+$string2 = "<$string3>|<~script46(%varp1228, $string0)><$string0>000|<~script1009($int17, $int16)>";
+} else {
+$string2 = "<$string3>|0|<~script1009($int17, $int16)>";
+}
+} else {
+if($int18 == %varp1228 && $int15 >= 0) {
+$string3 = tostring($int15);
+if_settext("+<$string3>", $int2);
+$string1 = "Total XP tracker:|Tracking from:|Total XP:";
+if(%varp1228 > 0) {
+$string2 = "<$string3>|<~script46(%varp1228, $string0)><$string0>000|<~script1009($int17, $int16)>";
+} else {
+$string2 = "<$string3>|0|<~script1009($int17, $int16)>";
+}
+} else {
+if_settext("N/A", $int2);
+$string1 = "Your Total XP tracker is invalid.<br>Set a lower starting point.";
+}
+}
+} else {
+$string3 = ~script1009($int17, $int16);
+if_settext($string3, $int2);
+$string1 = "Total XP:";
+$string2 = $string3;
+}
+}
+}
+$int19 = if_getlayer($int2);
+if(string_length($string2) > 0) {
+if_setonmouserepeat("script992(-2147483645, -1, $int6, $string1, $string2, 495, 0)", $int19);
+} else {
+if(string_length($string1) > 0) {
+if_setonmouserepeat("script526(-2147483645, -1, $int6, $string1, 0, 512)", $int19);
+} else {
+if_setonmouserepeat("null()", $int19);
+}
+}
+if_setonmouseleave("script40($int6)", $int19);
+$int20 = 0;
+$int21 = 0;
+$int22 = 0;
+$int23 = 0;
+$int24 = 0;
+$int25 = 0;
+$int26 = 0;
+if($int8 != -1) {
+$int20 = 1;
+$int12 = stat_xp($int8);
+$gosubResult1002_0, $gosubResult1002_1 = ~script1002($int8);
+$int11 = $gosubResult1002_1;
+$int10 = $gosubResult1002_0;
+if($int11 != -1 && $int11 > $int10) {
+$int21 = ~script1000($int4, $int10, $int12, $int11, 1);
+$string1 = "<enum(stat, string, 680, $int8)> goal|<col=7f7f7f>Start:</col>|Current:|<col=7f7f7f>End:</col>";
+$string2 = "<~script1001($int21)>|<col=7f7f7f><~script46($int10, $string0)></col>|<~script46($int12, $string0)>|<col=7f7f7f><~script46($int11, $string0)></col>";
+if($int12 < $int11) {
+$string1 = append($string1, "|Remaining:");
+$string2 = append($string2, "|<~script46(sub($int11, $int12), $string0)>");
+}
+} else {
+$int13 = stat_base($int8);
+$int22 = add($int13, 1);
+if($int22 > 99) {
+$int22 = 99;
+}
+$int14 = enum(int, int, 256, $int22);
+$int21 = ~script1000($int4, enum(int, int, 256, $int13), $int12, $int14, 0);
+if($int13 < 99) {
+$string1 = "<enum(stat, string, 680, $int8)>|Current XP:|<col=7f7f7f>Next level:</col>|Remaining:";
+$string2 = "<~script1001($int21)>|<~script46($int12, $string0)>|<col=7f7f7f><~script46($int14, $string0)></col>|<~script46(sub($int14, $int12), $string0)>";
+} else {
+$string1 = "<enum(stat, string, 680, $int8)> XP:";
+$string2 = ~script46($int12, $string0);
+}
+}
+} else {
+if(%varbit4698 == 30) {
+$int20 = 1;
+$gosubResult1008_0, $gosubResult1008_1 = ~script1008;
+$int16 = $gosubResult1008_1;
+$int17 = $gosubResult1008_0;
+if(%varp1252 != -1 && %varp1252 > %varp1228) {
+if($int17 < 2 && %varp1252 <= divide(2147483647, 1000)) {
+$int21 = ~script1000($int4, multiply(%varp1228, 1000), add(multiply($int17, pow(10, 9)), $int16), multiply(%varp1252, 1000), 1);
+$int24 = sub(multiply(%varp1252, 1000), add(multiply($int17, pow(10, 9)), $int16));
+} else {
+$int25 = add(multiply($int17, pow(10, 6)), divide($int16, 1000));
+$int21 = ~script1000($int4, %varp1228, $int25, %varp1252, 1);
+if($int25 < %varp1252) {
+$int24 = sub(%varp1252, $int25);
+$int26 = modulo($int16, 1000);
+if($int26 > 0) {
+$int24 = sub($int24, 1);
+$int23 = divide($int24, pow(10, 6));
+$int24 = multiply(modulo($int24, pow(10, 6)), 1000);
+$int24 = add($int24, sub(1000, $int26));
+} else {
+$int23 = divide($int24, pow(10, 6));
+$int24 = multiply(modulo($int24, pow(10, 6)), 1000);
+}
+}
+}
+$string1 = "Total XP goal|<col=7f7f7f>Start:</col>|Current:|<col=7f7f7f>End:</col>";
+if(%varp1228 > 0) {
+$string2 = "<~script1001($int21)>|<col=7f7f7f><~script46(%varp1228, $string0)><$string0>000</col>|<~script1009($int17, $int16)>|<col=7f7f7f><~script46(%varp1252, $string0)><$string0>000</col>";
+} else {
+$string2 = "<~script1001($int21)>|<col=7f7f7f>0</col>|<~script1009($int17, $int16)>|<col=7f7f7f><~script46(%varp1252, $string0)><$string0>000</col>";
+}
+if($int23 > 0 || $int24 > 0) {
+$string1 = append($string1, "|Remaining:");
+$string2 = append($string2, "|<~script1009($int23, $int24)>");
+}
+} else {
+if_setsize(0, 0, 1, 1, $int4);
+if_setcolor(0x606060, $int4);
+$string2 = "";
+$string1 = "Use the setup menu to set a Total XP goal.";
+}
+} else {
+$string2 = "";
+$string1 = "";
+~script41($int6);
+}
+}
+if(string_length($string2) > 0) {
+if_setonmouserepeat("script992(-2147483645, -1, $int6, $string1, $string2, 495, 0)", $int3);
+} else {
+if(string_length($string1) > 0) {
+if_setonmouserepeat("script526(-2147483645, -1, $int6, $string1, 0, 512)", $int3);
+} else {
+if_setonmouserepeat("null()", $int3);
+}
+}
+if_setonmouseleave("script40($int6)", $int3);
+if($int9 == 1) {
+if_sethide(0, $int19);
+if_setposition(0, 0, 1, 0, $int19);
+if_setsize(0, 29, 1, 0, $int19);
+if($int20 == 1) {
+if_sethide(0, $int3);
+if_setposition(0, 28, 1, 0, $int3);
+if_setposition(0, add(if_gety($int0), 38), 1, 0, $int5);
+} else {
+if_sethide(1, $int3);
+if_setposition(0, add(if_gety($int0), 29), 1, 0, $int5);
+}
+} else {
+if($int20 == 1) {
+if_sethide(0, $int19);
+if_setposition(0, 5, 1, 0, $int19);
+if_setsize(0, 4, 1, 0, $int19);
+if_sethide(0, $int3);
+if_setposition(0, 7, 1, 0, $int3);
+if_setposition(0, add(if_gety($int0), 17), 1, 0, $int5);
+} else {
+if_sethide(1, $int19);
+if_sethide(1, $int3);
+if_setposition(0, if_gety($int0), 1, 0, $int5);
+}
+}
+return();

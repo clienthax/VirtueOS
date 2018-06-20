@@ -1,0 +1,17 @@
+[clientscript,script2022]
+if(%varbit5935 == 0) {
+if_settext(tostring(%varbit5934), 611:10);
+} else {
+if_settext("<col=ff0000><tostring(%varbit5934)></col>", 611:10);
+}
+if(%varbit5938 < 30) {
+if_settext("<col=ff0000><tostring(%varbit5938)>%</col>", 611:12);
+} else {
+if(%varbit5938 < 70) {
+if_settext("<col=ffff00><tostring(%varbit5938)>%</col>", 611:12);
+} else {
+if_settext("<col=00ff00><tostring(%varbit5938)>%</col>", 611:12);
+}
+}
+if_settext(tostring(%varbit5937), 611:14);
+return();

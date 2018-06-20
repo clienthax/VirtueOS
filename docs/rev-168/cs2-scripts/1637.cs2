@@ -1,0 +1,7 @@
+[clientscript,script1637](int $int0)
+if(~script1942 == 1) {
+~script1638($int0, %varbit5710);
+} else {
+~script1638($int0, %varbit4164);
+}
+return();

@@ -1,0 +1,10 @@
+[clientscript,script271]
+if(%varbit3957 == 0) {
+cc_setonop("script272(-1)");
+.cc_setobject(76, 1);
+return();
+}
+$int0 = multiply(%varbit3948, 1000);
+cc_setonop("script272($int0)");
+.cc_setobject(995, $int0);
+return();

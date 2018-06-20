@@ -1,0 +1,15 @@
+[clientscript,script404](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+~script1611("Withdraw all", $int4, 495);
+$int8 = -1;
+if(%varbit5432 == 1) {
+$int8 = ~script1611("Deposit all", $int5, 495);
+} else {
+$int8 = ~script1611("Bank all", $int5, 495);
+}
+~script1611("Shared", $int7, 494);
+~script1605($int4, $int5, $int6, $int8);
+if_setonvartransmit("script1604($int4, $int5, $int6, $int8){1431}", $int6);
+~scrollbar_vertical($int2, $int1, 792, 789, 790, 791, 773, 788);
+~script1607($int1, $int2, $int3);
+if_setoninvtransmit("script1606($int1, $int2, $int3){583}", $int0);
+return();

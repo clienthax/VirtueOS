@@ -1,0 +1,16 @@
+[clientscript,script2203](int $int0)
+switch($int0) {
+case 3:
+~script2189;
+case 4:
+~script2190;
+case 5:
+~script2191;
+case 6:
+~script2192;
+case 7:
+~script2193;
+default:
+return();
+}
+return();

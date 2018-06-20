@@ -1,0 +1,5 @@
+[clientscript,script987](int $int0, int $int1, int $int2)
+if_sethide(1, $int0);
+if_sethide(1, $int1);
+if_setgraphic(1180, $int2);
+return();

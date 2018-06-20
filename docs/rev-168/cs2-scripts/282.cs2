@@ -1,0 +1,13 @@
+[clientscript,script282](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12)
+if(~script514 == 1) {
+if_setgraphic(179, $int8);
+if(%varc5 == 11) {
+if_setontimer("script283($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12)", $int8);
+} else {
+if_setontimer("null()", $int8);
+}
+} else {
+if_setgraphic(170, $int8);
+if_setontimer("null()", $int8);
+}
+return();

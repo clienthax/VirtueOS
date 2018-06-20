@@ -1,0 +1,27 @@
+[clientscript,script1669](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, string $string0)
+cc_deleteall($int0);
+cc_create($int0, Graphic, 0);
+cc_setsize(7, 5, 0, 0);
+cc_setposition(0, 0, 1, 1);
+if(%varc183 == $int2) {
+cc_setgraphic(1051);
+cc_settrans(0);
+if_setonmouserepeat("script1528(-2147483645, cc_getid, 120, $int12, $string0)", $int0);
+if_setonmouseleave("cc_settrans(-2147483645, cc_getid, 0, $int12)", $int0);
+if_setonclick("script1670($int1, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12)", $int0);
+} else {
+if(%varc183 == $int1) {
+cc_setgraphic(1050);
+cc_settrans(0);
+if_setonmouserepeat("script1528(-2147483645, cc_getid, 120, $int12, $string0)", $int0);
+if_setonmouseleave("cc_settrans(-2147483645, cc_getid, 0, $int12)", $int0);
+if_setonclick("script1670($int2, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12)", $int0);
+} else {
+cc_setgraphic(1050);
+cc_settrans(100);
+if_setonmouserepeat("script1528(-2147483645, cc_getid, 200, $int12, $string0)", $int0);
+if_setonmouseleave("cc_settrans(-2147483645, cc_getid, 100, $int12)", $int0);
+if_setonclick("script1670($int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12)", $int0);
+}
+}
+return();

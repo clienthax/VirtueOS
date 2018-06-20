@@ -1,0 +1,12 @@
+[clientscript,script537](int $int0, int $int1, int $int2)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+if(%varbit4181 == 0) {
+%varbit4181 = 1;
+} else {
+%varbit4181 = 0;
+}
+~script538($int1, $int2);
+return();

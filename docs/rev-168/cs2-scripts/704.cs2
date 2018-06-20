@@ -1,0 +1,25 @@
+[clientscript,script704](int $int0, int $int1, int $int2, int $int3, int $int4)
+switch(%varbit4070) {
+case 1:
+if_sethide(1, $int0);
+if_sethide(0, $int1);
+if_sethide(1, $int2);
+if_sethide(1, $int3);
+case 2:
+if_sethide(1, $int0);
+if_sethide(1, $int1);
+if_sethide(0, $int2);
+if_sethide(1, $int3);
+case 3:
+if_sethide(1, $int0);
+if_sethide(1, $int1);
+if_sethide(1, $int2);
+if_sethide(0, $int3);
+default:
+if_sethide(0, $int0);
+if_sethide(1, $int1);
+if_sethide(1, $int2);
+if_sethide(1, $int3);
+}
+cc_deleteall($int4);
+return();

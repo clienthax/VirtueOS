@@ -1,0 +1,5 @@
+[clientscript,script2291](int $int0, int $int1, int $int2)
+if(cc_find($int0, $int1) == 1) {
+cc_setposition(0, $int2, 0, 0);
+}
+return();

@@ -1,0 +1,50 @@
+[clientscript,script264](int $int0)
+if_sethide(0, 207:0);
+if_sethide(0, 207:1);
+if_setposition(0, 0, 0, 0, 207:0);
+if_setsize(1, 1, 0, 0, 207:0);
+if_settextalign(2, 2, 0, 207:0);
+if_setontimer("script265(13565953)", 207:0);
+~script267($int0, 13565953);
+if($int0 == 1) {
+if_setonvartransmit("null()", 207:0);
+} else {
+if_setonvartransmit("script266(13565953){1065, 1058}", 207:0);
+}
+cc_create(207:1, Rectangle, 17);
+cc_setsize(46, 55, 0, 0);
+cc_setposition(5, 30, 2, 0);
+cc_setcolor(0x7F460F);
+cc_setfill(1);
+cc_settrans(100);
+cc_setonmouseover("cc_settrans(-2147483645, -2147483643, 0, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 100, -1)");
+cc_setop(1, "Examine");
+cc_setopbase("<col=ff9040>Coffer");
+.cc_create(207:1, Rectangle, 18);
+.cc_setsize(46, 55, 0, 0);
+.cc_setposition(5, 30, 2, 0);
+.cc_setcolor(0x7F460F);
+.cc_setfill(0);
+.cc_create(207:1, Graphic, 19);
+.cc_setsize(44, 53, 0, 0);
+.cc_setposition(6, 31, 2, 0);
+.cc_setgraphic(1040);
+.cc_settiling(1);
+.cc_settrans(100);
+.cc_create(207:1, Text, 20);
+.cc_setsize(46, 51, 0, 0);
+.cc_setposition(5, 32, 2, 0);
+.cc_setcolor(0xFF981F);
+.cc_settextfont(495);
+.cc_settextalign(1, 0, 0);
+.cc_settextshadow(1);
+.cc_settext("Coffer");
+.cc_create(207:1, Graphic, 21);
+.cc_setsize(36, 32, 0, 0);
+.cc_setposition(11, 49, 2, 0);
+.cc_setgraphicshadow(0x333333);
+.cc_setoutline(1);
+.cc_setonvartransmit("script270(-2147483645, cc_getid, -2147483643){1058, 638}");
+~script271;
+return();

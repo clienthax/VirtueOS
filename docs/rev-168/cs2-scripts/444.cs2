@@ -1,0 +1,66 @@
+[clientscript,script444](int $int0, int $int1, int $int2, int $int3, int $int4)
+if($int4 != 10) {
+$int3 = 0;
+}
+if($int0 <= 0) {
+if($int1 <= 0) {
+if($int2 <= 0) {
+if($int3 <= 0) {
+if_sethide(0, 495:0);
+if_sethide(1, 495:1);
+return();
+}
+}
+}
+}
+if_sethide(1, 495:0);
+if_sethide(0, 495:1);
+$int5 = 20542;
+if($int0 > 0) {
+$int5 = 20544;
+}
+if_setmodel($int5, 495:3);
+if_setmodel($int5, 495:10);
+if_setmodel($int5, 495:17);
+if_setmodel($int5, 495:24);
+if($int1 > 0) {
+$int5 = 20545;
+} else {
+$int5 = 20542;
+}
+if_setmodel($int5, 495:5);
+if_setmodel($int5, 495:12);
+if_setmodel($int5, 495:19);
+if_setmodel($int5, 495:26);
+if($int2 > 0) {
+$int5 = 20543;
+} else {
+$int5 = 20542;
+}
+if_setmodel($int5, 495:7);
+if_setmodel($int5, 495:14);
+if_setmodel($int5, 495:21);
+if_setmodel($int5, 495:28);
+if($int3 > 0) {
+$int5 = 20572;
+} else {
+$int5 = 20542;
+}
+if_setmodel($int5, 495:31);
+$string0 = tostring($int0);
+if_settext($string0, 495:4);
+if_settext($string0, 495:11);
+if_settext($string0, 495:18);
+if_settext($string0, 495:25);
+$string0 = tostring($int1);
+if_settext($string0, 495:6);
+if_settext($string0, 495:13);
+if_settext($string0, 495:20);
+if_settext($string0, 495:27);
+$string0 = tostring($int2);
+if_settext($string0, 495:8);
+if_settext($string0, 495:15);
+if_settext($string0, 495:22);
+if_settext($string0, 495:29);
+if_settext(tostring($int3), 495:32);
+return();

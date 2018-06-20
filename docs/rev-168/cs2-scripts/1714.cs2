@@ -1,0 +1,8 @@
+[clientscript,script1714](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11)
+if(opcode6605() == 0 || clientclock < $int2) {
+return();
+}
+$int12 = add($int8, scale($int0, $int4, $int6));
+$int13 = sub($int11, scale($int1, $int5, $int7));
+if_setonclickrepeat("script1714(-2147483647, -2147483646, add(clientclock, 10), -2147483645, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11)", $int3);
+return();

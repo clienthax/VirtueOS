@@ -1,0 +1,205 @@
+[clientscript,script2046](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, string $string0)
+~script2047(17694734);
+~script2047(17694735);
+~script2047(17694736);
+~script2047(17694737);
+~script2047(17694738);
+~script2047(17694739);
+~script2047(17694740);
+~script2047(17694741);
+~script2047(17694742);
+~script2047(17694743);
+~script2047(17694727);
+~script2047(17694728);
+~script2047(17694729);
+~script2047(17694730);
+~script2047(17694731);
+~script2047(17694732);
+~script41(17694744);
+if($int2 == -1) {
+if_settext("You can't think of any options.", 270:5);
+if_setsize(0, 0, 0, 1, 270:6);
+if_setsize(0, 0, 1, 1, 270:3);
+return();
+}
+$string1 = "";
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+if_settext($string1, 270:5);
+if_settext("Choose a quantity, then <~script1971("click", "tap")> an item to begin.", 270:4);
+if(enum(int, boolean, 1810, $int0) == 1) {
+$int1 = ~max(1, ~min(28, $int1));
+$int12 = ~max(1, ~min($int1, $int12));
+} else {
+if($int1 > 5) {
+$int1 = 10;
+if($int12 > 5) {
+$int12 = 10;
+} else {
+if($int12 > 1) {
+$int12 = 5;
+} else {
+$int12 = 1;
+}
+}
+} else {
+if($int1 > 1) {
+$int1 = 5;
+if($int12 > 1) {
+$int12 = 5;
+} else {
+$int12 = 1;
+}
+} else {
+$int12 = 1;
+$int1 = 1;
+}
+}
+}
+%varc201 = $int12;
+%varc200 = $int12;
+~script2055($int0, $int1);
+$int13 = 10;
+if($int3 == -1) {
+$int13 = 1;
+} else {
+if($int4 == -1) {
+$int13 = 2;
+} else {
+if($int5 == -1) {
+$int13 = 3;
+} else {
+if($int6 == -1) {
+$int13 = 4;
+} else {
+if($int7 == -1) {
+$int13 = 5;
+} else {
+if($int8 == -1) {
+$int13 = 6;
+} else {
+if($int9 == -1) {
+$int13 = 7;
+} else {
+if($int10 == -1) {
+$int13 = 8;
+} else {
+if($int11 == -1) {
+$int13 = 9;
+}
+}
+}
+}
+}
+}
+}
+}
+}
+$int14 = sub(if_getwidth(270:0), 20);
+$int15 = 100;
+$int16 = 20;
+$int17 = sub($int13, 1);
+$int18 = 4;
+$int19 = 0;
+$int20 = 0;
+$int21 = 1;
+$int22 = 75;
+cc_deleteall(270:13);
+$int23 = 0;
+if($int13 > 1) {
+if(add(multiply($int15, $int13), multiply($int16, $int17)) > $int14) {
+$int16 = divide(sub($int14, multiply($int15, $int13)), $int17);
+$int18 = add($int18, multiply(2, ~max(0, sub(7, $int13))));
+if($int16 < $int18) {
+$int16 = $int18;
+$int15 = divide(sub($int14, multiply($int18, $int17)), $int13);
+}
+}
+$int19 = add($int15, $int16);
+$int22 = sub(75, 3);
+$int21 = 2;
+$int20 = 14;
+while($int23 < $int13) {
+cc_create(270:13, Text, $int23);
+cc_setposition(multiply($int23, $int19), 0, 0, 2);
+cc_setsize($int15, 14, 0, 0);
+cc_setcolor(0x403020);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(0);
+cc_settext(enum(int, string, 1812, $int23));
+$int23 = add($int23, 1);
+}
+} else {
+$int19 = $int15;
+}
+if_setposition(multiply(0, $int19), $int20, 0, $int21, 270:14);
+if_setposition(multiply(1, $int19), $int20, 0, $int21, 270:15);
+if_setposition(multiply(2, $int19), $int20, 0, $int21, 270:16);
+if_setposition(multiply(3, $int19), $int20, 0, $int21, 270:17);
+if_setposition(multiply(4, $int19), $int20, 0, $int21, 270:18);
+if_setposition(multiply(5, $int19), $int20, 0, $int21, 270:19);
+if_setposition(multiply(6, $int19), $int20, 0, $int21, 270:20);
+if_setposition(multiply(7, $int19), $int20, 0, $int21, 270:21);
+if_setposition(multiply(8, $int19), $int20, 0, $int21, 270:22);
+if_setposition(multiply(9, $int19), $int20, 0, $int21, 270:23);
+if_setsize(add(multiply($int13, $int15), multiply($int17, $int16)), 50, 0, 1, 270:13);
+if($int13 >= 1) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+~script2048(0, $int2, $string1, 17694734, 83, $int0, $int15, $int22);
+if($int13 >= 2) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+~script2048(1, $int3, $string1, 17694735, -1, $int0, $int15, $int22);
+if($int13 >= 3) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+~script2048(2, $int4, $string1, 17694736, -1, $int0, $int15, $int22);
+if($int13 >= 4) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+~script2048(3, $int5, $string1, 17694737, -1, $int0, $int15, $int22);
+if($int13 >= 5) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+~script2048(4, $int6, $string1, 17694738, -1, $int0, $int15, $int22);
+if($int13 >= 6) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+~script2048(5, $int7, $string1, 17694739, -1, $int0, $int15, $int22);
+if($int13 >= 7) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+~script2048(6, $int8, $string1, 17694740, -1, $int0, $int15, $int22);
+if($int13 >= 8) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+~script2048(7, $int9, $string1, 17694741, -1, $int0, $int15, $int22);
+if($int13 >= 9) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+~script2048(8, $int10, $string1, 17694742, -1, $int0, $int15, $int22);
+if($int13 >= 10) {
+~script2048(9, $int11, $string0, 17694743, -1, $int0, $int15, $int22);
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+return();

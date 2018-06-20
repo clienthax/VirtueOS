@@ -1,0 +1,31 @@
+[clientscript,script1255](int $int0, int $int1, int $int2, string $string0, string $string1)
+$int3 = 0;
+if($int0 == 1) {
+$int3 = ~script198($int1);
+} else {
+$int3 = ~script208($int1);
+}
+cc_create($int1, Model, $int3);
+$int3 = add($int3, 1);
+cc_setsize(sub(if_getwidth($int1), 40), sub(if_getheight($int1), 40), 0, 0);
+cc_setposition(0, 0, 1, 1);
+cc_setobject_nonum($int2, 1);
+cc_create($int1, Text, $int3);
+$int3 = add($int3, 1);
+.cc_create($int1, Text, $int3);
+$int3 = add($int3, 1);
+cc_setsize(0, 20, 1, 0);
+.cc_setsize(0, 15, 1, 0);
+cc_setposition(0, 5, 1, 0);
+.cc_setposition(0, 5, 1, 2);
+cc_setcolor(0xFF981F);
+.cc_setcolor(0xFF981F);
+cc_settextfont(495);
+.cc_settextfont(494);
+cc_settextalign(1, 0, 0);
+.cc_settextalign(1, 2, 0);
+cc_settextshadow(1);
+.cc_settextshadow(1);
+cc_settext($string0);
+.cc_settext($string1);
+return();

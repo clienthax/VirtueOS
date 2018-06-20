@@ -1,0 +1,11 @@
+[clientscript,script678]
+cc_create(162:33, Text, 0);
+cc_setsize(if_getwidth(162:33), if_gety(162:36), 0, 0);
+cc_setposition(0, 0, 0, 0);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(0);
+cc_setcolor(0x0000FF);
+cc_setonmouseover("script85(-2147483645, -2147483643, 16777215)");
+cc_setonmouseleave("script85(-2147483645, -2147483643, 255)");
+return();

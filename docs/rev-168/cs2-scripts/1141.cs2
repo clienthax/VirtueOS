@@ -1,0 +1,7 @@
+[clientscript,script1141](int $int0, int $int1)
+if(testbit(%varp1295, sub($int1, 1)) == 1) {
+~script1145($int0, $int1);
+} else {
+~script1146($int0, $int1);
+}
+return();

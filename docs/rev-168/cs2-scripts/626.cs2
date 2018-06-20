@@ -1,0 +1,281 @@
+[clientscript,poll_results_addquestion](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18, int $int19, int $int20, int $int21, int $int22, int $int23, int $int24, int $int25, int $int26, int $int27, int $int28, int $int29, int $int30, int $int31, int $int32, int $int33, int $int34, string $string0)
+$int35 = if_getwidth(345:11);
+$int36 = sub($int35, multiply(3, 2));
+$int37 = %varc43;
+$int38 = %varc49;
+cc_create(345:11, Rectangle, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition(0, $int38, 0, 0);
+cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+cc_settrans(225);
+cc_create(345:11, Rectangle, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition(0, $int38, 0, 0);
+cc_setcolor(0x777775);
+cc_setfill(0);
+cc_create(345:11, Rectangle, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition(1, add($int38, 1), 0, 0);
+cc_setcolor(0x474745);
+cc_setfill(0);
+%varc49 = add(%varc49, 3);
+$string1 = "";
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+$int39 = add(multiply(paraheight($int36, 494, $string1), 10), 2);
+if($int39 < 15) {
+$int39 = 15;
+}
+cc_create(345:11, Text, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition(3, %varc49, 0, 0);
+cc_setsize($int36, $int39, 0, 0);
+%varc49 = add(%varc49, $int39);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(0, 1, 0);
+cc_settextshadow(1);
+cc_settext($string1);
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+$int39 = add(multiply(paraheight($int36, 495, $string1), 12), 5);
+cc_create(345:11, Text, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition(3, %varc49, 0, 0);
+cc_setsize($int36, $int39, 0, 0);
+%varc49 = add(%varc49, $int39);
+cc_setcolor(0xFFFFFF);
+cc_settextfont(495);
+cc_settextalign(0, 1, 0);
+cc_settextshadow(1);
+cc_settext($string1);
+$string2 = "";
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string2 = $gosubResult632_0;
+~script611($string1, $string2, 22609931, $int36, 3, 494, 494, 10, 2);
+$string3 = $string0;
+def_int $anArray0(add(40, 1));
+$anArray0(0) = $int3;
+$anArray0(1) = $int4;
+$anArray0(2) = $int5;
+$anArray0(3) = $int6;
+$anArray0(4) = $int7;
+$anArray0(5) = $int8;
+$anArray0(6) = $int9;
+$anArray0(7) = $int10;
+$anArray0(8) = $int11;
+$anArray0(9) = $int12;
+$anArray0(10) = $int13;
+$anArray0(11) = $int14;
+$anArray0(12) = $int15;
+$anArray0(13) = $int16;
+$anArray0(14) = $int17;
+$anArray0(15) = $int18;
+$anArray0(16) = $int19;
+$anArray0(17) = $int20;
+$anArray0(18) = $int21;
+$anArray0(19) = $int22;
+$anArray0(20) = $int23;
+$anArray0(21) = $int24;
+$anArray0(22) = $int25;
+$anArray0(23) = $int26;
+$anArray0(24) = $int27;
+$anArray0(25) = $int28;
+$anArray0(26) = $int29;
+$anArray0(27) = $int30;
+$anArray0(28) = $int31;
+$anArray0(29) = $int32;
+$anArray0(30) = $int33;
+$anArray0(31) = $int34;
+$anArray0(38) = 0;
+$anArray0(39) = 100;
+$anArray0(40) = -1;
+$int40 = 0;
+$int41 = 0;
+while($int41 < $int1) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+$anArray0(38) = parawidth($int36, 494, $string1);
+if($anArray0(38) > $anArray0(39)) {
+$anArray0(39) = $anArray0(38);
+}
+if($int0 == -1) {
+if(compare(lowercase($string1), "skip question") == 0) {
+$anArray0(40) = $int41;
+} else {
+$int40 = add($int40, $anArray0($int41));
+}
+}
+$int41 = add($int41, 1);
+}
+if($int0 != -1) {
+$int40 = $int0;
+}
+if($int40 <= 0) {
+$int40 = 1;
+}
+def_int $anArray1($int1);
+$int42 = 1000;
+$anArray0(32) = 2147483647;
+$anArray0(33) = -1;
+$anArray0(34) = -1;
+$anArray0(35) = -2147483648;
+$anArray0(36) = -1;
+$anArray0(37) = -1;
+$int41 = 0;
+while($int41 < $int1) {
+if($int41 != $anArray0(40)) {
+$anArray1($int41) = interpolate(0, $anArray0($int41), 0, $int40, 2000);
+if(modulo($anArray1($int41), 2) == 1) {
+if($int0 != -1 || $int1 != 3 || $int41 != 0 || $anArray1($int41) != sub(multiply(75, 20), 1)) {
+$anArray1($int41) = add($anArray1($int41), 1);
+}
+}
+$anArray1($int41) = divide($anArray1($int41), 2);
+if($anArray0($int41) > 0) {
+if($int0 == -1) {
+$int42 = sub($int42, $anArray1($int41));
+if($anArray0($int41) < $anArray0(32)) {
+$anArray0(32) = $anArray0($int41);
+$anArray0(33) = $int41;
+$anArray0(34) = -1;
+} else {
+if($anArray0($int41) == $anArray0(32)) {
+$anArray0(34) = $int41;
+}
+}
+}
+if($anArray0($int41) > $anArray0(35)) {
+$anArray0(35) = $anArray0($int41);
+$anArray0(36) = $int41;
+$anArray0(37) = -1;
+} else {
+if($anArray0($int41) == $anArray0(35)) {
+$anArray0(37) = $int41;
+}
+}
+}
+}
+$int41 = add($int41, 1);
+}
+if($int0 == -1) {
+if($int42 > 0) {
+if($anArray0(33) != -1) {
+if($anArray0(34) == -1) {
+$anArray1($anArray0(33)) = add($anArray1($anArray0(33)), $int42);
+}
+}
+}
+}
+if($anArray0(37) != -1) {
+$anArray0(36) = -1;
+}
+if($anArray0(39) > 230) {
+$anArray0(39) = 230;
+}
+$int43 = sub($int35, add(3, 95));
+$int44 = add(add(3, $anArray0(39)), 5);
+$int45 = sub(sub($int43, $int44), 5);
+$string0 = $string3;
+$int41 = 0;
+while($int41 < $int1) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+if($int41 == 0) {
+$string2 = $string1;
+} else {
+if($int41 == 1) {
+if($int1 == 2 || $anArray0(40) == 2) {
+if($int1 == 3) {
+if($int0 == -1) {
+if(compare(lowercase($string2), "yes") == 0) {
+if(compare(lowercase($string1), "no") == 0) {
+if($anArray1(0) >= multiply(75, 10)) {
+if(cc_find(22609931, $int37) == 1) {
+cc_setcolor(0x00FF00);
+}
+}
+}
+}
+}
+}
+}
+}
+}
+$int39 = add(multiply(paraheight($anArray0(39), 494, $string1), 10), 2);
+if($int39 < 15) {
+$int39 = 15;
+}
+cc_create(345:11, Text, %varc43);
+%varc43 = add(%varc43, 1);
+.cc_create(345:11, Text, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition(3, %varc49, 0, 0);
+.cc_setposition($int43, %varc49, 0, 0);
+cc_setsize($anArray0(39), $int39, 0, 0);
+.cc_setsize(95, $int39, 0, 0);
+if(testbit($int2, $int41) == 1) {
+cc_setcolor(0xFFFF7F);
+.cc_setcolor(0xFFFF7F);
+} else {
+if($int41 == $anArray0(40)) {
+cc_setcolor(0xAFAFAF);
+.cc_setcolor(0xAFAFAF);
+} else {
+if(modulo($int41, 2) == 0) {
+cc_setcolor(0xFFA82F);
+.cc_setcolor(0xFFA82F);
+} else {
+cc_setcolor(0xFF981F);
+.cc_setcolor(0xFF981F);
+}
+}
+}
+cc_settextfont(494);
+.cc_settextfont(494);
+cc_settextalign(0, 1, 0);
+.cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+.cc_settextshadow(1);
+cc_settext($string1);
+$string1 = ",";
+if($int41 != $anArray0(40)) {
+.cc_settext("<tostring(divide($anArray1($int41), 10))>.<tostring(modulo($anArray1($int41), 10))>% (<~script46($anArray0($int41), $string1)>)");
+cc_create(345:11, Graphic, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition($int44, add(%varc49, divide(sub($int39, 11), 2)), 0, 0);
+cc_setsize(interpolate(0, $anArray0($int41), 0, $int40, $int45), 11, 0, 0);
+if($int41 == $anArray0(36)) {
+cc_setgraphic(897);
+} else {
+cc_setgraphic(297);
+}
+cc_settiling(1);
+} else {
+.cc_settext("(<~script46($anArray0($int41), $string1)>)");
+}
+%varc49 = add(%varc49, $int39);
+$int41 = add($int41, 1);
+}
+%varc49 = add(%varc49, 3);
+$int39 = sub(%varc49, $int38);
+if(cc_find(22609931, $int37) == 1) {
+cc_setsize($int35, $int39, 0, 0);
+}
+if(cc_find(22609931, add($int37, 1)) == 1) {
+cc_setsize($int35, $int39, 0, 0);
+}
+if(cc_find(22609931, add($int37, 2)) == 1) {
+cc_setsize(sub($int35, 2), sub($int39, 2), 0, 0);
+}
+%varc49 = add(%varc49, 3);
+return();

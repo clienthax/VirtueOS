@@ -1,0 +1,11 @@
+[clientscript,script1190](int $int0, int $int1)
+~scrollbar_vertical($int1, $int0, 792, 789, 790, 791, 773, 788);
+if(cc_find($int1, 1) == 1) {
+if(%varc80 < 0 || %varc80 >= if_getscrollheight($int0)) {
+%varc80 = 0;
+}
+~scrollbar_vertical_doscroll($int1, $int0, %varc80, 1);
+} else {
+%varc80 = 0;
+}
+return();

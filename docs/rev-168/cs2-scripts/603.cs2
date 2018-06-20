@@ -1,0 +1,13 @@
+[clientscript,script603](int $int0, int $int1, int $int2, int $int3, string $string0, string $string1)
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551309)) == 0) {
+return();
+}
+~steelborder($int0, $string0, 0);
+cc_deleteall($int2);
+%varc49 = 0;
+%varc43 = 0;
+if_sethide(1, $int2);
+if_sethide(0, $int3);
+if_settext($string1, $int3);
+cc_deleteall($int1);
+return();

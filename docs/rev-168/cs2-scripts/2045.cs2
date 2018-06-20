@@ -1,0 +1,19 @@
+[proc,script2045](int $int0, int $int1)(int)
+~create_graphic($int0, $int1, 1545, 0, 0, 1, 1, 2, 2, 1, 1);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 1554, 0, 0, 0, 0, 9, 9, 0, 0);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 1555, 0, 0, 2, 0, 9, 9, 0, 0);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 1556, 0, 0, 0, 2, 9, 9, 0, 0);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 1557, 0, 0, 2, 2, 9, 9, 0, 0);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 1558, 0, 0, 0, 1, 9, 18, 0, 1);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 1559, 0, 0, 1, 0, 18, 9, 1, 0);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 1560, 0, 0, 2, 1, 9, 18, 0, 1);
+$int1 = add($int1, 1);
+~create_graphic($int0, $int1, 1561, 0, 0, 1, 2, 18, 9, 1, 0);
+return(add($int1, 1));

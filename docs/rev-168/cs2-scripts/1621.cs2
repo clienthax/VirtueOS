@@ -1,0 +1,55 @@
+[clientscript,script1621](int $int0, int $int1)
+$int2 = 0;
+$int3 = 0;
+$int4 = -1;
+$int5 = -1;
+$int6 = 0;
+while($int6 < $int1) {
+if(cc_find($int0, $int6) == 1) {
+cc_clearops;
+$int5 = inv_getobj(93, $int6);
+if(%varbit3459 == 1) {
+cc_sethide(0);
+~script1622($int5, inv_getnum(93, $int6));
+cc_setdragdeadzone(10);
+cc_setdragdeadtime(10);
+} else {
+if($int5 != -1) {
+cc_sethide(0);
+cc_setobject($int5, inv_getnum(93, $int6));
+cc_setopbase("<col=ff9040><oc_name($int5)></col>");
+$int3 = 0;
+$int2 = 0;
+$int4 = enum(int, obj, 1666, $int3);
+while($int2 == 0) {
+while($int4 != -1) {
+if($int4 == $int5) {
+$int2 = 1;
+}
+$int3 = add($int3, 1);
+$int4 = enum(int, obj, 1666, $int3);
+}
+}
+if($int2 == 1) {
+cc_setop(1, "Donate");
+cc_setop(2, "Donate-5");
+cc_setop(3, "Donate-10");
+cc_setop(4, "Donate-All");
+cc_setop(5, "Donate-X");
+cc_setop(10, "Examine");
+cc_settrans(0);
+cc_setonop("script177(-2147483644, -2147483645, -2147483643)");
+} else {
+cc_setop(10, "Donate");
+cc_settrans(150);
+cc_setonop("null()");
+}
+} else {
+cc_sethide(1);
+cc_setonop("null()");
+}
+}
+}
+$int6 = add($int6, 1);
+}
+return();

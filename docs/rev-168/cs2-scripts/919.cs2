@@ -1,0 +1,34 @@
+[clientscript,script919](int $int0)
+$int1 = -1;
+if($int0 == 1131 || $int0 == 1745) {
+if(%varc171 != -1) {
+$int1 = enum(int, component, 1137, %varc171);
+}
+if(if_hassub(enum(component, component, $int0, 10551362)) == 1 || if_hassub(enum(component, component, $int0, $int1)) == 1) {
+if($int1 != -1 && if_hassub(enum(component, component, $int0, $int1)) == 1) {
+if($int0 == 1131) {
+if_sethide(0, 164:62);
+} else {
+if($int1 == 10551364 || $int1 == 10551369 || $int1 == 10551370 || $int1 == 10551376 || $int1 == 10551372 || $int1 == 10551373 || $int1 == 10551371) {
+if_setposition(33, 90, 0, 1, 601:15);
+} else {
+if_setposition(33, 90, 2, 1, 601:15);
+}
+~script2263;
+if_sethide(0, 601:15);
+}
+} else {
+} else {
+if_sethide(1, 164:62);
+if_sethide(1, 601:15);
+}
+}
+if(if_gethide(enum(component, component, $int0, 10551346)) == 1) {
+if_sethide(1, enum(component, component, $int0, 10551334));
+if_sethide(1, enum(component, component, $int0, 10551341));
+} else {
+if_sethide(0, enum(component, component, $int0, 10551334));
+if_sethide(0, enum(component, component, $int0, 10551341));
+}
+}
+return();

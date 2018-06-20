@@ -1,0 +1,14 @@
+[clientscript,script1994](int $int0, int $int1, int $int2)
+$int3 = interpolate(0, if_getwidth($int2), 0, 100, %varbit5798);
+if_setsize($int3, 0, 0, 1, $int0);
+if_setsize(sub(if_getwidth($int2), $int3), 0, 0, 1, $int1);
+if($int3 < divide(if_getwidth($int2), 4)) {
+if_setcolor(0xEE1111, $int0);
+} else {
+if($int3 < divide(if_getwidth($int2), 2)) {
+if_setcolor(0xEEEE11, $int0);
+} else {
+if_setcolor(0x11EE11, $int0);
+}
+}
+return();

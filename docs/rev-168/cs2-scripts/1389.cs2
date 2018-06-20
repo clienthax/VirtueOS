@@ -1,0 +1,134 @@
+[clientscript,script1389](int $int0, int $int1, int $int2)
+if_setonvartransmit("script1388(0, $int0, $int1, $int2){780}", 422:43);
+if($int0 < $int1) {
+$int0 = $int1;
+} else {
+if($int0 > $int2) {
+$int0 = $int2;
+}
+}
+$int3 = add(7, 2);
+$int4 = pow($int3, 2);
+$int5 = 0;
+$int6 = 1;
+if($int0 == 0) {
+$int6 = 0;
+}
+$int7 = 0;
+while($int7 < $int4) {
+if(cc_find(27656197, $int5) == 1) {
+cc_sethide($int6);
+}
+$int5 = add($int5, 1);
+$int7 = add($int7, 1);
+}
+if($int0 == 1) {
+$int6 = 0;
+} else {
+$int6 = 1;
+}
+$int7 = 0;
+while($int7 < $int4) {
+if(cc_find(27656197, $int5) == 1) {
+cc_sethide($int6);
+}
+$int5 = add($int5, 1);
+$int7 = add($int7, 1);
+}
+$int7 = 0;
+while($int7 < $int4) {
+if(cc_find(27656197, $int5) == 1) {
+cc_sethide(1);
+}
+$int5 = add($int5, 1);
+$int7 = add($int7, 1);
+}
+$int8 = -1;
+$int9 = sub(%varbit5330, 1);
+if($int9 >= 0 && $int9 < $int4) {
+$int8 = 0;
+} else {
+if($int9 >= $int4 && $int9 < multiply($int4, 2)) {
+$int8 = 1;
+} else {
+if($int9 >= multiply($int4, 2)) {
+if($int9 < multiply($int4, 3)) {
+$int8 = 2;
+}
+}
+}
+}
+$int10 = enum(int, component, 1424, -1);
+if($int0 == $int8) {
+if_sethide(0, $int10);
+if(cc_find($int10, 1) == 1 || cc_find($int10, 2) == 1 || cc_find($int10, 3) == 1) {
+if(cc_gettrans >= 255) {
+if_setontimer("script1393(-2147483645, clientclock)", $int10);
+~script1394($int10, clientclock);
+}
+}
+} else {
+if_sethide(1, $int10);
+if(cc_find($int10, 1) == 1) {
+cc_settrans(255);
+}
+if(cc_find($int10, 2) == 1) {
+cc_settrans(255);
+}
+if(cc_find($int10, 3) == 1) {
+cc_settrans(255);
+}
+}
+$int11 = 0;
+if($int1 <= 0) {
+$int11 = ~script1391(27656236, 0, "Dungeon", $int0, $int1, $int2, $int8);
+} else {
+$int11 = ~script1392(27656236, "Dungeon");
+}
+$int12 = 0;
+if($int2 >= 2) {
+$int12 = ~script1391(27656238, 2, "Upstairs", $int0, $int1, $int2, $int8);
+} else {
+$int12 = ~script1392(27656238, "Upstairs");
+}
+$int13 = sub(if_getwidth(if_getlayer(422:45)), add(add($int11, ~script1391(27656237, 1, "Ground", $int0, $int1, $int2, $int8)), $int12));
+if_setposition(add($int11, divide($int13, 2)), 0, 0, 1, 422:45);
+~script1390(1, %varc141, $int0, $int3, $int4);
+~script1390(2, %varc142, $int0, $int3, $int4);
+~script1390(3, %varc143, $int0, $int3, $int4);
+~script1390(4, %varc144, $int0, $int3, $int4);
+~script1390(5, %varc145, $int0, $int3, $int4);
+~script1390(6, %varc146, $int0, $int3, $int4);
+~script1390(7, %varc147, $int0, $int3, $int4);
+~script1390(8, %varc148, $int0, $int3, $int4);
+~script1390(9, %varc149, $int0, $int3, $int4);
+~script1390(10, %varc150, $int0, $int3, $int4);
+~script1390(11, %varc151, $int0, $int3, $int4);
+~script1390(12, %varc152, $int0, $int3, $int4);
+~script1390(13, %varc153, $int0, $int3, $int4);
+~script1390(14, %varc154, $int0, $int3, $int4);
+~script1390(15, %varc155, $int0, $int3, $int4);
+~script1390(16, %varc156, $int0, $int3, $int4);
+~script1390(17, %varc157, $int0, $int3, $int4);
+~script1390(18, %varc158, $int0, $int3, $int4);
+~script1390(19, %varc159, $int0, $int3, $int4);
+~script1390(20, %varc160, $int0, $int3, $int4);
+~script1390(21, %varc161, $int0, $int3, $int4);
+~script1390(22, %varc162, $int0, $int3, $int4);
+~script1390(23, %varc163, $int0, $int3, $int4);
+~script1390(24, %varc164, $int0, $int3, $int4);
+~script1390(25, %varc165, $int0, $int3, $int4);
+~script1390(26, %varc166, $int0, $int3, $int4);
+~script1390(27, %varc167, $int0, $int3, $int4);
+~script1390(28, %varc168, $int0, $int3, $int4);
+~script1390(29, %varc169, $int0, $int3, $int4);
+~script1390(30, %varc170, $int0, $int3, $int4);
+~script1390(31, %varc174, $int0, $int3, $int4);
+~script1390(32, %varc176, $int0, $int3, $int4);
+~script1390(33, %varc177, $int0, $int3, $int4);
+if($int9 != -1) {
+if(cc_find(27656197, $int9) == 1) {
+cc_sethide(1);
+}
+}
+return();

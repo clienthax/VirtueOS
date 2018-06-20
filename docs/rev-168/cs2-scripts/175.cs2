@@ -1,0 +1,97 @@
+[clientscript,script175](int $int0, int $int1)
+$int2 = ~script553;
+if($int0 == 1) {
+if(determinateDisplayMode() == 2 && %varc41 == $int1) {
+%varc41 = -1;
+} else {
+%varc41 = $int1;
+}
+~script2263;
+~script923;
+~script183($int1, 0);
+~script178;
+~script84($int2);
+~script89($int2);
+} else {
+if($int0 == 2) {
+if($int1 == 2) {
+~script184($int1, 4);
+~script178;
+~script84($int2);
+~script89($int2);
+} else {
+if($int1 == 1) {
+if(%varbit26 == 0) {
+%varbit26 = 1;
+} else {
+%varbit26 = 0;
+}
+~script178;
+~script84($int2);
+~script89($int2);
+}
+}
+} else {
+if($int0 == 3) {
+if($int1 == 1) {
+return();
+}
+~script184($int1, 0);
+~script178;
+~script84($int2);
+~script89($int2);
+} else {
+if($int0 == 4) {
+~script184($int1, 1);
+~script178;
+~script84($int2);
+~script89($int2);
+} else {
+if($int0 == 5) {
+~script184($int1, 2);
+~script178;
+~script84($int2);
+~script89($int2);
+} else {
+if($int1 == 2) {
+switch($int0) {
+case 6:
+~script184($int1, 3);
+~script178;
+~script84($int2);
+~script89($int2);
+case 7:
+%varc199 = clientclock;
+~script84($int2);
+case 8:
+~script548;
+case 9:
+~script550;
+case 10:
+if(string_length(%varcstr28) > 0) {
+if(%varc62 == 1) {
+%varc62 = 0;
+} else {
+%varc62 = 1;
+}
+~script95;
+} else {
+%varc62 = 0;
+~script95;
+}
+}
+} else {
+if($int1 == 3) {
+if($int0 == 6) {
+%varc175 = clientclock;
+~script84($int2);
+~script89($int2);
+}
+}
+}
+}
+}
+}
+}
+}
+return();

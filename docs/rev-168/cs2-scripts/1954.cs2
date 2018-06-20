@@ -1,0 +1,23 @@
+[clientscript,script1954]
+$int0 = if_getwidth(599:46);
+$int1 = if_getheight(599:46);
+$int2 = $int0;
+$int3 = %varp1606;
+$string0 = "<tostring($int3)>/99";
+$int2 = scale($int3, 99, $int2);
+if($int2 == 0) {
+if($int3 > 0) {
+$int2 = 1;
+}
+}
+if($int2 == $int0) {
+if($int3 < 99) {
+$int2 = sub($int2, 1);
+}
+}
+if($int2 > $int0) {
+$int2 = $int0;
+}
+if_settext($string0, 599:56);
+if_setsize($int2, $int1, 0, 0, 599:51);
+return();

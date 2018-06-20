@@ -1,0 +1,11 @@
+[clientscript,script482](int $int0, int $int1)
+$int2 = interpolate(0, $int1, 0, 500, 182);
+if($int2 > 182) {
+$int2 = 182;
+} else {
+if($int2 < 0) {
+$int2 = 0;
+}
+}
+if_setsize($int2, if_getheight($int0), 0, 0, $int0);
+return();

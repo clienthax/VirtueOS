@@ -1,0 +1,5 @@
+[clientscript,script719](int $int0, int $int1, int $int2, int $int3)
+if(cc_find($int0, $int1) == 1) {
+cc_setobject($int2, $int3);
+}
+return();

@@ -1,0 +1,4 @@
+[clientscript,script722]
+if_setobject(13192, -1, 64:10);
+if_setobject(995, inv_total(93, 995), 64:17);
+return();

@@ -1,0 +1,63 @@
+[clientscript,script2230](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if(~script1972 == 0) {
+if_sethide(0, 300:18);
+if_sethide(1, $int5);
+}
+switch(%varbit6348) {
+case 0:
+~script835($int1, 0);
+~script835($int2, 0);
+~script835($int3, 0);
+~script835($int4, 0);
+~script836($int0, 0);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 1, $int5)", $int1);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 2, $int5)", $int2);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 3, $int5)", $int3);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 4, $int5)", $int4);
+if_setonop("null()", $int0);
+case 1:
+~script835($int0, 0);
+~script835($int2, 0);
+~script835($int3, 0);
+~script835($int4, 0);
+~script836($int1, 0);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 0, $int5)", $int0);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 2, $int5)", $int2);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 3, $int5)", $int3);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 4, $int5)", $int4);
+if_setonop("null()", $int1);
+case 2:
+~script835($int0, 0);
+~script835($int1, 0);
+~script835($int3, 0);
+~script835($int4, 0);
+~script836($int2, 0);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 0, $int5)", $int0);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 1, $int5)", $int1);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 3, $int5)", $int3);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 4, $int5)", $int4);
+if_setonop("null()", $int2);
+case 3:
+~script835($int0, 0);
+~script835($int1, 0);
+~script835($int2, 0);
+~script835($int4, 0);
+~script836($int3, 0);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 0, $int5)", $int0);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 1, $int5)", $int1);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 2, $int5)", $int2);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 4, $int5)", $int4);
+if_setonop("null()", $int3);
+case 4:
+~script835($int0, 0);
+~script835($int1, 0);
+~script835($int2, 0);
+~script835($int3, 0);
+~script836($int4, 0);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 0, $int5)", $int0);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 1, $int5)", $int1);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 2, $int5)", $int2);
+if_setonop("script2231(-2147483644, $int0, $int1, $int2, $int3, $int4, 3, $int5)", $int3);
+if_setonop("null()", $int4);
+}
+return();

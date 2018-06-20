@@ -1,0 +1,10 @@
+[clientscript,script652](int $int0, int $int1)
+sound_synth(2266, 1, 0);
+$int0 = if_getlayer($int0);
+if($int0 == -1) {
+return();
+}
+if(cc_find($int0, $int1) == 1) {
+cc_resume_pausebutton;
+}
+return();

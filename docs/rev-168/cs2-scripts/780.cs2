@@ -1,0 +1,9 @@
+[clientscript,script780](int $int0, int $int1, int $int2)
+~script198($int2);
+if_setonmouserepeat("null()", $int2);
+if_setonmouseleave("null()", $int2);
+if_setonop("null()", $int2);
+if(cc_find($int0, $int1) == 1) {
+cc_settext("---");
+}
+return();

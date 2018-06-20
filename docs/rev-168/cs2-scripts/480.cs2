@@ -1,0 +1,4 @@
+[clientscript,script480](int $int0, int $int1)
+~script482($int1, %varbit2375);
+if_setontimer("script481($int1, %varbit2375, clientclock)", $int0);
+return();

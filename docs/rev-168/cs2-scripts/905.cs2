@@ -1,0 +1,11 @@
+[clientscript,script905](int $int0, int $int1, int $int2)
+if(if_gettop() == 80 && %varbit1463 == 1) {
+~script2186($int0);
+} else {
+if(if_gettop() == 165 && %varbit6331 == 1) {
+~script2203($int0);
+} else {
+~script2068($int0, $int1, $int2);
+}
+}
+return();

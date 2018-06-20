@@ -1,0 +1,65 @@
+[clientscript,script2093](int $int0, int $int1)
+$int2 = 34414;
+if(modulo($int1, 50) < 25) {
+$int2 = 34415;
+}
+$int3 = modulo(multiply($int1, 34), 2048);
+if($int1 <= 30) {
+.cc_setmodel($int2);
+cc_settrans(sub(255, multiply($int1, 8)));
+cc_setcolor(0xFFFFFF);
+.cc_setmodelangle(0, 60, 30, $int3, 0, sub(1580, multiply($int1, 50)));
+return();
+}
+$int4 = 0;
+if($int1 <= 60) {
+.cc_setmodel($int2);
+$int1 = sub($int1, 30);
+cc_settrans(sub(15, divide($int1, 2)));
+$int4 = sub(255, scale($int1, 30, 255));
+cc_setcolor(~script246(sub(255, scale($int1, 30, 127)), $int4, $int4));
+.cc_setmodelangle(0, 60, 30, $int3, 0, sub(80, scale($int1, 30, 20)));
+return();
+}
+if($int1 <= 90) {
+.cc_setmodel($int2);
+$int1 = sub($int1, 60);
+cc_setcolor(~script246(sub(128, scale($int1, 30, 128)), 0, 0));
+.cc_setmodelangle(0, 60, 30, $int3, 0, add(60, scale($int1, 30, 20)));
+return();
+}
+if($int1 <= 120) {
+.cc_setmodel($int2);
+$int1 = sub($int1, 90);
+cc_setcolor(~script246(scale($int1, 30, 128), $int1, 0));
+.cc_setmodelangle(0, 60, 30, $int3, 0, sub(80, scale($int1, 30, 20)));
+return();
+}
+if($int1 <= 150) {
+.cc_setmodel($int2);
+$int1 = sub($int1, 120);
+cc_setcolor(~script246(sub(128, scale($int1, 30, 128)), sub(30, $int1), 0));
+.cc_setmodelangle(0, 60, 30, $int3, 0, add(60, scale($int1, 30, 20)));
+return();
+}
+if($int1 <= 180) {
+.cc_setmodel($int2);
+$int1 = sub($int1, 150);
+cc_setcolor(~script246(scale($int1, 30, 96), 0, 0));
+.cc_setmodelangle(0, 60, 30, $int3, 0, add(80, multiply($int1, 50)));
+return();
+}
+if($int1 <= 210) {
+.cc_setmodel(16238);
+$int1 = sub($int1, 180);
+cc_setcolor(~script246(sub(96, scale($int1, 30, 96)), 0, 0));
+return();
+}
+if($int1 <= 270) {
+.cc_setmodel(16238);
+$int1 = sub($int1, 210);
+cc_settrans(scale($int1, 60, 255));
+return();
+}
+cc_deleteall($int0);
+return();

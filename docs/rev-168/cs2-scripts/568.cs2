@@ -1,0 +1,2 @@
+[proc,script568](int $int0)(int)
+return(~inzone(53482112, 860869375, $int0));

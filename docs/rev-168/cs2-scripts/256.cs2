@@ -1,0 +1,17 @@
+[clientscript,script256](int $int0, int $int1)
+$int2 = coordx(coord);
+$int3 = coordx($int1);
+if($int2 >= $int3) {
+if($int2 < add($int3, 128)) {
+$int3 = coordz($int1);
+$int2 = coordz(coord);
+if($int2 >= $int3) {
+if($int2 < add($int3, 128)) {
+if_sethide(0, $int0);
+return();
+}
+}
+}
+}
+if_sethide(1, $int0);
+return();

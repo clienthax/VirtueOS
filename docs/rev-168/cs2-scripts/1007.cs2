@@ -1,0 +1,10 @@
+[proc,stat_totallevel](int)
+$int0 = 0;
+$int1 = 1;
+$int2 = enum(int, stat, 681, $int1);
+while($int2 != -1) {
+$int0 = add($int0, stat_base($int2));
+$int1 = add($int1, 1);
+$int2 = enum(int, stat, 681, $int1);
+}
+return($int0);

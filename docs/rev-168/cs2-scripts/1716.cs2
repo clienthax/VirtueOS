@@ -1,0 +1,10 @@
+[clientscript,script1716](int $int0, int $int1)
+cc_create($int1, Rectangle, $int0);
+cc_setsize(0, 21, 1, 0);
+cc_setposition(0, multiply(21, $int0), 1, 0);
+cc_setfill(1);
+cc_setcolor(0xFFFFFF);
+cc_settrans(255);
+cc_setonmouserepeat("cc_settrans(-2147483645, -2147483643, 220, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 255, -1)");
+return();

@@ -1,0 +1,17 @@
+[proc,script1752](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)(int,int)
+$int7 = 0;
+$int8 = 0;
+if($int1 == 1) {
+$int7 = coordx($int0);
+$int8 = coordz($int0);
+} else {
+$int8 = opcode6617($int0);
+$int7 = opcode6617($int0);
+}
+$int9 = if_getwidth($int2);
+$int10 = if_getheight($int2);
+$int7 = scale($int9, sub($int5, $int6), sub($int7, $int6));
+$int8 = scale($int10, sub($int3, $int4), sub($int8, $int4));
+$int7 = sub($int7, divide($int9, 2));
+$int8 = sub(divide($int10, 2), $int8);
+return($int7, $int8);

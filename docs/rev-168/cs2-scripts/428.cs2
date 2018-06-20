@@ -1,0 +1,12 @@
+[clientscript,script428](int $int0, int $int1, int $int2, int $int3, int $int4)
+if($int4 == 1) {
+if_setoninvtransmit("script428($int0, -2147483645, $int2, $int3, 0){93}", $int1);
+}
+if(inv_total(93, $int0) > 0) {
+if_sethide(0, $int3);
+if_sethide(1, $int2);
+} else {
+if_sethide(1, $int3);
+if_sethide(0, $int2);
+}
+return();

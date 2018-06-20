@@ -1,0 +1,5 @@
+[clientscript,script2242](int $int0)
+if(~script1972 == 0) {
+return();
+}
+return();

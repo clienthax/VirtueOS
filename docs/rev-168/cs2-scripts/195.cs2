@@ -1,0 +1,17 @@
+[clientscript,script195](int $int0, string $string0)
+cc_deleteall($int0);
+$int1 = ~script835($int0, 0);
+cc_create($int0, Text, $int1);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 0, 1, 1);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_setcolor(0xFF981F);
+cc_settext($string0);
+if_setop(1, "Configure", $int0);
+if_setopbase("<col=ff9040><$string0></col>", $int0);
+if_setonop("script489(-2147483644, 2)", $int0);
+if_setonmouseover("script85(-2147483645, cc_getid, 16777215)", $int0);
+if_setonmouseleave("script85(-2147483645, cc_getid, 16750623)", $int0);
+return();

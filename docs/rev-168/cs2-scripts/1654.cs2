@@ -1,0 +1,5 @@
+[clientscript,script1654](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+sound_synth(2266, 1, 0);
+%varc184 = $int0;
+~ignore_update($int1, $int2, $int3, $int4, $int5, $int6, $int7);
+return();

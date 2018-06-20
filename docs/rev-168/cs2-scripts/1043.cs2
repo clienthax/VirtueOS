@@ -1,0 +1,9 @@
+[clientscript,script1043](int $int0, int $int1, int $int2)
+if($int0 != 17104909) {
+return();
+}
+if(%varbit4606 != 0) {
+return();
+}
+~script1049;
+return();

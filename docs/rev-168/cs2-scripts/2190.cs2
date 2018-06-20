@@ -1,0 +1,3 @@
+[clientscript,script2190]
+docheat("~dmm_switch");
+return();

@@ -1,0 +1,16 @@
+[clientscript,script35](int $int0, int $int1, int $int2, int $int3)
+$int4 = 0;
+$int5 = 0;
+if(cc_find($int0, 1) == 1) {
+if(.cc_find($int0, 2) == 1) {
+.cc_setposition(0, add($int2, 16), 1, 0);
+}
+if(.cc_find($int0, 3) == 1) {
+.cc_setposition(0, sub(add(add($int2, 16), cc_getheight), 5), 1, 0);
+}
+$int4 = sub(sub(if_getheight($int0), 32), cc_getheight);
+$int5 = sub(if_getscrollheight($int1), if_getheight($int1));
+$int2 = divide(multiply($int2, $int5), ~max(1, $int4));
+~scrollbar_vertical_doscroll($int0, $int1, $int2, $int3);
+}
+return();

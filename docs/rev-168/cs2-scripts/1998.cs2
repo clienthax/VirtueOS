@@ -1,0 +1,7 @@
+[clientscript,script1998](int $int0)
+if(%varbit4692 == 2) {
+if_setposition(0, 5, 1, 0, $int0);
+} else {
+if_setposition(5, 22, 0, 0, $int0);
+}
+return();

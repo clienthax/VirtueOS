@@ -1,0 +1,18 @@
+[clientscript,script2263]
+if(~script1972 == 0) {
+return();
+}
+$int0 = -1;
+if(%varc171 != -1) {
+$int0 = enum(int, component, 1137, %varc171);
+if($int0 == 10551364 || $int0 == 10551369 || $int0 == 10551370 || $int0 == 10551376 || $int0 == 10551372 || $int0 == 10551373 || $int0 == 10551371) {
+if_setposition(35, 64, 2, 1, 601:28);
+return();
+}
+}
+if(%varc41 == -1) {
+if_setposition(35, 7, 0, 0, 601:28);
+return();
+}
+if_setposition(35, 64, 0, 1, 601:28);
+return();

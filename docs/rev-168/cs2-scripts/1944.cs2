@@ -1,0 +1,4 @@
+[clientscript,script1944]
+if_settext("Champions remaining:", 90:5);
+if_settext(tostring(%varbit5706), 90:6);
+return();

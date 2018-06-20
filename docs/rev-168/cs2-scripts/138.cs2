@@ -1,0 +1,5 @@
+[clientscript,script138]
+if(%varc5 == 7 || %varc5 == 8 || %varc5 == 9 || %varc5 == 11 || %varc5 == 14 || %varc5 == 15 || %varc5 == 16) {
+~script299(1, 1);
+}
+return();

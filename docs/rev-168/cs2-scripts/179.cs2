@@ -1,0 +1,14 @@
+[proc,script179](int $int0)(int)
+switch($int0) {
+case 1:
+return(%varc44);
+case 2:
+return(%varc45);
+case 3:
+return(%varc46);
+case 4:
+return(%varc47);
+case 5:
+return(%varc48);
+}
+return(0);

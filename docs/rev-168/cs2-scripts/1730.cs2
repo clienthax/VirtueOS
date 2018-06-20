@@ -1,0 +1,6 @@
+[clientscript,script1730](int $int0, int $int1, int $int2)
+cc_settrans(255);
+cc_setonop("script1728(-2147483644, $int0, -2147483645, -2147483643)");
+cc_setonmouserepeat("cc_settrans(-2147483645, -2147483643, 220, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, 255, -1)");
+return();

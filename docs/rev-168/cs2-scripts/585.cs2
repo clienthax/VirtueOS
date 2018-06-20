@@ -1,0 +1,9 @@
+[clientscript,script585](int $int0, int $int1)
+if(testbit(%varp92, $int1) == 1) {
+cc_setgraphic(699);
+.cc_setcolor(0xFFFFFF);
+} else {
+cc_setgraphic(698);
+.cc_setcolor(0xFF981F);
+}
+return();

@@ -1,0 +1,21 @@
+[clientscript,script1612](int $int0, int $int1, string $string0, int $int2)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+cc_deleteall($int1);
+$int3 = ~script836($int1, 0);
+cc_create($int1, Text, $int3);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont($int2);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext("---");
+if_setonmouserepeat("null()", $int1);
+if_setonmouseleave("null()", $int1);
+if_clearops($int1);
+if_setonop("null()", $int1);
+if_setontimer("script1613($int1, $string0, $int2, add(clientclock, 20))", $int1);
+return();

@@ -1,0 +1,10 @@
+[clientscript,script628](int $int0, int $int1, int $int2, string $string0)
+sound_synth(2266, 1, 0);
+if(cc_find($int0, $int2) == 1) {
+cc_settext("<col=ffffff>Loading...</col>");
+cc_setontimer("script629(-2147483645, -2147483643, $string0, add(clientclock, 30))");
+}
+if(cc_find($int0, $int1) == 1) {
+cc_resume_pausebutton;
+}
+return();

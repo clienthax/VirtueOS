@@ -1,0 +1,12 @@
+[clientscript,script915](int $int0)
+$int1 = ~toplevel_getcomponents;
+if($int1 == -1) {
+return();
+}
+if($int0 == -1) {
+if(enum(enum, boolean, 1134, $int1) == 0) {
+$int0 = 8;
+}
+}
+~script916($int0, $int1);
+return();

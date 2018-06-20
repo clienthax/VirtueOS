@@ -1,0 +1,8 @@
+[proc,poh_jewellerybox_getbuttonspacing](int $int0, int $int1)(int,int)
+$int1 = ~max($int1, 1);
+$int2 = ~min(divide(sub(if_getheight($int0), 10), $int1), 25);
+$int3 = sub(0, multiply($int2, divide($int1, 2)));
+if(modulo($int1, 2) == 0) {
+$int3 = add($int3, divide($int2, 2));
+}
+return($int3, $int2);

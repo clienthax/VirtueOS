@@ -1,0 +1,50 @@
+[clientscript,script1847](int $int0, int $int1)
+if(testbit(%varbit5640, 3) == 1) {
+~script41(38993955);
+return();
+}
+if(%varc2 == 1) {
+return();
+}
+$string0 = enum(maplabel, string, 1713, opcode6695(opcode6697()));
+if(string_length($string0) <= 0) {
+return();
+}
+$int2 = 150;
+$int3 = if_getlayer(595:35);
+if($int3 != -1) {
+$int2 = ~min($int2, if_getwidth($int3));
+}
+$int2 = sub($int2, 4);
+$int4 = add(4, parawidth($int2, 495, $string0));
+$int5 = add(7, multiply(12, paraheight($int2, 495, $string0)));
+if_setsize($int4, $int5, 0, 0, 595:35);
+$int6 = add($int0, 5);
+$int7 = add($int1, 20);
+if($int3 != -1) {
+$int6 = ~min($int6, sub(if_getwidth($int3), $int4));
+if($int7 > sub(if_getheight($int3), $int5)) {
+$int7 = sub($int1, add($int5, 5));
+}
+}
+if_setposition($int6, $int7, 0, 0, 595:35);
+cc_deleteall(595:35);
+cc_create(595:35, Rectangle, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(1);
+cc_setcolor(0xFFFFA0);
+cc_create(595:35, Rectangle, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(0);
+cc_setcolor(0x000000);
+cc_create(595:35, Text, 2);
+cc_setsize(4, 1, 1, 1);
+cc_setposition(0, 0, 1, 2);
+cc_settext($string0);
+cc_settextalign(0, 0, 0);
+cc_settextfont(495);
+cc_setcolor(0x000000);
+%varc2 = 1;
+return();

@@ -1,0 +1,24 @@
+[clientscript,script1027](int $int0)
+$int1 = 0;
+$int2 = 0;
+$gosubResult1002_0, $gosubResult1002_1 = ~script1002($int0);
+$int2 = $gosubResult1002_1;
+$int1 = $gosubResult1002_0;
+if($int2 == -1) {
+if($int0 != -1) {
+cc_settext("Tracking XP since <col=ffffff><~script1028($int1, 0)></col>.");
+} else {
+cc_settext("Tracking XP since <col=ffffff><~script1029($int1)></col>.");
+}
+} else {
+if($int2 > $int1) {
+if($int0 != -1) {
+cc_settext("Goal is <col=ffffff><~script1028($int2, 0)></col>, starting from <col=ffffff><~script1028($int1, 0)></col>.");
+} else {
+cc_settext("Goal is <col=ffffff><~script1029($int2)></col>, starting from <col=ffffff><~script1029($int1)></col>.");
+}
+} else {
+cc_settext("No tracker or goal set.");
+}
+}
+return();

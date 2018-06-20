@@ -1,0 +1,64 @@
+[clientscript,tournament_data](int $int0, int $int1, string $string0)
+if($int1 == -1) {
+if(cc_find($int0, 0) == 1) {
+cc_sethide(1);
+}
+if(cc_find($int0, 1) == 1) {
+cc_settext("");
+}
+if(cc_find($int0, 2) == 1) {
+cc_sethide(1);
+}
+if(cc_find($int0, 3) == 1) {
+cc_sethide(1);
+}
+if(cc_find($int0, 4) == 1) {
+cc_settext("");
+}
+if(cc_find($int0, 5) == 1) {
+cc_settext("");
+}
+if(cc_find($int0, 6) == 1) {
+cc_settext("");
+}
+return();
+}
+if(cc_find($int0, 0) == 1) {
+cc_sethide(0);
+}
+if(cc_find($int0, 1) == 1) {
+cc_settext($string0);
+}
+if(cc_find($int0, 2) == 1) {
+cc_sethide(0);
+}
+$int2 = testbit($int1, 30);
+$int1 = clearbit($int1, 30);
+$int3 = and($int1, 1023);
+$int1 = divide($int1, pow(2, 10));
+$int4 = and($int1, 1023);
+$int1 = divide($int1, pow(2, 10));
+$int5 = and($int1, 1023);
+if(cc_find($int0, 3) == 1) {
+cc_sethide(0);
+if($int2 == 1) {
+cc_setcolor(0x009F00);
+} else {
+cc_setcolor(0x7F0000);
+}
+if($int3 >= 99) {
+cc_setsize(25, 0, 0, 1);
+} else {
+cc_setsize(25, interpolate(0, $int3, 0, 99, 16384), 0, 2);
+}
+}
+if(cc_find($int0, 4) == 1) {
+cc_settext(tostring($int3));
+}
+if(cc_find($int0, 5) == 1) {
+cc_settext("<tostring($int4)>%");
+}
+if(cc_find($int0, 6) == 1) {
+cc_settext(tostring($int5));
+}
+return();

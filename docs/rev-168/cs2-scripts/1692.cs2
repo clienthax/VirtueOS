@@ -1,0 +1,13 @@
+[clientscript,script1692](int $int0, int $int1, int $int2, string $string0, string $string1, string $string2, int $int3)
+if(clientclock < $int3) {
+return();
+}
+if(cc_find($int1, $int2) == 1) {
+if(.cc_find(38666240, $int0) == 1) {
+.cc_setontimer("null()");
+cc_settext($string0);
+cc_setonop("script1690(-2147483644, $int0, $int1, $int2, $string0, $string1, $string2)");
+.cc_setonkey("script1689(-2147483639, $int0, $int1, $int2, $string0, $string1, $string2)");
+}
+}
+return();

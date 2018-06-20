@@ -1,0 +1,17 @@
+[clientscript,script2155]
+if(~toplevel_getcomponents == 1745) {
+if(if_find(10616834) == 1) {
+cc_setposition(0, 0, 0, 0);
+}
+if(if_find(10616862) == 1) {
+cc_setposition(0, 0, 0, 2);
+}
+} else {
+if(if_find(10616834) == 1) {
+cc_setposition(0, 0, 0, 2);
+}
+if(if_find(10616862) == 1) {
+cc_setposition(0, 0, 0, 0);
+}
+}
+return();

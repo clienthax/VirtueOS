@@ -1,0 +1,18 @@
+[clientscript,script76]
+$string0 = "null";
+if(%varc3 != -1) {
+%varc3 = add(%varc3, 1);
+if(%varc3 >= 20) {
+%varc3 = 0;
+}
+if(%varc3 == %varc4) {
+%varcstr1 = "";
+%varc3 = -1;
+} else {
+$string0 = ~script79(%varc3);
+if(string_length($string0) > 0) {
+%varcstr1 = $string0;
+}
+}
+}
+return();

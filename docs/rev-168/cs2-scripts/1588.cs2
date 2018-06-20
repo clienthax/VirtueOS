@@ -1,0 +1,5 @@
+[clientscript,script1588](int $int0)
+if(cc_find(35979279, $int0) == 1) {
+cc_settext("0");
+}
+return();

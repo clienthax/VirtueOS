@@ -1,0 +1,9 @@
+[clientscript,script1725](int $int0, int $int1, int $int2)
+if($int0 > 0) {
+~script1727(0, $int1, $int2);
+} else {
+if($int0 < 0) {
+~script1727(1, $int1, $int2);
+}
+}
+return();

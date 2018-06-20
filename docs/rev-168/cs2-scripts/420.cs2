@@ -1,0 +1,502 @@
+[clientscript,script420]
+def_int $anArray0(4);
+def_int $anArray1(4);
+$int0 = 653;
+$int1 = 654;
+if(%varbit357 == 18 || %varbit357 == 21) {
+if_sethide(0, 593:19);
+$anArray0(0) = 20;
+$anArray0(1) = 20;
+$anArray0(2) = 20;
+$anArray0(3) = 20;
+$anArray1(0) = 45;
+$anArray1(1) = 80;
+$anArray1(2) = 115;
+$anArray1(3) = 150;
+if_setsize(72, 36, 0, 0, 593:3);
+if_setsize(72, 36, 0, 0, 593:7);
+if_setsize(72, 36, 0, 0, 593:11);
+if_setsize(72, 36, 0, 0, 593:15);
+if_setsize(72, 36, 0, 0, 593:4);
+if_setsize(72, 36, 0, 0, 593:8);
+if_setsize(72, 36, 0, 0, 593:12);
+if_setsize(72, 36, 0, 0, 593:16);
+if_setposition(20, 5, 0, 0, 593:5);
+if_setposition(20, 5, 0, 0, 593:9);
+if_setposition(20, 5, 0, 0, 593:13);
+if_setposition(20, 5, 0, 0, 593:17);
+if_setsize(34, 24, 0, 0, 593:5);
+if_setposition(0, 21, 0, 0, 593:6);
+if_setposition(0, 21, 0, 0, 593:10);
+if_setposition(0, 21, 0, 0, 593:14);
+if_setposition(0, 21, 0, 0, 593:18);
+$int1 = 294;
+$int0 = 293;
+} else {
+if_sethide(1, 593:19);
+$anArray0(0) = 20;
+$anArray0(1) = 104;
+$anArray0(2) = 20;
+$anArray0(3) = 104;
+$anArray1(0) = 45;
+$anArray1(1) = 45;
+$anArray1(2) = 98;
+$anArray1(3) = 98;
+if_setsize(70, 46, 0, 0, 593:3);
+if_setsize(70, 46, 0, 0, 593:7);
+if_setsize(70, 46, 0, 0, 593:11);
+if_setsize(70, 46, 0, 0, 593:15);
+if_setsize(70, 46, 0, 0, 593:4);
+if_setsize(70, 46, 0, 0, 593:8);
+if_setsize(70, 46, 0, 0, 593:12);
+if_setsize(70, 46, 0, 0, 593:16);
+if(%varbit357 == 8) {
+if_setposition(22, 2, 0, 0, 593:5);
+if_setsize(30, 30, 0, 0, 593:5);
+} else {
+if_setposition(20, 5, 0, 0, 593:5);
+if_setsize(34, 24, 0, 0, 593:5);
+}
+if_setposition(20, 5, 0, 0, 593:9);
+if_setposition(20, 5, 0, 0, 593:13);
+if_setposition(20, 5, 0, 0, 593:17);
+if_setposition(0, 30, 0, 0, 593:6);
+if_setposition(0, 30, 0, 0, 593:10);
+if_setposition(0, 30, 0, 0, 593:14);
+if_setposition(0, 30, 0, 0, 593:18);
+}
+$string0 = "";
+$string1 = "";
+$string2 = "";
+$string3 = "";
+$string4 = "";
+$string5 = "";
+$string6 = "";
+$string7 = "";
+$int2 = -1;
+$int3 = -1;
+$int4 = -1;
+$int5 = -1;
+if(%varbit357 == 1) {
+$int2 = 234;
+$string4 = "(Accurate)<br>(Slash)<br>(Attack XP)";
+$string0 = "Chop";
+$int3 = 235;
+$string5 = "(Aggressive)<br>(Slash)<br>(Strength XP)";
+$string1 = "Hack";
+$int4 = 236;
+$string6 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string2 = "Smash";
+$int5 = 233;
+$string7 = "(Defensive)<br>(Slash)<br>(Defence XP)";
+$string3 = "Block";
+} else {
+if(%varbit357 == 2) {
+$int2 = 255;
+$string4 = "(Accurate)<br>(Crush)<br>(Attack XP)";
+$string0 = "Pound";
+$int3 = 256;
+$string5 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string1 = "Pummel";
+$int5 = 253;
+$string7 = "(Defensive)<br>(Crush)<br>(Defence XP)";
+$string3 = "Block";
+} else {
+if(%varbit357 == 26) {
+$int2 = 255;
+$string4 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string0 = "Pound";
+$int3 = 256;
+$string5 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string1 = "Pummel";
+$int5 = 253;
+$string7 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string3 = "Smash";
+} else {
+if(%varbit357 == 3) {
+$int2 = 268;
+$string4 = "(Accurate)<br>(Ranged XP)";
+$string0 = "Accurate";
+$int3 = 269;
+$string5 = "(Rapid)<br>(Ranged XP)";
+$string1 = "Rapid";
+$int5 = 270;
+$string7 = "(Longrange)<br>(Ranged XP)<br>(Defence XP)";
+$string3 = "Longrange";
+} else {
+if(%varbit357 == 4) {
+$int2 = 279;
+$string4 = "(Accurate)<br>(Slash)<br>(Attack XP)";
+$string0 = "Chop";
+$int3 = 278;
+$string5 = "(Aggressive)<br>(Slash)<br>(Strength XP)";
+$string1 = "Slash";
+$int4 = 277;
+$string6 = "(Controlled)<br>(Stab)<br>(Shared XP)";
+$string2 = "Lunge";
+$int5 = 280;
+$string7 = "(Defensive)<br>(Slash)<br>(Defence XP)";
+$string3 = "Block";
+} else {
+if(%varbit357 == 5) {
+$int2 = 258;
+$string4 = "(Accurate)<br>(Ranged XP)";
+$string0 = "Accurate";
+$int3 = 259;
+$string5 = "(Rapid)<br>(Ranged XP)";
+$string1 = "Rapid";
+$int5 = 260;
+$string7 = "(Longrange)<br>(Ranged XP)<br>(Defence XP)";
+$string3 = "Longrange";
+} else {
+if(%varbit357 == 6) {
+$int2 = 289;
+$string4 = "(Aggressive)<br>(Slash)<br>(Strength XP)";
+$string0 = "Scorch";
+$int3 = 290;
+$string5 = "(Accurate)<br>(Ranged)<br>(Ranged XP)";
+$string1 = "Flare";
+$int4 = 291;
+$string6 = "(Defensive)<br>(Magic)<br>(Magic XP)";
+$string2 = "Blaze";
+} else {
+if(%varbit357 == 7) {
+$int2 = 288;
+$string4 = "(Short fuse)<br>(Ranged XP)";
+$string0 = "Short fuse";
+$int3 = 282;
+$string5 = "(Medium fuse)<br>(Ranged XP)";
+$string1 = "Medium fuse";
+$int5 = 281;
+$string7 = "(Long fuse)<br>(Ranged XP)<br>(Defence XP)";
+$string3 = "Long fuse";
+} else {
+if(%varbit357 == 8) {
+$int2 = 128;
+$string4 = "(Aim and Fire)";
+$string0 = "Aim and Fire";
+$int3 = 248;
+$string5 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string1 = "Kick";
+} else {
+if(%varbit357 == 9) {
+$int2 = 239;
+$string4 = "(Accurate)<br>(Slash)<br>(Attack XP)";
+$string0 = "Chop";
+$int3 = 238;
+$string5 = "(Aggressive)<br>(Slash)<br>(Strength XP)";
+$string1 = "Slash";
+$int4 = 240;
+$string6 = "(Controlled)<br>(Stab)<br>(Shared XP)";
+$string2 = "Lunge";
+$int5 = 237;
+$string7 = "(Defensive)<br>(Slash)<br>(Defence XP)";
+$string3 = "Block";
+} else {
+if(%varbit357 == 10) {
+$int2 = 239;
+$string4 = "(Accurate)<br>(Slash)<br>(Attack XP)";
+$string0 = "Chop";
+$int3 = 238;
+$string5 = "(Aggressive)<br>(Slash)<br>(Strength XP)";
+$string1 = "Slash";
+$int4 = 238;
+$string6 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string2 = "Smash";
+$int5 = 237;
+$string7 = "(Defensive)<br>(Slash)<br>(Defence XP)";
+$string3 = "Block";
+} else {
+if(%varbit357 == 22) {
+$int2 = 239;
+$string4 = "(Accurate)<br>(Slash)<br>(Attack XP)";
+$string0 = "Chop";
+$int3 = 238;
+$string5 = "(Aggressive)<br>(Slash)<br>(Strength XP)";
+$string1 = "Slash";
+$int4 = 238;
+$string6 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string2 = "Smash";
+$int5 = 237;
+$string7 = "(Defensive)<br>(Slash)<br>(Defence XP)";
+$string3 = "Block";
+} else {
+if(%varbit357 == 11) {
+$int2 = 274;
+$string4 = "(Accurate)<br>(Stab)<br>(Attack XP)";
+$string0 = "Spike";
+$int3 = 276;
+$string5 = "(Aggressive)<br>(Stab)<br>(Strength XP)";
+$string1 = "Impale";
+$int4 = 275;
+$string6 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string2 = "Smash";
+$int5 = 273;
+$string7 = "(Defensive)<br>(Stab)<br>(Defence XP)";
+$string3 = "Block";
+} else {
+if(%varbit357 == 12) {
+$int2 = 284;
+$string4 = "(Controlled)<br>(Stab)<br>(Shared XP)";
+$string0 = "Jab";
+$int3 = 285;
+$string5 = "(Aggressive)<br>(Slash)<br>(Strength XP)";
+$string1 = "Swipe";
+$int5 = 283;
+$string7 = "(Defensive)<br>(Stab)<br>(Defence XP)";
+$string3 = "Fend";
+} else {
+if(%varbit357 == 25) {
+$int2 = 284;
+$string4 = "(Controlled)<br>(Stab)<br>(Shared XP)";
+$string0 = "Jab";
+$int3 = 285;
+$string5 = "(Aggressive)<br>(Slash)<br>(Strength XP)";
+$string1 = "Swipe";
+$int5 = 283;
+$string7 = "(Defensive)<br>(Stab)<br>(Defence XP)";
+$string3 = "Fend";
+} else {
+if(%varbit357 == 13) {
+$int2 = 266;
+$string4 = "(Accurate)<br>(Crush)<br>(Attack XP)";
+$string0 = "Bash";
+$int3 = 267;
+$string5 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string1 = "Pound";
+$int5 = 252;
+$string7 = "(Defensive)<br>(Crush)<br>(Defence XP)";
+$string3 = "Block";
+} else {
+if(%varbit357 == 14) {
+$int2 = 272;
+$string4 = "(Accurate)<br>(Slash)<br>(Attack XP)";
+$string0 = "Reap";
+$int3 = 262;
+$string5 = "(Aggressive)<br>(Slash)<br>(Strength XP)";
+$string1 = "Chop";
+$int4 = 271;
+$string6 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string2 = "Jab";
+$int5 = 261;
+$string7 = "(Defensive)<br>(Slash)<br>(Defence XP)";
+$string3 = "Block";
+} else {
+if(%varbit357 == 15) {
+$int2 = 241;
+$string4 = "(Controlled)<br>(Stab)<br>(Shared XP)";
+$string0 = "Lunge";
+$int3 = 251;
+$string5 = "(Controlled)<br>(Slash)<br>(Shared XP)";
+$string1 = "Swipe";
+$int4 = 242;
+$string6 = "(Controlled)<br>(Crush)<br>(Shared XP)";
+$string2 = "Pound";
+$int5 = 250;
+$string7 = "(Defensive)<br>(Stab)<br>(Defence XP)";
+$string3 = "Block";
+} else {
+if(%varbit357 == 24) {
+$int2 = 241;
+$string4 = "(Accurate)<br>(Stab)<br>(Attack XP)";
+$string0 = "Lunge";
+$int3 = 251;
+$string5 = "(Aggressive)<br>(Slash)<br>(Strength XP)";
+$string1 = "Swipe";
+$int4 = 242;
+$string6 = "(Controlled)<br>(Crush)<br>(Shared XP)";
+$string2 = "Pound";
+$int5 = 250;
+$string7 = "(Defensive)<br>(Stab)<br>(Defence XP)";
+$string3 = "Block";
+} else {
+if(%varbit357 == 16) {
+$int2 = 246;
+$string4 = "(Accurate)<br>(Crush)<br>(Attack XP)";
+$string0 = "Pound";
+$int3 = 244;
+$string5 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string1 = "Pummel";
+$int4 = 245;
+$string6 = "(Controlled)<br>(Stab)<br>(Shared XP)";
+$string2 = "Spike";
+$int5 = 243;
+$string7 = "(Defensive)<br>(Crush)<br>(Defence XP)";
+$string3 = "Block";
+} else {
+if(%varbit357 == 17) {
+$int2 = 240;
+$string4 = "(Accurate)<br>(Stab)<br>(Attack XP)";
+$string0 = "Stab";
+$int3 = 239;
+$string5 = "(Aggressive)<br>(Stab)<br>(Strength XP)";
+$string1 = "Lunge";
+$int4 = 238;
+$string6 = "(Aggressive)<br>(Slash)<br>(Strength XP)";
+$string2 = "Slash";
+$int5 = 237;
+$string7 = "(Defensive)<br>(Stab)<br>(Defence XP)";
+$string3 = "Block";
+} else {
+if(%varbit357 == 18) {
+$int2 = 266;
+$string4 = "(Accurate)<br>(Crush)<br>(Attack XP)";
+$string0 = "Bash";
+$int3 = 267;
+$string5 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string1 = "Pound";
+$int5 = 252;
+$string7 = "(Defensive)<br>(Crush)<br>(Defence XP)";
+$string3 = "Focus";
+} else {
+if(%varbit357 == 21) {
+$int2 = 266;
+$string4 = "(Accurate)<br>(Stab)<br>(Attack XP)";
+$string0 = "Jab";
+$int3 = 267;
+$string5 = "(Aggressive)<br>(Slash)<br>(Strength XP)";
+$string1 = "Swipe";
+$int5 = 252;
+$string7 = "(Defensive)<br>(Crush)<br>(Defence XP)";
+$string3 = "Fend";
+} else {
+if(%varbit357 == 19) {
+$int2 = 263;
+$string4 = "(Accurate)<br>(Ranged XP)";
+$string0 = "Accurate";
+$int3 = 264;
+$string5 = "(Rapid)<br>(Ranged XP)";
+$string1 = "Rapid";
+$int5 = 265;
+$string7 = "(Longrange)<br>(Ranged XP)<br>(Defence XP)";
+$string3 = "Longrange";
+} else {
+if(%varbit357 == 20) {
+$int2 = 286;
+$string4 = "(Accurate)<br>(Slash)<br>(Attack XP)";
+$string0 = "Flick";
+$int3 = 287;
+$string5 = "(Controlled)<br>(Slash)<br>(Shared XP)";
+$string1 = "Lash";
+$int5 = 286;
+$string7 = "(Defensive)<br>(Slash)<br>(Defence XP)";
+$string3 = "Deflect";
+} else {
+if(%varbit357 == 23) {
+$int2 = 263;
+$string4 = "(Accurate)<br>(Magic XP)";
+$string0 = "Accurate";
+$int3 = 263;
+$string5 = "(Accurate)<br>(Magic XP)";
+$string1 = "Accurate";
+$int5 = 265;
+$string7 = "(Longrange)<br>(Magic XP)<br>(Defence XP)";
+$string3 = "Longrange";
+} else {
+if(%varbit357 == 27) {
+$int2 = 254;
+$string4 = "(Accurate)<br>(Crush)<br>(Attack XP)";
+$string0 = "Pummel";
+$int5 = 253;
+$string7 = "No attacking!";
+$string3 = "Block";
+} else {
+$int2 = 247;
+$string4 = "(Accurate)<br>(Crush)<br>(Attack XP)";
+$string0 = "Punch";
+$int3 = 248;
+$string5 = "(Aggressive)<br>(Crush)<br>(Strength XP)";
+$string1 = "Kick";
+$int5 = 249;
+$string7 = "(Defensive)<br>(Crush)<br>(Defence XP)";
+$string3 = "Block";
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+~script324($int2, $int3, $int4, $int5, $int0, $int1);
+$int6 = 0;
+if($int2 != -1) {
+if_sethide(0, 593:3);
+if_setposition($anArray0($int6), $anArray1($int6), 0, 0, 593:3);
+$int6 = add($int6, 1);
+if_setgraphic($int2, 593:5);
+if_settext($string0, 593:6);
+if_setop(1, $string0, 593:3);
+if_setonop("script323($int2, $int3, $int4, $int5, $int0, $int1, -2147483644, 0)", 593:3);
+if_setonmouseleave("script40(38862883)", 593:3);
+if(string_length($string4) > 0) {
+if_setonmouserepeat("script526(-2147483645, -1, 38862883, $string4, 25, 140)", 593:3);
+}
+} else {
+if_sethide(1, 593:3);
+}
+if($int3 != -1) {
+if_sethide(0, 593:7);
+if_setposition($anArray0($int6), $anArray1($int6), 0, 0, 593:7);
+$int6 = add($int6, 1);
+if_setgraphic($int3, 593:9);
+if_settext($string1, 593:10);
+if_setop(1, $string1, 593:7);
+if_setonop("script323($int2, $int3, $int4, $int5, $int0, $int1, -2147483644, 1)", 593:7);
+if_setonmouseleave("script40(38862883)", 593:7);
+if(string_length($string5) > 0) {
+if_setonmouserepeat("script526(-2147483645, -1, 38862883, $string5, 25, 140)", 593:7);
+}
+} else {
+if_sethide(1, 593:7);
+}
+if($int4 != -1) {
+if_sethide(0, 593:11);
+if_setposition($anArray0($int6), $anArray1($int6), 0, 0, 593:11);
+$int6 = add($int6, 1);
+if_setgraphic($int4, 593:13);
+if_settext($string2, 593:14);
+if_setop(1, $string2, 593:11);
+if_setonop("script323($int2, $int3, $int4, $int5, $int0, $int1, -2147483644, 2)", 593:11);
+if_setonmouseleave("script40(38862883)", 593:11);
+if(string_length($string6) > 0) {
+if_setonmouserepeat("script526(-2147483645, -1, 38862883, $string6, 25, 140)", 593:11);
+}
+} else {
+if_sethide(1, 593:11);
+}
+if($int5 != -1) {
+if_sethide(0, 593:15);
+if_setposition($anArray0($int6), $anArray1($int6), 0, 0, 593:15);
+$int6 = add($int6, 1);
+if_setgraphic($int5, 593:17);
+if_settext($string3, 593:18);
+if_setop(1, $string3, 593:15);
+if_setonop("script323($int2, $int3, $int4, $int5, $int0, $int1, -2147483644, 3)", 593:15);
+if_setonmouseleave("script40(38862883)", 593:15);
+if(string_length($string7) > 0) {
+if_setonmouserepeat("script526(-2147483645, -1, 38862883, $string7, 25, 140)", 593:15);
+}
+} else {
+if_sethide(1, 593:15);
+}
+return();

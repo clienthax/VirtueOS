@@ -1,0 +1,11 @@
+[proc,script708](int)
+$int0 = 0;
+$int1 = enum(int, inv, 150, $int0);
+while($int1 != -1) {
+if(inv_getnum($int1, 0) > 0 || inv_getnum($int1, 1) > 0) {
+return(1);
+}
+$int0 = add($int0, 1);
+$int1 = enum(int, inv, 150, $int0);
+}
+return(0);

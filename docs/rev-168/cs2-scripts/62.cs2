@@ -1,0 +1,35 @@
+[clientscript,script62](int $int0, int $int1)
+cc_deleteall($int0);
+cc_deleteall($int1);
+$int2 = 0;
+$int3 = 0;
+$int4 = enum(int, namedobj, 1385, $int3);
+while($int4 != -1) {
+cc_create($int0, Graphic, $int3);
+cc_setsize(36, 32, 0, 0);
+$int2 = multiply(divide($int3, 8), 50);
+cc_setposition(multiply(modulo($int3, 8), 46), $int2, 0, 0);
+cc_setobject($int4, 1);
+cc_setopbase("<col=ff9040><oc_name($int4)>");
+cc_setop(1, "Buy-1");
+cc_setop(2, "Value");
+cc_setop(7, "Buy-5");
+cc_setop(8, "Buy-10");
+cc_setop(9, "Buy-50");
+cc_setop(10, "Examine");
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+$int3 = add($int3, 1);
+$int4 = enum(int, namedobj, 1385, $int3);
+}
+if($int2 > 0) {
+$int2 = add($int2, 32);
+}
+if_setscrollpos(0, 0, $int0);
+if($int2 > if_getheight($int0)) {
+if_setscrollsize(0, $int2, $int0);
+~scrollbar_vertical($int1, $int0, 792, 789, 790, 791, 773, 788);
+} else {
+if_setscrollsize(0, 0, $int0);
+}
+return();

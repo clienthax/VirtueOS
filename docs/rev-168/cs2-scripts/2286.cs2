@@ -1,0 +1,41 @@
+[clientscript,script2286](int $int0, int $int1)
+cc_deleteall($int1);
+$int2 = 0;
+$int3 = 0;
+if(enum(int, component, 1913, %varp1204) != -1) {
+if_settext("The required Old School bonds will be taken from your account.<br>Select <col=ffffff>Confirm</col> to continue.", $int0);
+$gosubResult2274_0, $gosubResult2274_1 = ~script2274($int1, $int3);
+$int3 = $gosubResult2274_1;
+$int2 = $gosubResult2274_0;
+if_setonmouserepeat("script2287(1, $int1, $int2)", $int1);
+if_setonmouseleave("script2287(0, $int1, $int2)", $int1);
+cc_create($int1, Text, $int3);
+$int3 = add($int3, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont(497);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext("Confirm");
+} else {
+if_settext("Select a membership package from the listed options.", $int0);
+$int3 = ~script198($int1);
+cc_create($int1, Graphic, $int3);
+$int3 = add($int3, 1);
+cc_setsize(2, 2, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setgraphic(897);
+cc_settiling(1);
+cc_settrans(75);
+cc_create($int1, Text, $int3);
+$int3 = add($int3, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0x7F7F7F);
+cc_settextfont(496);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext("---");
+}
+return();

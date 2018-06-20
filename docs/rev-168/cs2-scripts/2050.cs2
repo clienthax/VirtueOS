@@ -1,0 +1,5 @@
+[clientscript,script2050](int $int0, int $int1, int $int2, string $string0, int $int3, int $int4, int $int5)
+if($int0 == 1) {
+~script2052($int1, $int2, $string0, $int3, $int4, $int5);
+}
+return();

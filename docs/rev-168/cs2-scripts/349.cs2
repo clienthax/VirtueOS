@@ -1,0 +1,9 @@
+[clientscript,script349](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+~script358(%varp168, $int1, $int2, $int3, $int4, $int5);
+if_setonvartransmit("script350($int1, $int2, $int3, $int4, $int5){168}", $int0);
+if_setonop("script351(-2147483644, 4, $int1, $int2, $int3, $int4, $int5)", $int1);
+if_setonop("script351(-2147483644, 3, $int1, $int2, $int3, $int4, $int5)", $int2);
+if_setonop("script351(-2147483644, 2, $int1, $int2, $int3, $int4, $int5)", $int3);
+if_setonop("script351(-2147483644, 1, $int1, $int2, $int3, $int4, $int5)", $int4);
+if_setonop("script351(-2147483644, 0, $int1, $int2, $int3, $int4, $int5)", $int5);
+return();

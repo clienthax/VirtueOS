@@ -1,0 +1,7 @@
+[clientscript,script1380](int $int0)
+if(%varbit5329 == $int0) {
+cc_sethide(0);
+} else {
+cc_sethide(1);
+}
+return();

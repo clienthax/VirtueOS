@@ -1,0 +1,2 @@
+[proc,script2](int $int0)(int,int,int)
+return(modulo(divide($int0, pow(2, 16)), 256), modulo(divide($int0, pow(2, 8)), 256), modulo($int0, 256));

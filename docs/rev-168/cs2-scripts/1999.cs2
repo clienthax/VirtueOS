@@ -1,0 +1,23 @@
+[clientscript,script1999](int $int0, int $int1, int $int2, int $int3)
+%varc198 = 1;
+if(%varbit5811 >= 100 || %varbit5811 == 0) {
+if_settrans(255, $int0);
+if_setontimer("null()", $int1);
+%varc198 = 0;
+return();
+}
+$int4 = 1;
+$int5 = 100;
+$int6 = 255;
+$int7 = 180;
+if(%varbit5811 < 50) {
+$int4 = 2;
+$int5 = multiply(%varbit5811, 2);
+}
+if_settrans($int3, $int0);
+if(modulo(clientclock, $int5) <= divide($int5, 2)) {
+$int4 = sub(0, $int4);
+}
+$int3 = ~minmax($int7, $int6, add($int3, $int4));
+if_setontimer("script1999($int0, $int1, $int2, $int3)", $int1);
+return();

@@ -1,0 +1,5 @@
+[clientscript,script1107](int $int0, int $int1, int $int2)
+if_setonmouseleave("script40($int2)", $int0);
+~script1111($int0, $int1, $int2, determinateDisplayMode());
+if_setonvartransmit("script1108($int0, $int1, $int2){1055, 287}", $int0);
+return();

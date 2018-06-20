@@ -1,0 +1,47 @@
+[clientscript,script1067](int $int0, int $int1)
+cc_deleteall($int0);
+$int2 = add(32, 10);
+$int3 = 0;
+$int4 = 0;
+$int5 = -1;
+$int6 = 0;
+while($int6 < $int1) {
+cc_create($int0, Graphic, $int6);
+$int5 = inv_getobj(141, $int6);
+if($int5 != -1) {
+cc_sethide(0);
+cc_setsize(36, 32, 0, 0);
+$int3 = modulo($int6, 3);
+$int4 = divide($int6, 3);
+if($int4 < 2) {
+if($int3 == 0) {
+cc_setposition(0, multiply($int4, $int2), 0, 0);
+} else {
+if($int3 == 1) {
+cc_setposition(0, multiply($int4, $int2), 1, 0);
+} else {
+cc_setposition(0, multiply($int4, $int2), 2, 0);
+}
+}
+} else {
+if($int3 == 0) {
+cc_setposition(0, multiply($int4, $int2), 2, 0);
+} else {
+if($int3 == 1) {
+cc_setposition(0, multiply($int4, $int2), 1, 0);
+} else {
+cc_setposition(0, multiply($int4, $int2), 0, 0);
+}
+}
+}
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setobject($int5, inv_getnum(141, $int6));
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int5)></col>");
+} else {
+cc_sethide(1);
+}
+$int6 = add($int6, 1);
+}
+return();

@@ -1,0 +1,13 @@
+[clientscript,script1349](int $int0, int $int1, int $int2)
+$int3 = ~toplevel_getcomponents;
+if($int3 == -1) {
+return();
+}
+$int4 = enum(enum, int, 1135, $int3);
+if_setsize($int4, enum(enum, int, 1136, $int3), 1, 1, $int1);
+if($int4 > 0) {
+if_setposition(-7, 200, 2, 0, $int2);
+} else {
+if_setposition(2, 2, 2, 2, $int2);
+}
+return();

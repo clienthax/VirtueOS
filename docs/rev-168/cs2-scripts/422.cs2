@@ -1,0 +1,73 @@
+[clientscript,script422](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+cc_deleteall($int0);
+$int7 = 0;
+$int8 = 0;
+$string0 = "Creature";
+if(%varp262 == 98) {
+if(%varp261 > 0) {
+$string0 = enum(int, string, 1174, %varp263);
+$int8 = 1;
+if_settext("<tostring(%varp261)> x <$string0>", $int1);
+} else {
+if(%varp261 == -1) {
+$string0 = enum(int, string, 1174, %varp263);
+$int8 = 1;
+if_settext($string0, $int1);
+} else {
+if_settext("None", $int1);
+}
+}
+} else {
+if(%varp261 > 0 && %varp262 != 0) {
+$string0 = enum(int, string, 693, %varp262);
+$int8 = 1;
+if_settext("<tostring(%varp261)> x <$string0>", $int1);
+} else {
+if_settext("None", $int1);
+}
+}
+cc_create($int0, Graphic, $int7);
+$int7 = add($int7, 1);
+.cc_create($int0, Text, $int7);
+$int7 = add($int7, 1);
+cc_setsize(85, 22, 0, 0);
+.cc_setsize(85, 22, 0, 0);
+cc_setposition(275, 62, 0, 0);
+.cc_setposition(275, 62, 0, 0);
+cc_setgraphic(812);
+.cc_settextfont(494);
+.cc_settextalign(1, 1, 0);
+.cc_settextshadow(1);
+.cc_settext("Cancel task");
+if($int8 == 1) {
+.cc_setcolor(0xFF981F);
+cc_setonmouseover("script85(-2147483645, .cc_getid, 16777215)");
+cc_setonmouseleave("script85(-2147483645, .cc_getid, 16750623)");
+cc_setop(1, "Cancel");
+cc_setonop("script423($string0, 0, $int2, $int3, $int4, $int5, $int6)");
+} else {
+.cc_setcolor(0x7F4C0F);
+}
+cc_create($int0, Graphic, $int7);
+$int7 = add($int7, 1);
+.cc_create($int0, Text, $int7);
+$int7 = add($int7, 1);
+cc_setsize(85, 22, 0, 0);
+.cc_setsize(85, 22, 0, 0);
+cc_setposition(375, 62, 0, 0);
+.cc_setposition(375, 62, 0, 0);
+cc_setgraphic(812);
+.cc_settextfont(494);
+.cc_settextalign(1, 1, 0);
+.cc_settextshadow(1);
+.cc_settext("Block task");
+if($int8 == 1 && %varp262 != 97 && %varp262 != 105 && %varp262 != 98) {
+.cc_setcolor(0xFF981F);
+cc_setonmouseover("script85(-2147483645, .cc_getid, 16777215)");
+cc_setonmouseleave("script85(-2147483645, .cc_getid, 16750623)");
+cc_setop(1, "Block");
+cc_setonop("script423($string0, 1, $int2, $int3, $int4, $int5, $int6)");
+} else {
+.cc_setcolor(0x7F4C0F);
+}
+return();

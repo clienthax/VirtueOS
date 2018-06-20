@@ -1,0 +1,36 @@
+[proc,script713](int $int0, int $int1, int $int2)(int)
+if($int1 == 1) {
+~create_graphic($int0, $int2, 824, 0, 0, 0, 0, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 825, 0, 0, 2, 0, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 826, 0, 0, 0, 2, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 827, 0, 0, 2, 2, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 820, 0, -13, 1, 0, 64, 32, 1, 0);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 822, 0, -12, 1, 2, 64, 32, 1, 0);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 821, -13, 0, 0, 1, 32, 64, 0, 1);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 823, -12, 0, 2, 1, 32, 64, 0, 1);
+} else {
+~create_graphic($int0, $int2, 846, 0, 0, 0, 0, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 847, 0, 0, 2, 0, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 848, 0, 0, 0, 2, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 849, 0, 0, 2, 2, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 828, 0, -14, 1, 0, 64, 32, 1, 0);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 828, 0, -12, 1, 2, 64, 32, 1, 0);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 841, -14, 0, 0, 1, 32, 64, 0, 1);
+$int2 = add($int2, 1);
+~create_graphic($int0, $int2, 841, -12, 0, 2, 1, 32, 64, 0, 1);
+}
+$int2 = add($int2, 1);
+return($int2);

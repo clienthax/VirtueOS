@@ -1,0 +1,11 @@
+[proc,script922](int)
+if(determinateDisplayMode() == 1) {
+return(0);
+}
+if(if_hassub(162:550) == 1 || if_hassub(162:549) == 1) {
+return(0);
+}
+if(if_gethide(162:33) == 0) {
+return(0);
+}
+return(1);

@@ -1,0 +1,28 @@
+[clientscript,script54](int $int0)
+cc_deleteall($int0);
+$int1 = if_getwidth($int0);
+$int2 = if_getheight($int0);
+cc_create($int0, Graphic, 0);
+cc_setposition(10, 0, 0, 0);
+cc_setsize(sub($int1, 20), $int2, 0, 0);
+cc_setgraphic(1048);
+cc_settiling(1);
+cc_create($int0, Graphic, 1);
+cc_setposition(0, 0, 0, 0);
+cc_setsize(36, $int2, 0, 0);
+cc_setgraphic(174);
+cc_create($int0, Graphic, 2);
+cc_setposition(sub($int1, 36), 0, 0, 0);
+cc_setsize(36, $int2, 0, 0);
+cc_setgraphic(176);
+cc_create($int0, Text, 3);
+cc_setposition(0, 0, 0, 0);
+cc_setsize($int1, $int2, 0, 0);
+cc_settextfont(495);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext(if_getop(1, $int0));
+if_setonmouseover("script85(-2147483645, cc_getid, 16777215)", $int0);
+if_setonmouseleave("script85(-2147483645, cc_getid, 16750623)", $int0);
+return();

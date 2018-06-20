@@ -1,0 +1,9 @@
+[clientscript,script491](int $int0, int $int1)
+if(%varbit4139 == 1) {
+if_sethide(1, $int0);
+if_sethide(0, $int1);
+} else {
+if_sethide(0, $int0);
+if_sethide(1, $int1);
+}
+return();

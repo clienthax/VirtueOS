@@ -1,0 +1,6 @@
+[clientscript,script41](int $int0)
+cc_deleteall($int0);
+%varc2 = 0;
+%varc217 = 0;
+%varc218 = -1;
+return();

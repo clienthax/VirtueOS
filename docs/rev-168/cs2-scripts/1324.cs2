@@ -1,0 +1,12 @@
+[clientscript,script1324](int $int0)
+if(playermod == 1 || staffmodlevel > 0) {
+if(%varc6 == 1) {
+%varc6 = 0;
+} else {
+%varc6 = 1;
+}
+~script1326($int0, %varc6);
+} else {
+mes("Only moderators may do that.");
+}
+return();

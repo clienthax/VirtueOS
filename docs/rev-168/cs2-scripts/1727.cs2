@@ -1,0 +1,38 @@
+[clientscript,script1727](int $int0, int $int1, int $int2)
+if(opcode6605() == 0) {
+return();
+}
+sound_synth(2266, 1, 0);
+$int3 = opcode6603();
+$int4 = -1;
+if($int0 == 1) {
+if($int3 < 50) {
+$int4 = 50;
+} else {
+if($int3 < 75) {
+$int4 = 75;
+} else {
+if($int3 < 100) {
+$int4 = 100;
+} else {
+$int4 = 200;
+}
+}
+}
+} else {
+if($int3 > 100) {
+$int4 = 100;
+} else {
+if($int3 > 75) {
+$int4 = 75;
+} else {
+if($int3 > 50) {
+$int4 = 50;
+} else {
+$int4 = 25;
+}
+}
+}
+}
+~script1721($int4, $int1, $int2);
+return();

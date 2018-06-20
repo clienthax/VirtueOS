@@ -1,0 +1,24 @@
+[clientscript,script1233](int $int0, int $int1, int $int2, int $int3)
+$int4 = 0;
+$int5 = 0;
+$int6 = 0;
+$int7 = 0;
+$int8 = 0;
+if(cc_find($int0, $int1) == 1) {
+$int5 = sub($int3, clientclock);
+$int4 = enum(int, int, 1279, $int2);
+if($int5 <= 0) {
+cc_setcolor($int4);
+cc_setontimer("null()");
+return();
+}
+if($int5 > 30) {
+$int5 = 30;
+}
+$gosubResult2_0, $gosubResult2_1, $gosubResult2_2 = ~script2($int4);
+$int8 = $gosubResult2_2;
+$int7 = $gosubResult2_1;
+$int6 = $gosubResult2_0;
+cc_setcolor(~script246(add($int6, interpolate(0, $int5, 0, 30, sub(255, $int6))), add($int7, interpolate(0, $int5, 0, 30, sub(255, $int7))), add($int8, interpolate(0, $int5, 0, 30, sub(255, $int8)))));
+}
+return();

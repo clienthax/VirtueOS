@@ -1,0 +1,9 @@
+[clientscript,script848](int $int0, int $int1, int $int2)
+if_setonmouseleave("script40($int2)", $int0);
+if_setop(1, "Side-stones arrangement", $int0);
+if_setop(1, "Hotkeys Behaviour", $int1);
+~script120($int1, "Side-panels...", "Can be closed by the hotkeys.", "In resizable mode, if the stone buttons are arranged along the bottom of the screen, should it be possible to shut a side-panel by pressing its hotkey?", $int2);
+~script851($int0, $int1, $int2);
+if_setonvartransmit("script849($int0, $int1, $int2){1055}", $int0);
+if_setonop("script850(-2147483644, 0, $int0, $int1, $int2)", $int0);
+return();

@@ -1,0 +1,22 @@
+[clientscript,script120](int $int0, int $int1, string $string0, string $string1, string $string2)
+cc_deleteall($int0);
+cc_create($int0, Text, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(0, 0, 0);
+cc_settext($string0);
+cc_setonmouserepeat("script526(-2147483645, -2147483643, $int1, $string2, 25, 512)");
+cc_setonmouseleave("script40($int1)");
+cc_create($int0, Text, 1);
+cc_setsize(20, 17, 1, 0);
+cc_setposition(0, 0, 2, 2);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(0, 1, 0);
+cc_settext($string1);
+cc_create($int0, Graphic, 2);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(0, 0, 0, 2);
+return();

@@ -1,0 +1,15 @@
+[clientscript,script1510](int $int0, int $int1, int $int2)
+if(cc_find($int0, $int1) == 1) {
+if(.cc_find($int0, $int2) == 1) {
+~script1511($int0);
+if(%varbit6386 > 0) {
+if(%varbit5425 < 5) {
+cc_setontimer("script2289($int0, $int1, $int2)");
+}
+}
+if(%varbit5425 >= 5) {
+cc_setontimer("null()");
+}
+}
+}
+return();

@@ -1,0 +1,29 @@
+[clientscript,script388](int $int0)
+$int1 = ~wilderness_level;
+if(~deadman_world == 1) {
+if(%varbit4965 > 0) {
+if_settext("Protection", $int0);
+} else {
+if($int1 > 0 && %varbit5954 == 1) {
+if_settext("Level: <tostring($int1)>", $int0);
+} else {
+if(%varc78 == 1) {
+if_settext("Guarded", $int0);
+} else {
+if(%varc78 == 2) {
+if_settext("No PvP", $int0);
+} else {
+if_settext("Deadman", $int0);
+}
+}
+}
+}
+} else {
+if($int1 > 0) {
+if_settext("Level: <tostring($int1)>", $int0);
+} else {
+if_settext("", $int0);
+}
+}
+~script387($int1);
+return();

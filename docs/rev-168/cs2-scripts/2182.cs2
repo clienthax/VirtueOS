@@ -1,0 +1,33 @@
+[clientscript,script2182](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, string $string0, string $string1)
+$int6 = 140;
+if($int5 == 1) {
+$int6 = 142;
+}
+if_settext($string0, enum(component, component, $int6, 10092553));
+if_settext($string1, enum(component, component, $int6, 10092555));
+$string2 = "<tostring($int0)> / <tostring($int1)>";
+if_settext($string2, enum(component, component, $int6, 10092596));
+$int0 = divide(multiply(divide(multiply($int0, 100), $int1), 500), 100);
+if($int0 > 500) {
+$int0 = 500;
+}
+if_setsize($int0, 6, 0, 1, enum(component, component, $int6, 10092595));
+if_setsize(sub(500, $int0), 6, 0, 1, enum(component, component, $int6, 10092594));
+$string3 = "<tostring($int2)> / <tostring($int3)>";
+if_settext($string3, enum(component, component, $int6, 10092584));
+$int2 = divide(multiply(divide(multiply($int2, 100), $int3), 247), 100);
+if($int2 > 247) {
+$int2 = 247;
+}
+if_setsize($int2, 6, 0, 1, enum(component, component, $int6, 10092583));
+if_setsize(sub(247, $int2), 6, 0, 1, enum(component, component, $int6, 10092582));
+$int4 = divide($int4, 10);
+if($int4 > 100) {
+$int4 = 100;
+}
+$string4 = "<tostring($int4)>%";
+if_settext($string4, enum(component, component, $int6, 10092590));
+$int4 = divide(multiply($int4, 247), 100);
+if_setsize($int4, 6, 0, 1, enum(component, component, $int6, 10092589));
+if_setsize(sub(247, $int4), 6, 0, 1, enum(component, component, $int6, 10092588));
+return();

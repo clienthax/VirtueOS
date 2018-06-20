@@ -1,0 +1,11 @@
+[clientscript,script220](int $int0)
+if(determinateDisplayMode() == 2) {
+if(%varbit4702 == 0 || %varbit4692 != 1) {
+if_setposition(0, 10, 1, 0, $int0);
+} else {
+if_setposition(3, 20, 0, 0, $int0);
+}
+} else {
+if_setposition(3, 35, 2, 2, $int0);
+}
+return();

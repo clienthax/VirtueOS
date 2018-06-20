@@ -1,0 +1,174 @@
+[clientscript,script206]
+$int0 = 0;
+$int1 = 0;
+$int2 = -1;
+$string0 = "";
+$string1 = "";
+def_obj $anArray0(28);
+def_int $anArray1(28);
+$int3 = 0;
+$int4 = 99;
+$int5 = 0;
+while($int0 < 28) {
+$int2 = inv_getobj(134, $int0);
+$int1 = inv_getnum(134, $int0);
+if($int2 != -1) {
+$int4 = 99;
+$int5 = 0;
+while($int5 < 28) {
+if($anArray0($int5) != -1) {
+if($anArray0($int5) == $int2) {
+$int4 = $int5;
+$int5 = 28;
+}
+$int5 = add($int5, 1);
+} else {
+$int5 = 28;
+}
+}
+if($int4 == 99) {
+$anArray0($int3) = $int2;
+$anArray1($int3) = $int1;
+$int3 = add($int3, 1);
+} else {
+$anArray1($int4) = add($anArray1($int4), $int1);
+}
+}
+$int0 = add($int0, 1);
+}
+$int3 = 0;
+while($int3 < 28) {
+$int2 = $anArray0($int3);
+if($int2 != -1) {
+$int1 = $anArray1($int3);
+$string0 = append($string0, ~script207(2, $int1, $int2));
+} else {
+$int3 = 28;
+}
+$int3 = add($int3, 1);
+}
+$int0 = 0;
+$int3 = 0;
+while($int3 < 28) {
+$anArray0($int3) = -1;
+$anArray1($int3) = 0;
+$int3 = add($int3, 1);
+}
+$int3 = 0;
+$int5 = 0;
+while($int0 < 28) {
+$int2 = invother_getobj(134, $int0);
+$int1 = invother_getnum(134, $int0);
+if($int2 != -1) {
+$int4 = 99;
+$int5 = 0;
+while($int5 < 28) {
+if($anArray0($int5) != -1) {
+if($anArray0($int5) == $int2) {
+$int4 = $int5;
+$int5 = 28;
+}
+$int5 = add($int5, 1);
+} else {
+$int5 = 28;
+}
+}
+if($int4 == 99) {
+$anArray0($int3) = $int2;
+$anArray1($int3) = $int1;
+$int3 = add($int3, 1);
+} else {
+$anArray1($int4) = add($anArray1($int4), $int1);
+}
+}
+$int0 = add($int0, 1);
+}
+$int3 = 0;
+while($int3 < 28) {
+$int2 = $anArray0($int3);
+if($int2 != -1) {
+$int1 = $anArray1($int3);
+$string1 = append($string1, ~script207(2, $int1, $int2));
+} else {
+$int3 = 28;
+}
+$int3 = add($int3, 1);
+}
+if_settext($string0, 476:57);
+if_settext($string1, 476:65);
+$string2 = "";
+$string3 = "";
+if(%varbit642 > 0) {
+$string2 = "<$string2>Some worn items will be taken off.<br>";
+}
+if(testbit(%varp286, 7) == 1 || testbit(%varp286, 13) == 1) {
+$string2 = "<$string2>Boosted stats will be restored.<br>";
+}
+if(testbit(%varp286, 9) == 1) {
+$string2 = "<$string2>Existing prayers will be stopped.<br>";
+}
+if(testbit(%varp286, 0) == 1) {
+$string3 = "<$string3>You cannot forfeit the duel.<br>";
+}
+if(testbit(%varp286, 1) == 1) {
+$string3 = "<$string3>You cannot move.<br>";
+}
+if(testbit(%varp286, 2) == 1) {
+$string3 = "<$string3>You cannot switch weapons.<br>";
+}
+if(testbit(%varp286, 4) == 1) {
+$string3 = "<$string3>You cannot use Ranged attacks <col=ff0000>or salamanders<col=ffffff>.<br>";
+}
+if(testbit(%varp286, 5) == 1) {
+$string3 = "<$string3>You cannot use Melee attacks <col=ff0000>or salamanders<col=ffffff>.<br>";
+}
+if(testbit(%varp286, 6) == 1) {
+$string3 = "<$string3>You cannot use Magic attacks <col=ff0000>or salamanders<col=ffffff>.<br>";
+}
+if(testbit(%varp286, 13) == 1) {
+$string3 = "<$string3>You cannot use special attacks.<br>";
+}
+if(testbit(%varp286, 12) == 1) {
+$string3 = "<$string3>You can only attack with 'fun' weapons.<br>";
+}
+if(testbit(%varp286, 7) == 1) {
+$string3 = "<$string3>You cannot use potions or drinks.<br>";
+}
+if(testbit(%varp286, 8) == 1) {
+$string3 = "<$string3>You cannot use food.<br>";
+}
+if(testbit(%varp286, 9) == 1) {
+$string3 = "<$string3>You cannot use Prayer.<br>";
+}
+if(testbit(%varp286, 10) == 1) {
+$string3 = "<$string3>There will be obstacles in the arena.<br>";
+}
+if(testbit(%varp286, 17) == 1 || testbit(%varp286, 19) == 1) {
+$string3 = "<$string3>You can't use 2H weapons such as bows.<br>";
+}
+if_settext($string2, 476:74);
+if_settext($string3, 476:76);
+if_setsize(100, multiply(11, paraheight(100, 494, if_gettext(476:72))), 0, 0, 476:72);
+if_setsize(132, multiply(11, paraheight(132, 494, $string2)), 0, 0, 476:74);
+if_setsize(132, multiply(11, paraheight(132, 494, $string3)), 0, 0, 476:76);
+if_setposition(2, 2, 0, 0, 476:77);
+if(if_gethide(476:77) == 1) {
+if_setposition(2, 2, 0, 0, 476:71);
+} else {
+if_setposition(2, add(add(if_gety(476:77), if_getheight(476:77)), 2), 0, 0, 476:71);
+}
+if_setposition(2, add(add(if_gety(476:71), if_getheight(476:71)), 2), 0, 0, 476:72);
+if_setposition(2, add(add(if_gety(476:72), if_getheight(476:72)), 2), 0, 0, 476:73);
+if_setposition(2, add(add(if_gety(476:73), if_getheight(476:73)), 2), 0, 0, 476:74);
+if_setposition(2, add(add(if_gety(476:74), if_getheight(476:74)), 2), 0, 0, 476:75);
+if_setposition(2, add(add(if_gety(476:75), if_getheight(476:75)), 2), 0, 0, 476:76);
+$int6 = add(add(if_gety(476:76), if_getheight(476:76)), 2);
+if($int6 > if_getheight(476:68)) {
+if_setscrollsize(0, $int6, 476:69);
+if_sethide(0, 476:70);
+~scrollbar_vertical(31195206, 31195205, 792, 789, 790, 791, 773, 788);
+} else {
+if_sethide(1, 476:70);
+if_setscrollpos(0, 0, 476:69);
+}
+return();

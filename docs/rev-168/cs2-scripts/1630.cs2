@@ -1,0 +1,17 @@
+[clientscript,script1630](int $int0, int $int1, int $int2)
+$string0 = "<~script1971("Shift click", "Tap")> to drop items (currently off)";
+if_setgraphic(~script2151(1165, 1566), $int1);
+if(%varbit5542 == 1) {
+toggle_shift(1);
+$string0 = "<~script1971("Shift click", "Tap")>  to drop items (currently on)";
+if_setgraphic(762, $int0);
+} else {
+toggle_shift(0);
+if_setgraphic(761, $int0);
+}
+if(~script1972 == 1) {
+if_setop(1, "Toggle Tap to drop", $int0);
+}
+if_setonmouserepeat("script526($int0, -1, $int2, $string0, 25, 190)", $int0);
+%varc2 = 0;
+return();

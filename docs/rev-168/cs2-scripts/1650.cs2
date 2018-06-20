@@ -1,0 +1,14 @@
+[clientscript,script1650](int $int0, int $int1, int $int2)
+$string0 = "Options on your follower are moved lower down the <~script1971("right-click", "long press")> menus (currently off)";
+if_setgraphic(~script2151(1166, 1567), $int1);
+if(%varbit5599 == 1) {
+toggle_npcops(1);
+$string0 = "Options on your follower are moved lower down the <~script1971("right-click", "long press")> menus (currently on)";
+if_setgraphic(762, $int0);
+} else {
+toggle_npcops(0);
+if_setgraphic(761, $int0);
+}
+if_setonmouserepeat("script526($int0, -1, $int2, $string0, 25, 190)", $int0);
+%varc2 = 0;
+return();

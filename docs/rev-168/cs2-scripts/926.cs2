@@ -1,0 +1,19 @@
+[clientscript,script926]
+$int0 = 0;
+$int1 = enum(int, component, 580, $int0);
+while($int1 != -1) {
+cc_create(163:0, Text, multiply($int0, 2));
+.cc_create(163:0, Text, add(multiply($int0, 2), 1));
+cc_setcolor(0x00FFFF);
+.cc_setcolor(0x00FFFF);
+cc_settextfont(495);
+.cc_settextfont(495);
+cc_settextalign(0, 0, 13);
+.cc_settextalign(0, 0, 13);
+cc_sethide(1);
+.cc_sethide(1);
+$int0 = add($int0, 1);
+$int1 = enum(int, component, 580, $int0);
+}
+~script89(~script553);
+return();

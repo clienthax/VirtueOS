@@ -1,0 +1,117 @@
+[clientscript,script1478](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+cc_deleteall($int0);
+$int6 = 0;
+$int7 = -1;
+$int8 = 0;
+$int9 = 0;
+$int10 = 0;
+$string0 = "";
+$string1 = "";
+$int11 = 0;
+$int12 = 0;
+$int13 = 0;
+$int14 = 0;
+$int15 = 0;
+$int16 = 0;
+$int17 = 0;
+$int18 = enum(int, location, $int2, $int16);
+while($int18 != -1) {
+if(modulo($int16, 4) == 0) {
+cc_create($int0, Rectangle, $int6);
+$int7 = $int6;
+$int6 = add($int6, 1);
+cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+cc_settrans(245);
+cc_setposition(0, $int15, 1, 0);
+} else {
+$int7 = -1;
+}
+$string0 = enum(location, string, 1531, $int18);
+$int8 = add(multiply(paraheight(143, 495, $string0), 12), 9);
+if($int8 < 20) {
+$int8 = 20;
+}
+$gosubResult1479_0, $gosubResult1479_1 = ~script1479($int18, $int3, $int4, $int5);
+$int13 = $gosubResult1479_1;
+$int11 = $gosubResult1479_0;
+$int17 = add($int16, 1);
+$int18 = enum(int, location, $int2, $int17);
+if($int18 != -1) {
+$string1 = enum(location, string, 1531, $int18);
+$int9 = add(multiply(paraheight(143, 495, $string1), 12), 9);
+$gosubResult1479_0, $gosubResult1479_1 = ~script1479($int18, $int3, $int4, $int5);
+$int14 = $gosubResult1479_1;
+$int12 = $gosubResult1479_0;
+if($int8 < $int9) {
+$int8 = $int9;
+}
+$int10 = add($int15, divide(sub($int8, 17), 2));
+cc_create($int0, Text, $int6);
+$int6 = add($int6, 1);
+cc_setsize(143, $int8, 0, 0);
+cc_setposition(317, $int15, 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextfont(495);
+cc_settextalign(0, 1, 0);
+cc_settext($string1);
+if($int12 == 1) {
+cc_create($int0, Graphic, $int6);
+$int6 = add($int6, 1);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(244, $int10, 0, 0);
+cc_setgraphic(1210);
+}
+if($int14 == 1) {
+cc_create($int0, Graphic, $int6);
+$int6 = add($int6, 1);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(286, $int10, 0, 0);
+cc_setgraphic(1210);
+}
+$int16 = add($int17, 1);
+$int18 = enum(int, location, $int2, $int16);
+} else {
+$int18 = -1;
+$int10 = add($int15, divide(sub($int8, 17), 2));
+}
+cc_create($int0, Text, $int6);
+$int6 = add($int6, 1);
+cc_setsize(143, $int8, 0, 0);
+cc_setposition(85, $int15, 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextfont(495);
+cc_settextalign(0, 1, 0);
+cc_settext($string0);
+if($int11 == 1) {
+cc_create($int0, Graphic, $int6);
+$int6 = add($int6, 1);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(12, $int10, 0, 0);
+cc_setgraphic(1210);
+}
+if($int13 == 1) {
+cc_create($int0, Graphic, $int6);
+$int6 = add($int6, 1);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(54, $int10, 0, 0);
+cc_setgraphic(1210);
+}
+if($int7 != -1) {
+if(cc_find($int0, $int7) == 1) {
+cc_setsize(0, $int8, 1, 0);
+}
+}
+$int15 = add($int15, $int8);
+}
+if($int15 > if_getheight($int0)) {
+if_setscrollsize(0, $int15, $int0);
+} else {
+if_setscrollsize(0, 0, $int0);
+}
+if_setscrollpos(0, 0, $int0);
+cc_deleteall($int1);
+~scrollbar_vertical($int1, $int0, 792, 789, 790, 791, 773, 788);
+return();

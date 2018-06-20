@@ -1,0 +1,4 @@
+[clientscript,music_setcolour](int $int0)
+cc_setcolor($int0);
+cc_setonmouseleave("script85(-2147483645, -2147483643, $int0)");
+return();

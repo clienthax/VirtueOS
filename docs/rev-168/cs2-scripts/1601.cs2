@@ -1,0 +1,151 @@
+[clientscript,script1601](int $int0, int $int1, int $int2, int $int3, string $string0, string $string1)
+if_settext($string1, 4:23);
+$int4 = 0;
+$int5 = 0;
+$int6 = -1;
+$int7 = 0;
+$string2 = "";
+$int8 = 0;
+$int9 = 0;
+$int10 = 0;
+def_obj $anArray0($int1);
+$int11 = 0;
+$int12 = 0;
+if($int0 == 0) {
+if(inv_total(93, 13190) > 0 || inv_total(93, 13192) > 0) {
+$int9 = 1;
+}
+while($int10 < $int1) {
+$int6 = inv_getobj(584, $int10);
+if($int6 != -1) {
+$int7 = inv_getnum(584, $int10);
+while($int10 < $int1) {
+while($int7 > 0) {
+$anArray0($int10) = $int6;
+$int7 = sub($int7, 1);
+$int10 = add($int10, 1);
+}
+}
+} else {
+$int10 = $int1;
+}
+}
+while($int4 < $int1) {
+cc_create(4:18, Graphic, $int4);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add(5, multiply($int4, 40)), 25, 0, 0);
+$int6 = $anArray0($int4);
+if($int6 != -1) {
+cc_setobject($int6, 1);
+cc_setopbase("<col=ff981f><oc_name($int6)>");
+cc_setop(1, "Item:");
+cc_setonop("script1603(1, 1, oc_name($int6))");
+cc_setgraphicshadow(0x111111);
+cc_setoutline(1);
+$int4 = add($int4, 1);
+} else {
+$int4 = $int1;
+}
+}
+$int4 = 0;
+while($int4 < inv_size(468)) {
+$int6 = inv_getobj(468, $int4);
+if($int6 != -1) {
+cc_create(4:21, Graphic, $int5);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add(5, multiply(modulo($int5, 8), 38)), add(25, multiply(38, divide($int5, 8))), 0, 0);
+cc_setobject($int6, inv_getnum(468, $int4));
+cc_setopbase("<col=ff981f><oc_name($int6)>");
+cc_setop(1, "Item:");
+cc_setonop("script1603(0, inv_getnum(468, $int4), oc_name($int6))");
+cc_setgraphicshadow(0x111111);
+if(enum(obj, boolean, 879, $int6) == 1) {
+cc_setoutline(2);
+$int8 = 1;
+} else {
+cc_setoutline(1);
+}
+$int5 = add($int5, 1);
+if(oc_stackable($int6) == 1) {
+$int10 = 0;
+$int12 = 0;
+while($int10 < $int1) {
+if($anArray0($int10) == $int6) {
+$int12 = add($int12, 1);
+}
+$int10 = add($int10, 1);
+}
+$int11 = add(sub(sub(2147483647, inv_total(94, $int6)), inv_total(93, $int6)), $int12);
+$int11 = sub(0, $int11);
+if($int11 > 0) {
+cc_create(4:21, Graphic, $int5);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add(5, multiply(modulo($int5, 8), 38)), add(25, multiply(38, divide($int5, 8))), 0, 0);
+cc_setobject($int6, $int11);
+cc_setopbase("<col=ff981f><oc_name($int6)>");
+cc_setop(1, "Item:");
+cc_setonop("script1603(0, $int11, oc_name($int6))");
+cc_setgraphicshadow(0x111111);
+if(enum(obj, boolean, 879, $int6) == 1) {
+cc_setoutline(2);
+$int8 = 1;
+} else {
+cc_setoutline(1);
+}
+$int5 = add($int5, 1);
+}
+}
+}
+$int4 = add($int4, 1);
+}
+$string2 = "The normal amount of items kept is three.<br><br>";
+if($int3 == 1) {
+$string2 = append($string2, "You're an <col=ff3333>Ultimate Iron Man<col=ff981f>, so you will always keep zero items.");
+} else {
+if($int1 == 0) {
+$string2 = append($string2, "You're marked with a <col=ff3333>PK skull<col=ff981f>. This reduces the items you keep from three to zero!");
+} else {
+if($int1 == 1) {
+$string2 = append($string2, "You're marked with a <col=ff3333>PK skull<col=ff981f>. This reduces the items you keep from three to zero!<br><br>However, you also have the <col=ff3333>Protect Items<col=ff981f> prayer active, which saves you one extra item!");
+} else {
+if($int1 == 3) {
+$string2 = append($string2, "You have no factors affecting the items you keep.");
+} else {
+if($int1 == add(3, 1)) {
+$string2 = append($string2, "You have the <col=ff3333>Protect Items<col=ff981f> prayer active, which saves you one extra item!");
+}
+}
+}
+}
+}
+if($int8 == 1 || $int9 == 1) {
+if($int8 == 1 && $int9 == 1) {
+$string2 = append($string2, "<br><br>Items with a <col=ffffff>white outline<col=ff981f> will always be lost.<br><col=00ff00>Bonds</col> are always protected.");
+} else {
+if($int8 == 1) {
+$string2 = append($string2, "<br><br>Items with a <col=ffffff>white outline<col=ff981f> will always be lost.");
+} else {
+$string2 = append($string2, "<br><br><col=00ff00>Bonds</col> are always protected, so are not shown here.");
+}
+}
+}
+if_settext($string2, 4:29);
+if_settext("<col=ffcc33>Max items kept on death :<br><br><col=ffcc33>~ <tostring($int1)> ~", 4:30);
+if($int2 > 0) {
+if_settext("Items you will keep on death:", 4:17);
+if_settext("Items you will lose on death:", 4:20);
+} else {
+if_settext("Items you will keep on death if not skulled:", 4:17);
+if_settext("Items you will lose on death if not skulled:", 4:20);
+}
+} else {
+if_sethide(1, 4:21);
+if_sethide(1, 4:18);
+if_sethide(0, 4:31);
+if_settext($string0, 4:32);
+$string2 = "The normal amount of items kept is three.<br><br>";
+$string2 = append($string2, "You're in a <col=ff3333>safe area<col=ff981f>. See information to the left for a more detailed description.");
+if_settext($string2, 4:29);
+if_settext("<col=ffcc33>Max items kept on death :<br><br><col=ffcc33>All items!", 4:30);
+}
+return();

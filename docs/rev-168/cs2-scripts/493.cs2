@@ -1,0 +1,40 @@
+[clientscript,script493](int $int0)
+cc_deleteall($int0);
+$int1 = inv_size(516);
+$int2 = -1;
+$int3 = 0;
+$int4 = 0;
+while($int4 < $int1) {
+cc_create($int0, Graphic, $int4);
+$int2 = inv_getobj(516, $int4);
+if($int2 != -1) {
+$int3 = add($int3, 1);
+cc_sethide(0);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(multiply(modulo($int4, 4), add(36, 8)), multiply(divide($int4, 4), add(32, 1)), 0, 0);
+cc_setoutline(1);
+cc_setgraphicshadow(0x333333);
+cc_setobject($int2, inv_getnum(516, $int4));
+cc_settrans(0);
+cc_setop(1, "Deposit-1");
+cc_setop(2, "Deposit-5");
+cc_setop(3, "Deposit-All");
+cc_setop(4, "Deposit-X");
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int2)></col>");
+} else {
+cc_sethide(1);
+}
+$int4 = add($int4, 1);
+}
+if($int3 <= 0) {
+cc_create($int0, Text, $int4);
+cc_setposition(0, 0, 0, 0);
+cc_setsize(if_getwidth($int0), if_getheight($int0), 0, 0);
+cc_settextalign(1, 1, 0);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_setcolor(0xFF981F);
+cc_settext("The bag is empty.");
+}
+return();

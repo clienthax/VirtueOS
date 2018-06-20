@@ -1,0 +1,16 @@
+[clientscript,script750](int $int0, int $int1, string $string0)
+~script677;
+if_sethide(1, 162:36);
+if_setposition(0, 0, 0, 0, 162:37);
+if_sethide(0, 162:38);
+~scrollbar_vertical(10616875, 10616874, 792, 789, 790, 791, 773, 788);
+%varc5 = 14;
+~script222($string0);
+if_setonkey("script112(-2147483640, -2147483639, $string0)", 162:37);
+~script752($int0, $int1);
+if_setontimer("script751($int0, $int1)", 162:33);
+if_setondialogabort("script138()", 162:37);
+if(~script1972 == 1) {
+~script1983(0, 25);
+}
+return();

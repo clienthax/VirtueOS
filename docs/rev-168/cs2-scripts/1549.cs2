@@ -1,0 +1,4 @@
+[clientscript,script1549](int $int0, int $int1)
+~script1551($int0, $int1);
+cc_setonclantransmit("script1550(-2147483645, -2147483643, $int0, $int1)");
+return();

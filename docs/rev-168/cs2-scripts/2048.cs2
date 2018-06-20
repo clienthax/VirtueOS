@@ -1,0 +1,16 @@
+[clientscript,script2048](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, string $string0)
+~script2054(0, $int1, $int2, $int5, $int6);
+if_setonmouseover("script2049(1, $int1, $int2, $int5, $int6)", $int2);
+if_setonmouseleave("script2049(0, $int1, $int2, $int5, $int6)", $int2);
+$string1 = enum(int, string, 1812, $int0);
+$string2 = $string0;
+if(string_length($string1) > 0) {
+$string2 = append("<col=7f7f7f>(<$string1>)</col> ", $string2);
+}
+if_setonmouserepeat("script526($int2, -1, 17694744, $string2, 25, 479)", $int2);
+if_setonop("script2050(-2147483644, $int1, $int2, $string1, $int3, $int5, $int6)", $int2);
+if_setonkey("script2051(-2147483639, -2147483640, $int1, $int2, $string1, $int3, $int5, $int6)", $int2);
+if_setontimer("null()", $int2);
+if_setop(1, enum(int, string, 1809, $int4), $int2);
+if_setopbase("<col=ff9040><$string0></col>", $int2);
+return();

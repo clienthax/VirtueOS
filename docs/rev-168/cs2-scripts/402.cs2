@@ -1,0 +1,155 @@
+[clientscript,script402](int $int0, int $int1, int $int2, int $int3, int $int4)
+if($int2 == 1) {
+if(%varc54 == 1 || %varc54 == 0) {
+%varc54 = %varc54;
+} else {
+%varc54 = 0;
+}
+if(%varc0 < 0) {
+%varc0 = 0;
+}
+~scrollbar_vertical($int1, $int0, 792, 789, 790, 791, 773, 788);
+} else {
+sound_synth(2266, 1, 0);
+if(%varc54 == 1) {
+%varc54 = 0;
+} else {
+%varc54 = 1;
+}
+}
+$int5 = -1;
+$int6 = -1;
+$int7 = -1;
+$int8 = sub(if_getwidth($int0), 20);
+if($int8 <= 0) {
+$int8 = 143;
+}
+cc_deleteall($int0);
+cc_deleteall($int4);
+$int9 = 17;
+$int10 = 0;
+$int11 = 0;
+$int12 = 1;
+while($int11 < 4) {
+$int5 = enum(int, component, 1297, $int11);
+$int7 = enum(int, component, 1298, $int11);
+$int6 = enum(int, component, 1299, $int11);
+if($int5 != -1) {
+if($int6 != -1) {
+if($int7 != -1) {
+if(string_length(if_gettext($int5)) > 0) {
+$int9 = add(multiply(paraheight($int8, 495, if_gettext($int5)), 12), 5);
+if_sethide(0, $int5);
+if_sethide(0, $int7);
+if_sethide(0, $int6);
+if_setsize($int8, $int9, 0, 0, $int5);
+if_setsize($int8, $int9, 0, 0, $int7);
+if_setposition(20, $int10, 0, 0, $int5);
+if_setposition(2, $int10, 0, 0, $int6);
+if_setposition(20, $int10, 0, 0, $int7);
+if_setopbase("<col=ff981f><if_gettext($int7)></col>", $int5);
+if_setonmouseover("script45($int7, 16744319)", $int5);
+if_setonmouseleave("script45($int7, 16727871)", $int5);
+$int12 = 0;
+$int10 = add(add($int10, $int9), 3);
+} else {
+if_sethide(1, $int5);
+if_sethide(1, $int6);
+if_sethide(1, $int7);
+}
+}
+}
+}
+$int11 = add($int11, 1);
+}
+if($int12 == 0) {
+$int10 = add($int10, 3);
+}
+if_sethide($int12, $int3);
+if_setsize(0, $int10, 1, 0, $int4);
+$int13 = 0;
+$int14 = -1;
+def_component $anArray0(64);
+$int15 = 0;
+$string0 = "";
+while($int13 < 64) {
+$int14 = enum(int, component, 824, $int13);
+if($int14 != -1) {
+$int6 = enum(component, component, 1296, $int14);
+if(string_length(if_gettext($int14)) > 0) {
+if_sethide(0, $int14);
+if($int6 != -1) {
+if_sethide(0, $int6);
+}
+$anArray0($int15) = $int14;
+$int15 = add($int15, 1);
+} else {
+if_sethide(1, $int14);
+if($int6 != -1) {
+if_sethide(1, $int6);
+}
+}
+}
+$int13 = add($int13, 1);
+}
+if($int15 > 0) {
+if(%varc54 == 1) {
+~script1341(0, 0, sub($int15, 1));
+} else {
+~script1342(0, 0, sub($int15, 1), 823);
+}
+}
+$int13 = 0;
+cc_deleteall($int0);
+while($int13 < $int15) {
+$int6 = enum(component, component, 1296, $anArray0($int13));
+$string0 = enum(component, string, 823, $anArray0($int13));
+$int9 = add(multiply(paraheight($int8, 495, if_gettext($anArray0($int13))), 12), 5);
+if($int6 != -1) {
+if_setposition(2, $int10, 0, 0, $int6);
+}
+if_setsize($int8, $int9, 0, 0, $anArray0($int13));
+if_setposition(20, $int10, 0, 0, $anArray0($int13));
+cc_create($int0, Text, $int13);
+cc_setsize($int8, $int9, 0, 0);
+cc_setposition(20, if_gety($anArray0($int13)), 0, 0);
+cc_settextfont(495);
+cc_setcolor(0xFF3F3F);
+cc_settextshadow(1);
+cc_settextalign(0, 0, 0);
+cc_settext($string0);
+if_setopbase("<col=ff981f><$string0></col>", $anArray0($int13));
+if_setonmouseover("script85($int0, cc_getid, 16744319)", $anArray0($int13));
+if_setonmouseleave("script85($int0, cc_getid, 16727871)", $anArray0($int13));
+$int10 = add(add($int10, $int9), 3);
+$int13 = add($int13, 1);
+}
+$string0 = if_gettext(381:139);
+if(string_length($string0) > 0) {
+if_sethide(0, 381:139);
+$int9 = add(multiply(paraheight($int8, 495, $string0), 12), 5);
+if_setsize($int8, $int9, 0, 0, 381:139);
+if_setposition(20, $int10, 0, 0, 381:139);
+if_setcolor(0xFF3F3F, 381:139);
+if_setonmouseover("script45(-2147483645, 16744319)", 381:139);
+if_setonmouseleave("script45(-2147483645, 16727871)", 381:139);
+$int10 = add(add($int10, $int9), 3);
+} else {
+if_sethide(1, 381:139);
+}
+if($int10 > 0) {
+$int10 = sub($int10, 3);
+}
+$int9 = if_getheight($int0);
+if($int10 > $int9) {
+if_setscrollsize(0, $int10, $int0);
+$int9 = sub($int10, $int9);
+if(%varc0 > $int9) {
+%varc0 = $int9;
+}
+} else {
+if_setscrollsize(0, 0, $int0);
+%varc0 = 0;
+}
+~script72($int1, $int0, %varc0);
+return();

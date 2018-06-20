@@ -1,0 +1,18 @@
+[clientscript,script1587](int $int0, int $int1)
+$int2 = 0;
+$int3 = 0;
+if(cc_find($int0, $int1) == 1) {
+if(.cc_find(35979277, $int1) == 1) {
+if_settext("Reset streak:<br><.cc_gettext>", 549:24);
+if_setsize(add(parawidth(75, 494, if_gettext(549:24)), 10), 50, 0, 0, 549:19);
+if(paraheight(if_getwidth(549:24), 494, if_gettext(549:24)) > 2) {
+if_setsize(if_getwidth(549:19), 60, 0, 0, 549:19);
+}
+$int2 = if_getscrolly(549:5);
+$int3 = sub(add(if_getscrolly(549:5), if_getheight(549:5)), if_getheight(549:19));
+if_sethide(0, 549:17);
+if_sethide(0, 549:19);
+if_setposition(12, ~minmax($int2, $int3, add(multiply(18, $int1), 5)), 2, 0, 549:19);
+}
+}
+return();

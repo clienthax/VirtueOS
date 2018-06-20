@@ -1,0 +1,16 @@
+[clientscript,script677]
+$int0 = 0;
+~script299(1, 0);
+if_sethide(0, 162:33);
+if(~script1972 == 1) {
+if_sethide(0, 162:34);
+if_sethide(0, 162:0);
+if_setposition(0, 76, 0, 0, 162:0);
+if_setsize(if_getwidth(162:33), 20, 0, 0, 162:0);
+~script2263;
+}
+if_sethide(1, 162:44);
+~script923;
+~script89(~script553);
+~script927(0);
+return();

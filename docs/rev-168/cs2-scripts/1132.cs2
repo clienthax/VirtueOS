@@ -1,0 +1,7 @@
+[clientscript,script1132](int $int0, int $int1)
+if_setnoclickthrough(1, $int1);
+if_setonclick("script489(0, 0)", $int1);
+if_setopbase("<col=ff8040>Camera motion</col>", $int0);
+~script1135($int0, $int1);
+if_setonvartransmit("script1133($int0, $int1){19}", $int0);
+return();

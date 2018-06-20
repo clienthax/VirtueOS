@@ -1,0 +1,17 @@
+[clientscript,script1135](int $int0, int $int1)
+if(%varbit4814 == 1) {
+if_settrans(150, $int0);
+if_settrans(150, $int1);
+if_setonmouserepeat("script1136(0, 0, $int0, $int1)", $int0);
+if_setonmouseleave("script1136(150, 150, $int0, $int1)", $int0);
+if_setop(1, "Enable", $int0);
+if_setonop("script1134(-2147483644, 0, $int0, $int1)", $int0);
+} else {
+if_settrans(255, $int0);
+if_settrans(150, $int1);
+if_setonmouserepeat("script1136(255, 0, $int0, $int1)", $int0);
+if_setonmouseleave("script1136(255, 150, $int0, $int1)", $int0);
+if_setop(1, "Disable", $int0);
+if_setonop("script1134(-2147483644, 1, $int0, $int1)", $int0);
+}
+return();

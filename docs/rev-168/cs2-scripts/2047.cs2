@@ -1,0 +1,8 @@
+[clientscript,script2047](int $int0)
+cc_deleteall($int0);
+if_setonmouseover("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_clearops($int0);
+if_setonop("null()", $int0);
+if_setontimer("null()", $int0);
+return();

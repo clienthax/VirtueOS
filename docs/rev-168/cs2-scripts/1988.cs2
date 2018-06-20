@@ -1,0 +1,19 @@
+[clientscript,script1988](int $int0, int $int1, int $int2, int $int3)
+if($int0 == 1) {
+if_settrans(100, $int1);
+if($int2 != -1) {
+if_sethide(1, $int2);
+}
+if($int3 != -1) {
+if_sethide(0, $int3);
+}
+} else {
+if_settrans(0, $int1);
+if($int2 != -1) {
+if_sethide(0, $int2);
+}
+if($int3 != -1) {
+if_sethide(1, $int3);
+}
+}
+return();

@@ -1,0 +1,146 @@
+[clientscript,script89](int $int0)
+$int1 = 4;
+if(enum(enum, int, 1136, ~toplevel_getcomponents) > 0) {
+if(%varc41 == -1 && ~script922 == 1) {
+$int1 = add($int1, 23);
+} else {
+$int1 = add($int1, 165);
+}
+}
+$int2 = $int1;
+$int3 = if_getwidth(163:0);
+$int4 = 0;
+$int5 = enum(int, component, 580, $int4);
+$int6 = 0;
+$string0 = "";
+if(reboottimer > 0) {
+$int6 = modulo(divide(reboottimer, 50), 60);
+if($int6 < 10) {
+$string0 = "System update in: <tostring(divide(reboottimer, 3000))>:0<tostring($int6)>";
+} else {
+$string0 = "System update in: <tostring(divide(reboottimer, 3000))>:<tostring($int6)>";
+}
+if(~toplevel_getcomponents == 1745) {
+$int2 = add($int2, ~script199($string0, $int4, $int5, 10682368, $int3, 0, 13, $int2, 0, 16776960, 1));
+} else {
+$int2 = add($int2, ~script199($string0, $int4, $int5, 10682368, $int3, 0, 13, $int2, 2, 16776960, 1));
+}
+if_clearops($int5);
+if_setonop("null()", $int5);
+if_setonmouserepeat("null()", $int5);
+if_setonmouseleave("null()", $int5);
+if_setsize(0, 0, 0, 0, $int5);
+$int4 = add($int4, 1);
+$int5 = enum(int, component, 580, $int4);
+}
+$int7 = -1;
+$int8 = -1;
+$string1 = "";
+$int9 = 0;
+$string2 = "";
+$string3 = "";
+if(%varc55 >= %varc202) {
+if(%varc55 > sub(clientclock, 3000)) {
+if(chat_gethistorylength(14) > 0) {
+$int9 = getChatMessagesParam6(14, 0);
+$string0 = getChatMessagesParam5(14, 0);
+$string2 = getChatMessagesParam4(14, 0);
+$string1 = getChatMessagesOwner(14, 0);
+$int8 = getChatMessagesCycle(14, 0);
+$int7 = getChatMessagesNextId(14, 0);
+if($int7 != -1) {
+$gosubResult2066_0, $gosubResult2066_1 = ~script2066($string0);
+$string3 = $gosubResult2066_1;
+$string0 = $gosubResult2066_0;
+$int2 = add($int2, ~script199($string0, $int4, $int5, 10682368, $int3, 0, 13, $int2, 2, 16776960, 1));
+if_clearops($int5);
+if(string_length($string3) > 0) {
+if_setop(6, "Open", $int5);
+if_setop(7, "Check", $int5);
+if_setonmouserepeat("script2065(if_getlayer($int5), $int4, 16777215)", $int5);
+if_setonmouseleave("script2065(if_getlayer($int5), $int4, 16776960)", $int5);
+} else {
+if_setonmouserepeat("null()", $int5);
+if_setonmouseleave("null()", $int5);
+}
+if_setop(9, "Clear history", $int5);
+if_setopbase("<col=ff9040>Notification</col>", $int5);
+if_setonop("script2064(-2147483644, $string3)", $int5);
+$int4 = add($int4, 1);
+$int5 = enum(int, component, 580, $int4);
+}
+}
+}
+}
+$int7 = $int0;
+$int10 = 0;
+while(%varp287 == 1) {
+if(%varc41 != -1 || %varbit4089 == 0) {
+while($int7 != -1) {
+while($int5 != -1) {
+while(sub($int2, $int1) < 57) {
+$int9 = getChatMessagesParam6($int7);
+$string0 = getChatMessagesParam5($int7);
+$string2 = getChatMessagesParam4($int7);
+$string1 = getChatMessagesOwner($int7);
+$int8 = getChatMessagesCycle($int7);
+$int10 = getChatMessagesType($int7);
+if(~script91($int10, $string1, $int8, $int9) == 1) {
+switch($int10) {
+case 3:
+case 7:
+$int2 = add($int2, ~script203("From <$string1>:", $string0, $int4, $int5, 10682368, $int3, 0, 13, $int2, 2, 65535, 1));
+case 6:
+$int2 = add($int2, ~script203("To <$string1>:", $string0, $int4, $int5, 10682368, $int3, 0, 13, $int2, 2, 65535, 1));
+default:
+$int2 = add($int2, ~script199($string0, $int4, $int5, 10682368, $int3, 0, 13, $int2, 2, 65535, 1));
+if($int10 == 5) {
+if(%varbit1627 == 0) {
+%varc65 = add(add($int8, 500), 1);
+if_setontimer("script664(0)", 162:1);
+}
+}
+}
+if_clearops($int5);
+if($int10 == 3 || $int10 == 6 || $int10 == 7) {
+if($int9 == 1) {
+if_setop(8, "Message", $int5);
+} else {
+if_setop(8, "Add friend", $int5);
+if_setop(9, "Add ignore", $int5);
+}
+if_setop(10, "Report", $int5);
+if_setopbase("<col=ffffff><$string1></col>", $int5);
+if_setonop("private_op(-2147483644, "event_opbase")", $int5);
+} else {
+if_setonop("null()", $int5);
+}
+if_setonmouserepeat("null()", $int5);
+if_setonmouseleave("null()", $int5);
+$int4 = add($int4, 1);
+$int5 = enum(int, component, 580, $int4);
+}
+$int7 = chat_getprevuid($int7);
+}
+}
+}
+}
+}
+while($int5 != -1) {
+if_clearops($int5);
+if_setonop("null()", $int5);
+if_setonmouserepeat("null()", $int5);
+if_setonmouseleave("null()", $int5);
+if_setsize(0, 0, 0, 0, $int5);
+if(cc_find(10682368, multiply($int4, 2)) == 1) {
+cc_settext("");
+cc_sethide(1);
+}
+if(cc_find(10682368, add(multiply($int4, 2), 1)) == 1) {
+cc_settext("");
+cc_sethide(1);
+}
+$int4 = add($int4, 1);
+$int5 = enum(int, component, 580, $int4);
+}
+return();

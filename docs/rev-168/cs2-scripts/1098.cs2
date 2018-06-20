@@ -1,0 +1,51 @@
+[clientscript,script1098](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+if(~script1701(156, -1) == 0) {
+return();
+}
+if($int0 == 84) {
+if(~script1972 == 1) {
+~script1984;
+}
+}
+$string0 = "";
+if($int2 == $int5) {
+%varcstr27 = ~script74(%varcstr27, 5, $int0, $int1);
+$string0 = %varcstr27;
+if(string_length(%varcstr27) > 0) {
+if_setop(1, "Submit", $int7);
+if_setonop("script1103()", $int7);
+if_setonclick("null()", $int7);
+} else {
+if_clearops($int7);
+if_setonop("null()", $int7);
+if_setonclick("script1103()", $int7);
+}
+} else {
+if($int2 == $int6) {
+%varcstr130 = ~script74(%varcstr130, 5, $int0, $int1);
+$string0 = %varcstr130;
+} else {
+return();
+}
+}
+$string0 = ~script1099($string0);
+$string0 = append($string0, "<col=ffffff>*</col>");
+$int8 = add(multiply(paraheight(if_getwidth($int2), 495, $string0), 12), 5);
+$int9 = if_getheight($int2);
+if($int8 < $int9) {
+$int8 = $int9;
+}
+if(cc_find($int2, 0) == 1) {
+if(.cc_find($int2, 1) == 1) {
+cc_setsize(0, $int8, 1, 0);
+.cc_setsize(0, $int8, 1, 0);
+.cc_settext($string0);
+}
+}
+if($int8 > $int9) {
+if_setscrollsize(0, $int8, $int2);
+} else {
+if_setscrollsize(0, 0, $int2);
+}
+~script72($int3, $int2, $int8);
+return();

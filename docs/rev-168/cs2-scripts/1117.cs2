@@ -1,0 +1,41 @@
+[proc,script1117](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)(int)
+$int7 = 0;
+$int8 = 0;
+$int9 = enum(int, component, 1235, $int0);
+$int10 = enum(int, component, 1236, $int0);
+$int11 = enum(int, component, 1237, $int0);
+if($int9 != -1) {
+if($int10 != -1) {
+if($int11 != -1) {
+if($int1 == %varbit4776) {
+if_sethide(0, $int9);
+if_sethide(0, $int10);
+if_sethide(0, $int11);
+$int7 = modulo($int6, 3);
+$int8 = multiply(add($int3, 2), divide($int6, 3));
+if($int7 == 0) {
+if_setposition(0, $int8, 0, 0, $int9);
+if_setposition(divide(sub($int2, $int4), 2), add($int8, divide(sub($int3, $int5), 2)), 0, 0, $int10);
+if_setposition(0, $int8, 0, 0, $int11);
+} else {
+if($int7 == 1) {
+if_setposition(0, $int8, 1, 0, $int9);
+if_setposition(0, add($int8, divide(sub($int3, $int5), 2)), 1, 0, $int10);
+if_setposition(0, $int8, 1, 0, $int11);
+} else {
+if_setposition(0, $int8, 2, 0, $int9);
+if_setposition(divide(sub($int2, $int4), 2), add($int8, divide(sub($int3, $int5), 2)), 2, 0, $int10);
+if_setposition(0, $int8, 2, 0, $int11);
+}
+}
+$int6 = add($int6, 1);
+} else {
+if_sethide(1, $int9);
+if_sethide(1, $int10);
+if_sethide(1, $int11);
+if_setposition(0, sub(0, $int3), 0, 0, $int10);
+}
+}
+}
+}
+return($int6);

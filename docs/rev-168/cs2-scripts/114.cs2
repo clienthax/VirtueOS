@@ -1,0 +1,25 @@
+[clientscript,script114](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+%varc204 = ~max(3, ~min(15, %varc204));
+opcode3129(2, %varc204);
+set_renderplayer_enabled(0)
+~steelborder($int1, "Orb of Oculus", 1);
+cc_deleteall($int0);
+.cc_create($int0, Rectangle, 0);
+.cc_setsize(1, 1, 0, 0);
+.cc_setposition(0, 0, 1, 1);
+.cc_setcolor(0xFFFFFF);
+.cc_setfill(1);
+.cc_sethide(1);
+cc_create($int0, Text, 1);
+cc_setsize(1, 1, 0, 0);
+cc_setposition(0, 0, 1, 1);
+cc_settextfont(494);
+cc_settext("");
+~script1655(%varc214, $int0, $int2, $int3, $int4, $int5);
+cc_create($int0, Text, 2);
+cc_setsize(1, 1, 0, 0);
+cc_setposition(0, 0, 1, 1);
+cc_settextfont(494);
+cc_settext("");
+cc_setonkey("script2220(-2147483640, -2147483645, .cc_getid)");
+return();

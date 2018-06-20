@@ -1,0 +1,14 @@
+[clientscript,script1080](string $string0)
+if(string_length($string0) > 0) {
+if_sethide(0, 378:4);
+if_settrans(255, 378:4);
+if_setonmouserepeat("settrans(-2147483645, 220)", 378:4);
+if_setonmouseleave("settrans(-2147483645, 255)", 378:4);
+if_setonclick("script1081($string0, 1)", 378:4);
+} else {
+if_sethide(1, 378:4);
+if_setonmouseover("null()", 378:4);
+if_setonmouseleave("null()", 378:4);
+if_setonclick("null()", 378:4);
+}
+return();

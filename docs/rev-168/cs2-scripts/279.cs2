@@ -1,0 +1,16 @@
+[proc,script279](int $int0)(int)
+$string0 = "";
+$string1 = "";
+if(~script514 == 1) {
+$string1 = ~script280;
+if(string_length($string1) > 0) {
+if($int0 != -1) {
+$string0 = lowercase(oc_name($int0));
+}
+if(string_indexof_string($string0, $string1, 0) != -1) {
+return(1);
+}
+return(0);
+}
+}
+return(1);

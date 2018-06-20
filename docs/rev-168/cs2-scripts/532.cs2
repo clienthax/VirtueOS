@@ -1,0 +1,5 @@
+[clientscript,script532](int $int0, int $int1, int $int2)
+sound_synth(2266, 1, 0);
+hideRoofs($int0);
+~script534($int1, $int2);
+return();

@@ -1,0 +1,10 @@
+[clientscript,script2185](int $int0)
+if_sethide(1, 595:18);
+if_sethide(1, 595:26);
+if_setsize(12, 12, 1, 1, 595:3);
+if($int0 == 1) {
+if_sethide(1, 595:34);
+}
+set_loadingtext_enabled(0)
+opcode6632(0);
+return();

@@ -1,0 +1,15 @@
+[clientscript,script1662](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+~scrollbar_vertical($int5, $int4, 792, 789, 790, 791, 773, 788);
+switch(%varc186) {
+case 0:
+case 1:
+case 2:
+case 3:
+case 6:
+case 7:
+default:
+%varc186 = 0;
+}
+~script1664($int1, $int2, $int3, $int4, $int5, $int6);
+if_setonfriendtransmit("script1663($int1, $int2, $int3, $int4, $int5, $int6)", $int0);
+return();

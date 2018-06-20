@@ -1,0 +1,36 @@
+[clientscript,script237](int $int0)
+$int1 = 0;
+$string0 = "";
+$int2 = -1;
+$int3 = 0;
+$int4 = -1;
+$int5 = 0;
+$int6 = -1;
+$int7 = 0;
+$int8 = -1;
+$int9 = 0;
+$gosubResult242_0, $gosubResult242_1, $gosubResult242_2, $gosubResult242_3, $gosubResult242_4, $gosubResult242_5, $gosubResult242_6, $gosubResult242_7, $gosubResult242_8, $gosubResult242_9 = ~script242($int0);
+$int9 = $gosubResult242_8;
+$int8 = $gosubResult242_7;
+$int7 = $gosubResult242_6;
+$int6 = $gosubResult242_5;
+$int5 = $gosubResult242_4;
+$int4 = $gosubResult242_3;
+$int3 = $gosubResult242_2;
+$int2 = $gosubResult242_1;
+$string0 = $gosubResult242_9;
+$int1 = $gosubResult242_0;
+if(stat(^magic) >= $int1) {
+if($int2 == -1 || ~script19($int2) >= $int3) {
+if($int4 == -1 || ~script19($int4) >= $int5) {
+if($int6 == -1 || ~script19($int6) >= $int7) {
+if($int8 == -1 || ~script19($int8) >= $int9) {
+cc_setgraphic(enum(int, graphic, 796, $int0));
+return();
+}
+}
+}
+}
+}
+cc_setgraphic(enum(int, graphic, 795, $int0));
+return();

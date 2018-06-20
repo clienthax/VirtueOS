@@ -1,0 +1,5 @@
+[clientscript,script846](int $int0, int $int1, int $int2, int $int3)
+if(determinateDisplayMode() != $int0) {
+~script843($int1, $int2, $int3);
+}
+return();

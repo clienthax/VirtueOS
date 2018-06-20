@@ -1,0 +1,17 @@
+[proc,script1701](int $int0, int $int1)(int)
+if(%varc187 > clientclock) {
+return(0);
+}
+if($int1 != 595) {
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551310)) == 1) {
+if(%varc190 == 1) {
+return(0);
+}
+}
+}
+if($int0 != 16) {
+if(if_hassub(165:27) == 1) {
+return(0);
+}
+}
+return(1);

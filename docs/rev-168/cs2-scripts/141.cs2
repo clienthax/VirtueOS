@@ -1,0 +1,19 @@
+[clientscript,script141](int $int0, string $string0, string $string1)
+$int1 = if_getwidth($int0);
+$int2 = if_getheight($int0);
+cc_deleteall($int0);
+cc_create($int0, Graphic, 0);
+cc_setsize($int1, $int2, 0, 0);
+cc_setposition(0, 0, 0, 0);
+cc_settiling(0);
+.cc_create($int0, Text, 1);
+.cc_setsize($int1, $int2, 0, 0);
+.cc_setposition(0, 0, 0, 0);
+.cc_settextfont(494);
+.cc_settextshadow(1);
+.cc_settextalign(1, 1, 0);
+.cc_settext($string0);
+if_setop(1, $string1, $int0);
+~script707($int0);
+if_setoninvtransmit("script706($int0, cc_getid, .cc_getid){518, 519, 520, 521, 522, 523, 539, 540}", $int0);
+return();

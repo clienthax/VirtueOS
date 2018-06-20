@@ -1,0 +1,12 @@
+[clientscript,script964](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+sound_synth(2266, 1, 0);
+if($int0 == 1) {
+~script300;
+~script966($int1, $int2, $int3, $int4, $int5);
+} else {
+if(%varc5 == 11) {
+~script299(1, 1);
+}
+~script965($int1, $int2, $int3, $int4, $int5);
+}
+return();

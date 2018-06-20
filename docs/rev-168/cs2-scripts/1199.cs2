@@ -1,0 +1,14 @@
+[clientscript,script1199](int $int0, int $int1, int $int2, int $int3, int $int4)
+if_setobject_nonum($int4, 1, $int0);
+cc_deleteall($int1);
+cc_deleteall($int2);
+cc_create($int1, Rectangle, 0);
+.cc_create($int2, Rectangle, 0);
+cc_setfill(0);
+.cc_setfill(1);
+cc_setposition(0, 0, 1, 1);
+.cc_setposition(0, 0, 0, 1);
+cc_setsize(0, 0, 1, 1);
+~script1201($int0, $int1, $int2, $int3, $int4);
+if_setoninvtransmit("script1200($int0, $int1, $int2, $int3, $int4, cc_getid, .cc_getid){173}", $int0);
+return();

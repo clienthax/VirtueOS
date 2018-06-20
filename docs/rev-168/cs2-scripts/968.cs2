@@ -1,0 +1,16 @@
+[clientscript,script968](int $int0, int $int1)
+$int2 = enum(int, int, 1504, $int1);
+$int3 = 31588470;
+if($int1 >= 14) {
+if($int1 <= 27) {
+$int3 = 31588443;
+}
+}
+if($int2 != -1) {
+if(cc_find($int3, $int2) == 1) {
+cc_sethide(0);
+cc_setontimer("script756($int3, $int2, clientclock)");
+}
+}
+~script1442($int0, 5);
+return();

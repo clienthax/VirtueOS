@@ -1,0 +1,11 @@
+[clientscript,script841](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13)
+if(isWorldListLoaded() == 0) {
+return();
+}
+if_setontimer("null()", $int0);
+if_settext("Current world - <tostring(map_world)>", $int1);
+if_sethide(0, $int2);
+~script892($int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13);
+if_setonvartransmit("script891($int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13){477}", $int0);
+if_setonstattransmit("script891($int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13)", $int0);
+return();

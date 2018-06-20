@@ -1,0 +1,34 @@
+[clientscript,options_brightness](int $int0, int $int1, int $int2, int $int3)
+if(%varp166 == 1) {
+if_setgraphic(683, $int0);
+if_setgraphic(680, $int1);
+if_setgraphic(681, $int2);
+if_setgraphic(682, $int3);
+} else {
+if(%varp166 == 2) {
+if_setgraphic(679, $int0);
+if_setgraphic(684, $int1);
+if_setgraphic(681, $int2);
+if_setgraphic(682, $int3);
+} else {
+if(%varp166 == 3) {
+if_setgraphic(679, $int0);
+if_setgraphic(680, $int1);
+if_setgraphic(685, $int2);
+if_setgraphic(682, $int3);
+} else {
+if(%varp166 == 4) {
+if_setgraphic(679, $int0);
+if_setgraphic(680, $int1);
+if_setgraphic(681, $int2);
+if_setgraphic(686, $int3);
+} else {
+if_setgraphic(679, $int0);
+if_setgraphic(680, $int1);
+if_setgraphic(681, $int2);
+if_setgraphic(682, $int3);
+}
+}
+}
+}
+return();

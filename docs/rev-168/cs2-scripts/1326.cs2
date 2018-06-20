@@ -1,0 +1,7 @@
+[clientscript,script1326](int $int0, int $int1)
+if($int1 == 1) {
+if_setgraphic(1217, $int0);
+} else {
+if_setgraphic(1216, $int0);
+}
+return();

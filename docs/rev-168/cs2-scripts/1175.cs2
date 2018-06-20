@@ -1,0 +1,41 @@
+[clientscript,script1175]
+$int0 = 0;
+$int1 = 0;
+$int2 = 1077;
+$int3 = 1078;
+while($int0 < 5) {
+if(%varbit4842 == $int0) {
+if(cc_find(15335438, $int0) == 1) {
+cc_setgraphic(1079);
+cc_setop(1, "View tab");
+cc_setonop("null()");
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+}
+} else {
+if(cc_find(15335438, $int0) == 1) {
+if(inv_total(93, enum(int, namedobj, 1244, $int0)) <= 0) {
+cc_setgraphic(1080);
+cc_setop(1, "");
+cc_setonop("null()");
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+} else {
+cc_setgraphic(1077);
+cc_setop(1, "View tab");
+cc_setonop("script1173($int0)");
+cc_setonmouserepeat("script229(15335438, $int0, $int3, -1)");
+cc_setonmouseleave("script229(15335438, $int0, $int2, -1)");
+}
+}
+}
+if(cc_find(15335438, add(5, $int0)) == 1) {
+if(inv_total(93, enum(int, namedobj, 1244, $int0)) <= 0) {
+cc_sethide(1);
+} else {
+cc_sethide(0);
+}
+}
+$int0 = add($int0, 1);
+}
+return();

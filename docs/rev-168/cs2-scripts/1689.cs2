@@ -1,0 +1,14 @@
+[clientscript,script1689](int $int0, int $int1, int $int2, int $int3, string $string0, string $string1, string $string2)
+if(~script1701(590, -1) == 0) {
+return();
+}
+if($int0 != -1) {
+if(string_indexof_char($string1, $int0) != -1 || string_indexof_char($string2, $int0) != -1) {
+if(cc_find($int2, $int3) == 1) {
+if(.cc_find(38666240, $int1) == 1) {
+~script1691($string0, $string1, $string2);
+}
+}
+}
+}
+return();

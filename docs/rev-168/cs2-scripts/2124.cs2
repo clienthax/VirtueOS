@@ -1,0 +1,17 @@
+[clientscript,script2124](int $int0, int $int1, int $int2, int $int3, int $int4)
+cc_deleteall($int1);
+cc_create($int1, Graphic, 0);
+cc_setsize(36, 32, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+.cc_create($int1, Text, 1);
+.cc_setcolor(0xFF981F);
+.cc_settextfont(495);
+.cc_settextshadow(1);
+.cc_settextalign(1, 1, 0);
+~script2131($int1);
+if_setoninvtransmit("script2130($int1, cc_getid, .cc_getid){93}", $int0);
+~script2125($int2, "Agility XP", $int2, $int3, $int4);
+~script2125($int3, "Thieving XP", $int2, $int3, $int4);
+~script2125($int4, "Both skills", $int2, $int3, $int4);
+return();

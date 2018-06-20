@@ -1,0 +1,24 @@
+[clientscript,script1520](int $int0, int $int1, int $int2, int $int3)
+$int4 = 235;
+if($int1 == $int2) {
+$int4 = 220;
+} else {
+if(modulo($int0, 2) == 0) {
+$int4 = 255;
+}
+}
+cc_settrans($int4);
+cc_clearops;
+if($int3 == 1) {
+cc_setop(1, "Stats");
+if(%varbit5428 == 1) {
+if(clan_getchatcount > 0) {
+if(clan_getchatrank >= clan_getchatminkick) {
+cc_setop(6, "Kick");
+}
+}
+}
+cc_setonmouserepeat("cc_settrans(-2147483645, -2147483643, 220, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, $int4, -1)");
+}
+return();

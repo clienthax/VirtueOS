@@ -8,18 +8,15 @@ import com.oldscape.server.game.model.item.ItemId;
 public class WidgetItem {
 
     private final int id;
+
     private final int quantity;
+
     private final int index;
 
     public WidgetItem(int id, int quantity, int index) {
         this.id = id;
         this.quantity = quantity;
         this.index = index;
-    }
-
-    @Override
-    public String toString() {
-        return "WidgetItem{" + "id=" + id + ", quantity=" + quantity + ", index=" + index + "}";
     }
 
     /**

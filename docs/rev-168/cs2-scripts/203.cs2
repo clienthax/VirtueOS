@@ -1,0 +1,27 @@
+[proc,script203](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, string $string0, string $string1)(int)
+$int10 = sub($int3, $int4);
+$int11 = add(parawidth(2147483647, 495, $string0), 3);
+$int12 = sub($int10, $int11);
+$int13 = multiply(paraheight($int12, 495, $string1), $int5);
+if($int7 == 0) {
+$int6 = sub($int6, $int13);
+}
+if(cc_find($int2, multiply($int0, 2)) == 1) {
+if(.cc_find($int2, add(multiply($int0, 2), 1)) == 1) {
+if_setsize($int10, $int13, 0, 0, $int1);
+if_setposition($int4, $int6, 0, $int7, $int1);
+cc_sethide(0);
+cc_setsize($int10, $int13, 0, 0);
+cc_setposition($int4, $int6, 0, $int7);
+cc_settext($string0);
+cc_setcolor($int8);
+cc_settextshadow($int9);
+.cc_sethide(0);
+.cc_setsize($int12, $int13, 0, 0);
+.cc_setposition(add($int4, $int11), $int6, 0, $int7);
+.cc_settext($string1);
+.cc_setcolor($int8);
+.cc_settextshadow($int9);
+}
+}
+return($int13);

@@ -1,0 +1,14 @@
+[clientscript,script2264]
+if(~script1972 == 0) {
+return();
+}
+if_setposition(6, 6, 2, 2, 595:3);
+if_setposition(5, 44, 2, 0, 595:6);
+if_setposition(6, 6, 0, 2, 595:10);
+if_setposition(0, 6, 1, 0, 595:18);
+if_setposition(0, 24, 1, 0, 595:26);
+if_setposition(53, 0, 2, 1, 595:25);
+if_setposition(93, 0, 2, 1, 595:24);
+if_setposition(134, 0, 2, 1, 595:23);
+if_setposition(15, 10, 2, 0, 595:34);
+return();

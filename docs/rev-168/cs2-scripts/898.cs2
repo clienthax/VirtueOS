@@ -1,0 +1,12 @@
+[clientscript,script898](int $int0)
+$int1 = if_getheight($int0);
+if($int1 < 334) {
+$int1 = 334;
+} else {
+if($int1 > 1200) {
+$int1 = 1200;
+}
+}
+$int2 = sub(180, interpolate(0, nth_root(sub($int1, 334), 2), 0, nth_root(sub(1200, 334), 2), 130));
+cc_setmodelangle(0, 0, 462, 0, 0, $int2);
+return();

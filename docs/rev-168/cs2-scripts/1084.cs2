@@ -1,0 +1,4 @@
+[clientscript,script1084](int $int0, string $string0, string $string1)
+if_setsize(add(parawidth(2147483647, 494, $string0), 28), if_getheight($int0), 0, 0, $int0);
+~script1086(0, 1, $int0, $string0, $string1);
+return();

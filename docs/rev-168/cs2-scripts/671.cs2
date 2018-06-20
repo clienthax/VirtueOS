@@ -1,0 +1,31 @@
+[clientscript,script671](int $int0, int $int1)
+cc_clearops;
+cc_setontimer("null()");
+if($int0 != -1) {
+if(enum(obj, int, 55, $int0) != 0) {
+cc_settrans(0);
+cc_setobject($int0, $int1);
+cc_setopbase("<col=ff9040><oc_name($int0)></col>");
+cc_setop(1, "Store-1");
+cc_setop(2, "Store-5");
+cc_setop(3, "Store-All");
+cc_setop(4, "Store-X");
+cc_setop(10, "Examine");
+cc_setonop("script487(-2147483645, -2147483643, 100, 0)");
+cc_setondragcomplete("script672(-2147483645, -2147483642, -2147483643, -2147483641, 255, 0)");
+} else {
+cc_settrans(150);
+cc_setobject($int0, $int1);
+cc_setopbase("<col=ff9040><oc_name($int0)></col>");
+cc_setop(1, "Store");
+cc_setop(10, "Examine");
+cc_setonop("script487(-2147483645, -2147483643, 175, 150)");
+cc_setondragcomplete("script672(-2147483645, -2147483642, -2147483643, -2147483641, 255, 150)");
+}
+} else {
+cc_settrans(0);
+cc_setobject(6512, 1);
+cc_setonop("null()");
+cc_setondragcomplete("null()");
+}
+return();

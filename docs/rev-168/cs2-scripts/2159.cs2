@@ -1,0 +1,7 @@
+[clientscript,script2159](int $int0, int $int1, int $int2, int $int3, int $int4)
+~chatdefault_stopinput;
+~script2160($int1, "1");
+~script2160($int2, "2");
+~script2160($int3, "3");
+~script2160($int4, "4");
+return();

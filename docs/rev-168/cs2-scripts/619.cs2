@@ -1,0 +1,10 @@
+[clientscript,script619](int $int0, int $int1, string $string0)
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551309)) == 0) {
+return();
+}
+$int2 = divide($int0, 256);
+$int3 = ~script633(testbit($int0, 1));
+$int4 = divide(and($int0, 252), 4);
+~poll_storequestion($int2, $string0);
+~script621($int2, $int3, $string0, $int4, $int1);
+return();

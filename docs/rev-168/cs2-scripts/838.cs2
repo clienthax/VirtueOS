@@ -1,0 +1,36 @@
+[clientscript,script838](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+$int8 = 0;
+$int9 = 0;
+if($int7 == 1) {
+$int9 = 180;
+$int8 = 235;
+}
+if(~script1972 == 1) {
+$int9 = 130;
+$int8 = 200;
+}
+if(cc_find($int0, 0) == 1) {
+cc_setgraphic($int1);
+cc_settrans($int8);
+}
+if(cc_find($int0, 1) == 1) {
+cc_setgraphic($int3);
+cc_settrans($int8);
+}
+if(cc_find($int0, 2) == 1) {
+cc_setgraphic($int2);
+cc_settrans($int8);
+}
+if(cc_find($int0, 3) == 1) {
+cc_setgraphic($int4);
+cc_settrans($int8);
+}
+if(cc_find($int0, 4) == 1) {
+cc_setgraphic($int5);
+cc_settrans($int9);
+}
+if(cc_find($int0, 5) == 1) {
+cc_setgraphic($int6);
+cc_settrans($int9);
+}
+return();

@@ -1,0 +1,133 @@
+[clientscript,script759]
+if(testbit(%varp286, 0) == 1) {
+if_setgraphic(1192, 482:50);
+} else {
+if_setgraphic(697, 482:50);
+}
+if(testbit(%varp286, 1) == 1) {
+if_setgraphic(1192, 482:51);
+} else {
+if_setgraphic(697, 482:51);
+}
+if(testbit(%varp286, 2) == 1) {
+if_setgraphic(1192, 482:52);
+} else {
+if_setgraphic(697, 482:52);
+}
+if(testbit(%varp286, 3) == 1) {
+if_setgraphic(1192, 482:53);
+} else {
+if_setgraphic(697, 482:53);
+}
+if(testbit(%varp286, 4) == 1) {
+if_setgraphic(1192, 482:54);
+} else {
+if_setgraphic(697, 482:54);
+}
+if(testbit(%varp286, 5) == 1) {
+if_setgraphic(1192, 482:55);
+} else {
+if_setgraphic(697, 482:55);
+}
+if(testbit(%varp286, 6) == 1) {
+if_setgraphic(1192, 482:56);
+} else {
+if_setgraphic(697, 482:56);
+}
+if(testbit(%varp286, 7) == 1) {
+if_setgraphic(1192, 482:57);
+} else {
+if_setgraphic(697, 482:57);
+}
+if(testbit(%varp286, 8) == 1) {
+if_setgraphic(1192, 482:58);
+} else {
+if_setgraphic(697, 482:58);
+}
+if(testbit(%varp286, 9) == 1) {
+if_setgraphic(1192, 482:59);
+} else {
+if_setgraphic(697, 482:59);
+}
+if(testbit(%varp286, 10) == 1) {
+if_setgraphic(1192, 482:60);
+} else {
+if_setgraphic(697, 482:60);
+}
+if(testbit(%varp286, 12) == 1) {
+if_setgraphic(1192, 482:61);
+} else {
+if_setgraphic(697, 482:61);
+}
+if(testbit(%varp286, 13) == 1) {
+if_setgraphic(1192, 482:62);
+} else {
+if_setgraphic(697, 482:62);
+}
+if(testbit(%varp286, 14) == 1) {
+if_sethide(0, 482:92);
+} else {
+if_sethide(1, 482:92);
+~script41(31588472);
+}
+if(testbit(%varp286, 15) == 1) {
+if_sethide(0, 482:93);
+} else {
+if_sethide(1, 482:93);
+~script41(31588472);
+}
+if(testbit(%varp286, 16) == 1) {
+if_sethide(0, 482:94);
+} else {
+if_sethide(1, 482:94);
+~script41(31588472);
+}
+if(testbit(%varp286, 17) == 1) {
+if_sethide(0, 482:95);
+} else {
+if_sethide(1, 482:95);
+~script41(31588472);
+}
+if(testbit(%varp286, 18) == 1) {
+if_sethide(0, 482:96);
+} else {
+if_sethide(1, 482:96);
+~script41(31588472);
+}
+if(testbit(%varp286, 19) == 1) {
+if_sethide(0, 482:97);
+} else {
+if_sethide(1, 482:97);
+~script41(31588472);
+}
+if(testbit(%varp286, 21) == 1) {
+if_sethide(0, 482:98);
+} else {
+if_sethide(1, 482:98);
+~script41(31588472);
+}
+if(testbit(%varp286, 23) == 1) {
+if_sethide(0, 482:99);
+} else {
+if_sethide(1, 482:99);
+~script41(31588472);
+}
+if(testbit(%varp286, 24) == 1) {
+if_sethide(0, 482:100);
+} else {
+if_sethide(1, 482:100);
+~script41(31588472);
+}
+if(testbit(%varp286, 26) == 1) {
+if_sethide(0, 482:101);
+} else {
+if_sethide(1, 482:101);
+~script41(31588472);
+}
+if(testbit(%varp286, 27) == 1) {
+if_sethide(0, 482:102);
+} else {
+if_sethide(1, 482:102);
+~script41(31588472);
+}
+return();

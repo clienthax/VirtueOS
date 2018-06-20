@@ -1,0 +1,8 @@
+[clientscript,script597](int $int0, int $int1, int $int2, int $int3)
+if(cc_find($int1, $int2) == 1) {
+if($int3 > 0) {
+$int3 = sub($int3, 1);
+}
+~script598($int0, $int1, $int3);
+}
+return();

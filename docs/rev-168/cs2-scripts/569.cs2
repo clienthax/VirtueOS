@@ -1,0 +1,21 @@
+[clientscript,script569](int $int0, int $int1)
+cc_deleteall($int1);
+$string0 = "Step over the line to fight!";
+$int2 = add(parawidth(512, 645, $string0), 15);
+if_setsize($int2, 40, 0, 0, $int1);
+cc_create($int1, Graphic, 0);
+cc_setposition(0, 0, 0, 0);
+cc_setsize($int2, 40, 0, 0);
+cc_setgraphic(897);
+cc_settiling(1);
+cc_settrans(100);
+cc_create($int1, Text, ~script575($int1, 1));
+cc_setposition(0, 3, 0, 0);
+cc_setsize($int2, 34, 0, 0);
+cc_settextalign(1, 1, 0);
+cc_settextfont(645);
+cc_settextshadow(1);
+cc_setcolor(0xFFFFA0);
+cc_settext($string0);
+if_setontimer("script570($int1)", $int0);
+return();

@@ -1,0 +1,9 @@
+[clientscript,script638](int $int0, int $int1, int $int2)
+if($int0 == 1) {
+sound_synth(2266, 1, 0);
+if(cc_find($int1, $int2) == 1) {
+cc_settrans(100);
+cc_setontimer("script488(-2147483645, -2147483643, 0, add(clientclock, 10))");
+}
+}
+return();

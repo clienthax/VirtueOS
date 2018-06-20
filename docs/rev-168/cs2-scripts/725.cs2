@@ -1,0 +1,5 @@
+[clientscript,script725]
+%varc67 = %varp1202;
+%varc68 = %varp1203;
+~script729;
+return();

@@ -1,0 +1,36 @@
+[clientscript,script611](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, string $string0, string $string1)
+$string0 = removetags($string0);
+if(string_length($string0) <= 0 || string_length($string1) <= 0) {
+return();
+}
+$int7 = sub($int1, add(15, $int6));
+$int8 = parawidth($int7, $int4, $string0);
+$int9 = add(multiply(paraheight($int7, $int4, $string0), $int5), $int6);
+if($int9 < 15) {
+$int9 = 15;
+}
+$int7 = add(add($int8, 15), $int6);
+cc_create($int0, Rectangle, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setsize($int7, $int9, 0, 0);
+$int7 = divide(sub($int1, $int7), 2);
+cc_setposition($int7, %varc49, 0, 0);
+cc_setfill(1);
+cc_settrans(255);
+.cc_create($int0, Text, %varc43);
+%varc43 = add(%varc43, 1);
+.cc_setsize($int8, $int9, 0, 0);
+.cc_setposition(add(add($int7, 15), $int6), %varc49, 0, 0);
+.cc_settextfont($int3);
+.cc_settextalign(1, 1, 0);
+.cc_settextshadow(1);
+~script612($int0, cc_getid, .cc_getid, $string0, $string1);
+.cc_create($int0, Graphic, %varc43);
+%varc43 = add(%varc43, 1);
+.cc_setsize(15, 15, 0, 0);
+.cc_setposition($int7, add(%varc49, divide(sub($int9, 15), 2)), 0, 0);
+.cc_setgraphicshadow(0x333333);
+.cc_settiling(1);
+.cc_setgraphic(1094);
+%varc49 = add(add(%varc49, $int9), 3);
+return();

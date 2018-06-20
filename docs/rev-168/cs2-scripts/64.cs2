@@ -1,0 +1,10 @@
+[clientscript,script64]
+cc_create(257:0, Rectangle, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 0, 2);
+cc_setfill(1);
+cc_setcolor(0x000000);
+cc_setEnabledColor(0);
+cc_setRectangleType(4);
+cc_setontimer("script2080(clientclock, add(clientclock, 60))");
+return();

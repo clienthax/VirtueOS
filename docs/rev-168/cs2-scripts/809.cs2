@@ -1,0 +1,14 @@
+[clientscript,script809](int $int0)
+$string0 = if_gettext($int0);
+if(string_length($string0) <= 0) {
+cc_settrans(255);
+if_sethide(1, $int0);
+return();
+}
+cc_settrans(0);
+if_sethide(0, $int0);
+$int1 = add(21, parawidth(150, 494, if_gettext($int0)));
+$int2 = divide(sub(150, $int1), 2);
+cc_setposition(add(15, $int2), if_gety($int0), 0, 0);
+if_setsize(sub(150, $int2), if_getheight($int0), 0, 0, $int0);
+return();

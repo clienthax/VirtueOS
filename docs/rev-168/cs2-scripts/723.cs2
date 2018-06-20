@@ -1,0 +1,5 @@
+[clientscript,script723](int $int0, int $int1)
+%varc67 = $int0;
+%varc68 = $int1;
+~script729;
+return();

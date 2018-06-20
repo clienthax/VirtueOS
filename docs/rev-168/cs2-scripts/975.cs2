@@ -1,0 +1,23 @@
+[clientscript,script975](int $int0)
+if($int0 <= 5) {
+if(%varbit4289 == 1) {
+cc_setcolor(0xFF3F3F);
+} else {
+if(%varbit4289 == 2) {
+cc_setcolor(0x5F5FFF);
+} else {
+cc_setcolor(0xFF981F);
+}
+}
+} else {
+if(%varbit4289 == 2) {
+cc_setcolor(0xFF3F3F);
+} else {
+if(%varbit4289 == 1) {
+cc_setcolor(0x3F3FFF);
+} else {
+cc_setcolor(0xFF981F);
+}
+}
+}
+return();

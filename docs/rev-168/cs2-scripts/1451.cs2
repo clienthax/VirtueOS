@@ -1,0 +1,7 @@
+[clientscript,script1451](int $int0, int $int1)
+if_settext("Check...", $int0);
+if_setcolor(~script1444(16750879), $int0);
+if_setonmouseover("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setontimer("script1443($int0, add(clientclock, multiply($int1, 30)))", $int0);
+return();

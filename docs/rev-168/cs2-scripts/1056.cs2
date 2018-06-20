@@ -1,0 +1,13 @@
+[clientscript,script1056](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11)
+~script1058($int1, 5341, "Rake");
+~script1058($int2, 5343, "Dibber");
+~script1058($int3, 952, "Spade");
+~script1058($int4, 5329, "Secateurs");
+~script1058($int5, 6797, "Watering Can");
+~script1058($int6, 5325, "Trowel");
+~script1058($int7, 6036, "Plant Cure");
+~script1058($int8, 1925, "Buckets");
+~script1058($int9, 6032, "Compost");
+~script1058($int10, 6034, "Supercompost");
+~script1058($int11, 21483, "Ultracompost");
+return();

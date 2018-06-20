@@ -1,0 +1,66 @@
+[clientscript,script1404](int $int0, int $int1, int $int2, int $int3, string $string0)
+$int4 = enum(int, component, 1461, $int0);
+if($int4 == -1) {
+return();
+}
+cc_deleteall($int4);
+cc_create($int4, Text, 0);
+cc_sethide(1);
+cc_settextfont(494);
+cc_settext("<~script47($int2)><~script47($int0)>");
+cc_create($int4, Text, 1);
+cc_setsize(56, 32, 0, 1);
+cc_setposition(0, 0, 0, 2);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(1, 0, 0);
+cc_settext("Level <tostring($int2)>");
+cc_create($int4, Text, 2);
+cc_setsize(56, 12, 1, 0);
+cc_setposition(0, 0, 2, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(0, 0, 0);
+$string1 = "";
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+cc_settext($string1);
+cc_create($int4, Text, 3);
+cc_setsize(56, 12, 1, 1);
+cc_setposition(0, 0, 2, 2);
+cc_setcolor(0xCCCCFF);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(0, 0, 0);
+cc_settext($string0);
+cc_create($int4, Graphic, 4);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(10, 0, 0, 0);
+cc_setobject_nonum($int1, 1);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+if_setop(1, "Build", $int4);
+if_setop(10, "Examine", $int4);
+if_setopbase("<col=ff9040><oc_name($int1)></col>", $int4);
+if_setonop("script1405(-2147483644, $int0, $int1, -2147483645, cc_getid)", $int4);
+cc_create($int4, Graphic, 5);
+cc_setsize(16, 16, 0, 0);
+cc_setposition(12, 0, 0, 0);
+cc_setgraphic(520);
+if($int3 == 1) {
+cc_sethide(1);
+cc_create($int4, Text, 6);
+cc_setsize(56, 32, 0, 0);
+cc_setposition(0, 0, 0, 0);
+cc_setcolor(0xCCCCFF);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(0, 0, 0);
+cc_settext("");
+} else {
+cc_sethide(0);
+}
+return();

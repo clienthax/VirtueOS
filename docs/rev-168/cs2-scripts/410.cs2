@@ -1,0 +1,4 @@
+[clientscript,script410]
+$string0 = ",";
+cc_settext("Reward points: <~script46(%varbit4068, $string0)>");
+return();

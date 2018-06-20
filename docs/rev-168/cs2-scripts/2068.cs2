@@ -1,0 +1,29 @@
+[clientscript,script2068](int $int0, int $int1, int $int2)
+if(~script1701(-1, -1) == 0) {
+return();
+}
+$int3 = enum(component, component, $int1, 10551309);
+$int4 = enum(int, component, 1137, 3);
+$int4 = enum(component, component, $int1, $int4);
+if($int3 != -1) {
+if($int0 == 13) {
+if(%varbit4681 == 1) {
+if(if_hassub($int4) == 1) {
+if(if_hassub($int3) == 1) {
+if_close();
+return();
+}
+}
+}
+}
+}
+$int5 = ~script986($int0);
+if($int5 == -1 || $int5 == sub(%varbit3756, 1)) {
+return();
+}
+$int6 = enum(int, component, 1137, $int5);
+$int6 = enum(component, component, $int1, $int6);
+if(if_hassub($int6) == 1) {
+~script71($int1, $int5, $int2);
+}
+return();

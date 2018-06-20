@@ -1,0 +1,8 @@
+[clientscript,script754](int $int0, int $int1)
+if($int1 != 84) {
+return();
+}
+sendObjectSearchResult($int0);
+sound_synth(2266, 1, 0);
+~script299(1, 1);
+return();

@@ -1,0 +1,63 @@
+[clientscript,script1163]
+cc_deleteall(234:14);
+cc_deleteall(234:15);
+$int0 = 0;
+while($int0 < 5) {
+cc_create(234:14, Graphic, $int0);
+cc_setsize(41, 40, 0, 0);
+cc_setposition(multiply($int0, 40), 0, 0, 0);
+cc_setopbase(tostring($int0));
+cc_settiling(0);
+$int0 = add($int0, 1);
+}
+$int0 = 0;
+while($int0 < 5) {
+cc_create(234:14, Graphic, add(5, $int0));
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add(multiply($int0, 40), 3), 4, 0, 0);
+cc_setobject_nonum(13302, 1);
+cc_setgraphicshadow(0x111111);
+cc_setoutline(1);
+$int0 = add($int0, 1);
+}
+$int0 = 0;
+while($int0 < 5) {
+cc_create(234:14, Text, add(multiply(5, 2), $int0));
+cc_setsize(41, 38, 0, 0);
+cc_setposition(multiply($int0, 40), 0, 0, 0);
+cc_settextfont(494);
+cc_setcolor(0xFFFFFF);
+cc_settextalign(1, 2, 0);
+cc_settextshadow(1);
+$int0 = add($int0, 1);
+}
+$int1 = 0;
+$int2 = 0;
+while($int1 < 5) {
+while($int2 < 28) {
+cc_create(234:15, Graphic, add(multiply($int1, 28), $int2));
+cc_setsize(36, 32, 0, 0);
+cc_setposition(multiply(modulo($int2, 7), 39), multiply(divide($int2, 7), 38), 0, 0);
+cc_setgraphicshadow(0x111111);
+cc_setoutline(1);
+cc_setop(1, "Bank 1");
+cc_setop(2, "Bank 5");
+cc_setop(3, "Bank 10");
+cc_setop(4, "Bank X");
+cc_setop(5, "Bank All");
+cc_setop(6, "Withdraw 1");
+cc_setop(7, "Withdraw 5");
+cc_setop(8, "Withdraw 10");
+cc_setop(9, "Withdraw X");
+cc_setop(10, "Withdraw All");
+$int2 = add($int2, 1);
+}
+$int1 = add($int1, 1);
+$int2 = 0;
+}
+~script1174;
+~script1166;
+if_setonvartransmit("script1164(){1299}", 234:25);
+if_setonvartransmit("script1172(){1299}", 234:15);
+if_setoninvtransmit("script1170(){558, 559, 560, 561, 562}", 234:15);
+return();

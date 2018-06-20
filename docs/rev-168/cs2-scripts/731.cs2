@@ -1,0 +1,6 @@
+[clientscript,script731]
+if_sethide(0, 64:40);
+if_sethide(1, 64:43);
+if_settext("Confirm", 64:44);
+if_setcolor(0xFFFFFF, 64:44);
+return();

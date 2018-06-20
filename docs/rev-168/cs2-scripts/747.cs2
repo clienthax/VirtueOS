@@ -1,0 +1,28 @@
+[clientscript,script747](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13)
+if_settext("Loading...", $int1);
+if_setscrollpos(0, 0, $int2);
+if_sethide(1, $int2);
+cc_deleteall($int3);
+~scrollbar_vertical($int3, $int2, 792, 789, 790, 791, 773, 788);
+if_sethide(1, $int5);
+if_sethide(1, $int6);
+if_sethide(1, $int7);
+if_sethide(1, $int8);
+if_sethide(1, $int9);
+cc_deleteall($int4);
+$int14 = 0;
+while($int14 <= 420) {
+cc_create($int4, Graphic, $int14);
+cc_setsize(0, 16, 1, 0);
+cc_setop(1, "Switch");
+cc_setop(2, "Favourite");
+if($int14 > 300) {
+cc_setopbase("<col=ff9040><tostring(sub($int14, 300))></col>");
+} else {
+cc_setopbase("<col=ff9040><tostring($int14)></col>");
+}
+cc_sethide(1);
+$int14 = add($int14, 1);
+}
+if_setontimer("script841($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13)", $int0);
+return();

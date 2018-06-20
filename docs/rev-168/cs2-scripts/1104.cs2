@@ -1,0 +1,24 @@
+[clientscript,script1104](int $int0, string $string0)
+~chatdefault_stopinput;
+if($int0 == 1) {
+%varcstr24 = $string0;
+}
+if_setonkey("script133(-2147483640, -2147483639)", 553:5);
+if_settext("<escape(%varcstr24)><col=ffff00>|", 553:5);
+%varc140 = 1;
+%varc6 = 0;
+if(playermod == 1 || staffmodlevel > 0) {
+%varc140 = 0;
+if_setcolor(0xFFFFFF, 553:14);
+~script1326(36241423, %varc6);
+} else {
+if_setgraphic(1215, 553:15);
+if_setcolor(0xBBBBBB, 553:14);
+if_clearops(553:15);
+if_clearops(553:14);
+}
+~script1326(36241420, %varc140);
+if(~script1972 == 1) {
+~script1983(0, 12);
+}
+return();

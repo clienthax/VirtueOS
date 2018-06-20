@@ -1,0 +1,7 @@
+[clientscript,script551]
+if(string_length(%varcstr22) > 0) {
+if_settext("Send autochat: <col=0000ff><escape(%varcstr22)></col>", 162:36);
+} else {
+if_settext("Send autochat: <col=7f0000>[off]</col>", 162:36);
+}
+return();

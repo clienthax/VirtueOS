@@ -1,0 +1,19 @@
+[clientscript,script1755](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if(cc_find($int1, $int2) == 1) {
+cc_setcolor($int5);
+}
+if($int3 != -1) {
+if(cc_find($int1, $int3) == 1) {
+cc_setcolor($int5);
+}
+}
+if($int0 == 1) {
+if(cc_find($int1, $int4) == 1) {
+cc_sethide(0);
+}
+} else {
+if(cc_find($int1, $int4) == 1) {
+cc_sethide(1);
+}
+}
+return();

@@ -1,0 +1,37 @@
+[clientscript,script2226](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if(~script1972 == 0) {
+if_sethide(1, $int5);
+}
+switch(%varbit6347) {
+case 0:
+~script835($int1, 0);
+~script835($int2, 0);
+~script835($int3, 0);
+~script835($int4, 0);
+~script836($int0, 0);
+case 1:
+~script835($int0, 0);
+~script835($int2, 0);
+~script835($int3, 0);
+~script835($int4, 0);
+~script836($int1, 0);
+case 2:
+~script835($int0, 0);
+~script835($int1, 0);
+~script835($int3, 0);
+~script835($int4, 0);
+~script836($int2, 0);
+case 3:
+~script835($int0, 0);
+~script835($int1, 0);
+~script835($int2, 0);
+~script835($int4, 0);
+~script836($int3, 0);
+case 4:
+~script835($int0, 0);
+~script835($int1, 0);
+~script835($int2, 0);
+~script835($int3, 0);
+~script836($int4, 0);
+}
+return();

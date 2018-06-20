@@ -1,0 +1,12 @@
+[clientscript,script741](int $int0, int $int1)
+cc_deleteall($int0);
+cc_deleteall($int1);
+cc_create($int0, Rectangle, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(0);
+.cc_create($int1, Rectangle, 0);
+.cc_setfill(1);
+~script1494;
+if_setonvartransmit("script1493($int0, cc_getid, $int1, .cc_getid){243}", $int0);
+return();

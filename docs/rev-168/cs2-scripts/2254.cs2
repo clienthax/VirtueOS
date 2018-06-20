@@ -1,0 +1,9 @@
+[clientscript,script2254](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9)
+sound_synth(2266, 1, 0);
+if_sethide(0, $int0);
+if_sethide(1, $int1);
+~script1097($int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9);
+if(~script1972 == 1) {
+~script1983(0, 80);
+}
+return();

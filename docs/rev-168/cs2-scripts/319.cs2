@@ -1,0 +1,16 @@
+[clientscript,script319](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+if($int1 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+cc_deleteall($int5);
+if_setonop("null()", $int6);
+if($int0 == 1) {
+if_settext("Requesting...", $int4);
+if_setontimer("script320(add(clientclock, 45), $int2, $int3, $int5, $int6)", $int5);
+return();
+}
+if_settext("", $int4);
+if_sethide(0, $int2);
+if_sethide(1, $int3);
+return();

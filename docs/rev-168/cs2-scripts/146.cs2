@@ -1,0 +1,27 @@
+[clientscript,script146](int $int0, int $int1, int $int2)
+$int3 = divide(sub(if_getwidth($int0), multiply(36, 7)), 6);
+$int4 = divide(sub(if_getheight($int0), multiply(32, 4)), 3);
+$int5 = inv_size(93);
+while($int5 > 0) {
+$int5 = sub($int5, 1);
+if(cc_find($int0, $int5) == 1) {
+cc_clearops;
+cc_setposition(multiply(modulo($int5, 7), add(36, $int3)), multiply(divide($int5, 7), add(32, $int4)), 0, 0);
+~script172($int0, inv_getobj(93, $int5), inv_getnum(93, $int5));
+}
+}
+$int6 = 170;
+$int7 = 179;
+if(inv_total(93, 11941) > 0) {
+if_setonmouseover("settrans($int2, 75)", $int1);
+if_setonmouseleave("settrans($int2, 0)", $int1);
+if_setonop("script292(-2147483645, $int7, $int6, -2147483644)", $int1);
+} else {
+if_setonmouseover("null()", $int1);
+if_setonmouseleave("null()", $int1);
+if_setonop("null()", $int1);
+if_setgraphic($int6, $int1);
+if_settrans(75, $int2);
+if_setontimer("null()", $int1);
+}
+return();

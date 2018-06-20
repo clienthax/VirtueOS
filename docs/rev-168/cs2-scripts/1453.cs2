@@ -1,0 +1,59 @@
+[clientscript,script1453](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18, int $int19, int $int20, int $int21, int $int22, int $int23, int $int24, int $int25, int $int26, int $int27)
+cc_deleteall(481:29);
+$int28 = 0;
+$int29 = -1;
+$int30 = -1;
+def_obj $anArray0(inv_size(93));
+$anArray0(0) = $int0;
+$anArray0(1) = $int1;
+$anArray0(2) = $int2;
+$anArray0(3) = $int3;
+$anArray0(4) = $int4;
+$anArray0(5) = $int5;
+$anArray0(6) = $int6;
+$anArray0(7) = $int7;
+$anArray0(8) = $int8;
+$anArray0(9) = $int9;
+$anArray0(10) = $int10;
+$anArray0(11) = $int11;
+$anArray0(12) = $int12;
+$anArray0(13) = $int13;
+$anArray0(14) = $int14;
+$anArray0(15) = $int15;
+$anArray0(16) = $int16;
+$anArray0(17) = $int17;
+$anArray0(18) = $int18;
+$anArray0(19) = $int19;
+$anArray0(20) = $int20;
+$anArray0(21) = $int21;
+$anArray0(22) = $int22;
+$anArray0(23) = $int23;
+$anArray0(24) = $int24;
+$anArray0(25) = $int25;
+$anArray0(26) = $int26;
+$anArray0(27) = $int27;
+$int31 = sub(if_getwidth(481:29), 10);
+$int32 = sub(if_getheight(481:29), 10);
+$int33 = divide($int31, 4);
+$int34 = divide($int32, 7);
+$int35 = 5;
+$int36 = 5;
+while($int28 < inv_size(93)) {
+cc_create(481:29, Graphic, $int28);
+cc_setsize(36, 32, 0, 0);
+cc_setposition($int35, $int36, 0, 0);
+if($anArray0($int28) != -1) {
+cc_setobject_nonum($anArray0($int28), 0);
+cc_setopbase("<col=ff981f><oc_name($anArray0($int28))>");
+cc_setop(10, "Examine<col=ff9040>");
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+}
+$int35 = add($int35, $int33);
+$int28 = add($int28, 1);
+if(modulo($int28, 4) == 0) {
+$int35 = 10;
+$int36 = add($int36, $int34);
+}
+}
+return();

@@ -1,0 +1,56 @@
+[proc,script1412](int $int0, int $int1, int $int2, int $int3, int $int4, string $string0, string $string1)(int)
+cc_deleteall($int1);
+if_setposition(0, $int0, 1, 0, $int1);
+$int5 = string_length($string1);
+if($int5 < $int2) {
+$int2 = $int5;
+}
+if($int2 <= 0) {
+if_setsize(0, 0, 1, 0, $int1);
+return($int0);
+}
+$int6 = 0;
+def_int $anArray0($int2);
+$int7 = 0;
+while($int7 < $int2) {
+cc_create($int1, Text, $int7);
+cc_setsize(0, 18, 1, 0);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext(enum(int, string, $int3, $int7));
+$int6 = string_indexof_string("<tostring(1)><tostring(0)><tostring(2)>", substring($string1, $int7, add($int7, 1)), 0);
+if($int6 == 0) {
+cc_setcolor(0xFF0000);
+} else {
+if($int6 == 1) {
+cc_setcolor(0xFFFF00);
+} else {
+cc_setcolor(0x0DC10D);
+}
+}
+$anArray0($int7) = $int7;
+$int7 = add($int7, 1);
+}
+if($int2 > 1) {
+~script1360(0, 0, sub($int2, 1), $int4);
+}
+$int8 = 25;
+$int7 = 0;
+while($int7 < $int2) {
+if(cc_find($int1, $anArray0($int7)) == 1) {
+cc_setposition(0, $int8, 1, 0);
+}
+$int8 = add($int8, 18);
+$int7 = add($int7, 1);
+}
+cc_create($int1, Text, $int7);
+cc_setsize(0, 25, 1, 0);
+cc_setposition(0, 0, 1, 0);
+cc_setcolor(if_getmodelyof(473:8));
+cc_settextfont(496);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext($string0);
+if_setsize(0, $int8, 1, 0, $int1);
+return(add(add($int0, $int8), 10));

@@ -1,0 +1,18 @@
+[clientscript,script1997](int $int0, int $int1, int $int2)
+if_setsize(interpolate(0, 16384, 0, 1000, %varbit5811), 0, 2, 1, $int0);
+if(if_getwidth($int0) == 0) {
+if(%varbit5811 != 0) {
+if_setsize(1, 0, 0, 1, $int0);
+}
+}
+if(%varbit5811 == 0) {
+if_setsize(0, 0, 0, 1, $int0);
+return();
+}
+if_settext("Oxygen Level: <tostring(divide(%varbit5811, 10))>%", $int1);
+if(%varbit5811 <= 100) {
+if(%varc198 != 1) {
+if_setontimer("script1999($int2, $int1, clientclock, 250)", $int1);
+}
+}
+return();

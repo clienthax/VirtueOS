@@ -1,0 +1,8 @@
+[clientscript,script972](int $int0, int $int1, int $int2, int $int3)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+%varp211 = $int3;
+~script973($int1, $int2, $int3);
+return();

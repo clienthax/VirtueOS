@@ -1,0 +1,7 @@
+[clientscript,script651](int $int0)
+if(inv_total(93, 995) < $int0) {
+cc_setcolor(0xFF0000);
+} else {
+cc_setcolor(0xFFFF00);
+}
+return();

@@ -1,0 +1,24 @@
+[clientscript,script259](int $int0, int $int1)
+$string0 = ",";
+$string0 = "Points:<br><~script46($int1, $string0)>";
+$int2 = add(parawidth(512, 494, $string0), 8);
+$int3 = add(add(multiply(paraheight(512, 494, $string0), 10), 2), 8);
+if(cc_find($int0, 0) == 1) {
+cc_setposition(5, 15, 2, 0);
+cc_setsize($int2, $int3, 0, 0);
+}
+if(cc_find($int0, 1) == 1) {
+cc_setposition(5, 15, 2, 0);
+cc_setsize($int2, $int3, 0, 0);
+}
+if(cc_find($int0, 2) == 1) {
+cc_setposition(6, 16, 2, 0);
+cc_setsize(sub($int2, 2), sub($int3, 2), 0, 0);
+}
+if(cc_find($int0, 3) == 1) {
+cc_setposition(5, 15, 2, 0);
+cc_setsize($int2, $int3, 0, 0);
+cc_settext($string0);
+cc_setonvartransmit("script257(-2147483645, -2147483643, $int1){1059}");
+}
+return();

@@ -1,0 +1,9 @@
+[clientscript,script1020](int $int0, int $int1, int $int2, int $int3)
+if(clientclock < $int3) {
+return();
+}
+if(cc_find($int0, $int1) == 1) {
+cc_setcolor($int2);
+cc_setontimer("null()");
+}
+return();

@@ -1,0 +1,57 @@
+[clientscript,script230](int $int0, int $int1, int $int2, int $int3, int $int4)
+cc_deleteall($int1);
+cc_deleteall($int2);
+cc_deleteall($int3);
+cc_deleteall($int4);
+$int5 = 789;
+$int6 = 790;
+if(%varbit3945 == 1) {
+if_sethide(1, $int0);
+if_sethide(0, $int3);
+$int5 = 791;
+$int6 = 792;
+if(%varbit3944 == 1) {
+~script499($int3, 787, 788, -1, -1, 800, 60, 0, 1, 1);
+} else {
+~script499($int3, 778, 779, -1, -1, 720, 60, 0, 1, 1);
+}
+} else {
+if_sethide(0, $int0);
+if_sethide(1, $int3);
+if(%varbit3944 == 1) {
+~script499($int1, 781, 782, -1, 332, 600, 135, 0, 1, 0);
+~script499($int2, 784, 785, -1, 456, 650, 135, 0, 2, 0);
+} else {
+~script499($int1, 771, 772, 773, 151, 780, 135, 0, 1, 1);
+~script499($int2, 775, 776, -1, 292, 780, 135, 0, 2, 1);
+}
+}
+$int7 = 0;
+while($int7 < 29) {
+cc_create($int4, Rectangle, $int7);
+cc_setsize(25, 25, 0, 0);
+if($int7 < 15) {
+cc_setposition(multiply($int7, 25), 0, 0, 0);
+} else {
+cc_setposition(add(multiply(sub($int7, 15), 25), 12), 26, 0, 0);
+}
+cc_setfill(1);
+cc_setcolor(enum(int, int, $int5, $int7));
+cc_setop(1, enum(int, string, $int6, $int7));
+$int7 = add($int7, 1);
+}
+$int7 = 0;
+while($int7 < 29) {
+cc_create($int4, Graphic, add($int7, 29));
+cc_setsize(25, 25, 0, 0);
+if($int7 < 15) {
+cc_setposition(multiply($int7, 25), 0, 0, 0);
+} else {
+cc_setposition(add(multiply(sub($int7, 15), 25), 12), 26, 0, 0);
+}
+cc_setgraphic(442);
+~script501($int7, 3);
+cc_setonvartransmit("script500(-2147483645, -2147483643, $int7, 3){263}");
+$int7 = add($int7, 1);
+}
+return();

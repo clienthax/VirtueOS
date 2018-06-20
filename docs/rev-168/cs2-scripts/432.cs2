@@ -1,0 +1,7 @@
+[clientscript,script432](int $int0)
+~scrollbar_vertical(4980752, 4980751, 792, 789, 790, 791, 773, 788);
+~scrollbar_vertical(4980758, 4980757, 792, 789, 790, 791, 773, 788);
+if_setonfriendtransmit("script434()", $int0);
+if_setonclantransmit("script434()", $int0);
+~script435;
+return();

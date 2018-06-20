@@ -1,0 +1,9 @@
+[clientscript,script2016](int $int0, int $int1, int $int2)
+~script2020;
+~script2021;
+~script2022;
+if_setonvartransmit("script2019(){1653, 1654, 1655}", $int0);
+~script2018($int2);
+if_setonresize("script2017($int2)", $int2);
+if_setonsubchange("script2017($int2)", $int2);
+return();

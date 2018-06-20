@@ -1,0 +1,36 @@
+[clientscript,script250](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+cc_deleteall($int1);
+if_setscrollpos(0, 0, $int1);
+$int7 = enum_getoutputcount(818);
+if_setontimer("script2257(-2147483645, $int7)", $int3);
+if_setonvartransmit("script313(-2147483645, $int3, $int7){568, 20, 21, 22, 23, 24, 25, 298, 311, 346, 414, 464, 598, 662, 721, 906, 1009, 1338, 1681}", $int1);
+def_int $anArray0($int7);
+$int8 = 0;
+while($int8 < $int7) {
+$anArray0($int8) = $int8;
+cc_create($int1, Text, $int8);
+cc_sethide(1);
+$int8 = add($int8, 1);
+}
+if_setscrollsize(0, add(add(32, multiply($int7, 15)), 3), $int1);
+if($int7 > 1) {
+~script2255(0, 0, sub($int7, 1));
+}
+$int8 = 0;
+while($int8 < $int7) {
+if(cc_find($int1, $anArray0($int8)) == 1) {
+cc_sethide(0);
+cc_setsize(1, 1, 0, 0);
+cc_setposition(1, 1, 0, 0);
+cc_setontimer("script252(-2147483645, -2147483643, $int8)");
+}
+$int8 = add($int8, 1);
+}
+~script318($int4, $int5, $int6);
+if_setonvartransmit("script317($int4, $int5, $int6){18, 19}", $int0);
+if_setonop("script315(-2147483644, 1, $int4, $int5, $int6)", $int4);
+if_setonop("script315(-2147483644, 0, $int4, $int5, $int6)", $int5);
+if_setonop("script316(-2147483644, $int4, $int5, $int6)", $int6);
+cc_deleteall($int2);
+~scrollbar_vertical($int2, $int1, 792, 789, 790, 791, 773, 788);
+return();

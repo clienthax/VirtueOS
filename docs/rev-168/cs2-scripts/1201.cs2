@@ -1,0 +1,25 @@
+[clientscript,script1201](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = inv_total(173, $int4);
+if($int5 > 1000) {
+$int5 = 1000;
+}
+.cc_setsize(divide(multiply($int5, 16384), 1000), 0, 2, 1);
+$int6 = 0;
+$int7 = 0;
+if($int5 <= 500) {
+$int7 = interpolate(0, $int5, 0, 500, 255);
+$int6 = 255;
+} else {
+$int7 = 255;
+$int6 = interpolate(0, sub(1000, $int5), 0, 500, 255);
+}
+$int8 = ~script246($int6, $int7, 0);
+cc_setcolor($int8);
+.cc_setcolor($int8);
+$string0 = "<oc_name($int4)>: <tostring(divide($int5, 10))>.<tostring(modulo($int5, 10))>% appreciation";
+if_setonmouserepeat("script526(-2147483645, -1, $int3, $string0, 25, 512)", $int0);
+if_setonmouserepeat("script526(-2147483645, -1, $int3, $string0, 25, 512)", $int1);
+if_setonmouseleave("script40($int3)", $int0);
+if_setonmouseleave("script40($int3)", $int1);
+%varc2 = 0;
+return();

@@ -1,0 +1,23 @@
+[clientscript,chat_onchattransmit]
+$int0 = ~script553;
+$int1 = 0;
+$int2 = -1;
+$string0 = "";
+$string1 = "";
+$string2 = "";
+$int3 = 0;
+if(if_hassub(162:549) == 1) {
+$int3 = getChatMessagesParam6($int0);
+$string2 = getChatMessagesParam5($int0);
+$string1 = getChatMessagesParam4($int0);
+$string0 = getChatMessagesOwner($int0);
+$int2 = getChatMessagesCycle($int0);
+$int1 = getChatMessagesType($int0);
+if(enum(int, boolean, 892, $int1) == 1) {
+~script102($string2);
+}
+}
+~script84($int0);
+~script89($int0);
+~script192($int0);
+return();

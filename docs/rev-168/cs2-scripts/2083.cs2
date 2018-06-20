@@ -1,0 +1,2 @@
+[proc,script2083](int)
+return(~max(sub(144000, %varbit6024), 0));

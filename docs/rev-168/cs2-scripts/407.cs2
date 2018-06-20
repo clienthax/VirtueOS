@@ -1,0 +1,39 @@
+[clientscript,script407](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+cc_deleteall($int0);
+$int6 = 0;
+$int7 = 0;
+$gosubResult408_0, $gosubResult408_1 = ~script408($int0, $int1, "Unlock", $int6, $int7, $int1, $int2, $int3, $int4, $int5);
+$int7 = $gosubResult408_1;
+$int6 = $gosubResult408_0;
+$gosubResult408_0, $gosubResult408_1 = ~script408($int0, $int2, "Extend", $int6, $int7, $int1, $int2, $int3, $int4, $int5);
+$int7 = $gosubResult408_1;
+$int6 = $gosubResult408_0;
+$gosubResult408_0, $gosubResult408_1 = ~script408($int0, $int3, "Buy", $int6, $int7, $int1, $int2, $int3, $int4, $int5);
+$int7 = $gosubResult408_1;
+$int6 = $gosubResult408_0;
+$gosubResult408_0, $gosubResult408_1 = ~script408($int0, $int4, "Tasks", $int6, $int7, $int1, $int2, $int3, $int4, $int5);
+$int7 = $gosubResult408_1;
+$int6 = $gosubResult408_0;
+cc_create($int0, Text, $int6);
+cc_setposition(0, 0, 2, 0);
+cc_setsize($int7, 0, 1, 1);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+~script410;
+cc_setonvartransmit("script409(-2147483645, -2147483643){661}");
+if_sethide(0, $int5);
+if($int5 != $int1) {
+if_sethide(1, $int1);
+}
+if($int5 != $int2) {
+if_sethide(1, $int2);
+}
+if($int5 != $int3) {
+if_sethide(1, $int3);
+}
+if($int5 != $int4) {
+if_sethide(1, $int4);
+}
+return();

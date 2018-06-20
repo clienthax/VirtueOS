@@ -1,0 +1,5 @@
+[clientscript,script519](int $int0, int $int1)
+cc_create($int0, Graphic, add($int1, 4));
+cc_setposition(4, add(4, multiply(add($int1, 1), 17)), 0, 0);
+cc_setsize(17, 17, 0, 0);
+return();

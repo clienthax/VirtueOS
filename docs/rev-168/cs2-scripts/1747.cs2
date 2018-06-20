@@ -1,0 +1,68 @@
+[clientscript,script1747](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9)
+$int10 = %varc191;
+$int11 = %varc192;
+$int12 = %varc193;
+$int13 = %varc194;
+$int14 = 0;
+$int15 = if_getwidth($int5);
+$int16 = if_getheight($int5);
+if(cc_find($int5, $int0) == 1) {
+cc_setgraphic(-1);
+switch($int0) {
+case 0:
+$int13 = add($int13, sub($int2, $int4));
+$int12 = add($int12, sub($int1, $int3));
+case 1:
+$int11 = sub($int11, sub($int2, $int4));
+case 2:
+$int14 = sub($int1, $int3);
+$int12 = add($int12, $int14);
+$int10 = add($int10, $int14);
+case 3:
+$int10 = sub($int10, sub($int1, $int3));
+case 4:
+$int14 = sub($int1, $int3);
+$int12 = add($int12, $int14);
+$int10 = add($int10, $int14);
+$int14 = sub($int2, $int4);
+$int13 = add($int13, $int14);
+$int11 = add($int11, $int14);
+case 5:
+$int10 = sub($int10, sub($int1, $int3));
+$int14 = sub($int2, $int4);
+$int13 = add($int13, $int14);
+$int11 = add($int11, $int14);
+case 6:
+$int14 = sub($int1, $int3);
+$int12 = add($int12, $int14);
+$int10 = add($int10, $int14);
+$int11 = sub($int11, sub($int2, $int4));
+case 7:
+$int10 = sub($int10, sub($int1, $int3));
+$int11 = sub($int11, sub($int2, $int4));
+}
+if($int12 < 10) {
+$int10 = sub($int10, $int12);
+$int12 = 0;
+}
+if($int10 < add($int12, 10)) {
+$int10 = $int12;
+}
+if($int13 < 10) {
+$int11 = sub($int11, $int13);
+$int13 = 0;
+}
+if($int11 < add($int13, 10)) {
+$int11 = $int13;
+}
+$int10 = ~max(~min($int10, sub($int15, $int9)), 0);
+$int11 = ~max(~min($int11, sub($int16, 280)), 0);
+$int13 = ~max(~min($int13, $int11), 0);
+$int12 = ~max(~min($int12, $int10), 0);
+if_setposition($int12, $int13, 0, 0, $int7);
+if_setsize($int10, $int11, 1, 1, $int7);
+if_sethide(0, $int7);
+if_sethide(1, $int8);
+cc_setontimer("script1748(add(clientclock, 3), $int10, $int11, $int12, $int13, $int5, $int6, $int7, $int8, $int9)");
+}
+return();

@@ -1,0 +1,16 @@
+[clientscript,script2133](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, string $string0, string $string1)
+cc_deleteall($int0);
+cc_create($int0, Graphic, 0);
+.cc_create($int0, Graphic, 1);
+cc_setposition(0, 0, 1, 1);
+.cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 0, 1, 1);
+.cc_setsize(29, 22, 0, 0);
+cc_setgraphic(170);
+.cc_setgraphic($int1);
+if_setonmouserepeat("cc_settrans($int0, .cc_getid, 100, -1)", $int0);
+if_setonmouseleave("cc_settrans($int0, .cc_getid, 0, -1)", $int0);
+if_setop(1, $string0, $int0);
+if_setonop("script2134(-2147483644, cc_getid, .cc_getid, $int0, $string0, $int1, $string1, $int2, $int3, $int4, $int5)", $int0);
+if_setontimer("null()", $int0);
+return();

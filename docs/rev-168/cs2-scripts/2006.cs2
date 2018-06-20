@@ -1,0 +1,4 @@
+[clientscript,script2006](int $int0, int $int1, int $int2, int $int3)
+if_setonvartransmit("script2007($int0, $int1, $int2, $int3){1635, 1636, 1637, 1638, 1639, 1640, 1641, 1642}", $int1);
+~script2008($int0, $int1, $int2, $int3);
+return();

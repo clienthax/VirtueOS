@@ -1,0 +1,6 @@
+[clientscript,script1015](int $int0, int $int1, int $int2, int $int3)
+if(cc_find($int0, $int1) == 1) {
+cc_setcolor($int2);
+cc_settrans($int3);
+}
+return();

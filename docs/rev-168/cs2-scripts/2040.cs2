@@ -1,0 +1,5 @@
+[clientscript,script2040](int $int0, int $int1, int $int2, int $int3)
+if(cc_find($int1, $int2) == 1) {
+~script2041($int0, $int3);
+}
+return();

@@ -1,0 +1,11 @@
+[clientscript,script1443](int $int0, int $int1)
+if(clientclock < $int1) {
+return();
+} else {
+if_settext("Accept", $int0);
+if_setcolor(~script1444(3394560), $int0);
+if_setonmouseover("script45(-2147483645, ~script1444(10087936))", $int0);
+if_setonmouseleave("script45(-2147483645, ~script1444(3394560))", $int0);
+if_setontimer("null()", $int0);
+}
+return();

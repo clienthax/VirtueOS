@@ -1,0 +1,9 @@
+[clientscript,script1221](int $int0, int $int1)
+if(if_gettrans($int0) < 240) {
+if_settrans(add(if_gettrans($int0), 5), $int0);
+return();
+}
+if_setcolor(enum(int, int, 1279, $int1), $int0);
+if_setontimer("null()", $int0);
+if_settrans(0, $int0);
+return();

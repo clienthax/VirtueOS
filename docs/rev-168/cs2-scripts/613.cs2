@@ -1,0 +1,14 @@
+[clientscript,script613](int $int0, int $int1, int $int2, string $string0, string $string1)
+if(cc_find($int0, $int1) == 1) {
+if(.cc_find($int0, $int2) == 1) {
+.cc_setcolor(0xFFFFFF);
+.cc_settext("<u=ffffff><$string0></u>");
+cc_setontimer("script614($int0, $int1, $int2, $string0, $string1, add(clientclock, 25))");
+cc_setonmouseover("null()");
+cc_setonmouseleave("null()");
+cc_setonclick("null()");
+}
+}
+sound_synth(2266, 1, 0);
+openurl($string1, 1);
+return();

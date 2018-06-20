@@ -1,0 +1,43 @@
+[clientscript,script393](int $int0, int $int1, int $int2, int $int3)
+$string0 = enum(int, string, 108, $int2);
+$int4 = enum(int, stat, 681, $int2);
+cc_deleteall($int0);
+cc_create($int0, Graphic, 0);
+cc_setposition(-2, -2, 0, 0);
+cc_setsize(36, 36, 0, 0);
+cc_setgraphic(174);
+cc_create($int0, Graphic, 1);
+cc_setposition(28, -2, 0, 0);
+cc_setsize(36, 36, 0, 0);
+cc_setgraphic(175);
+cc_create($int0, Graphic, 2);
+cc_setposition(add(3, $int3), 4, 0, 0);
+cc_setsize(25, 25, 0, 0);
+cc_setgraphic(enum(stat, graphic, 255, $int4));
+cc_create($int0, Text, 3);
+.cc_create($int0, Text, 4);
+cc_setposition(32, 4, 0, 0);
+.cc_setposition(44, 16, 0, 0);
+cc_setsize(15, 12, 0, 0);
+.cc_setsize(15, 12, 0, 0);
+cc_setcolor(0xFFFF00);
+.cc_setcolor(0xFFFF00);
+cc_settextfont(494);
+.cc_settextfont(494);
+cc_settextalign(1, 0, 0);
+.cc_settextalign(1, 0, 0);
+cc_settextshadow(1);
+.cc_settextshadow(1);
+if_clearops($int0);
+if(~script1972 == 1) {
+if_setop(1, "Toggle <col=ff981f><$string0></col> XP", $int0);
+if_setop(2, "View <col=ff981f><$string0></col> guide", $int0);
+if_setonclick("script394($int4, $int0, $string0, cc_getid, .cc_getid, $int1)", $int0);
+} else {
+if_setop(1, "View <col=ff981f><$string0></col> guide", $int0);
+if_setonmouseleave("script40($int1)", $int0);
+}
+if_setonstattransmit("script394($int4, $int0, $string0, cc_getid, .cc_getid, $int1){$int4, 0, 2, 1, 4, 6}", $int0);
+if_setonvartransmit("script394($int4, $int0, $string0, cc_getid, .cc_getid, $int1){427, 1588, 1437, 1438, 1439, 1436, 1435, 1440, 1453, 1447, 1452, 1443, 1449, 1441, 1442, 1444, 1450, 1457, 1445, 1446, 1454, 1455, 1456, 1451, 1448}", $int0);
+~script395($int4, $int0, $string0, $int1);
+return();

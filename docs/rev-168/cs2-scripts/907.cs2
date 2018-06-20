@@ -1,0 +1,130 @@
+[clientscript,script907](int $int0, int $int1)
+if(%varbit4611 == 1) {
+if_setonkey("script905(-2147483640, $int1, 0)", $int0);
+} else {
+if_setonkey("script905(-2147483640, $int1, 1)", $int0);
+}
+~toplevel_resize($int0, $int1);
+if(~toplevel_getcomponents == 1745) {
+~script1974;
+}
+~script2152;
+$int2 = enum(component, component, $int1, 10551313);
+if($int2 != -1) {
+if_sethide(~script633(%varbit542), $int2);
+}
+$int2 = enum(component, component, $int1, 10551322);
+if($int2 != -1) {
+if(%varbit542 == 1 || %varbit4606 != 0) {
+if_sethide(1, $int2);
+} else {
+if_sethide(0, $int2);
+}
+}
+$int3 = enum(component, component, $int1, 10551299);
+$int4 = 0;
+$int5 = 0;
+$int4 = viewport_getmaxzoom();
+$int5 = viewport_getminzoom();
+if(%varc73 > 0) {
+if(%varc74 > 0) {
+if($int5 != %varc73 || $int4 != %varc74) {
+~script42(%varc73, %varc74);
+}
+}
+}
+if_setonscrollwheel("camera_zoom(-2147483646)", $int3);
+$int6 = sub(%varbit3756, 1);
+$int7 = enum(int, component, 1139, $int6);
+if($int7 != -1) {
+$int7 = enum(component, component, $int1, $int7);
+if($int7 != -1) {
+if_setontimer("toplevel_timer($int7)", $int0);
+} else {
+if_setontimer("null()", $int0);
+}
+} else {
+if_setontimer("null()", $int0);
+}
+~script912($int1);
+$int8 = enum(int, component, 1138, 2);
+$int7 = enum(int, component, 1139, 2);
+$int7 = enum(component, component, $int1, $int7);
+$int8 = enum(component, component, $int1, $int8);
+if($int8 != -1) {
+if($int7 != -1) {
+if(%varbit5432 == 1) {
+if_setop(1, "Raiding Party", $int8);
+if_setgraphic(1414, $int7);
+} else {
+if(%varbit618 == 1) {
+if_setop(1, "Kourend Tasks", $int8);
+if_setgraphic(1299, $int7);
+} else {
+if(%varbit3217 == 1) {
+if_setop(1, "Minigames", $int8);
+if_setgraphic(1052, $int7);
+} else {
+if(%varbit3612 == 1) {
+if_setop(1, "Achievement Diaries", $int8);
+if_setgraphic(1053, $int7);
+} else {
+if_setop(1, "Quest List", $int8);
+if_setgraphic(776, $int7);
+}
+}
+}
+}
+}
+}
+$int7 = enum(int, component, 1139, 6);
+$int7 = enum(component, component, $int1, $int7);
+if($int7 != -1) {
+if(%varbit4070 == 1) {
+if_setgraphic(1582, $int7);
+} else {
+if(%varbit4070 == 2) {
+if_setgraphic(1583, $int7);
+} else {
+if(%varbit4070 == 3) {
+if_setgraphic(1584, $int7);
+} else {
+if_setgraphic(780, $int7);
+}
+}
+}
+}
+$int7 = enum(component, component, $int1, 10551326);
+if($int7 != -1) {
+if(%varbit4609 == 1) {
+if_setgraphic(897, $int7);
+if_settrans(0, $int7);
+} else {
+if_setgraphic(1040, $int7);
+if_settrans(150, $int7);
+}
+}
+$int7 = enum(component, component, $int1, 10551312);
+if($int7 != -1) {
+if(%varbit4605 == 1 && %varbit542 == 0) {
+if_sethide(0, $int7);
+} else {
+if_sethide(1, $int7);
+}
+}
+if(%varbit4134 == 1) {
+mmbControlsCamera(0);
+} else {
+mmbControlsCamera(1);
+}
+if(%varbit5542 == 1) {
+toggle_shift(1);
+} else {
+toggle_shift(0);
+}
+if(%varbit5599 == 1) {
+toggle_npcops(1);
+} else {
+toggle_npcops(0);
+}
+return();

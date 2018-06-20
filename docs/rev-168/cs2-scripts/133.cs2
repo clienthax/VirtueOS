@@ -1,0 +1,12 @@
+[clientscript,script133](int $int0, int $int1)
+if(~script1701(553, -1) == 0) {
+return();
+}
+if($int0 == 84) {
+if(~script1972 == 1) {
+~script1984;
+}
+}
+%varcstr24 = ~script74(%varcstr24, 2, $int0, $int1);
+if_settext("<escape(%varcstr24)><col=ffff00>|", 553:5);
+return();

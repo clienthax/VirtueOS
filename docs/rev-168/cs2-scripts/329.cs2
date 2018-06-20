@@ -1,0 +1,24 @@
+[clientscript,script329](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = 32;
+$int6 = 36;
+$int7 = 780;
+if(%varbit276 != 0) {
+$int7 = enum(int, graphic, 796, %varbit276);
+if($int7 != -1) {
+$int6 = 24;
+$int5 = 24;
+} else {
+$int7 = 780;
+}
+if(%varbit2668 == $int4) {
+if_setgraphic(654, $int3);
+} else {
+if_setgraphic(653, $int3);
+}
+} else {
+if_setgraphic(653, $int3);
+}
+if_setsize($int5, $int6, 0, 0, $int0);
+if_setgraphic($int7, $int0);
+if_setposition(sub($int1, divide($int5, 2)), sub($int2, divide($int6, 2)), 0, 0, $int0);
+return();

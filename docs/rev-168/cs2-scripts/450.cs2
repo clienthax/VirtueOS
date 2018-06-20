@@ -1,0 +1,91 @@
+[clientscript,script450](int $int0, int $int1, int $int2, int $int3, string $string0)
+if_settext($string0, 78:2);
+cc_deleteall(78:4);
+cc_deleteall(78:5);
+$int4 = add(divide(sub(if_getwidth(78:4), multiply(10, 36)), 9), 36);
+$int5 = 0;
+$int6 = 0;
+$int7 = 0;
+$int8 = -1;
+$int9 = 0;
+while($int9 <= 97) {
+if($int9 < 32) {
+if(testbit($int0, $int9) == 1) {
+$int7 = 1;
+} else {
+$int7 = 0;
+}
+} else {
+if($int9 < 64) {
+if(testbit($int1, sub($int9, 32)) == 1) {
+$int7 = 1;
+} else {
+$int7 = 0;
+}
+} else {
+if($int9 < 96) {
+if(testbit($int2, sub($int9, 64)) == 1) {
+$int7 = 1;
+} else {
+$int7 = 0;
+}
+} else {
+if($int9 < 128) {
+if(testbit($int3, sub($int9, 96)) == 1) {
+$int7 = 1;
+} else {
+$int7 = 0;
+}
+} else {
+$int7 = 0;
+}
+}
+}
+}
+cc_create(78:4, Graphic, $int9);
+if($int7 == 1) {
+$int8 = enum(int, namedobj, 708, $int9);
+if($int8 != -1) {
+if(inv_total(93, $int8) == 0) {
+cc_sethide(0);
+} else {
+cc_sethide(1);
+}
+cc_setsize(36, 32, 0, 0);
+cc_setposition(multiply($int6, $int4), $int5, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setobject($int8, 1);
+cc_setop(1, "Take");
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int8)>");
+if($int6 < 9) {
+$int6 = add($int6, 1);
+} else {
+$int5 = add(add($int5, 32), 15);
+$int6 = 0;
+}
+} else {
+cc_sethide(1);
+}
+} else {
+cc_sethide(1);
+}
+$int9 = add($int9, 1);
+}
+if($int6 > 0) {
+$int5 = add($int5, 32);
+} else {
+if($int5 > 0) {
+$int5 = sub($int5, 15);
+}
+}
+if($int5 <= if_getheight(78:4)) {
+if_setscrollsize(0, 0, 78:4);
+} else {
+if_setscrollsize(0, $int5, 78:4);
+}
+if_setscrollpos(0, 0, 78:4);
+~scrollbar_vertical(5111813, 5111812, 798, 795, 796, 797, 793, 794);
+if_setoninvtransmit("script474($int0, $int1, $int2, $int3){93}", 78:4);
+return();

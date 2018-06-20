@@ -1,0 +1,41 @@
+[clientscript,script2075](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10)
+$int11 = ~script2076(coord);
+$int12 = setbit(0, $int11);
+switch($int11) {
+case 6:
+$int12 = setbit($int12, 3);
+case 3:
+$int12 = setbit($int12, 6);
+case 7:
+$int12 = setbit($int12, 4);
+case 4:
+$int12 = setbit($int12, 7);
+}
+if(%varp302 < 61) {
+$int12 = setbit($int12, 3);
+$int12 = setbit($int12, 6);
+}
+if(%varp655 < 140) {
+$int12 = setbit($int12, 3);
+}
+if(%varp365 < 2 || %varp150 < 160) {
+$int12 = setbit($int12, 8);
+}
+if(%varp328 < 15) {
+$int12 = setbit($int12, 9);
+}
+if(%varp176 < 2 || %varp176 > 9) {
+$int12 = setbit($int12, 0);
+}
+if_sethide(~script633(testbit($int12, 1)), $int5);
+if_sethide(~script633(testbit($int12, 2)), $int2);
+if_sethide(~script633(testbit($int12, 3)), $int8);
+if_sethide(~script633(testbit($int12, 4)), $int4);
+if_sethide(~script633(testbit($int12, 5)), $int6);
+if_sethide(~script633(testbit($int12, 6)), $int1);
+if_sethide(~script633(testbit($int12, 7)), $int7);
+if_sethide(~script633(testbit($int12, 8)), $int3);
+if_sethide(~script633(testbit($int12, 9)), $int0);
+if_sethide(~script633(testbit($int12, 0)), $int9);
+if_sethide(~script633(testbit($int12, 10)), $int10);
+return();

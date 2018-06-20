@@ -1,0 +1,192 @@
+[clientscript,script595](int $int0, int $int1, int $int2)
+if(%varbit4287 <= 0) {
+if(%varbit4288 <= 0) {
+if_sethide(1, $int1);
+return();
+}
+}
+if_sethide(0, $int1);
+$int3 = 0;
+$string0 = "";
+$string1 = "";
+$string2 = "";
+if(%varbit4285 == 1) {
+$int3 = 1;
+$string0 = " ";
+$string1 = clan_getchatdisplayname;
+$string2 = "Opponents";
+}
+$string3 = ",";
+$string4 = "";
+$int4 = 0;
+$int5 = 0;
+$int3 = add($int3, 1);
+$string4 = "Fighters:";
+if(string_length($string0) > 0) {
+$string0 = append($string0, "<br>");
+}
+$string0 = append($string0, $string4);
+if(%varbit4289 == 2) {
+$string4 = ~script46(%varbit4288, $string3);
+} else {
+$string4 = ~script46(%varbit4287, $string3);
+}
+if(string_length($string1) > 0) {
+$string1 = append($string1, "<br>");
+}
+$string1 = append($string1, $string4);
+$int4 = parawidth(512, 494, $string4);
+if($int5 < $int4) {
+$int5 = $int4;
+}
+if(%varbit4289 == 2) {
+$string4 = ~script46(%varbit4287, $string3);
+} else {
+$string4 = ~script46(%varbit4288, $string3);
+}
+if(string_length($string2) > 0) {
+$string2 = append($string2, "<br>");
+}
+$string2 = append($string2, $string4);
+$string5 = "";
+$int6 = 0;
+$int7 = enum(int, int, 376, %varbit4270);
+$int8 = enum(int, int, 377, %varbit4270);
+$int9 = enum(int, int, 1120, %varbit4270);
+$int10 = enum(int, int, 1119, %varbit4270);
+if($int7 > 0 || $int8 > 0 || $int9 > 0 || $int10 > 0) {
+$int3 = add($int3, 1);
+$string4 = "Kills:";
+$string0 = append($string0, append("<br>", $string4));
+if(%varbit4289 == 2) {
+if(%varbit4291 >= 65535) {
+$string4 = "Lots!";
+} else {
+$string4 = ~script46(%varbit4291, $string3);
+}
+} else {
+if(%varbit4290 >= 65535) {
+$string4 = "Lots!";
+} else {
+$string4 = ~script46(%varbit4290, $string3);
+}
+}
+$string1 = append($string1, append("<br>", $string4));
+$int4 = parawidth(512, 494, $string4);
+if($int5 < $int4) {
+$int5 = $int4;
+}
+if(%varbit4289 == 2) {
+if(%varbit4290 >= 65535) {
+$string4 = "Lots!";
+} else {
+$string4 = ~script46(%varbit4290, $string3);
+}
+} else {
+if(%varbit4291 >= 65535) {
+$string4 = "Lots!";
+} else {
+$string4 = ~script46(%varbit4291, $string3);
+}
+}
+$string2 = append($string2, append("<br>", $string4));
+if($int8 > 0 || $int9 > 0) {
+$int3 = add($int3, 1);
+if($int8 > 0) {
+$string4 = "Hill points:";
+} else {
+if($int9 > 0) {
+$string4 = "Skull points:";
+} else {
+$string4 = "Points:";
+}
+}
+$string0 = append($string0, append("<br>", $string4));
+if(%varbit4289 == 2) {
+$string4 = ~script46(%varbit4576, $string3);
+} else {
+$string4 = ~script46(%varbit4575, $string3);
+}
+$string1 = append($string1, append("<br>", $string4));
+$int4 = parawidth(512, 494, $string4);
+if($int5 < $int4) {
+$int5 = $int4;
+}
+if(%varbit4289 == 2) {
+$string4 = ~script46(%varbit4575, $string3);
+} else {
+$string4 = ~script46(%varbit4576, $string3);
+}
+$string2 = append($string2, append("<br>", $string4));
+}
+if($int8 > 0) {
+$string5 = "Victory: <~script46($int8, $string3)> points";
+} else {
+if($int9 > 0) {
+$string5 = "Victory: <~script46($int9, $string3)> points";
+} else {
+if($int7 > 0) {
+$string5 = "Victory: <~script46($int7, $string3)> kills";
+} else {
+if($int10 > 0) {
+if(cc_find($int1, add($int2, 3)) == 1) {
+$string5 = ~script213;
+}
+}
+}
+}
+}
+$int6 = parawidth(512, 494, $string5);
+}
+$int11 = parawidth(512, 494, $string0);
+$int12 = parawidth(512, 494, $string1);
+$int13 = parawidth(512, 494, $string2);
+$int4 = add(add(add(add($int11, 4), $int12), 4), $int13);
+if($int6 > $int4) {
+$int11 = add($int11, sub($int6, $int4));
+$int5 = $int12;
+}
+$int3 = add(multiply($int3, 10), 2);
+$int14 = 4;
+if(cc_find($int1, $int2) == 1) {
+cc_setsize($int11, $int3, 0, 0);
+cc_setposition($int14, 4, 0, 0);
+cc_settext($string0);
+$int14 = add($int14, $int11);
+}
+if(cc_find($int1, add($int2, 1)) == 1) {
+$int4 = divide(sub($int12, $int5), 2);
+$int4 = sub($int4, 4);
+$int14 = sub($int14, $int4);
+if($int14 < 4) {
+$int14 = 4;
+}
+cc_setsize($int12, $int3, 0, 0);
+cc_setposition($int14, 4, 0, 0);
+cc_settext($string1);
+$int14 = add(add($int14, $int12), 4);
+}
+if(cc_find($int1, add($int2, 2)) == 1) {
+cc_setsize($int13, $int3, 0, 0);
+cc_setposition($int14, 4, 0, 0);
+cc_settext($string2);
+$int14 = add($int14, $int13);
+}
+if(cc_find($int1, add($int2, 3)) == 1) {
+cc_setsize(sub($int14, 4), 11, 0, 0);
+cc_setposition(4, add(4, $int3), 0, 0);
+cc_settext($string5);
+}
+$int4 = add($int14, 4);
+$int3 = add(add(4, $int3), 4);
+if($int6 > 0) {
+$int3 = add($int3, 11);
+}
+if_setsize($int4, $int3, 0, 0, $int1);
+while($int2 > 0) {
+$int2 = sub($int2, 1);
+if(cc_find($int1, $int2) == 1) {
+cc_setsize($int4, $int3, 0, 0);
+}
+}
+return();

@@ -1,0 +1,13 @@
+[clientscript,script1983](int $int0, int $int1)
+if(~script1972 == 0) {
+return();
+}
+%varc215 = $int0;
+%varc216 = $int1;
+switch($int0) {
+case 0:
+opcode6522("", $int1);
+case 1:
+opcode6523("", $int1);
+}
+return();

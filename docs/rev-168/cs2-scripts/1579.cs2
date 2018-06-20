@@ -1,0 +1,6 @@
+[clientscript,script1579](int $int0, int $int1)
+$int2 = inv_size(581);
+~script1581($int1, $int2);
+if_setoninvtransmit("script1580($int1, $int2){581}", $int0);
+if_setonvartransmit("script1580($int1, $int2){1432}", $int0);
+return();

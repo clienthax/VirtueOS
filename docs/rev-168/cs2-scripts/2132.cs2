@@ -1,0 +1,9 @@
+[clientscript,script2132](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8)
+if_sethide(1, $int1);
+~script2136($int6, "Cancel", $int1);
+~script2136($int7, "Discard all", $int1);
+~script2136($int8, "Bank all", $int1);
+~script2133($int3, "Discard all", 1235, "Are you sure you want to <col=ff0000>destroy</col><br>everything you've caught?", $int1, $int2, $int7, $int8);
+~script2133($int4, "Bank all", 1227, "Pay <tostring(5)> numulites to <col=ffffff>bank</col><br>everything you've caught?", $int1, $int2, $int8, $int7);
+~script2133($int5, "Take all", 1041, "", -1, -1, -1, -1);
+return();

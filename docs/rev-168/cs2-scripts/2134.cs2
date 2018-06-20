@@ -1,0 +1,28 @@
+[clientscript,script2134](int $int0, int $int1, int $int2, int $int3, string $string0, int $int4, string $string1, int $int5, int $int6, int $int7, int $int8)
+if($int0 == 1) {
+if(cc_find($int3, $int1) == 1) {
+if(.cc_find($int3, $int2) == 1) {
+sound_synth(2266, 1, 0);
+cc_setgraphic(179);
+.cc_settrans(0);
+if_clearops($int3);
+if_setonmouserepeat("null()", $int3);
+if_setonmouseleave("null()", $int3);
+if_setonop("null()", $int3);
+if($int5 != -1) {
+if($int6 != -1) {
+if($int7 != -1) {
+if($int8 != -1) {
+if_sethide(0, $int5);
+if_settext($string1, $int6);
+if_sethide(0, $int7);
+if_sethide(1, $int8);
+}
+}
+}
+}
+if_setontimer("script2135(add(clientclock, 20), $int3, $string0, $int4, $string1, $int5, $int6, $int7, $int8)", $int3);
+}
+}
+}
+return();

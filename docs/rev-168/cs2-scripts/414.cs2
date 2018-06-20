@@ -1,0 +1,63 @@
+[clientscript,script414](int $int0, int $int1, string $string0, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+sound_synth(2266, 1, 0);
+if_sethide(1, $int2);
+if_sethide(0, $int3);
+cc_deleteall($int5);
+if_setposition(33, 165, 0, 0, $int6);
+if_sethide(0, $int5);
+$string1 = "Extend everything";
+$string2 = "Confirm";
+$string3 = "";
+if($int1 == add(43, 9)) {
+$string3 = "<u=ff981f><$string1></u><br><br>All task extensions will be unlocked. You can re-lock them individually later, but will not receive a refund.<br><br><col=ff0000>Pay <tostring($int7)> points?</col>";
+} else {
+if($int1 == 35 && $int0 == 0) {
+$string1 = enum(int, string, 834, $int1);
+if(%varbit5362 == 1) {
+$string2 = "Enable";
+$string3 = "<u=ff981f><$string1></u><br><br><$string0><br><br><col=00ff00>Really enable it? It will </col><col=ffffff>not cost you any points</col><col=00ff00> as you have unlocked this previously.</col>";
+} else {
+$string2 = "Disable";
+$string3 = "<u=ff981f><$string1></u><br><br><$string0><br><br><col=00ff00>Really disable it? This feature can be toggled at your leisure for </col><col=ffffff>no future cost</col><col=00ff00>.</col>";
+}
+} else {
+if($int1 == 43 && $int0 == 0) {
+$string1 = enum(int, string, 834, $int1);
+if(%varbit6251 == 1) {
+$string2 = "Enable";
+$string3 = "<u=ff981f><$string1></u><br><br><$string0><br><br><col=00ff00>Really enable it? It will </col><col=ffffff>not cost you any points</col><col=00ff00> as you have unlocked this previously.</col>";
+} else {
+$string2 = "Disable";
+$string3 = "<u=ff981f><$string1></u><br><br><$string0><br><br><col=00ff00>Really disable it? This feature can be toggled at your leisure for </col><col=ffffff>no future cost</col><col=00ff00>.</col>";
+}
+} else {
+if($int0 == 1) {
+$string1 = enum(int, string, 834, $int1);
+$string2 = "Unlock";
+$string3 = "<u=ff981f><$string1></u><br><br><$string0><br><br><col=ff0000>Pay <~script46(enum(int, int, 836, $int1), ",")> points?</col>";
+} else {
+$string1 = enum(int, string, 834, $int1);
+$string2 = "Disable";
+$string3 = "<u=ff981f><$string1></u><br><br>Really disable it?<br><br><col=ff0000>You will not get your points back.</col>";
+}
+}
+}
+}
+if_settext($string3, $int4);
+$int8 = 0;
+while($int8 < $int1) {
+cc_create($int5, Rectangle, $int8);
+cc_sethide(1);
+$int8 = add($int8, 1);
+}
+cc_create($int5, Rectangle, $int1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(1);
+cc_settrans(255);
+cc_setop(1, $string2);
+cc_setopbase("<col=ff9040><$string1>");
+cc_setonop("script319(1, -2147483644, $int2, $int3, $int4, $int5, $int6)");
+if_setop(1, "Back", $int6);
+if_setonop("script319(0, -2147483644, $int2, $int3, $int4, $int5, $int6)", $int6);
+return();

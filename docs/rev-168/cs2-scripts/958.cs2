@@ -1,0 +1,6 @@
+[clientscript,script958](int $int0)
+$int1 = ~toplevel_getcomponents;
+if($int1 != -1) {
+if_setposition(enum(enum, int, 1135, $int1), 0, 2, 0, $int0);
+}
+return();

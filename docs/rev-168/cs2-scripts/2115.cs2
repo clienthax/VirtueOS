@@ -1,0 +1,39 @@
+[clientscript,script2115](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8)
+if($int0 == 1) {
+if(cc_find($int1, $int3) == 1) {
+if(.cc_find($int1, $int2) == 1) {
+sound_synth(2266, 1, 0);
+%varbit1777 = $int4;
+~script2096($int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8);
+if($int1 != $int5) {
+if(cc_find($int5, $int3) == 1) {
+if(.cc_find($int5, $int2) == 1) {
+~script2096($int5, $int2, $int3, 0, $int5, $int6, $int7, $int8);
+}
+}
+}
+if($int1 != $int6) {
+if(cc_find($int6, $int3) == 1) {
+if(.cc_find($int6, $int2) == 1) {
+~script2096($int6, $int2, $int3, 1, $int5, $int6, $int7, $int8);
+}
+}
+}
+if($int1 != $int7) {
+if(cc_find($int7, $int3) == 1) {
+if(.cc_find($int7, $int2) == 1) {
+~script2096($int7, $int2, $int3, 3, $int5, $int6, $int7, $int8);
+}
+}
+}
+if($int1 != $int8) {
+if(cc_find($int8, $int3) == 1) {
+if(.cc_find($int8, $int2) == 1) {
+~script2096($int8, $int2, $int3, 2, $int5, $int6, $int7, $int8);
+}
+}
+}
+}
+}
+}
+return();

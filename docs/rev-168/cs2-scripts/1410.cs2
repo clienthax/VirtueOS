@@ -1,0 +1,12 @@
+[proc,script1410](int $int0)(string)
+$int1 = coordx(coord);
+$int2 = coordz(coord);
+$int3 = add(coordy(coord), $int0);
+$string0 = "No such level: <tostring($int3)>";
+if($int3 >= 0) {
+if($int3 <= 3) {
+$string0 = "::tele <tostring($int3)>,<tostring(divide($int1, 64))>,<tostring(divide($int2, 64))>,<tostring(modulo($int1, 64))>,<tostring(modulo($int2, 64))>";
+}
+}
+mes($string0);
+return($string0);

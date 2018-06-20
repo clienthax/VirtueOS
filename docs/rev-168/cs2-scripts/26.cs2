@@ -1,0 +1,18 @@
+[clientscript,script26](int $int0, int $int1, int $int2)
+cc_create($int0, Graphic, 0);
+cc_setposition(0, 0, 0, 0);
+cc_setsize(24, 24, 0, 0);
+cc_setgraphic($int2);
+cc_settiling(0);
+cc_setonclick("script29()");
+cc_setonmouseover("script27($int0)");
+cc_setonmouseleave("script28($int0)");
+cc_create($int0, Graphic, 1);
+cc_setposition(0, 0, 0, 0);
+cc_setsize(24, 24, 0, 0);
+cc_setgraphic($int1);
+cc_settiling(0);
+cc_setonclick("script29()");
+cc_setonmouseover("script27($int0)");
+cc_setonmouseleave("script28($int0)");
+return();

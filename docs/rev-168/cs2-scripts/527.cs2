@@ -1,0 +1,10 @@
+[clientscript,script527](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = divide(sub(190, 160), 5);
+cc_deleteall($int0);
+$int6 = ~script2151(1084, 1563);
+~script528(0, $int1, "Display", $int6, $int5, $int0, $int1, $int2, $int3, $int4);
+~script528(1, $int2, "Audio", 661, $int5, $int0, $int1, $int2, $int3, $int4);
+~script528(2, $int3, "Chat", 1085, $int5, $int0, $int1, $int2, $int3, $int4);
+~script528(3, $int4, "Controls", 1088, $int5, $int0, $int1, $int2, $int3, $int4);
+~script530(0, $int1, $int0, $int1, $int2, $int3, $int4);
+return();

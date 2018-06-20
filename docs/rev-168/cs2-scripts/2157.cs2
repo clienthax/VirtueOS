@@ -1,0 +1,7 @@
+[clientscript,chatdefault_stopinput]
+%varc11 = 1;
+if(if_gethide(162:33) == 0) {
+~script299(1, 1);
+}
+~script927(0);
+return();

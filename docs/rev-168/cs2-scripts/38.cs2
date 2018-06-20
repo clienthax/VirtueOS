@@ -1,0 +1,49 @@
+[clientscript,script38](int $int0, int $int1, string $string0, int $int2, int $int3)
+$int4 = 0;
+$int5 = 0;
+if(%varc1 < add(clientclock, $int2)) {
+if(%varc1 < clientclock) {
+%varc1 = clientclock;
+}
+%varc1 = add(%varc1, 2);
+return();
+}
+%varc1 = add(add(clientclock, $int2), 10);
+if(%varc2 == 0) {
+if($int3 > if_getwidth(if_getlayer($int1))) {
+$int3 = if_getwidth(if_getlayer($int1));
+}
+$int3 = sub($int3, 4);
+if_setsize(add(4, parawidth($int3, 495, $string0)), add(4, multiply(13, paraheight($int3, 495, $string0))), 0, 0, $int1);
+$int4 = add(if_getx($int0), 5);
+$int5 = add(add(if_gety($int0), if_getheight($int0)), 5);
+if(if_getlayer($int1) != -1) {
+if($int4 > sub(if_getwidth(if_getlayer($int1)), if_getwidth($int1))) {
+$int4 = sub(if_getwidth(if_getlayer($int1)), if_getwidth($int1));
+}
+if($int5 > sub(if_getheight(if_getlayer($int1)), if_getheight($int1))) {
+$int5 = sub(sub(if_gety($int0), if_getheight($int1)), 5);
+}
+}
+if_setposition($int4, $int5, 0, 0, $int1);
+cc_deleteall($int1);
+cc_create($int1, Rectangle, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(1);
+cc_setcolor(0xFFFFA0);
+cc_create($int1, Rectangle, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setfill(0);
+cc_setcolor(0x000000);
+cc_create($int1, Text, 2);
+cc_setsize(4, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_settext($string0);
+cc_settextalign(0, 1, 0);
+cc_settextfont(495);
+cc_setcolor(0x000000);
+%varc2 = 1;
+}
+return();

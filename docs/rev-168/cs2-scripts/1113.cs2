@@ -1,0 +1,16 @@
+[clientscript,script1113](int $int0, int $int1, string $string0)
+$int2 = multiply($int0, 2);
+cc_create($int1, Graphic, $int2);
+.cc_create($int1, Text, add($int2, 1));
+cc_setsize(72, 36, 0, 0);
+.cc_setsize(72, 0, 0, 1);
+$int2 = multiply($int0, 72);
+cc_setposition($int2, 0, 0, 1);
+.cc_setposition($int2, 0, 0, 1);
+cc_setop(1, $string0);
+.cc_settextfont(494);
+.cc_settextalign(1, 1, 0);
+.cc_setcolor(0xFF981F);
+.cc_settextshadow(1);
+.cc_settext($string0);
+return();

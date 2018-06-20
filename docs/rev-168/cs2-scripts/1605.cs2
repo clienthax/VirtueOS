@@ -1,0 +1,18 @@
+[clientscript,script1605](int $int0, int $int1, int $int2, int $int3)
+$string0 = "";
+if(%varbit5432 == 1) {
+$string0 = "Deposit all";
+if_settext("Items stored here <col=ff0000>cannot</col> be taken by other players.<br>Any <col=ff0000>non-raiding</col> items left in here <col=ff0000>can</col> be retrieved outside.", $int2);
+if(cc_find($int1, $int3) == 1) {
+cc_settext($string0);
+}
+if_setonop("script1612(-2147483644, $int1, $string0, 495)", $int1);
+} else {
+$string0 = "Bank all";
+if_settext("You must retrieve <col=ff0000>all your items</col> from the private storage<br>before you can re-enter the Chambers of Xeric.", $int2);
+if(cc_find($int1, $int3) == 1) {
+cc_settext($string0);
+}
+if_setonop("script1612(-2147483644, $int1, $string0, 495)", $int1);
+}
+return();

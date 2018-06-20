@@ -1,0 +1,235 @@
+[proc,script19](int $int0)(int)
+$int1 = 0;
+$int2 = 0;
+$int3 = 0;
+$int4 = inv_getobj(94, 3);
+if(map_members == 1) {
+if(inv_total(93, 12791) > 0) {
+$int3 = %varbit1623;
+$int2 = %varbit1622;
+$int1 = %varbit29;
+}
+} else {
+if($int4 != -1) {
+if(oc_members($int4) == 1) {
+$int4 = -1;
+}
+}
+}
+$int5 = 0;
+switch($int0) {
+case 556:
+if(%varbit4145 == 1) {
+return(2147483647);
+}
+if(enum(obj, boolean, 988, $int4) == 1) {
+return(2147483647);
+}
+if(~script234 == 1) {
+return(inv_total(93, 11688));
+}
+$int5 = inv_total(93, 556);
+if(map_members == 1) {
+$int5 = ~add($int5, inv_total(93, 4697));
+$int5 = ~add($int5, inv_total(93, 4695));
+$int5 = ~add($int5, inv_total(93, 4696));
+$int5 = ~add($int5, inv_total(93, 11715));
+if(enum(int, boolean, 983, $int1) == 1) {
+$int5 = ~add($int5, %varbit1624);
+}
+if(enum(int, boolean, 983, $int2) == 1) {
+$int5 = ~add($int5, %varbit1625);
+}
+if(enum(int, boolean, 983, $int3) == 1) {
+$int5 = ~add($int5, %varbit1626);
+}
+}
+return($int5);
+case 555:
+if(%varbit4145 == 1) {
+return(2147483647);
+}
+if(enum(obj, boolean, 989, $int4) == 1) {
+return(2147483647);
+}
+if(~script234 == 1) {
+return(inv_total(93, 11687));
+}
+$int5 = inv_total(93, 555);
+if(map_members == 1) {
+$int5 = ~add($int5, inv_total(93, 4694));
+$int5 = ~add($int5, inv_total(93, 4695));
+$int5 = ~add($int5, inv_total(93, 4698));
+$int5 = ~add($int5, inv_total(93, 11716));
+if(enum(int, boolean, 987, $int1) == 1) {
+$int5 = ~add($int5, %varbit1624);
+}
+if(enum(int, boolean, 987, $int2) == 1) {
+$int5 = ~add($int5, %varbit1625);
+}
+if(enum(int, boolean, 987, $int3) == 1) {
+$int5 = ~add($int5, %varbit1626);
+}
+}
+return($int5);
+case 557:
+if(%varbit4145 == 1) {
+return(2147483647);
+}
+if(enum(obj, boolean, 996, $int4) == 1) {
+return(2147483647);
+}
+if(~script234 == 1) {
+return(inv_total(93, 11689));
+}
+$int5 = inv_total(93, 557);
+if(map_members == 1) {
+$int5 = ~add($int5, inv_total(93, 4696));
+$int5 = ~add($int5, inv_total(93, 4699));
+$int5 = ~add($int5, inv_total(93, 4698));
+$int5 = ~add($int5, inv_total(93, 11717));
+if(enum(int, boolean, 993, $int1) == 1) {
+$int5 = ~add($int5, %varbit1624);
+}
+if(enum(int, boolean, 993, $int2) == 1) {
+$int5 = ~add($int5, %varbit1625);
+}
+if(enum(int, boolean, 993, $int3) == 1) {
+$int5 = ~add($int5, %varbit1626);
+}
+}
+return($int5);
+case 554:
+if(%varbit4145 == 1) {
+return(2147483647);
+}
+if(enum(obj, boolean, 997, $int4) == 1) {
+return(2147483647);
+}
+if(~script234 == 1) {
+return(inv_total(93, 11686));
+}
+if(inv_getobj(94, 5) == 20714) {
+if(map_members == 1) {
+return(2147483647);
+}
+}
+$int5 = inv_total(93, 554);
+if(map_members == 1) {
+$int5 = ~add($int5, inv_total(93, 4694));
+$int5 = ~add($int5, inv_total(93, 4697));
+$int5 = ~add($int5, inv_total(93, 4699));
+$int5 = ~add($int5, inv_total(93, 11718));
+if(enum(int, boolean, 994, $int1) == 1) {
+$int5 = ~add($int5, %varbit1624);
+}
+if(enum(int, boolean, 994, $int2) == 1) {
+$int5 = ~add($int5, %varbit1625);
+}
+if(enum(int, boolean, 994, $int3) == 1) {
+$int5 = ~add($int5, %varbit1626);
+}
+}
+return($int5);
+case 561:
+if(~script234 == 1) {
+return(inv_total(93, 11693));
+}
+$int5 = inv_total(93, 561);
+if(map_members == 1) {
+if($int4 == 22370) {
+return(2147483647);
+}
+if(enum(int, namedobj, 982, $int1) == 561) {
+$int5 = ~add($int5, %varbit1624);
+}
+if(enum(int, namedobj, 982, $int2) == 561) {
+$int5 = ~add($int5, %varbit1625);
+}
+if(enum(int, namedobj, 982, $int3) == 561) {
+$int5 = ~add($int5, %varbit1626);
+}
+}
+case 8843:
+if($int4 == 2416 || $int4 == 8841) {
+return(1);
+}
+return(0);
+case 2417:
+switch($int4) {
+case 2417:
+case 12902:
+case 12904:
+case 11791:
+return(1);
+}
+return(0);
+case 4170:
+switch($int4) {
+case 12902:
+case 21255:
+case 12904:
+case 22296:
+case 4170:
+case 11791:
+return(1);
+}
+return(0);
+case 1409:
+if($int4 == 1409 || $int4 == 12658) {
+return(1);
+}
+return(0);
+case 2415:
+if($int4 == $int0 || $int4 == 22296) {
+return(1);
+}
+return(0);
+}
+$int6 = enum(obj, obj, 13, $int0);
+if($int6 != -1) {
+if(~script234 == 1) {
+if(map_members == 1 || oc_members($int6) == 0) {
+return(inv_total(93, $int6));
+}
+return(0);
+}
+}
+if(%varbit4145 == 1) {
+if(enum(obj, int, 55, $int0) != 0) {
+if(map_members == 1 || oc_members($int0) == 0) {
+return(2147483647);
+}
+return(0);
+}
+}
+if(map_members == 1) {
+$int5 = inv_total(93, $int0);
+if($int0 == 562) {
+$int5 = ~add($int5, inv_total(93, 11712));
+} else {
+if($int0 == 560) {
+$int5 = ~add($int5, inv_total(93, 11713));
+} else {
+if($int0 == 565) {
+$int5 = ~add($int5, inv_total(93, 11714));
+}
+}
+}
+if($int0 == enum(int, namedobj, 982, $int1)) {
+$int5 = ~add($int5, %varbit1624);
+}
+if($int0 == enum(int, namedobj, 982, $int2)) {
+$int5 = ~add($int5, %varbit1625);
+}
+if($int0 == enum(int, namedobj, 982, $int3)) {
+$int5 = ~add($int5, %varbit1626);
+}
+} else {
+if(oc_members($int0) == 0) {
+$int5 = inv_total(93, $int0);
+} else {
+$int5 = 0;
+}
+}
+return($int5);

@@ -1,0 +1,40 @@
+[clientscript,script1464](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if_settrans(0, $int0);
+if_settrans(0, $int1);
+$string0 = "Low-Alchemy";
+if(%varbit5398 == 1) {
+$string0 = "High-Alchemy";
+if_settext("High Alchemy", $int2);
+if_setgraphic(75, $int0);
+if_setonmouserepeat("settrans(-2147483645, 120)", $int0);
+if_setonmouseleave("settrans(-2147483645, 0)", $int0);
+if_setonop("script489(-2147483644, 2)", $int0);
+if_setgraphic(41, $int1);
+if_setonmouserepeat("null()", $int1);
+if_setonmouseleave("null()", $int1);
+if_setonop("null()", $int1);
+} else {
+if_settext("Low Alchemy", $int2);
+if_setgraphic(25, $int0);
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setonop("null()", $int0);
+if_setgraphic(91, $int1);
+if_setonmouserepeat("settrans(-2147483645, 120)", $int1);
+if_setonmouseleave("settrans(-2147483645, 0)", $int1);
+if_setonop("script489(-2147483644, 2)", $int1);
+}
+if_settext("Charges: <tostring(sub(30, %varbit4554))>", $int4);
+if(%varbit4554 < 30) {
+if_setcolor(0xFF981F, $int4);
+} else {
+if_setcolor(0xFF0000, $int4);
+}
+$int6 = $int5;
+while($int6 > 0) {
+$int6 = sub($int6, 1);
+if(cc_find($int3, $int6) == 1) {
+cc_setop(1, $string0);
+}
+}
+return();

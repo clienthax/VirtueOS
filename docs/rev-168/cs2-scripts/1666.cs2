@@ -1,0 +1,5 @@
+[clientscript,script1666](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+sound_synth(2266, 1, 0);
+%varc186 = $int0;
+~script1664($int1, $int2, $int3, $int4, $int5, $int6);
+return();

@@ -1,0 +1,12 @@
+[clientscript,script1445](int $int0)
+$int1 = 0;
+cc_deleteall($int0);
+while($int1 < 13) {
+cc_create($int0, Graphic, $int1);
+cc_setsize(5, 16, 0, 0);
+cc_setposition(0, multiply($int1, 20), 0, 0);
+cc_setgraphic(937);
+cc_sethide(1);
+$int1 = add($int1, 1);
+}
+return();

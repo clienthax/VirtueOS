@@ -1,0 +1,33 @@
+[clientscript,script0](int $int0, int $int1, int $int2, int $int3, int $int4)
+if_setonvartransmit("script5($int1, $int0, $int3, $int2, $int4){702}", $int2);
+cc_deleteall($int0);
+cc_deleteall($int1);
+if_sethide(1, $int2);
+if_sethide(1, $int4);
+if_settext("Select a reward<br><br>on the left to<br><br>display information<br><br>here.", $int3);
+$int5 = 0;
+$int6 = divide(if_getwidth($int0), 3);
+$int7 = divide(sub($int6, 36), 2);
+$int8 = 20;
+while($int5 < 9) {
+cc_create($int1, Graphic, $int5);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add($int7, multiply(add(multiply($int7, 2), 36), modulo($int5, 3))), $int8, 0, 0);
+cc_setobject_nonum(enum(int, obj, 1382, $int5), 0);
+cc_setop(1, "Details");
+cc_setonop("script4(-2147483643, $int1, $int0, $int3, $int2, $int4)");
+cc_setonmouseover("script9(-2147483643, $int1, $int0)");
+cc_setonmouseleave("script22(-2147483643, $int1, $int0)");
+cc_create($int0, Text, $int5);
+cc_setsize(56, 62, 0, 0);
+cc_setposition(add(sub($int7, 10), multiply(add(multiply(sub($int7, 10), 2), 56), modulo($int5, 3))), $int8, 0, 0);
+cc_settext(enum(int, string, 1383, $int5));
+cc_settextalign(1, 2, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+$int5 = add($int5, 1);
+if(modulo($int5, 3) == 0) {
+$int8 = add($int8, 80);
+}
+}
+return();

@@ -1,0 +1,30 @@
+[clientscript,script1985](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9)
+$int10 = ~steelborder($int1, "", 0);
+~script1987($int1, $int10, $int4, $int5, $int8, $int9);
+if_setonvartransmit("script1986($int1, $int10, $int4, $int5, $int8, $int9){261}", $int0);
+if_setgraphic(170, $int6);
+if_setop(1, "Discard-All", $int6);
+if_setontimer("null()", $int6);
+if_setonmouserepeat("script1988(1, $int7, -1, -1)", $int6);
+if_setonmouseleave("script1988(0, $int7, -1, -1)", $int6);
+if_setonop("script1989(-2147483644, $int6, $int7, -1, -1)", $int6);
+$int11 = add(36, 10);
+$int12 = add(32, 8);
+cc_deleteall($int2);
+$int13 = 0;
+while($int13 < 90) {
+cc_create($int2, Graphic, $int13);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add(1, multiply(modulo($int13, 8), $int11)), add(3, multiply(divide($int13, 8), $int12)), 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setop(2, "Take-All");
+cc_setop(9, "Value");
+cc_setop(10, "Examine");
+cc_sethide(1);
+$int13 = add($int13, 1);
+}
+~scrollbar_vertical($int3, $int2, 792, 789, 790, 791, 773, 788);
+~script1992($int2, $int3);
+if_setoninvtransmit("script1991($int2, $int3){525}", $int0);
+return();

@@ -1,0 +1,3 @@
+[clientscript,script880](int $int0)
+if_settext("Rank: <tostring(%varp649)>", $int0);
+return();

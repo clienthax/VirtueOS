@@ -1,0 +1,13 @@
+[clientscript,script1094](int $int0)
+cc_deleteall($int0);
+cc_create($int0, Graphic, 0);
+.cc_create($int0, Text, 1);
+cc_setposition(0, 0, 1, 0);
+.cc_setposition(0, 0, 1, 0);
+cc_settiling(1);
+cc_setgraphic(1040);
+.cc_setcolor(0xFF981F);
+.cc_settextfont(495);
+.cc_settextshadow(1);
+.cc_settextalign(0, 0, 0);
+return();

@@ -1,0 +1,18 @@
+[proc,script2031](int $int0)(int)
+$int1 = %varp1588;
+$int2 = sub(~max(multiply(10, stat_xp(^attack)), %varp1435), %varp1714);
+$int2 = multiply(~min($int2, divide(%varp1588, 2)), 2);
+$int1 = sub($int1, ~min($int2, $int1));
+$int2 = sub(~max(multiply(10, stat_xp(^strength)), %varp1436), %varp1715);
+$int2 = multiply(~min($int2, divide(%varp1588, 2)), 2);
+$int1 = sub($int1, ~min($int2, $int1));
+$int2 = sub(~max(multiply(10, stat_xp(^defence)), %varp1439), %varp1718);
+$int2 = multiply(~min($int2, divide(%varp1588, 3)), 3);
+$int1 = sub($int1, ~min($int2, $int1));
+$int2 = sub(~max(multiply(10, stat_xp(^ranged)), %varp1437), %varp1716);
+$int2 = multiply(~min($int2, divide(%varp1588, 3)), 3);
+$int1 = sub($int1, ~min($int2, $int1));
+$int2 = sub(~max(multiply(10, stat_xp(^magic)), %varp1438), %varp1717);
+$int2 = multiply(~min($int2, divide(%varp1588, 2)), 2);
+$int1 = sub($int1, ~min($int2, $int1));
+return(divide($int1, $int0));

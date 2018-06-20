@@ -1,0 +1,11 @@
+[clientscript,script370](int $int0, int $int1)
+$string0 = "Split Private Chat<br>(currently off)";
+if(%varp287 <= 0) {
+if_setgraphic(761, $int0);
+} else {
+$string0 = "Split Private Chat<br>(currently on)";
+if_setgraphic(762, $int0);
+}
+if_setonmouserepeat("script526($int0, -1, $int1, $string0, 25, 190)", $int0);
+%varc2 = 0;
+return();

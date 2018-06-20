@@ -1,0 +1,12 @@
+[clientscript,script560](int $int0, string $string0)
+cc_create($int0, Text, ~script198($int0));
+cc_setposition(0, 0, 0, 0);
+cc_setsize(if_getwidth($int0), if_getheight($int0), 0, 0);
+cc_settextfont(495);
+cc_setcolor(0xFFFFFF);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext($string0);
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+return();

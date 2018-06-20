@@ -1,0 +1,12 @@
+[clientscript,script1616](int $int0, int $int1, int $int2)
+~script1624($int1);
+cc_deleteall($int2);
+if(%varbit5509 == 1 || %varbit3459 == 1) {
+if_sethide(1, $int0);
+if_setonop("null()", $int2);
+if_setontimer("null()", $int2);
+return();
+}
+if_sethide(0, $int0);
+~script1617($int2);
+return();

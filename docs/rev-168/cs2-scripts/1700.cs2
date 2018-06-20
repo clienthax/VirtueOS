@@ -1,0 +1,37 @@
+[clientscript,script1700](int $int0)
+$int1 = ~toplevel_getcomponents;
+if($int1 == -1) {
+return();
+}
+$int2 = 1439;
+$int3 = 1440;
+if(if_hassub(enum(component, component, $int1, 10551310)) == 1) {
+if_settrans(125, $int0);
+if_setgraphic($int3, $int0);
+if_setonmouserepeat("settrans(-2147483645, 0)", $int0);
+if_setonmouseleave("settrans(-2147483645, 125)", $int0);
+if_clearops($int0);
+if_setop(1, "Close", $int0);
+if_setopbase("<col=ff9040>Floating panel</col>", $int0);
+if_setonop("script489(-2147483644, 2)", $int0);
+} else {
+if_settrans(0, $int0);
+if_setgraphic($int2, $int0);
+if_setonmouserepeat("script44(-2147483645, $int3)", $int0);
+if_setonmouseleave("script44(-2147483645, $int2)", $int0);
+if_clearops($int0);
+if($int1 == 1745) {
+if_setop(1, "Fullscreen", $int0);
+if(%varbit6254 == 0) {
+if_setop(3, "Minimise", $int0);
+} else {
+if_setop(3, "Restore", $int0);
+}
+} else {
+if_setop(1, "Floating", $int0);
+if_setop(2, "Fullscreen", $int0);
+}
+if_setopbase("<col=ff9040>World Map</col>", $int0);
+if_setonop("script489(-2147483644, 6)", $int0);
+}
+return();

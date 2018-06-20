@@ -1,0 +1,20 @@
+[clientscript,script1383](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if($int0 > $int2) {
+~script1385($int0, 0, 3, 0);
+return();
+}
+$int6 = enum(int, component, 1424, $int0);
+if($int6 == -1) {
+return();
+}
+if_sethide(1, $int6);
+$int7 = 0;
+$int8 = 0;
+$int9 = 0;
+$gosubResult1387_0, $gosubResult1387_1, $gosubResult1387_2 = ~script1387($int1);
+$int9 = $gosubResult1387_2;
+$int8 = $gosubResult1387_1;
+$int7 = $gosubResult1387_0;
+if_setsize($int3, $int3, 0, 0, $int6);
+if_setposition(sub(multiply($int7, $int3), $int4), sub(multiply($int9, $int3), $int5), 0, 2, $int6);
+return();

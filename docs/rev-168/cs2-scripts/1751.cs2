@@ -1,0 +1,5 @@
+[clientscript,script1751](int $int0, int $int1)
+if_setontimer("script1750($int0, $int1, -1, -1, -1, -1, -1)", $int0);
+cc_deleteall($int0);
+cc_deleteall($int1);
+return();

@@ -1,0 +1,8 @@
+[clientscript,script1729](int $int0, int $int1, int $int2, int $int3)
+if(clientclock < $int3) {
+return();
+}
+if(cc_find($int1, $int2) == 1) {
+~script1730($int0, $int1, $int2);
+}
+return();

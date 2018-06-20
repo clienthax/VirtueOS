@@ -1,0 +1,9 @@
+[clientscript,script889](int $int0, int $int1)
+$int2 = inv_total(93, $int1);
+if($int2 > 0) {
+if_setcolor(0xFF0000, $int0);
+} else {
+if_setcolor(0xB5B54A, $int0);
+}
+if_settext(tostring($int2), $int0);
+return();

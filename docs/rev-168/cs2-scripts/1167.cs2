@@ -1,0 +1,8 @@
+[clientscript,script1167](int $int0, int $int1, int $int2, int $int3)
+if($int3 != 1) {
+return();
+}
+if_setgraphic($int1, $int0);
+sound_synth(2266, 1, 0);
+if_setontimer("script1168(-2147483645, $int2, add(clientclock, 20))", $int0);
+return();

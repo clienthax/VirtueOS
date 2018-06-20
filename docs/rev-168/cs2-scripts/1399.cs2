@@ -1,0 +1,16 @@
+[clientscript,script1399](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, string $string0)
+cc_deleteall($int0);
+$int16 = ~script835($int0, 0);
+cc_create($int0, Text, $int16);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext($string0);
+if_setonmouserepeat("script85(-2147483645, $int16, 16777215)", $int0);
+if_setonmouseleave("script85(-2147483645, $int16, 16750623)", $int0);
+if_setonop("script1402(-2147483644, -2147483645, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15)", $int0);
+if_setop(1, $string0, $int0);
+return();

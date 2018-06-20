@@ -1,0 +1,14 @@
+[clientscript,script142](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = if_getwidth($int3);
+$int6 = multiply($int5, 2);
+$int7 = divide($int5, 2);
+if_setsize($int6, if_getheight($int1), 0, 0, $int1);
+if_setsize($int6, if_getheight($int2), 0, 0, $int2);
+$int8 = if_getx($int3);
+if_setposition(sub($int8, $int7), if_gety($int2), 0, 0, $int2);
+if_setposition(sub(sub($int8, add($int5, 6)), $int7), if_gety($int1), 0, 0, $int1);
+$int9 = inv_size(90);
+~script768($int9, $int5, $int7, $int1, $int2, $int3, $int4);
+if_setoninvtransmit("script767($int9, $int5, $int7, $int1, $int2, $int3, $int4){90}", $int0);
+if_setonvartransmit("script767($int9, $int5, $int7, $int1, $int2, $int3, $int4){1042}", $int0);
+return();

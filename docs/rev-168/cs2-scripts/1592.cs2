@@ -1,0 +1,52 @@
+[clientscript,script1592](int $int0, int $int1, int $int2)
+$int3 = 0;
+$int4 = 0;
+$int5 = 0;
+cc_deleteall($int0);
+$int6 = 0;
+$int7 = enum(int, obj, 1666, $int6);
+while($int7 != -1) {
+cc_create($int0, Graphic, $int6);
+$int4 = invother_total(582, $int7);
+if($int4 > 0) {
+cc_setsize(36, 32, 0, 0);
+$int5 = multiply(divide($int3, 10), add(32, 8));
+cc_setposition(add(2, multiply(modulo($int3, 10), add(36, 8))), $int5, 0, 0);
+cc_setoutline(1);
+cc_settrans(0);
+cc_setgraphicshadow(0x333333);
+cc_setobject($int7, $int4);
+cc_setop(1, "Withdraw");
+cc_setop(2, "Withdraw-5");
+cc_setop(3, "Withdraw-10");
+cc_setop(4, "Withdraw-All");
+cc_setop(5, "Withdraw-X");
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int7)></col>");
+cc_setonop("script177(-2147483644, -2147483645, -2147483643)");
+$int3 = add($int3, 1);
+} else {
+cc_sethide(1);
+}
+$int6 = add($int6, 1);
+$int7 = enum(int, obj, 1666, $int6);
+}
+$int8 = 0;
+$int5 = add($int5, 32);
+if($int5 > if_getheight($int0)) {
+$int8 = if_getscrolly($int0);
+if_setscrollsize(0, $int5, $int0);
+} else {
+if_setscrollsize(0, 0, $int0);
+}
+~script72($int1, $int0, $int8);
+$int3 = 0;
+$int6 = inv_size(582);
+while($int6 > 0) {
+$int6 = sub($int6, 1);
+if(invother_getnum(582, $int6) > 0) {
+$int3 = add($int3, 1);
+}
+}
+if_settext(tostring($int3), $int2);
+return();

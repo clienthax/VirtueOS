@@ -1,0 +1,13 @@
+[clientscript,script1258](int $int0, int $int1, int $int2, int $int3, string $string0)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+if(cc_find($int2, $int1) == 1) {
+if(.cc_find($int2, $int3) == 1) {
+.cc_settext("---");
+.cc_setontimer("script1259(add(clientclock, 60), $int2, $int3, $string0)");
+}
+cc_resume_pausebutton;
+}
+return();

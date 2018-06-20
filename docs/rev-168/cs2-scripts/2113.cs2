@@ -1,0 +1,7 @@
+[clientscript,script2113](int $int0, int $int1)
+$int1 = add(clientclock, multiply($int1, 30));
+if_setontimer("script2114($int1)", 304:7);
+$int0 = divide(multiply(divide(multiply($int0, 100), 900), 150), 100);
+if_setsize($int0, 20, 0, 0, 304:4);
+if_setsize(sub(150, $int0), 20, 0, 0, 304:3);
+return();

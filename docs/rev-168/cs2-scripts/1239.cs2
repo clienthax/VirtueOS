@@ -1,0 +1,4 @@
+[clientscript,script1239]
+if_sethide(1, 367:6);
+if_sethide(1, 367:5);
+return();

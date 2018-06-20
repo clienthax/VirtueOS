@@ -1,0 +1,5 @@
+[clientscript,script1578](int $int0)
+$int1 = add(add(add(add(add(%varbit457, %varbit458), %varbit459), %varbit460), %varbit461), %varbit462);
+$int2 = add(%varbit463, multiply($int1, 2));
+if_settext("Rewards potential: <tostring(interpolate(0, 100, 0, 1012, $int2))>%", $int0);
+return();

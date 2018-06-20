@@ -1,0 +1,11 @@
+[clientscript,script525](int $int0, int $int1)
+if(cc_find($int0, $int1) == 1) {
+cc_sethide(1);
+}
+if(cc_find($int0, add($int1, 4)) == 1) {
+cc_setgraphic(699);
+}
+if(cc_find($int0, add($int1, 8)) == 1) {
+cc_setcolor(0xFF981F);
+}
+return();

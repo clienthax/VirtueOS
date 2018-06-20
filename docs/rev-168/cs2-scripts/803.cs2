@@ -1,0 +1,19 @@
+[clientscript,script803](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13)
+$int14 = ~steelborder($int1, "", 0);
+~script793($int5);
+$int15 = 0;
+$int16 = enum(int, component, 245, $int15);
+while($int16 != -1) {
+~script794($int1, $int14, $int3, $int4, $int6, $int10, $int16, $int15, $int13);
+$int15 = add($int15, 1);
+$int16 = enum(int, component, 245, $int15);
+}
+~script819($int6, $int7, $int8);
+~script816($int9);
+~script773($int10, $int11, $int12);
+~script806($int1, $int14, $int3, $int4, $int6, $int10, $int13);
+if_setonvartransmit("script804($int1, $int14, $int3, $int4, $int6, $int10, $int13){375}", $int0);
+if_setonstocktransmit("script804($int1, $int14, $int3, $int4, $int6, $int10, $int13)", $int0);
+if_setonop("script805(-2147483644, -1, -1, $int1, $int14, $int3, $int4, $int6, $int10, $int13)", $int3);
+~script541($int2, "History", 0);
+return();

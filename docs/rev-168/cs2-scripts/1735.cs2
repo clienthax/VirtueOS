@@ -1,0 +1,11 @@
+[clientscript,script1735](int $int0)
+$int1 = 897;
+$int2 = 297;
+cc_setgraphic($int1);
+%varcstr138 = "";
+~script1738("Search", $int0);
+cc_setonmouserepeat("script229(-2147483645, -2147483643, $int2, -1)");
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int1, -1)");
+cc_setop(1, "Search");
+cc_setonop("script1736($int0, cc_getid, .cc_getid)");
+return();

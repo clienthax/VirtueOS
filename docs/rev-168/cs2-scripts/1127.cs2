@@ -1,0 +1,24 @@
+[clientscript,script1127](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8)
+if($int0 != 1) {
+return();
+}
+$int2 = sub($int2, 1);
+if(~script1972 == 1) {
+if(string_length(enum(int, string, 1879, $int2)) <= 0) {
+return();
+}
+} else {
+if(string_length(enum(int, string, 1246, $int2)) <= 0) {
+return();
+}
+}
+if($int1 == $int6) {
+%varp1107 = $int2;
+} else {
+if($int1 == $int8) {
+%varp1306 = $int2;
+}
+}
+~script1131($int5, $int7);
+~script1129($int3, $int4, $int5, $int7);
+return();

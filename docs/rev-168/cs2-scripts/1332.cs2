@@ -1,0 +1,3 @@
+[clientscript,script1332]
+if_settextalign(1, 1, 17, 203:2);
+return();

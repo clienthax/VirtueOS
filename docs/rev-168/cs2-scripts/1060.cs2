@@ -1,0 +1,29 @@
+[clientscript,script1060](int $int0, int $int1, int $int2, string $string0)
+$int3 = 0;
+$int4 = -1;
+$gosubResult1063_0, $gosubResult1063_1 = ~script1063($int1);
+$int4 = $gosubResult1063_1;
+$int3 = $gosubResult1063_0;
+$int5 = 8331264;
+if($int3 > 0) {
+$int5 = 2154272;
+}
+if($int1 == 6797) {
+if($int4 == -1) {
+$int4 = 6797;
+}
+$string0 = oc_name($int4);
+}
+if(cc_find($int0, 0) == 1) {
+if(.cc_find($int0, 1) == 1) {
+cc_settext($string0);
+cc_setcolor($int5);
+.cc_setcolor($int5);
+.cc_settext("<tostring($int3)>/<tostring($int2)>");
+}
+}
+if(cc_find($int0, 2) == 1) {
+cc_setobject_nonum($int4, $int3);
+}
+if_setopbase("<col=ff9040><oc_name($int4)></col>", $int0);
+return();

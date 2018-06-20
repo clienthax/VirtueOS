@@ -1,0 +1,3 @@
+[clientscript,script1241](int $int0)
+if_settext("x <tostring(%varbit861)>", $int0);
+return();

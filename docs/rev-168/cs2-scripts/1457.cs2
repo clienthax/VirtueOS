@@ -1,0 +1,12 @@
+[clientscript,script1457](int $int0, int $int1, int $int2, int $int3, int $int4)
+sound_synth(2266, 1, 0);
+if_setonmouseover("null()", $int2);
+if_setonmouseleave("null()", $int2);
+if(.cc_find($int2, $int3) == 1) {
+.cc_sethide(1);
+}
+if_setontimer("script1458(add(clientclock, 60), add(clientclock, 10), $int1, $int2, $int3, $int4)", $int2);
+if(cc_find($int1, $int0) == 1) {
+cc_resume_pausebutton;
+}
+return();

@@ -1,0 +1,5 @@
+[clientscript,script1977](int $int0, int $int1)
+%varc41 = -1;
+~script923;
+~script178;
+return();

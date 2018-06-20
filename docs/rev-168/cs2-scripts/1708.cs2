@@ -1,0 +1,29 @@
+[clientscript,script1708](int $int0, int $int1, int $int2, int $int3)
+sound_synth(2266, 1, 0);
+~script1014($int0);
+if_sethide(0, $int1);
+$int4 = 0;
+$int5 = -1;
+while($int4 <= 31) {
+$int5 = enum(int, maparea, 1697, $int4);
+if($int5 != -1) {
+if(cc_find($int2, add($int4, 1)) == 1) {
+if($int3 != -1) {
+if(~script1715($int5, %varc188) != -1) {
+if(.cc_find($int2, $int3) == 1) {
+.cc_sethide(0);
+.cc_setposition(1, sub(cc_gety, 1), 0, 0);
+}
+$int3 = -1;
+}
+}
+}
+}
+$int4 = add($int4, 1);
+}
+if($int3 != -1) {
+if(cc_find($int2, $int3) == 1) {
+cc_sethide(1);
+}
+}
+return();

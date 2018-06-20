@@ -1,0 +1,6 @@
+[clientscript,script2240]
+if(~script1972 == 0) {
+return();
+}
+~script1983(%varc215, %varc216);
+return();

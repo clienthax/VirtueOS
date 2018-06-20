@@ -1,0 +1,6 @@
+[clientscript,script33](int $int0, int $int1)
+$int2 = add(if_getscrolly($int1), 4);
+if(cc_find($int0, 1) == 1) {
+~scrollbar_vertical_doscroll($int0, $int1, $int2, 1);
+}
+return();

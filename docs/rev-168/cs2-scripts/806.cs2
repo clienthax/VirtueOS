@@ -1,0 +1,32 @@
+[clientscript,script806](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+~script41($int6);
+$int7 = sub(%varbit4439, 1);
+$int8 = enum(int, inv, 150, $int7);
+if($int8 == -1) {
+if_sethide(1, $int2);
+if_sethide(0, $int3);
+if_sethide(1, $int4);
+if_sethide(1, $int5);
+if(cc_find($int0, $int1) == 1) {
+cc_settext("Grand Exchange");
+}
+return();
+}
+if_sethide(0, $int2);
+if_settrans(0, $int2);
+if(stockmarket_isofferempty($int7) == 1) {
+if_sethide(1, $int3);
+if_sethide(1, $int4);
+if_sethide(0, $int5);
+if(cc_find($int0, $int1) == 1) {
+cc_settext("Grand Exchange: Set up offer");
+}
+return();
+}
+if_sethide(1, $int3);
+if_sethide(0, $int4);
+if_sethide(1, $int5);
+if(cc_find($int0, $int1) == 1) {
+cc_settext("Grand Exchange: Offer status");
+}
+return();

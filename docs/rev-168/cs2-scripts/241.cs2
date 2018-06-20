@@ -1,0 +1,15 @@
+[clientscript,script241](int $int0, int $int1, int $int2)
+cc_setobject($int1, 1);
+$int3 = ~script19($int1);
+if($int3 >= $int2) {
+.cc_setcolor(0x00FF00);
+if($int0 == 1) {
+.cc_settext("<tostring($int2)>/<tostring($int2)>");
+} else {
+.cc_settext("<~magic_tostring($int3)>/<tostring($int2)>");
+}
+} else {
+.cc_setcolor(0xFF0000);
+.cc_settext("<~magic_tostring($int3)>/<tostring($int2)>");
+}
+return();

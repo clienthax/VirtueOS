@@ -1,0 +1,20 @@
+[clientscript,script131](int $int0)
+if(~script1701(-1, -1) == 0) {
+return();
+}
+$int1 = ~toplevel_getcomponents;
+if($int1 == -1) {
+return();
+}
+$int2 = enum(component, component, $int1, 10551309);
+if($int2 != -1) {
+if($int0 == 13) {
+if(%varbit4681 == 1) {
+if(if_hassub($int2) == 1) {
+if_close();
+return();
+}
+}
+}
+}
+return();

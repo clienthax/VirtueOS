@@ -1,0 +1,7 @@
+[clientscript,script1674](int $int0, string $string0, int $int1)
+if(clientclock >= $int1) {
+if(%varc5 != 15) {
+~script1672($int0, $string0);
+}
+}
+return();

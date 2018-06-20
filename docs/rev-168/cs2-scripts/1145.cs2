@@ -1,0 +1,10 @@
+[clientscript,script1145](int $int0, int $int1)
+~script1278($int1);
+if(cc_find($int0, 4) == 1) {
+cc_sethide(1);
+}
+if(cc_find($int0, 5) == 1) {
+cc_sethide(1);
+}
+if_setop(1, "Unprotect", $int0);
+return();

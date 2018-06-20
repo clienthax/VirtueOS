@@ -1,0 +1,5 @@
+[clientscript,script842](int $int0, int $int1, int $int2)
+if_setop(1, "Fixed mode", $int0);
+if_setop(1, "Resizable mode", $int1);
+~script843($int0, $int1, $int2);
+return();

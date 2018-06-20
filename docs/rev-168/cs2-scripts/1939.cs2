@@ -1,0 +1,226 @@
+[clientscript,script1939](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18, int $int19, int $int20, int $int21, int $int22, int $int23, int $int24, int $int25, int $int26, int $int27)
+if_settext(tostring(%varbit5672), $int14);
+if(%varbit5672 > 0) {
+if_setcolor(0xFFFF00, $int14);
+if(%varbit5685 == 1) {
+if_setobject_nonum(21374, 0, $int0);
+} else {
+if_setobject_nonum(12402, 0, $int0);
+}
+} else {
+if_setcolor(0xC80000, $int14);
+if(%varbit5685 == 1) {
+if_setobject_nonum(21374, 0, $int0);
+} else {
+if_setobject_nonum(21361, 0, $int0);
+}
+}
+if_settext(tostring(%varbit5673), $int15);
+if(%varbit5673 > 0) {
+if_setcolor(0xFFFF00, $int15);
+if(%varbit5685 == 2) {
+if_setobject_nonum(21375, 0, $int1);
+} else {
+if_setobject_nonum(12403, 0, $int1);
+}
+} else {
+if_setcolor(0xC80000, $int15);
+if(%varbit5685 == 2) {
+if_setobject_nonum(21375, 0, $int1);
+} else {
+if_setobject_nonum(21362, 0, $int1);
+}
+}
+if_settext(tostring(%varbit5674), $int16);
+if(%varbit5674 > 0) {
+if_setcolor(0xFFFF00, $int16);
+if(%varbit5685 == 3) {
+if_setobject_nonum(21376, 0, $int2);
+} else {
+if_setobject_nonum(12404, 0, $int2);
+}
+} else {
+if_setcolor(0xC80000, $int16);
+if(%varbit5685 == 3) {
+if_setobject_nonum(21376, 0, $int2);
+} else {
+if_setobject_nonum(21363, 0, $int2);
+}
+}
+if_settext(tostring(%varbit5675), $int17);
+if(%varbit5675 > 0) {
+if_setcolor(0xFFFF00, $int17);
+if(%varbit5685 == 4) {
+if_setobject_nonum(21377, 0, $int3);
+} else {
+if_setobject_nonum(12405, 0, $int3);
+}
+} else {
+if_setcolor(0xC80000, $int17);
+if(%varbit5685 == 4) {
+if_setobject_nonum(21377, 0, $int3);
+} else {
+if_setobject_nonum(21364, 0, $int3);
+}
+}
+if_settext(tostring(%varbit5676), $int18);
+if(%varbit5676 > 0) {
+if_setcolor(0xFFFF00, $int18);
+if(%varbit5685 == 5) {
+if_setobject_nonum(21378, 0, $int4);
+} else {
+if_setobject_nonum(12406, 0, $int4);
+}
+} else {
+if_setcolor(0xC80000, $int18);
+if(%varbit5685 == 5) {
+if_setobject_nonum(21378, 0, $int4);
+} else {
+if_setobject_nonum(21365, 0, $int4);
+}
+}
+if_settext(tostring(%varbit5677), $int19);
+if(%varbit5677 > 0) {
+if_setcolor(0xFFFF00, $int19);
+if(%varbit5685 == 6) {
+if_setobject_nonum(21379, 0, $int5);
+} else {
+if_setobject_nonum(12407, 0, $int5);
+}
+} else {
+if_setcolor(0xC80000, $int19);
+if(%varbit5685 == 6) {
+if_setobject_nonum(21379, 0, $int5);
+} else {
+if_setobject_nonum(21366, 0, $int5);
+}
+}
+if_settext(tostring(%varbit5678), $int20);
+if(%varbit5678 > 0) {
+if_setcolor(0xFFFF00, $int20);
+if(%varbit5685 == 7) {
+if_setobject_nonum(21380, 0, $int6);
+} else {
+if_setobject_nonum(12408, 0, $int6);
+}
+} else {
+if_setcolor(0xC80000, $int20);
+if(%varbit5685 == 7) {
+if_setobject_nonum(21380, 0, $int6);
+} else {
+if_setobject_nonum(21367, 0, $int6);
+}
+}
+if_settext(tostring(%varbit5679), $int21);
+if(%varbit5679 > 0) {
+if_setcolor(0xFFFF00, $int21);
+if(%varbit5685 == 8) {
+if_setobject_nonum(21381, 0, $int7);
+} else {
+if_setobject_nonum(12409, 0, $int7);
+}
+} else {
+if_setcolor(0xC80000, $int21);
+if(%varbit5685 == 8) {
+if_setobject_nonum(21381, 0, $int7);
+} else {
+if_setobject_nonum(21368, 0, $int7);
+}
+}
+if_settext(tostring(%varbit5680), $int22);
+if(%varbit5680 > 0) {
+if_setcolor(0xFFFF00, $int22);
+if(%varbit5685 == 9) {
+if_setobject_nonum(21382, 0, $int8);
+} else {
+if_setobject_nonum(12410, 0, $int8);
+}
+} else {
+if_setcolor(0xC80000, $int22);
+if(%varbit5685 == 9) {
+if_setobject_nonum(21382, 0, $int8);
+} else {
+if_setobject_nonum(21369, 0, $int8);
+}
+}
+if_settext(tostring(%varbit5681), $int23);
+if(%varbit5681 > 0) {
+if_setcolor(0xFFFF00, $int23);
+if(%varbit5685 == 10) {
+if_setobject_nonum(21383, 0, $int9);
+} else {
+if_setobject_nonum(12411, 0, $int9);
+}
+} else {
+if_setcolor(0xC80000, $int23);
+if(%varbit5685 == 10) {
+if_setobject_nonum(21383, 0, $int9);
+} else {
+if_setobject_nonum(21370, 0, $int9);
+}
+}
+if_settext(tostring(%varbit5682), $int24);
+if(%varbit5682 > 0) {
+if_setcolor(0xFFFF00, $int24);
+if(%varbit5685 == 11) {
+if_setobject_nonum(21384, 0, $int10);
+} else {
+if_setobject_nonum(12642, 0, $int10);
+}
+} else {
+if_setcolor(0xC80000, $int24);
+if(%varbit5685 == 11) {
+if_setobject_nonum(21384, 0, $int10);
+} else {
+if_setobject_nonum(21371, 0, $int10);
+}
+}
+if_settext(tostring(%varbit5683), $int25);
+if(%varbit5683 > 0) {
+if_setcolor(0xFFFF00, $int25);
+if(%varbit5685 == 12) {
+if_setobject_nonum(21385, 0, $int11);
+} else {
+if_setobject_nonum(12938, 0, $int11);
+}
+} else {
+if_setcolor(0xC80000, $int25);
+if(%varbit5685 == 12) {
+if_setobject_nonum(21385, 0, $int11);
+} else {
+if_setobject_nonum(21372, 0, $int11);
+}
+}
+if_settext(tostring(%varbit5684), $int26);
+if(%varbit5684 > 0) {
+if_setcolor(0xFFFF00, $int26);
+if(%varbit5685 == 13) {
+if_setobject_nonum(21386, 0, $int12);
+} else {
+if_setobject_nonum(13249, 0, $int12);
+}
+} else {
+if_setcolor(0xC80000, $int26);
+if(%varbit5685 == 13) {
+if_setobject_nonum(21386, 0, $int12);
+} else {
+if_setobject_nonum(21373, 0, $int12);
+}
+}
+if_settext(tostring(%varbit6056), $int27);
+if(%varbit6056 > 0) {
+if_setcolor(0xFFFF00, $int27);
+if(%varbit5685 == 14) {
+if_setobject_nonum(21790, 0, $int13);
+} else {
+if_setobject_nonum(21802, 0, $int13);
+}
+} else {
+if_setcolor(0xC80000, $int27);
+if(%varbit5685 == 14) {
+if_setobject_nonum(21790, 0, $int13);
+} else {
+if_setobject_nonum(21789, 0, $int13);
+}
+}
+return();

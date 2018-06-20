@@ -1,0 +1,7 @@
+[clientscript,script1016](int $int0)
+cc_deleteall($int0);
+cc_create($int0, Graphic, 0);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(4, 0, 0, 1);
+~thinbox($int0, 1);
+return();

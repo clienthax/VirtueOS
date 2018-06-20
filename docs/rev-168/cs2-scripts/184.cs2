@@ -1,0 +1,12 @@
+[clientscript,script184](int $int0, int $int1)
+switch($int0) {
+case 2:
+sendChatSettings($int1, chat_getfilter_private, chat_getfilter_trade);
+case 3:
+sendChatSettings(chat_getfilter_public, $int1, chat_getfilter_trade);
+case 4:
+%varp1054 = $int1;
+case 5:
+sendChatSettings(chat_getfilter_public, chat_getfilter_private, $int1);
+}
+return();

@@ -1,0 +1,24 @@
+[clientscript,script43](int $int0, int $int1, int $int2, int $int3)
+$string0 = "<~script1971("Click", "Tap")> here to enable zooming using <~script1971("the mouse scroll wheel", "the pinch gesture")>.";
+if($int2 == 1) {
+if(%varbit6357 == 0) {
+%varbit6357 = 1;
+} else {
+%varbit6357 = 0;
+$string0 = "<~script1971("Click", "Tap")> here to disable zooming using <~script1971("the mouse scroll wheel", "the pinch gesture")>.";
+}
+if(%varbit6357 == 0) {
+if_sethide(1, $int1);
+} else {
+if(%varbit6357 == 1) {
+if_sethide(0, $int1);
+}
+}
+if_setonmouserepeat("script526($int0, -1, $int3, $string0, 25, 190)", $int0);
+if_setonmouseleave("script40($int3)", $int0);
+} else {
+if($int2 == 2) {
+~script42(256, 320);
+}
+}
+return();

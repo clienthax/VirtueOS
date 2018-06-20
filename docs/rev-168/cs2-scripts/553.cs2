@@ -1,0 +1,45 @@
+[proc,script553](int)
+$int0 = -1;
+$int1 = -1;
+$string0 = "";
+$string1 = "";
+$string2 = "";
+$int2 = -1;
+$int3 = -2147483648;
+$int4 = -2147483648;
+$int5 = 0;
+$int6 = 0;
+while($int5 <= 107) {
+if(chat_gethistorylength($int5) > 0) {
+$int6 = getChatMessagesParam6($int5, 0);
+$string2 = getChatMessagesParam5($int5, 0);
+$string1 = getChatMessagesParam4($int5, 0);
+$string0 = getChatMessagesOwner($int5, 0);
+$int1 = getChatMessagesCycle($int5, 0);
+$int0 = getChatMessagesNextId($int5, 0);
+if($int1 > $int3 || $int0 > $int2) {
+$int3 = $int1;
+$int2 = $int0;
+}
+switch($int5) {
+case 3:
+case 6:
+case 7:
+if($int1 > $int4) {
+$int4 = $int1;
+%varcstr0 = removetags($string0);
+}
+case 14:
+if($int0 != -1) {
+if($int1 >= %varc202) {
+if($int1 > sub(clientclock, 3000)) {
+%varc55 = $int1;
+if_setontimer("script664(0)", 162:1);
+}
+}
+}
+}
+}
+$int5 = add($int5, 1);
+}
+return($int2);

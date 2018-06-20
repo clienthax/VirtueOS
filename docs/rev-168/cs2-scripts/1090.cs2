@@ -1,0 +1,111 @@
+[clientscript,script1090](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)
+cc_deleteall($int1);
+$int8 = if_getwidth($int1);
+$int9 = divide(sub($int8, 4), 2);
+$int10 = sub($int8, add($int9, 1));
+$int11 = sub($int9, 10);
+$int12 = 0;
+$int13 = 0;
+$int14 = 0;
+$string0 = "";
+$int15 = 0;
+$int16 = -1;
+$int17 = 0;
+$int18 = 0;
+$string1 = "";
+$string2 = "";
+$int19 = 0;
+$int20 = enum(int, int, $int0, $int19);
+while($int20 != -1) {
+while($int20 <= 43) {
+$string1 = enum(int, string, 834, $int20);
+$string2 = ~script1298($int20);
+$string0 = "<$string2> <col=ff0000>(<tostring(enum(int, int, 836, $int20))> points)</col>";
+$int15 = add(multiply(paraheight($int11, 494, $string0), 10), 2);
+if(modulo($int19, 2) == 1) {
+$int16 = enum(int, int, $int0, sub($int19, 1));
+$int14 = $int10;
+} else {
+$int16 = enum(int, int, $int0, add($int19, 1));
+$int14 = 0;
+}
+if($int16 != -1) {
+$int17 = add(multiply(paraheight($int11, 494, "<~script1298($int16)> <col=ff0000>(<tostring(enum(int, int, 836, $int16))> points)</col>"), 10), 2);
+if($int17 > $int15) {
+$int15 = $int17;
+}
+}
+$int18 = add(add($int15, 10), 32);
+.cc_create($int1, Rectangle, $int12);
+$int12 = add($int12, 1);
+.cc_setposition($int14, $int13, 0, 0);
+.cc_setsize($int9, $int18, 0, 0);
+.cc_setcolor(0xFFFFFF);
+.cc_setfill(1);
+.cc_settrans(245);
+.cc_setonmouseover("cc_settrans(-2147483645, .cc_getid, 230, -1)");
+.cc_setonmouseleave("cc_settrans(-2147483645, .cc_getid, 245, -1)");
+.cc_setopbase("<col=ff9040><$string1>");
+cc_create($int1, Rectangle, $int12);
+$int12 = add($int12, 1);
+cc_setposition($int14, $int13, 0, 0);
+cc_setsize($int9, $int18, 0, 0);
+cc_setfill(0);
+cc_setcolor(0x0E0E0C);
+cc_create($int1, Rectangle, $int12);
+$int12 = add($int12, 1);
+cc_setposition(add($int14, 1), add($int13, 1), 0, 0);
+cc_setsize(sub($int9, 2), sub($int18, 2), 0, 0);
+cc_setfill(0);
+cc_setcolor(0x474745);
+cc_create($int1, Graphic, $int12);
+$int12 = add($int12, 1);
+cc_setposition(add($int14, 5), add($int13, 5), 0, 0);
+cc_setsize(36, 32, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setobject_nonum(enum(int, obj, 837, $int20), 1);
+cc_create($int1, Graphic, $int12);
+$int12 = add($int12, 1);
+cc_setsize(16, 16, 0, 0);
+cc_settiling(1);
+cc_setposition(add(add($int14, 5), 36), add($int13, 14), 0, 0);
+~script413($int20, $string2, $int3, $int4, $int5, $int6, $int7);
+.cc_setonvartransmit("script412(-2147483645, .cc_getid, cc_getid, $int20, $string2, $int3, $int4, $int5, $int6, $int7){1076, 1344, 695}");
+cc_create($int1, Text, $int12);
+$int12 = add($int12, 1);
+cc_setposition(add(add($int14, 21), 36), add($int13, 6), 0, 0);
+cc_setsize(sub($int9, add(26, 36)), 32, 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext($string1);
+cc_create($int1, Text, $int12);
+$int12 = add($int12, 1);
+cc_setposition(add($int14, 5), add(add($int13, 5), 32), 0, 0);
+cc_setsize($int11, $int15, 0, 0);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(0, 1, 0);
+cc_settext($string0);
+$int19 = add($int19, 1);
+$int20 = enum(int, int, $int0, $int19);
+if($int20 == -1) {
+$int13 = add($int13, $int18);
+} else {
+if(modulo($int19, 2) == 0) {
+$int13 = add(add($int13, $int18), 3);
+}
+}
+}
+}
+if_setscrollpos(0, 0, $int1);
+if($int13 > if_getheight($int1)) {
+if_setscrollsize(0, $int13, $int1);
+} else {
+if_setscrollsize(0, 0, $int1);
+}
+~scrollbar_vertical($int2, $int1, 792, 789, 790, 791, 773, 788);
+return();

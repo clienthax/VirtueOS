@@ -1,0 +1,33 @@
+[clientscript,script308](int $int0, int $int1, int $int2, int $int3, int $int4)
+cc_deleteall($int0);
+$int5 = 0;
+$int6 = 0;
+$gosubResult309_0, $gosubResult309_1 = ~script309($int0, $int1, "Resources", $int5, $int6, $int1, $int2, $int3, $int4);
+$int6 = $gosubResult309_1;
+$int5 = $gosubResult309_0;
+$gosubResult309_0, $gosubResult309_1 = ~script309($int0, $int2, "Upgrades", $int5, $int6, $int1, $int2, $int3, $int4);
+$int6 = $gosubResult309_1;
+$int5 = $gosubResult309_0;
+$gosubResult309_0, $gosubResult309_1 = ~script309($int0, $int3, "Benefits", $int5, $int6, $int1, $int2, $int3, $int4);
+$int6 = $gosubResult309_1;
+$int5 = $gosubResult309_0;
+cc_create($int0, Text, $int5);
+cc_setposition($int6, 0, 0, 0);
+cc_setsize(sub(if_getwidth($int0), $int6), if_getheight($int0), 0, 0);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+~script311;
+cc_setonvartransmit("script310(-2147483645, -2147483643){1060}");
+if_sethide(0, $int4);
+if($int4 != $int1) {
+if_sethide(1, $int1);
+}
+if($int4 != $int2) {
+if_sethide(1, $int2);
+}
+if($int4 != $int3) {
+if_sethide(1, $int3);
+}
+return();

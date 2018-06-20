@@ -1,0 +1,4 @@
+[clientscript,script1710](int $int0, int $int1)
+if_sethide(1, $int1);
+~script1013($int0);
+return();

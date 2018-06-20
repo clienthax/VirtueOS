@@ -1,0 +1,101 @@
+[clientscript,script499](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9)
+$int10 = 0;
+$string0 = enum(int, string, $int1, $int10);
+while(string_length($string0) > 0) {
+cc_create($int0, Rectangle, $int10);
+cc_setfill(1);
+cc_setcolor(0x000000);
+cc_settrans(255);
+cc_setop(1, $string0);
+$int10 = add($int10, 1);
+$string0 = enum(int, string, $int1, $int10);
+}
+if($int10 <= 0) {
+return();
+}
+$int11 = 0;
+if($int9 == 1) {
+$int11 = divide($int10, 2);
+if(modulo($int10, 2) == 1) {
+$int11 = add($int11, 1);
+}
+} else {
+$int11 = $int10;
+}
+$int12 = divide(if_getwidth($int0), $int11);
+$int13 = 40;
+$int14 = 0;
+if($int12 <= $int13) {
+$int13 = $int12;
+} else {
+$int14 = divide(sub($int12, $int13), 2);
+}
+$int15 = divide(sub($int12, 25), 2);
+$int16 = sub(if_getheight($int0), 20);
+if($int9 == 1) {
+$int16 = divide($int16, 2);
+}
+$int17 = sub(add(20, $int16), 25);
+$int18 = 0;
+if($int9 == 1) {
+$int18 = add($int17, $int16);
+}
+$int19 = $int10;
+$int20 = 0;
+$int21 = 0;
+$int22 = 0;
+$int23 = -1;
+$int24 = 0;
+while($int20 < $int10) {
+if($int9 == 1 && $int20 >= $int11) {
+$int22 = add(20, $int16);
+$int24 = 1;
+$int21 = multiply(sub($int20, $int11), $int12);
+} else {
+$int21 = multiply($int20, $int12);
+$int22 = 20;
+$int24 = 0;
+}
+if(cc_find($int0, $int20) == 1) {
+cc_setsize($int13, $int16, 0, 0);
+cc_setposition(add($int21, $int14), $int22, 0, 0);
+}
+cc_create($int0, Model, $int19);
+$int19 = add($int19, 1);
+cc_setposition($int21, $int22, 0, 0);
+cc_setsize($int12, $int16, 0, 0);
+cc_setmodel(enum(int, model, $int2, $int20));
+cc_setmodelangle(0, $int6, 0, $int7, 0, $int5);
+if($int3 != -1) {
+$int23 = enum(int, model, $int3, $int20);
+if($int23 != -1) {
+cc_create($int0, Model, $int19);
+$int19 = add($int19, 1);
+cc_setposition($int21, $int22, 0, 0);
+cc_setsize($int12, $int16, 0, 0);
+cc_setmodel($int23);
+cc_setmodelangle(0, $int6, 0, $int7, 0, $int5);
+}
+}
+if($int4 != -1) {
+cc_create($int0, Model, $int19);
+$int19 = add($int19, 1);
+cc_setposition($int21, $int22, 0, 0);
+cc_setsize($int12, $int16, 0, 0);
+cc_setmodel($int4);
+cc_setmodelangle(0, $int6, 0, $int7, 0, $int5);
+}
+cc_create($int0, Graphic, $int19);
+$int19 = add($int19, 1);
+cc_setsize(25, 25, 0, 0);
+if($int24 == 1) {
+cc_setposition(add($int21, $int15), $int18, 0, 0);
+} else {
+cc_setposition(add($int21, $int15), $int17, 0, 0);
+}
+cc_setgraphic(442);
+~script501($int20, $int8);
+cc_setonvartransmit("script500(-2147483645, -2147483643, $int20, $int8){261, 262}");
+$int20 = add($int20, 1);
+}
+return();

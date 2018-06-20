@@ -1,0 +1,28 @@
+[clientscript,script805](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9)
+if($int0 != 1) {
+if($int0 != 2) {
+return();
+}
+}
+sound_synth(2266, 1, 0);
+if($int0 != 1) {
+return();
+}
+$int10 = enum(int, inv, 150, $int1);
+if($int10 == -1) {
+%varbit4439 = 0;
+} else {
+if(stockmarket_isofferempty($int1) == 1) {
+if(inv_getobj($int10, 0) != -1 || inv_getobj($int10, 1) != -1) {
+return();
+}
+}
+%varbit4439 = add($int1, 1);
+if($int2 != -1) {
+if(stockmarket_isofferempty($int1) == 1) {
+%varbit4397 = $int2;
+}
+}
+}
+~script806($int3, $int4, $int5, $int6, $int7, $int8, $int9);
+return();

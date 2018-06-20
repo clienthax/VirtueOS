@@ -1,0 +1,63 @@
+[clientscript,script1548](int $int0, string $string0)
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551366)) == 0) {
+return();
+}
+if(string_length($string0) <= 0) {
+return();
+}
+$string1 = "";
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+$string2 = removetags($string1);
+$string3 = "";
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string3 = $gosubResult632_0;
+if(cc_find(32768010, multiply($int0, 7)) == 1) {
+cc_setopbase("<col=ff9040><$string2></col>");
+~script1549($int0, 0);
+cc_setonop("script1552($string2)");
+}
+$int1 = 0;
+$int2 = 0;
+$int3 = 0;
+$string4 = "";
+if(cc_find(32768010, add(multiply($int0, 7), 1)) == 1) {
+$int2 = cc_getwidth;
+$int1 = string_length($string1);
+if($int1 > 0 && parawidth(512, 494, $string1) > $int2) {
+cc_setonmouserepeat("script526(-2147483645, -2147483643, 32768015, $string2, 25, 190)");
+cc_setonmouseleave("script40(32768015)");
+while($int1 > 1) {
+while($int3 == 0) {
+$int1 = sub($int1, 1);
+$string4 = append(substring($string1, 0, $int1), "...");
+if(parawidth(512, 494, $string4) <= $int2) {
+$int3 = 1;
+$string1 = $string4;
+}
+}
+}
+} else {
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+}
+cc_settext($string1);
+}
+if(cc_find(32768010, add(multiply($int0, 7), 2)) == 1) {
+cc_settext($string3);
+}
+if(cc_find(32768010, add(multiply($int0, 7), 3)) == 1) {
+cc_settext($string0);
+}
+if(cc_find(32768010, add(multiply($int0, 7), 4)) == 1) {
+cc_settext($string2);
+}
+if(cc_find(32768010, add(multiply($int0, 7), 5)) == 1) {
+cc_settext(append_num($int0, ~script1503($string3, 3)));
+}
+if(cc_find(32768010, add(multiply($int0, 7), 6)) == 1) {
+cc_settext(append_num($int0, ~script1503($string0, 4)));
+}
+return();

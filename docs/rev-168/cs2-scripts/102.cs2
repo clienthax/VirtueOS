@@ -1,0 +1,11 @@
+[clientscript,script102](string $string0)
+if(%varc5 <= 0 || %varc5 == 1) {
+~script677;
+if_settext($string0, 162:36);
+if_settext("<~script1971("Click", "Tap")> to continue", 162:37);
+if_settextalign(1, 1, 0, 162:37);
+%varc5 = 1;
+if_setonclick("script101(1)", 162:33);
+if_setonkey("null()", 162:37);
+}
+return();

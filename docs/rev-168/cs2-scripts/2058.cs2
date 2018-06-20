@@ -1,0 +1,17 @@
+[clientscript,script2058](int $int0, int $int1, string $string0)
+cc_deleteall($int1);
+$int2 = 0;
+if($int0 == 1) {
+$int2 = ~script2044($int1, $int2);
+} else {
+$int2 = ~script2045($int1, $int2);
+}
+cc_create($int1, Text, $int2);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 0, 1, 1);
+cc_settextalign(1, 1, 0);
+cc_setcolor(if_getmodelyof(270:5));
+cc_settextshadow(0);
+cc_settextfont(494);
+cc_settext($string0);
+return();

@@ -1,0 +1,23 @@
+[clientscript,script1724](int $int0, int $int1, int $int2, string $string0)
+cc_deleteall($int0);
+$int3 = 0;
+if($int1 == 1) {
+$int3 = ~script198($int0);
+} else {
+$int3 = ~script208($int0);
+}
+cc_create($int0, Graphic, $int3);
+$int3 = add($int3, 1);
+.cc_create($int0, Text, $int3);
+$int3 = add($int3, 1);
+cc_setposition(-1, -1, 1, 1);
+.cc_setposition(-1, -1, 1, 1);
+cc_setsize(29, 22, 0, 0);
+.cc_setsize(0, 0, 1, 1);
+cc_setgraphic(1043);
+.cc_setcolor($int2);
+.cc_settextshadow(0);
+.cc_settextfont(495);
+.cc_settextalign(1, 1, 0);
+.cc_settext($string0);
+return();

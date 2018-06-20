@@ -1,0 +1,5 @@
+[clientscript,script1336](int $int0)
+~script208($int0);
+sound_synth(576, 1, 0);
+if_setontimer("script1337(-2147483645, add(clientclock, 15))", $int0);
+return();

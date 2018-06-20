@@ -1,0 +1,6 @@
+[clientscript,script728]
+if(%varc67 < inv_total(93, 13192)) {
+%varc67 = add(%varc67, 1);
+~script729;
+}
+return();

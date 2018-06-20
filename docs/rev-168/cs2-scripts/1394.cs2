@@ -1,0 +1,19 @@
+[clientscript,script1394](int $int0, int $int1)
+$int2 = modulo(sub(clientclock, $int1), 40);
+$int3 = 0;
+if($int2 <= 20) {
+$int3 = add(120, interpolate(0, $int2, 0, 20, 100));
+} else {
+$int3 = add(120, sub(100, interpolate(0, sub($int2, 20), 0, 20, 100)));
+}
+$int4 = add($int3, 30);
+if(cc_find($int0, 1) == 1) {
+cc_settrans($int4);
+}
+if(cc_find($int0, 2) == 1) {
+cc_settrans($int3);
+}
+if(cc_find($int0, 3) == 1) {
+cc_settrans($int4);
+}
+return();

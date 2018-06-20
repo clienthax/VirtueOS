@@ -1,0 +1,9 @@
+[clientscript,script1698](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11)
+if_setobject_nonum(453, 0, $int2);
+if_setobject_nonum(444, 0, $int3);
+if_setobject_nonum(447, 0, $int4);
+if_setobject_nonum(449, 0, $int5);
+if_setobject_nonum(451, 0, $int6);
+~script1941($int1, $int7, $int8, $int9, $int10, $int11);
+if_setonvartransmit("script1940($int1, $int7, $int8, $int9, $int10, $int11){694, 203, 1227}", $int0);
+return();

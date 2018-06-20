@@ -1,0 +1,16 @@
+[clientscript,script692](int $int0, int $int1, int $int2, int $int3, int $int4)
+$int5 = -1;
+$int6 = 0;
+while($int6 < $int1) {
+$int5 = ~script1484($int6);
+if(cc_find($int0, $int6) == 1) {
+if($int5 != -1 && .cc_find($int0, add($int1, $int5)) == 1) {
+cc_sethide(0);
+.cc_setposition(multiply(modulo($int6, 5), $int3), multiply(divide($int6, 5), $int4), 0, 0);
+} else {
+cc_sethide(1);
+}
+}
+$int6 = add($int6, 1);
+}
+return();

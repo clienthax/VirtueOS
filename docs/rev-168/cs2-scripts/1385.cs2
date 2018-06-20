@@ -1,0 +1,139 @@
+[clientscript,script1385](int $int0, int $int1, int $int2, int $int3)
+if($int0 < 8) {
+if($int0 == 1) {
+%varc141 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 2) {
+%varc142 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 3) {
+%varc143 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 4) {
+%varc144 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 5) {
+%varc145 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 6) {
+%varc146 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 7) {
+%varc147 = ~script1386($int1, $int2, $int3);
+} else {
+mes("The menu could not draw room <tostring($int0)>.");
+}
+}
+}
+}
+}
+}
+}
+} else {
+if($int0 < 16) {
+if($int0 == 8) {
+%varc148 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 9) {
+%varc149 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 10) {
+%varc150 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 11) {
+%varc151 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 12) {
+%varc152 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 13) {
+%varc153 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 14) {
+%varc154 = ~script1386($int1, $int2, $int3);
+} else {
+%varc155 = ~script1386($int1, $int2, $int3);
+}
+}
+}
+}
+}
+}
+}
+} else {
+if($int0 < 24) {
+if($int0 == 16) {
+%varc156 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 17) {
+%varc157 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 18) {
+%varc158 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 19) {
+%varc159 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 20) {
+%varc160 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 21) {
+%varc161 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 22) {
+%varc162 = ~script1386($int1, $int2, $int3);
+} else {
+%varc163 = ~script1386($int1, $int2, $int3);
+}
+}
+}
+}
+}
+}
+}
+} else {
+if($int0 == 24) {
+%varc164 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 25) {
+%varc165 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 26) {
+%varc166 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 27) {
+%varc167 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 28) {
+%varc168 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 29) {
+%varc169 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 30) {
+%varc170 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 31) {
+%varc174 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 32) {
+%varc176 = ~script1386($int1, $int2, $int3);
+} else {
+if($int0 == 33) {
+%varc177 = ~script1386($int1, $int2, $int3);
+} else {
+mes("The menu could not draw room <tostring($int0)>.");
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+return();

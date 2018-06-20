@@ -1,0 +1,11 @@
+[clientscript,script95]
+if(string_length(%varcstr28) > 0) {
+if(%varc62 == 1) {
+if_setop(10, "<col=00afff>Resume autochat</col>", enum(int, component, 683, 2));
+} else {
+if_setop(10, "<col=00afff>Pause autochat</col>", enum(int, component, 683, 2));
+}
+} else {
+if_setop(10, "", enum(int, component, 683, 2));
+}
+return();

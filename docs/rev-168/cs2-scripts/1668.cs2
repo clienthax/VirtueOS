@@ -1,0 +1,12 @@
+[clientscript,script1668](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+$int7 = 0;
+if($int0 == 1) {
+if(cc_find($int1, $int2) == 1) {
+sound_synth(2266, 1, 0);
+$int7 = clientclock;
+~script1683($int7, $int1, $int3, $int4, $int5, $int6);
+cc_setontimer("script1671($int7, -2147483645, -2147483643, $int3, $int4, $int5, $int6)");
+cc_setonkey("null()");
+}
+}
+return();

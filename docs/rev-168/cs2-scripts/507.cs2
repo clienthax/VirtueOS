@@ -1,0 +1,10 @@
+[clientscript,script507](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13)
+cc_setop(1, "View tab");
+cc_setop(6, "Collapse tab");
+cc_setop(7, "Remove placeholders");
+cc_setopbase("<col=ff9040><tostring($int13)></col>");
+cc_setonop("script504($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, -2147483644, $int13)");
+cc_setdragdeadzone(5);
+cc_setdragdeadtime(5);
+cc_setondrag("script515($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12)");
+return();

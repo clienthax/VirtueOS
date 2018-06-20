@@ -1,0 +1,23 @@
+[clientscript,script737](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+$int7 = if_getwidth(596:0);
+$int8 = scale(1, 4, $int7);
+$int8 = ~max($int8, 150);
+$int8 = ~min($int8, 500);
+if($int0 == $int8) {
+return();
+}
+if_setsize($int8, 38, 0, 0, $int1);
+if(%varbit4692 == 2) {
+if_setposition(0, 5, 1, 0, $int1);
+if_settextalign(1, 1, 0, $int4);
+if_setposition(0, 0, 1, 1, $int4);
+if_setposition(0, 0, 1, 0, $int2);
+} else {
+if_setposition(5, 22, 0, 0, $int1);
+if_settextalign(0, 1, 0, $int4);
+if_setposition(10, 0, 0, 1, $int4);
+if_setposition(0, 0, 0, 0, $int2);
+}
+if_setontimer("script736($int8, $int1, $int2, $int3, $int4, $int5, $int6)", 596:0);
+~script739($int5, $int6);
+return();

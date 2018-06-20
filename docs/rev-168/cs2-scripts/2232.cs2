@@ -1,0 +1,8 @@
+[clientscript,script2232]
+if(~script1972 == 0) {
+return();
+}
+if(if_find(11927564) == 1) {
+cc_settext("Tap here to logout");
+}
+return();

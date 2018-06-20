@@ -1,0 +1,4 @@
+[clientscript,script1211](int $int0, int $int1)
+$int2 = interpolate(0, $int1, 0, 1000, 1000);
+cc_settext("<enum(int, string, 1264, $int0)>: <col=ffffff><tostring(divide($int2, 10))>.<tostring(modulo($int2, 10))>%</col>");
+return();

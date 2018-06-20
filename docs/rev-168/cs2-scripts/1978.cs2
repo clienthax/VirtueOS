@@ -1,0 +1,7 @@
+[clientscript,script1978]
+if(%varc196 != -1) {
+%varc41 = %varc196;
+~script923;
+~script178;
+}
+return();

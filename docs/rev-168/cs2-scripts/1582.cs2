@@ -1,0 +1,13 @@
+[clientscript,script1582](int $int0, int $int1, int $int2)
+cc_sethide(0);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(0, multiply($int2, add(32, 5)), 0, 0);
+cc_setoutline(1);
+cc_settrans(0);
+cc_setgraphicshadow(0x333333);
+cc_setobject($int0, $int1);
+cc_setop(1, "Take");
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int0)></col>");
+cc_setonop("script1583(-2147483644, -2147483645, -2147483643)");
+return();

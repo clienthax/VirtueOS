@@ -1,0 +1,33 @@
+[clientscript,script1294](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10)
+if($int0 == 17301529) {
+~script1296($int1, 19613, 0, 0, 2, 0, 563, 1, -1, 0, -1, 0, 6, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10);
+}
+if($int0 == 17301531) {
+~script1296($int1, 19615, 0, 1, 1, 0, 563, 1, -1, 0, -1, 0, 17, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10);
+}
+if($int0 == 17301533) {
+~script1296($int1, 19617, 0, 0, 0, 0, 563, 1, 558, 2, -1, 0, 28, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10);
+}
+if($int0 == 17301535) {
+~script1296($int1, 19619, 0, 0, 0, 0, 563, 1, 566, 2, -1, 0, 40, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10);
+}
+if($int0 == 17301537) {
+~script1296($int1, 19621, 0, 0, 1, 0, 563, 1, 566, 1, -1, 0, 48, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10);
+}
+if($int0 == 17301539) {
+~script1296($int1, 19623, 0, 0, 0, 0, 563, 2, 566, 2, -1, 0, 61, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10);
+}
+if($int0 == 17301541) {
+~script1296($int1, 19625, 0, 0, 0, 0, 563, 1, 566, 1, 561, 1, 65, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10);
+}
+if($int0 == 17301543) {
+~script1296($int1, 19627, 0, 0, 0, 0, 563, 1, 566, 1, 565, 1, 71, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10);
+}
+if($int0 == 17301545) {
+~script1296($int1, 19629, 0, 0, 0, 0, 563, 2, 566, 2, 565, 1, 83, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10);
+}
+if($int0 == 17301547) {
+~script1296($int1, 19631, 0, 0, 0, 0, 563, 2, 566, 2, 565, 2, 90, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10);
+}
+if_sethide(0, $int1);
+return();

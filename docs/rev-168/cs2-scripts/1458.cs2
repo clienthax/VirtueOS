@@ -1,0 +1,14 @@
+[clientscript,script1458](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if(clientclock < $int1) {
+return();
+}
+if(.cc_find($int3, $int4) == 1) {
+if(.cc_gethide == 1) {
+.cc_sethide(0);
+}
+}
+if(clientclock < $int0) {
+return();
+}
+~script1456($int2, -1, $int5);
+return();

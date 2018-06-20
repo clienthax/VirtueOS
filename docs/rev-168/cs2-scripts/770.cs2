@@ -1,0 +1,31 @@
+[proc,script770](int $int0, int $int1, int $int2)(int)
+$int3 = if_getwidth($int1);
+$int4 = if_getheight($int1);
+$int5 = sub($int3, 32);
+$int6 = sub($int4, 32);
+~create_graphic($int1, $int2, 987, 16, -13, 0, 0, $int5, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int1, $int2, 989, 16, sub($int4, 20), 0, 0, $int5, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int1, $int2, 988, -14, 16, 0, 0, 32, $int6, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int1, $int2, 990, sub($int3, 20), 16, 0, 0, 32, $int6, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int1, $int2, 991, 0, 0, 0, 0, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int1, $int2, 992, $int5, 0, 0, 0, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int1, $int2, 993, 0, $int6, 0, 0, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int1, $int2, 994, $int5, $int6, 0, 0, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+if($int0 < 6) {
+return($int2);
+}
+~create_graphic($int1, $int2, 995, 0, sub($int0, 20), 0, 0, $int3, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int1, $int2, 996, 0, sub($int0, 18), 0, 0, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+~create_graphic($int1, $int2, 997, $int5, sub($int0, 18), 0, 0, 32, 32, 0, 0);
+$int2 = add($int2, 1);
+return($int2);

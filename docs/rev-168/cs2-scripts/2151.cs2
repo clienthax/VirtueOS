@@ -1,0 +1,5 @@
+[proc,script2151](int $int0, int $int1)(int)
+if(~script1972 == 1) {
+return($int1);
+}
+return($int0);

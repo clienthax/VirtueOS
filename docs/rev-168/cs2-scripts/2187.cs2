@@ -1,0 +1,5 @@
+[clientscript,script2187]
+docheat("~freecam");
+~script2224;
+opcode3129(6, %varc204);
+return();

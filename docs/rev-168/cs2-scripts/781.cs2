@@ -1,0 +1,30 @@
+[clientscript,script781](int $int0, int $int1)
+cc_deleteall($int0);
+$int2 = 0;
+$int3 = inv_size(93);
+while($int2 < $int3) {
+cc_create($int0, Graphic, $int2);
+cc_setsize(36, 32, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setdragdeadzone(5);
+cc_setdragdeadtime(5);
+cc_sethide(0);
+$int2 = add($int2, 1);
+}
+cc_deleteall($int1);
+$int2 = 0;
+while($int2 < 4) {
+cc_create($int1, Rectangle, $int2);
+cc_sethide(1);
+cc_setposition($int2, $int2, 0, 0);
+cc_setsize(sub(190, multiply($int2, 2)), sub(261, multiply($int2, 2)), 0, 0);
+cc_setcolor(0xFFFF00);
+cc_setfill(1);
+$int2 = add($int2, 1);
+}
+~script783($int0, $int1);
+if_setoninvtransmit("script782($int0, $int1){93}", $int0);
+if_setonvartransmit("script782($int0, $int1){563, 375}", $int0);
+if_setonstocktransmit("script782($int0, $int1)", $int0);
+return();

@@ -1,0 +1,12 @@
+[clientscript,script1274](int $int0, int $int1, string $string0)
+cc_create(226:4, Graphic, multiply($int0, 2));
+cc_setposition(multiply($int0, 39), 0, 0, 0);
+cc_setsize(39, 29, 0, 0);
+cc_setgraphic(1345);
+cc_setop(1, $string0);
+cc_setonop("script1275($int0)");
+cc_create(226:4, Graphic, add(multiply($int0, 2), 1));
+cc_setposition(add(multiply($int0, 39), 7), 3, 0, 0);
+cc_setsize(25, 20, 0, 0);
+cc_setgraphic($int1);
+return();

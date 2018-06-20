@@ -1,0 +1,36 @@
+[clientscript,bankside_build](int $int0, int $int1, int $int2, int $int3)
+$int4 = 0;
+$int5 = inv_size(516);
+while($int5 > 0) {
+while($int4 == 0) {
+$int5 = sub($int5, 1);
+if(inv_getobj(516, $int5) != -1) {
+$int4 = 1;
+}
+}
+}
+cc_deleteall($int2);
+$int6 = 0;
+$int7 = sub(multiply(sub(42, 36), 3), 2);
+$int8 = multiply(sub(36, 32), 2);
+$int9 = -1;
+$int5 = inv_size(93);
+while($int5 > 0) {
+$int5 = sub($int5, 1);
+if(cc_find($int1, $int5) == 1) {
+$int9 = inv_getobj(93, $int5);
+~script297($int9, inv_getnum(93, $int5), $int1, $int2, $int4, $int0, $int3);
+cc_setposition(add($int7, multiply(modulo($int5, 4), 42)), add($int8, multiply(divide($int5, 4), 36)), 0, 0);
+if($int9 == 11941) {
+if($int4 == 1) {
+.cc_create($int2, Graphic, $int6);
+$int6 = add($int6, 1);
+.cc_setsize(34, 34, 0, 0);
+.cc_setposition(cc_getx, cc_gety, 0, 0);
+.cc_setgraphic(155);
+.cc_settrans(180);
+}
+}
+}
+}
+return();

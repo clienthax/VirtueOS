@@ -1,0 +1,46 @@
+[clientscript,script453](int $int0, int $int1, int $int2)
+cc_deleteall($int1);
+$int3 = 7;
+cc_create($int1, Graphic, 0);
+cc_setsize(36, 32, 0, 0);
+cc_setposition($int3, 25, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setdragdeadzone(5);
+cc_setdragdeadtime(5);
+$int3 = add(add($int3, 36), 20);
+cc_create($int1, Graphic, 1);
+cc_setsize(36, 32, 0, 0);
+cc_setposition($int3, 25, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setdragdeadzone(5);
+cc_setdragdeadtime(5);
+$int3 = add(add($int3, 36), 20);
+cc_create($int1, Graphic, 2);
+cc_setsize(36, 32, 0, 0);
+cc_setposition($int3, 25, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setdragdeadzone(5);
+cc_setdragdeadtime(5);
+~script666($int1);
+if_setonvartransmit("script665($int1){1139, 1140}", $int0);
+cc_deleteall($int2);
+$int3 = add(divide(sub(if_getwidth($int2), add(10, multiply(7, 36))), 6), 36);
+$int4 = add(divide(sub(if_getheight($int2), add(30, multiply(4, 32))), 3), 32);
+$int5 = inv_size(93);
+$int6 = 0;
+while($int6 < $int5) {
+cc_create($int2, Graphic, $int6);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add(5, multiply(modulo($int6, 7), $int3)), add(25, multiply(divide($int6, 7), $int4)), 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setdragdeadzone(5);
+cc_setdragdeadtime(5);
+$int6 = add($int6, 1);
+}
+~script670($int2);
+if_setoninvtransmit("script669($int2){93}", $int0);
+return();

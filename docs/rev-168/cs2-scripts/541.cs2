@@ -1,0 +1,29 @@
+[clientscript,script541](int $int0, int $int1, string $string0)
+if_setsize(add(parawidth(512, 494, $string0), 10), if_getheight($int0), 0, 0, $int0);
+cc_deleteall($int0);
+$int2 = 0;
+if($int1 == 1) {
+$int2 = ~script836($int0, 0);
+} else {
+$int2 = ~script835($int0, 0);
+}
+cc_create($int0, Text, $int2);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 0, 1, 1);
+cc_settextfont(494);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext($string0);
+if_setop(1, $string0, $int0);
+if($int1 == 1) {
+cc_setcolor(0xFFFFFF);
+if_setonmouserepeat("null()", $int0);
+if_setonmouseleave("null()", $int0);
+if_setonop("null()", $int0);
+} else {
+cc_setcolor(0xFF981F);
+if_setonmouserepeat("script85(-2147483645, $int2, 16777215)", $int0);
+if_setonmouseleave("script85(-2147483645, $int2, 16750623)", $int0);
+if_setonop("script542(-2147483644, $int0, $string0)", $int0);
+}
+return();

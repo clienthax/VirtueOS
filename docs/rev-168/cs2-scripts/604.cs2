@@ -1,0 +1,6 @@
+[clientscript,script604](int $int0, int $int1, string $string0)
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551309)) == 0) {
+return();
+}
+~script606($int0, $int1, $string0);
+return();

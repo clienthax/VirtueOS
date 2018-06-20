@@ -1,0 +1,81 @@
+[clientscript,script1525](int $int0)
+~script1527(33226759, 0, 1, "Sort by name", $int0);
+~script1527(33226760, 2, 3, "Sort by combat level", $int0);
+~script1527(33226761, 4, 5, "Sort by skill total", $int0);
+~script1527(33226762, 6, 7, "Sort by kill count", $int0);
+def_int $anArray0(100);
+$int1 = 0;
+$int2 = 0;
+while($int2 == 0) {
+while($int1 < 100) {
+if(cc_find(33226763, multiply($int1, 8)) == 1) {
+$anArray0($int1) = $int1;
+$int1 = add($int1, 1);
+} else {
+$int2 = 1;
+}
+}
+}
+$string0 = "";
+if($int1 >= 2) {
+if(%varc181 == 2 || %varc181 == 3) {
+~script1526(0, 0, sub($int1, 1), 5);
+} else {
+if(%varc181 == 4 || %varc181 == 5) {
+~script1526(0, 0, sub($int1, 1), 6);
+} else {
+if(%varc181 == 6 || %varc181 == 7) {
+~script1526(0, 0, sub($int1, 1), 7);
+} else {
+~script1526(0, 0, sub($int1, 1), 1);
+}
+}
+}
+}
+$int3 = 0;
+$int4 = 0;
+if(%varc181 == 3 || %varc181 == 5 || %varc181 == 7 || %varc181 == 1) {
+$int3 = $int1;
+while($int3 > 0) {
+$int3 = sub($int3, 1);
+if(cc_find(33226763, multiply($anArray0($int3), 8)) == 1) {
+cc_setposition(cc_getx, $int4, 0, 0);
+~script1518($int3, $anArray0($int3), $int0, 1);
+}
+if(cc_find(33226763, add(multiply($anArray0($int3), 8), 1)) == 1) {
+cc_setposition(cc_getx, $int4, 0, 0);
+}
+if(cc_find(33226763, add(multiply($anArray0($int3), 8), 2)) == 1) {
+cc_setposition(cc_getx, $int4, 0, 0);
+}
+if(cc_find(33226763, add(multiply($anArray0($int3), 8), 3)) == 1) {
+cc_setposition(cc_getx, $int4, 0, 0);
+}
+if(cc_find(33226763, add(multiply($anArray0($int3), 8), 4)) == 1) {
+cc_setposition(cc_getx, $int4, 0, 0);
+}
+$int4 = add($int4, 14);
+}
+} else {
+while($int3 < $int1) {
+if(cc_find(33226763, multiply($anArray0($int3), 8)) == 1) {
+cc_setposition(cc_getx, $int4, 0, 0);
+~script1518($int3, $anArray0($int3), $int0, 1);
+}
+if(cc_find(33226763, add(multiply($anArray0($int3), 8), 1)) == 1) {
+cc_setposition(cc_getx, $int4, 0, 0);
+}
+if(cc_find(33226763, add(multiply($anArray0($int3), 8), 2)) == 1) {
+cc_setposition(cc_getx, $int4, 0, 0);
+}
+if(cc_find(33226763, add(multiply($anArray0($int3), 8), 3)) == 1) {
+cc_setposition(cc_getx, $int4, 0, 0);
+}
+if(cc_find(33226763, add(multiply($anArray0($int3), 8), 4)) == 1) {
+cc_setposition(cc_getx, $int4, 0, 0);
+}
+$int4 = add($int4, 14);
+$int3 = add($int3, 1);
+}
+}
+return();

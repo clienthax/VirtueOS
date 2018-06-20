@@ -1,0 +1,30 @@
+[clientscript,script1987](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if(cc_find($int0, $int1) == 1) {
+cc_settext(enum(int, string, 1753, %varp261));
+}
+if_sethide(0, $int4);
+if_sethide(1, $int5);
+if_setgraphic(170, $int2);
+if_setontimer("null()", $int2);
+$int6 = enum(int, namedobj, 1756, %varp261);
+$int7 = enum(int, int, 1757, %varp261);
+if($int6 != -1 && $int7 > 0) {
+if_setgraphic(1342, $int3);
+if_setop(1, "Unlock", $int2);
+if($int7 > 1) {
+if_settext("Fee to unlock:<br><col=ffffff><~script46($int7, ",")> x <oc_name($int6)></col>", $int5);
+} else {
+if_settext("Fee to unlock:<br><col=ffffff><oc_name($int6)></col>", $int5);
+}
+if_setonmouserepeat("script1988(1, $int3, $int4, $int5)", $int2);
+if_setonmouseleave("script1988(0, $int3, $int4, $int5)", $int2);
+if_setonop("script1989(-2147483644, $int2, $int3, $int4, $int5)", $int2);
+} else {
+if_setgraphic(1041, $int3);
+if_setop(1, "Take-All", $int2);
+if_settext("", $int5);
+if_setonmouserepeat("script1988(1, $int3, -1, -1)", $int2);
+if_setonmouseleave("script1988(0, $int3, -1, -1)", $int2);
+if_setonop("script1989(-2147483644, $int2, $int3, -1, -1)", $int2);
+}
+return();

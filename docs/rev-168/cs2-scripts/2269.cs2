@@ -1,0 +1,15 @@
+[clientscript,script2269]
+$string0 = "Limit FPS";
+$string1 = " (disabled)";
+switch(%varbit6364) {
+case 1:
+$string1 = " (15 FPS)";
+case 2:
+$string1 = " (20 FPS)";
+case 3:
+$string1 = " (30 FPS)";
+}
+$string0 = append($string0, $string1);
+if_setonmouserepeat("script526(1245200, -1, 1245204, $string0, 25, 190)", 19:16);
+%varc2 = 0;
+return();

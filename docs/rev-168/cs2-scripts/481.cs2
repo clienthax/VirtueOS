@@ -1,0 +1,3 @@
+[clientscript,script481](int $int0, int $int1, int $int2)
+~script482($int0, add($int1, divide(sub(clientclock, $int2), 30)));
+return();

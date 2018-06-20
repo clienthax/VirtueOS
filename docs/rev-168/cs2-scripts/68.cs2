@@ -1,0 +1,3 @@
+[clientscript,script68](int $int0, string $string0)
+if_settext($string0, $int0);
+return();

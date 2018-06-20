@@ -1,0 +1,347 @@
+[clientscript,smithing_setup]
+$int0 = 0;
+if(%varp197 < 16) {
+$int0 = 1;
+}
+$int1 = 0;
+$int2 = enum(int, obj, 1253, %varbit3216);
+if($int2 == 2349) {
+~smithing_item(20447234, "Dagger", 1205, 0, $int2);
+~smithing_item(20447235, "Sword", 1277, 0, $int2);
+~smithing_item(20447236, "Scimitar", 1321, 0, $int2);
+~smithing_item(20447237, "Long sword", 1291, 0, $int2);
+~smithing_item(20447238, "2-hand sword", 1307, 0, $int2);
+~smithing_item(20447239, "Axe", 1351, 0, $int2);
+~smithing_item(20447240, "Mace", 1422, 0, $int2);
+~smithing_item(20447241, "Warhammer", 1337, 0, $int2);
+~smithing_item(20447242, "Battle axe", 1375, 0, $int2);
+if(%varp314 >= 80) {
+~smithing_item(20447243, "Claws", 3095, 0, $int2);
+} else {
+~smithing_item(20447243, "", -1, 0, $int2);
+}
+~smithing_item(20447244, "Chain body", 1103, 0, $int2);
+~smithing_item(20447245, "Plate legs", 1075, 0, $int2);
+~smithing_item(20447246, "Plate skirt", 1087, 0, $int2);
+~smithing_item(20447247, "Plate body", 1117, 0, $int2);
+~smithing_item(20447248, "Nails", 4819, 0, $int2);
+~smithing_item(20447249, "Medium helm", 1139, 0, $int2);
+~smithing_item(20447250, "Full helm", 1155, 0, $int2);
+~smithing_item(20447251, "Square shield", 1173, 0, $int2);
+~smithing_item(20447252, "Kite shield", 1189, 0, $int2);
+~smithing_item(20447253, "", -1, 0, $int2);
+~smithing_item(20447254, "", -1, 0, $int2);
+~smithing_item(20447255, "Dart tips", 819, $int0, $int2);
+~smithing_item(20447256, "Arrowtips", 39, 0, $int2);
+~smithing_item(20447257, "Knives", 864, 0, $int2);
+~smithing_item(20447258, "Bronze wire", 1794, 0, $int2);
+~smithing_item(20447259, "", -1, 0, $int2);
+if(map_members == 1) {
+~smithing_item(20447260, "Bolts", 9375, 0, $int2);
+~smithing_item(20447261, "Limbs", 9420, 0, $int2);
+~smithing_item(20447262, "Javelin heads", 19570, 0, $int2);
+} else {
+~smithing_item(20447260, "", -1, 0, $int2);
+~smithing_item(20447261, "", -1, 0, $int2);
+~smithing_item(20447262, "", -1, 0, $int2);
+}
+} else {
+if($int2 == 2351) {
+~smithing_item(20447234, "Dagger", 1203, 0, $int2);
+~smithing_item(20447235, "Sword", 1279, 0, $int2);
+~smithing_item(20447236, "Scimitar", 1323, 0, $int2);
+~smithing_item(20447237, "Long sword", 1293, 0, $int2);
+~smithing_item(20447238, "2-hand sword", 1309, 0, $int2);
+~smithing_item(20447239, "Axe", 1349, 0, $int2);
+~smithing_item(20447240, "Mace", 1420, 0, $int2);
+~smithing_item(20447241, "Warhammer", 1335, 0, $int2);
+~smithing_item(20447242, "Battle axe", 1363, 0, $int2);
+if(%varp314 >= 80) {
+~smithing_item(20447243, "Claws", 3096, 0, $int2);
+} else {
+~smithing_item(20447243, "", -1, 0, $int2);
+}
+~smithing_item(20447244, "Chain body", 1101, 0, $int2);
+~smithing_item(20447245, "Plate legs", 1067, 0, $int2);
+~smithing_item(20447246, "Plate skirt", 1081, 0, $int2);
+~smithing_item(20447247, "Plate body", 1115, 0, $int2);
+~smithing_item(20447248, "Nails", 4820, 0, $int2);
+~smithing_item(20447249, "Medium helm", 1137, 0, $int2);
+~smithing_item(20447250, "Full helm", 1153, 0, $int2);
+~smithing_item(20447251, "Square shield", 1175, 0, $int2);
+~smithing_item(20447252, "Kite shield", 1191, 0, $int2);
+~smithing_item(20447253, "Oil lantern frame", 4540, 0, $int2);
+~smithing_item(20447254, "", -1, 0, $int2);
+~smithing_item(20447255, "Dart tips", 820, $int0, $int2);
+~smithing_item(20447256, "Arrowtips", 40, 0, $int2);
+~smithing_item(20447257, "Knives", 863, 0, $int2);
+~smithing_item(20447258, "Iron spit", 7225, 0, $int2);
+~smithing_item(20447259, "", -1, 0, $int2);
+if(map_members == 1) {
+~smithing_item(20447260, "Bolts", 9377, 0, $int2);
+~smithing_item(20447261, "Limbs", 9423, 0, $int2);
+~smithing_item(20447262, "Javelin heads", 19572, 0, $int2);
+} else {
+~smithing_item(20447260, "", -1, 0, $int2);
+~smithing_item(20447261, "", -1, 0, $int2);
+~smithing_item(20447262, "", -1, 0, $int2);
+}
+} else {
+if($int2 == 2353) {
+~smithing_item(20447234, "Dagger", 1207, 0, $int2);
+~smithing_item(20447235, "Sword", 1281, 0, $int2);
+~smithing_item(20447236, "Scimitar", 1325, 0, $int2);
+~smithing_item(20447237, "Long sword", 1295, 0, $int2);
+~smithing_item(20447238, "2-hand sword", 1311, 0, $int2);
+~smithing_item(20447239, "Axe", 1353, 0, $int2);
+~smithing_item(20447240, "Mace", 1424, 0, $int2);
+~smithing_item(20447241, "Warhammer", 1339, 0, $int2);
+~smithing_item(20447242, "Battle axe", 1365, 0, $int2);
+if(%varp314 >= 80) {
+~smithing_item(20447243, "Claws", 3097, 0, $int2);
+} else {
+~smithing_item(20447243, "", -1, 0, $int2);
+}
+~smithing_item(20447244, "Chain body", 1105, 0, $int2);
+~smithing_item(20447245, "Plate legs", 1069, 0, $int2);
+~smithing_item(20447246, "Plate skirt", 1083, 0, $int2);
+~smithing_item(20447247, "Plate body", 1119, 0, $int2);
+~smithing_item(20447248, "Nails", 1539, 0, $int2);
+~smithing_item(20447249, "Medium helm", 1141, 0, $int2);
+~smithing_item(20447250, "Full helm", 1157, 0, $int2);
+~smithing_item(20447251, "Square shield", 1177, 0, $int2);
+~smithing_item(20447252, "Kite shield", 1193, 0, $int2);
+~smithing_item(20447253, "Bullseye lantern", 4544, 0, $int2);
+~smithing_item(20447254, "", -1, 0, $int2);
+~smithing_item(20447255, "Dart tips", 821, $int0, $int2);
+~smithing_item(20447256, "Arrowtips", 41, 0, $int2);
+~smithing_item(20447257, "Knives", 865, 0, $int2);
+~smithing_item(20447258, "Studs", 2370, 0, $int2);
+~smithing_item(20447259, "", -1, 0, $int2);
+if(map_members == 1) {
+~smithing_item(20447260, "Bolts", 9378, 0, $int2);
+~smithing_item(20447261, "Limbs", 9425, 0, $int2);
+~smithing_item(20447262, "Javelin heads", 19574, 0, $int2);
+} else {
+~smithing_item(20447260, "", -1, 0, $int2);
+~smithing_item(20447261, "", -1, 0, $int2);
+~smithing_item(20447262, "", -1, 0, $int2);
+}
+} else {
+if($int2 == 2359) {
+~smithing_item(20447234, "Dagger", 1209, 0, $int2);
+~smithing_item(20447235, "Sword", 1285, 0, $int2);
+~smithing_item(20447236, "Scimitar", 1329, 0, $int2);
+~smithing_item(20447237, "Long sword", 1299, 0, $int2);
+~smithing_item(20447238, "2-hand sword", 1315, 0, $int2);
+~smithing_item(20447239, "Axe", 1355, 0, $int2);
+~smithing_item(20447240, "Mace", 1428, 0, $int2);
+~smithing_item(20447241, "Warhammer", 1343, 0, $int2);
+~smithing_item(20447242, "Battle axe", 1369, 0, $int2);
+if(%varp314 >= 80) {
+~smithing_item(20447243, "Claws", 3099, 0, $int2);
+} else {
+~smithing_item(20447243, "", -1, 0, $int2);
+}
+~smithing_item(20447244, "Chain body", 1109, 0, $int2);
+~smithing_item(20447245, "Plate legs", 1071, 0, $int2);
+~smithing_item(20447246, "Plate skirt", 1085, 0, $int2);
+~smithing_item(20447247, "Plate body", 1121, 0, $int2);
+~smithing_item(20447248, "Nails", 4822, 0, $int2);
+~smithing_item(20447249, "Medium helm", 1143, 0, $int2);
+~smithing_item(20447250, "Full helm", 1159, 0, $int2);
+~smithing_item(20447251, "Square shield", 1181, 0, $int2);
+~smithing_item(20447252, "Kite shield", 1197, 0, $int2);
+~smithing_item(20447253, "", -1, 0, $int2);
+~smithing_item(20447254, "", -1, 0, $int2);
+~smithing_item(20447255, "Dart tips", 822, $int0, $int2);
+~smithing_item(20447256, "Arrowtips", 42, 0, $int2);
+~smithing_item(20447257, "Knives", 866, 0, $int2);
+~smithing_item(20447259, "", -1, 0, $int2);
+if(map_members == 1) {
+~smithing_item(20447260, "Bolts", 9379, 0, $int2);
+~smithing_item(20447261, "Limbs", 9427, 0, $int2);
+~smithing_item(20447262, "Javelin heads", 19576, 0, $int2);
+~smithing_item(20447258, "Grapple Tip", 9416, 0, $int2);
+} else {
+~smithing_item(20447260, "", -1, 0, $int2);
+~smithing_item(20447261, "", -1, 0, $int2);
+~smithing_item(20447262, "", -1, 0, $int2);
+~smithing_item(20447258, "", -1, 0, $int2);
+}
+} else {
+if($int2 == 2361) {
+~smithing_item(20447234, "Dagger", 1211, 0, $int2);
+~smithing_item(20447235, "Sword", 1287, 0, $int2);
+~smithing_item(20447236, "Scimitar", 1331, 0, $int2);
+~smithing_item(20447237, "Long sword", 1301, 0, $int2);
+~smithing_item(20447238, "2-hand sword", 1317, 0, $int2);
+~smithing_item(20447239, "Axe", 1357, 0, $int2);
+~smithing_item(20447240, "Mace", 1430, 0, $int2);
+~smithing_item(20447241, "Warhammer", 1345, 0, $int2);
+~smithing_item(20447242, "Battle axe", 1371, 0, $int2);
+if(%varp314 >= 80) {
+~smithing_item(20447243, "Claws", 3100, 0, $int2);
+} else {
+~smithing_item(20447243, "", -1, 0, $int2);
+}
+~smithing_item(20447244, "Chain body", 1111, 0, $int2);
+~smithing_item(20447245, "Plate legs", 1073, 0, $int2);
+~smithing_item(20447246, "Plate skirt", 1091, 0, $int2);
+~smithing_item(20447247, "Plate body", 1123, 0, $int2);
+~smithing_item(20447248, "Nails", 4823, 0, $int2);
+~smithing_item(20447249, "Medium helm", 1145, 0, $int2);
+~smithing_item(20447250, "Full helm", 1161, 0, $int2);
+~smithing_item(20447251, "Square shield", 1183, 0, $int2);
+~smithing_item(20447252, "Kite shield", 1199, 0, $int2);
+~smithing_item(20447253, "", -1, 0, $int2);
+~smithing_item(20447254, "", -1, 0, $int2);
+~smithing_item(20447255, "Dart tips", 823, $int0, $int2);
+~smithing_item(20447256, "Arrowtips", 43, 0, $int2);
+~smithing_item(20447257, "Knives", 867, 0, $int2);
+~smithing_item(20447258, "", -1, 0, $int2);
+~smithing_item(20447259, "", -1, 0, $int2);
+if(map_members == 1) {
+~smithing_item(20447260, "Bolts", 9380, 0, $int2);
+~smithing_item(20447261, "Limbs", 9429, 0, $int2);
+~smithing_item(20447262, "Javelin heads", 19578, 0, $int2);
+} else {
+~smithing_item(20447260, "", -1, 0, $int2);
+~smithing_item(20447261, "", -1, 0, $int2);
+~smithing_item(20447262, "", -1, 0, $int2);
+}
+} else {
+if($int2 == 2363) {
+~smithing_item(20447234, "Dagger", 1213, 0, $int2);
+~smithing_item(20447235, "Sword", 1289, 0, $int2);
+~smithing_item(20447236, "Scimitar", 1333, 0, $int2);
+~smithing_item(20447237, "Long sword", 1303, 0, $int2);
+~smithing_item(20447238, "2-hand sword", 1319, 0, $int2);
+~smithing_item(20447239, "Axe", 1359, 0, $int2);
+~smithing_item(20447240, "Mace", 1432, 0, $int2);
+~smithing_item(20447241, "Warhammer", 1347, 0, $int2);
+~smithing_item(20447242, "Battle axe", 1373, 0, $int2);
+if(%varp314 >= 80) {
+~smithing_item(20447243, "Claws", 3101, 0, $int2);
+} else {
+~smithing_item(20447243, "", -1, 0, $int2);
+}
+~smithing_item(20447244, "Chain body", 1113, 0, $int2);
+~smithing_item(20447245, "Plate legs", 1079, 0, $int2);
+~smithing_item(20447246, "Plate skirt", 1093, 0, $int2);
+~smithing_item(20447247, "Plate body", 1127, 0, $int2);
+~smithing_item(20447248, "Nails", 4824, 0, $int2);
+~smithing_item(20447249, "Medium helm", 1147, 0, $int2);
+~smithing_item(20447250, "Full helm", 1163, 0, $int2);
+~smithing_item(20447251, "Square shield", 1185, 0, $int2);
+~smithing_item(20447252, "Kite shield", 1201, 0, $int2);
+~smithing_item(20447253, "", -1, 0, $int2);
+~smithing_item(20447254, "", -1, 0, $int2);
+~smithing_item(20447255, "Dart tips", 824, $int0, $int2);
+~smithing_item(20447256, "Arrowtips", 44, 0, $int2);
+~smithing_item(20447257, "Knives", 868, 0, $int2);
+~smithing_item(20447258, "", -1, 0, $int2);
+~smithing_item(20447259, "", -1, 0, $int2);
+if(map_members == 1) {
+~smithing_item(20447260, "Bolts", 9381, 0, $int2);
+~smithing_item(20447261, "Limbs", 9431, 0, $int2);
+~smithing_item(20447262, "Javelin heads", 19580, 0, $int2);
+} else {
+~smithing_item(20447260, "", -1, 0, $int2);
+~smithing_item(20447261, "", -1, 0, $int2);
+~smithing_item(20447262, "", -1, 0, $int2);
+}
+} else {
+if($int2 == 13354) {
+if(%varbit4898 < enum(int, int, 1267, 13)) {
+$int1 = 1;
+} else {
+$int1 = 0;
+}
+~smithing_item(20447234, "Gloves (1)", 13538, $int1, $int2);
+~smithing_item(20447235, "Boots (1)", 13539, $int1, $int2);
+~smithing_item(20447236, "Helm (1)", 13540, $int1, $int2);
+~smithing_item(20447237, "Greaves (1)", 13541, $int1, $int2);
+~smithing_item(20447238, "Platebody (1)", 13542, $int1, $int2);
+if(%varbit4898 < enum(int, int, 1267, 14)) {
+$int1 = 1;
+} else {
+$int1 = 0;
+}
+~smithing_item(20447239, "Gloves (2)", 13543, $int1, $int2);
+~smithing_item(20447240, "Boots (2)", 13544, $int1, $int2);
+~smithing_item(20447241, "Helm (2)", 13545, $int1, $int2);
+~smithing_item(20447242, "Greaves (2)", 13546, $int1, $int2);
+~smithing_item(20447243, "Platebody (2)", 13547, $int1, $int2);
+if(%varbit4898 < enum(int, int, 1267, 15)) {
+$int1 = 1;
+} else {
+$int1 = 0;
+}
+~smithing_item(20447244, "Gloves (3)", 13548, $int1, $int2);
+~smithing_item(20447245, "Boots (3)", 13549, $int1, $int2);
+~smithing_item(20447246, "Helm (3)", 13550, $int1, $int2);
+~smithing_item(20447247, "Greaves (3)", 13551, $int1, $int2);
+~smithing_item(20447248, "Platebody (3)", 13552, $int1, $int2);
+if(%varbit4898 < enum(int, int, 1267, 16)) {
+$int1 = 1;
+} else {
+$int1 = 0;
+}
+~smithing_item(20447249, "Gloves (4)", 13553, $int1, $int2);
+~smithing_item(20447250, "Boots (4)", 13554, $int1, $int2);
+~smithing_item(20447251, "Helm (4)", 13555, $int1, $int2);
+~smithing_item(20447252, "Greaves (4)", 13556, $int1, $int2);
+~smithing_item(20447253, "", -1, 0, $int2);
+~smithing_item(20447254, "Platebody (4)", 13557, $int1, $int2);
+if(%varbit4898 < enum(int, int, 1267, 17)) {
+$int1 = 1;
+} else {
+$int1 = 0;
+}
+~smithing_item(20447255, "Gloves (5)", 13558, $int1, $int2);
+~smithing_item(20447256, "Boots (5)", 13559, $int1, $int2);
+~smithing_item(20447257, "Helm (5)", 13560, $int1, $int2);
+~smithing_item(20447258, "Greaves (5)", 13561, $int1, $int2);
+~smithing_item(20447259, "Platebody (5)", 13562, $int1, $int2);
+~smithing_item(20447260, "", -1, 0, $int2);
+~smithing_item(20447261, "", -1, 0, $int2);
+~smithing_item(20447262, "", -1, 0, $int2);
+} else {
+~smithing_item(20447234, "", -1, 0, $int2);
+~smithing_item(20447235, "", -1, 0, $int2);
+~smithing_item(20447236, "", -1, 0, $int2);
+~smithing_item(20447237, "", -1, 0, $int2);
+~smithing_item(20447238, "", -1, 0, $int2);
+~smithing_item(20447239, "", -1, 0, $int2);
+~smithing_item(20447240, "", -1, 0, $int2);
+~smithing_item(20447241, "", -1, 0, $int2);
+~smithing_item(20447242, "", -1, 0, $int2);
+~smithing_item(20447243, "", -1, 0, $int2);
+~smithing_item(20447244, "", -1, 0, $int2);
+~smithing_item(20447245, "", -1, 0, $int2);
+~smithing_item(20447246, "", -1, 0, $int2);
+~smithing_item(20447247, "", -1, 0, $int2);
+~smithing_item(20447248, "", -1, 0, $int2);
+~smithing_item(20447249, "", -1, 0, $int2);
+~smithing_item(20447250, "", -1, 0, $int2);
+~smithing_item(20447251, "", -1, 0, $int2);
+~smithing_item(20447252, "", -1, 0, $int2);
+~smithing_item(20447253, "", -1, 0, $int2);
+~smithing_item(20447254, "", -1, 0, $int2);
+~smithing_item(20447255, "", -1, 0, $int2);
+~smithing_item(20447256, "", -1, 0, $int2);
+~smithing_item(20447257, "", -1, 0, $int2);
+~smithing_item(20447258, "", -1, 0, $int2);
+~smithing_item(20447259, "", -1, 0, $int2);
+~smithing_item(20447260, "", -1, 0, $int2);
+~smithing_item(20447261, "", -1, 0, $int2);
+~smithing_item(20447262, "", -1, 0, $int2);
+}
+}
+}
+}
+}
+}
+}
+return();

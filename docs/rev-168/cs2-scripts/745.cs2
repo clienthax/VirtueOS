@@ -1,0 +1,7 @@
+[clientscript,script745]
+if(~script1972 == 1) {
+mes("Bond purchases are not currently available on mobile.");
+return();
+}
+openurl("https://www.runescape.com/oldschool/bonds", 1);
+return();

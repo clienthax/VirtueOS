@@ -1,0 +1,48 @@
+[clientscript,script1473](int $int0, int $int1, int $int2, int $int3, int $int4)
+if($int1 == 1) {
+if($int0 == 1) {
+sound_synth(2266, 1, 0);
+%varbit5400 = 0;
+%varbit5399 = 0;
+if(cc_find($int3, $int4) == 1) {
+~script1472($int3);
+}
+} else {
+if($int0 == 2) {
+sound_synth(2266, 1, 0);
+if(cc_find($int3, $int4) == 1) {
+cc_setcolor(0xFFFFFF);
+cc_settext("Set a value...");
+if_setonmouserepeat("null()", $int3);
+if_setonmouseleave("null()", $int3);
+if_setonop("null()", $int3);
+if_setontimer("script1474($int3, cc_getid, add(clientclock, 100))", $int3);
+}
+}
+}
+} else {
+if($int0 == 1) {
+if($int2 > 0) {
+sound_synth(2266, 1, 0);
+if($int2 > 500000000) {
+$int2 = 500000000;
+}
+%varbit5400 = $int2;
+%varbit5399 = 1;
+if(cc_find($int3, $int4) == 1) {
+~script1472($int3);
+}
+} else {
+sound_synth(2266, 1, 0);
+if(cc_find($int3, $int4) == 1) {
+cc_setcolor(0xFFFFFF);
+cc_settext("Set a value...");
+if_setonmouserepeat("null()", $int3);
+if_setonmouseleave("null()", $int3);
+if_setonop("null()", $int3);
+if_setontimer("script1474($int3, cc_getid, add(clientclock, 100))", $int3);
+}
+}
+}
+}
+return();

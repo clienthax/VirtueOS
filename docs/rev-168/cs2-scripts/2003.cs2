@@ -1,0 +1,18 @@
+[clientscript,script2003](int $int0)
+$int1 = ~toplevel_getcomponents;
+if($int1 == -1) {
+return();
+}
+$int2 = enum(component, component, $int1, 10551299);
+if($int2 == -1) {
+return();
+}
+cc_deleteall($int2);
+cc_create($int2, Model, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setmodel(33278);
+cc_setmodelanim(3320);
+~script898($int2);
+cc_setontimer("script897(-2147483645, -2147483643, add(clientclock, $int0))");
+return();

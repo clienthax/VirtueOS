@@ -1,0 +1,104 @@
+[clientscript,script698](int $int0)
+$int1 = 0;
+cc_deleteall($int0);
+$int2 = if_getwidth($int0);
+$int3 = 1;
+$int4 = 0;
+$int5 = -1;
+$int6 = -1;
+$int7 = 27;
+if(%varbit4803 == 1) {
+$int1 = add($int1, 1);
+}
+if(%varbit4804 == 1) {
+$int1 = add($int1, 1);
+}
+if(%varbit6007 == 1) {
+$int1 = add($int1, 1);
+}
+$int7 = sub($int7, multiply($int1, 3));
+$int8 = enum(int, int, 998, $int4);
+while($int8 != -1) {
+cc_create($int0, Rectangle, $int4);
+$int5 = enum(int, int, 999, $int4);
+if($int5 == 8) {
+if(%varbit4803 == 1) {
+if($int5 == %varp262) {
+$int6 = $int3;
+}
+cc_sethide(0);
+cc_setsize(2, $int7, 1, 0);
+cc_setposition(1, $int3, 0, 0);
+cc_setfill(1);
+cc_setcolor($int8);
+cc_setop(1, "Select colour");
+cc_setonop("script697(-2147483644, $int5, $int0)");
+$int3 = add($int3, $int7);
+} else {
+cc_sethide(1);
+}
+} else {
+if($int5 == 9 || $int5 == 10) {
+if(%varbit4804 == 1) {
+if($int5 == %varp262) {
+$int6 = $int3;
+}
+cc_sethide(0);
+cc_setsize(2, $int7, 1, 0);
+cc_setposition(1, $int3, 0, 0);
+cc_setfill(1);
+cc_setcolor($int8);
+cc_setop(1, "Select colour");
+cc_setonop("script697(-2147483644, $int5, $int0)");
+$int3 = add($int3, $int7);
+} else {
+cc_sethide(1);
+}
+} else {
+if($int5 == 11) {
+if(%varbit6007 == 1) {
+if($int5 == %varp262) {
+$int6 = $int3;
+}
+cc_sethide(0);
+cc_setsize(2, $int7, 1, 0);
+cc_setposition(1, $int3, 0, 0);
+cc_setfill(1);
+cc_setcolor($int8);
+cc_setop(1, "Select colour");
+cc_setonop("script697(-2147483644, $int5, $int0)");
+$int3 = add($int3, $int7);
+} else {
+cc_sethide(1);
+}
+} else {
+if($int5 == %varp262) {
+$int6 = $int3;
+}
+cc_sethide(0);
+cc_setsize(2, $int7, 1, 0);
+cc_setposition(1, $int3, 0, 0);
+cc_setfill(1);
+cc_setcolor($int8);
+cc_setop(1, "Select colour");
+cc_setonop("script697(-2147483644, $int5, $int0)");
+$int3 = add($int3, $int7);
+}
+}
+}
+$int4 = add($int4, 1);
+$int8 = enum(int, int, 998, $int4);
+}
+cc_create($int0, Rectangle, $int4);
+cc_setsize(0, add($int3, 1), 1, 0);
+cc_setposition(0, 0, 0, 0);
+cc_setfill(0);
+cc_setcolor(0x000000);
+$int4 = add($int4, 1);
+if($int6 != -1) {
+cc_create($int0, Graphic, $int4);
+cc_setsize(16, 16, 0, 0);
+cc_setgraphic(299);
+cc_setposition(0, sub($int6, divide(sub(16, $int7), 2)), 1, 0);
+}
+return();

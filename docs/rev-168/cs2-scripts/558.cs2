@@ -1,0 +1,7 @@
+[clientscript,script558](int $int0)
+if(%varbit4285 == 1) {
+~script560($int0, "Waiting");
+} else {
+~script561($int0);
+}
+return();

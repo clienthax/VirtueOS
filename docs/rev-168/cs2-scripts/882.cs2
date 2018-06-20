@@ -1,0 +1,3 @@
+[clientscript,script882](int $int0)
+if_settext(tostring(%varp143), $int0);
+return();

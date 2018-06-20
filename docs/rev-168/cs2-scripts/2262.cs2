@@ -1,0 +1,11 @@
+[clientscript,script2262]
+if(~script1972 == 0) {
+return();
+}
+if_setsize(if_getwidth(593:29), 36, 0, 0, 593:29);
+if_setsize(if_getwidth(593:30), 36, 0, 0, 593:30);
+if_setsize(if_getwidth(593:31), 22, 0, 0, 593:31);
+if_setsize(if_getwidth(593:32), 22, 0, 0, 593:32);
+if_setsize(if_getwidth(593:33), 22, 0, 0, 593:33);
+if_setsize(if_getwidth(593:34), 36, 0, 0, 593:34);
+return();

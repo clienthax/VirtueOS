@@ -1,0 +1,32 @@
+[clientscript,script1472](int $int0)
+$string0 = "Enable (1 coin)";
+if(%varbit5399 == 0 || %varbit5400 <= 0) {
+cc_setcolor(0x9F9F9F);
+cc_settext("Off");
+if_setonmouserepeat("script85(-2147483645, cc_getid, 16777215)", $int0);
+if_setonmouseleave("script85(-2147483645, cc_getid, 10461087)", $int0);
+if(%varbit5400 > 0) {
+if(%varbit5400 > 1) {
+$string0 = "Enable (<~script46(%varbit5400, ",")> coins)";
+}
+if_setop(1, $string0, $int0);
+} else {
+if_setop(1, "Enable", $int0);
+}
+if_setop(2, "", $int0);
+if_setonop("script1473(-2147483644, 0, %varbit5400, $int0, cc_getid)", $int0);
+} else {
+cc_setcolor(0xFF981F);
+if(%varbit5400 != 1) {
+cc_settext("<~script46(%varbit5400, ",")> coins");
+} else {
+cc_settext("1 coin");
+}
+if_setop(1, "Disable", $int0);
+if_setop(2, "Change", $int0);
+if_setonmouserepeat("script85(-2147483645, cc_getid, 16777215)", $int0);
+if_setonmouseleave("script85(-2147483645, cc_getid, 16750623)", $int0);
+if_setonop("script1473(-2147483644, 1, 0, $int0, cc_getid)", $int0);
+}
+if_setontimer("null()", $int0);
+return();

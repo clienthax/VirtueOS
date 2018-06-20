@@ -1,0 +1,13 @@
+[clientscript,script1961](int $int0, int $int1)
+$string0 = "Hovering over prayers displays tooltips (currently on)";
+if(%varbit5711 == 0) {
+if_setgraphic(762, $int0);
+} else {
+$string0 = "Hovering over prayers displays tooltips(currently off)";
+if_setgraphic(761, $int0);
+}
+if(~script1972 == 0) {
+if_setonmouserepeat("script526($int0, -1, $int1, $string0, 25, 512)", $int0);
+}
+%varc2 = 0;
+return();

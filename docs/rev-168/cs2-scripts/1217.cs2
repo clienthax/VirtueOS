@@ -1,0 +1,67 @@
+[clientscript,script1217](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18, int $int19, int $int20, int $int21, int $int22, int $int23, int $int24, int $int25, int $int26, int $int27)
+%varc110 = $int0;
+%varc111 = $int1;
+%varc112 = $int2;
+%varc113 = $int3;
+%varc114 = $int4;
+%varc115 = $int5;
+%varc116 = $int6;
+%varc117 = $int7;
+%varc118 = $int8;
+%varc119 = $int9;
+%varc120 = $int10;
+%varc121 = $int11;
+%varc122 = $int12;
+%varc123 = $int13;
+%varc124 = $int14;
+%varc125 = $int15;
+%varc126 = $int16;
+%varc127 = $int17;
+%varc128 = $int18;
+%varc129 = $int19;
+%varc130 = $int20;
+%varc131 = $int21;
+%varc132 = $int22;
+%varc133 = $int23;
+%varc134 = $int24;
+%varc135 = $int25;
+%varc136 = $int26;
+%varc137 = $int27;
+$int28 = inv_size(90);
+def_int $anArray0($int28);
+$anArray0(0) = $int0;
+$anArray0(1) = $int1;
+$anArray0(2) = $int2;
+$anArray0(3) = $int3;
+$anArray0(4) = $int4;
+$anArray0(5) = $int5;
+$anArray0(6) = $int6;
+$anArray0(7) = $int7;
+$anArray0(8) = $int8;
+$anArray0(9) = $int9;
+$anArray0(10) = $int10;
+$anArray0(11) = $int11;
+$anArray0(12) = $int12;
+$anArray0(13) = $int13;
+$anArray0(14) = $int14;
+$anArray0(15) = $int15;
+$anArray0(16) = $int16;
+$anArray0(17) = $int17;
+$anArray0(18) = $int18;
+$anArray0(19) = $int19;
+$anArray0(20) = $int20;
+$anArray0(21) = $int21;
+$anArray0(22) = $int22;
+$anArray0(23) = $int23;
+$anArray0(24) = $int24;
+$anArray0(25) = $int25;
+$anArray0(26) = $int26;
+$anArray0(27) = $int27;
+while($int28 > 0) {
+$int28 = sub($int28, 1);
+if(cc_find(21954588, $int28) == 1) {
+~trade_tooltip(invother_getnum(90, $int28), $anArray0($int28), 21954592);
+}
+}
+~script41(21954592);
+return();

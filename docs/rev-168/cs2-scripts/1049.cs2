@@ -1,0 +1,16 @@
+[clientscript,script1049]
+$int0 = sub(715, 175);
+$int1 = sub(700, 195);
+$int2 = sub(if_getwidth(261:8), if_getwidth(261:13));
+$int3 = 0;
+$int4 = 0;
+$int4 = viewport_geteffectiveheight();
+$int3 = viewport_geteffectivewidth();
+$int5 = 0;
+if($int3 > 334) {
+$int5 = divide(multiply(sub(%varc74, 175), $int2), $int0);
+} else {
+$int5 = divide(multiply(sub(%varc73, 195), $int2), $int1);
+}
+if_setposition($int5, 0, 0, 0, 261:13);
+return();

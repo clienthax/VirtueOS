@@ -1,0 +1,24 @@
+[clientscript,script2273](int $int0, int $int1, int $int2)
+switch(%varbit6364) {
+case 1:
+mobile_setmaxfps(15)
+if_setgraphic(683, $int0);
+if_setgraphic(680, $int1);
+if_setgraphic(682, $int2);
+case 2:
+mobile_setmaxfps(20)
+if_setgraphic(679, $int0);
+if_setgraphic(684, $int1);
+if_setgraphic(682, $int2);
+case 3:
+mobile_setmaxfps(30)
+if_setgraphic(679, $int0);
+if_setgraphic(680, $int1);
+if_setgraphic(686, $int2);
+default:
+mobile_setmaxfps(0)
+if_setgraphic(679, $int0);
+if_setgraphic(680, $int1);
+if_setgraphic(682, $int2);
+}
+return();

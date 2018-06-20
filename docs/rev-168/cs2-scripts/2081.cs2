@@ -1,0 +1,12 @@
+[clientscript,script2081](int $int0, int $int1)
+if(cc_find(16842752, 0) == 1) {
+if(clientclock < $int0) {
+return();
+}
+if(clientclock >= $int1) {
+cc_setontimer("null()");
+return();
+}
+cc_setcolor(~colour_interpolate(15771656, 0, $int0, $int1, clientclock));
+}
+return();

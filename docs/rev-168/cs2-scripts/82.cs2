@@ -1,0 +1,23 @@
+[clientscript,script82](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+if($int0 != -1) {
+if_setnoclickthrough(1, $int5);
+if_setonstattransmit("script82(-1, $int1, $int2, $int3, $int4, $int5, $int6){5}", $int0);
+if_setonvartransmit("script82(-1, $int1, $int2, $int3, $int4, $int5, $int6){375}", $int0);
+if_setonsubchange("script82(-1, $int1, $int2, $int3, $int4, $int5, $int6)", $int0);
+if_setonop("script455(-2147483644, $int3, $int4, $int6)", $int6);
+}
+$int7 = 1072;
+if(~script918(5) == 1) {
+if_setonmouserepeat("script44($int5, $int7)", $int6);
+$int7 = 1071;
+if_setonmouseleave("script44($int5, $int7)", $int6);
+if_sethide(0, $int6);
+} else {
+if_setgraphic(1071, $int5);
+if_setonmouserepeat("null()", $int6);
+if_setonmouseleave("null()", $int6);
+if_sethide(1, $int6);
+}
+~orbs_update($int1, $int2, stat(^prayer), stat_base(^prayer));
+~script456($int3, $int4, $int6);
+return();

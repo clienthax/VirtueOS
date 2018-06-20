@@ -1,0 +1,33 @@
+[proc,script642](int $int0, int $int1, int $int2, int $int3)(int)
+switch($int1) {
+case 1686:
+$int0 = enum(int, namedobj, $int1, %varbit4324);
+case 1687:
+$int0 = enum(int, namedobj, $int1, %varbit4325);
+case 1688:
+$int0 = enum(int, namedobj, $int1, %varbit4326);
+case 1691:
+$int0 = enum(int, namedobj, $int1, %varbit4388);
+case 1689:
+$int0 = enum(int, namedobj, $int1, %varbit4327);
+case 1690:
+$int0 = enum(int, namedobj, $int1, %varbit4328);
+case 285:
+$int0 = enum(int, namedobj, $int1, %varbit3983);
+case 1893:
+$int0 = enum(int, namedobj, $int1, %varbit6270);
+case 1711:
+$int0 = enum(int, namedobj, $int1, %varbit6380);
+}
+cc_sethide(0);
+cc_setsize(36, 32, 0, 0);
+$int4 = multiply(40, divide($int3, 6));
+cc_setposition(multiply($int2, modulo($int3, 6)), $int4, 0, 0);
+cc_setobject($int0, 1);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setop(1, "Take");
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int0)></col>");
+cc_setonop("script638(-2147483644, -2147483645, -2147483643)");
+return($int4);

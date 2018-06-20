@@ -1,0 +1,39 @@
+[clientscript,script2213]
+if(%varbit6281 == 1) {
+if_setgraphic(179, 12:54);
+if_setgraphic(170, 12:57);
+if_setgraphic(170, 12:59);
+if_setgraphic(170, 12:61);
+if_setgraphic(170, 12:63);
+} else {
+if(%varbit6281 == 2) {
+if_setgraphic(170, 12:54);
+if_setgraphic(179, 12:57);
+if_setgraphic(170, 12:59);
+if_setgraphic(170, 12:61);
+if_setgraphic(170, 12:63);
+} else {
+if(%varbit6281 == 3) {
+if_setgraphic(170, 12:54);
+if_setgraphic(170, 12:57);
+if_setgraphic(179, 12:59);
+if_setgraphic(170, 12:61);
+if_setgraphic(170, 12:63);
+} else {
+if(%varbit6281 == 4) {
+if_setgraphic(170, 12:54);
+if_setgraphic(170, 12:57);
+if_setgraphic(170, 12:59);
+if_setgraphic(179, 12:61);
+if_setgraphic(170, 12:63);
+} else {
+if_setgraphic(170, 12:54);
+if_setgraphic(170, 12:57);
+if_setgraphic(170, 12:59);
+if_setgraphic(170, 12:61);
+if_setgraphic(179, 12:63);
+}
+}
+}
+}
+return();

@@ -1,0 +1,4 @@
+[clientscript,script710]
+set_loadingtext_enabled(1)
+opcode6632(1);
+return();

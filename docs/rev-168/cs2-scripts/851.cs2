@@ -1,0 +1,42 @@
+[clientscript,script851](int $int0, int $int1, int $int2)
+$string0 = "Resizable mode stone buttons:<br>'Old School Box'";
+if(%varbit4607 == 0) {
+if_setgraphic(761, $int0);
+if(cc_find($int1, 0) == 1) {
+cc_setcolor(0x8F8F8F);
+}
+if(cc_find($int1, 1) == 1) {
+cc_setcolor(0x8F8F8F);
+}
+if(cc_find($int1, 2) == 1) {
+cc_setgraphic(697);
+}
+if_setonmouserepeat("null()", $int1);
+if_setonmouseleave("null()", $int1);
+if_setonop("null()", $int1);
+} else {
+if_setgraphic(762, $int0);
+if(cc_find($int1, 0) == 1) {
+cc_setcolor(0xFF981F);
+}
+if(cc_find($int1, 1) == 1) {
+cc_setcolor(0xFF981F);
+}
+if(%varbit4611 == 1) {
+$string0 = "Resizable mode stone buttons:<br>'Bottom Line'<br>The hotkeys will not close the side-panels.";
+if(cc_find($int1, 2) == 1) {
+cc_setgraphic(698);
+}
+} else {
+$string0 = "Resizable mode stone buttons:<br>'Bottom Line'<br>The hotkeys can close the side-panels.";
+if(cc_find($int1, 2) == 1) {
+cc_setgraphic(699);
+}
+}
+if_setonmouserepeat("script121(1, -2147483645)", $int1);
+if_setonmouseleave("script121(0, -2147483645)", $int1);
+if_setonop("script850(-2147483644, 1, $int0, $int1, $int2)", $int1);
+}
+if_setonmouserepeat("script526($int0, -1, $int2, $string0, 25, 512)", $int0);
+%varc2 = 0;
+return();

@@ -1,0 +1,91 @@
+[proc,script506](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18, int $int19, int $int20)(int,int)
+$int21 = -1;
+$string0 = "";
+$int22 = 0;
+if(.cc_find($int9, $int13) == 1) {
+if($int13 == 0) {
+cc_create($int9, Graphic, add(add($int13, 9), 1));
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add(add(multiply($int13, 40), $int17), $int18), $int19, 0, 0);
+cc_setgraphic(1081);
+cc_settrans(20);
+cc_setop(1, "View all items");
+cc_setop(7, "Remove placeholders");
+cc_setonop("script504($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, -2147483644, $int13)");
+~script508($int13);
+} else {
+if($int14 > 0) {
+if(%varbit4170 == 1) {
+$string0 = tostring($int13);
+cc_create($int9, Text, add(add($int13, 9), 1));
+cc_setsize(41, 40, 0, 0);
+cc_setposition(add(multiply($int13, 40), $int17), 0, 0, 0);
+cc_settextalign(1, 1, 0);
+cc_settextfont(645);
+cc_settextshadow(1);
+cc_setcolor(0xE4D8A2);
+cc_settext($string0);
+cc_setondragcomplete("script511(-2147483645, -2147483643, -2147483642, -2147483641, $int20)");
+~script507($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13);
+~script508($int13);
+} else {
+if(%varbit4170 == 2) {
+$string0 = enum(int, string, 207, $int13);
+cc_create($int9, Text, add(add($int13, 9), 1));
+cc_setsize(41, 35, 0, 0);
+cc_setposition(add(multiply($int13, 40), $int17), 0, 0, 0);
+cc_settextalign(1, 1, 0);
+cc_settextfont(764);
+cc_settextshadow(1);
+cc_setcolor(0xE4D8A2);
+cc_settext($string0);
+cc_setondragcomplete("script511(-2147483645, -2147483643, -2147483642, -2147483641, $int20)");
+~script507($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13);
+~script508($int13);
+} else {
+$int21 = inv_getobj(95, $int15);
+cc_create($int9, Graphic, add(add($int13, 9), 1));
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add(add(add(multiply($int13, 40), $int17), $int18), 1), $int19, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+if($int21 != -1) {
+cc_setobject_nonum($int21, inv_getnum(95, $int15));
+if(oc_unplaceholder($int21) != $int21) {
+cc_settrans(120);
+cc_setondragcomplete("script512(-2147483645, -2147483643, -2147483642, -2147483641, $int20, 120)");
+} else {
+cc_settrans(0);
+cc_setondragcomplete("script512(-2147483645, -2147483643, -2147483642, -2147483641, $int20, 0)");
+}
+} else {
+cc_setobject_nonum(6512, 1);
+cc_settrans(0);
+cc_setondragcomplete("script512(-2147483645, -2147483643, -2147483642, -2147483641, $int20, 0)");
+}
+~script507($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13);
+~script508($int13);
+}
+}
+} else {
+if($int16 == 0) {
+cc_create($int9, Graphic, add(add($int13, 9), 1));
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add(add(multiply($int13, 40), $int17), $int18), $int19, 0, 0);
+cc_setgraphic(1082);
+cc_settrans(20);
+cc_setop(1, "New tab");
+cc_setonop("script489(-2147483644, 1)");
+cc_setdragdeadzone(512);
+cc_setdragdeadtime(2147483647);
+.cc_setgraphic(1080);
+$int16 = 1;
+} else {
+cc_create($int9, Graphic, add(add($int13, 9), 1));
+cc_sethide(1);
+.cc_sethide(1);
+}
+}
+}
+}
+return(add($int15, $int14), $int16);

@@ -1,0 +1,102 @@
+[proc,script1757](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)(int)
+$int0 = ~script1715(opcode6616(), $int0);
+if($int0 == -1) {
+if(cc_find($int2, $int7) == 1) {
+cc_sethide(1);
+}
+return(add($int7, 1));
+}
+$int8 = 0;
+$int9 = 0;
+$gosubResult1752_0, $gosubResult1752_1 = ~script1752($int0, 0, $int2, $int3, $int4, $int5, $int6);
+$int9 = $gosubResult1752_1;
+$int8 = $gosubResult1752_0;
+$int10 = struct_param($int1, 459);
+$int11 = struct_param($int1, 462);
+$int12 = divide($int11, 2);
+$int13 = 0;
+$int14 = 0;
+$int15 = divide(if_getwidth($int2), 2);
+$int16 = divide(if_getheight($int2), 2);
+if($int8 < sub(0, $int15)) {
+$int8 = sub($int12, $int15);
+if($int9 < sub(0, $int16)) {
+$int9 = sub($int12, $int16);
+$int13 = 16384;
+$int10 = struct_param($int1, 461);
+} else {
+if($int9 > $int16) {
+$int9 = sub($int16, $int12);
+$int13 = 32768;
+$int10 = struct_param($int1, 461);
+} else {
+$int13 = 32768;
+$int10 = struct_param($int1, 460);
+}
+}
+} else {
+if($int8 > $int15) {
+$int8 = sub($int15, $int12);
+if($int9 < sub(0, $int16)) {
+$int9 = sub($int12, $int16);
+$int13 = 0;
+$int10 = struct_param($int1, 461);
+} else {
+if($int9 > $int16) {
+$int9 = sub($int16, $int12);
+$int13 = 49152;
+$int10 = struct_param($int1, 461);
+} else {
+$int13 = 0;
+$int10 = struct_param($int1, 460);
+}
+}
+} else {
+if($int9 < sub(0, $int16)) {
+$int9 = sub($int12, $int16);
+$int13 = 16384;
+$int10 = struct_param($int1, 460);
+} else {
+if($int9 > $int16) {
+$int9 = sub($int16, $int12);
+$int13 = 49152;
+$int10 = struct_param($int1, 460);
+} else {
+$int14 = 1;
+$int13 = ~script1759;
+}
+}
+}
+}
+if(testbit(%varbit5640, 4) == 1) {
+$int14 = 0;
+}
+if(cc_find($int2, $int7) == 1) {
+cc_sethide(0);
+cc_setop(1, "Focus");
+cc_setonop("script1756(-2147483644, $int0, 0)");
+cc_setposition($int8, $int9, 1, 1);
+cc_setgraphic($int10);
+cc_set2dangle($int13);
+if($int14 == 1) {
+cc_setontimer("script1758(-2147483645, -2147483643)");
+} else {
+cc_setontimer("null()");
+}
+} else {
+cc_create($int2, Graphic, $int7);
+cc_sethide(0);
+cc_setop(1, "Focus");
+cc_setonop("script1756(-2147483644, $int0, 0)");
+cc_setsize($int11, $int11, 0, 0);
+cc_setposition($int8, $int9, 1, 1);
+cc_setgraphic($int10);
+cc_set2dangle($int13);
+if($int14 == 1) {
+cc_setontimer("script1758(-2147483645, -2147483643)");
+} else {
+cc_setontimer("null()");
+}
+}
+$int7 = add($int7, 1);
+return($int7);

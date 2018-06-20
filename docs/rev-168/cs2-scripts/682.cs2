@@ -1,0 +1,8 @@
+[clientscript,script682](int $int0, string $string0)
+if(%varc5 != $int0) {
+return();
+}
+%varcstr22 = $string0;
+~script222("");
+~script681;
+return();

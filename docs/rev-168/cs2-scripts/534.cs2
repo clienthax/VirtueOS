@@ -1,0 +1,15 @@
+[clientscript,script534](int $int0, int $int1)
+$string0 = "Always hide roofs (currently on)";
+if(roofsHidden == 1) {
+if_setgraphic(762, $int0);
+if_setonop("script532(0, $int0, $int1)", $int0);
+if_setontimer("script533(1, $int0, $int1)", $int0);
+} else {
+$string0 = "Always hide roofs (currently off)";
+if_setgraphic(761, $int0);
+if_setonop("script532(1, $int0, $int1)", $int0);
+if_setontimer("script533(0, $int0, $int1)", $int0);
+}
+if_setonmouserepeat("script526($int0, -1, $int1, $string0, 25, 512)", $int0);
+%varc2 = 0;
+return();

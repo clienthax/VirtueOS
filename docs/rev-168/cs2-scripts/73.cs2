@@ -1,0 +1,114 @@
+[clientscript,script73](int $int0, int $int1)
+if(if_gethide(162:44) == 1 || if_gethide(162:45) == 1) {
+return();
+}
+if(%varc203 == 0 || %varc203 == -1 || ~script1701(-1, 162) == 0) {
+return();
+}
+$int2 = string_length(%varcstr1);
+$int3 = 0;
+$int4 = 0;
+if(~script1972 == 1) {
+if(%varc41 == 4) {
+$int4 = 1;
+}
+}
+if(staffmodlevel > 0) {
+$int3 = 1;
+}
+if($int3 == 1) {
+if(string_indexof_char("`", $int1) != -1) {
+if($int2 == 0) {
+return();
+}
+}
+}
+if($int0 == 84) {
+~script1984;
+if($int2 > 0) {
+if(string_indexof_string(%varcstr1, "/", 0) == 0 || $int4 == 1) {
+if(clan_getchatcount > 0) {
+if($int2 <= 1) {
+return();
+}
+if(%varbit4394 == 1) {
+if(clan_getchatcount > 0) {
+clan_leavechat();
+}
+} else {
+if($int4 == 1) {
+%varcstr1 = append("/", %varcstr1);
+}
+~chat_sendpublic(%varcstr1, 2);
+}
+} else {
+~chat_sendpublic(%varcstr1, 0);
+}
+} else {
+if(string_indexof_string(%varcstr1, "::", 0) == 0) {
+if($int2 > 2) {
+if(string_indexof_string(%varcstr1, "::toggleroof", 0) == 0) {
+if(roofsHidden == 1) {
+hideRoofs(0);
+mes("Roofs will only be removed selectively.");
+} else {
+hideRoofs(1);
+mes("Roofs are now all hidden.");
+}
+} else {
+if(string_indexof_string(%varcstr1, "::bank", 0) == 0) {
+~chat_sendpublic("Hey, everyone, I just tried to do something very silly!", 0);
+} else {
+%varcstr1 = ~script224(%varcstr1);
+$int2 = string_length(%varcstr1);
+docheat(substring(%varcstr1, 2, $int2));
+}
+}
+} else {
+~chat_sendpublic(%varcstr1, 0);
+}
+} else {
+~chat_sendpublic(%varcstr1, 0);
+}
+}
+~script77(%varcstr1);
+%varcstr1 = "";
+}
+} else {
+if($int0 == 104) {
+if($int3 == 1) {
+~script75;
+}
+} else {
+if($int0 == 105) {
+if($int3 == 1) {
+~script76;
+}
+} else {
+if($int0 == 80) {
+if(string_length(%varcstr0) > 0) {
+if(friend_test(%varcstr0) == 1) {
+~script107(%varcstr0);
+return();
+}
+if(%varc60 > clientclock) {
+return();
+}
+%varc60 = add(clientclock, 50);
+mes("That player was not found on your Friends list.");
+return();
+}
+if(%varc60 > clientclock) {
+return();
+}
+%varc60 = add(clientclock, 50);
+mes("You haven't received any messages to which you can reply.");
+return();
+} else {
+%varcstr1 = ~script74(%varcstr1, 0, $int0, $int1);
+}
+}
+}
+}
+~script223;
+return();

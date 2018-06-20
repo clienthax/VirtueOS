@@ -1,0 +1,15 @@
+[clientscript,camera_zoom](int $int0)
+$int1 = sub(0, multiply($int0, 5));
+$int2 = 320;
+$int3 = 256;
+if(%varbit6357 == 0) {
+if(%varbit4606 != 0) {
+return();
+}
+$int2 = viewport_getmaxzoom();
+$int3 = viewport_getminzoom();
+$int3 = addpercent($int3, $int1);
+$int2 = addpercent($int2, $int1);
+~script42($int3, $int2);
+}
+return();

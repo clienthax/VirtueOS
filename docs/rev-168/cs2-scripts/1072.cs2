@@ -1,0 +1,5 @@
+[clientscript,script1072](int $int0, int $int1)
+if(.cc_find($int0, add(multiply($int1, 2), 1)) == 1) {
+~script1073($int1);
+}
+return();

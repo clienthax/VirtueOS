@@ -1,0 +1,11 @@
+[clientscript,script538](int $int0, int $int1)
+$string0 = "Stats panel shows XP to next level (currently on)";
+if(%varbit4181 == 0) {
+if_setgraphic(762, $int0);
+} else {
+$string0 = "Stats panel shows XP to next level (currently off)";
+if_setgraphic(761, $int0);
+}
+if_setonmouserepeat("script526($int0, -1, $int1, $string0, 25, 512)", $int0);
+%varc2 = 0;
+return();

@@ -1,0 +1,127 @@
+[clientscript,script621](int $int0, int $int1, int $int2, int $int3, string $string0)
+$int4 = if_getwidth(400:10);
+$int5 = sub($int4, multiply(4, 2));
+$int6 = %varc43;
+$int7 = %varc49;
+cc_create(400:10, Rectangle, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition(0, $int7, 0, 0);
+cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+cc_settrans(225);
+cc_create(400:10, Rectangle, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition(0, $int7, 0, 0);
+cc_setcolor(0x777775);
+cc_setfill(0);
+cc_create(400:10, Rectangle, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition(1, add($int7, 1), 0, 0);
+cc_setcolor(0x474745);
+cc_setfill(0);
+%varc49 = add(%varc49, 4);
+$string1 = "";
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+$int8 = add(multiply(paraheight($int5, 494, $string1), 10), 2);
+if($int8 < 15) {
+$int8 = 15;
+}
+cc_create(400:10, Text, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition(4, %varc49, 0, 0);
+cc_setsize($int5, $int8, 0, 0);
+%varc49 = add(%varc49, $int8);
+cc_setcolor(0xFF981F);
+cc_settextfont(494);
+cc_settextalign(0, 1, 0);
+cc_settextshadow(1);
+cc_settext($string1);
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+$int8 = add(multiply(paraheight($int5, 495, $string1), 12), 5);
+cc_create(400:10, Text, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition(4, %varc49, 0, 0);
+cc_setsize($int5, $int8, 0, 0);
+%varc49 = add(%varc49, $int8);
+cc_setcolor(0xFFFFFF);
+cc_settextfont(495);
+cc_settextalign(0, 1, 0);
+cc_settextshadow(1);
+cc_settext($string1);
+$string2 = "";
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string2 = $gosubResult632_0;
+~script611($string1, $string2, 26214410, $int5, 4, 494, 494, 10, 2);
+$int9 = add(add(4, 17), 4);
+$int10 = sub($int5, add(4, $int9));
+$int11 = 0;
+while($int11 < $int2) {
+$gosubResult632_0, $gosubResult632_1 = ~script632($string0);
+$string0 = $gosubResult632_1;
+$string1 = $gosubResult632_0;
+$int8 = add(multiply(paraheight($int10, 494, $string1), 10), 2);
+if($int8 < 17) {
+$int8 = 17;
+}
+cc_create(400:10, Rectangle, %varc43);
+cc_settrans(255);
+cc_setcolor(0xFFFFFF);
+cc_setfill(1);
+%varc43 = add(%varc43, 1);
+.cc_create(400:10, Text, %varc43);
+%varc43 = add(%varc43, 1);
+cc_setposition(4, %varc49, 0, 0);
+.cc_setposition($int9, %varc49, 0, 0);
+cc_setsize($int5, $int8, 0, 0);
+.cc_setsize($int10, $int8, 0, 0);
+.cc_settextfont(494);
+.cc_settextalign(0, 1, 0);
+.cc_settextshadow(1);
+.cc_setcolor(0xFF981F);
+cc_setonmouserepeat("script85(-2147483645, .cc_getid, 16777215)");
+cc_setonmouseleave("script85(-2147483645, .cc_getid, 16750623)");
+.cc_settext($string1);
+.cc_create(400:10, Graphic, %varc43);
+%varc43 = add(%varc43, 1);
+.cc_setposition(4, add(%varc49, divide(sub($int8, 17), 2)), 0, 0);
+.cc_setsize(17, 17, 0, 0);
+if(testbit($int3, $int11) == 1) {
+.cc_setgraphic(699);
+} else {
+if($int1 == 1) {
+.cc_setgraphic(698);
+} else {
+.cc_setgraphic(697);
+}
+}
+.cc_settiling(0);
+if($int1 == 1 && testbit($int3, $int11) == 1) {
+cc_setop(1, "De-select");
+} else {
+cc_setop(1, "Select");
+}
+cc_setonop("script623(-2147483645, -2147483643, $int0, $int11)");
+%varc49 = add(%varc49, $int8);
+$int11 = add($int11, 1);
+}
+%varc49 = add(%varc49, 4);
+$int8 = sub(%varc49, $int7);
+if(cc_find(26214410, $int6) == 1) {
+cc_setsize($int4, $int8, 0, 0);
+}
+if(cc_find(26214410, add($int6, 1)) == 1) {
+cc_setsize($int4, $int8, 0, 0);
+}
+if(cc_find(26214410, add($int6, 2)) == 1) {
+cc_setsize(sub($int4, 2), sub($int8, 2), 0, 0);
+}
+%varc49 = add(%varc49, 4);
+return();

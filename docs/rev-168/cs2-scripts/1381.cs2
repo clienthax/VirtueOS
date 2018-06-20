@@ -1,0 +1,13 @@
+[clientscript,script1381](int $int0, int $int1, int $int2, string $string0)
+if($int0 == 1) {
+if(cc_find($int1, $int2) == 1) {
+cc_settrans(175);
+}
+~script837($int1, -1, 27656257, $string0, 25, divide(512, 2));
+} else {
+if(cc_find($int1, $int2) == 1) {
+cc_settrans(0);
+}
+~script41(27656257);
+}
+return();

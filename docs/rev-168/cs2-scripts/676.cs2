@@ -1,0 +1,11 @@
+[clientscript,script676](int $int0, int $int1)
+$string0 = "Login/Logout notification timeout<br>(currently enabled)";
+if(%varbit1627 <= 0) {
+if_setgraphic(762, $int0);
+} else {
+$string0 = "Login/Logout notification timeout<br>(currently disabled)";
+if_setgraphic(761, $int0);
+}
+if_setonmouserepeat("script526($int0, -1, $int1, $string0, 25, 190)", $int0);
+%varc2 = 0;
+return();

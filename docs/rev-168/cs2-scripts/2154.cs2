@@ -1,0 +1,19 @@
+[clientscript,script2154]
+if(%varbit6257 == 0) {
+if_sethide(1, 601:11);
+if_sethide(1, 601:10);
+} else {
+if_sethide(0, 601:11);
+if_sethide(0, 601:10);
+if(%varbit6256 == 0) {
+if_setgraphic(1624, 601:40);
+} else {
+if(%varbit6255 == 1 && ~script2238 == 0) {
+if_setgraphic(1624, 601:40);
+%varbit6256 = 0;
+} else {
+if_setgraphic(1623, 601:40);
+}
+}
+}
+return();

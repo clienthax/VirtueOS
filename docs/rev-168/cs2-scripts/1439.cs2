@@ -1,0 +1,17 @@
+[clientscript,script1439](int $int0, int $int1, int $int2, int $int3)
+if($int3 >= 7) {
+cc_setgraphic(942);
+if_setop(1, "Enable warning", $int0);
+if_setonop("script1440(-2147483645, cc_getid, $int1, $int2, 6)", $int0);
+} else {
+if($int3 == 6) {
+cc_setgraphic(941);
+if_setop(1, "Disable warning", $int0);
+if_setonop("script1440(-2147483645, cc_getid, $int1, $int2, 7)", $int0);
+} else {
+cc_setgraphic(-1);
+if_clearops($int0);
+if_setonop("null()", $int0);
+}
+}
+return();

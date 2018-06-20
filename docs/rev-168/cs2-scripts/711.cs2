@@ -1,0 +1,39 @@
+[proc,script711](int $int0, int $int1, string $string0)(int)
+cc_deleteall($int0);
+$int2 = if_getwidth($int0);
+$int3 = if_getheight($int0);
+~create_graphic($int0, 0, 297, 1, 1, 0, 0, sub($int2, 2), sub($int3, 2), 0, 0);
+cc_create($int0, Text, 1);
+cc_setposition(6, 6, 0, 0);
+cc_setsize(sub($int2, 12), 23, 0, 0);
+cc_settextalign(1, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settextfont(496);
+cc_settext($string0);
+$int4 = cc_getid;
+$int5 = sub($int2, 32);
+$int6 = sub($int3, 32);
+~create_graphic($int0, 2, 824, 0, 0, 0, 0, 32, 32, 0, 0);
+~create_graphic($int0, 3, 825, $int5, 0, 0, 0, 32, 32, 0, 0);
+~create_graphic($int0, 4, 826, 0, $int6, 0, 0, 32, 32, 0, 0);
+~create_graphic($int0, 5, 827, $int5, $int6, 0, 0, 32, 32, 0, 0);
+$int7 = sub($int2, 64);
+~create_graphic($int0, 6, 820, 32, -13, 0, 0, $int7, 32, 0, 0);
+~create_graphic($int0, 7, 822, 32, sub($int3, 20), 0, 0, $int7, 32, 0, 0);
+$int8 = sub($int3, 64);
+~create_graphic($int0, 8, 821, -13, 32, 0, 0, 32, $int8, 0, 0);
+~create_graphic($int0, 9, 823, sub($int2, 20), 32, 0, 0, 32, $int8, 0, 0);
+~create_graphic($int0, 10, 829, 0, 17, 0, 0, 32, 32, 0, 0);
+~create_graphic($int0, 11, 830, $int5, 17, 0, 0, 32, 32, 0, 0);
+~create_graphic($int0, 12, 828, 11, 15, 0, 0, sub($int2, 22), 32, 0, 0);
+$int9 = 831;
+if(testbit($int1, 0) == 0) {
+~create_graphic($int0, 13, $int9, sub($int2, 26), 10, 0, 0, 16, 16, 0, 0);
+cc_setonmouseleave("script229(-2147483645, -2147483643, $int9, -1)");
+$int9 = 832;
+cc_setonmouseover("script229(-2147483645, -2147483643, $int9, -1)");
+cc_setop(1, "Close");
+cc_setonop("script29()");
+}
+return($int4);

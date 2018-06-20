@@ -1,0 +1,8 @@
+[clientscript,script1325](int $int0)
+if(%varc140 == 1) {
+%varc140 = 0;
+} else {
+%varc140 = 1;
+}
+~script1326($int0, %varc140);
+return();

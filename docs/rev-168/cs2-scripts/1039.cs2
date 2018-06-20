@@ -1,0 +1,5 @@
+[clientscript,script1039](int $int0)
+if_setopbase("<col=ff9040>XP drops</col>", $int0);
+~script1042($int0);
+if_setonvartransmit("script1041(-2147483645){1055}", $int0);
+return();

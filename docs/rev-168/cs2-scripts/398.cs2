@@ -1,0 +1,53 @@
+[clientscript,script398](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+$int6 = 0;
+if($int0 == 1) {
+$int6 = sub(2048, multiply(%varbit3985, 512));
+} else {
+if($int0 == 2) {
+$int6 = sub(2048, multiply(%varbit3986, 512));
+} else {
+if($int0 == 3) {
+$int6 = sub(2048, multiply(%varbit3987, 512));
+} else {
+return();
+}
+}
+}
+$int7 = if_getmodelangle_z($int1);
+if($int7 < 0 || $int7 >= 2048) {
+$int7 = 0;
+}
+$int8 = 0;
+if($int7 != $int6) {
+if($int6 < $int7) {
+$int6 = add($int6, 2048);
+}
+$int8 = sub($int6, $int7);
+if($int8 < 1024) {
+if($int8 > 10) {
+$int7 = add($int7, 10);
+} else {
+$int7 = $int6;
+}
+} else {
+if($int8 < 2038) {
+$int7 = add($int7, 2038);
+} else {
+$int7 = $int6;
+}
+}
+}
+$int7 = modulo($int7, 2048);
+if($int7 < 0) {
+if($int7 < -2048) {
+$int7 = 0;
+} else {
+$int7 = add($int7, 2048);
+}
+}
+if_setmodelangle(0, 0, 0, 0, $int7, 1000, $int1);
+if_setmodelangle(0, 0, 0, 0, $int7, 1000, $int2);
+if_setmodelangle(0, 0, 0, 0, $int7, 1000, $int3);
+if_setmodelangle(0, 0, 0, 0, $int7, 1000, $int4);
+if_setmodelangle(0, 0, 0, 0, $int7, 1000, $int5);
+return();

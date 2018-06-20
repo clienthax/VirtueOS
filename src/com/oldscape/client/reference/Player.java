@@ -178,7 +178,7 @@ final class Player extends Actor {
         //GFX
         if ((flags & 256) != 0) {
             player.graphic = buffer.getUnsignedShortLE();
-            var5 = buffer.method3563();
+            var5 = buffer.getIntV1();
             player.field1198 = var5 >> 16;
             player.graphicsDelay = (var5 & 65535) + Client.gameCycle;
             player.spotAnimFrame = 0;

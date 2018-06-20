@@ -1,0 +1,19 @@
+[clientscript,script2131](int $int0)
+$int1 = inv_total(93, 22207);
+$string0 = "";
+if($int1 > 700) {
+$int1 = 700;
+$string0 = "Only <col=ffffff><~script46(700, ",")></col> may be exchanged.";
+} else {
+$string0 = "<col=ffffff><~script46($int1, ",")></col> x <oc_name(22207)>";
+}
+cc_setobject_nonum(22207, $int1);
+.cc_settext($string0);
+$int2 = if_getwidth($int0);
+$int3 = parawidth($int2, 495, $string0);
+.cc_setsize($int3, 32, 0, 0);
+$int3 = add(add(36, 3), $int3);
+$int4 = divide(sub($int2, $int3), 2);
+cc_setposition($int4, 0, 0, 2);
+.cc_setposition($int4, 0, 2, 2);
+return();

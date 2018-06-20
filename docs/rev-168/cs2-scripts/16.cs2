@@ -1,0 +1,44 @@
+[clientscript,script16](int $int0, int $int1, int $int2, int $int3, int $int4, string $string0, string $string1, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12)
+~script21($int0, $int1, $int2, $int3, $int4, $string0, $string1, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12);
+switch($int0) {
+case 14286947:
+case 14286849:
+case 14286945:
+case 14286993:
+if(%varbit1771 == 1) {
+if_setop(10, "Animation", $int0);
+} else {
+if_setop(10, "", $int0);
+}
+case 14286864:
+if(%varbit4585 == 1 && map_members == 1) {
+if_setop(1, "", $int0);
+if_setop(3, "Cast", $int0);
+} else {
+if_setop(1, "Cast", $int0);
+if_setop(3, "", $int0);
+}
+case 14286875:
+if(%varbit4560 == 1 && map_members == 1) {
+if_setop(1, "", $int0);
+if_setop(3, "Cast", $int0);
+} else {
+if_setop(1, "Cast", $int0);
+if_setop(3, "", $int0);
+}
+case 14286886:
+if(%varbit4548 == 1 && map_members == 1) {
+if_setop(1, "", $int0);
+if_setop(3, "Cast", $int0);
+} else {
+if_setop(1, "Cast", $int0);
+if_setop(3, "", $int0);
+}
+case 14286951:
+if(%varbit5006 == 10 && %varbit5037 == 1) {
+if_setop(2, "Steve", $int0);
+} else {
+if_setop(2, enum(int, string, 1702, %varbit5006), $int0);
+}
+}
+return();

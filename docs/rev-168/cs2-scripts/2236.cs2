@@ -1,0 +1,7 @@
+[clientscript,script2236]
+if(~script2238 == 1) {
+~script2237(0);
+} else {
+~script2237(1);
+}
+return();

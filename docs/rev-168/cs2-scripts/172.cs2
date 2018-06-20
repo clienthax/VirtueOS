@@ -1,0 +1,18 @@
+[clientscript,script172](int $int0, int $int1, int $int2)
+if($int1 != -1) {
+cc_settrans(0);
+cc_setobject($int1, $int2);
+cc_setop(1, "Deposit-1");
+cc_setop(2, "Deposit-5");
+cc_setop(3, "Deposit-10");
+cc_setop(4, "Deposit-All");
+cc_setop(5, "Deposit-X");
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int1)></col>");
+cc_setondragcomplete("script705(-2147483645, -2147483643, -2147483641)");
+} else {
+cc_settrans(255);
+cc_setobject(6512, 1);
+cc_setondragcomplete("null()");
+}
+return();

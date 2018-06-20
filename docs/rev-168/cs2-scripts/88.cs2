@@ -1,0 +1,32 @@
+[clientscript,private_op](int $int0, string $string0)
+$string1 = removetags($string0);
+if($int0 == 10) {
+%varcstr24 = $string1;
+} else {
+if(friend_test($string1) == 1) {
+if($int0 == 8 || $int0 == 9) {
+if(%varc203 == 1) {
+~script107($string1);
+} else {
+mes("You must set a name before you can do that.");
+}
+}
+} else {
+if($int0 == 8) {
+if(%varc203 == 1) {
+friend_add($string1);
+} else {
+mes("You must set a name before you can do that.");
+}
+} else {
+if($int0 == 9) {
+if(%varc203 == 1) {
+ignore_add($string1);
+} else {
+mes("You must set a name before you can do that.");
+}
+}
+}
+}
+}
+return();

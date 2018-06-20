@@ -1,0 +1,37 @@
+[clientscript,script1941](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+if(%varbit4692 == 1) {
+if_setposition(0, 30, 1, 0, $int0);
+} else {
+if_setposition(0, 0, 1, 0, $int0);
+}
+if_settext(tostring(%varbit4924), $int1);
+if(%varbit4924 >= 450) {
+if_setcolor(0xC80000, $int1);
+} else {
+if_setcolor(0xFFFF00, $int1);
+}
+if_settext(tostring(%varbit4925), $int2);
+if(%varbit4925 >= 450) {
+if_setcolor(0xC80000, $int2);
+} else {
+if_setcolor(0xFFFF00, $int2);
+}
+if_settext(tostring(%varbit4926), $int3);
+if(%varbit4926 >= 450) {
+if_setcolor(0xC80000, $int3);
+} else {
+if_setcolor(0xFFFF00, $int3);
+}
+if_settext(tostring(%varbit4921), $int4);
+if(%varbit4921 >= 450) {
+if_setcolor(0xC80000, $int4);
+} else {
+if_setcolor(0xFFFF00, $int4);
+}
+if_settext(tostring(%varbit4922), $int5);
+if(%varbit4922 >= 450) {
+if_setcolor(0xC80000, $int5);
+} else {
+if_setcolor(0xFFFF00, $int5);
+}
+return();

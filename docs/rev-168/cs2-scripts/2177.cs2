@@ -1,0 +1,7 @@
+[proc,script2177](int $int0, int $int1)(int)
+if(testbit($int1, 25) == 1) {
+if(testbit($int1, 23) == 1) {
+return(1);
+}
+}
+return(0);

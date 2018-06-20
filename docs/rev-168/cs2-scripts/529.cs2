@@ -1,0 +1,6 @@
+[clientscript,script529](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+if(if_gethide($int1) == 1) {
+sound_synth(2266, 1, 0);
+}
+~script530($int0, $int1, $int2, $int3, $int4, $int5, $int6);
+return();

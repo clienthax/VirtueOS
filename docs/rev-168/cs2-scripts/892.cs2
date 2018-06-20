@@ -1,0 +1,145 @@
+[clientscript,script892](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11)
+~script760($int3, 2, 3, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11);
+~script760($int4, 0, 1, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11);
+~script760($int5, 4, 5, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11);
+~script760($int6, 8, 9, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11);
+~script760($int7, 6, 7, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11);
+if(%varbit4596 == 2) {
+sortWorlds(7, 0, 0, 0);
+} else {
+if(%varbit4596 == 3) {
+sortWorlds(7, 1, 0, 0);
+} else {
+if(%varbit4596 == 4) {
+sortWorlds(2, 0, 0, 0);
+} else {
+if(%varbit4596 == 5) {
+sortWorlds(2, 1, 0, 0);
+} else {
+if(%varbit4596 == 8) {
+sortWorlds(1, 0, 0, 0);
+} else {
+if(%varbit4596 == 9) {
+sortWorlds(1, 1, 0, 0);
+} else {
+if(%varbit4596 == 6) {
+sortWorlds(3, 0, 0, 0);
+} else {
+if(%varbit4596 == 7) {
+sortWorlds(3, 1, 0, 0);
+} else {
+if(%varbit4596 == 1) {
+sortWorlds(0, 1, 7, 0);
+} else {
+sortWorlds(0, 0, 7, 0);
+}
+}
+}
+}
+}
+}
+}
+}
+}
+$int12 = if_getheight($int3);
+$int13 = if_getwidth($int3);
+$int14 = if_getwidth($int4);
+$int15 = if_getwidth($int5);
+$int16 = if_getwidth($int6);
+$int17 = if_getwidth($int7);
+cc_deleteall($int0);
+$int18 = ~stat_totallevel;
+$int19 = ~script1320;
+$int20 = 0;
+$int21 = 0;
+$int22 = 0;
+$string0 = "";
+$int23 = -1;
+$int24 = 0;
+$string1 = "";
+$string1 = getFirstWorld().region;
+$int24 = getFirstWorld().players;
+$int23 = getFirstWorld().country;
+$string0 = getFirstWorld().activity;
+$int22 = getFirstWorld().flag;
+$int21 = getFirstWorld().id;
+while($int21 > 0) {
+if(~script961($int21, $int22) == 1) {
+$int20 = ~script960($int0, $int20, $int12, $int2, $int21, $int21, $int22, $string0, $int23, $int24, $int13, $int14, $int15, $int16, $int17, $int18, $int19, $int11);
+$int12 = add($int12, 16);
+}
+$string1 = getNextWorld().region;
+$int24 = getNextWorld().players;
+$int23 = getNextWorld().country;
+$string0 = getNextWorld().activity;
+$int22 = getNextWorld().flag;
+$int21 = getNextWorld().id;
+}
+if($int12 > if_getheight($int0)) {
+if_setscrollsize(0, $int12, $int0);
+} else {
+if_setscrollsize(0, 0, $int0);
+}
+if_setsize(0, $int12, 1, 0, $int2);
+if(%varc69 < 0) {
+%varc69 = 0;
+}
+~script72($int1, $int0, %varc69);
+cc_deleteall($int8);
+cc_deleteall($int9);
+$int25 = sub(if_getwidth($int8), add(add(add($int13, $int14), $int15), $int16));
+if(%varbit4597 > 0) {
+if_sethide(1, $int10);
+$string1 = getWorld(%varbit4597).region;
+$int24 = getWorld(%varbit4597).players;
+$int23 = getWorld(%varbit4597).country;
+$string0 = getWorld(%varbit4597).activity;
+$int22 = getWorld(%varbit4597).flag;
+$int21 = getWorld(%varbit4597).id;
+if(~script961($int21, $int22) == 0) {
+$int24 = 0;
+$int23 = -1;
+$string0 = "Unavailable";
+$int21 = 0;
+}
+~script960($int8, 0, 0, $int8, -1, $int21, $int22, $string0, $int23, $int24, $int13, $int14, $int15, $int16, $int25, $int18, $int19, $int11);
+if(%varbit4598 > 0) {
+$string1 = getWorld(%varbit4598).region;
+$int24 = getWorld(%varbit4598).players;
+$int23 = getWorld(%varbit4598).country;
+$string0 = getWorld(%varbit4598).activity;
+$int22 = getWorld(%varbit4598).flag;
+$int21 = getWorld(%varbit4598).id;
+if(~script961($int21, $int22) == 0) {
+$int24 = 0;
+$int23 = -1;
+$string0 = "Unavailable";
+$int21 = 0;
+}
+~script960($int9, 0, 0, $int9, -1, $int21, $int22, $string0, $int23, $int24, $int13, $int14, $int15, $int16, $int25, $int18, $int19, $int11);
+} else {
+~script893($int9);
+}
+} else {
+~script893($int8);
+if(%varbit4598 > 0) {
+if_sethide(1, $int10);
+$string1 = getWorld(%varbit4598).region;
+$int24 = getWorld(%varbit4598).players;
+$int23 = getWorld(%varbit4598).country;
+$string0 = getWorld(%varbit4598).activity;
+$int22 = getWorld(%varbit4598).flag;
+$int21 = getWorld(%varbit4598).id;
+if(~script961($int21, $int22) == 0) {
+$int24 = 0;
+$int23 = -1;
+$string0 = "Unavailable";
+$int21 = 0;
+}
+~script960($int9, 0, 0, $int9, -1, $int21, $int22, $string0, $int23, $int24, $int13, $int14, $int15, $int16, $int25, $int18, $int19, $int11);
+} else {
+if_sethide(0, $int10);
+~script893($int9);
+}
+}
+return();

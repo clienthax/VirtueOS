@@ -1,0 +1,19 @@
+[clientscript,script123](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10)
+if_settext("Friends List - World <tostring(map_world)>", $int1);
+cc_deleteall($int8);
+~scrollbar_vertical($int8, $int7, 792, 789, 790, 791, 773, 788);
+switch(%varc183) {
+case 0:
+case 1:
+case 2:
+case 3:
+case 4:
+case 5:
+case 8:
+case 9:
+default:
+%varc183 = 0;
+}
+~friend_update($int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10);
+if_setonfriendtransmit("friend_update($int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10)", $int0);
+return();

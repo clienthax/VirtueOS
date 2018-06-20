@@ -1,0 +1,19 @@
+[clientscript,script1314]
+$int0 = ~toplevel_getcomponents;
+if($int0 == -1) {
+return();
+}
+$int1 = enum(component, component, $int0, 10551299);
+if($int1 == -1) {
+return();
+}
+cc_deleteall($int1);
+cc_create($int1, Rectangle, 0);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0x000000);
+cc_setfill(1);
+cc_setontimer("script1315(-2147483645, -2147483643, clientclock)");
+~script1316($int1, 0);
+sound_synth(2982, 1, 10);
+return();

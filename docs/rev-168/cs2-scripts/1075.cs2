@@ -1,0 +1,4 @@
+[clientscript,script1075](int $int0, int $int1, int $int2, int $int3, int $int4)
+~script1076($int0, $int1, $int2, $int3, $int4);
+~script2230(19660805, 19660808, 19660810, 19660812, 19660814, 19660802);
+return();

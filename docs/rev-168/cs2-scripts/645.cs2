@@ -1,0 +1,8 @@
+[clientscript,script645](int $int0)
+if(%varbit2013 == 1) {
+cc_setgraphic(698);
+} else {
+cc_setgraphic(699);
+}
+if_setontimer("null()", $int0);
+return();

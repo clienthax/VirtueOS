@@ -1,0 +1,44 @@
+[proc,script79](int $int0)(string)
+switch($int0) {
+case 0:
+return(%varcstr2);
+case 1:
+return(%varcstr3);
+case 2:
+return(%varcstr4);
+case 3:
+return(%varcstr5);
+case 4:
+return(%varcstr6);
+case 5:
+return(%varcstr7);
+case 6:
+return(%varcstr8);
+case 7:
+return(%varcstr9);
+case 8:
+return(%varcstr10);
+case 9:
+return(%varcstr11);
+case 10:
+return(%varcstr12);
+case 11:
+return(%varcstr13);
+case 12:
+return(%varcstr14);
+case 13:
+return(%varcstr15);
+case 14:
+return(%varcstr16);
+case 15:
+return(%varcstr17);
+case 16:
+return(%varcstr18);
+case 17:
+return(%varcstr19);
+case 18:
+return(%varcstr20);
+case 19:
+return(%varcstr21);
+}
+return("");

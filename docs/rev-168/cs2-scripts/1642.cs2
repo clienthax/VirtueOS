@@ -1,0 +1,6 @@
+[clientscript,script1642]
+$int0 = %varbit4167;
+$int0 = ~max(1, $int0);
+if_settext(tostring($int0), 90:6);
+~script2084(5898256);
+return();

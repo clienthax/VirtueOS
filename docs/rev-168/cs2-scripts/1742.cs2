@@ -1,0 +1,4 @@
+[clientscript,script1742](int $int0, int $int1, int $int2)
+sound_synth(2266, 1, 0);
+~script1743($int0, $int1, $int2);
+return();

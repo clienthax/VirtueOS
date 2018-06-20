@@ -1,0 +1,20 @@
+[clientscript,script636](int $int0)
+if(cc_find(9699342, $int0) == 1) {
+cc_sethide(1);
+}
+$int1 = 0;
+$int0 = 0;
+while($int1 == 0) {
+while($int0 <= 39) {
+if(cc_find(9699342, $int0) == 1) {
+if(cc_gethide == 0) {
+$int1 = 1;
+}
+}
+$int0 = add($int0, 1);
+}
+}
+if($int1 == 0) {
+~script637(9699342, 31, 9699343, 0, 0);
+}
+return();

@@ -1,0 +1,13 @@
+[clientscript,script1118](int $int0)
+if(cc_find($int0, 0) == 1) {
+return();
+}
+cc_create($int0, Text, ~thinbox($int0, 0));
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_setcolor(0xFF981F);
+cc_settextshadow(1);
+cc_settext("Loading...");
+return();

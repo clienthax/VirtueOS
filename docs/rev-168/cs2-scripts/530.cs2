@@ -1,0 +1,38 @@
+[clientscript,script530](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+if($int1 == $int4) {
+if_sethide(1, $int3);
+if_sethide(0, $int4);
+if_sethide(1, $int5);
+if_sethide(1, $int6);
+} else {
+if($int1 == $int5) {
+if_sethide(1, $int3);
+if_sethide(1, $int4);
+if_sethide(0, $int5);
+if_sethide(1, $int6);
+} else {
+if($int1 == $int6) {
+if_sethide(1, $int3);
+if_sethide(1, $int4);
+if_sethide(1, $int5);
+if_sethide(0, $int6);
+} else {
+if_sethide(0, $int3);
+if_sethide(1, $int4);
+if_sethide(1, $int5);
+if_sethide(1, $int6);
+}
+}
+}
+$int7 = 0;
+while($int7 < 4) {
+if(cc_find($int2, multiply($int7, 2)) == 1) {
+if($int7 == $int0) {
+cc_setgraphic(762);
+} else {
+cc_setgraphic(761);
+}
+}
+$int7 = add($int7, 1);
+}
+return();

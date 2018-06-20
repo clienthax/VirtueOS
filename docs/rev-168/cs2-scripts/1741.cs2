@@ -1,0 +1,19 @@
+[clientscript,script1741](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11)
+$int12 = if_getwidth($int1);
+$int13 = if_getheight($int1);
+if($int12 == $int4) {
+if($int13 == $int5) {
+return();
+}
+}
+~script1745($int0, $int1, $int2, $int3, $int9);
+$int13 = if_getheight($int1);
+$int12 = if_getwidth($int1);
+~script231($int7, $int6);
+$int14 = ~min(200, sub(divide(sub($int12, $int8), 2), 54));
+if_setsize($int14, 20, 0, 0, $int10);
+if(.cc_find($int10, $int11) == 1) {
+~script1739($int14);
+}
+if_setontimer("script1740($int0, $int1, $int2, $int3, $int12, $int13, $int6, $int7, $int8, $int9, $int10, $int11)", $int0);
+return();

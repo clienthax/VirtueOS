@@ -1,0 +1,5 @@
+[clientscript,script403](int $int0, int $int1, int $int2, int $int3, int $int4, string $string0)
+if_setopbase("<col=ff9040><$string0>", $int0);
+if_setonvartransmit("script475($int0, $int1, $int2, $int3, $int4){261, 262}", $int0);
+~script476($int0, $int1, $int2, $int3, $int4);
+return();

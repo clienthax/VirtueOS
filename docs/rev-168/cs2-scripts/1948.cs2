@@ -1,0 +1,4 @@
+[clientscript,script1948]
+$int0 = %varp1610;
+if_settext("<tostring($int0)>/50", 599:25);
+return();

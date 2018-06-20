@@ -1,0 +1,13 @@
+[clientscript,script59](int $int0, int $int1, int $int2, int $int3, string $string0)
+cc_create(219:0, Text, $int0);
+cc_setsize(479, $int2, 0, 0);
+cc_setposition(0, $int1, 0, 0);
+cc_setcolor(0x000000);
+cc_settextshadow(0);
+cc_settextfont(497);
+cc_settextalign(1, $int3, 0);
+cc_settext($string0);
+cc_setonmouseover("script85(-2147483645, -2147483643, 16777215)");
+cc_setonmouseleave("script85(-2147483645, -2147483643, 0)");
+cc_setonkey("script57(-2147483640, -2147483639, -2147483645, -2147483643, -1, tostring($int0), "", 0, 0)");
+return();

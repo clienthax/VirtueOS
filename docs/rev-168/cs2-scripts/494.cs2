@@ -1,0 +1,27 @@
+[clientscript,script494](int $int0, int $int1)
+if($int1 == 0) {
+if(modulo(clientclock, 50) != 0) {
+return();
+}
+}
+if(~deadman_world == 1) {
+if(%varbit4965 > 0) {
+return();
+}
+}
+if(%varbit4143 == 0 || ~wilderness_level <= 0) {
+if(~deadman_world == 0) {
+if_sethide(1, $int0);
+return();
+}
+}
+if_sethide(0, $int0);
+if(%varp1102 == 0) {
+if_settext("Kills:<tostring(%varp1103)><br>Deaths:0<br>K/D Ratio:0", $int0);
+return();
+}
+$int2 = divide(multiply(%varp1103, 10), %varp1102);
+$int3 = divide($int2, 10);
+$int4 = modulo($int2, 10);
+if_settext("Kills: <tostring(%varp1103)><br>Deaths: <tostring(%varp1102)><br>K/D Ratio: <tostring($int3)>.<tostring($int4)>", $int0);
+return();

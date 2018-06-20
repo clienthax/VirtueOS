@@ -1,0 +1,86 @@
+[clientscript,script168](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10)
+$int11 = ~toplevel_getcomponents;
+if($int11 == -1) {
+return();
+}
+$int12 = 5066031;
+$int13 = 0;
+$int14 = 2;
+if(~inzone(57681344, 864019967, coord) == 1) {
+if_sethide(0, $int1);
+if_sethide(0, $int8);
+if_sethide(0, $int9);
+} else {
+if(~inzone(58100932, 58707191, coord) == 1) {
+if_sethide(1, $int1);
+if_sethide(0, $int8);
+if_sethide(0, $int9);
+} else {
+if_sethide(1, $int1);
+if_sethide(1, $int8);
+if_sethide(1, $int9);
+}
+}
+$int15 = enum(enum, int, 1135, $int11);
+$int16 = 5;
+$int17 = 200;
+$int18 = 20;
+$int19 = 0;
+if_setsize($int15, enum(enum, int, 1136, $int11), 1, 1, $int1);
+if($int15 > 0) {
+if(~script1972 == 1) {
+$int16 = 220;
+$int15 = 45;
+$int18 = 60;
+$int17 = 180;
+$int19 = 2;
+} else {
+$int15 = 18;
+}
+if_setposition($int15, $int17, 2, 0, $int8);
+if_setposition($int16, $int18, $int19, 0, $int9);
+$int14 = 0;
+$int13 = 2;
+$int12 = 10526880;
+} else {
+if_setposition(10, 8, 2, 2, $int8);
+if_setposition(10, 28, 2, 2, $int9);
+}
+if_setcolor($int12, $int8);
+$int20 = 0;
+while($int20 < 6) {
+if(cc_find($int9, multiply($int20, 2)) == 1) {
+if(.cc_find($int9, add(multiply($int20, 2), 1)) == 1) {
+cc_setposition(0, multiply($int20, 17), $int14, 0);
+.cc_setposition(0, multiply($int20, 17), $int13, 0);
+cc_setcolor($int12);
+}
+}
+$int20 = add($int20, 1);
+}
+$int21 = if_getheight($int1);
+if($int21 < 334) {
+$int21 = 334;
+} else {
+if($int21 > 1500) {
+$int21 = 1500;
+}
+}
+if($int21 == $int10) {
+return();
+}
+$int22 = sub(400, interpolate(0, nth_root(sub($int21, 334), 2), 0, nth_root(sub(1500, 334), 2), 280));
+if_setmodelangle(0, 0, 0, 0, 0, $int22, $int2);
+if_setmodelangle(0, 0, 0, 0, 0, $int22, $int3);
+if_setmodelangle(0, 0, 0, 0, 0, $int22, $int4);
+if_setmodelangle(0, 0, 0, 0, 0, $int22, $int5);
+if_setmodelangle(0, 0, 0, 0, 0, $int22, $int6);
+if_setmodelangle(0, 0, 0, 0, 0, $int22, $int7);
+if_sethide(1, $int2);
+if_sethide(1, $int3);
+if_sethide(1, $int4);
+if_sethide(1, $int5);
+if_sethide(1, $int6);
+if_sethide(1, $int7);
+if_setontimer("script140($int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int21)", $int0);
+return();

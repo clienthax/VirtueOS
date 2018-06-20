@@ -1,0 +1,20 @@
+[clientscript,script2246](int $int0)
+if(if_find(1179648) == 1) {
+switch($int0) {
+case 1:
+cc_setgraphic(1621);
+case 2:
+cc_setgraphic(1620);
+case 3:
+cc_setgraphic(1618);
+case 4:
+cc_setgraphic(1616);
+case 5:
+cc_setgraphic(1619);
+case 6:
+cc_setgraphic(1615);
+}
+} else {
+mes("Please start the tutorial again at your earliest convenience.");
+}
+return();

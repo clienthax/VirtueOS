@@ -1,0 +1,34 @@
+[clientscript,script342](int $int0)
+$int1 = 255;
+if(%varbit4733 == 0) {
+if(~inzone(584586432, 585094359, coord) == 1) {
+$int1 = 125;
+} else {
+if(~inzone(584455384, 585094399, coord) == 1) {
+$int1 = 150;
+} else {
+if(~inzone(584062184, 584439039, coord) == 1 || ~inzone(584193248, 584439015, coord) == 1) {
+$int1 = 175;
+}
+}
+}
+}
+$int2 = %varc50;
+if($int2 > $int1) {
+$int2 = sub($int2, 4);
+if($int2 < $int1) {
+$int2 = $int1;
+}
+} else {
+if($int2 < $int1) {
+$int2 = add($int2, 4);
+if($int2 > $int1) {
+$int2 = $int1;
+}
+}
+}
+if($int2 != %varc50) {
+if_settrans($int2, $int0);
+%varc50 = $int2;
+}
+return();

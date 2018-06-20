@@ -1,0 +1,110 @@
+[clientscript,script2055](int $int0, int $int1)
+$int2 = enum(int, boolean, 1810, $int0);
+if($int2 == 1) {
+%varc200 = ~max(1, ~min($int1, %varc200));
+} else {
+if(%varc200 > 5) {
+%varc200 = 10;
+} else {
+if(%varc200 > 1) {
+%varc200 = 5;
+} else {
+%varc200 = 1;
+}
+}
+%varc200 = ~min(%varc200, $int1);
+}
+$int3 = 0;
+$string0 = "X";
+if($int2 == 1) {
+if($int1 > 1) {
+if(%varc200 == 1) {
+$int3 = ~script2056(1, 1, 17694727, $int0, $int1, $int3);
+} else {
+$int3 = ~script2056(0, 1, 17694727, $int0, $int1, $int3);
+}
+} else {
+~script2047(17694727);
+}
+if($int1 > 5) {
+if(%varc200 == 5) {
+$int3 = ~script2056(1, 5, 17694728, $int0, $int1, $int3);
+} else {
+$int3 = ~script2056(0, 5, 17694728, $int0, $int1, $int3);
+}
+} else {
+~script2047(17694728);
+}
+if($int1 > 10) {
+if(%varc200 == 10) {
+$int3 = ~script2056(1, 10, 17694729, $int0, $int1, $int3);
+} else {
+$int3 = ~script2056(0, 10, 17694729, $int0, $int1, $int3);
+}
+} else {
+~script2047(17694729);
+}
+if(%varc201 == 1 || %varc201 == 5 || %varc201 == 10 || %varc201 == $int1) {
+~script2047(17694730);
+} else {
+if(%varc201 < 1 || %varc201 > $int1) {
+~script2047(17694730);
+} else {
+if(%varc200 == %varc201) {
+$int3 = ~script2056(1, %varc201, 17694730, $int0, $int1, $int3);
+} else {
+$int3 = ~script2056(0, %varc201, 17694730, $int0, $int1, $int3);
+}
+}
+}
+if($int1 > 2) {
+if_setposition($int3, 0, 0, 1, 270:11);
+$int3 = add(add($int3, if_getwidth(270:11)), 5);
+~script2058(0, $string0, 17694731);
+if_setonmouseover("script2057(1, $string0, -2147483645)", 270:11);
+if_setonmouseleave("script2057(0, $string0, -2147483645)", 270:11);
+if_setop(1, "Other quantity", 270:11);
+if_setonop("script2060(-2147483644, $int0, $int1)", 270:11);
+if_setontimer("null()", 270:11);
+} else {
+~script2047(17694731);
+}
+if(%varc200 >= $int1) {
+$int3 = ~script2056(1, $int1, 17694732, $int0, $int1, $int3);
+} else {
+$int3 = ~script2056(0, $int1, 17694732, $int0, $int1, $int3);
+}
+} else {
+if(%varc200 == 1) {
+$int3 = ~script2056(1, 1, 17694727, $int0, $int1, $int3);
+} else {
+$int3 = ~script2056(0, 1, 17694727, $int0, $int1, $int3);
+}
+if($int1 >= 5) {
+if(%varc200 == 5) {
+$int3 = ~script2056(1, 5, 17694728, $int0, $int1, $int3);
+} else {
+$int3 = ~script2056(0, 5, 17694728, $int0, $int1, $int3);
+}
+} else {
+~script2047(17694728);
+}
+if($int1 >= 10) {
+if(%varc200 == 10) {
+$int3 = ~script2056(1, 10, 17694729, $int0, $int1, $int3);
+} else {
+$int3 = ~script2056(0, 10, 17694729, $int0, $int1, $int3);
+}
+} else {
+~script2047(17694729);
+}
+~script2047(17694730);
+~script2047(17694731);
+~script2047(17694732);
+}
+if($int3 > 0) {
+$int3 = sub($int3, 5);
+}
+if_setsize($int3, 0, 0, 1, 270:6);
+if_setsize($int3, 0, 1, 1, 270:3);
+return();

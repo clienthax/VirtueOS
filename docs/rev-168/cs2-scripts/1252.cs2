@@ -1,0 +1,29 @@
+[clientscript,script1252](int $int0, string $string0, int $int1, int $int2)
+$int3 = 0;
+if($int1 == 3839) {
+$int3 = %varp261;
+} else {
+if($int1 == 3843) {
+$int3 = %varp262;
+} else {
+if($int1 == 3841) {
+$int3 = %varp263;
+} else {
+if($int1 == 12607) {
+$int3 = %varp264;
+} else {
+if($int1 == 12609) {
+$int3 = %varp265;
+} else {
+if($int1 == 12611) {
+$int3 = %varp266;
+} else {
+return();
+}
+}
+}
+}
+}
+}
+~script1253($int0, $int3, $string0, $int1, $int2);
+return();

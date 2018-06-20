@@ -1,0 +1,3 @@
+[clientscript,script1356](int $int0)
+if_settext("Quest Points: <tostring(%varp101)>", $int0);
+return();

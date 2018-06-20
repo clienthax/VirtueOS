@@ -1,0 +1,61 @@
+[clientscript,questlist_showprogress](int $int0, int $int1, int $int2)
+$int3 = 0;
+$int4 = 0;
+$int5 = 0;
+while($int5 < 20) {
+if(cc_find($int0, $int5) == 1) {
+$int3 = ~script1357($int5);
+if($int3 == 2) {
+$int4 = 901389;
+} else {
+if($int3 == 0) {
+$int4 = 16776960;
+} else {
+$int4 = 16711680;
+}
+}
+cc_setcolor($int4);
+cc_setonmouseover("script85(-2147483645, -2147483643, 16777215)");
+cc_setonmouseleave("script85(-2147483645, -2147483643, $int4)");
+}
+$int5 = add($int5, 1);
+}
+$int5 = 0;
+while($int5 < 118) {
+if(cc_find($int1, $int5) == 1) {
+$int3 = ~script1358($int5);
+if($int3 == 2) {
+$int4 = 901389;
+} else {
+if($int3 == 0) {
+$int4 = 16776960;
+} else {
+$int4 = 16711680;
+}
+}
+cc_setcolor($int4);
+cc_setonmouseover("script85(-2147483645, -2147483643, 16777215)");
+cc_setonmouseleave("script85(-2147483645, -2147483643, $int4)");
+}
+$int5 = add($int5, 1);
+}
+$int5 = 0;
+while($int5 < 12) {
+if(cc_find($int2, $int5) == 1) {
+$int3 = ~script1359($int5);
+if($int3 == 2) {
+$int4 = 901389;
+} else {
+if($int3 == 0) {
+$int4 = 16776960;
+} else {
+$int4 = 16711680;
+}
+}
+cc_setcolor($int4);
+cc_setonmouseover("script85(-2147483645, -2147483643, 16777215)");
+cc_setonmouseleave("script85(-2147483645, -2147483643, $int4)");
+}
+$int5 = add($int5, 1);
+}
+return();

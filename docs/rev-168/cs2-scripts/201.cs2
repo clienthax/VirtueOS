@@ -1,0 +1,3 @@
+[clientscript,script201](int $int0, int $int1)
+~script637($int0, 32, $int1, %varp866, %varbit2168);
+return();

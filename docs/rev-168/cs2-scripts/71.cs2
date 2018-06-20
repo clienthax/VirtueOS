@@ -1,0 +1,10 @@
+[clientscript,script71](int $int0, int $int1, int $int2)
+if($int2 == 1) {
+if(%varc171 == $int1) {
+if(enum(enum, boolean, 1134, $int0) == 1) {
+$int1 = -1;
+}
+}
+}
+~script916($int1, $int0);
+return();

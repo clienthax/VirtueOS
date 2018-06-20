@@ -1,0 +1,7 @@
+[clientscript,script2136](int $int0, int $int1, string $string0)
+~script2138(0, $int0, $string0);
+if_setonmouserepeat("script2137(1, $int0, $string0)", $int0);
+if_setonmouseleave("script2137(0, $int0, $string0)", $int0);
+if_setop(1, $string0, $int0);
+if_setonop("script2139(-2147483644, $int1)", $int0);
+return();

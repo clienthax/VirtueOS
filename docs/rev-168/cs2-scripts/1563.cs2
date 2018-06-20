@@ -1,0 +1,31 @@
+[clientscript,script1563](int $int0, int $int1)
+$int2 = 0;
+while($int2 < 40) {
+if_sethide(1, enum(int, component, 1537, $int2));
+$int2 = add($int2, 1);
+}
+if_setscrollsize(0, 0, $int0);
+if_setscrollpos(0, 0, $int0);
+~scrollbar_vertical($int1, $int0, 792, 789, 790, 791, 773, 788);
+%varc59 = clientclock;
+%varc178 = 0;
+cc_deleteall($int0);
+cc_create($int0, Text, 0);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setcolor(0x808080);
+cc_settextfont(495);
+cc_settextalign(1, 1, 0);
+cc_settextshadow(1);
+cc_settext("Loading...");
+cc_deleteall(499:3);
+if_sethide(1, 499:56);
+cc_create(499:3, Rectangle, enum(component, int, 1538, 32702520));
+cc_sethide(1);
+if_sethide(1, 499:58);
+cc_create(499:3, Rectangle, enum(component, int, 1538, 32702522));
+cc_sethide(1);
+~script1558(32702520, "Refresh", 32702467, 1538, -1);
+~script1565;
+if_setonvartransmit("script1564(){1427}", 499:58);
+return();

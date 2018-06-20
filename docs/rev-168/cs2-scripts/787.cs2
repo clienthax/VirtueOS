@@ -1,0 +1,122 @@
+[clientscript,script787]
+$int0 = if_getwidth(464:2);
+$int1 = divide($int0, 5);
+$int2 = add(divide(sub($int0, multiply(5, $int1)), 4), $int1);
+$int3 = add(32, 35);
+$int4 = divide(sub($int1, 36), 2);
+cc_deleteall(464:2);
+$int5 = -1;
+$int6 = 0;
+$int7 = 0;
+$int8 = -1;
+$int9 = inv_size(90);
+def_int $anArray0($int9);
+$anArray0(0) = %varc81;
+$anArray0(1) = %varc82;
+$anArray0(2) = %varc83;
+$anArray0(3) = %varc84;
+$anArray0(4) = %varc85;
+$anArray0(5) = %varc86;
+$anArray0(6) = %varc87;
+$anArray0(7) = %varc88;
+$anArray0(8) = %varc89;
+$anArray0(9) = %varc90;
+$anArray0(10) = %varc91;
+$anArray0(11) = %varc92;
+$anArray0(12) = %varc93;
+$anArray0(13) = %varc94;
+$anArray0(14) = %varc95;
+$anArray0(15) = %varc96;
+$anArray0(16) = %varc97;
+$anArray0(17) = %varc98;
+$anArray0(18) = %varc99;
+$anArray0(19) = %varc100;
+$anArray0(20) = %varc101;
+$anArray0(21) = %varc102;
+$anArray0(22) = %varc104;
+$anArray0(23) = %varc105;
+$anArray0(24) = %varc106;
+$anArray0(25) = %varc107;
+$anArray0(26) = %varc108;
+$anArray0(27) = %varc109;
+$int10 = 0;
+while($int10 < $int9) {
+cc_create(464:2, Graphic, $int10);
+$int8 = inv_getobj(90, $int10);
+if($int8 != -1) {
+$int7 = multiply(divide($int10, 5), $int3);
+$int6 = multiply(modulo($int10, 5), $int2);
+$int5 = $int7;
+cc_sethide(0);
+cc_setsize(36, 32, 0, 0);
+cc_setposition(add($int6, $int4), $int7, 0, 0);
+cc_setgraphicshadow(0x333333);
+cc_setoutline(1);
+cc_setobject($int8, inv_getnum(90, $int10));
+cc_setop(1, "Remove");
+cc_setop(2, "Remove-5");
+cc_setop(3, "Remove-10");
+cc_setop(4, "Remove-All");
+cc_setop(5, "Remove-X");
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int8)></col>");
+cc_setonop("script487(-2147483645, -2147483643, 100, 0)");
+} else {
+cc_sethide(1);
+}
+$int10 = add($int10, 1);
+}
+$int11 = 0;
+$int12 = 0;
+$string0 = ",";
+$int13 = $int10;
+$int10 = 0;
+while($int10 < $int9) {
+$int11 = inv_getnum(90, $int10);
+$int8 = inv_getobj(90, $int10);
+if($int8 != -1) {
+if($int11 > 0) {
+$int7 = multiply(divide($int10, 5), $int3);
+$int6 = multiply(modulo($int10, 5), $int2);
+cc_create(464:2, Text, $int13);
+$int13 = add($int13, 1);
+cc_sethide(0);
+cc_setsize($int1, 35, 0, 0);
+cc_setposition($int6, add($int7, 32), 0, 0);
+cc_setcolor(0xFFFFFF);
+cc_settextfont(494);
+cc_settextshadow(1);
+cc_settextalign(1, 0, 0);
+if(divide(2147483647, $int11) < $anArray0($int10)) {
+$int12 = 2147483647;
+} else {
+$int12 = multiply($int11, $anArray0($int10));
+}
+if($int11 > 1) {
+if($int12 >= 0 && $int12 < 2147483647) {
+cc_settext("<~script46($int11, $string0)> x <~script46($anArray0($int10), $string0)><br>= <~script46($int12, $string0)>");
+} else {
+cc_settext("<~script46($int11, $string0)> x <~script46($anArray0($int10), $string0)>");
+}
+} else {
+cc_settext(~script46($anArray0($int10), $string0));
+}
+}
+}
+$int10 = add($int10, 1);
+}
+$int14 = 0;
+if($int5 >= 0) {
+$int14 = add($int5, $int3);
+}
+$int15 = if_getscrolly(464:2);
+if($int15 > $int5) {
+$int15 = $int5;
+}
+if($int14 > if_getheight(464:2)) {
+if_setscrollsize(0, $int14, 464:2);
+} else {
+if_setscrollsize(0, 0, 464:2);
+}
+~script72(30408707, 30408706, $int15);
+return();

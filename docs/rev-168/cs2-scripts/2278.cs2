@@ -1,0 +1,50 @@
+[clientscript,script2278](int $int0, int $int1, int $int2, int $int3, int $int4, string $string0, string $string1, string $string2)
+if(if_hassub(enum(component, component, ~toplevel_getcomponents, 10551309)) == 0) {
+return();
+}
+$int5 = enum(int, component, 1913, $int0);
+if($int5 == -1) {
+return();
+}
+if(string_length($string0) <= 0) {
+if_sethide(1, $int5);
+return();
+}
+%varc179 = add(%varc179, 1);
+if_sethide(0, $int5);
+cc_deleteall($int5);
+if_clearops($int5);
+$int6 = 0;
+if(string_length($string2) > 0) {
+if_setop(2, ~script1299($string0, "<br>", " "), $int5);
+if_setonop("script2279(removetags($string2))", $int5);
+if_setonvartransmit("null()", $int5);
+if_setonmouserepeat("null()", $int5);
+if_setonmouseleave("null()", $int5);
+$int6 = ~script198($int5);
+$int6 = ~script2283($int5, $int6, $string0, $int1, $int2, $int3, $int4, $string1);
+cc_create($int5, Graphic, $int6);
+$int6 = add($int6, 1);
+cc_setsize(2, 2, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setgraphic(897);
+cc_settiling(1);
+cc_settrans(75);
+cc_create($int5, Text, $int6);
+$int6 = add($int6, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont(496);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext($string2);
+} else {
+if_setop(1, ~script1299($string0, "<br>", " "), $int5);
+~script2282($int0, $int5, $string0, $int1, $int2, $int3, $int4, $string1);
+if_setonvartransmit("script2281($int0, $int5, $string0, $int1, $int2, $int3, $int4, $string1){1204}", $int5);
+if_setonop("script2280(-2147483644, $int0, $int5, $string0, $int1, $int2, $int3, $int4, $string1)", $int5);
+}
+if_setposition(0, %varc179, 1, 0, $int5);
+%varc179 = add(%varc179, if_getheight($int5));
+return();

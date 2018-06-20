@@ -1,0 +1,35 @@
+[clientscript,script709](int $int0, int $int1)
+def_int $anArray0(11);
+$int2 = 0;
+$int3 = 0;
+while($int2 < 11) {
+cc_create($int0, Rectangle, $int3);
+$int3 = add($int3, 1);
+cc_setop(1, "Open <enum(int, string, 595, $int2)> Journal");
+cc_setfill(0);
+cc_setcolor(0xFF9933);
+cc_settrans(150);
+cc_setsize(16, 27, 1, 0);
+$anArray0($int2) = $int2;
+$int2 = add($int2, 1);
+}
+~script1360(0, 0, sub(11, 1), 595);
+$int4 = 8;
+$int2 = 0;
+while($int2 < 11) {
+if(cc_find($int0, $anArray0($int2)) == 1) {
+cc_setposition(0, $int4, 1, 0);
+}
+$int3 = ~script2197($int0, $anArray0($int2), $int3, $int4);
+$int4 = add($int4, 28);
+$int2 = add($int2, 1);
+}
+$int4 = add($int4, 8);
+if_setscrollpos(0, 0, $int0);
+if($int4 > if_getheight($int0)) {
+if_setscrollsize(0, $int4, $int0);
+} else {
+if_setscrollsize(0, 0, $int0);
+}
+~scrollbar_vertical($int1, $int0, 792, 789, 790, 791, 773, 788);
+return();

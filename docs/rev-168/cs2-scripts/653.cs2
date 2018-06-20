@@ -1,0 +1,89 @@
+[clientscript,script653](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18)
+if($int0 == 3) {
+if_settext("Finally, the FOURTH digit.", $int18);
+if_settext("*", $int14);
+if_settext("*", $int15);
+if_settext("*", $int16);
+if_settext("?", $int17);
+} else {
+if($int0 == 2) {
+if_settext("Time for the THIRD digit.", $int18);
+if_settext("*", $int14);
+if_settext("*", $int15);
+if_settext("?", $int16);
+if_settext("?", $int17);
+} else {
+if($int0 == 1) {
+if_settext("Now click the SECOND digit.", $int18);
+if_settext("*", $int14);
+if_settext("?", $int15);
+if_settext("?", $int16);
+if_settext("?", $int17);
+} else {
+if($int0 == 0) {
+if_settext("First click the FIRST digit.", $int18);
+if_settext("?", $int14);
+if_settext("?", $int15);
+if_settext("?", $int16);
+if_settext("?", $int17);
+} else {
+if_settext("Submitting...", $int18);
+if_settext("*", $int14);
+if_settext("*", $int15);
+if_settext("*", $int16);
+if_settext("*", $int17);
+cc_deleteall($int4);
+cc_deleteall($int5);
+cc_deleteall($int6);
+cc_deleteall($int7);
+cc_deleteall($int8);
+cc_deleteall($int9);
+cc_deleteall($int10);
+cc_deleteall($int11);
+cc_deleteall($int12);
+cc_deleteall($int13);
+if_setonop("null()", $int2);
+if_clearops($int2);
+if_setonop("null()", $int3);
+if_clearops($int3);
+return();
+}
+}
+}
+}
+def_component $anArray0(10);
+$anArray0(0) = $int4;
+$anArray0(1) = $int5;
+$anArray0(2) = $int6;
+$anArray0(3) = $int7;
+$anArray0(4) = $int8;
+$anArray0(5) = $int9;
+$anArray0(6) = $int10;
+$anArray0(7) = $int11;
+$anArray0(8) = $int12;
+$anArray0(9) = $int13;
+$int19 = 0;
+$int20 = -1;
+$int21 = 20;
+while($int21 > 0) {
+$int21 = sub($int21, 1);
+$int19 = random() * 9;
+$int20 = $anArray0(9);
+$anArray0(9) = $anArray0($int19);
+$anArray0($int19) = $int20;
+}
+~script679($anArray0(0), 0, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18);
+~script679($anArray0(1), 1, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18);
+~script679($anArray0(2), 2, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18);
+~script679($anArray0(3), 3, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18);
+~script679($anArray0(4), 4, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18);
+~script679($anArray0(5), 5, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18);
+~script679($anArray0(6), 6, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18);
+~script679($anArray0(7), 7, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18);
+~script679($anArray0(8), 8, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18);
+~script679($anArray0(9), 9, $int0, $int1, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18);
+if_setop(1, if_gettext($int2), $int2);
+if_setonop("script686(12345, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18)", $int2);
+if_setop(1, if_gettext($int3), $int3);
+if_setonop("script686(54321, $int2, $int3, $int4, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12, $int13, $int14, $int15, $int16, $int17, $int18)", $int3);
+return();

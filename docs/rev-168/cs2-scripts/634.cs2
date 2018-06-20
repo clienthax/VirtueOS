@@ -1,0 +1,36 @@
+[clientscript,script634](int $int0, int $int1, int $int2)
+if(%varbit5605 == 1) {
+~script1594($int0);
+~script1672($int1, "Look up name");
+~script1677($int2, "---");
+} else {
+if(%varbit5605 == 2) {
+if_setontimer("script1593($int0)", $int0);
+~script1677($int1, "Look up name");
+~script1677($int2, "---");
+} else {
+if(%varbit5605 == 4) {
+~script1594($int0);
+~script1672($int1, "Another name");
+if(%varbit5606 == 1 && %varbit5607 == 0) {
+if(string_length(%varcstr137) <= 0) {
+%varcstr137 = "-";
+}
+~script1672($int2, "<col=00ff00><%varcstr137></col>");
+} else {
+~script1677($int2, "---");
+}
+} else {
+if(%varbit5605 == 5) {
+if_setontimer("script1593($int0)", $int0);
+~script1677($int1, "Another name");
+~script1677($int2, "---");
+} else {
+if_setontimer("script1593($int0)", $int0);
+~script1677($int1, "Look up name");
+~script1677($int2, "---");
+}
+}
+}
+}
+return();

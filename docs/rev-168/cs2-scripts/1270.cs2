@@ -1,0 +1,4 @@
+[clientscript,script1270](int $int0)
+~script1272($int0, 0);
+if_setoninvtransmit("script1271($int0){95}", $int0);
+return();

@@ -1,0 +1,9 @@
+[clientscript,script1160](int $int0)
+$int1 = inv_size(93);
+while($int1 > 0) {
+$int1 = sub($int1, 1);
+if(cc_find($int0, $int1) == 1) {
+~script1161(inv_getobj(93, $int1), inv_getnum(93, $int1), $int0);
+}
+}
+return();

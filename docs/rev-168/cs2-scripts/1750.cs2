@@ -1,0 +1,94 @@
+[clientscript,script1750](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+$int7 = opcode6616();
+if(opcode6605() == 0 || $int7 == -1 || if_getwidth($int0) <= 0) {
+~script1751($int0, $int1);
+return();
+}
+$int8 = 0;
+$int9 = 0;
+$int9 = opcode6622();
+$int8 = opcode6622();
+if($int8 <= 0) {
+return();
+}
+$int10 = 0;
+$int11 = 0;
+$int11 = opcode6610();
+$int10 = opcode6610();
+$int12 = 0;
+$int13 = 0;
+$int14 = -1;
+if(%varc188 != $int6) {
+if(%varc188 != -1) {
+$int14 = ~script1715($int7, %varc188);
+if($int14 != -1) {
+$int13 = opcode6617($int6);
+$int12 = opcode6617($int6);
+if($int12 >= sub($int10, 25)) {
+if($int12 <= add($int10, 25)) {
+if($int13 >= sub($int11, 25)) {
+if($int13 <= add($int11, 25)) {
+}
+}
+}
+}
+}
+}
+}
+if($int10 == $int2) {
+if($int11 == $int3) {
+if($int8 == $int4) {
+if($int9 == $int5) {
+if(%varc188 == $int6) {
+return();
+}
+}
+}
+}
+}
+if_setontimer("script1750($int0, $int1, $int10, $int11, $int8, $int9, %varc188)", $int0);
+$int15 = add($int11, divide($int9, 2));
+$int16 = sub($int11, divide($int9, 2));
+$int17 = add($int10, divide($int8, 2));
+$int18 = sub($int10, divide($int8, 2));
+~script1702($int0, $int15, $int16, $int17, $int18);
+$int19 = if_getwidth($int1);
+$int20 = if_getheight($int1);
+$int21 = 0;
+$int22 = 0;
+$int23 = 0;
+$int24 = 0;
+$int21 = opcode6613($int7);
+$int23 = opcode6613($int7);
+$int22 = opcode6613($int7);
+$int24 = opcode6613($int7);
+$int25 = 0;
+$int26 = 0;
+$int26 = opcode6612($int7);
+$int25 = opcode6612($int7);
+$int26 = ~max($int26, 1);
+$int25 = ~max($int25, 1);
+$int27 = scale(sub($int18, $int24), $int25, $int19);
+$int28 = scale(sub($int21, $int15), $int26, $int20);
+$int29 = scale(sub($int17, $int18), $int25, $int19);
+$int30 = scale(sub($int15, $int16), $int26, $int20);
+if(cc_find($int1, 0) == 1 && .cc_find($int1, 1) == 1) {
+cc_setposition($int27, $int28, 0, 0);
+.cc_setposition($int27, $int28, 0, 0);
+cc_setsize($int29, $int30, 0, 0);
+.cc_setsize($int29, $int30, 0, 0);
+} else {
+cc_create($int1, Rectangle, 0);
+.cc_create($int1, Rectangle, 1);
+cc_setcolor(0xFF3F3F);
+.cc_setcolor(0xFF3F3F);
+cc_setfill(0);
+.cc_setfill(1);
+cc_settrans(100);
+.cc_settrans(200);
+cc_setposition($int27, $int28, 0, 0);
+.cc_setposition($int27, $int28, 0, 0);
+cc_setsize($int29, $int30, 0, 0);
+.cc_setsize($int29, $int30, 0, 0);
+}
+return();

@@ -1,0 +1,8 @@
+[clientscript,script989](int $int0)
+if(%varbit4681 == 0) {
+%varbit4681 = 1;
+} else {
+%varbit4681 = 0;
+}
+~script990($int0);
+return();

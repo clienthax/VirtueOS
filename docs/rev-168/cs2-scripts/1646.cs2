@@ -1,0 +1,23 @@
+[clientscript,script1646]
+$int0 = 0;
+if(%varc43 > 0) {
+$int0 = multiply(%varc43, 38);
+} else {
+cc_deleteall(383:3);
+cc_create(383:3, Text, 0);
+cc_setposition(0, 0, 1, 1);
+cc_setsize(0, 0, 1, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(1, 1, 0);
+cc_settext("You have no recorded Grand Exchange trades.");
+}
+if_setscrollpos(0, 0, 383:3);
+if($int0 > if_getheight(383:3)) {
+if_setscrollsize(0, $int0, 383:3);
+} else {
+if_setscrollsize(0, 0, 383:3);
+}
+~scrollbar_vertical(25100292, 25100291, 792, 789, 790, 791, 773, 788);
+return();

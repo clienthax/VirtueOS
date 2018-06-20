@@ -1,0 +1,23 @@
+[proc,script1608](int $int0, int $int1, int $int2, int $int3)(int)
+if($int0 != -1) {
+cc_setobject($int0, $int1);
+cc_settrans(0);
+cc_setop(1, "Withdraw");
+cc_setop(2, "Withdraw-5");
+cc_setop(3, "Withdraw-10");
+cc_setop(4, "Withdraw-All");
+cc_setop(5, "Withdraw-X");
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int0)></col>");
+cc_setonop("script177(-2147483644, -2147483645, -2147483643)");
+cc_setondrag("script1609(-2147483645, -2147483643, -2147483647, -2147483646, $int3, 0)");
+cc_setondragcomplete("script1610(-2147483645, -2147483643, -2147483641, $int3)");
+$int2 = add($int2, 1);
+} else {
+cc_settrans(255);
+cc_setobject_nonum(6512, 1);
+cc_setonop("null()");
+cc_setondrag("null()");
+cc_setondragcomplete("null()");
+}
+return($int2);

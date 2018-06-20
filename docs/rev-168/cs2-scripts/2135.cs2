@@ -1,0 +1,11 @@
+[clientscript,script2135](int $int0, int $int1, string $string0, int $int2, string $string1, int $int3, int $int4, int $int5, int $int6)
+if(clientclock < $int0) {
+return();
+}
+if($int3 != -1) {
+if(if_gethide($int3) == 0) {
+return();
+}
+}
+~script2133($int1, $string0, $int2, $string1, $int3, $int4, $int5, $int6);
+return();

@@ -1,0 +1,19 @@
+[clientscript,script1489](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+$int6 = if_getwidth($int0);
+$int7 = if_getheight($int0);
+if($int6 == $int4) {
+if($int7 == $int5) {
+return();
+}
+}
+$int8 = sub($int7, 10);
+$int9 = 800;
+if($int9 > $int8) {
+$int9 = $int8;
+}
+$int10 = if_getscrollheight($int2);
+if_setsize(500, $int9, 0, 0, $int1);
+~script231($int3, $int2);
+~script72($int3, $int2, %varc63);
+if_setontimer("script1488($int0, $int1, $int2, $int3, $int6, $int7)", $int0);
+return();

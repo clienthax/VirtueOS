@@ -1,0 +1,9 @@
+[clientscript,script1627](int $int0, int $int1, int $int2)
+if_setonmouseleave("script40($int2)", $int0);
+~script1630($int0, $int1, $int2);
+if_setonvartransmit("script1628($int0, $int1, $int2){1055}", $int0);
+if(~script1972 == 1) {
+if_setop(1, "Toggle tap to drop", $int0);
+}
+if_setonop("script1629(-2147483644, $int0, $int1, $int2)", $int0);
+return();

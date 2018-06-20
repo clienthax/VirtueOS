@@ -1,0 +1,18 @@
+[clientscript,script840](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5)
+$int6 = if_getwidth($int1);
+$int7 = if_getheight($int1);
+if($int6 == $int2) {
+if($int7 == $int3) {
+return();
+}
+}
+$int8 = sub($int7, 3);
+$int9 = 800;
+if($int9 > $int8) {
+$int9 = $int8;
+}
+if_setsize(488, $int9, 0, 0, $int0);
+if_setposition(0, divide(sub($int7, $int9), 2), 1, 2, $int0);
+~script231($int4, $int5);
+if_setontimer("script839($int0, $int1, $int6, $int7, $int4, $int5)", $int0);
+return();

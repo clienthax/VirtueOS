@@ -1,0 +1,9 @@
+[clientscript,script1403](int $int0, int $int1, int $int2)
+if(clientclock < $int2) {
+return();
+}
+if(cc_find($int0, $int1) == 1) {
+cc_setgraphic(195);
+cc_setontimer("null()");
+}
+return();

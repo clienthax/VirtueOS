@@ -1,0 +1,7 @@
+[clientscript,script169](int $int0, int $int1)
+if(%varbit3905 == $int0) {
+if_setcolor(0xDD5032, $int1);
+} else {
+if_setcolor(0x64501E, $int1);
+}
+return();

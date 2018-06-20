@@ -1,0 +1,10 @@
+[clientscript,script932](int $int0, int $int1, int $int2, int $int3)
+$int4 = if_getheight($int0);
+if($int4 != $int3) {
+if(cc_find($int0, $int1) == 1) {
+if(.cc_find($int0, $int2) == 1) {
+~script933($int0, $int4);
+}
+}
+}
+return();

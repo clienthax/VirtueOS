@@ -1,0 +1,57 @@
+[clientscript,script474](int $int0, int $int1, int $int2, int $int3)
+$int4 = 0;
+$int5 = -1;
+$int6 = 0;
+while($int6 <= 97) {
+if(cc_find(5111812, $int6) == 1) {
+if($int6 < 32) {
+if(testbit($int0, $int6) == 1) {
+$int4 = 1;
+} else {
+$int4 = 0;
+}
+} else {
+if($int6 < 64) {
+if(testbit($int1, sub($int6, 32)) == 1) {
+$int4 = 1;
+} else {
+$int4 = 0;
+}
+} else {
+if($int6 < 96) {
+if(testbit($int2, sub($int6, 64)) == 1) {
+$int4 = 1;
+} else {
+$int4 = 0;
+}
+} else {
+if($int6 < 128) {
+if(testbit($int3, sub($int6, 96)) == 1) {
+$int4 = 1;
+} else {
+$int4 = 0;
+}
+} else {
+$int4 = 0;
+}
+}
+}
+}
+if($int4 == 1) {
+$int5 = enum(int, namedobj, 708, $int6);
+if($int5 != -1) {
+if(inv_total(93, $int5) == 0) {
+cc_sethide(0);
+} else {
+cc_sethide(1);
+}
+} else {
+cc_sethide(1);
+}
+} else {
+cc_sethide(1);
+}
+}
+$int6 = add($int6, 1);
+}
+return();

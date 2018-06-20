@@ -1,0 +1,4 @@
+[clientscript,script712](int $int0, int $int1)
+cc_deleteall($int0);
+~script713($int0, $int1, 0);
+return();

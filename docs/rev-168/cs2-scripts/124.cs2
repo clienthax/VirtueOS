@@ -1,0 +1,6 @@
+[clientscript,script124](int $int0)
+sound_synth(2266, 1, 0);
+if_sethide(1, 76:17);
+%varc64 = $int0;
+~script435;
+return();

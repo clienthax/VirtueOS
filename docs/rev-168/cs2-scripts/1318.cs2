@@ -1,0 +1,20 @@
+[clientscript,script1318](int $int0, int $int1, int $int2, int $int3, int $int4)
+if(clientclock < $int4) {
+return();
+}
+if(cc_find($int1, $int2) == 1) {
+if(.cc_find($int1, $int3) == 1) {
+cc_setontimer("null()");
+.cc_settext("Destroy");
+.cc_setcolor(0xFF981F);
+cc_setonmouserepeat("script85($int1, $int3, 16711680)");
+cc_setonmouseleave("script85($int1, $int3, 16750623)");
+if($int0 > 1) {
+cc_setop(1, "Destroy ALL");
+} else {
+cc_setop(1, "Destroy");
+}
+cc_setonop("script1319(-2147483644, $int1)");
+}
+}
+return();

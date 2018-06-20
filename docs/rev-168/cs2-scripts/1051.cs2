@@ -1,0 +1,9 @@
+[clientscript,script1051](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+if($int6 != -1 && cc_find($int5, $int6) == 1) {
+cc_setmodelangle($int0, $int1, modulo(add(cc_getmodelangle_x, $int2), 2048), modulo(add(cc_getmodelangle_y, $int3), 2048), modulo(add(cc_getmodelangle_z, $int4), 2048), cc_getmodelzoom);
+} else {
+if($int6 == -1) {
+if_setmodelangle($int0, $int1, modulo(add(if_getmodelangle_x($int5), $int2), 2048), modulo(add(if_getmodelangle_y($int5), $int3), 2048), modulo(add(if_getmodelangle_z($int5), $int4), 2048), if_getmodelzoom($int5), $int5);
+}
+}
+return();

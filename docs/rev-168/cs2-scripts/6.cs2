@@ -1,0 +1,11 @@
+[clientscript,script6](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, string $string0, string $string1)
+if_setopbase("<col=00ff00><$string0>", $int0);
+~script21($int0, $int1, $int2, $int3, $int4, $string0, $string1, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12);
+if(if_gettargetmask($int0) != 0) {
+if_setontargetenter("script17($int0)", $int0);
+if_setontargetleave("script18($int0)", $int0);
+}
+if_setonvartransmit("script16($int0, $int1, $int2, $int3, $int4, $string0, $string1, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12){638, 375, 1139, 1140, 1141, 439, 318, 635, 1377, 1339, 1429, 1632}", $int0);
+if_setoninvtransmit("script16($int0, $int1, $int2, $int3, $int4, $string0, $string1, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12){93}", $int0);
+if_setonstattransmit("script16($int0, $int1, $int2, $int3, $int4, $string0, $string1, $int5, $int6, $int7, $int8, $int9, $int10, $int11, $int12){6}", $int0);
+return();

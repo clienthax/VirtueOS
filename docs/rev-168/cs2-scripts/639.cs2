@@ -1,0 +1,7 @@
+[clientscript,script639](int $int0, int $int1)
+cc_deleteall($int1);
+~scrollbar_vertical($int1, $int0, 792, 789, 790, 791, 773, 788);
+~script641($int0, $int1, 0);
+if_setoninvtransmit("script640($int0, $int1){517}", $int0);
+if_setonvartransmit("script640($int0, $int1){864, 1416, 783}", $int0);
+return();

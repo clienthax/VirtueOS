@@ -1,0 +1,25 @@
+[clientscript,script290](int $int0, int $int1)
+if(~script1972 == 0) {
+if_setposition(159, 0, 0, 0, 12:31);
+if_setsize(152, 15, 0, 0, 12:31);
+if_setposition(159, 15, 0, 0, 12:33);
+if_setsize(76, 15, 0, 1, 12:33);
+if_setposition(159, 0, 0, 2, $int0);
+if_setsize(76, 15, 0, 1, $int0);
+if_setposition(235, 15, 0, 0, 12:35);
+if_setsize(76, 15, 0, 1, 12:35);
+if_setposition(235, 0, 0, 2, $int1);
+if_setsize(76, 15, 0, 1, $int1);
+}
+if(%varbit3958 == 1) {
+~script835($int0, 0);
+~script836($int1, 0);
+if_setonop("script291(-2147483644, $int0, $int1, 0)", $int0);
+if_setonop("null()", $int1);
+} else {
+~script836($int0, 0);
+~script835($int1, 0);
+if_setonop("null()", $int0);
+if_setonop("script291(-2147483644, $int0, $int1, 1)", $int1);
+}
+return();

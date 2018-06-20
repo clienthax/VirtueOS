@@ -1,0 +1,10 @@
+[clientscript,script157](int $int0, int $int1, int $int2, int $int3)
+$int4 = sub(if_getscrollheight($int1), if_getheight($int1));
+$int2 = ~max(~min($int2, $int4), 0);
+if_setscrollpos(0, $int2, $int1);
+if($int3 == 1) {
+if(cc_find($int0, 1) == 1) {
+~script740($int0, $int1);
+}
+}
+return();

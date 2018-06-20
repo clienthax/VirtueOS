@@ -1,0 +1,7 @@
+[clientscript,script1450](int $int0, int $int1, int $int2)
+if(cc_find($int0, $int1) == 1) {
+cc_sethide(0);
+cc_setontimer("script756($int0, $int1, clientclock)");
+}
+~script1442($int2, 5);
+return();

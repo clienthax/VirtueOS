@@ -1,0 +1,28 @@
+[clientscript,script387](int $int0)
+$int1 = 15;
+if(%varc53 == 1) {
+$int1 = add($int1, $int0);
+}
+$int2 = sub(%varc52, $int1);
+$int3 = add(%varc52, $int1);
+if(~deadman_world == 1) {
+if(%varbit4965 > 0) {
+if_sethide(1, 90:45);
+return();
+}
+$int2 = 3;
+$int3 = 126;
+if(%varc78 == 2) {
+if_settext("", 90:45);
+return();
+}
+} else {
+if($int2 < 3) {
+$int2 = 3;
+}
+if($int3 > 126) {
+$int3 = 126;
+}
+}
+if_settext("<tostring($int2)>-<tostring($int3)>", 90:45);
+return();

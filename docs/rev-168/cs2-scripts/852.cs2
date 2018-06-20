@@ -1,0 +1,9 @@
+[clientscript,script852](int $int0, int $int1, int $int2)
+if_setonmouseleave("script40($int2)", $int0);
+if_setop(1, "Transparent Chatbox", $int0);
+if_setop(1, "<~script1971("Click", "tap")> through chatbox", $int1);
+~script120($int1, "Transparent chatbox...", "Can be <~script1971("clicked", "tapped")> through.", "In resizable mode, if the chatbox is transparent, should it be possible to <~script1971("click", "tap")> through the chatbox on the ground beneath?", $int2);
+~script855($int0, $int1, $int2);
+if_setonvartransmit("script853($int0, $int1, $int2){1055}", $int0);
+if_setonop("script854(-2147483644, 0, $int0, $int1, $int2)", $int0);
+return();

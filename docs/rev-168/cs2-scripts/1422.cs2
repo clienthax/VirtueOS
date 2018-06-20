@@ -1,0 +1,22 @@
+[clientscript,script1422](int $int0, int $int1)
+$string0 = "Coffer";
+if_setsize(add(parawidth(512, 495, $string0), 10), 58, 0, 0, $int1);
+cc_deleteall($int1);
+$int2 = ~thinbox($int1, 0);
+cc_create($int1, Text, $int2);
+.cc_create($int1, Graphic, add($int2, 1));
+cc_setsize(0, 10, 1, 1);
+cc_setposition(0, 0, 1, 1);
+cc_setcolor(0xFF981F);
+cc_settextfont(495);
+cc_settextshadow(1);
+cc_settextalign(1, 0, 0);
+cc_settext($string0);
+.cc_setsize(36, 32, 0, 0);
+.cc_setposition(0, 5, 1, 2);
+.cc_setgraphicshadow(0x333333);
+.cc_setoutline(1);
+~script1424($int1);
+if_setonsubchange("script1423($int1, .cc_getid)", $int0);
+if_setonvartransmit("script1423($int1, .cc_getid){1227, 795}", $int0);
+return();

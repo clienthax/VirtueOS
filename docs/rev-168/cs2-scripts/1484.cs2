@@ -1,0 +1,54 @@
+[proc,script1484](int $int0)(int)
+switch($int0) {
+case 0:
+return(%varc81);
+case 1:
+return(%varc82);
+case 2:
+return(%varc83);
+case 3:
+return(%varc84);
+case 4:
+return(%varc85);
+case 5:
+return(%varc86);
+case 6:
+return(%varc87);
+case 7:
+return(%varc88);
+case 8:
+return(%varc89);
+case 9:
+return(%varc90);
+case 10:
+return(%varc91);
+case 11:
+return(%varc92);
+case 12:
+return(%varc93);
+case 13:
+return(%varc94);
+case 14:
+return(%varc95);
+case 15:
+return(%varc96);
+case 16:
+return(%varc97);
+case 17:
+return(%varc98);
+case 18:
+return(%varc99);
+case 19:
+return(%varc100);
+case 20:
+return(%varc101);
+case 21:
+return(%varc102);
+case 22:
+return(%varc104);
+case 23:
+return(%varc105);
+case 24:
+return(%varc106);
+}
+return(-1);

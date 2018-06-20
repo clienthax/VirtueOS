@@ -1,0 +1,7 @@
+[clientscript,script70]
+if(%varp560 < 1) {
+if_settext("You're the Winner!", 373:1);
+} else {
+if_settext("Foes Remaining: <tostring(%varp560)>", 373:1);
+}
+return();

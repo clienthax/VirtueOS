@@ -1,0 +1,15 @@
+[clientscript,script463](int $int0, int $int1, int $int2)
+if(testbit(%varbit4101, $int0) == 1) {
+if_setop(1, "Deactivate", $int1);
+cc_sethide(0);
+} else {
+if_setop(1, "Activate", $int1);
+cc_sethide(1);
+}
+if(~script464($int0) == 1) {
+.cc_setgraphic(enum(int, graphic, 865, $int0));
+} else {
+.cc_setgraphic(enum(int, graphic, 864, $int0));
+}
+~script1966($int2, $int1, $int0);
+return();

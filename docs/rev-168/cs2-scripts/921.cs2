@@ -1,0 +1,11 @@
+[proc,script921](int)
+if(~script922 == 0) {
+return(0);
+}
+if(~toplevel_getcomponents == 1745) {
+return(1);
+}
+if(%varbit4608 == 0) {
+return(0);
+}
+return(1);

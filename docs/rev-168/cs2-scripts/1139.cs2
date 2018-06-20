@@ -1,0 +1,15 @@
+[clientscript,script1139]
+~script1274(0, 1346, "PvM");
+~script1274(1, 1347, "PvP");
+~script1274(2, 1348, "Skulled");
+~script1274(3, 1349, "Guarded");
+%varc139 = 1;
+~script1276(1);
+$int0 = 0;
+$int1 = 0;
+$gosubResult1147_0, $gosubResult1147_1 = ~script1147;
+$int1 = $gosubResult1147_1;
+$int0 = $gosubResult1147_0;
+if_settext("Combat <tostring($int0)>/2", 226:46);
+if_settext("Other <tostring($int1)>/3", 226:47);
+return();

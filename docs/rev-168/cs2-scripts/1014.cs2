@@ -1,0 +1,14 @@
+[clientscript,script1014](int $int0)
+if(cc_find($int0, 0) == 1) {
+cc_settrans(255);
+cc_setonmouseover("null()");
+cc_setonmouseleave("null()");
+}
+if(cc_find($int0, 3) == 1) {
+cc_settrans(0);
+cc_setgraphic(773);
+}
+if(cc_find($int0, 4) == 1) {
+cc_setcolor(0xFFB83F);
+}
+return();

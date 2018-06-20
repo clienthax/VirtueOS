@@ -1,0 +1,3 @@
+[clientscript,script2237](int $int0)
+client_set_forceshift($int0)
+return();

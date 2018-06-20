@@ -1,0 +1,10 @@
+[clientscript,script928](int $int0)
+cc_deleteall($int0);
+cc_create($int0, Rectangle, 0);
+cc_setsize(0, interpolate(0, 5, 0, 20, 16384), 1, 2);
+cc_setposition(0, 0, 1, 2);
+cc_setfill(1);
+cc_setcolor(0x000000);
+cc_setEnabledColor(8421504);
+cc_setRectangleType(1);
+return();

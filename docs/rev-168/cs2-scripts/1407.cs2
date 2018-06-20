@@ -1,0 +1,38 @@
+[clientscript,script1407](int $int0, int $int1, int $int2)
+$int3 = divide(add($int1, $int2), 2);
+$int4 = $anArray0($int3);
+$anArray0($int3) = $anArray0($int2);
+$anArray0($int2) = $int4;
+$int5 = $int1;
+$int6 = $int1;
+$int7 = -1;
+$string0 = "";
+$string1 = "";
+while($int6 < $int2) {
+if(cc_find(enum(int, component, 1461, $anArray0($int6)), 0) == 1) {
+$string0 = cc_gettext;
+} else {
+$string0 = "";
+}
+if(cc_find(enum(int, component, 1461, $int4), 0) == 1) {
+$string1 = cc_gettext;
+} else {
+$string1 = "";
+}
+if(compare($string0, $string1) <= 0) {
+$int7 = $anArray0($int6);
+$anArray0($int6) = $anArray0($int5);
+$anArray0($int5) = $int7;
+$int5 = add($int5, 1);
+}
+$int6 = add($int6, 1);
+}
+$anArray0($int2) = $anArray0($int5);
+$anArray0($int5) = $int4;
+if($int1 < sub($int5, 1)) {
+~script1407(0, $int1, sub($int5, 1));
+}
+if(add($int5, 1) < $int2) {
+~script1407(0, add($int5, 1), $int2);
+}
+return();

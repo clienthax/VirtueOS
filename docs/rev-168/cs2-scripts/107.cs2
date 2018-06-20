@@ -1,0 +1,20 @@
+[clientscript,script107](string $string0)
+if(%varc203 == 0 || %varc203 == -1) {
+mes("You must set a name before you can chat.");
+return();
+}
+if(%varc11 == 1) {
+mes("You can't do that right now.");
+return();
+}
+%varcstr23 = $string0;
+~script677;
+if_settext("Enter message to send to <%varcstr23>", 162:36);
+%varc5 = 6;
+~script222("");
+$string1 = "";
+if_setonkey("script112(-2147483640, -2147483639, $string1)", 162:37);
+if(~script1972 == 1) {
+~script1983(0, 80);
+}
+return();

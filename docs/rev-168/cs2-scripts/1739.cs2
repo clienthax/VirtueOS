@@ -1,0 +1,7 @@
+[clientscript,script1739](int $int0)
+if(parawidth(4000, 494, .cc_gettext) > sub($int0, 4)) {
+.cc_settextalign(2, 1, 0);
+} else {
+.cc_settextalign(1, 1, 0);
+}
+return();

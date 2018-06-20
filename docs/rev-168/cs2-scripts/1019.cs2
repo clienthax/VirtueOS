@@ -1,0 +1,10 @@
+[clientscript,script1019](int $int0, int $int1, int $int2, int $int3)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+if(cc_find($int1, $int2) == 1) {
+cc_setcolor(0xFFFFFF);
+cc_setontimer("script1020(-2147483645, -2147483643, $int3, add(clientclock, 30))");
+}
+return();

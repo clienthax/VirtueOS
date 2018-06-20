@@ -1,0 +1,4 @@
+[clientscript,ignore_op](string $string0)
+ignore_del(removetags($string0));
+sound_synth(2266, 1, 0);
+return();

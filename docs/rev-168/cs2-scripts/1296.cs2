@@ -1,0 +1,140 @@
+[clientscript,script1296](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11, int $int12, int $int13, int $int14, int $int15, int $int16, int $int17, int $int18, int $int19, int $int20, int $int21)
+def_obj $anArray0(4);
+def_int $anArray1(4);
+$int22 = 0;
+if_setobject(-1, 0, $int13);
+if_setobject(-1, 0, $int14);
+if_setobject(-1, 0, $int15);
+if_setobject(-1, 0, $int16);
+cc_deleteall($int0);
+$anArray0($int22) = 13446;
+$anArray1($int22) = 1;
+$int22 = add($int22, 1);
+if($int2 > 0) {
+$anArray0($int22) = 556;
+$anArray1($int22) = $int2;
+$int22 = add($int22, 1);
+}
+if($int3 > 0) {
+$anArray0($int22) = 555;
+$anArray1($int22) = $int3;
+$int22 = add($int22, 1);
+}
+if($int22 <= 3) {
+if($int4 > 0) {
+$anArray0($int22) = 557;
+$anArray1($int22) = $int4;
+$int22 = add($int22, 1);
+}
+}
+if($int22 <= 3) {
+if($int5 > 0) {
+$anArray0($int22) = 554;
+$anArray1($int22) = $int5;
+$int22 = add($int22, 1);
+}
+}
+if($int22 <= 3) {
+if($int7 > 0) {
+$anArray0($int22) = $int6;
+$anArray1($int22) = $int7;
+$int22 = add($int22, 1);
+}
+}
+if($int22 <= 3) {
+if($int9 > 0) {
+$anArray0($int22) = $int8;
+$anArray1($int22) = $int9;
+$int22 = add($int22, 1);
+}
+}
+if($int22 <= 3) {
+if($int11 > 0) {
+$anArray0($int22) = $int10;
+$anArray1($int22) = $int11;
+$int22 = add($int22, 1);
+}
+}
+if_settext("Magic level: <tostring($int12)>", $int17);
+if(stat(^magic) >= $int12) {
+if_setcolor(0xFF981F, $int17);
+} else {
+if_setcolor(0xC80000, $int17);
+}
+if($anArray0(0) != -1) {
+if($anArray1(0) > 0) {
+if_settext("<tostring(inv_total(93, 13446))>/1", $int18);
+if_setobject_nonum($anArray0(0), $anArray1(0), $int13);
+if(inv_total(93, $anArray0(0)) < $anArray1(0)) {
+cc_create($int0, Graphic, 0);
+cc_setsize(16, 16, 0, 0);
+cc_setposition(add(if_getx($int13), 20), add(if_gety($int13), 16), 0, 0);
+cc_setgraphic(299);
+if_setcolor(0xC80000, $int18);
+} else {
+cc_create($int0, Graphic, 0);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(add(if_getx($int13), 20), add(if_gety($int13), 16), 0, 0);
+cc_setgraphic(1210);
+if_setcolor(0xFF981F, $int18);
+}
+}
+}
+if($anArray0(1) != -1 && $anArray1(1) > 0) {
+if_settext("<~magic_tostring(~script19($anArray0(1)))>/<tostring($anArray1(1))>", $int19);
+if_setobject_nonum($anArray0(1), $anArray1(1), $int14);
+if(~script19($anArray0(1)) < $anArray1(1)) {
+cc_create($int0, Graphic, 1);
+cc_setsize(16, 16, 0, 0);
+cc_setposition(add(if_getx($int14), 20), add(if_gety($int14), 16), 0, 0);
+cc_setgraphic(299);
+if_setcolor(0xC80000, $int19);
+} else {
+cc_create($int0, Graphic, 1);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(add(if_getx($int14), 20), add(if_gety($int14), 16), 0, 0);
+cc_setgraphic(1210);
+if_setcolor(0xFF981F, $int19);
+}
+} else {
+if_settext("", $int19);
+}
+if($anArray0(2) != -1 && $anArray1(2) > 0) {
+if_settext("<~magic_tostring(~script19($anArray0(2)))>/<tostring($anArray1(2))>", $int20);
+if_setobject_nonum($anArray0(2), $anArray1(2), $int15);
+if(~script19($anArray0(2)) < $anArray1(2)) {
+cc_create($int0, Graphic, 2);
+cc_setsize(16, 16, 0, 0);
+cc_setposition(add(if_getx($int15), 20), add(if_gety($int15), 16), 0, 0);
+cc_setgraphic(299);
+if_setcolor(0xC80000, $int20);
+} else {
+cc_create($int0, Graphic, 2);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(add(if_getx($int15), 20), add(if_gety($int15), 16), 0, 0);
+cc_setgraphic(1210);
+if_setcolor(0xFF981F, $int20);
+}
+} else {
+if_settext("", $int20);
+}
+if($anArray0(3) != -1 && $anArray1(3) > 0) {
+if_settext("<~magic_tostring(~script19($anArray0(3)))>/<tostring($anArray1(3))>", $int21);
+if_setobject_nonum($anArray0(3), $anArray1(3), $int16);
+if(~script19($anArray0(3)) < $anArray1(3)) {
+cc_create($int0, Graphic, 3);
+cc_setsize(16, 16, 0, 0);
+cc_setposition(add(if_getx($int16), 20), add(if_gety($int16), 16), 0, 0);
+cc_setgraphic(299);
+if_setcolor(0xC80000, $int21);
+} else {
+cc_create($int0, Graphic, 3);
+cc_setsize(17, 17, 0, 0);
+cc_setposition(add(if_getx($int16), 20), add(if_gety($int16), 16), 0, 0);
+cc_setgraphic(1210);
+if_setcolor(0xFF981F, $int21);
+}
+} else {
+if_settext("", $int21);
+}
+return();

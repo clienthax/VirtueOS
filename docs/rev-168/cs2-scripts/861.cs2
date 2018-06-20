@@ -1,0 +1,71 @@
+[clientscript,script861](int $int0, int $int1, int $int2, int $int3)
+cc_deleteall(127:1);
+cc_deleteall(127:12);
+~script835(8323084, 0);
+cc_create(127:1, Rectangle, 0);
+cc_sethide(1);
+if_setcolor(0xA6A692, 127:13);
+if_setontimer("null()", 127:12);
+if($int0 != -1) {
+if_settext("Remove this key", 127:13);
+if_setonmouserepeat("script45(8323085, 16777215)", 127:12);
+if_setonmouseleave("script45(8323085, 10921618)", 127:12);
+if_setop(1, "Remove", 127:12);
+if_setopbase("<col=ff9040><oc_name($int0)></col>", 127:12);
+if_setonop("script862(-2147483644, -2147483645, cc_getlayer, cc_getid)", 127:12);
+} else {
+if_settext("---", 127:13);
+if_setonmouserepeat("null()", 127:12);
+if_setonmouseleave("null()", 127:12);
+if_clearops(127:12);
+if_setonop("null()", 127:12);
+}
+$string0 = "";
+cc_create(127:1, Rectangle, 1);
+cc_sethide(1);
+if_setmodel(5626, 127:18);
+if_sethide(1, 127:19);
+if_setontimer("null()", 127:18);
+if($int1 != -1) {
+if_setonmouserepeat("script69(0, 8323091)", 127:18);
+if_setonmouseleave("script69(1, 8323091)", 127:18);
+if_setop(1, "Previous:", 127:18);
+if_setopbase("<col=ff9040><oc_name($int1)></col>", 127:18);
+if_setonop("script864(-2147483644, -2147483645, 5626, 5627, 8323091, cc_getlayer, cc_getid)", 127:18);
+if_setonclick("null()", 127:18);
+} else {
+if_setonmouserepeat("null()", 127:18);
+if_setonmouseleave("null()", 127:18);
+if_clearops(127:18);
+if($int2 != -1) {
+$string0 = "This is the first key on your key ring.";
+} else {
+$string0 = "There are no more keys on your key ring.";
+}
+if_setonclick("mes($string0)", 127:18);
+}
+cc_create(127:1, Rectangle, 2);
+cc_sethide(1);
+if_setmodel(5625, 127:15);
+if_sethide(1, 127:16);
+if_setontimer("null()", 127:15);
+if($int2 != -1) {
+if_setonmouserepeat("script69(0, 8323088)", 127:15);
+if_setonmouseleave("script69(1, 8323088)", 127:15);
+if_setop(1, "Next:", 127:15);
+if_setopbase("<col=ff9040><oc_name($int2)></col>", 127:15);
+if_setonop("script864(-2147483644, -2147483645, 5625, 5629, 8323088, cc_getlayer, cc_getid)", 127:15);
+if_setonclick("null()", 127:15);
+} else {
+if_setonmouserepeat("null()", 127:15);
+if_setonmouseleave("null()", 127:15);
+if_clearops(127:15);
+if($int1 != -1) {
+$string0 = "This is the last key on your key ring.";
+} else {
+$string0 = "There are no more keys on your key ring.";
+}
+if_setonclick("mes($string0)", 127:15);
+}
+if_settext("Key total: <tostring($int3)>", 127:14);
+return();

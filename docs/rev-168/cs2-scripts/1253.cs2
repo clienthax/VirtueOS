@@ -1,0 +1,27 @@
+[clientscript,script1253](int $int0, int $int1, int $int2, int $int3, string $string0)
+if_setontimer("null()", $int0);
+$int4 = $int2;
+$string1 = "<col=ff0000>Not owned</col>";
+if($int1 >= 3) {
+if_setop(1, "Take", $int0);
+$string1 = "<col=00ff00>Complete</col>";
+$int4 = $int3;
+} else {
+if($int1 == 2) {
+if_setop(1, "Take", $int0);
+$string1 = "Incomplete";
+} else {
+if($int1 == 1) {
+if_setop(1, "Retrieve", $int0);
+$string1 = "Missing";
+} else {
+if_setop(1, "Unlock", $int0);
+}
+}
+}
+if_setopbase("<col=ff9040><oc_name($int4)></col>", $int0);
+~script1255(0, $int0, $string0, $string1, $int4);
+if_setonmouserepeat("script1254(1, $int0, $string0, $string1, $int4)", $int0);
+if_setonmouseleave("script1254(0, $int0, $string0, $string1, $int4)", $int0);
+if_setonop("script1256(-2147483644, $int0, $int1, $string0, $int2, $int3, $int4)", $int0);
+return();

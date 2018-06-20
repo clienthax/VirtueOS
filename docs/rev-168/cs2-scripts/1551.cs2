@@ -1,0 +1,21 @@
+[clientscript,script1551](int $int0, int $int1)
+$int2 = 235;
+if(modulo($int0, 2) == 0) {
+$int2 = 255;
+}
+cc_settrans($int2);
+cc_clearops;
+if($int1 == 1) {
+if(clan_getchatcount > 0 && clan_getchatrank >= clan_getchatminkick) {
+cc_setop(6, "Kick");
+cc_setonmouserepeat("cc_settrans(-2147483645, -2147483643, 220, -1)");
+cc_setonmouseleave("cc_settrans(-2147483645, -2147483643, $int2, -1)");
+} else {
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+}
+} else {
+cc_setonmouserepeat("null()");
+cc_setonmouseleave("null()");
+}
+return();

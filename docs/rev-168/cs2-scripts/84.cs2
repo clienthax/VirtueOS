@@ -1,0 +1,214 @@
+[clientscript,script84](int $int0)
+$int1 = if_getwidth(162:47);
+$string0 = removetags(chat_playername());
+$int2 = 0;
+if(%varc41 == 3) {
+$int2 = 1;
+}
+$int3 = 0;
+$int4 = 0;
+$string1 = "<col=0000ff>";
+$string2 = "<col=7f0000>";
+$string3 = "<col=2020ef>";
+$string4 = "<col=004f00>";
+$string5 = "<col=0000ff>";
+$string6 = "<col=7f0000>";
+$string7 = "<col=7f007f>";
+$string8 = "<col=7e3200>";
+if(~script921 == 1) {
+$int4 = 1;
+$int3 = 16777215;
+$string4 = "<col=30ff30>";
+$string3 = "<col=4040ff>";
+$string2 = "<col=bf2020>";
+$string1 = "<col=9090ff>";
+$string8 = "<col=ff20df>";
+$string7 = "<col=df20ff>";
+$string6 = "<col=ef5050>";
+$string5 = "<col=9070ff>";
+}
+$int5 = 0;
+$int6 = 0;
+$int7 = 0;
+$int8 = enum(int, component, 579, $int7);
+if(%varc41 == 0 || %varc41 == 2) {
+if(string_length(messageFilter) > 0) {
+$int6 = ~script199("<$string1>Public chat filtering:</col> <lt><lowercase(escape(messageFilter))><gt>", $int7, $int8, 10616879, $int1, 3, 14, $int5, 0, $int3, $int4);
+if_clearops($int8);
+if_setonop("null()", $int8);
+if_setonmouserepeat("null()", $int8);
+if_setonmouseleave("null()", $int8);
+$int5 = sub($int5, $int6);
+$int7 = add($int7, 1);
+$int8 = enum(int, component, 579, $int7);
+}
+}
+$int9 = $int0;
+$int10 = 0;
+$int11 = -1;
+$string9 = "";
+$string10 = "";
+$string11 = "";
+$string12 = "";
+$int12 = 0;
+while($int9 != -1) {
+while($int8 != -1) {
+$int12 = getChatMessagesParam6($int9);
+$string11 = getChatMessagesParam5($int9);
+$string10 = getChatMessagesParam4($int9);
+$string9 = getChatMessagesOwner($int9);
+$int11 = getChatMessagesCycle($int9);
+$int10 = getChatMessagesType($int9);
+if(~script193($int10, $string9, $int12) == 1) {
+if(~script90($int10, $string9, $string11, $int11, $int2, $string0, $int12) == 1) {
+switch($int10) {
+case 1:
+case 2:
+$int6 = ~script203("<$string9>:", "<$string1><$string11></col>", $int7, $int8, 10616879, $int1, 3, 14, $int5, 0, $int3, $int4);
+case 90:
+case 91:
+$int6 = ~script203("<$string9>:", "<$string3><$string11></col>", $int7, $int8, 10616879, $int1, 3, 14, $int5, 0, $int3, $int4);
+case 3:
+case 7:
+$int6 = ~script203("From <$string9>:", "<$string2><$string11></col>", $int7, $int8, 10616879, $int1, 3, 14, $int5, 0, $int3, $int4);
+case 101:
+$int6 = ~script199("<$string7><$string11></col>", $int7, $int8, 10616879, $int1, 3, 14, $int5, 0, $int3, $int4);
+case 5:
+$int6 = ~script199("<$string2><$string11></col>", $int7, $int8, 10616879, $int1, 3, 14, $int5, 0, $int3, $int4);
+if(%varbit1627 == 0) {
+%varc65 = add(add($int11, 500), 1);
+if_setontimer("script664(0)", 162:1);
+}
+case 6:
+$int6 = ~script203("To <$string9>:", "<$string2><$string11></col>", $int7, $int8, 10616879, $int1, 3, 14, $int5, 0, $int3, $int4);
+case 103:
+case 104:
+$int6 = ~script199("<$string8><$string11></col>", $int7, $int8, 10616879, $int1, 3, 14, $int5, 0, $int3, $int4);
+case 9:
+$int6 = ~script203("[<$string5><$string10></col>] <$string9>:", "<$string6><$string11></col>", $int7, $int8, 10616879, $int1, 3, 14, $int5, 0, $int3, $int4);
+case 14:
+$gosubResult2066_0, $gosubResult2066_1 = ~script2066($string11);
+$string12 = $gosubResult2066_1;
+$string11 = $gosubResult2066_0;
+$int6 = ~script203("<$string4>Broadcast:</col>", $string11, $int7, $int8, 10616879, $int1, 3, 14, $int5, 0, $int3, $int4);
+case 107:
+if(sub(clientclock, $int11) > 500) {
+$int6 = ~script199("jk :P", $int7, $int8, 10616879, $int1, 3, 14, $int5, 0, $int3, $int4);
+} else {
+$int6 = ~script199($string11, $int7, $int8, 10616879, $int1, 3, 14, $int5, 0, $int3, $int4);
+}
+default:
+$int6 = ~script199($string11, $int7, $int8, 10616879, $int1, 3, 14, $int5, 0, $int3, $int4);
+}
+if_clearops($int8);
+switch($int10) {
+case 1:
+case 2:
+case 3:
+case 6:
+case 7:
+case 9:
+case 106:
+case 90:
+case 91:
+if_setopbase("<col=ffffff><$string9></col>", $int8);
+if_setonop("chat_op(-2147483644, "event_opbase")", $int8);
+if_setonmouserepeat("null()", $int8);
+if_setonmouseleave("null()", $int8);
+if(compare($string0, removetags($string9)) != 0) {
+if($int12 == 1) {
+if_setop(6, "Message", $int8);
+} else {
+if_setop(6, "Add friend", $int8);
+if_setop(7, "Add ignore", $int8);
+}
+if_setop(8, "Report", $int8);
+if($int10 == 9) {
+if(clan_getchatcount > 0) {
+if(clan_getchatrank >= clan_getchatminkick) {
+if_setop(9, "Kick", $int8);
+}
+}
+}
+}
+case 101:
+if_setopbase("<col=ffffff><$string9></col>", $int8);
+if_setonop("chat_op(-2147483644, "event_opbase")", $int8);
+if_setonmouserepeat("null()", $int8);
+if_setonmouseleave("null()", $int8);
+if_setop(1, "Accept trade", $int8);
+case 103:
+case 104:
+if_setopbase("<col=ffffff><$string9></col>", $int8);
+if_setonop("chat_op(-2147483644, "event_opbase")", $int8);
+if_setonmouserepeat("null()", $int8);
+if_setonmouseleave("null()", $int8);
+if_setop(2, "Accept challenge", $int8);
+case 14:
+if(string_length($string12) > 0) {
+if_setop(6, "Open", $int8);
+if_setop(7, "Check", $int8);
+if_setonmouserepeat("script2065(if_getlayer($int8), $int7, 3158271)", $int8);
+if_setonmouseleave("script2065(if_getlayer($int8), $int7, $int3)", $int8);
+} else {
+if_setonmouserepeat("null()", $int8);
+if_setonmouseleave("null()", $int8);
+}
+if_setop(9, "Clear history", $int8);
+if_setopbase("<col=ff9040>Notification</col>", $int8);
+if_setonop("script2064(-2147483644, $string12)", $int8);
+default:
+if_setonop("null()", $int8);
+if_setonmouserepeat("null()", $int8);
+if_setonmouseleave("null()", $int8);
+}
+$int5 = sub($int5, $int6);
+$int7 = add($int7, 1);
+$int8 = enum(int, component, 579, $int7);
+}
+}
+$int9 = chat_getprevuid($int9);
+}
+}
+$int13 = $int7;
+while($int8 != -1) {
+if_clearops($int8);
+if_setonop("null()", $int8);
+if_setonmouserepeat("null()", $int8);
+if_setonmouseleave("null()", $int8);
+if_setsize(0, 0, 0, 0, $int8);
+if(cc_find(10616879, multiply($int7, 2)) == 1) {
+cc_settext("");
+cc_sethide(1);
+}
+if(cc_find(10616879, add(multiply($int7, 2), 1)) == 1) {
+cc_settext("");
+cc_sethide(1);
+}
+$int7 = add($int7, 1);
+$int8 = enum(int, component, 579, $int7);
+}
+$int5 = sub($int5, 2);
+$int5 = sub(0, $int5);
+$int14 = if_getheight(162:47);
+if($int5 > $int14) {
+$int14 = $int5;
+}
+$int7 = $int13;
+while($int7 > 0) {
+$int7 = sub($int7, 1);
+$int8 = enum(int, component, 579, $int7);
+$int5 = sub(add(if_gety($int8), $int14), 2);
+if_setposition(if_getx($int8), $int5, 0, 0, $int8);
+if(cc_find(10616879, multiply($int7, 2)) == 1) {
+cc_setposition(cc_getx, $int5, 0, 0);
+}
+if(cc_find(10616879, add(multiply($int7, 2), 1)) == 1) {
+cc_setposition(cc_getx, $int5, 0, 0);
+}
+}
+if_setscrollsize(0, $int14, 162:47);
+~script72(10617380, 10616879, add(%varc7, sub($int14, %varc8)));
+%varc8 = $int14;
+%varc7 = if_getscrolly(162:47);
+return();

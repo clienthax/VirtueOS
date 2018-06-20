@@ -1,0 +1,41 @@
+[clientscript,script297](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)
+$string0 = "";
+if($int0 != -1) {
+cc_settrans(0);
+cc_setobject($int0, $int1);
+cc_clearops;
+if($int0 == 11941) {
+if($int4 == 1) {
+cc_setop(1, "View");
+cc_setonop("script490(-2147483644, $int5, $int6, 1)");
+}
+}
+if(~script1972 == 1) {
+cc_setop(2, append("Deposit-", ~script2227));
+} else {
+cc_setop(2, "Deposit-1");
+}
+cc_setop(3, "Deposit-5");
+cc_setop(4, "Deposit-10");
+if(%varbit3960 > 0) {
+cc_setop(5, "Deposit-<tostring(%varbit3960)>");
+}
+cc_setop(6, "Deposit-X");
+cc_setop(7, "Deposit-All");
+if(%varbit6347 > 0) {
+cc_setop(8, "Deposit-1");
+}
+$string0 = enum(obj, string, 995, $int0);
+if(string_length($string0) > 0) {
+cc_setop(9, $string0);
+}
+cc_setop(10, "Examine");
+cc_setopbase("<col=ff9040><oc_name($int0)></col>");
+cc_setondragcomplete("script298(-2147483645, -2147483643, -2147483641, $int3, $int5, $int6)");
+} else {
+cc_settrans(255);
+cc_setobject(6512, 1);
+cc_clearops;
+cc_setondragcomplete("null()");
+}
+return();

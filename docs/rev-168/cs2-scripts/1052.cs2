@@ -1,0 +1,5 @@
+[clientscript,script1052](int $int0)
+~script1054($int0);
+if_setonvartransmit("script1053($int0){518}", $int0);
+if_setontimer("script1051(0, 25, 0, 21, 0, $int0, -1)", $int0);
+return();

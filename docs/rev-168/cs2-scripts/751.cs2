@@ -1,0 +1,9 @@
+[clientscript,script751](int $int0, int $int1)
+if(%varc66 <= 0) {
+return();
+}
+%varc66 = sub(%varc66, 1);
+if(%varc66 <= 0) {
+~script752($int0, $int1);
+}
+return();

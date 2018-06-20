@@ -1,0 +1,17 @@
+[clientscript,script946](int $int0, int $int1, int $int2)
+if($int0 == 1) {
+if($int1 != -1) {
+if_setcolor(0xDBDBB7, $int1);
+}
+if($int2 != -1) {
+if_setcolor(0xDBDBB7, $int2);
+}
+} else {
+if($int1 != -1) {
+if_setcolor(0xD4B082, $int1);
+}
+if($int2 != -1) {
+if_setcolor(0xD4B082, $int2);
+}
+}
+return();

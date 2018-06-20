@@ -1,0 +1,13 @@
+[clientscript,script598](int $int0, int $int1, int $int2)
+$int3 = divide(modulo($int2, 3000), 50);
+if($int3 >= 10) {
+cc_settext("<tostring(divide($int2, 3000))>:<tostring($int3)>");
+} else {
+cc_settext("<tostring(divide($int2, 3000))>:0<tostring($int3)>");
+}
+if_setontimer("script597($int0, $int1, cc_getid, $int2)", $int0);
+if($int2 > 500) {
+$int2 = 500;
+}
+cc_setcolor(~script246(255, interpolate(0, $int2, 0, 500, 152), interpolate(0, $int2, 0, 500, 31)));
+return();

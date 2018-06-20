@@ -1,0 +1,99 @@
+[proc,script1754](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9)(int)
+$int10 = add($int9, 1);
+$int11 = add($int9, 2);
+$int12 = 0;
+$int13 = 0;
+$gosubResult1752_0, $gosubResult1752_1 = ~script1752($int0, $int2, $int4, $int5, $int6, $int7, $int8);
+$int13 = $gosubResult1752_1;
+$int12 = $gosubResult1752_0;
+$int14 = 0;
+$int15 = 0;
+$gosubResult1752_0, $gosubResult1752_1 = ~script1752($int1, $int2, $int4, $int5, $int6, $int7, $int8);
+$int15 = $gosubResult1752_1;
+$int14 = $gosubResult1752_0;
+$int16 = add($int12, divide(sub($int14, $int12), 2));
+$int17 = add($int13, divide(sub($int15, $int13), 2));
+$int18 = sub($int14, $int12);
+$int19 = sub($int15, $int13);
+$int20 = 0;
+if($int18 < 0) {
+if($int19 < 0) {
+$int19 = sub(0, $int19);
+$int18 = sub(0, $int18);
+} else {
+$int20 = 1;
+$int18 = sub(0, $int18);
+}
+} else {
+if($int19 < 0) {
+$int20 = 1;
+$int19 = sub(0, $int19);
+}
+}
+if(cc_find($int4, $int9) == 1) {
+if(testbit(%varbit5640, 1) == 1) {
+cc_sethide(1);
+} else {
+cc_sethide(0);
+}
+cc_setposition(add($int12, 1), add($int13, 1), 1, 1);
+} else {
+cc_create($int4, Rectangle, $int9);
+if(testbit(%varbit5640, 1) == 1) {
+cc_sethide(1);
+} else {
+cc_sethide(0);
+}
+cc_setposition(add($int12, 1), add($int13, 1), 1, 1);
+cc_setsize($int3, $int3, 0, 0);
+cc_setcolor(0x000000);
+cc_setfill(1);
+}
+$int21 = 0;
+$int22 = 0;
+$int23 = 0;
+$int24 = 0;
+if(cc_find($int4, $int10) == 1) {
+if(testbit(%varbit5640, 1) == 1) {
+cc_sethide(1);
+} else {
+cc_sethide(0);
+}
+cc_setposition($int12, $int13, 1, 1);
+} else {
+$gosubResult2_0, $gosubResult2_1, $gosubResult2_2 = ~script2(16776960);
+$int23 = $gosubResult2_2;
+$int22 = $gosubResult2_1;
+$int21 = $gosubResult2_0;
+$int23 = ~max(sub($int23, 48), 0);
+$int22 = ~max(sub($int22, 48), 0);
+$int21 = ~max(sub($int21, 48), 0);
+$int24 = ~script246($int21, $int22, $int23);
+cc_create($int4, Rectangle, $int10);
+if(testbit(%varbit5640, 1) == 1) {
+cc_sethide(1);
+} else {
+cc_sethide(0);
+}
+cc_setposition($int12, $int13, 1, 1);
+cc_setsize($int3, $int3, 0, 0);
+cc_setcolor($int24);
+cc_setfill(1);
+cc_setonmouseover("script1755(1, $int4, $int10, -1, $int11, 16776960)");
+cc_setonmouseleave("script1755(0, $int4, $int10, -1, $int11, $int24)");
+cc_setop(1, "Scroll map");
+cc_setonop("script1756(-2147483644, $int1, $int2)");
+}
+if(cc_find($int4, $int11) == 1) {
+cc_setposition($int16, $int17, 1, 1);
+cc_setsize($int18, $int19, 0, 0);
+} else {
+cc_create($int4, Line, $int11);
+cc_setposition($int16, $int17, 1, 1);
+cc_setsize($int18, $int19, 0, 0);
+cc_setRectangleType($int20);
+cc_setlinewid(add(1, divide($int3, 5)));
+cc_setcolor(0xFFFF00);
+cc_sethide(1);
+}
+return(add($int11, 1));

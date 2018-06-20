@@ -1,0 +1,9 @@
+[clientscript,script325]
+if(%varp172 == 0) {
+if_setgraphic(656, 593:27);
+if_settext("Auto Retaliate<br>(On)", 593:28);
+} else {
+if_setgraphic(655, 593:27);
+if_settext("Auto Retaliate<br>(Off)", 593:28);
+}
+return();

@@ -1,0 +1,8 @@
+[clientscript,script2260](int $int0, int $int1, int $int2)
+if($int0 != 1) {
+return();
+}
+sound_synth(2266, 1, 0);
+%varbit6374 = sub(1, %varbit6374);
+~script2261($int1, $int2);
+return();
