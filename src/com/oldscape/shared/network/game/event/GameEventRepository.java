@@ -68,6 +68,8 @@ public final class GameEventRepository {
         addMessageEncoder(MusicEvent.class, new MusicEventEncoder());
         addMessageEncoder(MessageEvent.class, new MessageEventEncoder());
         addMessageEncoder(WidgetCloseSubEvent.class, new WidgetCloseSubEventEncoder());
+        addMessageEncoder(CameraResetEvent.class, new CameraResetEventEncoder());
+        addMessageEncoder(CameraRepositionEvent.class, new CameraRepositionEventEncoder());
 
         /* Ignored for now */
         // 93 = Mouse change listener.

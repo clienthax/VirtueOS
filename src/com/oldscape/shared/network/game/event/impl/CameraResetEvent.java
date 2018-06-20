@@ -4,7 +4,7 @@ import com.oldscape.shared.event.Event;
 
 public class CameraResetEvent  implements Event {
 
-    /*
-     * Nothing to do.
-     */
+    public CameraResetEvent(){
+        /* Nothing to do. */
+    }
 }

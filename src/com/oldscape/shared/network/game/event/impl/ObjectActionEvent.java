@@ -12,6 +12,10 @@ public class ObjectActionEvent implements Event {
      */
     private int object;
     /**
+     * The object type.
+     */
+    private int type;
+    /**
      * The X coordinate of the object.
      */
     private int x;
@@ -29,9 +33,10 @@ public class ObjectActionEvent implements Event {
     /**
      * The constructor of this class setting the X , Y and the object ID.
      */
-    public ObjectActionEvent(int actionSlot, int object, int x, int y) {
+    public ObjectActionEvent(int actionSlot, int object, int type, int x, int y) {
         this.actionSlot = actionSlot;
         this.object = object;
+        this.type = type;
         this.x = x;
         this.y = y;
     }
@@ -43,6 +48,10 @@ public class ObjectActionEvent implements Event {
      */
     public int getObject() {
         return object;
+    }
+
+    public int getType() {
+        return type;
     }
 
     /**

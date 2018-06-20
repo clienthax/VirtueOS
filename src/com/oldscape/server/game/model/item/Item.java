@@ -60,7 +60,7 @@ public final class Item {
     }
 
     /**
-     * Gets the {@link ItemDefinition} that describes this item.
+     * Gets the {@link ItemType} that describes this item.
      *
      * @return The definition.
      */

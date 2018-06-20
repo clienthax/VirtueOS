@@ -5,6 +5,7 @@ import com.oldscape.server.game.network.game.GameSessionContext;
 import com.oldscape.shared.event.EventListener;
 import com.oldscape.shared.model.Position;
 import com.oldscape.shared.network.game.event.impl.ObjectActionEvent;
+import com.oldscape.shared.script.listeners.ObjectListener;
 
 /**
  * @author Giovanni
@@ -13,10 +14,17 @@ public class ObjectActionListener implements EventListener<ObjectActionEvent, Ga
 
     @Override
     public void onEvent(ObjectActionEvent event, GameSessionContext context) {
-        System.out.println("object clicked");
         Player player = context.getPlayer();
         player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()));
-        // TODO: Handle the action of the object here
+
+        //FIXME: Z and Type are... missing? I think they should be loaded from the cache.
+
+        // TODO: Add position check before action.
+        ObjectListener listener = context.getServer().getScriptManager().forObject(event.getObject());
+        if (listener != null) {
+            listener.handle(context.getPlayer(), event.getActionSlot(), event.getObject(), event.getType(), event.getX(), event.getY());
+        }
+
 
     }
 

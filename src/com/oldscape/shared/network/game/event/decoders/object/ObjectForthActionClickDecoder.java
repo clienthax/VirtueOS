@@ -16,8 +16,8 @@ public class ObjectForthActionClickDecoder implements GameMessageDecoder<ObjectA
         int x = (int) frame.getUnsigned(DataType.SHORT, DataOrder.LITTLE, DataTransformation.ADD);
         int y = (int) frame.getUnsigned(DataType.SHORT, DataOrder.LITTLE);
 
-        System.out.println("objectActionEvent(3): " + x + ", Y:" + y + ", type:" + type + " obj:" + object);
-        return new ObjectActionEvent(3, object, x, y);
+        System.out.println("objectActionEvent(3): " + object + " " + x + " " + y + " " + type);
+        return new ObjectActionEvent(3, object, type, x, y);
     }
 
 }

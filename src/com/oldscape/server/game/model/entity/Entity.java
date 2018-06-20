@@ -18,7 +18,7 @@ public abstract class Entity {
     /**
      * Creates the Entity.
      *
-     * @param world    The {@link World} containing the Entity.
+     * @param world    The {@link GameWorld} containing the Entity.
      * @param position The {@link Position} of the Entity.
      */
     public Entity(GameWorld world, Position position) {
@@ -39,7 +39,7 @@ public abstract class Entity {
     }
 
     /**
-     * Gets the {@link World} this Entity is in.
+     * Gets the {@link GameWorld} this Entity is in.
      *
      * @return The World.
      */

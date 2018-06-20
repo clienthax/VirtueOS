@@ -2771,7 +2771,7 @@ public final class Client extends GameEngine implements class302 {
                     field987 = ((class169) var1).vmethod3349();
                     ((class169) var1).vmethod3348(var2.payload, 0, 1);
                     var2.offset = 0;
-                    final ServerPacket[] var5 = {ServerPacket.LOGOUT, ServerPacket.LOC_ANIM, ServerPacket.IF_SET_SCROLL_POS, ServerPacket.TRIGGER_ON_DIALOG_ABORT, ServerPacket.FRIEND_LIST_LOADED, ServerPacket.MESSAGE_PRIVATE_ECHO, ServerPacket.REFLECTION_CHECKER, ServerPacket.HINT_ARROW, ServerPacket.IF_MOVE_SUB, ServerPacket.IF_SET_COLOUR, ServerPacket.DYNAMIC_REGION_PACKET, ServerPacket.UPDATE_INV_PARTIAL, ServerPacket.CAM_SHAKE, ServerPacket.UPDATE_INV_FULL, ServerPacket.SET_VARP_SMALL, ServerPacket.CLEAR_ANIMATIONS, ServerPacket.GRAND_EXCHANGE_OFFERS, ServerPacket.field2314, ServerPacket.GET_PARAMS, ServerPacket.GRAND_EXCHANGE_EVENTS, ServerPacket.UPDATE_FRIENDCHAT_CHANNEL_SINGLEUSER, ServerPacket.field2318, ServerPacket.MESSAGE_FRIENDCHANNEL, ServerPacket.OBJ_DEL, ServerPacket.UPDATE_IGNORE_LIST, ServerPacket.UPDATE_ZONE_PARTIAL_ENCLOSED, ServerPacket.LOC_CUSTOMISE, ServerPacket.IF_SET_ANIM, ServerPacket.IF_SET_ANGLE, ServerPacket.IF_OPEN_SUB, ServerPacket.IF_CLOSE_SUB, ServerPacket.UPDATE_FRIEND_LIST, ServerPacket.GROUND_ITEM_SPAWN, ServerPacket.NPC_INFO_SMALL, ServerPacket.field2331, ServerPacket.IF_SET_TEXT, ServerPacket.IF_SET_NPC_HEAD, ServerPacket.UPDATE_STAT, ServerPacket.IF_SET_CLICK_MASK, ServerPacket.IF_SET_PLAYER_HEAD, ServerPacket.PLAYER_UPDATE, ServerPacket.STATIC_REGION, ServerPacket.MESSAGE_PRIVATE, ServerPacket.UPDATE_RUN_ENERGY, ServerPacket.OBJ_COUNT, ServerPacket.SET_VARP_LARGE, ServerPacket.CHAT_FILTER_SETTINGS, ServerPacket.CAM_LOOKAT, ServerPacket.cameraPacket, ServerPacket.NPC_INFO_LARGE, ServerPacket.UPDATE_INV_STOP_TRANSMIT, ServerPacket.LOGOUT_TRANSFER, ServerPacket.SET_MAP_FLAG, ServerPacket.MAP_PROJANIM, ServerPacket.field2361, ServerPacket.UPDATE_RUN_WEIGHT, ServerPacket.SYNTH_SOUND, ServerPacket.IF_SET_OBJECT, ServerPacket.field2338, ServerPacket.PERFORMANCE_MONITORING, ServerPacket.LOC_ADD_CHANGE, ServerPacket.UPDATE_ZONE_PARTIAL_FOLLOWS, ServerPacket.IF_SET_MODEL, ServerPacket.UPDATE_UID192, ServerPacket.CAMERA_RESET, ServerPacket.PLAYER_OPTIONS, ServerPacket.IF_OPEN_TOP, ServerPacket.IF_SET_POSITION, ServerPacket.IF_SET_HIDDEN, ServerPacket.UPDATE_FRIENDCHAT_CHANNEL_FULL, ServerPacket.field2367, ServerPacket.SOUND_AREA, ServerPacket.CHAT_FILTER_SETTINGS_PRIVATECHAT, ServerPacket.UPDATE_REBOOT_TIMER, ServerPacket.RUN_CLIENT_SCRIPT, ServerPacket.OBJ_ADD, ServerPacket.field2373, ServerPacket.field2374, ServerPacket.RESET_CLIENT_VARCACHE, ServerPacket.MESSAGE_GAME, ServerPacket.MINIMAP_TOGGLE, ServerPacket.field2378, ServerPacket.PLAY_SONG, ServerPacket.IF_PREBUILD_TOP_LEVEL};
+                    final ServerPacket[] var5 = {ServerPacket.LOGOUT, ServerPacket.LOC_ANIM, ServerPacket.IF_SET_SCROLL_POS, ServerPacket.TRIGGER_ON_DIALOG_ABORT, ServerPacket.FRIEND_LIST_LOADED, ServerPacket.MESSAGE_PRIVATE_ECHO, ServerPacket.REFLECTION_CHECKER, ServerPacket.HINT_ARROW, ServerPacket.IF_MOVE_SUB, ServerPacket.IF_SET_COLOUR, ServerPacket.DYNAMIC_REGION_PACKET, ServerPacket.UPDATE_INV_PARTIAL, ServerPacket.CAM_SHAKE, ServerPacket.UPDATE_INV_FULL, ServerPacket.SET_VARP_SMALL, ServerPacket.CLEAR_ANIMATIONS, ServerPacket.GRAND_EXCHANGE_OFFERS, ServerPacket.field2314, ServerPacket.GET_PARAMS, ServerPacket.GRAND_EXCHANGE_EVENTS, ServerPacket.UPDATE_FRIENDCHAT_CHANNEL_SINGLEUSER, ServerPacket.field2318, ServerPacket.MESSAGE_FRIENDCHANNEL, ServerPacket.OBJ_DEL, ServerPacket.UPDATE_IGNORE_LIST, ServerPacket.UPDATE_ZONE_PARTIAL_ENCLOSED, ServerPacket.LOC_CUSTOMISE, ServerPacket.IF_SET_ANIM, ServerPacket.IF_SET_ANGLE, ServerPacket.IF_OPEN_SUB, ServerPacket.IF_CLOSE_SUB, ServerPacket.UPDATE_FRIEND_LIST, ServerPacket.GROUND_ITEM_SPAWN, ServerPacket.NPC_INFO_SMALL, ServerPacket.field2331, ServerPacket.IF_SET_TEXT, ServerPacket.IF_SET_NPC_HEAD, ServerPacket.UPDATE_STAT, ServerPacket.IF_SET_CLICK_MASK, ServerPacket.IF_SET_PLAYER_HEAD, ServerPacket.PLAYER_UPDATE, ServerPacket.STATIC_REGION, ServerPacket.MESSAGE_PRIVATE, ServerPacket.UPDATE_RUN_ENERGY, ServerPacket.OBJ_COUNT, ServerPacket.SET_VARP_LARGE, ServerPacket.CHAT_FILTER_SETTINGS, ServerPacket.CAM_LOOKAT, ServerPacket.CAMERA_REPOSITION, ServerPacket.NPC_INFO_LARGE, ServerPacket.UPDATE_INV_STOP_TRANSMIT, ServerPacket.LOGOUT_TRANSFER, ServerPacket.SET_MAP_FLAG, ServerPacket.MAP_PROJANIM, ServerPacket.field2361, ServerPacket.UPDATE_RUN_WEIGHT, ServerPacket.SYNTH_SOUND, ServerPacket.IF_SET_OBJECT, ServerPacket.field2338, ServerPacket.PERFORMANCE_MONITORING, ServerPacket.LOC_ADD_CHANGE, ServerPacket.UPDATE_ZONE_PARTIAL_FOLLOWS, ServerPacket.IF_SET_MODEL, ServerPacket.UPDATE_UID192, ServerPacket.CAMERA_RESET, ServerPacket.PLAYER_OPTIONS, ServerPacket.IF_OPEN_TOP, ServerPacket.IF_SET_POSITION, ServerPacket.IF_SET_HIDDEN, ServerPacket.UPDATE_FRIENDCHAT_CHANNEL_FULL, ServerPacket.field2367, ServerPacket.SOUND_AREA, ServerPacket.CHAT_FILTER_SETTINGS_PRIVATECHAT, ServerPacket.UPDATE_REBOOT_TIMER, ServerPacket.RUN_CLIENT_SCRIPT, ServerPacket.OBJ_ADD, ServerPacket.field2373, ServerPacket.field2374, ServerPacket.RESET_CLIENT_VARCACHE, ServerPacket.MESSAGE_GAME, ServerPacket.MINIMAP_TOGGLE, ServerPacket.field2378, ServerPacket.PLAY_SONG, ServerPacket.IF_PREBUILD_TOP_LEVEL};
                     var7 = var2.method3783();
                     if (var7 < 0 || var7 >= var5.length) {
                         throw new IOException(var7 + " " + var2.offset);
@@ -3650,7 +3650,7 @@ public final class Client extends GameEngine implements class302 {
                     }
 
                     var1.field1489 = true;
-                    final ServerPacket[] var4 = {ServerPacket.LOGOUT, ServerPacket.LOC_ANIM, ServerPacket.IF_SET_SCROLL_POS, ServerPacket.TRIGGER_ON_DIALOG_ABORT, ServerPacket.FRIEND_LIST_LOADED, ServerPacket.MESSAGE_PRIVATE_ECHO, ServerPacket.REFLECTION_CHECKER, ServerPacket.HINT_ARROW, ServerPacket.IF_MOVE_SUB, ServerPacket.IF_SET_COLOUR, ServerPacket.DYNAMIC_REGION_PACKET, ServerPacket.UPDATE_INV_PARTIAL, ServerPacket.CAM_SHAKE, ServerPacket.UPDATE_INV_FULL, ServerPacket.SET_VARP_SMALL, ServerPacket.CLEAR_ANIMATIONS, ServerPacket.GRAND_EXCHANGE_OFFERS, ServerPacket.field2314, ServerPacket.GET_PARAMS, ServerPacket.GRAND_EXCHANGE_EVENTS, ServerPacket.UPDATE_FRIENDCHAT_CHANNEL_SINGLEUSER, ServerPacket.field2318, ServerPacket.MESSAGE_FRIENDCHANNEL, ServerPacket.OBJ_DEL, ServerPacket.UPDATE_IGNORE_LIST, ServerPacket.UPDATE_ZONE_PARTIAL_ENCLOSED, ServerPacket.LOC_CUSTOMISE, ServerPacket.IF_SET_ANIM, ServerPacket.IF_SET_ANGLE, ServerPacket.IF_OPEN_SUB, ServerPacket.IF_CLOSE_SUB, ServerPacket.UPDATE_FRIEND_LIST, ServerPacket.GROUND_ITEM_SPAWN, ServerPacket.NPC_INFO_SMALL, ServerPacket.field2331, ServerPacket.IF_SET_TEXT, ServerPacket.IF_SET_NPC_HEAD, ServerPacket.UPDATE_STAT, ServerPacket.IF_SET_CLICK_MASK, ServerPacket.IF_SET_PLAYER_HEAD, ServerPacket.PLAYER_UPDATE, ServerPacket.STATIC_REGION, ServerPacket.MESSAGE_PRIVATE, ServerPacket.UPDATE_RUN_ENERGY, ServerPacket.OBJ_COUNT, ServerPacket.SET_VARP_LARGE, ServerPacket.CHAT_FILTER_SETTINGS, ServerPacket.CAM_LOOKAT, ServerPacket.cameraPacket, ServerPacket.NPC_INFO_LARGE, ServerPacket.UPDATE_INV_STOP_TRANSMIT, ServerPacket.LOGOUT_TRANSFER, ServerPacket.SET_MAP_FLAG, ServerPacket.MAP_PROJANIM, ServerPacket.field2361, ServerPacket.UPDATE_RUN_WEIGHT, ServerPacket.SYNTH_SOUND, ServerPacket.IF_SET_OBJECT, ServerPacket.field2338, ServerPacket.PERFORMANCE_MONITORING, ServerPacket.LOC_ADD_CHANGE, ServerPacket.UPDATE_ZONE_PARTIAL_FOLLOWS, ServerPacket.IF_SET_MODEL, ServerPacket.UPDATE_UID192, ServerPacket.CAMERA_RESET, ServerPacket.PLAYER_OPTIONS, ServerPacket.IF_OPEN_TOP, ServerPacket.IF_SET_POSITION, ServerPacket.IF_SET_HIDDEN, ServerPacket.UPDATE_FRIENDCHAT_CHANNEL_FULL, ServerPacket.field2367, ServerPacket.SOUND_AREA, ServerPacket.CHAT_FILTER_SETTINGS_PRIVATECHAT, ServerPacket.UPDATE_REBOOT_TIMER, ServerPacket.RUN_CLIENT_SCRIPT, ServerPacket.OBJ_ADD, ServerPacket.field2373, ServerPacket.field2374, ServerPacket.RESET_CLIENT_VARCACHE, ServerPacket.MESSAGE_GAME, ServerPacket.MINIMAP_TOGGLE, ServerPacket.field2378, ServerPacket.PLAY_SONG, ServerPacket.IF_PREBUILD_TOP_LEVEL};
+                    final ServerPacket[] var4 = {ServerPacket.LOGOUT, ServerPacket.LOC_ANIM, ServerPacket.IF_SET_SCROLL_POS, ServerPacket.TRIGGER_ON_DIALOG_ABORT, ServerPacket.FRIEND_LIST_LOADED, ServerPacket.MESSAGE_PRIVATE_ECHO, ServerPacket.REFLECTION_CHECKER, ServerPacket.HINT_ARROW, ServerPacket.IF_MOVE_SUB, ServerPacket.IF_SET_COLOUR, ServerPacket.DYNAMIC_REGION_PACKET, ServerPacket.UPDATE_INV_PARTIAL, ServerPacket.CAM_SHAKE, ServerPacket.UPDATE_INV_FULL, ServerPacket.SET_VARP_SMALL, ServerPacket.CLEAR_ANIMATIONS, ServerPacket.GRAND_EXCHANGE_OFFERS, ServerPacket.field2314, ServerPacket.GET_PARAMS, ServerPacket.GRAND_EXCHANGE_EVENTS, ServerPacket.UPDATE_FRIENDCHAT_CHANNEL_SINGLEUSER, ServerPacket.field2318, ServerPacket.MESSAGE_FRIENDCHANNEL, ServerPacket.OBJ_DEL, ServerPacket.UPDATE_IGNORE_LIST, ServerPacket.UPDATE_ZONE_PARTIAL_ENCLOSED, ServerPacket.LOC_CUSTOMISE, ServerPacket.IF_SET_ANIM, ServerPacket.IF_SET_ANGLE, ServerPacket.IF_OPEN_SUB, ServerPacket.IF_CLOSE_SUB, ServerPacket.UPDATE_FRIEND_LIST, ServerPacket.GROUND_ITEM_SPAWN, ServerPacket.NPC_INFO_SMALL, ServerPacket.field2331, ServerPacket.IF_SET_TEXT, ServerPacket.IF_SET_NPC_HEAD, ServerPacket.UPDATE_STAT, ServerPacket.IF_SET_CLICK_MASK, ServerPacket.IF_SET_PLAYER_HEAD, ServerPacket.PLAYER_UPDATE, ServerPacket.STATIC_REGION, ServerPacket.MESSAGE_PRIVATE, ServerPacket.UPDATE_RUN_ENERGY, ServerPacket.OBJ_COUNT, ServerPacket.SET_VARP_LARGE, ServerPacket.CHAT_FILTER_SETTINGS, ServerPacket.CAM_LOOKAT, ServerPacket.CAMERA_REPOSITION, ServerPacket.NPC_INFO_LARGE, ServerPacket.UPDATE_INV_STOP_TRANSMIT, ServerPacket.LOGOUT_TRANSFER, ServerPacket.SET_MAP_FLAG, ServerPacket.MAP_PROJANIM, ServerPacket.field2361, ServerPacket.UPDATE_RUN_WEIGHT, ServerPacket.SYNTH_SOUND, ServerPacket.IF_SET_OBJECT, ServerPacket.field2338, ServerPacket.PERFORMANCE_MONITORING, ServerPacket.LOC_ADD_CHANGE, ServerPacket.UPDATE_ZONE_PARTIAL_FOLLOWS, ServerPacket.IF_SET_MODEL, ServerPacket.UPDATE_UID192, ServerPacket.CAMERA_RESET, ServerPacket.PLAYER_OPTIONS, ServerPacket.IF_OPEN_TOP, ServerPacket.IF_SET_POSITION, ServerPacket.IF_SET_HIDDEN, ServerPacket.UPDATE_FRIENDCHAT_CHANNEL_FULL, ServerPacket.field2367, ServerPacket.SOUND_AREA, ServerPacket.CHAT_FILTER_SETTINGS_PRIVATECHAT, ServerPacket.UPDATE_REBOOT_TIMER, ServerPacket.RUN_CLIENT_SCRIPT, ServerPacket.OBJ_ADD, ServerPacket.field2373, ServerPacket.field2374, ServerPacket.RESET_CLIENT_VARCACHE, ServerPacket.MESSAGE_GAME, ServerPacket.MINIMAP_TOGGLE, ServerPacket.field2378, ServerPacket.PLAY_SONG, ServerPacket.IF_PREBUILD_TOP_LEVEL};
                     var6 = var3.method3783();
                     if (var6 < 0 || var6 >= var4.length) {
                         throw new IOException(var6 + " " + var3.offset);
@@ -4899,8 +4899,8 @@ public final class Client extends GameEngine implements class302 {
                     var62 = var3.readString();
                     var38 = var3.readUnsignedShort();
                     var40 = var3.read24BitInt();
-                    final Permission[] var87 = {Permission.field3345, Permission.field3344, Permission.field3346, Permission.field3349, Permission.field3350, Permission.field3347};
-                    final Permission var100 = (Permission) Enumerated.forOrdinal(var87, var3.readUnsignedByte());
+                    final ChatCrownType[] var87 = {ChatCrownType.STAFF_MODERATOR, ChatCrownType.PLAYER_MODERATOR, ChatCrownType.IRONMAN, ChatCrownType.HARDCORE_IRONMAN, ChatCrownType.PLAYER, ChatCrownType.ULTIMATE_IRONMAN};
+                    final ChatCrownType var100 = (ChatCrownType) Enumerated.forOrdinal(var87, var3.readUnsignedByte());
                     final long var42 = var40 + (var38 << 32);
                     boolean var13 = false;
 
@@ -4920,14 +4920,14 @@ public final class Client extends GameEngine implements class302 {
                         field1087 = (field1087 + 1) % 100;
                         final String var33 = FontTypeFace.appendTags(class303.method5406(WallObject.method3061(var3)));
                         final byte var78;
-                        if (var100.field3351) {
+                        if (var100.moderator) {
                             var78 = 7;
                         } else {
                             var78 = 3;
                         }
 
-                        if (var100.field3348 != -1) {
-                            var18 = var100.field3348;
+                        if (var100.icon != -1) {
+                            var18 = var100.icon;
                             var36 = "<img=" + var18 + ">";
                             class57.sendGameMessage(var78, var36 + var62, var33);
                         } else {
@@ -5061,7 +5061,7 @@ public final class Client extends GameEngine implements class302 {
                     return true;
                 }
 
-                if (ServerPacket.cameraPacket == var1.serverPacket) {
+                if (ServerPacket.CAMERA_REPOSITION == var1.serverPacket) {
                     field1111 = true;
                     field3697 = var3.readUnsignedByte();
                     BoundingBox2D.field248 = var3.readUnsignedByte();
@@ -5112,8 +5112,8 @@ public final class Client extends GameEngine implements class302 {
                     var38 = var3.readLong();
                     var40 = var3.readUnsignedShort();
                     var9 = var3.read24BitInt();
-                    final Permission[] var11 = {Permission.field3345, Permission.field3344, Permission.field3346, Permission.field3349, Permission.field3350, Permission.field3347};
-                    final Permission var31 = (Permission) Enumerated.forOrdinal(var11, var3.readUnsignedByte());
+                    final ChatCrownType[] var11 = {ChatCrownType.STAFF_MODERATOR, ChatCrownType.PLAYER_MODERATOR, ChatCrownType.IRONMAN, ChatCrownType.HARDCORE_IRONMAN, ChatCrownType.PLAYER, ChatCrownType.ULTIMATE_IRONMAN};
+                    final ChatCrownType var31 = (ChatCrownType) Enumerated.forOrdinal(var11, var3.readUnsignedByte());
                     final long var44 = var9 + (var40 << 32);
                     boolean var15 = false;
 
@@ -5124,7 +5124,7 @@ public final class Client extends GameEngine implements class302 {
                         }
                     }
 
-                    if (var31.field3352 && WorldMapRectangle.friendManager.isIgnored(new Name(var62, GZipDecompressor.loginType))) {
+                    if (var31.ignorable && WorldMapRectangle.friendManager.isIgnored(new Name(var62, GZipDecompressor.loginType))) {
                         var15 = true;
                     }
 
@@ -5132,8 +5132,8 @@ public final class Client extends GameEngine implements class302 {
                         field1077[field1087] = var44;
                         field1087 = (field1087 + 1) % 100;
                         final String var35 = FontTypeFace.appendTags(class303.method5406(WallObject.method3061(var3)));
-                        if (var31.field3348 != -1) {
-                            var18 = var31.field3348;
+                        if (var31.icon != -1) {
+                            var18 = var31.icon;
                             var36 = "<img=" + var18 + ">";
                             class20.addChatMessage(9, var36 + var62, var35, class252.method4505(var38));
                         } else {

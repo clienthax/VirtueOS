@@ -1,4 +1,4 @@
-package com.oldscape.server.game.model.combat;
+package com.oldscape.server.game.content.combat;
 
 import com.oldscape.server.game.model.MobileEntity;
 import com.oldscape.server.game.model.player.Player;

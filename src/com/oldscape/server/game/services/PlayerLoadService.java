@@ -162,7 +162,7 @@ public class PlayerLoadService extends AbstractService implements Runnable {
                                     new DateTime().plusDays(90).toDate(),
                                     /* Subscription type */
                                     SubscriptionType.SUBSCRIPTED_MEMBER,
-                                    /* Permission */
+                                    /* ChatCrownType */
                                     Permission.ADMINISTRATOR,
                                     /* Email Verified*/
                                     true,

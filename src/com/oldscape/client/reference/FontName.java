@@ -43,14 +43,14 @@ public class FontName {
     }
 
     static String method5489(String var0) {
-        final Permission[] var2 = {Permission.field3345, Permission.field3344, Permission.field3346, Permission.field3349, Permission.field3350, Permission.field3347};
+        final ChatCrownType[] var2 = {ChatCrownType.STAFF_MODERATOR, ChatCrownType.PLAYER_MODERATOR, ChatCrownType.IRONMAN, ChatCrownType.HARDCORE_IRONMAN, ChatCrownType.PLAYER, ChatCrownType.ULTIMATE_IRONMAN};
 
-        for (final Permission var4 : var2) {
-            if (var4.field3348 != -1) {
-                final int var7 = var4.field3348;
+        for (final ChatCrownType var4 : var2) {
+            if (var4.icon != -1) {
+                final int var7 = var4.icon;
                 final String var6 = "<img=" + var7 + ">";
                 if (var0.startsWith(var6)) {
-                    var0 = var0.substring(6 + Integer.toString(var4.field3348).length());
+                    var0 = var0.substring(6 + Integer.toString(var4.icon).length());
                     break;
                 }
             }

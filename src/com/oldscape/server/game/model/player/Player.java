@@ -9,6 +9,7 @@ import com.oldscape.server.game.model.player.inv.ItemContainer.StackMode;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.reference.Appearance;
 import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
+import com.oldscape.server.game.model.var.Varbit;
 import com.oldscape.server.game.model.widget.WidgetId;
 import com.oldscape.server.game.network.game.GameSessionContext;
 import com.oldscape.shared.event.Event;
@@ -311,6 +312,10 @@ public class Player extends MobileEntity {
         server.getSaveService().addPlayerSave(this);
     }
 
+    public void setCameraReposition(int x, int y, int z, int pitch, int yaw) {
+        write(new CameraRepositionEvent(x, y, z, pitch, yaw));
+    }
+
     public void sendWidgetSetClickMask(int root, int component, int from, int to, int settings) {
         write(new WidgetSetClickMaskEvent(root, component, from, to, settings));
     }
@@ -337,6 +342,16 @@ public class Player extends MobileEntity {
 
     public void sendVarp(int i, int val) {
         write(new VarpEvent(i, val));
+    }
+
+    public void sendVarbit(int i, int val) {
+        Varbit varbit = new Varbit(this);
+        varbit.sendVarbit(i, val);
+    }
+
+    public void sendVarbit(int i, int val, boolean force) {
+        Varbit varbit = new Varbit(this);
+        varbit.forceVarbit(i, val);
     }
 
     public void sendSetRootWidget(int interfaceId) {

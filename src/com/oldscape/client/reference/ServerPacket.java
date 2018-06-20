@@ -49,7 +49,7 @@ public class ServerPacket {
     public static final ServerPacket SET_VARP_LARGE;
     public static final ServerPacket CHAT_FILTER_SETTINGS;
     public static final ServerPacket CAM_LOOKAT;
-    public static final ServerPacket cameraPacket;//better name?
+    public static final ServerPacket CAMERA_REPOSITION;
     public static final ServerPacket NPC_INFO_LARGE;
     public static final ServerPacket UPDATE_INV_STOP_TRANSMIT;
     public static final ServerPacket LOGOUT_TRANSFER;
@@ -137,7 +137,7 @@ public class ServerPacket {
         SET_VARP_LARGE = new ServerPacket(45, 6);
         CHAT_FILTER_SETTINGS = new ServerPacket(46, 2);//public chat settings?
         CAM_LOOKAT = new ServerPacket(47, 6);
-        cameraPacket = new ServerPacket(48, 6);//heh?
+        CAMERA_REPOSITION = new ServerPacket(48, 6);//heh?
         NPC_INFO_LARGE = new ServerPacket(49, -2);
         UPDATE_INV_STOP_TRANSMIT = new ServerPacket(50, 2);
         LOGOUT_TRANSFER = new ServerPacket(51, -1);

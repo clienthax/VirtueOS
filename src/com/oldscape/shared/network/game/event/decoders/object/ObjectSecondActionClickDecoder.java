@@ -16,8 +16,8 @@ public class ObjectSecondActionClickDecoder implements GameMessageDecoder<Object
         int type = (int) frame.getUnsigned(DataType.BYTE, DataTransformation.ADD);
         int object = (int) frame.getUnsigned(DataType.SHORT, DataOrder.LITTLE, DataTransformation.ADD);
 
-        System.out.println("objectActionEvent(1): " + x + ", Y:" + y + ", type:" + type + " obj:" + object);
-        return new ObjectActionEvent(1, object, x, y);
+        System.out.println("objectActionEvent(1): " + object + " " + x + " " + y + " " + type);
+        return new ObjectActionEvent(1, object, type, x, y);
     }
 
 }

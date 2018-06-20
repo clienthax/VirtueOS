@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2015 Kyle Friz & Kayla Friz
  * <p>
- * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * ChatCrownType is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -21,10 +21,7 @@
  */
 package com.oldscape.shared.script;
 
-import com.oldscape.shared.script.listeners.CommandListener;
-import com.oldscape.shared.script.listeners.LocationListener;
-import com.oldscape.shared.script.listeners.NpcListener;
-import com.oldscape.shared.script.listeners.WidgetListener;
+import com.oldscape.shared.script.listeners.*;
 import com.oldscape.shared.utility.FileUtils;
 
 import javax.script.Invocable;
@@ -55,6 +52,8 @@ public class ScriptManager {
 
     private Map<Integer, NpcListener> npcListeners = new HashMap<>();
 
+    private Map<Integer, ObjectListener> objectListeners = new HashMap<>();
+
     public void initialize() {
         ScriptEngineManager engineManager = new ScriptEngineManager();
         ScriptEngine nashorn = engineManager.getEngineByName("nashorn");
@@ -73,7 +72,9 @@ public class ScriptManager {
                 (commandListeners.size() +
                 locationListeners.size() +
                 widgetListeners.size() +
-                npcListeners.size()) +
+                npcListeners.size() +
+                objectListeners.size()
+                ) +
                 " Nashorn Script(s).");
     }
 
@@ -115,6 +116,16 @@ public class ScriptManager {
 
     public NpcListener forNpc(Integer id) {
         return npcListeners.get(id);
+    }
+
+    public void setObjectListener(ObjectListener listener, Integer... ids) {
+        Arrays.stream(ids).forEach((Integer id) -> {
+            objectListeners.put(id, listener);
+        });
+    }
+
+    public ObjectListener forObject(Integer id) {
+        return objectListeners.get(id);
     }
 
 }

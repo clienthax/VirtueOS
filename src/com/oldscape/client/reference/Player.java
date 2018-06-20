@@ -195,14 +195,14 @@ final class Player extends Actor {
         //Chat masks
         if ((flags & 8) != 0) {
             var5 = buffer.getUnsignedShortLE();
-            final Permission[] var17 = {Permission.field3345, Permission.field3344, Permission.field3346, Permission.field3349, Permission.field3350, Permission.field3347};
-            final Permission var18 = (Permission) Enumerated.forOrdinal(var17, buffer.readUnsignedShortOb1());
+            final ChatCrownType[] var17 = {ChatCrownType.STAFF_MODERATOR, ChatCrownType.PLAYER_MODERATOR, ChatCrownType.IRONMAN, ChatCrownType.HARDCORE_IRONMAN, ChatCrownType.PLAYER, ChatCrownType.ULTIMATE_IRONMAN};
+            final ChatCrownType var18 = (ChatCrownType) Enumerated.forOrdinal(var17, buffer.readUnsignedShortOb1());
             final boolean var21 = buffer.readUnsignedByte() == 1;
             var9 = buffer.method3538();
             var10 = buffer.offset;
             if (player.name != null && player.composition != null) {
                 boolean var22 = false;
-                if (var18.field3352 && WorldMapRectangle.friendManager.isIgnored(player.name)) {
+                if (var18.ignorable && WorldMapRectangle.friendManager.isIgnored(player.name)) {
                     var22 = true;
                 }
 
@@ -216,16 +216,16 @@ final class Player extends Actor {
                     player.field1175 = var5 & 255;
                     player.overheadTextCyclesRemaining = 150;
                     player.field1168 = var21;
-                    player.field1157 = player != Client.localPlayer && var18.field3352 && "" != Client.field1085 && !var19.toLowerCase().contains(Client.field1085);
+                    player.field1157 = player != Client.localPlayer && var18.ignorable && "" != Client.field1085 && !var19.toLowerCase().contains(Client.field1085);
                     final int var13;
-                    if (var18.field3351) {
+                    if (var18.moderator) {
                         var13 = var21 ? 91 : 1;
                     } else {
                         var13 = var21 ? 90 : 2;
                     }
 
-                    if (var18.field3348 != -1) {
-                        final int var16 = var18.field3348;
+                    if (var18.icon != -1) {
+                        final int var16 = var18.icon;
                         final String var15 = "<img=" + var16 + ">";
                         class57.sendGameMessage(var13, var15 + player.name.getName(), var19);
                     } else {

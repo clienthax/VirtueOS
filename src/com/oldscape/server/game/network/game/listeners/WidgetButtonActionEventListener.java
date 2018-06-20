@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2015 Kyle Friz
  * <p>
- * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * ChatCrownType is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -42,10 +42,18 @@ public class WidgetButtonActionEventListener implements EventListener<WidgetButt
     public void onEvent(WidgetButtonActionEvent event, GameSessionContext context) {
         Player player = context.getPlayer();
 
-        /* Test: Check Scripts */
         WidgetListener listener = context.getServer().getScriptManager().forWidget(event.getWidgetHash());
         if (listener != null) {
             listener.handle(context.getPlayer(), event.getWidgetHash(), event.getButtonHash(), event.getWidgetID(), event.getWidgetChildID(), event.getOpcode());
+        }
+
+        if (event.getWidgetHash() == 135) {
+            switch (event.getButtonHash()) {
+                /* Close */
+                case 13:
+                    player.sendCameraReset();
+                    break;
+            }
         }
 
         /**
@@ -56,6 +64,7 @@ public class WidgetButtonActionEventListener implements EventListener<WidgetButt
                 /* Close Map [x] */
                 case WidgetId.WorldMap.CLOSE:
                     player.sendCloseWidgetSub(WidgetId.FIXED_VIEWPORT_GROUP_ID, 22);
+
                     break;
             }
         }

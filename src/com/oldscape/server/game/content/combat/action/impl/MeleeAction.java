@@ -1,7 +1,7 @@
-package com.oldscape.server.game.model.combat.action.impl;
+package com.oldscape.server.game.content.combat.action.impl;
 
 import com.oldscape.server.game.model.MobileEntity;
-import com.oldscape.server.game.model.combat.action.CombatAction;
+import com.oldscape.server.game.content.combat.action.CombatAction;
 
 /**
  * MeleeAction Class

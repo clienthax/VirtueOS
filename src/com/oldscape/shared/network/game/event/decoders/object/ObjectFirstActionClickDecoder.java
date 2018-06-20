@@ -16,8 +16,8 @@ public class ObjectFirstActionClickDecoder implements GameMessageDecoder<ObjectA
         int type = (int) frame.getUnsigned(DataType.BYTE, DataTransformation.SUBTRACT);
         int object = (int) frame.getUnsigned(DataType.SHORT);
 
-        System.out.println("objectActionEvent(0): " + x + ", Y:" + y + ", type:" + type + " obj:" + object);
-        return new ObjectActionEvent(0, object, x, y);
+        System.out.println("objectActionEvent(0): " + object + " " + x + " " + y + " " + type);
+        return new ObjectActionEvent(0, object, type, x, y);
     }
 
 }

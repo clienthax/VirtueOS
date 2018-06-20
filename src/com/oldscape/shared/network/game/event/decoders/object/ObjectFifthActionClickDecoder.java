@@ -16,8 +16,8 @@ public class ObjectFifthActionClickDecoder implements GameMessageDecoder<ObjectA
         int type = (int) frame.getUnsigned(DataType.BYTE, DataTransformation.SUBTRACT);
         int object = (int) frame.getUnsigned(DataType.SHORT);
 
-        System.out.println("objectActionEvent(4): " + x + ", Y:" + y + ", type:" + type + " obj:" + object);
-        return new ObjectActionEvent(4, object, x, y);
+        System.out.println("objectActionEvent(4): " + object + " " + x + " " + y + " " + type);
+        return new ObjectActionEvent(4, object, type, x, y);
     }
 
 }
