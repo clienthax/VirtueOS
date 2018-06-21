@@ -133,7 +133,7 @@ class class57 {
             var2 = var1.readUnsignedByte();
             var3 = (var2 >> 4 & 7) + WidgetNode.field794;
             var37 = (var2 & 7) + ParamNode.field3551;
-            var5 = var1.readUnsignedShortOb1();
+            var5 = var1.readUnsignedByteS();
             var6 = var5 >> 2;
             var7 = var5 & 3;
             var8 = Client.field929[var6];
@@ -197,7 +197,7 @@ class class57 {
             int var14;
             final int var44;
             if (class183.field2491 == var0) {
-                var2 = var1.readUnsignedShortOb1() * 4;
+                var2 = var1.readUnsignedByteS() * 4;
                 final byte var38 = var1.method3725();
                 var37 = var1.method3555();
                 var5 = var1.readUnsignedByte();
@@ -205,7 +205,7 @@ class class57 {
                 var7 = var1.readUnsignedShort();
                 var8 = var1.method3556();
                 var39 = var1.readUnsignedByte();
-                var44 = var1.readUnsignedShortOb1() * 4;
+                var44 = var1.readUnsignedByteS() * 4;
                 var11 = var1.readByte();
                 var12 = var1.readUnsignedByte();
                 var13 = (var12 >> 4 & 7) + WidgetNode.field794;
@@ -235,7 +235,7 @@ class class57 {
                     byte var31 = var1.method3548();
                     var11 = var1.method3725();
                     var12 = var1.getUnsignedShortLE();
-                    var13 = var1.readUnsignedShortOb1();
+                    var13 = var1.readUnsignedByteS();
                     var14 = var13 >> 2;
                     final int var32 = var13 & 3;
                     final int var16 = Client.field929[var14];
@@ -345,7 +345,7 @@ class class57 {
 
                 } else {
                     if (class183.field2495 == var0) {
-                        var2 = var1.readUnsignedShortOb1();
+                        var2 = var1.readUnsignedByteS();
                         var3 = (var2 >> 4 & 7) + WidgetNode.field794;
                         var37 = (var2 & 7) + ParamNode.field3551;
                         var5 = var1.method3636();
@@ -390,7 +390,7 @@ class class57 {
                         var3 = (var2 >> 4 & 7) + WidgetNode.field794;
                         var37 = (var2 & 7) + ParamNode.field3551;
                         var5 = var1.getUnsignedShortLE();
-                        var6 = var1.readUnsignedShortOb1();
+                        var6 = var1.readUnsignedByteS();
                         var7 = var6 >> 2;
                         var8 = var6 & 3;
                         var39 = Client.field929[var7];

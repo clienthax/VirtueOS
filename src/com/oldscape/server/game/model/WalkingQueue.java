@@ -5,6 +5,7 @@ import com.oldscape.server.game.model.player.Player;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.reference.Direction;
 import com.oldscape.shared.model.Position;
+import com.oldscape.shared.model.region.Region;
 import com.oldscape.shared.model.region.RegionManager;
 
 import java.util.ArrayDeque;
@@ -12,7 +13,7 @@ import java.util.Deque;
 import java.util.Queue;
 
 /**
- * A queue of {@link Direction}s which a {@link Mob} will follow.
+ * A queue of {@link Direction}s which a {@link MobileEntity} will follow.
  *
  * @author Graham
  */
@@ -182,16 +183,12 @@ public final class WalkingQueue {
                 deltaY--;
             }
 
-            // Position pos = new Position(x - deltaX, y - deltaY,
-            // step.getHeight());
-            // Region region = manager.lookup(pos.getRegionID());
-            // System.out.println("Tile: [ " + pos.getX() + ", " + pos.getY() +
-            // " ], Blocked: [ " +
-            // region.getClipMap().isClipped(step.getHeight(),
-            // pos.getXInRegion(), pos.getYInRegion(), 1,
-            // ClipFlag.FLOOR_BLOCKSWALK) + " ]");
+            Position pos = new Position(x - deltaX, y - deltaY, step.getHeight());
 
-            addStep(x - deltaX, y - deltaY);
+//            Region region = manager.lookup(pos.getRegionID());
+//            System.out.println("Tile: [ " + pos.getX() + ", " + pos.getY() + " ], Blocked: [ " + region.getClipMap().isClipped(step.getHeight(), pos.getXInRegion(), pos.getYInRegion(), 1, ClipFlag.FLOOR_BLOCKSWALK) + " ]");
+
+            addStep(pos);
         }
     }
 

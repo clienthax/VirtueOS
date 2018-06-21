@@ -1,9 +1,11 @@
 package com.oldscape.server.game.model;
 
+import com.oldscape.server.game.model.player.Player;
 import com.oldscape.server.game.model.sync.block.InteractingMobBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlockSet;
 import com.oldscape.server.game.model.sync.reference.Animation;
+import com.oldscape.server.game.model.sync.reference.ChatMessage;
 import com.oldscape.server.game.model.sync.reference.Direction;
 import com.oldscape.server.game.model.sync.reference.Graphic;
 import com.oldscape.shared.cache.type.npcs.NpcType;
@@ -200,6 +202,10 @@ public abstract class MobileEntity extends Node {
      */
     public final void playGraphic(Graphic graphic) {
         blockSet.add(SynchronizationBlock.createGraphicBlock(graphic));
+    }
+
+    public final void sendChat(Player player, ChatMessage chatMessage) {
+        blockSet.add(SynchronizationBlock.createChatBlock(player, chatMessage));
     }
 
     /**

@@ -8,6 +8,7 @@ import com.oldscape.server.game.network.login.LoginSessionContext;
 import com.oldscape.server.game.network.login.LoginTransaction;
 import com.oldscape.server.game.network.login.PlayerLoginContextPair;
 import com.oldscape.shared.gson.PlayerSerializer;
+import com.oldscape.shared.model.Position;
 import com.oldscape.shared.model.Response;
 import com.oldscape.shared.model.player.AccountCredentials;
 import com.oldscape.shared.model.player.DisplayMode;
@@ -132,11 +133,12 @@ public class PlayerLoadService extends AbstractService implements Runnable {
                             continue;
                         }
 
-                        /*
-                         * if (player.getCredentials().isAurthenticated()) {
-                         * context.sendLoginFailure(Response.AUTHENTICATOR);
-                         * player = null; continue; }
-                         */
+
+                        if (player.getCredentials().isAuthenticated()) {
+                            context.sendLoginFailure(Response.AUTHENTICATOR);
+                            player = null; continue;
+                        }
+
                     }
                 } else {
                     // Fake a new player for now.

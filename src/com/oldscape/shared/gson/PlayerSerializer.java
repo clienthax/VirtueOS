@@ -43,13 +43,6 @@ import java.util.Date;
  */
 public class PlayerSerializer implements JsonSerializer<Player>, JsonDeserializer<Player> {
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see
-     * com.google.gson.JsonDeserializer#deserialize(com.google.gson.JsonElement,
-     * java.lang.reflect.Type, com.google.gson.JsonDeserializationContext)
-     */
     @Override
     public Player deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
             throws JsonParseException {
@@ -140,7 +133,7 @@ public class PlayerSerializer implements JsonSerializer<Player>, JsonDeserialize
         obj.addProperty("ip", src.getCredentials().getLastKnownIpAddress());
         obj.addProperty("email", src.getCredentials().getEmailAddress());
         obj.addProperty("verified", src.getCredentials().isEmailVerified());
-        obj.addProperty("authenticated", src.getCredentials().isAurthenticated());
+        obj.addProperty("authenticated", src.getCredentials().isAuthenticated());
         obj.addProperty("unread", src.getCredentials().getUnreadMessage());
         obj.addProperty("creation", format.format(src.getCredentials().getAccountCreation()));
         obj.addProperty("login", format.format(Date.from(Instant.now())));

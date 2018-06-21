@@ -548,7 +548,7 @@ class Buffer extends Node {
         return 0 - this.payload[this.offset++] & 255;
     }
 
-    public int readUnsignedShortOb1() {
+    public int readUnsignedByteS() {
         return 128 - this.payload[this.offset++] & 255;
     }
 

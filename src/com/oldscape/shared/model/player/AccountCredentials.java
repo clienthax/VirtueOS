@@ -243,7 +243,7 @@ public final class AccountCredentials {
      *
      * @return The {@code authenticated};
      */
-    public boolean isAurthenticated() {
+    public boolean isAuthenticated() {
         return authenticated;
     }
 }

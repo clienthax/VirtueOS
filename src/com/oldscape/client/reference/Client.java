@@ -3763,7 +3763,7 @@ public final class Client extends GameEngine implements class302 {
 
                 if (ServerPacket.CHAT_FILTER_SETTINGS == var1.serverPacket) {
                     field1084 = var3.method3538();
-                    publicChatMode = var3.readUnsignedShortOb1();
+                    publicChatMode = var3.readUnsignedByteS();
 
                     System.out.println(String.format("setPublicChatMode %d %d", field1084, publicChatMode));
 
@@ -3962,7 +3962,7 @@ public final class Client extends GameEngine implements class302 {
                 WidgetNode var7;
                 if (ServerPacket.IF_OPEN_SUB == var1.serverPacket) {
                     var23 = var3.getIntV1();
-                    var24 = var3.readUnsignedShortOb1();
+                    var24 = var3.readUnsignedByteS();
                     var6 = var3.getUnsignedShortLE();
 
                     System.out.println(String.format("sendOpenWidgetSub(%d, %d, %d, %b)", var23 >> 16, var23 & 0xFF, var6, var24 == 1));
@@ -4762,7 +4762,7 @@ public final class Client extends GameEngine implements class302 {
                 }
 
                 if (ServerPacket.GROUND_ITEM_SPAWN == var1.serverPacket) {
-                    ParamNode.field3551 = var3.readUnsignedShortOb1();
+                    ParamNode.field3551 = var3.readUnsignedByteS();
                     WidgetNode.field794 = var3.readUnsignedByte();
 
 //               System.out.println("ground item spawn "+ParamNode.field3551+" "+WidgetNode.field794);

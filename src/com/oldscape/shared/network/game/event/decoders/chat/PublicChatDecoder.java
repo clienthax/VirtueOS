@@ -30,12 +30,10 @@ import com.oldscape.shared.utility.StringUtils;
 
 public class PublicChatDecoder implements GameMessageDecoder<PublicChatMessage> {
 
-
-
     @Override
     public PublicChatMessage decode(GameFrameReader frame) {
 
-        int NAME_ME = (int) frame.getUnsigned(DataType.BYTE);// FIXME: What is this? Crown??
+        int type = (int) frame.getUnsigned(DataType.BYTE);
         int color = (int) frame.getUnsigned(DataType.BYTE);
         int effect = (int) frame.getUnsigned(DataType.BYTE);
         int decompressedLength = frame.getUnsignedSmart();
@@ -48,6 +46,6 @@ public class PublicChatDecoder implements GameMessageDecoder<PublicChatMessage> 
         Server.getServer().getHuffman().decompress(compressedData, 0, decompressedData, 0, decompressedLength);
         String chatMessage = StringUtils.decodeString(decompressedData, 0, decompressedLength);
 
-        return new PublicChatMessage(chatMessage, compressedData, color, effect);
+        return new PublicChatMessage(chatMessage, compressedData, type, color, effect);
     }
 }

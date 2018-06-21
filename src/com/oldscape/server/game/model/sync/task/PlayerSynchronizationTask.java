@@ -48,8 +48,10 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
         if (!viewport.initialized())
             return new ArrayList<>();
 
-        if (player.hasRegionChanged())
+        if (player.hasRegionChanged()) {
             player.setRegion(server.getRegionManager().lookup(player.getPosition().getRegionID()));
+            player.getWalkingQueue().handleRegionChange();
+        }
 
         List<SynchronizationSegment> segments = new ArrayList<>();
 
@@ -144,7 +146,6 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
                 viewport.setLocalPlayer(index, null);
             } else {
                 if (p.isTeleporting()) {
-                    System.out.println("Adding teleport segment");
                     segments.add(new TeleportSegment(p.getBlockSet(), p.getLastPosition(), p.getPosition()));
                 } else if (!p.getFirstDirection().equals(Direction.NONE) || p.getBlockSet().size() > 0) {
                     segments.add(new MovementSegment(p.getBlockSet(), p.getDirections()));

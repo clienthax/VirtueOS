@@ -40,7 +40,7 @@ class UrlRequester implements Runnable {
                     var5 = -1;
                 }
 
-                var6 = buffer.readUnsignedShortOb1();
+                var6 = buffer.readUnsignedByteS();
                 if (var5 == npc.animation && var5 != -1) {
                     var7 = CombatInfo1.getAnimation(var5).replyMode;
                     if (var7 == 1) {
@@ -131,8 +131,8 @@ class UrlRequester implements Runnable {
                         var9 = buffer.getUSmart();
                         if (var9 != 32767) {
                             var10 = buffer.getUSmart();
-                            var11 = buffer.readUnsignedShortOb1();
-                            final int var12 = var9 > 0 ? buffer.readUnsignedShortOb1() : var11;
+                            var11 = buffer.readUnsignedByteS();
+                            final int var12 = var9 > 0 ? buffer.readUnsignedByteS() : var11;
                             npc.setCombatInfo(var8, Client.gameCycle, var9, var10, var11, var12);
                         } else {
                             npc.method1659(var8);

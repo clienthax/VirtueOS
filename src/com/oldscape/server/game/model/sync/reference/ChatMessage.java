@@ -1,7 +1,7 @@
 package com.oldscape.server.game.model.sync.reference;
 
 /**
- * A {@link Message} sent by the client to send a public chat message to other
+ * A {@link ChatMessage} sent by the client to send a public chat message to other
  * players.
  *
  * @author Graham
@@ -31,7 +31,7 @@ public final class ChatMessage {
     /**
      * If this is a quick chat message
      */
-    private final boolean quickChat;
+    private final boolean autoChat;
 
     /**
      * Creates a new chat message.
@@ -40,14 +40,14 @@ public final class ChatMessage {
      * @param compressedMessage The compressed message.
      * @param color             The text color.
      * @param effects           The text effects.
-     * @param qc                If this is a quick chat message.
+     * @param autoChat                If this is a quick chat message.
      */
-    public ChatMessage(String message, byte[] compressedMessage, int color, int effects, boolean qc) {
+    public ChatMessage(String message, byte[] compressedMessage, int color, int effects, boolean autoChat) {
         this.message = message;
         this.compressedMessage = compressedMessage;
         this.color = color;
         this.effects = effects;
-        this.quickChat = qc;
+        this.autoChat = autoChat;
     }
 
     /**
@@ -71,7 +71,7 @@ public final class ChatMessage {
     /**
      * Gets the text color.
      *
-     * @return The text color.
+     * @return The color.
      */
     public int getTextColor() {
         return color;
@@ -80,19 +80,19 @@ public final class ChatMessage {
     /**
      * Gets the text effects.
      *
-     * @return The text effects.
+     * @return The effects.
      */
     public int getTextEffects() {
         return effects;
     }
 
     /**
-     * Gets if this message is a quick chat
+     * Gets if this message is a auto chat.
      *
-     * @return The {@link quickChat}
+     * @return the autoChat
      */
-    public boolean isQuickChat() {
-        return quickChat;
+    public boolean isAutoChat() {
+        return autoChat;
     }
 
 }

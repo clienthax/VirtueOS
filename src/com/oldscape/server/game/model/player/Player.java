@@ -17,6 +17,7 @@ import com.oldscape.shared.model.MessageType;
 import com.oldscape.shared.model.Position;
 import com.oldscape.shared.model.player.AccountCredentials;
 import com.oldscape.shared.model.player.DisplayMode;
+import com.oldscape.shared.model.player.Permission;
 import com.oldscape.shared.network.game.GameFrameBuilder;
 import com.oldscape.shared.network.game.GameFrameDecoder;
 import com.oldscape.shared.network.game.GameFrameEncoder;
@@ -269,6 +270,8 @@ public class Player extends MobileEntity {
         // TODO: Implement this.
         sendVarp(43, 0); // Attack Style Selection.
         sendVarp(172, -1);// Auto Retaliate
+        sendVarp(300, 1000); // Special Attack Amount.
+        sendVarp(301, 0); // Special Attack Switch.
         sendVarp(843, 0); // Weapon Style Group.
         sendWidgetText(WidgetId.COMBAT_GROUP_ID, 1, "Unarmed");
         sendWidgetText(WidgetId.COMBAT_GROUP_ID, 2, "Combat Lvl: " + 3);
@@ -285,7 +288,6 @@ public class Player extends MobileEntity {
 
         // Minimap Panel.
         sendRunEnergy(100);
-        sendVarp(300, 1000); // Special Attack Amount.
 
         // Stats Panel.
         sendSkill(3, 10, 1154);
@@ -424,11 +426,15 @@ public class Player extends MobileEntity {
     }
 
     public void sendChatMessage(String playerFrom, String message) {
-        write(new MessageEvent(MessageType.CHAT, playerFrom, message));
+        if(getCredentials().getPermission() == Permission.ADMINISTRATOR || getCredentials().getPermission() == Permission.MODERATOR) {
+            write(new MessageEvent(MessageType.PUBLIC_MOD, playerFrom, message));
+        } else {
+            write(new MessageEvent(MessageType.PUBLIC, playerFrom, message));
+        }
     }
 
     public void sendMessage(String message) {
-        write(new MessageEvent(MessageType.GAME, message));
+        write(new MessageEvent(MessageType.SERVER, message));
     }
 
     public void initGameFrameCodec() {

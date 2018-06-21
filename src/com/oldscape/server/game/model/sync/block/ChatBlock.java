@@ -16,18 +16,18 @@ public final class ChatBlock extends SynchronizationBlock {
     private final ChatMessage chatMessage;
 
     /**
-     * The {@link PrivilegeLevel}.
+     * The {@link Permission}.
      */
-    private final Permission privilegeLevel;
+    private final Permission crownType;
 
     /**
      * Creates the chat block.
      *
-     * @param privilegeLevel The {@link PrivilegeLevel} of the player who said the message.
+     * @param crownType The {@link Permission} of the player who said the message.
      * @param chatMessage    The {@link ChatMessage}.
      */
-    ChatBlock(Permission privilegeLevel, ChatMessage chatMessage) {
-        this.privilegeLevel = privilegeLevel;
+    ChatBlock(Permission crownType, ChatMessage chatMessage) {
+        this.crownType = crownType;
         this.chatMessage = chatMessage;
     }
 
@@ -50,18 +50,18 @@ public final class ChatBlock extends SynchronizationBlock {
     }
 
     /**
-     * Gets the {@link PrivilegeLevel} of the player who said the message.
+     * Gets the {@link Permission} of the player who said the message.
      *
      * @return The privilege level.
      */
-    public Permission getPrivilegeLevel() {
-        return privilegeLevel;
+    public Permission getCrownType() {
+        return crownType;
     }
 
     /**
      * Gets the text color.
      *
-     * @return The text color.
+     * @return The color.
      */
     public int getTextColor() {
         return chatMessage.getTextColor();
@@ -70,7 +70,7 @@ public final class ChatBlock extends SynchronizationBlock {
     /**
      * Gets the text effects.
      *
-     * @return The text effects.
+     * @return The effects.
      */
     public int getTextEffects() {
         return chatMessage.getTextEffects();
@@ -79,15 +79,12 @@ public final class ChatBlock extends SynchronizationBlock {
     /**
      * Gets if this message is a quick chat
      *
-     * @return The {@link quickChat}
+     * @return The autoChat
      */
-    public boolean isQuickChat() {
-        return chatMessage.isQuickChat();
+    public boolean isAutoChat() {
+        return chatMessage.isAutoChat();
     }
 
-    /* (non-Javadoc)
-     * @see com.oldscape.server.game.model.sync.block.SynchronizationBlock#getType()
-     */
     @Override
     public BlockType getType() {
         return BlockType.CHAT;

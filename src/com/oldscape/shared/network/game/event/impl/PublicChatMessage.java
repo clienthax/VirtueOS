@@ -2,6 +2,8 @@ package com.oldscape.shared.network.game.event.impl;
 
 public class PublicChatMessage extends ChatMessage {
 
+    private final int type;
+
     /**
      * The text color.
      */
@@ -20,10 +22,15 @@ public class PublicChatMessage extends ChatMessage {
      * @param color             The text color.
      * @param effects           The text effects.
      */
-    public PublicChatMessage(String message, byte[] compressedMessage, int color, int effects) {
+    public PublicChatMessage(String message, byte[] compressedMessage, int type, int color, int effects) {
         super(message, compressedMessage);
+        this.type = type;
         this.color = color;
         this.effects = effects;
+    }
+
+    public int getType() {
+        return type;
     }
 
     /**

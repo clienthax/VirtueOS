@@ -148,7 +148,7 @@ final class Player extends Actor {
                     if (var9 != 32767) {
                         var10 = buffer.getUSmart();
                         var11 = buffer.method3538();
-                        final int var12 = var9 > 0 ? buffer.readUnsignedShortOb1() : var11;
+                        final int var12 = var9 > 0 ? buffer.readUnsignedByteS() : var11;
                         player.setCombatInfo(var8, Client.gameCycle, var9, var10, var11, var12);
                     } else {
                         player.method1659(var8);
@@ -196,7 +196,7 @@ final class Player extends Actor {
         if ((flags & 8) != 0) {
             var5 = buffer.getUnsignedShortLE();
             final ChatCrownType[] var17 = {ChatCrownType.STAFF_MODERATOR, ChatCrownType.PLAYER_MODERATOR, ChatCrownType.IRONMAN, ChatCrownType.HARDCORE_IRONMAN, ChatCrownType.PLAYER, ChatCrownType.ULTIMATE_IRONMAN};
-            final ChatCrownType var18 = (ChatCrownType) Enumerated.forOrdinal(var17, buffer.readUnsignedShortOb1());
+            final ChatCrownType var18 = (ChatCrownType) Enumerated.forOrdinal(var17, buffer.readUnsignedByteS());
             final boolean var21 = buffer.readUnsignedByte() == 1;
             var9 = buffer.method3538();
             var10 = buffer.offset;
@@ -276,7 +276,7 @@ final class Player extends Actor {
 
         //Appearance
         if ((flags & 2) != 0) {
-            var5 = buffer.readUnsignedShortOb1();
+            var5 = buffer.readUnsignedByteS();
             final byte[] var23 = new byte[var5];
             final Buffer var24 = new Buffer(var23);
             buffer.method3661(var23, 0, var5);

@@ -59,7 +59,7 @@ public class Region {
     /**
      * Decodes terrain data stored in the specified {@link ByteBuffer}.
      *
-     * @param buffer The ByteBuffer.
+     * @param buf The ByteBuffer.
      */
     public void loadTerrain(ByteBuffer buf) {
         for (int height = 0; height < 4; height++) {

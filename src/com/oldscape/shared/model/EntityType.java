@@ -21,6 +21,9 @@
  */
 package com.oldscape.shared.model;
 
+import com.oldscape.server.game.model.entity.Entity;
+import com.oldscape.shared.model.region.Region;
+
 /**
  * Represents a type of {@link Entity}.
  *

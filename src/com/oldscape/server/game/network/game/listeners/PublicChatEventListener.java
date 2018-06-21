@@ -21,23 +21,38 @@
  */
 package com.oldscape.server.game.network.game.listeners;
 
+import com.oldscape.server.game.model.sync.reference.ChatMessage;
 import com.oldscape.server.game.network.game.GameSessionContext;
 import com.oldscape.shared.event.EventListener;
+import com.oldscape.shared.model.player.Permission;
 import com.oldscape.shared.network.game.event.impl.PublicChatMessage;
 
 public class PublicChatEventListener implements EventListener<PublicChatMessage, GameSessionContext> {
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see
-     * com.oldscape.shared.event.EventListener#onEvent(com.oldscape.shared.event.Event,
-     * com.oldscape.shared.event.EventContext)
-     */
     @Override
     public void onEvent(PublicChatMessage event, GameSessionContext context) {
 
-        context.getPlayer().sendChatMessage(context.getPlayer().getCredentials().getUserName(), event.getMessage());//TODO this will likely explode
+//        //TODO: better implement this.
+//        String crown = "";
+//        if(context.getPlayer().getCredentials().getPermission() == Permission.MODERATOR){
+//            crown = "<img=0> ";
+//        }
+//        if(context.getPlayer().getCredentials().getPermission() == Permission.ADMINISTRATOR){
+//            crown = "<img=1> ";
+//        }
+//        if(context.getPlayer().getCredentials().getPermission() == Permission.IRONMAN){
+//            crown = "<img=2> ";
+//        }
+//        if(context.getPlayer().getCredentials().getPermission() == Permission.ULTIMATE_IRONMAN){
+//            crown = "<img=3> ";
+//        }
+//        if(context.getPlayer().getCredentials().getPermission() == Permission.HARDCORE_IRONMAN){
+//            crown = "<img=10> ";
+//        }
+//        context.getPlayer().sendChatMessage(crown + context.getPlayer().getCredentials().getDisplayName(), event.getMessage());//TODO this will likely explode
+
+
+        context.getPlayer().sendChat(context.getPlayer(), new ChatMessage(event.getMessage(), event.getCompressedMessage(), event.getTextColor(), event.getTextEffects(), false));
 
     }
 
