@@ -216,7 +216,7 @@ public class Player extends MobileEntity {
         sendVarp(313, -1); // Unlock Emotes.
         sendVarp(465, -1); // Unlock Emotes: Lost Tribe Quest. (also Status)
         sendVarp(802, -1); // Unlock Emotes: Stronghold of Security.
-        sendWidgetClickMask(WidgetId.EMOTES_GROUP_ID, 1, 0, 47, 2); // Emote List.
+        sendWidgetClickMask(WidgetId.EMOTES_GROUP_ID, 1, 0, 47, 2); // Clickable Emote List.
 
         // Settings Panel.
         // TODO: Implement these.

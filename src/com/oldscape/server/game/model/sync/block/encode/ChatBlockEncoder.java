@@ -19,12 +19,12 @@ public class ChatBlockEncoder extends SynchronizationBlockEncoder {
         ChatBlock chat = (ChatBlock) block;
         int length = chat.getMessage().length();
         byte[] bytes = chat.getCompressedMessage();
-        builder.put(DataType.SHORT, DataOrder.LITTLE, chat.getTextEffects() << 8 | chat.getTextColor());
+        builder.put(DataType.SHORT, DataOrder.LITTLE, chat.getTextColor() << 8 | chat.getTextEffects());
         builder.put(DataType.BYTE, DataTransformation.SUBTRACT, chat.getCrownType().ordinal());
         builder.put(DataType.BYTE, chat.isAutoChat() ? 1 : 0);
         builder.put(DataType.BYTE, DataTransformation.NEGATE, bytes.length + (length >= 0x80 ? 2 : 1));
-        builder.putSmart(length);
-        builder.putBytes(bytes);
+        builder.putBytesReverse(bytes);
+        builder.put(DataType.BYTE, length);
     }
 
     @Override

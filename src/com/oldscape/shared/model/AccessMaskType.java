@@ -61,7 +61,7 @@ public enum AccessMaskType {
     }
 
     public int getID() {
-        return type;
+        return (byte) type;
     }
 
 }
