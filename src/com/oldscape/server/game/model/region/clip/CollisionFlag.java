@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.oldscape.server.game.model.region;
+package com.oldscape.server.game.model.region.clip;
 
 import com.oldscape.server.game.model.entity.EntityType;
 

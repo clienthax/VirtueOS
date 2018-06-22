@@ -63,9 +63,6 @@ public final class GameWorld {
      *               registerLobbyPlayer.
      */
     public void registerPlayer(Player player) {
-
-        //TODO move to config
-//        npcs.add(npc = new Npc(394, account.getPosition().getX() + 1, account.getPosition().getY() + 1));
         synchronized (players) {
             players.add(player);
         }

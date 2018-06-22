@@ -26,7 +26,7 @@ import com.oldscape.server.game.model.sync.segment.MovementSegment;
 import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
 import com.oldscape.shared.event.Event;
 import com.oldscape.shared.network.game.GameFrameBuilder;
-import com.oldscape.shared.utility.SyncUtils;
+import com.oldscape.server.game.model.sync.Sync;
 
 /**
  * @author Kyle Friz
@@ -37,9 +37,9 @@ public class PlayerWalkDescriptor extends SynchronizationDescriptor {
     @Override
     public void encodeDescriptor(Event event, SynchronizationSegment segment, GameFrameBuilder builder) {
         Direction direction = ((MovementSegment) segment).getDirections()[0];
-        int dX = SyncUtils.getDirX(direction.toInteger());
-        int dY = SyncUtils.getDirY(direction.toInteger());
-        int opcode = SyncUtils.getPlayerWalkingDirection(dX, dY);
+        int dX = Sync.getDirX(direction.toInteger());
+        int dY = Sync.getDirY(direction.toInteger());
+        int opcode = Sync.getPlayerWalkingDirection(dX, dY);
 
         builder.putBit(true);
         builder.putBit(segment.getBlockSet().size() > 0);

@@ -1,4 +1,4 @@
-package com.oldscape.shared.utility;
+package com.oldscape.shared.utility.crypto;
 
 import java.nio.ByteBuffer;
 

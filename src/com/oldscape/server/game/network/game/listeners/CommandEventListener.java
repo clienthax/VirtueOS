@@ -106,7 +106,7 @@ public class CommandEventListener implements EventListener<CommandEvent, GameSes
          * 0].equals("true")); context.getPlayer().getWalkingQueue().addStep(new
          * Position(context.getPlayer().getPosition().getX() + 5,
          * context.getPlayer().getPosition().getY(),
-         * context.getPlayer().getPosition().getHeight())); }
+         * context.getPlayer().getPosition().getZ())); }
          *
          * if (event.getSyntax().equals("equip")) { int weapon = 12904; int helm
          * = 12417; int cape = 13069; int shield = 12817; int body = 10338; int

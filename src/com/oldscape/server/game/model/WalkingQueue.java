@@ -118,7 +118,7 @@ public final class WalkingQueue {
         Direction direction = Direction.fromDeltas(deltaX, deltaY);
 
         if (direction != Direction.NONE) {
-            Point point = new Point(new Position(x, y, mob.getPosition().getHeight()), direction);
+            Point point = new Point(new Position(x, y, mob.getPosition().getZ()), direction);
             points.add(point);
             oldPoints.add(point);
         }
@@ -182,10 +182,10 @@ public final class WalkingQueue {
                 deltaY--;
             }
 
-            Position pos = new Position(x - deltaX, y - deltaY, step.getHeight());
+            Position pos = new Position(x - deltaX, y - deltaY, step.getZ());
 
 //            Region region = manager.lookup(pos.getRegionID());
-//            System.out.println("Tile: [ " + pos.getX() + ", " + pos.getY() + " ], Blocked: [ " + region.getClipMap().isClipped(step.getHeight(), pos.getXInRegion(), pos.getYInRegion(), 1, ClipFlag.FLOOR_BLOCKSWALK) + " ]");
+//            System.out.println("Tile: [ " + pos.getX() + ", " + pos.getY() + " ], Blocked: [ " + region.getClipMap().isClipped(step.getZ(), pos.getXInRegion(), pos.getYInRegion(), 1, ClipFlag.FLOOR_BLOCKSWALK) + " ]");
 
             addStep(pos);
         }
@@ -264,6 +264,11 @@ public final class WalkingQueue {
         Player player = (Player) mob;
 
         Position current = player.getPosition();
+
+        if(player.getLastKnownRegion() == null) {
+            player.setLastKnownRegion(current);
+        }
+
         Position last = player.getLastKnownRegion();
 
         int deltaX = current.getLocalX(last);

@@ -28,7 +28,7 @@ public final class Position {
     }
 
     public boolean withinDistance(Position tile, int distance) {
-        if (tile.getHeight() != height)
+        if (tile.getZ() != height)
             return false;
         int deltaX = tile.x - x, deltaY = tile.y - y;
         return deltaX <= distance && deltaX >= -distance && deltaY <= distance
@@ -46,7 +46,7 @@ public final class Position {
     }
 
     public int toRegionPacked() {
-        return getRegionY() + (getRegionX() << 8) + (getHeight() << 16);
+        return getRegionY() + (getRegionX() << 8) + (getZ() << 16);
     }
 
     public int toPositionPacked() {
@@ -105,7 +105,7 @@ public final class Position {
         return y;
     }
 
-    public int getHeight() {
+    public int getZ() {
         return height;
     }
 
@@ -114,12 +114,12 @@ public final class Position {
     }
 
     public Position clone() {
-        return new Position(this.getX(), this.getY(), this.getHeight());
+        return new Position(this.getX(), this.getY(), this.getZ());
     }
 
     @Override
     public String toString() {
-        return "X: " + getX() + ", Y: " + getY() + ", Height: " + getHeight();
+        return "X: " + getX() + ", Y: " + getY() + ", Height: " + getZ();
     }
 
     public static enum RegionSize {

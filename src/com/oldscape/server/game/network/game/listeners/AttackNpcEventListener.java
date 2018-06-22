@@ -16,7 +16,7 @@ public class AttackNpcEventListener implements EventListener<AttackNpcEvent, Gam
         Npc npc = context.getServer().getGameWorld().getNpcs().get(event.getNpcIndex() - 1);
         if (npc != null) {
             System.out.println(npc.getPosition().toString());
-            context.getPlayer().getWalkingQueue().addStep(new Position((npc.getPosition().getX()), (npc.getPosition().getY()), npc.getPosition().getHeight()));
+            context.getPlayer().getWalkingQueue().addStep(new Position((npc.getPosition().getX()), (npc.getPosition().getY()), npc.getPosition().getZ()));
             context.getPlayer().addBlock(SynchronizationBlock.createInteractingMobBlock(event.getNpcIndex()));
         }
         System.out.println("ATTACK_NPC_EVENT_LISTENER index: " + event.getNpcIndex() + ", bool: " + event.isBool());

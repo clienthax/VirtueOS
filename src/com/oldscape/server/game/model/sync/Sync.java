@@ -1,4 +1,4 @@
-package com.oldscape.shared.utility;
+package com.oldscape.server.game.model.sync;
 
 import com.oldscape.server.game.model.sync.block.encode.*;
 import com.oldscape.server.game.model.sync.descriptor.*;
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SyncUtils {
+public class Sync {
 
     private static final Map<SegmentType, SynchronizationDescriptor> pDescriptors = new HashMap<>();
     private static final Map<SegmentType, SynchronizationDescriptor> nDescriptors = new HashMap<>();

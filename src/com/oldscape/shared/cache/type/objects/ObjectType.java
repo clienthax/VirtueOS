@@ -50,7 +50,7 @@ public class ObjectType implements Type {
     private int[] anIntArray2084;
     private int offsetX = 0;
     private boolean nonFlatShading = false;
-    private int anInt2088 = -1;
+    private boolean interactive = false;
     private int animationID = -1;
     private int varpID = -1;
     private int ambient = 0;
@@ -66,7 +66,7 @@ public class ObjectType implements Type {
     private int objectID;
     private int offsetHeight = 0;
     private int offsetY = 0;
-    private boolean aBool2104 = false;
+    private boolean isWalkable = false;
     private int anInt2105 = -1;
     private int anInt2106 = -1;
     private int[] configChangeDest;
@@ -124,7 +124,7 @@ public class ObjectType implements Type {
             } else if (opcode == 18) {
                 aBool2114 = false;
             } else if (opcode == 19) {
-                anInt2088 = buffer.get() & 0xFF;
+                setInteractive((buffer.get() & 0xFF) == 1);
             } else if (opcode == 21) {
                 anInt2105 = 0;
             } else if (opcode == 22) {
@@ -189,7 +189,7 @@ public class ObjectType implements Type {
             } else if (opcode == 72) {
                 offsetY = buffer.getShort() & 0xFFFF;
             } else if (opcode == 73) {
-                aBool2104 = true;
+                isWalkable = true;
             } else if (opcode == 74) {
                 isSolid = true;
             } else if (opcode == 75) {
@@ -495,17 +495,17 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @return the anInt2088
+     * @return the interactive
      */
-    public int getAnInt2088() {
-        return anInt2088;
+    public boolean isInteractive() {
+        return interactive;
     }
 
     /**
-     * @param anInt2088 the anInt2088 to set
+     * @param interactive the interactive to set
      */
-    public void setAnInt2088(int anInt2088) {
-        this.anInt2088 = anInt2088;
+    public void setInteractive(boolean interactive) {
+        this.interactive = interactive;
     }
 
     /**
@@ -719,17 +719,17 @@ public class ObjectType implements Type {
     }
 
     /**
-     * @return the aBool2104
+     * @return the isWalkable
      */
-    public boolean isaBool2104() {
-        return aBool2104;
+    public boolean isWalkable() {
+        return isWalkable;
     }
 
     /**
-     * @param aBool2104 the aBool2104 to set
+     * @param walkable the isWalkable to set
      */
-    public void setaBool2104(boolean aBool2104) {
-        this.aBool2104 = aBool2104;
+    public void setWalkable(boolean walkable) {
+        this.isWalkable = walkable;
     }
 
     /**

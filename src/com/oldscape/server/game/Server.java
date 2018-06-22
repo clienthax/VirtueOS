@@ -25,7 +25,7 @@ import com.oldscape.shared.network.login.LoginEvent;
 import com.oldscape.shared.network.login.LoginResponseEvent;
 import com.oldscape.shared.network.ondemand.*;
 import com.oldscape.shared.script.ScriptManager;
-import com.oldscape.shared.utility.Huffman;
+import com.oldscape.shared.utility.crypto.Huffman;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -123,7 +123,7 @@ public final class Server {
      */
     private final ByteBuffer checksumBuffer;
     /**
-     * The {@link com.oldscape.shared.utility.Huffman}.
+     * The {@link Huffman}.
      */
     private final Huffman huffman;
     /**

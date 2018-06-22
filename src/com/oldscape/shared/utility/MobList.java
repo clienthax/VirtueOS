@@ -36,8 +36,9 @@ public final class MobList<T extends Node> extends AbstractList<T> implements It
 
     @Override
     public T get(int index) {
-        if (index < 0 || index > mobs.length)
-            throw new IllegalArgumentException("Index error " + index + " either 0 or larger than " + mobs.length);
+        if (index < 0 || index > mobs.length) {
+            throw new IllegalArgumentException("Index error: cannot be " + index + " either 0 or larger than " + mobs.length);
+        }
 
         T node = (T) mobs[index];
 

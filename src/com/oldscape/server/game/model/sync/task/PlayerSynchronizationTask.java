@@ -194,8 +194,10 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
             }
             Player p = server.getGameWorld().getPlayers().get(playerIndex);
             boolean update = p == null ? false : viewport.regionUpdate(playerIndex, p.getPosition().toRegionPacked());
-            if (p != null && p != player && p.isActive()
-                    && p.getPosition().withinDistance(player.getPosition(), viewport.getViewingDistance())) {
+
+            //FIXME: !!
+
+            if (p != null && p != player && p.isActive() && p.getPosition().withinDistance(player.getPosition(), viewport.getViewingDistance())) {
                 if (update) {
                     segments.add(new PlayerAdditionSegment(p.getBlockSet(), p.getPosition(), viewport.getRegionHash(playerIndex)));
                     viewport.setRegionHash(playerIndex, p.getPosition().toRegionPacked());
@@ -266,7 +268,7 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
                 if (update) {
                     segments.add(new RegionHashSegment(p.getPosition(), viewport.getRegionHash(playerIndex)));
                     viewport.setRegionHash(playerIndex, p.getPosition().toRegionPacked());
-                } else {//Problem in here?
+                } else {
 
                     for (int idx = index + 1; idx < viewport.getOutPlayersIndexesCount(); idx++) {
                         int playerIdx = viewport.getOutPlayersIndex(idx);

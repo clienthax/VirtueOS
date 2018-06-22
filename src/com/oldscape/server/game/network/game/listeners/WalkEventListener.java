@@ -42,9 +42,9 @@ public class WalkEventListener implements EventListener<WalkEvent, GameSessionCo
 
         if (event.getType() != 2) {
             player.getWalkingQueue().clear();
-            player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()), context.getServer().getRegionManager());
+            player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getZ()), context.getServer().getRegionManager());
         } else {
-            player.teleport(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()));
+            player.teleport(new Position((event.getX()), (event.getY()), player.getPosition().getZ()));
         }
     }
 

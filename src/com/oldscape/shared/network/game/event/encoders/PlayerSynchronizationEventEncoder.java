@@ -8,7 +8,7 @@ import com.oldscape.shared.network.game.*;
 import com.oldscape.shared.network.game.event.EncoderOpcode;
 import com.oldscape.shared.network.game.event.GameMessageEncoder;
 import com.oldscape.shared.network.game.event.impl.PlayerSynchronizationEvent;
-import com.oldscape.shared.utility.SyncUtils;
+import com.oldscape.server.game.model.sync.Sync;
 import io.netty.buffer.ByteBufAllocator;
 
 /**
@@ -33,11 +33,11 @@ public final class PlayerSynchronizationEventEncoder implements GameMessageEncod
 
         for (SynchronizationSegment segment : event.getSegments()) {
 
-            desc = SyncUtils.getPlayerDescriptor(segment.getType());
+            desc = Sync.getPlayerDescriptor(segment.getType());
             desc.encodeDescriptor(event, segment, builder);
 
             for (int index = 0; index < 12; index++) {
-                encd = SyncUtils.getPlayerBlock(index);
+                encd = Sync.getPlayerBlock(index);
                 block = segment.getBlockSet().get(encd.getType()); //FIXME: Why is this null? When #encd isn't..
                 if (block != null) {
                     System.out.println("PlayerSynchronizationEventEncoder: " + encd.getType());

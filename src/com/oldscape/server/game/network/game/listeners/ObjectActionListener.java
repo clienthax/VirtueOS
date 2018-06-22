@@ -15,17 +15,16 @@ public class ObjectActionListener implements EventListener<ObjectActionEvent, Ga
     @Override
     public void onEvent(ObjectActionEvent event, GameSessionContext context) {
         Player player = context.getPlayer();
-        player.getWalkingQueue().addStep(new Position((event.getX()), (event.getY()), player.getPosition().getHeight()));
+        Position objectPosition = new Position((event.getX()), (event.getY()), player.getPosition().getZ());
 
-        //FIXME: Z and Type are... missing? I think they should be loaded from the cache.
+        player.getWalkingQueue().addStep(objectPosition);
 
-        // TODO: Add position check before action.
-        ObjectListener listener = context.getServer().getScriptManager().forObject(event.getObject());
-        if (listener != null) {
-            listener.handle(context.getPlayer(), event.getActionSlot(), event.getObject(), event.getType(), event.getX(), event.getY());
+        while(!player.getPosition().withinDistance(objectPosition, 1)) {
+            ObjectListener listener = context.getServer().getScriptManager().forObject(event.getObject());
+            if (listener != null) {
+                listener.handle(context.getPlayer(), event.getActionSlot(), event.getObject(), event.getType(), event.getX(), event.getY());
+            }
         }
-
-
     }
 
 }

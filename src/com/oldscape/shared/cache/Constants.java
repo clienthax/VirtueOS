@@ -30,13 +30,7 @@ public final class Constants {
     public static final String CACHE_PATH = "./repository/cache/";
     public static final String CACHEO_PATH = "./repository/cache-other/";
     public static final String CACHETMP_PATH = "./repository/cache-tmp/";
-    public static final String MODEL_PATH = "./repository/models/";
-    public static final String IMAGE_PATH = "./repository/item/";
-    public static final String SPRITE_PATH = "./repository/sprites/";
-    public static final String MAP_PATH = "./repository/maps/";
     public static final String XTABLE_PATH = "./repository/xtea/tables/";
     public static final String XMAP_PATH = "./repository/xtea/maps/";
     public static final String TYPE_PATH = "./repository/types/";
-    public static final String TRACK1_PATH = "./repository/songs/track1/";
-    public static final String TRACK2_PATH = "./repository/songs/track2/";
 }

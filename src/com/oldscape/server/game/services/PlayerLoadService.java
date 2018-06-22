@@ -14,7 +14,7 @@ import com.oldscape.server.game.model.entity.player.account.DisplayMode;
 import com.oldscape.server.game.model.entity.player.account.Permission;
 import com.oldscape.server.game.model.entity.player.account.Subscription;
 import com.oldscape.shared.network.login.LoginEvent;
-import com.oldscape.shared.utility.FNVHash;
+import com.oldscape.shared.utility.crypto.FNVHash;
 import com.oldscape.shared.utility.NameUtils;
 import org.joda.time.DateTime;
 

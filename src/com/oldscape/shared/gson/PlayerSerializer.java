@@ -106,7 +106,7 @@ public class PlayerSerializer implements JsonSerializer<Player>, JsonDeserialize
     /*
      * (non-Javadoc)
      *
-     * @see com.google.gson.JsonSerializer#serialize(java.lang.Object,
+     * @see com.google.gson.JsonSerializer#serialize(java.lang.StaticObject,
      * java.lang.reflect.Type, com.google.gson.JsonSerializationContext)
      */
     @Override
@@ -141,7 +141,7 @@ public class PlayerSerializer implements JsonSerializer<Player>, JsonDeserialize
         obj.addProperty("mode", src.getDisplay().toString());
         obj.addProperty("x", src.getPosition().getX());
         obj.addProperty("y", src.getPosition().getY());
-        obj.addProperty("height", src.getPosition().getHeight());
+        obj.addProperty("height", src.getPosition().getZ());
         obj.addProperty("size", src.getPosition().getMapSize().toString());
 
         /**

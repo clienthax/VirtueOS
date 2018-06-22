@@ -11,7 +11,7 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 import com.oldscape.shared.network.game.event.EncoderOpcode;
 import com.oldscape.shared.network.game.event.GameMessageEncoder;
 import com.oldscape.shared.network.game.event.impl.NpcSynchronizationEvent;
-import com.oldscape.shared.utility.SyncUtils;
+import com.oldscape.server.game.model.sync.Sync;
 import io.netty.buffer.ByteBufAllocator;
 
 /**
@@ -35,11 +35,11 @@ public final class NpcSynchronizationEventEncoder implements GameMessageEncoder<
         SynchronizationBlockEncoder encd;
         for (SynchronizationSegment segment : event.getSegments()) {
 
-            desc = SyncUtils.getNpcDescriptor(segment.getType());
+            desc = Sync.getNpcDescriptor(segment.getType());
             desc.encodeDescriptor(event, segment, builder);
 
             for (int index = 0; index < 7; index++) {
-                encd = SyncUtils.getNpcBlock(index);
+                encd = Sync.getNpcBlock(index);
                 block = segment.getBlockSet().get(encd.getType());
                 if (block != null) {
                     System.out.println("NpcSynchronizationEventEncoder: " + encd.getType());

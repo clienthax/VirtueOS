@@ -1,5 +1,5 @@
 /**
- * Copyright (c) Kyle Fricilone
+ * Copyright (c) 2015 Kyle Friz
  * <p>
  * ChatCrownType is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -19,38 +19,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.oldscape.shared.cache.sprite;
+package com.oldscape.server.game.model.entity.action;
 
-import java.nio.ByteBuffer;
+import com.oldscape.server.game.model.MobileEntity;
 
 /**
  * @author Kyle Friz
- * @since Jan 27, 2016
+ * @since Aug 4, 2015
  */
-public class Texture {
+public interface Action {
 
-    private final int[] fileIds;
+    void initialize(MobileEntity entity);
 
-    public Texture(int count) {
-        this.fileIds = new int[count];
-    }
+    void pulse(MobileEntity entity);
 
-    public static Texture decode(ByteBuffer buffer) {
-        buffer.getShort();
-        buffer.get();
-        int count = buffer.get() & 0xFF;
-
-        Texture texture = new Texture(count);
-
-        for (int i = 0; i < count; i++) {
-            texture.fileIds[i] = buffer.getShort() & 0xFFFF;
-        }
-
-        return texture;
-    }
-
-    public int getIds(int i) {
-        return fileIds[i];
-    }
+    void finalize(MobileEntity entity);
 
 }

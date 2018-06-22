@@ -26,7 +26,7 @@ import com.oldscape.server.game.model.sync.segment.MovementSegment;
 import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
 import com.oldscape.shared.event.Event;
 import com.oldscape.shared.network.game.GameFrameBuilder;
-import com.oldscape.shared.utility.SyncUtils;
+import com.oldscape.server.game.model.sync.Sync;
 
 /**
  * @author Kyle Friz
@@ -38,9 +38,9 @@ public class PlayerRunDescriptor extends SynchronizationDescriptor {
     public void encodeDescriptor(Event event, SynchronizationSegment segment, GameFrameBuilder builder) {
         Direction first = ((MovementSegment) segment).getDirections()[0];
         Direction second = ((MovementSegment) segment).getDirections()[0];
-        int dX = SyncUtils.getDirX(first.toInteger(), second.toInteger());
-        int dY = SyncUtils.getDirY(first.toInteger(), second.toInteger());
-        int opcode = SyncUtils.getPlayerRunningDirection(dX, dY);
+        int dX = Sync.getDirX(first.toInteger(), second.toInteger());
+        int dY = Sync.getDirY(first.toInteger(), second.toInteger());
+        int opcode = Sync.getPlayerRunningDirection(dX, dY);
 
 
         builder.putBit(true);

@@ -40,7 +40,7 @@ public class PlayerTeleportDescriptor extends SynchronizationDescriptor {
 
         int xOff = destination.getX() - start.getX();
         int yOff = destination.getY() - start.getY();
-        int zOff = destination.getHeight() - start.getHeight();
+        int zOff = destination.getZ() - start.getZ();
 
         boolean exterior = (Math.abs(xOff) > 15 || Math.abs(yOff) > 15);
 

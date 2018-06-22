@@ -21,9 +21,15 @@
  */
 package com.oldscape.server.game.model.region;
 
+import com.oldscape.server.game.model.entity.object.DynamicObject;
+import com.oldscape.server.game.model.entity.object.StaticObject;
+import com.oldscape.server.game.model.region.clip.Clipping;
+import com.oldscape.server.game.model.region.clip.CollisionDataFlag;
+import com.oldscape.server.game.model.region.clip.CollisionMatrix;
 import com.oldscape.shared.utility.BufferUtils;
 
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -46,7 +52,9 @@ public class Region {
     private static final int BRIDGE_TILE = 2;
 
     private final int regionID;
+
     private final List<Integer> keys;
+
     private final CollisionMatrix[] matrices;
 
     public Region(int id, List<Integer> keys) {
@@ -66,7 +74,11 @@ public class Region {
                 for (int localY = 0; localY < 64; localY++) {
                     int attributes = 0;
 
+                    int x = regionID >> 8;
+                    int y = regionID & 0xff;
+
                     while (true) {
+
                         int attributeId = buf.get() & 0xFF;
 
                         if (attributeId == 0) {
@@ -108,21 +120,19 @@ public class Region {
             while (positionOffset != 0) {
                 packed += positionOffset - 1;
 
+                int x = regionID >> 8;
+                int y = regionID & 0xff;
+
                 int localY = packed & 0x3F;
                 int localX = packed >> 6 & 0x3F;
                 int height = packed >> 12 & 0x3;
 
                 int attributes = buffer.get() & 0xFF;
                 int type = attributes >> 2;
-                int orientation = attributes & 0x3;
+                int direction = attributes & 0x3;
                 Position position = new Position(((regionID >> 8 & 0xFF) * 64) + localX,
                         ((regionID & 0xFF) * 64) + localY, height);
 
-                // GameObject object = new StaticGameObject(world, id, position,
-                // type, orientation);
-                // objects.add(object);
-
-                // block(object, position);
                 positionOffset = BufferUtils.getUnsignedSmart(buffer);
             }
 

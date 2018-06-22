@@ -78,7 +78,7 @@ public final class NpcSynchronizationTask extends SynchronizationTask {
 
             Position npcPosition = npc.getPosition();
             if (npcPosition.withinDistance(playerPosition, player.getViewport().getViewingDistance())
-                    && !localNpcs.contains(npc) && npcPosition.getHeight() == playerPosition.getHeight()) {
+                    && !localNpcs.contains(npc) && npcPosition.getZ() == playerPosition.getZ()) {
                 localNpcs.add(npc);
                 added++;
                 npc.turnTo(npc.getFacingPosition());
