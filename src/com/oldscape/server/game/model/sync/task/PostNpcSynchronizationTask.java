@@ -27,6 +27,7 @@ public final class PostNpcSynchronizationTask extends SynchronizationTask {
     @Override
     public void run() {
         npc.setTeleporting(false);
+
         npc.resetBlockSet();
     }
 

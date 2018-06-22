@@ -22,7 +22,7 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
      * packet from becoming too large (the client uses a 5000 byte buffer) and
      * also stops old spec PCs from crashing when they login or teleport.
      */
-    private static final int NEW_PLAYERS_PER_CYCLE = 20;
+    private static final int NEW_PLAYERS_PER_CYCLE = 15;
     /**
      * The player.
      */
@@ -50,7 +50,6 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 
         if (player.hasRegionChanged()) {
             player.setRegion(server.getRegionManager().lookup(player.getPosition().getRegionID()));
-            player.getWalkingQueue().handleRegionChange();
         }
 
         List<SynchronizationSegment> segments = new ArrayList<>();
@@ -62,8 +61,9 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
         for (int index = 0; index < viewport.getLocalPlayersIndexesCount(); index++) {
             int playerIndex = viewport.getLocalPlayersIndex(index);
 
-            if ((0x1 & viewport.getSlotFlag(playerIndex)) != 0)
+            if ((0x1 & viewport.getSlotFlag(playerIndex)) != 0) {
                 continue;
+            }
 
             if (skipCount > 0) {
                 skipCount--;
@@ -87,28 +87,28 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
                 viewport.setLocalPlayer(index, null);
             } else {
                 if (p.isTeleporting()) {
-                    System.out.println("Adding teleport segment");
                     segments.add(new TeleportSegment(p.getBlockSet(), p.getLastPosition(), p.getPosition()));
                 } else if (!p.getFirstDirection().equals(Direction.NONE) || p.getBlockSet().size() > 0) {
-                    MovementSegment e = new MovementSegment(p.getBlockSet(), p.getDirections());
-                    segments.add(e);
+                    segments.add(new MovementSegment(p.getBlockSet(), p.getDirections()));
                 } else {
                     for (int idx = index + 1; idx < viewport.getLocalPlayersIndexesCount(); idx++) {
                         int playerIdx = viewport.getLocalPlayersIndex(idx);
-                        if ((0x1 & viewport.getSlotFlag(playerIdx)) != 0)
+                        if ((0x1 & viewport.getSlotFlag(playerIdx)) != 0) {
                             continue;
+                        }
 
                         Player pl = viewport.getLocalPlayer(playerIdx);
                         if (pl == null || !pl.isActive()
                                 || pl.getPosition().getLongestDelta(player.getPosition()) > viewport.getViewingDistance()
                                 || !pl.getPosition().withinDistance(player.getPosition(), viewport.getViewingDistance())
-                                || !pl.getFirstDirection().equals(Direction.NONE) || pl.isTeleporting())
+                                || !pl.getFirstDirection().equals(Direction.NONE) || pl.isTeleporting()) {
                             break;
+                        }
 
                         skipCount++;
                     }
                     segments.add(new PlayerSkipSegment(skipCount));
-                    //System.out.println("[NSN0] : " + skipCount);
+
                     viewport.setSlotFlag(playerIndex, (byte) (viewport.getSlotFlag(playerIndex) | 0x2));
                 }
             }
@@ -123,14 +123,17 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 
         for (int index = 0; index < viewport.getLocalPlayersIndexesCount(); index++) {
             int playerIndex = viewport.getLocalPlayersIndex(index);
-            if ((0x1 & viewport.getSlotFlag(playerIndex)) == 0)
+
+            if ((0x1 & viewport.getSlotFlag(playerIndex)) == 0) {
                 continue;
+            }
 
             if (skipCount > 0) {
                 skipCount--;
                 viewport.setSlotFlag(playerIndex, (byte) (viewport.getSlotFlag(playerIndex) | 0x2));
                 continue;
             }
+
             Player p = viewport.getLocalPlayer(playerIndex);
             if (p == null || !p.isActive()
                     || p.getPosition().getLongestDelta(player.getPosition()) > viewport.getViewingDistance()
@@ -152,21 +155,21 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
                 } else {
                     for (int idx = index + 1; idx < viewport.getLocalPlayersIndexesCount(); idx++) {
                         int playerIdx = viewport.getLocalPlayersIndex(idx);
-                        if ((0x1 & viewport.getSlotFlag(playerIdx)) == 0)
+                        if ((0x1 & viewport.getSlotFlag(playerIdx)) == 0) {
                             continue;
+                        }
 
                         Player pl = viewport.getLocalPlayer(playerIdx);
                         if (pl == null || !pl.isActive()
-                                || pl.getPosition().getLongestDelta(player.getPosition()) > viewport
-                                .getViewingDistance()
+                                || pl.getPosition().getLongestDelta(player.getPosition()) > viewport.getViewingDistance()
                                 || !pl.getPosition().withinDistance(player.getPosition(), viewport.getViewingDistance())
-                                || !pl.getFirstDirection().equals(Direction.NONE) || pl.isTeleporting())
+                                || !pl.getFirstDirection().equals(Direction.NONE) || pl.isTeleporting()) {
                             break;
+                        }
 
                         skipCount++;
                     }
                     segments.add(new PlayerSkipSegment(skipCount));
-                    //System.out.println("[NSN1] : " + skipCount);
                     viewport.setSlotFlag(playerIndex, (byte) (viewport.getSlotFlag(playerIndex) | 0x2));
                 }
             }
@@ -180,8 +183,9 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 
         for (int index = 0; index < viewport.getOutPlayersIndexesCount(); index++) {
             int playerIndex = viewport.getOutPlayersIndex(index);
-            if ((0x1 & viewport.getSlotFlag(playerIndex)) == 0)
+            if ((0x1 & viewport.getSlotFlag(playerIndex)) == 0) {
                 continue;
+            }
 
             if (skipCount > 0) {
                 skipCount--;
@@ -208,19 +212,20 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
                 } else {
                     for (int idx = index + 1; idx < viewport.getOutPlayersIndexesCount(); idx++) {
                         int playerIdx = viewport.getOutPlayersIndex(idx);
-                        if ((0x1 & viewport.getSlotFlag(playerIdx)) == 0)
+                        if ((0x1 & viewport.getSlotFlag(playerIdx)) == 0) {
                             continue;
+                        }
 
                         Player pl = server.getGameWorld().getPlayers().get(playerIdx);
                         if (pl != null && pl != player && pl.isActive()
                                 && pl.getPosition().withinDistance(player.getPosition(), viewport.getViewingDistance())
-                                && !viewport.regionUpdate(playerIdx, pl.getPosition().toRegionPacked()))
+                                && !viewport.regionUpdate(playerIdx, pl.getPosition().toRegionPacked())) {
                             break;
+                        }
 
                         skipCount++;
                     }
                     segments.add(new PlayerSkipSegment(skipCount));
-                    //System.out.println("[NSN2] : " + skipCount);
                     viewport.setSlotFlag(playerIndex, (byte) (viewport.getSlotFlag(playerIndex) | 0x2));
                 }
             }
@@ -265,14 +270,16 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
 
                     for (int idx = index + 1; idx < viewport.getOutPlayersIndexesCount(); idx++) {
                         int playerIdx = viewport.getOutPlayersIndex(idx);
-                        if ((0x1 & viewport.getSlotFlag(playerIdx)) != 0)
+                        if ((0x1 & viewport.getSlotFlag(playerIdx)) != 0) {
                             continue;
+                        }
 
                         Player pl = server.getGameWorld().getPlayers().get(playerIdx);
                         if (pl != null && pl != player && pl.isActive()
                                 && pl.getPosition().withinDistance(player.getPosition(), viewport.getViewingDistance())
-                                && !viewport.regionUpdate(playerIdx, pl.getPosition().toRegionPacked()))
+                                && !viewport.regionUpdate(playerIdx, pl.getPosition().toRegionPacked())) {
                             break;
+                        }
 
                         skipCount++;
                     }

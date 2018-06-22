@@ -29,11 +29,12 @@ public final class PostPlayerSynchronizationTask extends SynchronizationTask {
     public void run() {
         if (player.isTeleporting()) {
             player.setTeleporting(false);
-//            player.addBlock(SynchronizationBlock.createMovementTypeBlock(player.getWalkingQueue().runningQueue(), player.isTeleporting()));
         }
 
         player.setRegionChange(false);
+
         player.resetBlockSet();
+
         player.getViewport().refresh();
     }
 

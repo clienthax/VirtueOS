@@ -226,6 +226,7 @@ public class Player extends MobileEntity {
         sendVarp(170, 0); // Controls: Mouse Buttons.
         sendVarp(171, 0); // Chat: Chat Effects.
         sendVarp(173, 1); // Run.
+        sendRunEnergy(100); // Run Energy.
         sendVarp(287, 1); // Chat: Split Private Chat.
         sendVarp(872, 0); // Audio: Area Sound Effect Volume.
         sendVarp(1074, 1); // Chat: Profanity Filter.
@@ -285,9 +286,6 @@ public class Player extends MobileEntity {
         } else {
             sendCS2Script(1105, 0);
         }
-
-        // Minimap Panel.
-        sendRunEnergy(100);
 
         // Stats Panel.
         sendSkill(3, 10, 1154);
