@@ -75,7 +75,7 @@ public class ScriptManager {
                 npcListeners.size() +
                 objectListeners.size()
                 ) +
-                " Nashorn Script(s).");
+                " Nashorn Script(s)."); // wrong number?
     }
 
     public void setCommandListener(CommandListener listener, String... syntaxes) {

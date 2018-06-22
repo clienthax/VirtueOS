@@ -1,4 +1,4 @@
-var Permission = Java.type('com.oldscape.shared.model.player.Permission');
+var Permission = Java.type('com.oldscape.server.game.model.entity.player.account.Permission');
 var Animation = Java.type('com.oldscape.server.game.model.sync.reference.Animation');
 
 var CommandListener = Java.extend(Java.type('com.oldscape.shared.script.listeners.CommandListener'), {

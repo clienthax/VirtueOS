@@ -1,4 +1,4 @@
-var ObjectId = Java.type('com.oldscape.server.game.model.object.ObjectId');
+var ObjectId = Java.type('com.oldscape.server.game.model.entity.object.ObjectId');
 
 var ObjectListener = Java.extend(Java.type('com.oldscape.shared.script.listeners.ObjectListener'), {
 

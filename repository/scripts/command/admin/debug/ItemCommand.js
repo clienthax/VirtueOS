@@ -1,5 +1,5 @@
 var Integer = Java.type('java.lang.Integer');
-var Permission = Java.type('com.oldscape.shared.model.player.Permission');
+var Permission = Java.type('com.oldscape.server.game.model.entity.player.account.Permission');
 
 var CommandListener = Java.extend(Java.type('com.oldscape.shared.script.listeners.CommandListener'), {
 

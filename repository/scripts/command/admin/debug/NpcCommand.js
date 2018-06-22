@@ -1,6 +1,6 @@
 var Integer = Java.type('java.lang.Integer');
-var Permission = Java.type('com.oldscape.shared.model.player.Permission');
-var Npc = Java.type('com.oldscape.server.game.model.npc.Npc');
+var Permission = Java.type('com.oldscape.server.game.model.entity.player.account.Permission');
+var Npc = Java.type('com.oldscape.server.game.model.entity.npc.Npc');
 
 var CommandListener = Java.extend(Java.type('com.oldscape.shared.script.listeners.CommandListener'), {
 

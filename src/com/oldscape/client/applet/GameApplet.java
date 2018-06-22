@@ -50,8 +50,8 @@ public class GameApplet extends JFrame implements AppletStub {
     private Map<String, String> map;
 
     public GameApplet() throws Exception {
-        super("VirtueOS - OSRS Private Server");
-        setPreferredSize(new Dimension(783, 543));
+        super("Virtue - OldSchool RuneScape Private Server");
+        setPreferredSize(new Dimension(782, 542));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         URLClassLoader loader = (URLClassLoader) ClassLoader.getSystemClassLoader();
         Class<?> urlClass = URLClassLoader.class;
@@ -63,19 +63,6 @@ public class GameApplet extends JFrame implements AppletStub {
     public static void main(String[] args) throws Exception {
         GameApplet app = new GameApplet();
         app.startApplet();
-    }
-
-    public static void dumpCS2Scripts(Object[] params) {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 1; i < params.length; i++) {
-            Object obj = params[i];
-            if (obj instanceof String) {
-                builder.append("\"" + ((String) obj) + "\"" + ((i == params.length - 1) ? "" : ", "));
-            } else {
-                builder.append("" + (obj) + "" + ((i == params.length - 1) ? "" : ", "));
-            }
-        }
-        System.out.println("player.sendCS2Script(" + params[0] + ", new Object[] { " + builder.toString() + " });");
     }
 
     private void startApplet() {

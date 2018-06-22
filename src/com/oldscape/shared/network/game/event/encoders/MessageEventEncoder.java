@@ -22,9 +22,9 @@ public class MessageEventEncoder implements
     public GameFrame encode(ByteBufAllocator alloc, MessageEvent event) {
         GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.GAME_MESSAGE, FrameType.VARIABLE_BYTE);
 
-        builder.putSmart(event.getType().getID());
+        builder.putSmart(event.getType().getType());
 
-        builder.put(DataType.BYTE, (event.getType() == MessageType.SERVER) ? 0 : 1);
+        builder.put(DataType.BYTE, (event.getType() != MessageType.SERVER) ? 1 : 0);
 
         if (event.getType() == MessageType.PUBLIC_MOD || event.getType() == MessageType.PUBLIC ) {
             builder.putString(event.getFrom());
