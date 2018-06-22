@@ -76,9 +76,11 @@ public class WidgetButtonActionEventListener implements EventListener<WidgetButt
             switch (event.getButtonHash()) {
                 /* Map Button */
                 case WidgetId.WorldMap.OPTION: // TODO: is this correct?
-                    player.sendCS2Script(1749, new Object[]{865789592});//c -- guessing this is coords?
+                    player.sendCS2Script(1749, player.getPosition().toPositionPacked());
                     player.sendOpenWidgetSub(WidgetId.FIXED_VIEWPORT_GROUP_ID, WidgetId.FixedViewport.GAME_VIEWPORT, WidgetId.WORLD_MAP_GROUP_ID, true);
-//					account.setInterfaceClickMask(595, 17, 0, 4, 2);//FIXME: Figure out.
+
+                    // Minimap buttons ?
+                    player.sendWidgetClickMask(595, 17, 0, 4, 2);
                     break;
             }
         }

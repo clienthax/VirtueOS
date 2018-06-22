@@ -85,13 +85,10 @@ function forButton(buttonId) {
 
         case EmotePanel.SALUTE:
             return AnimationId.SALUTE;
-
-        case -1:
-            return;
         /* MISSING */
         default:
             print("EmotePanel.js: Missing animation for button: " + buttonId);
-            return;
+            return -1;
     }
 }
 

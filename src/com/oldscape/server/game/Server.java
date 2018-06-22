@@ -222,7 +222,7 @@ public final class Server {
         gameEventHub.subscribe(ObjectActionEvent.class, new ObjectActionListener());
         gameEventHub.subscribe(NpcActionEvent.class, new NpcActionListener());
         gameEventHub.subscribe(ItemActionEvent.class, new ItemActionEventListener());
-
+        gameEventHub.subscribe(DoubleClickWorldMapEvent.class, new DoubleClickWorldMapEventListener());
         gameEventHub.subscribe(PublicChatMessage.class, new PublicChatEventListener());
 
         gameEventHub.subscribe(ClientDimensionsEvent.class, new ClientDimensionsEventListener());

@@ -1,4 +1,4 @@
-var NpcId = Java.type('com.oldscape.server.game.model.npc.NpcId');
+var NpcId = Java.type('com.oldscape.server.game.model.entity.npc.NpcId');
 var WidgetId = Java.type('com.oldscape.server.game.model.widget.WidgetId');
 
 var NpcListener = Java.extend(Java.type('com.oldscape.shared.script.listeners.NpcListener'), {

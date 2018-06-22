@@ -1,5 +1,5 @@
-var ContainerConstants = Java.type('com.oldscape.server.game.model.player.inv.ContainerConstants');
-var NpcId = Java.type('com.oldscape.server.game.model.npc.NpcId');
+var ContainerConstants = Java.type('com.oldscape.server.game.model.entity.player.inv.ContainerConstants');
+var NpcId = Java.type('com.oldscape.server.game.model.entity.npc.NpcId');
 
 var NpcListener = Java.extend(Java.type('com.oldscape.shared.script.listeners.NpcListener'), {
 

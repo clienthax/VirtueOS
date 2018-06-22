@@ -12,6 +12,7 @@ import com.oldscape.shared.network.game.event.decoders.object.*;
 import com.oldscape.shared.network.game.event.decoders.walking.MiniMapWalkDecoder;
 import com.oldscape.shared.network.game.event.decoders.walking.WalkDecoder;
 import com.oldscape.shared.network.game.event.decoders.widget.ContinueButtonDecoder;
+import com.oldscape.shared.network.game.event.decoders.widget.DoubleClickWorldMapDecoder;
 import com.oldscape.shared.network.game.event.decoders.widget.WidgetButtonActionDecoder;
 import com.oldscape.shared.network.game.event.encoders.*;
 import com.oldscape.shared.network.game.event.impl.*;
@@ -95,6 +96,7 @@ public final class GameEventRepository {
         addMessageDecoder(81, new NpcThirdActionDecoder());
         addMessageDecoder(62, new NpcForthActionDecoder());
         addMessageDecoder(71, new NpcFifthActionDecoder());
+        addMessageDecoder(73, new DoubleClickWorldMapDecoder());
         addMessageDecoder(25, new ClientFocusDecoder());
         addMessageDecoder(26, new PublicChatDecoder());
         addMessageDecoder(32, new CommandDecoder());
