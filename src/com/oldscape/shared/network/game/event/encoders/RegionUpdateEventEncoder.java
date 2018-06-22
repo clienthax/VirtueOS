@@ -60,7 +60,8 @@ public final class RegionUpdateEventEncoder implements GameMessageEncoder<Region
 
         builder.put(DataType.SHORT, DataOrder.LITTLE, DataTransformation.ADD, chunkY);
         builder.put(DataType.SHORT, DataTransformation.ADD, chunkX);
-        builder.put(DataType.SHORT, 9);
+
+        int regionCount = 0;
 
         GameFrameBuilder xtea = new GameFrameBuilder(alloc);
         for (int xCalc = (chunkX - 6) / 8; xCalc <= (6 + chunkX) / 8; ++xCalc) {
@@ -70,8 +71,11 @@ public final class RegionUpdateEventEncoder implements GameMessageEncoder<Region
                     List<Integer> keys = server.getRegionManager().lookup(region).getKeys();
                     keys.forEach((Integer key) -> xtea.put(DataType.INT, key));
                 }
+                regionCount++;
             }
         }
+
+        builder.put(DataType.SHORT, regionCount);
 
         builder.putRawBuilder(xtea);
 

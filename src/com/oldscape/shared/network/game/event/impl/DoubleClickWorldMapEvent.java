@@ -4,13 +4,13 @@ import com.oldscape.shared.event.Event;
 
 public class DoubleClickWorldMapEvent implements Event {
 
-    int bitPack;
+    private int bitPack;
 
     public DoubleClickWorldMapEvent(int bitPack) {
         this.bitPack = bitPack;
     }
 
-    public int getBitPack() {
+    private int getBitPack() {
         return bitPack;
     }
 
