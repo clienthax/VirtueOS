@@ -1,7 +1,7 @@
 package com.oldscape.server.game.model.sync.block;
 
 import com.oldscape.server.game.model.sync.reference.ChatMessage;
-import com.oldscape.shared.model.player.Permission;
+import com.oldscape.server.game.model.entity.player.account.Permission;
 
 /**
  * The chat {@link SynchronizationBlock}. Only players can utilise this block.
@@ -23,7 +23,7 @@ public final class ChatBlock extends SynchronizationBlock {
     /**
      * Creates the chat block.
      *
-     * @param crownType The {@link Permission} of the player who said the message.
+     * @param crownType The {@link Permission} of the account who said the message.
      * @param chatMessage    The {@link ChatMessage}.
      */
     ChatBlock(Permission crownType, ChatMessage chatMessage) {
@@ -50,7 +50,7 @@ public final class ChatBlock extends SynchronizationBlock {
     }
 
     /**
-     * Gets the {@link Permission} of the player who said the message.
+     * Gets the {@link Permission} of the account who said the message.
      *
      * @return The privilege level.
      */

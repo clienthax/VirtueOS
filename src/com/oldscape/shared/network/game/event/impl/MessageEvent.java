@@ -22,7 +22,7 @@
 package com.oldscape.shared.network.game.event.impl;
 
 import com.oldscape.shared.event.Event;
-import com.oldscape.shared.model.MessageType;
+import com.oldscape.server.game.model.MessageType;
 
 /**
  * @author Kyle Friz

@@ -1,8 +1,8 @@
 package com.oldscape.server.game.model.sync;
 
 import com.oldscape.server.game.Server;
-import com.oldscape.server.game.model.npc.Npc;
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.npc.Npc;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.model.sync.task.*;
 import com.oldscape.shared.utility.MobList;
 import com.oldscape.shared.utility.NamedThreadFactory;

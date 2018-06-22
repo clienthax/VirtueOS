@@ -1,6 +1,6 @@
 package com.oldscape.server.game.model.sync.task;
 
-import com.oldscape.server.game.model.npc.Npc;
+import com.oldscape.server.game.model.entity.npc.Npc;
 
 /**
  * A {@link SynchronizationTask} which does post-synchronization work for the
@@ -16,7 +16,7 @@ public final class PostNpcSynchronizationTask extends SynchronizationTask {
     private final Npc npc;
 
     /**
-     * Creates the {@link PostNpcSynchronizationTask} for the specified player.
+     * Creates the {@link PostNpcSynchronizationTask} for the specified account.
      *
      * @param npc The npc.
      */

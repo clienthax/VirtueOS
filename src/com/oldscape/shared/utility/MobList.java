@@ -1,6 +1,6 @@
 package com.oldscape.shared.utility;
 
-import com.oldscape.shared.model.Node;
+import com.oldscape.server.game.model.Node;
 
 import java.util.AbstractList;
 import java.util.Iterator;

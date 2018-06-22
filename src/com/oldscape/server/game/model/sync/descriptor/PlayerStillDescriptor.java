@@ -32,7 +32,7 @@ import com.oldscape.shared.network.game.GameFrameBuilder;
 public class PlayerStillDescriptor extends SynchronizationDescriptor {
 
     /* (non-Javadoc)
-     * @see com.oldscape.server.game.model.sync.Descriptor#encodeDescriptor(com.oldscape.server.game.model.player.Player, com.oldscape.server.game.model.sync.seg.SynchronizationSegment, com.oldscape.shared.network.game.GameFrameBuilder)
+     * @see com.oldscape.server.game.model.sync.Descriptor#encodeDescriptor(com.oldscape.server.game.model.account.Player, com.oldscape.server.game.model.sync.seg.SynchronizationSegment, com.oldscape.shared.network.game.GameFrameBuilder)
      */
     @Override
     public void encodeDescriptor(Event event, SynchronizationSegment segment, GameFrameBuilder builder) {

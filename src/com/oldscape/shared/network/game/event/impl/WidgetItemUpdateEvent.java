@@ -21,7 +21,7 @@
  */
 package com.oldscape.shared.network.game.event.impl;
 
-import com.oldscape.server.game.model.item.Item;
+import com.oldscape.server.game.model.entity.item.Item;
 import com.oldscape.shared.event.Event;
 
 /**

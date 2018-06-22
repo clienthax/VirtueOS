@@ -1,6 +1,6 @@
 package com.oldscape.shared.script.listeners;
 
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 
 public interface NpcListener {
 

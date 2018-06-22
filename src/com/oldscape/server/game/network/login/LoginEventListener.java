@@ -1,7 +1,6 @@
 package com.oldscape.server.game.network.login;
 
 import com.oldscape.shared.event.EventListener;
-import com.oldscape.shared.model.Response;
 import com.oldscape.shared.network.login.LoginEvent;
 
 /**

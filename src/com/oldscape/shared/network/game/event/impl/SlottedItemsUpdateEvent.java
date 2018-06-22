@@ -21,7 +21,7 @@
  */
 package com.oldscape.shared.network.game.event.impl;
 
-import com.oldscape.server.game.model.player.inv.SlottedItem;
+import com.oldscape.server.game.model.entity.player.inv.SlottedItem;
 import com.oldscape.shared.event.Event;
 
 /**

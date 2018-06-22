@@ -1,7 +1,7 @@
 package com.oldscape.shared.network.game.event.impl;
 
 import com.oldscape.server.game.GameWorld;
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.shared.network.game.event.Message;
 
 public abstract class MessageHandler<M extends Message> {
@@ -23,7 +23,7 @@ public abstract class MessageHandler<M extends Message> {
     /**
      * Handles the Message that was received.
      *
-     * @param player  The player to handle the Message for.
+     * @param player  The account to handle the Message for.
      * @param message The Message.
      */
     public abstract void handle(Player player, M message);

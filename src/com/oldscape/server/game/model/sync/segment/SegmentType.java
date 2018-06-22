@@ -40,7 +40,7 @@ public enum SegmentType {
     REGION_HASH,
 
     /**
-     * A segment with player skip counts.
+     * A segment with account skip counts.
      */
     SKIP,
 

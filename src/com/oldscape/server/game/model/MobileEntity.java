@@ -1,6 +1,7 @@
 package com.oldscape.server.game.model;
 
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
+import com.oldscape.server.game.model.region.Position;
 import com.oldscape.server.game.model.sync.block.InteractingMobBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlockSet;
@@ -9,9 +10,7 @@ import com.oldscape.server.game.model.sync.reference.ChatMessage;
 import com.oldscape.server.game.model.sync.reference.Direction;
 import com.oldscape.server.game.model.sync.reference.Graphic;
 import com.oldscape.shared.cache.type.npcs.NpcType;
-import com.oldscape.shared.model.Node;
-import com.oldscape.shared.model.Position;
-import com.oldscape.shared.model.region.Region;
+import com.oldscape.server.game.model.region.Region;
 
 import java.util.Optional;
 
@@ -71,7 +70,7 @@ public abstract class MobileEntity extends Node {
     protected boolean teleporting = false;
 
     /**
-     * This mob's npc definition. A player only uses this if they are appearing
+     * This mob's npc definition. A account only uses this if they are appearing
      * as an npc.
      */
     protected Optional<NpcType> npcType = Optional.empty();
@@ -160,7 +159,7 @@ public abstract class MobileEntity extends Node {
     }
 
     /*
-     * Checks if this player has ever known a sector.
+     * Checks if this account has ever known a sector.
      *
      * @return {@code true} if so, {@code false} if not.
      */

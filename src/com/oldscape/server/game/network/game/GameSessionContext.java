@@ -1,7 +1,7 @@
 package com.oldscape.server.game.network.game;
 
 import com.oldscape.server.game.Server;
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.network.SessionEventContext;
 import com.oldscape.shared.event.Event;
 import io.netty.channel.Channel;
@@ -20,7 +20,7 @@ public final class GameSessionContext extends SessionEventContext {
     private static final int EVENTS_TO_HANDLE_LIMIT_PER_CYCLE = 15;
 
     /**
-     * The {@link com.oldscape.server.game.model.player.Player}.
+     * The {@link com.oldscape.server.game.model.entity.player.Player}.
      */
     private final Player player;
 
@@ -31,7 +31,7 @@ public final class GameSessionContext extends SessionEventContext {
     private final Queue<Event> pendingEventsToHandle = new ConcurrentLinkedQueue<>();
 
     /**
-     * @param player The {@link com.oldscape.server.game.model.player.Player}.
+     * @param player The {@link com.oldscape.server.game.model.entity.player.Player}.
      * @see com.oldscape.server.game.network.SessionEventContext#SessionEventContext(io.netty.channel.Channel,
      * com.oldscape.server.game.Server)
      */
@@ -55,7 +55,7 @@ public final class GameSessionContext extends SessionEventContext {
     }
 
     /**
-     * Handles the disconnection of a {@link com.oldscape.server.game.model.player.Player}.
+     * Handles the disconnection of a {@link com.oldscape.server.game.model.entity.player.Player}.
      */
     public void onDisconnection() {
         player.setActive(false);
@@ -85,9 +85,9 @@ public final class GameSessionContext extends SessionEventContext {
     }
 
     /**
-     * Gets the {@link com.oldscape.server.game.model.player.Player}.
+     * Gets the {@link com.oldscape.server.game.model.entity.player.Player}.
      *
-     * @return The{@code player}.
+     * @return The{@code account}.
      */
     public Player getPlayer() {
         return player;

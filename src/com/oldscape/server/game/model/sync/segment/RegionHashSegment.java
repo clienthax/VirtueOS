@@ -1,6 +1,6 @@
 package com.oldscape.server.game.model.sync.segment;
 
-import com.oldscape.shared.model.Position;
+import com.oldscape.server.game.model.region.Position;
 
 public final class RegionHashSegment extends SynchronizationSegment {
 

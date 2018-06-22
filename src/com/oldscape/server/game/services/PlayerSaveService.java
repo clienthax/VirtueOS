@@ -3,7 +3,7 @@ package com.oldscape.server.game.services;
 import com.google.common.util.concurrent.AbstractService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.shared.gson.PlayerSerializer;
 
 import java.io.BufferedWriter;
@@ -29,7 +29,7 @@ public class PlayerSaveService extends AbstractService implements Runnable {
 
     /**
      * A {@link java.util.concurrent.BlockingDeque} of pending
-     * {@link com.oldscape.server.game.model.player.Player}s.
+     * {@link com.oldscape.server.game.model.entity.player.Player}s.
      */
     private final BlockingDeque<Player> pendingSaves = new LinkedBlockingDeque<>();
 
@@ -96,10 +96,10 @@ public class PlayerSaveService extends AbstractService implements Runnable {
     }
 
     /**
-     * Adds a {@link com.oldscape.server.game.model.player.Player} to the
+     * Adds a {@link com.oldscape.server.game.model.entity.player.Player} to the
      * {@code pendingContexts}.
      *
-     * @param player The {@link com.oldscape.server.game.model.player.Player} to
+     * @param player The {@link com.oldscape.server.game.model.entity.player.Player} to
      *               registerLobbyPlayer.
      */
     public void addPlayerSave(Player player) {

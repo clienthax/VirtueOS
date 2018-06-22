@@ -3,17 +3,16 @@ package com.oldscape.server.game.services;
 import com.google.common.util.concurrent.AbstractService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.network.login.LoginSessionContext;
 import com.oldscape.server.game.network.login.LoginTransaction;
 import com.oldscape.server.game.network.login.PlayerLoginContextPair;
 import com.oldscape.shared.gson.PlayerSerializer;
-import com.oldscape.shared.model.Position;
-import com.oldscape.shared.model.Response;
-import com.oldscape.shared.model.player.AccountCredentials;
-import com.oldscape.shared.model.player.DisplayMode;
-import com.oldscape.shared.model.player.Permission;
-import com.oldscape.shared.model.player.SubscriptionType;
+import com.oldscape.server.game.network.login.Response;
+import com.oldscape.server.game.model.entity.player.account.Credentials;
+import com.oldscape.server.game.model.entity.player.account.DisplayMode;
+import com.oldscape.server.game.model.entity.player.account.Permission;
+import com.oldscape.server.game.model.entity.player.account.Subscription;
 import com.oldscape.shared.network.login.LoginEvent;
 import com.oldscape.shared.utility.FNVHash;
 import com.oldscape.shared.utility.NameUtils;
@@ -141,9 +140,9 @@ public class PlayerLoadService extends AbstractService implements Runnable {
 
                     }
                 } else {
-                    // Fake a new player for now.
+                    // Fake a new account for now.
                     player = new Player(1,
-                            new AccountCredentials(
+                            new Credentials(
                                     /* Account creation date. */
                                     Date.from(Instant.now()),
                                     /* Last Logged in*/
@@ -163,7 +162,7 @@ public class PlayerLoadService extends AbstractService implements Runnable {
                                     /* Membership expiry date*/
                                     new DateTime().plusDays(90).toDate(),
                                     /* Subscription type */
-                                    SubscriptionType.SUBSCRIPTED_MEMBER,
+                                    Subscription.SUBSCRIPTED_MEMBER,
                                     /* ChatCrownType */
                                     Permission.ADMINISTRATOR,
                                     /* Email Verified*/

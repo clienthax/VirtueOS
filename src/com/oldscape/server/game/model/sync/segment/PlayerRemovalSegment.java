@@ -1,9 +1,9 @@
 package com.oldscape.server.game.model.sync.segment;
 
-import com.oldscape.shared.model.Position;
+import com.oldscape.server.game.model.region.Position;
 
 /**
- * A {@link SynchronizationSegment} which removes a player.
+ * A {@link SynchronizationSegment} which removes a account.
  *
  * @author Graham
  */
@@ -19,7 +19,7 @@ public final class PlayerRemovalSegment extends SynchronizationSegment {
     private final int regionHash;
 
     /**
-     * Creates the remove player segment.
+     * Creates the remove account segment.
      */
     public PlayerRemovalSegment(Position position) {
         super(EMPTY_BLOCK_SET);
@@ -29,7 +29,7 @@ public final class PlayerRemovalSegment extends SynchronizationSegment {
     }
 
     /**
-     * Creates the remove player segment.
+     * Creates the remove account segment.
      */
     public PlayerRemovalSegment(Position position, int regionHash) {
         super(EMPTY_BLOCK_SET);

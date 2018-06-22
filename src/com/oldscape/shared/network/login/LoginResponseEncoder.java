@@ -1,7 +1,7 @@
 package com.oldscape.shared.network.login;
 
-import com.oldscape.server.game.model.player.Player;
-import com.oldscape.shared.model.Response;
+import com.oldscape.server.game.model.entity.player.Player;
+import com.oldscape.server.game.network.login.Response;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;

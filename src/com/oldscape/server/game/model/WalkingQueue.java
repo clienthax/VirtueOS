@@ -1,12 +1,11 @@
 package com.oldscape.server.game.model;
 
 import com.google.common.base.MoreObjects;
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
+import com.oldscape.server.game.model.region.Position;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.reference.Direction;
-import com.oldscape.shared.model.Position;
-import com.oldscape.shared.model.region.Region;
-import com.oldscape.shared.model.region.RegionManager;
+import com.oldscape.server.game.model.region.RegionManager;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

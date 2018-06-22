@@ -12,7 +12,7 @@ public class PrivateChatMessage extends ChatMessage {
      *
      * @param message           The chat string.
      * @param compressedMessage The chat string, in a compressed form.
-     * @param username          The username of the player the message is being sent to.
+     * @param username          The username of the account the message is being sent to.
      */
     public PrivateChatMessage(String message, byte[] compressedMessage, String username) {
         super(message, compressedMessage);
@@ -20,7 +20,7 @@ public class PrivateChatMessage extends ChatMessage {
     }
 
     /**
-     * Gets the username of the player the chat string is being sent to.
+     * Gets the username of the account the chat string is being sent to.
      *
      * @return The username.
      */

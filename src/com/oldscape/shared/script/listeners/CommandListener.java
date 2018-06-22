@@ -21,8 +21,8 @@
  */
 package com.oldscape.shared.script.listeners;
 
-import com.oldscape.server.game.model.player.Player;
-import com.oldscape.shared.model.player.Permission;
+import com.oldscape.server.game.model.entity.player.Player;
+import com.oldscape.server.game.model.entity.player.account.Permission;
 
 /**
  * @author Kyle Friz
@@ -35,7 +35,7 @@ public interface CommandListener {
      * Called when this command is executed.
      *
      * @param syntax The syntax of the command.
-     * @param player The player.
+     * @param player The account.
      * @param args   The arguments
      * @return True if the command was handled, false otherwise
      */

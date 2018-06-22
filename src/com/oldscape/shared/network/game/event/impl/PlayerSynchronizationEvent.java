@@ -38,7 +38,7 @@ public class PlayerSynchronizationEvent implements Event {
     private final List<SynchronizationSegment> segments;
 
     /**
-     * Creates the player synchronization message.
+     * Creates the account synchronization message.
      *
      * @param segments A list of segments.
      */

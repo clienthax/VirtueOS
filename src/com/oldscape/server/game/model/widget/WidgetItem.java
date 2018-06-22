@@ -1,6 +1,6 @@
 package com.oldscape.server.game.model.widget;
 
-import com.oldscape.server.game.model.item.ItemId;
+import com.oldscape.server.game.model.entity.item.ItemId;
 
 /**
  * An item that is being represented in a {@link Widget}.

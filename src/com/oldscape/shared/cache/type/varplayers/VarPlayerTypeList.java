@@ -88,7 +88,7 @@ public class VarPlayerTypeList implements TypeList<VarPlayerType> {
     @Override
     public VarPlayerType list(int id) {
         Preconditions.checkArgument(id >= 0, "ID can't be negative!");
-        Preconditions.checkArgument(id < varPlayers.length, "ID can't be greater than the max var player id!");
+        Preconditions.checkArgument(id < varPlayers.length, "ID can't be greater than the max var account id!");
         return varPlayers[id];
     }
 

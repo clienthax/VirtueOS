@@ -1,6 +1,6 @@
 package com.oldscape.server.game.model.sync.task;
 
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 
 /**
  * A {@link SynchronizationTask} which does post-synchronization work for the
@@ -11,15 +11,15 @@ import com.oldscape.server.game.model.player.Player;
 public final class PostPlayerSynchronizationTask extends SynchronizationTask {
 
     /**
-     * The player.
+     * The account.
      */
     private final Player player;
 
     /**
      * Creates the {@link PostPlayerSynchronizationTask} for the specified
-     * player.
+     * account.
      *
-     * @param player The player.
+     * @param player The account.
      */
     public PostPlayerSynchronizationTask(Player player) {
         this.player = player;

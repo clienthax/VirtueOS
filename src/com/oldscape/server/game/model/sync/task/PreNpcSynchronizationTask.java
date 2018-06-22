@@ -1,6 +1,6 @@
 package com.oldscape.server.game.model.sync.task;
 
-import com.oldscape.server.game.model.npc.Npc;
+import com.oldscape.server.game.model.entity.npc.Npc;
 
 /**
  * A {@link SynchronizationTask} which does pre-synchronization work for the

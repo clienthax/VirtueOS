@@ -21,15 +21,15 @@
  */
 package com.oldscape.server.game.model.sync.block.encode;
 
-import com.oldscape.server.game.model.EquipmentConstants;
-import com.oldscape.server.game.model.item.Item;
-import com.oldscape.server.game.model.player.inv.ItemContainer;
+import com.oldscape.server.game.model.entity.item.equip.Equipment;
+import com.oldscape.server.game.model.entity.item.Item;
+import com.oldscape.server.game.model.entity.player.inv.ItemContainer;
 import com.oldscape.server.game.model.sync.block.AppearanceBlock;
 import com.oldscape.server.game.model.sync.block.BlockType;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.reference.Appearance;
 import com.oldscape.server.game.model.sync.reference.Appearance.Gender;
-import com.oldscape.shared.model.EquipmentType;
+import com.oldscape.server.game.model.entity.item.equip.EquipmentType;
 import com.oldscape.shared.network.game.DataTransformation;
 import com.oldscape.shared.network.game.DataType;
 import com.oldscape.shared.network.game.GameFrameBuilder;
@@ -71,13 +71,13 @@ public class AppearanceBlockEncoder extends SynchronizationBlockEncoder {
                 }
             }
 
-            if ((chest = equipment.get(EquipmentConstants.CHEST)) != null) {
+            if ((chest = equipment.get(Equipment.CHEST)) != null) {
                 props.put(DataType.SHORT, 0x200 + chest.getId());
             } else {
                 props.put(DataType.SHORT, 0x100 + style[2]);
             }
 
-            if ((item = equipment.get(EquipmentConstants.SHIELD)) != null) {
+            if ((item = equipment.get(Equipment.SHIELD)) != null) {
                 props.put(DataType.SHORT, 0x200 + item.getId());
             } else {
                 props.put(DataType.BYTE, 0);
@@ -94,13 +94,13 @@ public class AppearanceBlockEncoder extends SynchronizationBlockEncoder {
                 props.put(DataType.SHORT, 0x100 + style[3]);
             }
 
-            if ((item = equipment.get(EquipmentConstants.LEGS)) != null) {
+            if ((item = equipment.get(Equipment.LEGS)) != null) {
                 props.put(DataType.SHORT, 0x200 + item.getId());
             } else {
                 props.put(DataType.SHORT, 0x100 + style[5]);
             }
 
-            if ((helm = equipment.get(EquipmentConstants.HAT)) != null) {
+            if ((helm = equipment.get(Equipment.HAT)) != null) {
                 EquipmentType def = EquipmentType.lookup(helm.getId());
                 if (def != null && !def.isFullHat() && !def.isFullMask()) {
                     props.put(DataType.SHORT, 0x100 + style[0]);
@@ -111,13 +111,13 @@ public class AppearanceBlockEncoder extends SynchronizationBlockEncoder {
                 props.put(DataType.SHORT, 0x100 + style[0]);
             }
 
-            if ((item = equipment.get(EquipmentConstants.HANDS)) != null) {
+            if ((item = equipment.get(Equipment.HANDS)) != null) {
                 props.put(DataType.SHORT, 0x200 + item.getId());
             } else {
                 props.put(DataType.SHORT, 0x100 + style[4]);
             }
 
-            if ((item = equipment.get(EquipmentConstants.FEET)) != null) {
+            if ((item = equipment.get(Equipment.FEET)) != null) {
                 props.put(DataType.SHORT, 0x200 + item.getId());
             } else {
                 props.put(DataType.SHORT, 0x100 + style[6]);

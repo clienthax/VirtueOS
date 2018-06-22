@@ -21,7 +21,7 @@
  */
 package com.oldscape.shared.script.listeners;
 
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 
 /**
  * @author Kyle Friz
@@ -38,9 +38,9 @@ public interface WidgetListener {
     public Integer[] getPossibleWidgets();
 
     /**
-     * Called whenever a player clicks a button on the widget
+     * Called whenever a account clicks a button on the widget
      *
-     * @param player   The player who clicked the button
+     * @param player   The account who clicked the button
      * @param widgetId The id of the widget clicked
      * @param buttonId The id of the button clicked
      * @param itemId   The id of the item clicked, or 65535 if there was no item

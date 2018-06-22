@@ -21,9 +21,9 @@
  */
 package com.oldscape.server.game.network.game.listeners;
 
-import com.oldscape.server.game.model.EquipmentConstants;
-import com.oldscape.server.game.model.item.Item;
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.item.equip.Equipment;
+import com.oldscape.server.game.model.entity.item.Item;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.network.game.GameSessionContext;
 import com.oldscape.shared.cache.type.items.ItemType;
 import com.oldscape.shared.event.EventListener;
@@ -58,95 +58,95 @@ public class ItemActionEventListener implements EventListener<ItemActionEvent, G
 
     private int getSlot(ItemType definition) {
         if (definition.getName() == null)
-            return EquipmentConstants.WEAPON;
+            return Equipment.WEAPON;
         String name = definition.getName().toLowerCase();
 
         if (name.contains("claws"))
-            return EquipmentConstants.WEAPON;
+            return Equipment.WEAPON;
         if (name.contains("sword"))
-            return EquipmentConstants.WEAPON;
+            return Equipment.WEAPON;
         if (name.contains("dagger"))
-            return EquipmentConstants.WEAPON;
+            return Equipment.WEAPON;
         if (name.contains("mace"))
-            return EquipmentConstants.WEAPON;
+            return Equipment.WEAPON;
         if (name.contains("whip"))
-            return EquipmentConstants.WEAPON;
+            return Equipment.WEAPON;
         if (name.contains("bow"))
-            return EquipmentConstants.WEAPON;
+            return Equipment.WEAPON;
         if (name.contains("staff"))
-            return EquipmentConstants.WEAPON;
+            return Equipment.WEAPON;
         if (name.contains("dart"))
-            return EquipmentConstants.WEAPON;
+            return Equipment.WEAPON;
 
         if (name.contains("glove"))
-            return EquipmentConstants.HANDS;
+            return Equipment.HANDS;
         if (name.contains("vamb"))
-            return EquipmentConstants.HANDS;
+            return Equipment.HANDS;
         if (name.contains("gaunt"))
-            return EquipmentConstants.HANDS;
+            return Equipment.HANDS;
 
         if (name.contains("ring"))
-            return EquipmentConstants.RING;
+            return Equipment.RING;
         if (name.contains("bracelet"))
-            return EquipmentConstants.RING;
+            return Equipment.RING;
 
         if (name.contains("amulet"))
-            return EquipmentConstants.AMULET;
+            return Equipment.AMULET;
         if (name.contains("necklace"))
-            return EquipmentConstants.AMULET;
+            return Equipment.AMULET;
         if (name.contains("scarf"))
-            return EquipmentConstants.AMULET;
+            return Equipment.AMULET;
 
         if (name.contains("leg"))
-            return EquipmentConstants.LEGS;
+            return Equipment.LEGS;
         if (name.contains("bottom"))
-            return EquipmentConstants.LEGS;
+            return Equipment.LEGS;
         if (name.contains("skirt"))
-            return EquipmentConstants.LEGS;
+            return Equipment.LEGS;
 
         if (name.contains("body"))
-            return EquipmentConstants.CHEST;
+            return Equipment.CHEST;
         if (name.contains("top"))
-            return EquipmentConstants.CHEST;
+            return Equipment.CHEST;
         if (name.contains("chest"))
-            return EquipmentConstants.CHEST;
+            return Equipment.CHEST;
         if (name.contains("chainmail"))
-            return EquipmentConstants.CHEST;
+            return Equipment.CHEST;
         if (name.contains("torso"))
-            return EquipmentConstants.CHEST;
+            return Equipment.CHEST;
 
         if (name.contains("arrow"))
-            return EquipmentConstants.ARROWS;
+            return Equipment.ARROWS;
         if (name.contains("bolt"))
-            return EquipmentConstants.ARROWS;
+            return Equipment.ARROWS;
 
         if (name.contains("shield"))
-            return EquipmentConstants.SHIELD;
+            return Equipment.SHIELD;
         if (name.contains("defender"))
-            return EquipmentConstants.SHIELD;
+            return Equipment.SHIELD;
         if (name.contains("book"))
-            return EquipmentConstants.SHIELD;
+            return Equipment.SHIELD;
 
         if (name.contains("cape"))
-            return EquipmentConstants.CAPE;
+            return Equipment.CAPE;
         if (name.contains("cloak"))
-            return EquipmentConstants.CAPE;
+            return Equipment.CAPE;
 
         if (name.contains("boot"))
-            return EquipmentConstants.FEET;
+            return Equipment.FEET;
 
         if (name.contains("hat"))
-            return EquipmentConstants.HAT;
+            return Equipment.HAT;
         if (name.contains("helm"))
-            return EquipmentConstants.HAT;
+            return Equipment.HAT;
         if (name.contains("mask"))
-            return EquipmentConstants.HAT;
+            return Equipment.HAT;
         if (name.contains("hood"))
-            return EquipmentConstants.HAT;
+            return Equipment.HAT;
         if (name.contains("coif"))
-            return EquipmentConstants.HAT;
+            return Equipment.HAT;
 
-        return EquipmentConstants.WEAPON;
+        return Equipment.WEAPON;
     }
 
 }

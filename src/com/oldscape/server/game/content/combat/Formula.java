@@ -1,6 +1,6 @@
 package com.oldscape.server.game.content.combat;
 
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 
 /**
  * Combat Formula Class

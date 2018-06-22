@@ -3,7 +3,7 @@ package com.oldscape.server.game.services;
 import com.google.common.util.concurrent.AbstractScheduledService;
 import com.oldscape.server.game.GameWorld;
 import com.oldscape.server.game.Server;
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.model.sync.ClientSynchronizer;
 import com.oldscape.server.game.model.sync.ParallelClientSynchronizer;
 import com.oldscape.server.game.network.login.PlayerLoginContextPair;

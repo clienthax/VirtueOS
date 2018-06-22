@@ -1,7 +1,7 @@
 package com.oldscape.server.game.network.game.listeners;
 
 import com.oldscape.server.game.GameWorld;
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.model.sync.reference.Appearance;
 import com.oldscape.server.game.model.sync.reference.Appearance.Gender;
 import com.oldscape.shared.network.game.event.impl.MessageHandler;

@@ -1,6 +1,6 @@
 package com.oldscape.shared.network.game.event.encoders;
 
-import com.oldscape.shared.model.MessageType;
+import com.oldscape.server.game.model.MessageType;
 import com.oldscape.shared.network.game.DataType;
 import com.oldscape.shared.network.game.FrameType;
 import com.oldscape.shared.network.game.GameFrame;

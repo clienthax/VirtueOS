@@ -1,6 +1,6 @@
 package com.oldscape.server.game.model.sync.task;
 
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 
 /**
  * A {@link SynchronizationTask} which does pre-synchronization work for the
@@ -11,15 +11,15 @@ import com.oldscape.server.game.model.player.Player;
 public final class PrePlayerSynchronizationTask extends SynchronizationTask {
 
     /**
-     * The player.
+     * The account.
      */
     private final Player player;
 
     /**
      * Creates the {@link PrePlayerSynchronizationTask} for the specified
-     * player.
+     * account.
      *
-     * @param player The player.
+     * @param player The account.
      */
     public PrePlayerSynchronizationTask(Player player) {
         this.player = player;

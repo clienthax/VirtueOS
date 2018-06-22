@@ -1,10 +1,10 @@
 package com.oldscape.server.game.model.sync.segment;
 
 import com.oldscape.server.game.model.sync.block.SynchronizationBlockSet;
-import com.oldscape.shared.model.Position;
+import com.oldscape.server.game.model.region.Position;
 
 /**
- * A {@link SynchronizationSegment} which adds a player.
+ * A {@link SynchronizationSegment} which adds a account.
  *
  * @author Graham
  */
@@ -20,7 +20,7 @@ public final class PlayerAdditionSegment extends SynchronizationSegment {
     private final int regionHash;
 
     /**
-     * Creates the add player segment.
+     * Creates the add account segment.
      *
      * @param blockSet The block set.
      * @param position The position.
@@ -33,7 +33,7 @@ public final class PlayerAdditionSegment extends SynchronizationSegment {
     }
 
     /**
-     * Creates the add player segment.
+     * Creates the add account segment.
      *
      * @param blockSet The block set.
      * @param position The position.

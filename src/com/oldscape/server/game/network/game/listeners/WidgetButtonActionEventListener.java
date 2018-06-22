@@ -21,11 +21,11 @@
  */
 package com.oldscape.server.game.network.game.listeners;
 
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.model.widget.WidgetId;
 import com.oldscape.server.game.network.game.GameSessionContext;
 import com.oldscape.shared.event.EventListener;
-import com.oldscape.shared.model.player.DisplayMode;
+import com.oldscape.server.game.model.entity.player.account.DisplayMode;
 import com.oldscape.shared.network.game.event.impl.WidgetButtonActionEvent;
 import com.oldscape.shared.script.listeners.WidgetListener;
 
@@ -78,7 +78,7 @@ public class WidgetButtonActionEventListener implements EventListener<WidgetButt
                 case WidgetId.WorldMap.OPTION: // TODO: is this correct?
                     player.sendCS2Script(1749, new Object[]{865789592});//c -- guessing this is coords?
                     player.sendOpenWidgetSub(WidgetId.FIXED_VIEWPORT_GROUP_ID, WidgetId.FixedViewport.GAME_VIEWPORT, WidgetId.WORLD_MAP_GROUP_ID, true);
-//					player.setInterfaceClickMask(595, 17, 0, 4, 2);//FIXME: Figure out.
+//					account.setInterfaceClickMask(595, 17, 0, 4, 2);//FIXME: Figure out.
                     break;
             }
         }
@@ -192,7 +192,7 @@ public class WidgetButtonActionEventListener implements EventListener<WidgetButt
                         player.sendWidgetMoveSubEvent(165, 24, DisplayMode.FIXED.getId(), 11);
                         player.sendWidgetMoveSubEvent(165, 28, DisplayMode.FIXED.getId(), 22);
                     }
-                    //TODO: Set Now Playing Track - This should be loaded by region player is in.
+                    //TODO: Set Now Playing Track - This should be loaded by region account is in.
                     player.sendWidgetText(WidgetId.MUSIC_PANEL_ID, 5, "Harmony"); // TODO: is child 5?
 
                     player.setInGame(true);

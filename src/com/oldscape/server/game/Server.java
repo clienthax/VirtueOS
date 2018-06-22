@@ -17,7 +17,7 @@ import com.oldscape.shared.cache.FileStore;
 import com.oldscape.shared.cache.type.TypeListManager;
 import com.oldscape.shared.event.EventHub;
 import com.oldscape.shared.event.hubs.DefaultEventHub;
-import com.oldscape.shared.model.region.RegionManager;
+import com.oldscape.server.game.model.region.RegionManager;
 import com.oldscape.shared.network.game.event.GameEventRepository;
 import com.oldscape.shared.network.game.event.impl.*;
 import com.oldscape.shared.network.handshake.HandshakeDecoder;
@@ -143,7 +143,7 @@ public final class Server {
      */
     private ScriptManager scriptManager = new ScriptManager();
     /**
-     * The {@link com.oldscape.shared.model.region.RegionManager}.
+     * The {@link com.oldscape.server.game.model.region.RegionManager}.
      */
     private RegionManager regionManager = new RegionManager(this);
 

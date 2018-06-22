@@ -3,12 +3,12 @@ package com.oldscape.server.game.model.sync.segment;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlockSet;
 import com.oldscape.server.game.model.sync.reference.Direction;
-import com.oldscape.shared.model.Position;
+import com.oldscape.server.game.model.region.Position;
 
 /**
  * A segment contains a set of {@link SynchronizationBlock}s, {@link Direction}s
  * (or teleport {@link Position}s) and any other things required for the update
- * of a single player.
+ * of a single account.
  *
  * @author Graham
  */

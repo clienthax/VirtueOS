@@ -1,14 +1,14 @@
 package com.oldscape.server.game.model.sync.block;
 
 import com.oldscape.server.game.model.sync.reference.Direction;
-import com.oldscape.shared.model.Position;
+import com.oldscape.server.game.model.region.Position;
 
 /**
  * The Force Movement {@link SynchronizationBlock}. Only players can utilise
  * this block.
  * <p>
- * Note: This block is used to force a player to walk to a set location. The
- * player can then perform an action (e.g. an animation), as used in the Agility
+ * Note: This block is used to force a account to walk to a set location. The
+ * account can then perform an action (e.g. an animation), as used in the Agility
  * skill, hence this block earning the name 'Asynchronous Animation/Walking',
  * although the action is not restricted to animations.
  *
@@ -17,28 +17,28 @@ import com.oldscape.shared.model.Position;
 public final class ForceMovementBlock extends SynchronizationBlock {
 
     /**
-     * The direction the player is moving.
+     * The direction the account is moving.
      */
     private final Direction direction;
 
     /**
-     * The {@link Position} the player is being moved to.
+     * The {@link Position} the account is being moved to.
      */
     private final Position finalPosition;
 
     /**
-     * The initial {@link Position} of the player.
+     * The initial {@link Position} of the account.
      */
     private final Position initialPosition;
 
     /**
-     * The length of time (in game pulses) the player's movement along the
+     * The length of time (in game pulses) the account's movement along the
      * X-axis will last.
      */
     private final int travelDurationX;
 
     /**
-     * The length of time (in game pulses) the player's movement along the
+     * The length of time (in game pulses) the account's movement along the
      * Y-axis will last.
      */
     private final int travelDurationY;
@@ -46,13 +46,13 @@ public final class ForceMovementBlock extends SynchronizationBlock {
     /**
      * Creates a new force movement block.
      *
-     * @param initialPosition The initial {@link Position} of the player.
-     * @param finalPosition   The final {@link Position} of the player
-     * @param travelDurationX The length of time (in game pulses) the player's movement
+     * @param initialPosition The initial {@link Position} of the account.
+     * @param finalPosition   The final {@link Position} of the account
+     * @param travelDurationX The length of time (in game pulses) the account's movement
      *                        along the X-axis will last.
-     * @param travelDurationY The length of time (in game pulses) the player's movement
+     * @param travelDurationY The length of time (in game pulses) the account's movement
      *                        along the Y-axis will last.
-     * @param direction       The direction the player should move.
+     * @param direction       The direction the account should move.
      */
     ForceMovementBlock(Position initialPosition, Position finalPosition,
                        int travelDurationX, int travelDurationY, Direction direction) {
@@ -64,7 +64,7 @@ public final class ForceMovementBlock extends SynchronizationBlock {
     }
 
     /**
-     * Gets the {@link Direction} the player should move.
+     * Gets the {@link Direction} the account should move.
      *
      * @return The direction.
      */
@@ -109,7 +109,7 @@ public final class ForceMovementBlock extends SynchronizationBlock {
     }
 
     /**
-     * Gets the length of time (in game pulses) the player's movement along the
+     * Gets the length of time (in game pulses) the account's movement along the
      * X-axis will last.
      *
      * @return The time period.
@@ -119,7 +119,7 @@ public final class ForceMovementBlock extends SynchronizationBlock {
     }
 
     /**
-     * Gets the length of time (in game pulses) the player's movement along the
+     * Gets the length of time (in game pulses) the account's movement along the
      * Y-axis will last.
      *
      * @return The time period.

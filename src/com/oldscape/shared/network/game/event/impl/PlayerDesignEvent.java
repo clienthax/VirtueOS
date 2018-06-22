@@ -11,7 +11,7 @@ public class PlayerDesignEvent extends Message {
     private final Appearance appearance;
 
     /**
-     * Creates the player design message.
+     * Creates the account design message.
      *
      * @param appearance The appearance.
      */

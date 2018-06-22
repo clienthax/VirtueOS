@@ -24,7 +24,7 @@ package com.oldscape.server.game.model.sync.descriptor;
 import com.oldscape.server.game.model.sync.segment.NpcAdditionSegment;
 import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
 import com.oldscape.shared.event.Event;
-import com.oldscape.shared.model.Position;
+import com.oldscape.server.game.model.region.Position;
 import com.oldscape.shared.network.game.GameFrameBuilder;
 import com.oldscape.shared.network.game.event.impl.NpcSynchronizationEvent;
 
@@ -35,7 +35,7 @@ import com.oldscape.shared.network.game.event.impl.NpcSynchronizationEvent;
 public class NpcAdditionDescriptor extends SynchronizationDescriptor {//class28 method274
 
     /* (non-Javadoc)
-     * @see com.oldscape.server.game.model.sync.Descriptor#encodeDescriptor(com.oldscape.server.game.model.player.Player, com.oldscape.server.game.model.sync.seg.SynchronizationSegment, com.oldscape.shared.network.game.GameFrameBuilder)
+     * @see com.oldscape.server.game.model.sync.Descriptor#encodeDescriptor(com.oldscape.server.game.model.account.Player, com.oldscape.server.game.model.sync.seg.SynchronizationSegment, com.oldscape.shared.network.game.GameFrameBuilder)
      */
     @Override
     public void encodeDescriptor(Event event, SynchronizationSegment segment, GameFrameBuilder builder) {

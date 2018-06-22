@@ -21,10 +21,10 @@
  */
 package com.oldscape.server.game.network.game.listeners;
 
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.network.game.GameSessionContext;
 import com.oldscape.shared.event.EventListener;
-import com.oldscape.shared.model.player.DisplayMode;
+import com.oldscape.server.game.model.entity.player.account.DisplayMode;
 import com.oldscape.shared.network.game.event.impl.ClientDimensionsEvent;
 
 /**

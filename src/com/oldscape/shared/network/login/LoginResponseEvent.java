@@ -1,8 +1,8 @@
 package com.oldscape.shared.network.login;
 
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.shared.event.Event;
-import com.oldscape.shared.model.Response;
+import com.oldscape.server.game.network.login.Response;
 
 /**
  * Created by sean on 23/07/14.
@@ -10,7 +10,7 @@ import com.oldscape.shared.model.Response;
 public final class LoginResponseEvent implements Event {
 
     /**
-     * The {@link {@link com.oldscape.shared.model.Response}.
+     * The {@link {@link Response }.
      */
     private final Response response;
 
@@ -19,7 +19,7 @@ public final class LoginResponseEvent implements Event {
     /**
      * Creates a new {@link com.oldscape.shared.network.login.LoginResponseEvent}.
      *
-     * @param response The type of {@link com.oldscape.shared.model.Response}.
+     * @param response The type of {@link Response}.
      * @param payload  The payload of the response.
      */
     public LoginResponseEvent(Response response) {
@@ -28,7 +28,7 @@ public final class LoginResponseEvent implements Event {
 
     /**
      * Creates a new {@link com.oldscape.shared.network.login.LoginResponseEvent}
-     * with the {@link com.oldscape.shared.model.Response} set to use
+     * with the {@link Response} set to use
      * {@link Response#LOGIN_OK}.
      *
      * @param payload The payload of the response.
@@ -39,7 +39,7 @@ public final class LoginResponseEvent implements Event {
 
     /**
      * Creates a new {@link com.oldscape.shared.network.login.LoginResponseEvent}
-     * with the {@link com.oldscape.shared.model.Response} set to use
+     * with the {@link Response} set to use
      * {@link Response#LOGIN_OK}.
      *
      * @param payload The payload of the response.
@@ -50,7 +50,7 @@ public final class LoginResponseEvent implements Event {
     }
 
     /**
-     * Gets the {@link com.oldscape.shared.model.Response}.
+     * Gets the {@link Response}.
      *
      * @return The {@code response}.
      */

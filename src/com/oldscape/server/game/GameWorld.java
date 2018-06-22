@@ -1,9 +1,9 @@
 package com.oldscape.server.game;
 
-import com.oldscape.server.game.model.npc.Npc;
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.npc.Npc;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.network.login.PlayerLoginContextPair;
-import com.oldscape.shared.model.Response;
+import com.oldscape.server.game.network.login.Response;
 import com.oldscape.shared.utility.MobList;
 
 import java.util.Map;
@@ -28,18 +28,18 @@ public final class GameWorld {
 
     /**
      * The {@link java.util.Collection} of
-     * {@link com.oldscape.server.game.model.player.Player}s in the server.
+     * {@link com.oldscape.server.game.model.entity.player.Player}s in the server.
      */
     private final MobList<Player> players = new MobList<>(MAXIMUM_PLAYERS);
 
     /**
-     * The {@link java.util.Collection} of {@link com.oldscape.server.game.model.npc.Npc}s
+     * The {@link java.util.Collection} of {@link com.oldscape.server.game.model.entity.npc.Npc}s
      * in the server.
      */
     private final MobList<Npc> npcs = new MobList<>(MAXIMUM_NPCS);
 
     /**
-     * A {@link java.util.Queue} of {@link com.oldscape.server.game.model.player.Player}s
+     * A {@link java.util.Queue} of {@link com.oldscape.server.game.model.entity.player.Player}s
      * to remove.
      */
     private final Queue<Player> playersToRemove = new ConcurrentLinkedQueue<>();
@@ -57,15 +57,15 @@ public final class GameWorld {
     Npc npc;
 
     /**
-     * Adds a {@link com.oldscape.server.game.model.player.Player} to the players
+     * Adds a {@link com.oldscape.server.game.model.entity.player.Player} to the players
      *
-     * @param player The {@link com.oldscape.server.game.model.player.Player} to
+     * @param player The {@link com.oldscape.server.game.model.entity.player.Player} to
      *               registerLobbyPlayer.
      */
     public void registerPlayer(Player player) {
 
         //TODO move to config
-//        npcs.add(npc = new Npc(394, player.getPosition().getX() + 1, player.getPosition().getY() + 1));
+//        npcs.add(npc = new Npc(394, account.getPosition().getX() + 1, account.getPosition().getY() + 1));
         synchronized (players) {
             players.add(player);
         }
@@ -78,9 +78,9 @@ public final class GameWorld {
     }
 
     /**
-     * Adds a {@link com.oldscape.server.game.model.player.Player} to the
+     * Adds a {@link com.oldscape.server.game.model.entity.player.Player} to the
      * {@code playersToRemove} to unregister a
-     * {@link com.oldscape.server.game.model.player.Player}.
+     * {@link com.oldscape.server.game.model.entity.player.Player}.
      *
      * @param player
      */
@@ -89,11 +89,11 @@ public final class GameWorld {
     }
 
     /**
-     * Removes a {@link com.oldscape.server.game.model.player.Player} from the
-     * {@link java.util.Collection} of {@link com.oldscape.server.game.model.player.Player}
+     * Removes a {@link com.oldscape.server.game.model.entity.player.Player} from the
+     * {@link java.util.Collection} of {@link com.oldscape.server.game.model.entity.player.Player}
      * .
      *
-     * @param player The {@link com.oldscape.server.game.model.player.Player} to remove.
+     * @param player The {@link com.oldscape.server.game.model.entity.player.Player} to remove.
      */
     public void unregisterPlayer(Player player) {
         synchronized (players) {
@@ -123,7 +123,7 @@ public final class GameWorld {
 
     /**
      * Gets the {@link java.util.Collection} of
-     * {@link com.oldscape.server.game.model.player.Player}s.
+     * {@link com.oldscape.server.game.model.entity.player.Player}s.
      *
      * @return The {@code players}.
      */
@@ -133,7 +133,7 @@ public final class GameWorld {
 
     /**
      * Gets the {@link java.util.Collection} of
-     * {@link com.oldscape.server.game.model.npc.Npc}s.
+     * {@link com.oldscape.server.game.model.entity.npc.Npc}s.
      *
      * @return The {@code players}.
      */
@@ -143,7 +143,7 @@ public final class GameWorld {
 
     /**
      * Gets the {@link java.util.Queue} of
-     * {@link com.oldscape.server.game.model.player.Player}s to remove from the server.
+     * {@link com.oldscape.server.game.model.entity.player.Player}s to remove from the server.
      *
      * @return The {@code playersToRemove}.
      */

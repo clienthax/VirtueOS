@@ -3,7 +3,7 @@ package com.oldscape.server.game.model.sync.reference;
 import com.google.common.base.Preconditions;
 
 /**
- * Represents the appearance of a player.
+ * Represents the appearance of a account.
  *
  * @author Graham
  */
@@ -21,7 +21,7 @@ public final class Appearance {
      */
     private final int[] colors;
     /**
-     * The player's gender.
+     * The account's gender.
      */
     private final Gender gender;
     /**
@@ -49,27 +49,27 @@ public final class Appearance {
     }
 
     /**
-     * Gets the player's colors.
+     * Gets the account's colors.
      *
-     * @return The player's colors.
+     * @return The account's colors.
      */
     public int[] getColors() {
         return colors;
     }
 
     /**
-     * Gets the gender of the player.
+     * Gets the gender of the account.
      *
-     * @return The gender of the player.
+     * @return The gender of the account.
      */
     public Gender getGender() {
         return gender;
     }
 
     /**
-     * Gets the player's styles.
+     * Gets the account's styles.
      *
-     * @return The player's styles.
+     * @return The account's styles.
      */
     public int[] getStyle() {
         // 0 = head 1 = chin/beard 2 = chest 3 = arms 4 = hands 5 = legs 6 =
@@ -78,7 +78,7 @@ public final class Appearance {
     }
 
     /**
-     * Checks if the player is female.
+     * Checks if the account is female.
      *
      * @return {@code true} if so, {@code false} if not.
      */
@@ -87,7 +87,7 @@ public final class Appearance {
     }
 
     /**
-     * Checks if the player is male.
+     * Checks if the account is male.
      *
      * @return {@code true} if so, {@code false} if not.
      */

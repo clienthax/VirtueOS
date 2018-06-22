@@ -1,12 +1,12 @@
 package com.oldscape.server.game.model.sync.block;
 
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.model.sync.reference.Animation;
 import com.oldscape.server.game.model.sync.reference.ChatMessage;
 import com.oldscape.server.game.model.sync.reference.Direction;
 import com.oldscape.server.game.model.sync.reference.Graphic;
 import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
-import com.oldscape.shared.model.Position;
+import com.oldscape.server.game.model.region.Position;
 
 /**
  * A synchronization block is part of a {@link SynchronizationSegment}. A
@@ -30,13 +30,13 @@ public abstract class SynchronizationBlock {
     }
 
     /**
-     * Creates an {@link AppearanceBlock} for the specified player.
+     * Creates an {@link AppearanceBlock} for the specified account.
      *
-     * @param player The player.
+     * @param player The account.
      * @return The appearance block.
      */
     public static SynchronizationBlock createAppearanceBlock(Player player) {
-        int combat = 126;// player.getSkillSet().getCombatLevel();
+        int combat = 126;// account.getSkillSet().getCombatLevel();
         int id = player.hasNpcType() ? player.getNpcType().getID() : -1;
 
         return new AppearanceBlock(player.getCredentials().getDisplayName(), player.getAppearance(), combat, 0,
@@ -44,9 +44,9 @@ public abstract class SynchronizationBlock {
     }
 
     /**
-     * Creates a {@link ChatBlock} for the specified player.
+     * Creates a {@link ChatBlock} for the specified account.
      *
-     * @param player      The player.
+     * @param player      The account.
      * @param chatMessage The chat message.
      * @return The chat block.
      */
@@ -67,13 +67,13 @@ public abstract class SynchronizationBlock {
     /**
      * Creates a {@link ForceMovementBlock} with the specified parameters.
      *
-     * @param initialPosition The initial {@link Position} of the player.
-     * @param finalPosition   The final position of the player
-     * @param travelDurationX The length of time (in game pulses) the player's movement
+     * @param initialPosition The initial {@link Position} of the account.
+     * @param finalPosition   The final position of the account
+     * @param travelDurationX The length of time (in game pulses) the account's movement
      *                        along the X axis will last.
-     * @param travelDurationY The length of time (in game pulses) the player's movement
+     * @param travelDurationY The length of time (in game pulses) the account's movement
      *                        along the Y axis will last.
-     * @param direction       The {@link Direction} the player should move.
+     * @param direction       The {@link Direction} the account should move.
      * @return The force movement block.
      */
     public static SynchronizationBlock createForceMovementBlock(Position initialPosition, Position finalPosition,

@@ -1,8 +1,7 @@
 package com.oldscape.server.game.model.entity;
 
 import com.oldscape.server.game.GameWorld;
-import com.oldscape.shared.model.EntityType;
-import com.oldscape.shared.model.Position;
+import com.oldscape.server.game.model.region.Position;
 
 public abstract class Entity {
 

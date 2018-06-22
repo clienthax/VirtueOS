@@ -1,10 +1,9 @@
 package com.oldscape.server.game.network.login;
 
 import com.oldscape.server.game.Server;
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.network.SessionEventContext;
 import com.oldscape.server.game.network.game.GameSessionContext;
-import com.oldscape.shared.model.Response;
 import com.oldscape.shared.network.login.LoginDecoder;
 import com.oldscape.shared.network.login.LoginResponseEncoder;
 import com.oldscape.shared.network.login.LoginResponseEvent;
@@ -53,7 +52,7 @@ public final class LoginSessionContext extends SessionEventContext {
     /**
      * Sends the details of a successful login in.
      *
-     * @param player The {@link com.oldscape.server.game.model.player.Player} of the
+     * @param player The {@link com.oldscape.server.game.model.entity.player.Player} of the
      *               successful login.
      */
     public void sendLoginSuccess(Player player) throws Exception {

@@ -1,6 +1,6 @@
 package com.oldscape.server.game.network.login;
 
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.player.Player;
 
 /**
  * Created by sean on 17/07/14.
@@ -8,7 +8,7 @@ import com.oldscape.server.game.model.player.Player;
 public class PlayerLoginContextPair {
 
     /**
-     * The {@link com.oldscape.server.game.model.player.Player} of the succesfull login.
+     * The {@link com.oldscape.server.game.model.entity.player.Player} of the succesfull login.
      */
     private final Player player;
 
@@ -20,7 +20,7 @@ public class PlayerLoginContextPair {
     /**
      * Creates a new {@link com.oldscape.server.game.network.login.PlayerLoginContextPair}
      *
-     * @param composition The {@link com.oldscape.server.game.model.player.Player}.
+     * @param composition The {@link com.oldscape.server.game.model.entity.player.Player}.
      * @param context     The {@link com.oldscape.server.game.network.login.LoginSessionContext}.
      */
     public PlayerLoginContextPair(Player composition, LoginSessionContext context) {
@@ -38,9 +38,9 @@ public class PlayerLoginContextPair {
     }
 
     /**
-     * Gets the {@link com.oldscape.server.game.model.player.Player}.
+     * Gets the {@link com.oldscape.server.game.model.entity.player.Player}.
      *
-     * @return The {@code player}.
+     * @return The {@code account}.
      */
     public Player getPlayer() {
         return player;

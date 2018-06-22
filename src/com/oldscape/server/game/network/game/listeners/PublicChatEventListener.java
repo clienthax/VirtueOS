@@ -24,7 +24,6 @@ package com.oldscape.server.game.network.game.listeners;
 import com.oldscape.server.game.model.sync.reference.ChatMessage;
 import com.oldscape.server.game.network.game.GameSessionContext;
 import com.oldscape.shared.event.EventListener;
-import com.oldscape.shared.model.player.Permission;
 import com.oldscape.shared.network.game.event.impl.PublicChatMessage;
 
 public class PublicChatEventListener implements EventListener<PublicChatMessage, GameSessionContext> {

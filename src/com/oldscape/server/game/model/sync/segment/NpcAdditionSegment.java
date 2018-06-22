@@ -1,7 +1,7 @@
 package com.oldscape.server.game.model.sync.segment;
 
 import com.oldscape.server.game.model.sync.block.SynchronizationBlockSet;
-import com.oldscape.shared.model.Position;
+import com.oldscape.server.game.model.region.Position;
 
 /**
  * A {@link SynchronizationSegment} that adds an npc.

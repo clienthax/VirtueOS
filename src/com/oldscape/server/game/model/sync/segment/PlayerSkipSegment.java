@@ -13,7 +13,7 @@ public final class PlayerSkipSegment extends SynchronizationSegment {
     private final int count;
 
     /**
-     * Creates the skip player segment.
+     * Creates the skip account segment.
      */
     public PlayerSkipSegment(int count) {
         super(EMPTY_BLOCK_SET);

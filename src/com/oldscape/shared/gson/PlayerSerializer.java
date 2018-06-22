@@ -22,13 +22,13 @@
 package com.oldscape.shared.gson;
 
 import com.google.gson.*;
-import com.oldscape.server.game.model.player.Player;
-import com.oldscape.shared.model.Position;
-import com.oldscape.shared.model.Position.RegionSize;
-import com.oldscape.shared.model.player.AccountCredentials;
-import com.oldscape.shared.model.player.DisplayMode;
-import com.oldscape.shared.model.player.Permission;
-import com.oldscape.shared.model.player.SubscriptionType;
+import com.oldscape.server.game.model.entity.player.Player;
+import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.region.Position.RegionSize;
+import com.oldscape.server.game.model.entity.player.account.Credentials;
+import com.oldscape.server.game.model.entity.player.account.DisplayMode;
+import com.oldscape.server.game.model.entity.player.account.Permission;
+import com.oldscape.server.game.model.entity.player.account.Subscription;
 
 import java.lang.reflect.Type;
 import java.text.DateFormat;
@@ -58,13 +58,13 @@ public class PlayerSerializer implements JsonSerializer<Player>, JsonDeserialize
         DateFormat format = new SimpleDateFormat();
 
         /**
-         * Parses the player's credentials to the {@code obj}.
+         * Parses the account's credentials to the {@code obj}.
          */
         String username = obj.get("username").getAsString();
         String display = obj.get("display").getAsString();
         String password = obj.get("password").getAsString();
         Permission permission = Permission.valueOf(obj.get("permission").getAsString());
-        SubscriptionType subscription = SubscriptionType.valueOf(obj.get("subscription").getAsString());
+        Subscription subscription = Subscription.valueOf(obj.get("subscription").getAsString());
         String ip = obj.get("ip").getAsString();
         String email = obj.get("email").getAsString();
         boolean verified = obj.get("verified").getAsBoolean();
@@ -89,7 +89,7 @@ public class PlayerSerializer implements JsonSerializer<Player>, JsonDeserialize
         int height = obj.get("height").getAsInt();
         RegionSize size = RegionSize.valueOf(obj.get("size").getAsString());
 
-        AccountCredentials credentials = new AccountCredentials(creation, login, username, display, email, password,
+        Credentials credentials = new Credentials(creation, login, username, display, email, password,
                 unread, ip, expire, subscription, permission, verified, auth);
         Position position = new Position(x, y, height, size);
         Player player = new Player(1, credentials, mode);
@@ -98,7 +98,7 @@ public class PlayerSerializer implements JsonSerializer<Player>, JsonDeserialize
         player.setLastKnownRegion(position);
 
         /**
-         * Returns the {@code com.oldscape.shared.model.player.AccountCredentials}.
+         * Returns the {@code com.oldscape.server.game.model.entity.player.account.Credentials}.
          */
         return player;
     }
@@ -123,13 +123,13 @@ public class PlayerSerializer implements JsonSerializer<Player>, JsonDeserialize
         DateFormat format = new SimpleDateFormat();
 
         /**
-         * Adds the player's credentials to the {@code obj}.
+         * Adds the account's credentials to the {@code obj}.
          */
         obj.addProperty("username", src.getCredentials().getUserName());
         obj.addProperty("display", src.getCredentials().getDisplayName());
         obj.addProperty("password", src.getCredentials().getPassword());
         obj.addProperty("permission", src.getCredentials().getPermission().toString());
-        obj.addProperty("subscription", src.getCredentials().getSubscriptionType().toString());
+        obj.addProperty("subscription", src.getCredentials().getSubscription().toString());
         obj.addProperty("ip", src.getCredentials().getLastKnownIpAddress());
         obj.addProperty("email", src.getCredentials().getEmailAddress());
         obj.addProperty("verified", src.getCredentials().isEmailVerified());

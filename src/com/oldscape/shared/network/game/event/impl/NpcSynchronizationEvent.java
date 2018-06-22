@@ -21,10 +21,10 @@
  */
 package com.oldscape.shared.network.game.event.impl;
 
-import com.oldscape.server.game.model.npc.Npc;
+import com.oldscape.server.game.model.entity.npc.Npc;
 import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
 import com.oldscape.shared.event.Event;
-import com.oldscape.shared.model.Position;
+import com.oldscape.server.game.model.region.Position;
 
 import java.util.List;
 

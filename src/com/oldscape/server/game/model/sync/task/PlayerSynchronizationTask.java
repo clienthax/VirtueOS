@@ -1,8 +1,8 @@
 package com.oldscape.server.game.model.sync.task;
 
 import com.oldscape.server.game.Server;
-import com.oldscape.server.game.model.player.Player;
-import com.oldscape.server.game.model.player.Viewport;
+import com.oldscape.server.game.model.entity.player.Player;
+import com.oldscape.server.game.model.entity.player.Viewport;
 import com.oldscape.server.game.model.sync.reference.Direction;
 import com.oldscape.server.game.model.sync.segment.*;
 
@@ -24,7 +24,7 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
      */
     private static final int NEW_PLAYERS_PER_CYCLE = 15;
     /**
-     * The player.
+     * The account.
      */
     private final Player player;
     /**
@@ -33,9 +33,9 @@ public final class PlayerSynchronizationTask extends SynchronizationTask {
     protected Server server;
 
     /**
-     * Creates the {@link PlayerSynchronizationTask} for the specified player.
+     * Creates the {@link PlayerSynchronizationTask} for the specified account.
      *
-     * @param player The player.
+     * @param player The account.
      */
     public PlayerSynchronizationTask(Server server, Player player) {
         this.server = server;

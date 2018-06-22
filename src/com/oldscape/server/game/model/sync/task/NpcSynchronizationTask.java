@@ -1,13 +1,13 @@
 package com.oldscape.server.game.model.sync.task;
 
 import com.oldscape.server.game.Server;
-import com.oldscape.server.game.model.npc.Npc;
-import com.oldscape.server.game.model.player.Player;
+import com.oldscape.server.game.model.entity.npc.Npc;
+import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.model.sync.segment.MovementSegment;
 import com.oldscape.server.game.model.sync.segment.NpcAdditionSegment;
 import com.oldscape.server.game.model.sync.segment.NpcRemovalSegment;
 import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
-import com.oldscape.shared.model.Position;
+import com.oldscape.server.game.model.region.Position;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -28,7 +28,7 @@ public final class NpcSynchronizationTask extends SynchronizationTask {
      */
     private static final int NEW_NPCS_PER_CYCLE = 20;
     /**
-     * The player.
+     * The account.
      */
     private final Player player;
     /**
@@ -37,9 +37,9 @@ public final class NpcSynchronizationTask extends SynchronizationTask {
     protected Server server;
 
     /**
-     * Creates the {@link NpcSynchronizationTask} for the specified player.
+     * Creates the {@link NpcSynchronizationTask} for the specified account.
      *
-     * @param player The player.
+     * @param player The account.
      */
     public NpcSynchronizationTask(Server server, Player player) {
         this.server = server;
