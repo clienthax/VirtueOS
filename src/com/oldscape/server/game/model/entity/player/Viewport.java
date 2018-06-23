@@ -23,7 +23,7 @@ package com.oldscape.server.game.model.entity.player;
 
 import com.oldscape.server.game.GameWorld;
 import com.oldscape.server.game.model.entity.npc.Npc;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 import com.oldscape.shared.network.game.GameFrameBuilder;
 
 import java.util.ArrayList;
@@ -59,7 +59,7 @@ public class Viewport {
      */
     private final int[] outPlayersIndexes = new int[GameWorld.MAXIMUM_PLAYERS];
     /**
-     * Represents an array of region hashes
+     * Represents an array of map hashes
      */
     private final int[] regionHashes = new int[GameWorld.MAXIMUM_PLAYERS];
     /**
@@ -237,7 +237,7 @@ public class Viewport {
     }
 
     /**
-     * Sets the region hash
+     * Sets the map hash
      *
      * @param index the Index
      * @param hash  the Hash

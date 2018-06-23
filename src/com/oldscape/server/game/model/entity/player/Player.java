@@ -15,7 +15,7 @@ import com.oldscape.server.game.model.widget.WidgetId;
 import com.oldscape.server.game.network.game.GameSessionContext;
 import com.oldscape.shared.event.Event;
 import com.oldscape.server.game.model.MessageType;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 import com.oldscape.server.game.model.entity.player.account.Credentials;
 import com.oldscape.server.game.model.entity.player.account.DisplayMode;
 import com.oldscape.server.game.model.entity.player.account.Permission;

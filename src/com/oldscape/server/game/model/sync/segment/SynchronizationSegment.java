@@ -3,7 +3,7 @@ package com.oldscape.server.game.model.sync.segment;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlockSet;
 import com.oldscape.server.game.model.sync.reference.Direction;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 
 /**
  * A segment contains a set of {@link SynchronizationBlock}s, {@link Direction}s

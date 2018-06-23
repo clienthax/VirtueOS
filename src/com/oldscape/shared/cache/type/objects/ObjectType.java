@@ -79,6 +79,7 @@ public class ObjectType implements Type {
     private boolean aBool2114 = true;
     private int mapAreaId = -1;
     private Map<Integer, Object> params = null;
+    private int surroundings = 0;
 
     public ObjectType(int id) {
         this.id = id;
@@ -181,7 +182,7 @@ public class ObjectType implements Type {
             } else if (opcode == 68) {
                 mapSceneID = buffer.getShort() & 0xFFFF;
             } else if (opcode == 69) {
-                buffer.get();
+                surroundings = buffer.get();
             } else if (opcode == 70) {
                 offsetX = buffer.getShort() & 0xFFFF;
             } else if (opcode == 71) {
@@ -758,6 +759,10 @@ public class ObjectType implements Type {
      */
     public void setAnInt2106(int anInt2106) {
         this.anInt2106 = anInt2106;
+    }
+
+    public int getSurroundings() {
+        return surroundings;
     }
 
     /**

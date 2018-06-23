@@ -65,7 +65,7 @@ public abstract class SynchronizationDescriptor {
             } else if (dy == 1) {
                 opcode = 6;
             } else {
-                throw new RuntimeException("Invalid delta value for region hash!");
+                throw new RuntimeException("Invalid delta value for map hash!");
             }
             builder.putBits(2, 2);
             builder.putBits(5, ((planeOffset & 0x3) << 3) + (opcode & 0x7));

@@ -22,7 +22,7 @@
 package com.oldscape.shared.network.game.event.impl;
 
 import com.oldscape.shared.event.Event;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 import com.oldscape.shared.network.game.GameFrameBuilder;
 
 public final class RegionUpdateEvent implements Event {

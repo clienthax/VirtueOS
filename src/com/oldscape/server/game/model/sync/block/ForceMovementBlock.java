@@ -1,7 +1,7 @@
 package com.oldscape.server.game.model.sync.block;
 
 import com.oldscape.server.game.model.sync.reference.Direction;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 
 /**
  * The Force Movement {@link SynchronizationBlock}. Only players can utilise

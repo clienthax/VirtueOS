@@ -2,10 +2,10 @@ package com.oldscape.server.game.model;
 
 import com.google.common.base.MoreObjects;
 import com.oldscape.server.game.model.entity.player.Player;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.reference.Direction;
-import com.oldscape.server.game.model.region.RegionManager;
+import com.oldscape.server.game.model.map.RegionManager;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -184,8 +184,8 @@ public final class WalkingQueue {
 
             Position pos = new Position(x - deltaX, y - deltaY, step.getZ());
 
-//            Region region = manager.lookup(pos.getRegionID());
-//            System.out.println("Tile: [ " + pos.getX() + ", " + pos.getY() + " ], Blocked: [ " + region.getClipMap().isClipped(step.getZ(), pos.getXInRegion(), pos.getYInRegion(), 1, ClipFlag.FLOOR_BLOCKSWALK) + " ]");
+//            Region map = manager.lookup(pos.getRegionID());
+//            System.out.println("Tile: [ " + pos.getX() + ", " + pos.getY() + " ], Blocked: [ " + map.getClipMap().isClipped(step.getZ(), pos.getXInRegion(), pos.getYInRegion(), 1, ClipFlag.FLOOR_BLOCKSWALK) + " ]");
 
             addStep(pos);
         }

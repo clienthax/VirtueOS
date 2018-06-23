@@ -2,7 +2,7 @@ package com.oldscape.shared.script.listeners;
 
 import com.oldscape.server.game.model.entity.item.Item;
 import com.oldscape.server.game.model.entity.player.Player;
-import com.oldscape.server.game.model.region.Region;
+import com.oldscape.server.game.model.map.Region;
 
 public interface LocationListener {
 

@@ -23,8 +23,8 @@ package com.oldscape.shared.gson;
 
 import com.google.gson.*;
 import com.oldscape.server.game.model.entity.player.Player;
-import com.oldscape.server.game.model.region.Position;
-import com.oldscape.server.game.model.region.Position.RegionSize;
+import com.oldscape.server.game.model.map.Position;
+import com.oldscape.server.game.model.map.Position.RegionSize;
 import com.oldscape.server.game.model.entity.player.account.Credentials;
 import com.oldscape.server.game.model.entity.player.account.DisplayMode;
 import com.oldscape.server.game.model.entity.player.account.Permission;

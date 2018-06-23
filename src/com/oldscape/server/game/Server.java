@@ -17,7 +17,7 @@ import com.oldscape.shared.cache.FileStore;
 import com.oldscape.shared.cache.type.TypeListManager;
 import com.oldscape.shared.event.EventHub;
 import com.oldscape.shared.event.hubs.DefaultEventHub;
-import com.oldscape.server.game.model.region.RegionManager;
+import com.oldscape.server.game.model.map.RegionManager;
 import com.oldscape.shared.network.game.event.GameEventRepository;
 import com.oldscape.shared.network.game.event.impl.*;
 import com.oldscape.shared.network.handshake.HandshakeDecoder;
@@ -25,7 +25,7 @@ import com.oldscape.shared.network.login.LoginEvent;
 import com.oldscape.shared.network.login.LoginResponseEvent;
 import com.oldscape.shared.network.ondemand.*;
 import com.oldscape.shared.script.ScriptManager;
-import com.oldscape.shared.utility.crypto.Huffman;
+import com.oldscape.shared.utility.Huffman;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -143,7 +143,7 @@ public final class Server {
      */
     private ScriptManager scriptManager = new ScriptManager();
     /**
-     * The {@link com.oldscape.server.game.model.region.RegionManager}.
+     * The {@link com.oldscape.server.game.model.map.RegionManager}.
      */
     private RegionManager regionManager = new RegionManager(this);
 

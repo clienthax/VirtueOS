@@ -24,7 +24,7 @@ package com.oldscape.server.game.model.sync.descriptor;
 import com.oldscape.server.game.model.sync.segment.NpcAdditionSegment;
 import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
 import com.oldscape.shared.event.Event;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 import com.oldscape.shared.network.game.GameFrameBuilder;
 import com.oldscape.shared.network.game.event.impl.NpcSynchronizationEvent;
 

@@ -1,7 +1,7 @@
 package com.oldscape.server.game.model.sync.segment;
 
 import com.oldscape.server.game.model.sync.block.SynchronizationBlockSet;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 
 /**
  * A {@link SynchronizationSegment} where the mob is teleported to a new

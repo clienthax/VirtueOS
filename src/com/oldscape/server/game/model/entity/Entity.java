@@ -1,14 +1,12 @@
 package com.oldscape.server.game.model.entity;
 
-import com.oldscape.server.game.GameWorld;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.Node;
+import com.oldscape.server.game.model.map.Position;
 
-public abstract class Entity {
+public abstract class Entity extends Node {
 
-    /**
-     * The World containing this Entity.
-     */
-    protected final GameWorld world;
+    protected int id;
+
     /**
      * The Position of this Entity.
      */
@@ -16,12 +14,10 @@ public abstract class Entity {
 
     /**
      * Creates the Entity.
-     *
-     * @param world    The {@link GameWorld} containing the Entity.
-     * @param position The {@link Position} of the Entity.
      */
-    public Entity(GameWorld world, Position position) {
-        this.world = world;
+    public Entity(int id, Position position) {
+        super(id);
+        this.id = id;
         this.position = position;
     }
 
@@ -37,13 +33,8 @@ public abstract class Entity {
         return position;
     }
 
-    /**
-     * Gets the {@link GameWorld} this Entity is in.
-     *
-     * @return The World.
-     */
-    public GameWorld getWorld() {
-        return world;
+    public int getId() {
+        return id;
     }
 
     /**

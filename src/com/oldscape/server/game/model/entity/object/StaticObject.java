@@ -1,18 +1,21 @@
 package com.oldscape.server.game.model.entity.object;
 
-
 import com.oldscape.server.game.GameWorld;
 import com.oldscape.server.game.model.entity.Entity;
 import com.oldscape.server.game.model.entity.EntityType;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 import com.oldscape.shared.cache.type.objects.ObjectType;
 
 public class StaticObject extends Entity {
 
-    ObjectType object;
+    private ObjectType object;
 
-    public StaticObject(GameWorld world, Position position, ObjectType object) {
-        super(world, position);
+    private GameWorld gameWorld;
+
+    private Position position;
+
+    public StaticObject(Position position, ObjectType object) {
+        super(object.getID(), position);
         this.object = object;
     }
 
@@ -37,4 +40,8 @@ public class StaticObject extends Entity {
         return object;
     }
 
+    @Override
+    public String getName() {
+        return getObjectType().getName();
+    }
 }

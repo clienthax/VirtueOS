@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.oldscape.server.game.model.region.clip;
+package com.oldscape.server.game.model.map.clip;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;

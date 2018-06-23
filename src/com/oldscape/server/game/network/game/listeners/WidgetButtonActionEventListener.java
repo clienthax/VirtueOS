@@ -194,7 +194,7 @@ public class WidgetButtonActionEventListener implements EventListener<WidgetButt
                         player.sendWidgetMoveSubEvent(165, 24, DisplayMode.FIXED.getId(), 11);
                         player.sendWidgetMoveSubEvent(165, 28, DisplayMode.FIXED.getId(), 22);
                     }
-                    //TODO: Set Now Playing Track - This should be loaded by region account is in.
+                    //TODO: Set Now Playing Track - This should be loaded by map account is in.
                     player.sendWidgetText(WidgetId.MUSIC_PANEL_ID, 5, "Harmony"); // TODO: is child 5?
 
                     player.setInGame(true);

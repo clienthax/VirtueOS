@@ -19,17 +19,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.oldscape.server.game.model.region;
+package com.oldscape.server.game.model.map;
 
-import com.oldscape.server.game.model.entity.object.DynamicObject;
-import com.oldscape.server.game.model.entity.object.StaticObject;
-import com.oldscape.server.game.model.region.clip.Clipping;
-import com.oldscape.server.game.model.region.clip.CollisionDataFlag;
-import com.oldscape.server.game.model.region.clip.CollisionMatrix;
+import com.oldscape.server.game.model.map.clip.CollisionMatrix;
 import com.oldscape.shared.utility.BufferUtils;
 
 import java.nio.ByteBuffer;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

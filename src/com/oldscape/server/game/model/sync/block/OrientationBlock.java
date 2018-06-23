@@ -1,6 +1,6 @@
 package com.oldscape.server.game.model.sync.block;
 
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 
 /**
  * The turn to position {@link SynchronizationBlock}. Both players and npcs can

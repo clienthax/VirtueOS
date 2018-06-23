@@ -24,7 +24,7 @@ package com.oldscape.server.game.model.sync.block.encode;
 import com.oldscape.server.game.model.sync.block.BlockType;
 import com.oldscape.server.game.model.sync.block.OrientationBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 import com.oldscape.shared.network.game.DataTransformation;
 import com.oldscape.shared.network.game.DataType;
 import com.oldscape.shared.network.game.GameFrameBuilder;

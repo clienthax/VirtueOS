@@ -1,7 +1,7 @@
 package com.oldscape.server.game.model;
 
 import com.oldscape.server.game.model.entity.player.Player;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 import com.oldscape.server.game.model.sync.block.InteractingMobBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlockSet;
@@ -10,7 +10,7 @@ import com.oldscape.server.game.model.sync.reference.ChatMessage;
 import com.oldscape.server.game.model.sync.reference.Direction;
 import com.oldscape.server.game.model.sync.reference.Graphic;
 import com.oldscape.shared.cache.type.npcs.NpcType;
-import com.oldscape.server.game.model.region.Region;
+import com.oldscape.server.game.model.map.Region;
 
 import java.util.Optional;
 

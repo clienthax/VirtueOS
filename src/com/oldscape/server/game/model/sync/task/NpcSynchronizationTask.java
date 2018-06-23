@@ -7,7 +7,7 @@ import com.oldscape.server.game.model.sync.segment.MovementSegment;
 import com.oldscape.server.game.model.sync.segment.NpcAdditionSegment;
 import com.oldscape.server.game.model.sync.segment.NpcRemovalSegment;
 import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 
 import java.util.ArrayList;
 import java.util.Iterator;

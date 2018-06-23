@@ -23,7 +23,7 @@ package com.oldscape.server.game.model.entity.npc;
 
 import com.oldscape.server.game.model.MobileEntity;
 import com.oldscape.shared.cache.type.TypeListManager;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 
 import java.util.Optional;
 

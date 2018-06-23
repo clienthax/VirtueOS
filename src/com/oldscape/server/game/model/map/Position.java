@@ -1,4 +1,4 @@
-package com.oldscape.server.game.model.region;
+package com.oldscape.server.game.model.map;
 
 /**
  * Created by Sean on 20/12/2014.
@@ -117,26 +117,13 @@ public final class Position {
         return new Position(this.getX(), this.getY(), this.getZ());
     }
 
+    public Position copyNew(int x, int y, int plane) {
+        return new Position(this.getX() + x, this.getY() + y, this.getZ() + plane);
+    }
+
     @Override
     public String toString() {
         return "X: " + getX() + ", Y: " + getY() + ", Height: " + getZ();
     }
 
-    public static enum RegionSize {
-
-        DEFAULT(104),
-        LARGE(120),
-        XLARGE(136),
-        XXLARGE(168);
-
-        private final int size;
-
-        RegionSize(int size) {
-            this.size = size;
-        }
-
-        public int getSize() {
-            return size;
-        }
-    }
 }

@@ -1,6 +1,6 @@
 package com.oldscape.server.game.model.sync.segment;
 
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 
 /**
  * A {@link SynchronizationSegment} which removes a account.

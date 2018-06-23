@@ -77,9 +77,9 @@ public class ObjectTypeList implements TypeList<ObjectType> {
                 count++;
             }
         } catch (IOException e) {
-            logger.log(Level.SEVERE, "Error Loading ObjectTypes(s)!", e);
+            logger.log(Level.SEVERE, "Error Loading ObjectShape(s)!", e);
         }
-//        logger.info("Loaded " + count + " ObjectTypes(s)!");
+//        logger.info("Loaded " + count + " ObjectShape(s)!");
     }
 
     @Override

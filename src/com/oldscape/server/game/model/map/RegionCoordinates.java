@@ -1,4 +1,4 @@
-package com.oldscape.server.game.model.region;
+package com.oldscape.server.game.model.map;
 
 public class RegionCoordinates {
 
@@ -13,7 +13,7 @@ public class RegionCoordinates {
     private int y;
 
     /**
-     * Creates the region coordinate.
+     * Creates the map coordinate.
      *
      * @param x The x coordinate.
      * @param y The y coordinate.

@@ -6,7 +6,7 @@ import com.oldscape.server.game.model.sync.reference.ChatMessage;
 import com.oldscape.server.game.model.sync.reference.Direction;
 import com.oldscape.server.game.model.sync.reference.Graphic;
 import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 
 /**
  * A synchronization block is part of a {@link SynchronizationSegment}. A

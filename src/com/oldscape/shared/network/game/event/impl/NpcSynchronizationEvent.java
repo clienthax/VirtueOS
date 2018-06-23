@@ -24,7 +24,7 @@ package com.oldscape.shared.network.game.event.impl;
 import com.oldscape.server.game.model.entity.npc.Npc;
 import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
 import com.oldscape.shared.event.Event;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 
 import java.util.List;
 

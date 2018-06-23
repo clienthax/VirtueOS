@@ -4,7 +4,7 @@ import com.oldscape.server.game.model.entity.npc.Npc;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.network.game.GameSessionContext;
 import com.oldscape.shared.event.EventListener;
-import com.oldscape.server.game.model.region.Position;
+import com.oldscape.server.game.model.map.Position;
 import com.oldscape.shared.network.game.event.impl.AttackNpcEvent;
 
 public class AttackNpcEventListener implements EventListener<AttackNpcEvent, GameSessionContext> {
