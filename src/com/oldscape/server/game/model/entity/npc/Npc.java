@@ -41,21 +41,16 @@ public class Npc extends MobileEntity {
         this.setPosition(new Position(x, y, 0));
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see com.etoile.shared.model.Node#initialise()
-     */
-    @Override
-    public void initialize() {
-
-    }
-
     /**
      * @return
      */
     public int getId() {
         return getNpcType().getID();
+    }
+
+    @Override
+    public String getName() {
+        return getNpcType().getName();
     }
 
     public boolean isAttackable() {
