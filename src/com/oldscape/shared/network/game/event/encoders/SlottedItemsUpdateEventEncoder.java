@@ -1,10 +1,7 @@
 package com.oldscape.shared.network.game.event.encoders;
 
 import com.oldscape.server.game.model.entity.player.inv.SlottedItem;
-import com.oldscape.shared.network.game.DataType;
-import com.oldscape.shared.network.game.FrameType;
-import com.oldscape.shared.network.game.GameFrame;
-import com.oldscape.shared.network.game.GameFrameBuilder;
+import com.oldscape.shared.network.game.*;
 import com.oldscape.shared.network.game.event.EncoderOpcode;
 import com.oldscape.shared.network.game.event.GameMessageEncoder;
 import com.oldscape.shared.network.game.event.impl.SlottedItemsUpdateEvent;
@@ -32,10 +29,10 @@ public class SlottedItemsUpdateEventEncoder implements GameMessageEncoder<Slotte
 			builder.put(DataType.SHORT, id + 1);
 
 			if (amount > 254) {
-				builder.put(DataType.BYTE, 255);
+				builder.put(DataType.BYTE,255);
 				builder.put(DataType.INT, amount);
 			} else {
-				builder.put(DataType.BYTE, amount); // short add/remove
+				builder.put(DataType.BYTE, amount);
 			}
 		}
 

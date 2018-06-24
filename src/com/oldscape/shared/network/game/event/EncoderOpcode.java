@@ -61,7 +61,7 @@ public enum EncoderOpcode {
     CS2_SCRIPT(74),
 
 //	FULL_ITEMS(0),
-	SLOT_ITEMS(13),
+	SLOT_ITEMS(11),
 
     GAME_MESSAGE(79),//
     MUSIC(82),
