@@ -112,6 +112,7 @@ public class Player extends MobileEntity {
      * @param display     The {@link com.oldscape.server.game.model.entity.player.account.DisplayMode}.
      */
     public Player(int id, Credentials credentials, DisplayMode display) {
+        super(id);
         this.id = id;
         this.credentials = credentials;
         this.display = display;
@@ -128,7 +129,6 @@ public class Player extends MobileEntity {
     /**
      * Initializes the {@link Node}.
      */
-    @Override
     public void initialize() {
         setRegion(sessionContext.getServer().getRegionManager().lookup(position.getRegionID()));
 
@@ -576,6 +576,11 @@ public class Player extends MobileEntity {
      */
     public int getId() {
         return id;
+    }
+
+    @Override
+    public String getName() {
+        return this.getCredentials().getDisplayName();
     }
 
     /**

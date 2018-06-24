@@ -10,7 +10,7 @@ public abstract class Node {
     /**
      * The node id.
      */
-    protected final int id;
+    protected int id;
 
     /**
      * The current location.
@@ -73,6 +73,10 @@ public abstract class Node {
      */
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**

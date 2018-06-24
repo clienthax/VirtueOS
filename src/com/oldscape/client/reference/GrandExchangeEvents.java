@@ -43,7 +43,7 @@ class GrandExchangeEvents {
 
     }
 
-    public static void method76(final Applet var0, final String var1) {
+    static void method76(final Applet var0, final String var1) {
         class57.field674 = var0;
         if (var1 != null) {
             class57.field667 = var1;
@@ -185,7 +185,7 @@ class GrandExchangeEvents {
       }
    }*/ // TODO
 
-    public void sort(final Comparator var1, final boolean var2) {
+    void sort(final Comparator var1, final boolean var2) {
         if (var2) {
             this.events.sort(var1);
         } else {

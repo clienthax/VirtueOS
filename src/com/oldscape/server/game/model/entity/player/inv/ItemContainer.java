@@ -40,6 +40,7 @@ public final class ItemContainer {
      * The size of this inventory the number of 'used slots'.
      */
     private int size = 0;
+
     /**
      * Stand, Run, Walk
      */
@@ -344,7 +345,7 @@ public final class ItemContainer {
     }
 
     /**
-     * Checks if the item with the specified {@link ItemDefinition} should be
+     * Checks if the item with the specified {@link ItemType} should be
      * stacked.
      *
      * @param definition The item definition.

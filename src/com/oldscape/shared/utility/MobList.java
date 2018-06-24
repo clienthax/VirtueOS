@@ -26,7 +26,7 @@ public final class MobList<T extends Node> extends AbstractList<T> implements It
                 mobs[id] = mob;
                 size++;
 
-                mob.setIndex(id + 1);
+                mob.setId(id + 1);
                 return true;
             }
         }
@@ -53,7 +53,7 @@ public final class MobList<T extends Node> extends AbstractList<T> implements It
         }
 
         Node mob = (Node) obj;
-        int id = mob.getIndex() - 1;
+        int id = mob.getId() - 1;
         T m = get(id);
 
         if (m == null)
@@ -61,7 +61,7 @@ public final class MobList<T extends Node> extends AbstractList<T> implements It
 
         mobs[id] = null;
         size--;
-        mob.setIndex(0);
+        mob.setId(0);
         return true;
 
     }
@@ -74,7 +74,7 @@ public final class MobList<T extends Node> extends AbstractList<T> implements It
 
         Node mob = (Node) obj;
 
-        return mobs[mob.getIndex()] != null;
+        return mobs[mob.getId()] != null;
     }
 
     @Override

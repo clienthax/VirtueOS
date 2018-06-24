@@ -114,13 +114,13 @@ public class Viewport {
         localPlayersIndexesCount = 0;
         outPlayersIndexesCount = 0;
 
-        localPlayers[player.getIndex()] = player;
-        localPlayersIndexes[localPlayersIndexesCount++] = player.getIndex();
+        localPlayers[player.getId()] = player;
+        localPlayersIndexes[localPlayersIndexesCount++] = player.getId();
 
         builder.switchToBitAccess();
         builder.putBits(30, player.getPosition().toPositionPacked());
         for (int playerIndex = 1; playerIndex < GameWorld.MAXIMUM_PLAYERS; playerIndex++) {
-            if (playerIndex != player.getIndex()) {
+            if (playerIndex != player.getId()) {
                 Player player = world.getPlayers().get(playerIndex);
                 builder.putBits(18, player != null ? player.getPosition().toRegionPacked() : 0);
                 outPlayersIndexes[outPlayersIndexesCount++] = playerIndex;

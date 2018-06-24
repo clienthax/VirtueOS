@@ -1,6 +1,11 @@
 package com.oldscape.shared.network.game.event.encoders;
 
+import com.oldscape.server.game.model.entity.player.inv.SlottedItem;
+import com.oldscape.shared.network.game.DataType;
+import com.oldscape.shared.network.game.FrameType;
 import com.oldscape.shared.network.game.GameFrame;
+import com.oldscape.shared.network.game.GameFrameBuilder;
+import com.oldscape.shared.network.game.event.EncoderOpcode;
 import com.oldscape.shared.network.game.event.GameMessageEncoder;
 import com.oldscape.shared.network.game.event.impl.SlottedItemsUpdateEvent;
 import io.netty.buffer.ByteBufAllocator;
@@ -12,35 +17,29 @@ import io.netty.buffer.ByteBufAllocator;
  */
 public class SlottedItemsUpdateEventEncoder implements GameMessageEncoder<SlottedItemsUpdateEvent> {
 
-    @Override
-    public GameFrame encode(ByteBufAllocator alloc, SlottedItemsUpdateEvent event) {
-        // TODO: Add.
-        return null;
-    }
+	@Override
+	public GameFrame encode(ByteBufAllocator alloc, SlottedItemsUpdateEvent event) {
+		GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.SLOT_ITEMS, FrameType.VARIABLE_SHORT);
+		builder.put(DataType.INT, event.getWidgetId());
+		builder.put(DataType.SHORT, event.getChannelId());
 
-//	@Override
-//	public GameFrame encode(ByteBufAllocator alloc, SlottedItemsUpdateEvent event) {
-//		GameFrameBuilder builder = new GameFrameBuilder(alloc, EncoderOpcode.SLOT_ITEMS, FrameType.VARIABLE_SHORT);
-//		builder.put(DataType.INT, event.getWidgetHash());
-//		builder.put(DataType.SHORT, event.getChannelId());
-//
-//		for (SlottedItem item : event.getItems()) {
-//			builder.putSmart(item.getSlot());
-//
-//			int id = item == null ? -1 : item.getId();
-//			int amount = item == null ? 0 : item.getAmount();
-//
-//			builder.put(DataType.SHORT, id + 1);
-//
-//			if (amount > 254) {
-//				builder.put(DataType.BYTE, 255);
-//				builder.put(DataType.INT, amount);
-//			} else {
-//				builder.put(DataType.BYTE, amount);
-//			}
-//		}
-//
-//		return builder.toGameFrame();
-//	}
+		for (SlottedItem item : event.getItems()) {
+			builder.putSmart(item.getSlot());
+
+			int id = item == null ? -1 : item.getId();
+			int amount = item == null ? 0 : item.getAmount();
+
+			builder.put(DataType.SHORT, id + 1);
+
+			if (amount > 254) {
+				builder.put(DataType.BYTE, 255);
+				builder.put(DataType.INT, amount);
+			} else {
+				builder.put(DataType.BYTE, amount); // short add/remove
+			}
+		}
+
+		return builder.toGameFrame();
+	}
 
 }

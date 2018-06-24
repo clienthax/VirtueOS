@@ -33,7 +33,7 @@ public final class LoginResponseEncoder extends MessageToByteEncoder<LoginRespon
 
             buffer.writeBoolean(false);
 
-            buffer.writeShort(player.getIndex());
+            buffer.writeShort(player.getId());
 
             buffer.writeByte(1);
         }

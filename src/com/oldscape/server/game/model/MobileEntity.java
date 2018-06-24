@@ -2,6 +2,7 @@ package com.oldscape.server.game.model;
 
 import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.model.map.Position;
+import com.oldscape.server.game.model.map.RegionSize;
 import com.oldscape.server.game.model.sync.block.InteractingMobBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlock;
 import com.oldscape.server.game.model.sync.block.SynchronizationBlockSet;
@@ -27,9 +28,9 @@ public abstract class MobileEntity extends Node {
     //3250 3423 --varock east
     protected int X = 3222, Y = 3222;
 
-    protected Position position = new Position(X, Y, 0, Position.RegionSize.DEFAULT);
+    protected Position position = new Position(X, Y, 0, RegionSize.DEFAULT);
 
-    protected Position lastPosition = new Position(X, Y, 0, Position.RegionSize.DEFAULT);
+    protected Position lastPosition = new Position(X, Y, 0, RegionSize.DEFAULT);
     /**
      * This mob's set of synchronization blocks.
      */
@@ -78,6 +79,15 @@ public abstract class MobileEntity extends Node {
     protected Region region;
 
     protected Position lastKnownRegion = null;
+
+    /**
+     * Constructs a new {@code Node} {@code Object}.
+     *
+     * @param id The node.
+     */
+    public MobileEntity(int id) {
+        super(id);
+    }
 
     public Position getLastKnownRegion() {
         return lastKnownRegion;

@@ -1,4 +1,4 @@
-var Position = Java.type('com.oldscape.server.game.model.region.Position');
+var Position = Java.type('com.oldscape.server.game.model.map.Position');
 var Permission = Java.type('com.oldscape.server.game.model.entity.player.account.Permission');
 
 var CommandListener = Java.extend(Java.type('com.oldscape.shared.script.listeners.CommandListener'), {

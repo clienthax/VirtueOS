@@ -37,6 +37,7 @@ import java.util.Optional;
 public class Npc extends MobileEntity {
 
     public Npc(int id, int x, int y) {
+        super(id);
         this.npcType = Optional.of(TypeListManager.lookupNpc(id));
         this.setPosition(new Position(x, y, 0));
     }
