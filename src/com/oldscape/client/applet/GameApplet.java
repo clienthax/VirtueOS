@@ -74,8 +74,8 @@ public class GameApplet extends JFrame implements AppletStub {
             map.put("1", "0");
             map.put("2", "5464");
             map.put("3", "");
-            map.put("4", "301");
-            map.put("5", "false");
+            map.put("4", "302");
+            map.put("5", "true");
             map.put("6", ".runescape.com");
             map.put("7", "true");
             map.put("8", "0");

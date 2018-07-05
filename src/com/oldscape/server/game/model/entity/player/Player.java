@@ -13,6 +13,8 @@ import com.oldscape.server.game.model.sync.segment.SynchronizationSegment;
 import com.oldscape.server.game.model.entity.player.var.Varbit;
 import com.oldscape.server.game.model.widget.WidgetId;
 import com.oldscape.server.game.network.game.GameSessionContext;
+import com.oldscape.shared.cache.type.TypeListManager;
+import com.oldscape.shared.cache.type.enums.EnumType;
 import com.oldscape.shared.event.Event;
 import com.oldscape.server.game.model.MessageType;
 import com.oldscape.server.game.model.map.Position;
@@ -226,7 +228,7 @@ public class Player extends MobileEntity {
         sendVarp(169, 0); // Audio: Sound Effect Volume.
         sendVarp(170, 0); // Controls: Mouse Buttons.
         sendVarp(171, 0); // Chat: Chat Effects.
-        sendVarp(173, 1); // Run.
+        sendVarp(173, 1); // Run Toggle.
         sendRunEnergy(100); // Run Energy.
         sendVarp(287, 1); // Chat: Split Private Chat.
         sendVarp(872, 0); // Audio: Area Sound Effect Volume.
@@ -640,6 +642,25 @@ public class Player extends MobileEntity {
      */
     public final ItemContainer getBank() {
         return bank;
+    }
+
+    public Object getEnumValue(int enumId, int key) {
+        EnumType enumType = TypeListManager.lookupEnum(enumId);
+        if (enumType == null) {
+            throw new IllegalArgumentException("Invalid enum: "+enumId);
+        }
+        Object value;
+        if (enumType.getValType() == 's') {
+            value = enumType.getValueString(key);
+        } else {
+            value = enumType.getValueInt(key);
+        }
+        return value;
+    }
+
+    public int getEnumSize(int enumId) {
+        EnumType enumType = TypeListManager.lookupEnum(enumId);
+        return enumType == null ? 0 : enumType.getSize();
     }
 
 }

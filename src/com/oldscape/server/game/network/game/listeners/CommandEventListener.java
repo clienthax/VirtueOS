@@ -21,6 +21,7 @@
  */
 package com.oldscape.server.game.network.game.listeners;
 
+import com.oldscape.server.game.model.entity.item.Item;
 import com.oldscape.server.game.model.entity.player.Player;
 import com.oldscape.server.game.network.game.GameSessionContext;
 import com.oldscape.shared.event.EventListener;
@@ -108,16 +109,6 @@ public class CommandEventListener implements EventListener<CommandEvent, GameSes
          * context.getPlayer().getPosition().getY(),
          * context.getPlayer().getPosition().getZ())); }
          *
-         * if (event.getSyntax().equals("equip")) { int weapon = 12904; int helm
-         * = 12417; int cape = 13069; int shield = 12817; int body = 10338; int
-         * bottom = 10340; int necklace = 12436;
-         * context.getPlayer().getEquipment().set(3, new Item(weapon));
-         * context.getPlayer().getEquipment().set(0, new Item(helm));
-         * context.getPlayer().getEquipment().set(1, new Item(cape));
-         * context.getPlayer().getEquipment().set(5, new Item(shield));
-         * context.getPlayer().getEquipment().set(4, new Item(body));
-         * context.getPlayer().getEquipment().set(7, new Item(bottom));
-         * context.getPlayer().getEquipment().set(2, new Item(necklace)); }
          *
          * if (event.getSyntax().equals("inter")) { if (event.getArgs().length >
          * 1) { return; } context.getPlayer().sendOpenWidgetSub(548, 104,
@@ -147,6 +138,23 @@ public class CommandEventListener implements EventListener<CommandEvent, GameSes
          * context.getPlayer().addBlock(SynchronizationBlock
          * .createHitUpdateBlock(hit, 1, hit, 99, false)); }
          */
+
+         if (event.getSyntax().equals("equip")) {
+             int weapon = 12904;
+             int helm = 12417;
+             int cape = 13069;
+             int shield = 12817;
+             int body = 10338;
+             int bottom = 10340;
+             int necklace = 12436;
+             context.getPlayer().getEquipment().set(3, new Item(weapon));
+             context.getPlayer().getEquipment().set(0, new Item(helm));
+             context.getPlayer().getEquipment().set(1, new Item(cape));
+             context.getPlayer().getEquipment().set(5, new Item(shield));
+             context.getPlayer().getEquipment().set(4, new Item(body));
+             context.getPlayer().getEquipment().set(7, new Item(bottom));
+             context.getPlayer().getEquipment().set(2, new Item(necklace));
+         }
     }
 
 }

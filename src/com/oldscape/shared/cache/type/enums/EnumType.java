@@ -25,6 +25,7 @@ import com.oldscape.shared.cache.type.Type;
 import com.oldscape.shared.utility.BitUtils;
 import com.oldscape.shared.utility.ByteBufferUtils;
 
+import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
@@ -43,15 +44,12 @@ public class EnumType implements Type {
     private int size = 0;
     private Map<Integer, Object> params = null;
 
+    private Map<Integer, Serializable> valueMap;
+
     public EnumType(int id) {
         this.id = id;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see com.oldscape.shared.cache.type.Type#decode(java.nio.ByteBuffer)
-     */
     @Override
     public void decode(ByteBuffer buffer) {
         while (true) {
@@ -69,31 +67,24 @@ public class EnumType implements Type {
                 defaultInt = buffer.getInt();
             } else if (opcode == 5) {
                 size = buffer.getShort() & 0xFFFF;
-                params = new HashMap<>(BitUtils.nextPowerOfTwo(size));
-
+                setValueMap(new HashMap<>(BitUtils.nextPowerOfTwo(size)));
                 for (int index = 0; index < size; ++index) {
                     int key = buffer.getInt();
                     String value = ByteBufferUtils.getString(buffer);
-                    params.put(key, value);
+                    getValueMap().put(new Integer(key), value);
                 }
             } else if (opcode == 6) {
                 size = buffer.getShort() & 0xFFFF;
-                params = new HashMap<>(BitUtils.nextPowerOfTwo(size));
-
+                setValueMap(new HashMap<>(BitUtils.nextPowerOfTwo(size)));
                 for (int index = 0; index < size; ++index) {
                     int key = buffer.getInt();
                     int value = buffer.getInt();
-                    params.put(key, value);
+                    getValueMap().put(new Integer(key), value);
                 }
             }
         }
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see com.oldscape.shared.cache.type.Type#encode()
-     */
     @Override
     public ByteBuffer encode() {
         ByteBuffer buffer = ByteBuffer.allocate(1132);
@@ -189,6 +180,36 @@ public class EnumType implements Type {
      */
     public void setSize(int size) {
         this.size = size;
+    }
+
+    public Map<Integer, Object> getValueMap() {
+        return params;
+    }
+    public void setValueMap(Map<Integer, Object> valueMap) {
+        this.params = valueMap;
+    }
+
+    public int getValueInt(int key) {
+        Object value = getValue(key);
+        if (value == null) {
+            return defaultInt;
+        }
+        return ((Integer) value).intValue();
+    }
+
+    public String getValueString(int key) {
+        Object value = getValue(key);
+        if (null == value) {
+            return defaultString;
+        }
+        return (String) value;
+    }
+
+    Object getValue(int key) {
+        if (null != getValueMap()) {
+            return getValueMap().get(new Integer(key));
+        }
+        return null;
     }
 
 }
